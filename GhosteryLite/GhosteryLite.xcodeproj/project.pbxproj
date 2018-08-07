@@ -22,6 +22,18 @@
 		4F3049552118985C00BA3961 /* blockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049542118985C00BA3961 /* blockerList.json */; };
 		4F3049572118985C00BA3961 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049562118985C00BA3961 /* ContentBlockerRequestHandler.swift */; };
 		4F30495C2118985C00BA3961 /* ContentBlocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4F3049512118985C00BA3961 /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4F3049962119F46700BA3961 /* TrackerListBug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30498C2119F46700BA3961 /* TrackerListBug.swift */; };
+		4F3049972119F46700BA3961 /* TrackerListRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30498D2119F46700BA3961 /* TrackerListRegex.swift */; };
+		4F3049982119F46700BA3961 /* TrieNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30498E2119F46700BA3961 /* TrieNode.swift */; };
+		4F3049992119F46700BA3961 /* TrackerListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30498F2119F46700BA3961 /* TrackerListApp.swift */; };
+		4F30499A2119F46700BA3961 /* TrackerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049902119F46700BA3961 /* TrackerList.swift */; };
+		4F30499B2119F46700BA3961 /* TrackerListPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049912119F46700BA3961 /* TrackerListPath.swift */; };
+		4F30499C2119F46700BA3961 /* PageTrackersFound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049922119F46700BA3961 /* PageTrackersFound.swift */; };
+		4F30499D2119F46700BA3961 /* TrackerListHosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049932119F46700BA3961 /* TrackerListHosts.swift */; };
+		4F30499E2119F46700BA3961 /* TrackerListHostPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049942119F46700BA3961 /* TrackerListHostPaths.swift */; };
+		4F3049A42119F4FC00BA3961 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A12119F4FC00BA3961 /* ArrayExtensions.swift */; };
+		4F3049A52119F4FC00BA3961 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A22119F4FC00BA3961 /* DictionaryExtensions.swift */; };
+		4F3049A62119F4FC00BA3961 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A32119F4FC00BA3961 /* URLExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +90,18 @@
 		4F3049562118985C00BA3961 /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
 		4F3049582118985C00BA3961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3049592118985C00BA3961 /* ContentBlocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContentBlocker.entitlements; sourceTree = "<group>"; };
+		4F30498C2119F46700BA3961 /* TrackerListBug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerListBug.swift; sourceTree = "<group>"; };
+		4F30498D2119F46700BA3961 /* TrackerListRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerListRegex.swift; sourceTree = "<group>"; };
+		4F30498E2119F46700BA3961 /* TrieNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieNode.swift; sourceTree = "<group>"; };
+		4F30498F2119F46700BA3961 /* TrackerListApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerListApp.swift; sourceTree = "<group>"; };
+		4F3049902119F46700BA3961 /* TrackerList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerList.swift; sourceTree = "<group>"; };
+		4F3049912119F46700BA3961 /* TrackerListPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerListPath.swift; sourceTree = "<group>"; };
+		4F3049922119F46700BA3961 /* PageTrackersFound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageTrackersFound.swift; sourceTree = "<group>"; };
+		4F3049932119F46700BA3961 /* TrackerListHosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerListHosts.swift; sourceTree = "<group>"; };
+		4F3049942119F46700BA3961 /* TrackerListHostPaths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerListHostPaths.swift; sourceTree = "<group>"; };
+		4F3049A12119F4FC00BA3961 /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		4F3049A22119F4FC00BA3961 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
+		4F3049A32119F4FC00BA3961 /* URLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +155,8 @@
 		4F30491F2118982600BA3961 /* GhosteryLite */ = {
 			isa = PBXGroup;
 			children = (
+				4F3049A02119F4FC00BA3961 /* Extensions */,
+				4F30498A2119F46700BA3961 /* AntiTracking */,
 				4F3049202118982600BA3961 /* AppDelegate.swift */,
 				4F3049222118982600BA3961 /* ViewController.swift */,
 				4F3049242118982700BA3961 /* Assets.xcassets */,
@@ -172,6 +198,40 @@
 				4F3049592118985C00BA3961 /* ContentBlocker.entitlements */,
 			);
 			path = ContentBlocker;
+			sourceTree = "<group>";
+		};
+		4F30498A2119F46700BA3961 /* AntiTracking */ = {
+			isa = PBXGroup;
+			children = (
+				4F30498B2119F46700BA3961 /* TrackingManagement */,
+			);
+			path = AntiTracking;
+			sourceTree = "<group>";
+		};
+		4F30498B2119F46700BA3961 /* TrackingManagement */ = {
+			isa = PBXGroup;
+			children = (
+				4F30498C2119F46700BA3961 /* TrackerListBug.swift */,
+				4F30498D2119F46700BA3961 /* TrackerListRegex.swift */,
+				4F30498E2119F46700BA3961 /* TrieNode.swift */,
+				4F30498F2119F46700BA3961 /* TrackerListApp.swift */,
+				4F3049902119F46700BA3961 /* TrackerList.swift */,
+				4F3049912119F46700BA3961 /* TrackerListPath.swift */,
+				4F3049922119F46700BA3961 /* PageTrackersFound.swift */,
+				4F3049932119F46700BA3961 /* TrackerListHosts.swift */,
+				4F3049942119F46700BA3961 /* TrackerListHostPaths.swift */,
+			);
+			path = TrackingManagement;
+			sourceTree = "<group>";
+		};
+		4F3049A02119F4FC00BA3961 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4F3049A12119F4FC00BA3961 /* ArrayExtensions.swift */,
+				4F3049A22119F4FC00BA3961 /* DictionaryExtensions.swift */,
+				4F3049A32119F4FC00BA3961 /* URLExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,8 +367,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F3049A42119F4FC00BA3961 /* ArrayExtensions.swift in Sources */,
+				4F3049A52119F4FC00BA3961 /* DictionaryExtensions.swift in Sources */,
+				4F3049972119F46700BA3961 /* TrackerListRegex.swift in Sources */,
+				4F30499C2119F46700BA3961 /* PageTrackersFound.swift in Sources */,
+				4F3049A62119F4FC00BA3961 /* URLExtension.swift in Sources */,
 				4F3049232118982600BA3961 /* ViewController.swift in Sources */,
+				4F30499A2119F46700BA3961 /* TrackerList.swift in Sources */,
+				4F30499D2119F46700BA3961 /* TrackerListHosts.swift in Sources */,
+				4F3049992119F46700BA3961 /* TrackerListApp.swift in Sources */,
+				4F3049982119F46700BA3961 /* TrieNode.swift in Sources */,
+				4F30499B2119F46700BA3961 /* TrackerListPath.swift in Sources */,
+				4F3049962119F46700BA3961 /* TrackerListBug.swift in Sources */,
 				4F3049212118982600BA3961 /* AppDelegate.swift in Sources */,
+				4F30499E2119F46700BA3961 /* TrackerListHostPaths.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
