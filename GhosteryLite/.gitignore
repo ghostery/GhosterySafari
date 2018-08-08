@@ -1,3 +1,8 @@
 # Xcode
 build/
 *.xcuserstate
+GhosteryLite.xcworkspace/
+
+# Pods
+Podfile.lock
+Pods/

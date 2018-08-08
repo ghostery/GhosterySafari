@@ -34,6 +34,7 @@
 		4F3049A42119F4FC00BA3961 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A12119F4FC00BA3961 /* ArrayExtensions.swift */; };
 		4F3049A52119F4FC00BA3961 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A22119F4FC00BA3961 /* DictionaryExtensions.swift */; };
 		4F3049A62119F4FC00BA3961 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A32119F4FC00BA3961 /* URLExtension.swift */; };
+		F124157D8C4330395AE8B7CF /* Pods_GhosteryLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E882B4CED52B6C3590AA9F5D /* Pods_GhosteryLite.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,9 @@
 		4F3049A12119F4FC00BA3961 /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		4F3049A22119F4FC00BA3961 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
 		4F3049A32119F4FC00BA3961 /* URLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
+		871270F350184074300264CE /* Pods-GhosteryLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.release.xcconfig"; path = "Pods/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.release.xcconfig"; sourceTree = "<group>"; };
+		E4F7CCF571DEB0BE3D51F755 /* Pods-GhosteryLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.debug.xcconfig"; sourceTree = "<group>"; };
+		E882B4CED52B6C3590AA9F5D /* Pods_GhosteryLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GhosteryLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F124157D8C4330395AE8B7CF /* Pods_GhosteryLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +136,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35CAFFFF61FA043B926A6BE3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4F7CCF571DEB0BE3D51F755 /* Pods-GhosteryLite.debug.xcconfig */,
+				871270F350184074300264CE /* Pods-GhosteryLite.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4F3049142118982600BA3961 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +153,7 @@
 				4F3049532118985C00BA3961 /* ContentBlocker */,
 				4F3049352118983D00BA3961 /* Frameworks */,
 				4F30491E2118982600BA3961 /* Products */,
+				35CAFFFF61FA043B926A6BE3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				4F3049362118983D00BA3961 /* Cocoa.framework */,
+				E882B4CED52B6C3590AA9F5D /* Pods_GhosteryLite.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -241,10 +257,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F30492D2118982700BA3961 /* Build configuration list for PBXNativeTarget "GhosteryLite" */;
 			buildPhases = (
+				74A204C459E2813E667F381E /* [CP] Check Pods Manifest.lock */,
 				4F3049192118982600BA3961 /* Sources */,
 				4F30491A2118982600BA3961 /* Frameworks */,
 				4F30491B2118982600BA3961 /* Resources */,
 				4F30494C2118983D00BA3961 /* Embed App Extensions */,
+				57269BFA53F7F09A9825ABEB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -361,6 +379,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		57269BFA53F7F09A9825ABEB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74A204C459E2813E667F381E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GhosteryLite-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4F3049192118982600BA3961 /* Sources */ = {
@@ -551,6 +608,7 @@
 		};
 		4F30492E2118982700BA3961 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4F7CCF571DEB0BE3D51F755 /* Pods-GhosteryLite.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -571,6 +629,7 @@
 		};
 		4F30492F2118982700BA3961 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 871270F350184074300264CE /* Pods-GhosteryLite.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
