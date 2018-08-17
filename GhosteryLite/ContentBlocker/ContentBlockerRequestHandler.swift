@@ -11,12 +11,12 @@ import Foundation
 class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
 
     func beginRequest(with context: NSExtensionContext) {
-        let attachment = NSItemProvider(contentsOf: Bundle.main.url(forResource: "blockerList", withExtension: "json"))!
-        
+		let rules = AntiTrackingManager.shared.contentBlokerRules()
+		
         let item = NSExtensionItem()
-        item.attachments = [attachment]
-        
+        item.attachments = rules
+
         context.completeRequest(returningItems: [item], completionHandler: nil)
     }
-    
+
 }

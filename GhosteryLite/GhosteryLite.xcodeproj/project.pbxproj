@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E9973FC6C3C5AE1182E8E7B /* Pods_ContentBlocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1C37253CAD1E7BF0CB1212 /* Pods_ContentBlocker.framework */; };
 		4F3049212118982600BA3961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049202118982600BA3961 /* AppDelegate.swift */; };
 		4F3049232118982600BA3961 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049222118982600BA3961 /* ViewController.swift */; };
 		4F3049252118982700BA3961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049242118982700BA3961 /* Assets.xcassets */; };
@@ -34,6 +35,30 @@
 		4F3049A42119F4FC00BA3961 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A12119F4FC00BA3961 /* ArrayExtensions.swift */; };
 		4F3049A52119F4FC00BA3961 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A22119F4FC00BA3961 /* DictionaryExtensions.swift */; };
 		4F3049A62119F4FC00BA3961 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A32119F4FC00BA3961 /* URLExtension.swift */; };
+		4F3049AF211B36E800BA3961 /* BlockListFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */; };
+		4F3049B4211C6D3200BA3961 /* AntiTrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* AntiTrackingManager.swift */; };
+		4F3049B5211C71CB00BA3961 /* AntiTrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* AntiTrackingManager.swift */; };
+		4F3049B6211C721D00BA3961 /* BlockListFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */; };
+		4F931A1521259BEC00AF4226 /* DomainConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A1421259BEC00AF4226 /* DomainConfigRepository.swift */; };
+		4F931A172125AD6500AF4226 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A162125AD6500AF4226 /* RealmRepository.swift */; };
+		4F931A192125ADD500AF4226 /* CrudRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A182125ADD500AF4226 /* CrudRepository.swift */; };
+		4F931A1A2125C4A700AF4226 /* DomainConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A1421259BEC00AF4226 /* DomainConfigRepository.swift */; };
+		4F931A1B2125CB1900AF4226 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A162125AD6500AF4226 /* RealmRepository.swift */; };
+		4F931A1C2125CB1D00AF4226 /* CrudRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A182125ADD500AF4226 /* CrudRepository.swift */; };
+		4F931A1D2125D3DE00AF4226 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A32119F4FC00BA3961 /* URLExtension.swift */; };
+		4F931A1E2125D3F500AF4226 /* AntiTrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* AntiTrackingManager.swift */; };
+		4F931A1F2125D45400AF4226 /* DomainConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A1421259BEC00AF4226 /* DomainConfigRepository.swift */; };
+		4F931A202125DA4100AF4226 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A162125AD6500AF4226 /* RealmRepository.swift */; };
+		4F931A212125DA5200AF4226 /* BlockListFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */; };
+		4F931A222126C23800AF4226 /* CrudRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A182125ADD500AF4226 /* CrudRepository.swift */; };
+		4F931A252126C8C900AF4226 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A242126C8C900AF4226 /* Constants.swift */; };
+		4F931A262126C95A00AF4226 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A242126C8C900AF4226 /* Constants.swift */; };
+		4F931A272126C95B00AF4226 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A242126C8C900AF4226 /* Constants.swift */; };
+		4F931A292126E06000AF4226 /* DomainConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */; };
+		4F931A2A2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */; };
+		4F931A2B2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */; };
+		4FCC792F211D9C54003A9823 /* ghostery_content_blocker.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FCC792E211D9C54003A9823 /* ghostery_content_blocker.json */; };
+		D146948444D48F136412C66E /* Pods_SafariExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6E6A3A7F09CA6028BBC263 /* Pods_SafariExtension.framework */; };
 		F124157D8C4330395AE8B7CF /* Pods_GhosteryLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E882B4CED52B6C3590AA9F5D /* Pods_GhosteryLite.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +95,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		20D8DDE934AC7DA8B920E530 /* Pods-ContentBlocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.debug.xcconfig"; sourceTree = "<group>"; };
+		2B1C37253CAD1E7BF0CB1212 /* Pods_ContentBlocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContentBlocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F30491D2118982600BA3961 /* GhosteryLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhosteryLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3049202118982600BA3961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F3049222118982600BA3961 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,9 +130,21 @@
 		4F3049A12119F4FC00BA3961 /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		4F3049A22119F4FC00BA3961 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
 		4F3049A32119F4FC00BA3961 /* URLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
+		4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListFileManager.swift; sourceTree = "<group>"; };
+		4F3049B3211C6D3200BA3961 /* AntiTrackingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiTrackingManager.swift; sourceTree = "<group>"; };
+		4F931A1421259BEC00AF4226 /* DomainConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConfigRepository.swift; sourceTree = "<group>"; };
+		4F931A162125AD6500AF4226 /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
+		4F931A182125ADD500AF4226 /* CrudRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudRepository.swift; sourceTree = "<group>"; };
+		4F931A242126C8C900AF4226 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConfigDataSource.swift; sourceTree = "<group>"; };
+		4FCC792E211D9C54003A9823 /* ghostery_content_blocker.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ghostery_content_blocker.json; sourceTree = "<group>"; };
 		871270F350184074300264CE /* Pods-GhosteryLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.release.xcconfig"; path = "Pods/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.release.xcconfig"; sourceTree = "<group>"; };
+		AB6E6A3A7F09CA6028BBC263 /* Pods_SafariExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafariExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B132EB5ADA4E362C9953CF32 /* Pods-SafariExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafariExtension/Pods-SafariExtension.release.xcconfig"; sourceTree = "<group>"; };
+		C0ED2F60680AAB12316E2515 /* Pods-SafariExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafariExtension/Pods-SafariExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		E4F7CCF571DEB0BE3D51F755 /* Pods-GhosteryLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.debug.xcconfig"; sourceTree = "<group>"; };
 		E882B4CED52B6C3590AA9F5D /* Pods_GhosteryLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GhosteryLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9E6DD48CC7939FB760044B0 /* Pods-ContentBlocker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.release.xcconfig"; path = "Pods/Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3049372118983D00BA3961 /* Cocoa.framework in Frameworks */,
+				D146948444D48F136412C66E /* Pods_SafariExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3049522118985C00BA3961 /* Cocoa.framework in Frameworks */,
+				3E9973FC6C3C5AE1182E8E7B /* Pods_ContentBlocker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +182,10 @@
 			children = (
 				E4F7CCF571DEB0BE3D51F755 /* Pods-GhosteryLite.debug.xcconfig */,
 				871270F350184074300264CE /* Pods-GhosteryLite.release.xcconfig */,
+				20D8DDE934AC7DA8B920E530 /* Pods-ContentBlocker.debug.xcconfig */,
+				F9E6DD48CC7939FB760044B0 /* Pods-ContentBlocker.release.xcconfig */,
+				C0ED2F60680AAB12316E2515 /* Pods-SafariExtension.debug.xcconfig */,
+				B132EB5ADA4E362C9953CF32 /* Pods-SafariExtension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -170,6 +215,7 @@
 		4F30491F2118982600BA3961 /* GhosteryLite */ = {
 			isa = PBXGroup;
 			children = (
+				4F931A232126C8AF00AF4226 /* Common */,
 				4F3049A02119F4FC00BA3961 /* Extensions */,
 				4F30498A2119F46700BA3961 /* AntiTracking */,
 				4F3049202118982600BA3961 /* AppDelegate.swift */,
@@ -187,6 +233,8 @@
 			children = (
 				4F3049362118983D00BA3961 /* Cocoa.framework */,
 				E882B4CED52B6C3590AA9F5D /* Pods_GhosteryLite.framework */,
+				2B1C37253CAD1E7BF0CB1212 /* Pods_ContentBlocker.framework */,
+				AB6E6A3A7F09CA6028BBC263 /* Pods_SafariExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -219,7 +267,11 @@
 		4F30498A2119F46700BA3961 /* AntiTracking */ = {
 			isa = PBXGroup;
 			children = (
+				4F4BE2DF212595AE00FEE71E /* ConfigStorage */,
+				4FCC792D211D9BE8003A9823 /* BlockListAssets */,
+				4F3049AB211B368000BA3961 /* BlockListManagement */,
 				4F30498B2119F46700BA3961 /* TrackingManagement */,
+				4F3049B3211C6D3200BA3961 /* AntiTrackingManager.swift */,
 			);
 			path = AntiTracking;
 			sourceTree = "<group>";
@@ -248,6 +300,41 @@
 				4F3049A32119F4FC00BA3961 /* URLExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4F3049AB211B368000BA3961 /* BlockListManagement */ = {
+			isa = PBXGroup;
+			children = (
+				4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */,
+			);
+			path = BlockListManagement;
+			sourceTree = "<group>";
+		};
+		4F4BE2DF212595AE00FEE71E /* ConfigStorage */ = {
+			isa = PBXGroup;
+			children = (
+				4F931A1421259BEC00AF4226 /* DomainConfigRepository.swift */,
+				4F931A162125AD6500AF4226 /* RealmRepository.swift */,
+				4F931A182125ADD500AF4226 /* CrudRepository.swift */,
+				4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */,
+			);
+			path = ConfigStorage;
+			sourceTree = "<group>";
+		};
+		4F931A232126C8AF00AF4226 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4F931A242126C8C900AF4226 /* Constants.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4FCC792D211D9BE8003A9823 /* BlockListAssets */ = {
+			isa = PBXGroup;
+			children = (
+				4FCC792E211D9C54003A9823 /* ghostery_content_blocker.json */,
+			);
+			path = BlockListAssets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +366,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F3049492118983D00BA3961 /* Build configuration list for PBXNativeTarget "SafariExtension" */;
 			buildPhases = (
+				CC2D4694AF65C856ED99B336 /* [CP] Check Pods Manifest.lock */,
 				4F3049302118983D00BA3961 /* Sources */,
 				4F3049312118983D00BA3961 /* Frameworks */,
 				4F3049322118983D00BA3961 /* Resources */,
@@ -296,6 +384,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F30495D2118985C00BA3961 /* Build configuration list for PBXNativeTarget "ContentBlocker" */;
 			buildPhases = (
+				0E9736C7FFCEDE606EE4EC75 /* [CP] Check Pods Manifest.lock */,
 				4F30494D2118985C00BA3961 /* Sources */,
 				4F30494E2118985C00BA3961 /* Frameworks */,
 				4F30494F2118985C00BA3961 /* Resources */,
@@ -355,6 +444,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FCC792F211D9C54003A9823 /* ghostery_content_blocker.json in Resources */,
 				4F3049252118982700BA3961 /* Assets.xcassets in Resources */,
 				4F3049282118982700BA3961 /* Main.storyboard in Resources */,
 			);
@@ -381,6 +471,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0E9736C7FFCEDE606EE4EC75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ContentBlocker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		57269BFA53F7F09A9825ABEB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -389,10 +497,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -417,6 +529,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CC2D4694AF65C856ED99B336 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SafariExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -425,19 +555,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3049A42119F4FC00BA3961 /* ArrayExtensions.swift in Sources */,
+				4F931A292126E06000AF4226 /* DomainConfigDataSource.swift in Sources */,
 				4F3049A52119F4FC00BA3961 /* DictionaryExtensions.swift in Sources */,
+				4F931A1521259BEC00AF4226 /* DomainConfigRepository.swift in Sources */,
 				4F3049972119F46700BA3961 /* TrackerListRegex.swift in Sources */,
 				4F30499C2119F46700BA3961 /* PageTrackersFound.swift in Sources */,
 				4F3049A62119F4FC00BA3961 /* URLExtension.swift in Sources */,
 				4F3049232118982600BA3961 /* ViewController.swift in Sources */,
 				4F30499A2119F46700BA3961 /* TrackerList.swift in Sources */,
+				4F3049AF211B36E800BA3961 /* BlockListFileManager.swift in Sources */,
+				4F3049B4211C6D3200BA3961 /* AntiTrackingManager.swift in Sources */,
 				4F30499D2119F46700BA3961 /* TrackerListHosts.swift in Sources */,
 				4F3049992119F46700BA3961 /* TrackerListApp.swift in Sources */,
+				4F931A192125ADD500AF4226 /* CrudRepository.swift in Sources */,
 				4F3049982119F46700BA3961 /* TrieNode.swift in Sources */,
 				4F30499B2119F46700BA3961 /* TrackerListPath.swift in Sources */,
+				4F931A252126C8C900AF4226 /* Constants.swift in Sources */,
 				4F3049962119F46700BA3961 /* TrackerListBug.swift in Sources */,
 				4F3049212118982600BA3961 /* AppDelegate.swift in Sources */,
 				4F30499E2119F46700BA3961 /* TrackerListHostPaths.swift in Sources */,
+				4F931A172125AD6500AF4226 /* RealmRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,8 +582,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F931A212125DA5200AF4226 /* BlockListFileManager.swift in Sources */,
 				4F30493C2118983D00BA3961 /* SafariExtensionViewController.swift in Sources */,
 				4F30493A2118983D00BA3961 /* SafariExtensionHandler.swift in Sources */,
+				4F931A1E2125D3F500AF4226 /* AntiTrackingManager.swift in Sources */,
+				4F931A1F2125D45400AF4226 /* DomainConfigRepository.swift in Sources */,
+				4F931A222126C23800AF4226 /* CrudRepository.swift in Sources */,
+				4F931A1D2125D3DE00AF4226 /* URLExtension.swift in Sources */,
+				4F931A202125DA4100AF4226 /* RealmRepository.swift in Sources */,
+				4F931A2A2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */,
+				4F931A262126C95A00AF4226 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +599,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F931A2B2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */,
+				4F931A1B2125CB1900AF4226 /* RealmRepository.swift in Sources */,
+				4F3049B5211C71CB00BA3961 /* AntiTrackingManager.swift in Sources */,
+				4F931A1A2125C4A700AF4226 /* DomainConfigRepository.swift in Sources */,
+				4F3049B6211C721D00BA3961 /* BlockListFileManager.swift in Sources */,
+				4F931A272126C95B00AF4226 /* Constants.swift in Sources */,
 				4F3049572118985C00BA3961 /* ContentBlockerRequestHandler.swift in Sources */,
+				4F931A1C2125CB1D00AF4226 /* CrudRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +768,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2UYYSSHVUH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+				);
 				INFOPLIST_FILE = GhosteryLite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -637,6 +793,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2UYYSSHVUH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+				);
 				INFOPLIST_FILE = GhosteryLite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -650,6 +810,7 @@
 		};
 		4F30494A2118983D00BA3961 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0ED2F60680AAB12316E2515 /* Pods-SafariExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -669,6 +830,7 @@
 		};
 		4F30494B2118983D00BA3961 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B132EB5ADA4E362C9953CF32 /* Pods-SafariExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -688,6 +850,7 @@
 		};
 		4F30495E2118985C00BA3961 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20D8DDE934AC7DA8B920E530 /* Pods-ContentBlocker.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -707,6 +870,7 @@
 		};
 		4F30495F2118985C00BA3961 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9E6DD48CC7939FB760044B0 /* Pods-ContentBlocker.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
