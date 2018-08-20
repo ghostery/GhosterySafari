@@ -12,4 +12,8 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
     
     static let shared = SafariExtensionViewController()
 
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		self.preferredContentSize = NSMakeSize(self.view.frame.size.width, self.view.frame.size.height);
+	}
 }
