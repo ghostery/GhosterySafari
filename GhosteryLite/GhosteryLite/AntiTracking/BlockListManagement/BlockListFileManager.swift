@@ -19,13 +19,41 @@ enum CategoryType: Int {
 	case siteAnalytics
 	case socialMedia
 	case uncategorized
+
+	func fileName() -> String {
+		switch self {
+		case .advertising:
+			return "cat_advertising.json"
+		case .audioVideoPlayer:
+			return "cat_audio_video_player.json"
+		case .comments:
+			return "cat_comments.json"
+		case .customerInteraction:
+			return "cat_customer_interaction.json"
+		case .essential:
+			return "cat_essential.json"
+		case .pornvertising:
+			return "cat_pornvertising.json"
+		case .siteAnalytics:
+			return "cat_site_analytics.json"
+		case .socialMedia:
+			return "cat_social_media.json"
+		case .uncategorized:
+			return "cat_unclassifed.json"
+		}
+	}
 }
 
 final class BlockListFileManager {
+
 	private static let groupIdentifier = "2UYYSSHVUH.Gh.GhosteryLite"
-	private static let ghosteryBlockListFileName = "ghostery_content_blocker"
+
 	private static let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: BlockListFileManager.groupIdentifier)
-	static let assetsFolder: URL? = BlockListFileManager.groupStorageFolder?.appendingPathComponent("BlockListAssets")
+	private static let assetsFolder: URL? = BlockListFileManager.groupStorageFolder?.appendingPathComponent("BlockListAssets")
+	private static let categoryAssetsFolder: URL? = BlockListFileManager.assetsFolder?.appendingPathComponent("BlockListByCategory")
+
+	private static let ghosteryBlockListFileName = "ghostery_content_blocker"
+
 	static let shared = BlockListFileManager()
 
 	init() {
@@ -35,7 +63,8 @@ final class BlockListFileManager {
 	}
 
 	func blockListURL(_ category: CategoryType) -> URL? {
-		return Bundle.main.url(forResource: BlockListFileManager.ghosteryBlockListFileName, withExtension: "json")
+		return BlockListFileManager.categoryAssetsFolder?.appendingPathComponent(category.fileName())
+//		return Bundle.main.url(forResource: BlockListFileManager.ghosteryBlockListFileName, withExtension: "json")
 	}
 
 	private func versionExpired() -> Bool {
@@ -66,9 +95,9 @@ public enum FileDownloaderError: Error {
 
 final class FileDownloader {
 
-	class func download(_ fileName: String, completion: @escaping (Error?, Data?) -> Void) {
-		let urlString = getURL(fileName: fileName)
-		guard let url = URL(string: urlString ) else {
+	class func download(_ filePath: String, completion: @escaping (Error?, Data?) -> Void) {
+		let urlString = getBasePath()
+		guard let url = URL(string: "\(urlString)\(filePath)") else {
 			completion(FileDownloaderError.invalidAPIUrl, nil)
 			return
 		}
@@ -83,7 +112,11 @@ final class FileDownloader {
 		}
 	}
 
-	class func getURL(fileName: String) -> String {
-		return ""
+	class func getBasePath() -> String {
+		#if PROD
+			return "http://cdn.ghostery.com/update/"
+		#else
+			return "http://staging-cdn.ghostery.com/update"
+		#endif
 	}
 }
