@@ -22,8 +22,10 @@ enum CategoryType: Int {
 }
 
 final class BlockListFileManager {
+	private static let groupIdentifier = "2UYYSSHVUH.Gh.GhosteryLite"
 	private static let ghosteryBlockListFileName = "ghostery_content_blocker"
-	
+	private static let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: BlockListFileManager.groupIdentifier)
+	static let assetsFolder: URL? = BlockListFileManager.groupStorageFolder?.appendingPathComponent("BlockListAssets")
 	static let shared = BlockListFileManager()
 
 	init() {
@@ -41,7 +43,20 @@ final class BlockListFileManager {
 	}
 
 	private func downloadNewBlockList() {
-		
+		FileDownloader.download("hello") { (error, data) in
+			if let error = error {
+				// TODO: error handling
+			} else {
+				let blockListFilesFolder = BlockListFileManager.assetsFolder
+				FileManager.default.createDirectoryIfNotExists(blockListFilesFolder, withIntermediateDirectories: true)
+				
+				let fileURL = blockListFilesFolder?.appendingPathComponent("filename.json")
+				if FileManager.default.createFile(atPath: (fileURL?.path)!, contents: data, attributes: nil) {
+				} else {
+					print("FileUpdate failed")
+				}
+			}
+		}
 	}
 }
 
@@ -51,7 +66,7 @@ public enum FileDownloaderError: Error {
 
 final class FileDownloader {
 
-	private func download(_ fileName: String, completion: @escaping (Error?, Data?) -> Void) {
+	class func download(_ fileName: String, completion: @escaping (Error?, Data?) -> Void) {
 		let urlString = getURL(fileName: fileName)
 		guard let url = URL(string: urlString ) else {
 			completion(FileDownloaderError.invalidAPIUrl, nil)
@@ -68,7 +83,7 @@ final class FileDownloader {
 		}
 	}
 
-	private func getURL(fileName: String) -> String {
+	class func getURL(fileName: String) -> String {
 		return ""
 	}
 }
