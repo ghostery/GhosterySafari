@@ -78,7 +78,6 @@ final class BlockListFileManager {
 			} else {
 				let blockListFilesFolder = BlockListFileManager.assetsFolder
 				FileManager.default.createDirectoryIfNotExists(blockListFilesFolder, withIntermediateDirectories: true)
-				
 				let fileURL = blockListFilesFolder?.appendingPathComponent("filename.json")
 				if FileManager.default.createFile(atPath: (fileURL?.path)!, contents: data, attributes: nil) {
 				} else {

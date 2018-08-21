@@ -69,6 +69,12 @@
 		4FFD8345212B53F40038149F /* safariContentBlocker.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD8344212B53F40038149F /* safariContentBlocker.json */; };
 		4FFD8346212B53F40038149F /* safariContentBlocker.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD8344212B53F40038149F /* safariContentBlocker.json */; };
 		4FFD8347212B53F40038149F /* safariContentBlocker.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD8344212B53F40038149F /* safariContentBlocker.json */; };
+		4FFD8349212B5D430038149F /* GlobalConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */; };
+		4FFD834A212B5D430038149F /* GlobalConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */; };
+		4FFD834B212B5D430038149F /* GlobalConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */; };
+		4FFD834D212B602B0038149F /* GlobalConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */; };
+		4FFD834E212B602B0038149F /* GlobalConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */; };
+		4FFD834F212B602B0038149F /* GlobalConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */; };
 		D146948444D48F136412C66E /* Pods_SafariExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6E6A3A7F09CA6028BBC263 /* Pods_SafariExtension.framework */; };
 		F124157D8C4330395AE8B7CF /* Pods_GhosteryLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E882B4CED52B6C3590AA9F5D /* Pods_GhosteryLite.framework */; };
 /* End PBXBuildFile section */
@@ -159,6 +165,8 @@
 		4FFD8337212B4FF90038149F /* BlockListAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlockListAssets; sourceTree = "<group>"; };
 		4FFD8340212B53AE0038149F /* BlockListByCategory */ = {isa = PBXFileReference; lastKnownFileType = folder; name = BlockListByCategory; path = BlockListAssets/BlockListByCategory; sourceTree = "<group>"; };
 		4FFD8344212B53F40038149F /* safariContentBlocker.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = safariContentBlocker.json; path = BlockListAssets/safariContentBlocker.json; sourceTree = "<group>"; };
+		4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigRepository.swift; sourceTree = "<group>"; };
+		4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigDataSource.swift; sourceTree = "<group>"; };
 		871270F350184074300264CE /* Pods-GhosteryLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.release.xcconfig"; path = "Pods/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.release.xcconfig"; sourceTree = "<group>"; };
 		AB6E6A3A7F09CA6028BBC263 /* Pods_SafariExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafariExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B132EB5ADA4E362C9953CF32 /* Pods-SafariExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafariExtension/Pods-SafariExtension.release.xcconfig"; sourceTree = "<group>"; };
@@ -340,6 +348,8 @@
 				4F931A162125AD6500AF4226 /* RealmRepository.swift */,
 				4F931A182125ADD500AF4226 /* CrudRepository.swift */,
 				4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */,
+				4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */,
+				4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */,
 			);
 			path = ConfigStorage;
 			sourceTree = "<group>";
@@ -626,12 +636,14 @@
 				4F3049232118982600BA3961 /* ViewController.swift in Sources */,
 				4F30499A2119F46700BA3961 /* TrackerList.swift in Sources */,
 				4F3049AF211B36E800BA3961 /* BlockListFileManager.swift in Sources */,
+				4FFD8349212B5D430038149F /* GlobalConfigRepository.swift in Sources */,
 				4F3049B4211C6D3200BA3961 /* AntiTrackingManager.swift in Sources */,
 				4F30499D2119F46700BA3961 /* TrackerListHosts.swift in Sources */,
 				4F3049992119F46700BA3961 /* TrackerListApp.swift in Sources */,
 				4F931A192125ADD500AF4226 /* CrudRepository.swift in Sources */,
 				4F3049982119F46700BA3961 /* TrieNode.swift in Sources */,
 				4F30499B2119F46700BA3961 /* TrackerListPath.swift in Sources */,
+				4FFD834D212B602B0038149F /* GlobalConfigDataSource.swift in Sources */,
 				4F931A252126C8C900AF4226 /* Constants.swift in Sources */,
 				4F3049962119F46700BA3961 /* TrackerListBug.swift in Sources */,
 				4F3049212118982600BA3961 /* AppDelegate.swift in Sources */,
@@ -651,6 +663,8 @@
 				4F931A1E2125D3F500AF4226 /* AntiTrackingManager.swift in Sources */,
 				4F931A1F2125D45400AF4226 /* DomainConfigRepository.swift in Sources */,
 				4F931A222126C23800AF4226 /* CrudRepository.swift in Sources */,
+				4FFD834A212B5D430038149F /* GlobalConfigRepository.swift in Sources */,
+				4FFD834E212B602B0038149F /* GlobalConfigDataSource.swift in Sources */,
 				4F931A1D2125D3DE00AF4226 /* URLExtension.swift in Sources */,
 				4F931A202125DA4100AF4226 /* RealmRepository.swift in Sources */,
 				4FFD8315212B36BC0038149F /* FileManagerExtension.swift in Sources */,
@@ -667,8 +681,10 @@
 				4FFD8316212B36BC0038149F /* FileManagerExtension.swift in Sources */,
 				4F931A1B2125CB1900AF4226 /* RealmRepository.swift in Sources */,
 				4F3049B5211C71CB00BA3961 /* AntiTrackingManager.swift in Sources */,
+				4FFD834B212B5D430038149F /* GlobalConfigRepository.swift in Sources */,
 				4F931A1A2125C4A700AF4226 /* DomainConfigRepository.swift in Sources */,
 				4F3049B6211C721D00BA3961 /* BlockListFileManager.swift in Sources */,
+				4FFD834F212B602B0038149F /* GlobalConfigDataSource.swift in Sources */,
 				4F931A272126C95B00AF4226 /* Constants.swift in Sources */,
 				4F3049572118985C00BA3961 /* ContentBlockerRequestHandler.swift in Sources */,
 				4F931A1C2125CB1D00AF4226 /* CrudRepository.swift in Sources */,
