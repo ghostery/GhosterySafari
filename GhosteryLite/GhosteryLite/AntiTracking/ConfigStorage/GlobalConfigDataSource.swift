@@ -10,12 +10,14 @@ import Foundation
 
 class GlobalConfigDataSource {
 	
+	static let shared = GlobalConfigDataSource()
+
 	func getCurrentConfig() -> GlobalConfigObject? {
 		return GlobalConfigRepository.shared.globalConfig()
     }
 
 	func createConfigIfDoesNotExist() {
-		guard let _ = self.getCurrentConfig() else {
+		if let _ = self.getCurrentConfig() {
 			return
 		}
 		let _ = GlobalConfigRepository.shared.save(GlobalConfigObject(type: .byDefault))
@@ -27,4 +29,10 @@ class GlobalConfigDataSource {
 		}
 		return false
 	}
+
+	func changeCategoryStatus(_ categoryType: CategoryType, status: Bool) -> Bool {
+		GlobalConfigRepository.shared.updateCategoryStatus(type: categoryType, isOn: status)
+		return false
+	}
+
 }

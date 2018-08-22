@@ -23,23 +23,23 @@ enum CategoryType: Int {
 	func fileName() -> String {
 		switch self {
 		case .advertising:
-			return "cat_advertising.json"
+			return "cat_advertising"
 		case .audioVideoPlayer:
-			return "cat_audio_video_player.json"
+			return "cat_audio_video_player"
 		case .comments:
-			return "cat_comments.json"
+			return "cat_comments"
 		case .customerInteraction:
-			return "cat_customer_interaction.json"
+			return "cat_customer_interaction"
 		case .essential:
-			return "cat_essential.json"
+			return "cat_essential"
 		case .pornvertising:
-			return "cat_pornvertising.json"
+			return "cat_pornvertising"
 		case .siteAnalytics:
-			return "cat_site_analytics.json"
+			return "cat_site_analytics"
 		case .socialMedia:
-			return "cat_social_media.json"
+			return "cat_social_media"
 		case .uncategorized:
-			return "cat_unclassifed.json"
+			return "cat_unclassifed"
 		}
 	}
 }
@@ -62,8 +62,41 @@ final class BlockListFileManager {
 		}
 	}
 
+	func getFilePath(fileName: String) -> URL? {
+		return Bundle.main.url(forResource: fileName, withExtension: "json", subdirectory: "BlockListAssets/BlockListByCategory")
+	}
+
+	func generateCurrentBlockList(files: [String], completion: @escaping () -> Void) {
+		DispatchQueue.global(qos: .background).async {
+			
+			var finalJSON = [[String: Any]]()
+			for f in files {
+				if let url = self.getFilePath(fileName: f) {
+					let nextChunk: [[String:Any]]? = FileManager.default.readJsonFile(at: url)
+					if let n = nextChunk {
+						finalJSON.append(contentsOf: n)
+					}
+				}
+			}
+			let groupIdentifier = "2UYYSSHVUH.Gh.GhosteryLite"
+			
+			let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupIdentifier)
+			let assetsFolder: URL? = groupStorageFolder?.appendingPathComponent("BlockListAssets")
+			let categoryAssetsFolder: URL? = assetsFolder?.appendingPathComponent("BlockListByCategory")
+			let currentBlockList = assetsFolder?.appendingPathComponent("currentBlockList.json")
+			FileManager.default.createDirectoryIfNotExists(assetsFolder, withIntermediateDirectories: true)
+			FileManager.default.writeJsonFile(at: currentBlockList, with: finalJSON)
+			DispatchQueue.main.async {
+				completion()
+			}
+		}
+	}
+
 	func blockListURL(_ category: CategoryType) -> URL? {
-		return BlockListFileManager.categoryAssetsFolder?.appendingPathComponent(category.fileName())
+//		return BlockListFileManager.categoryAssetsFolder?.appendingPathComponent(category.fileName())
+//		return BlockListFileManager.categoryAssetsFolder?.appendingPathComponent("blockerList.json")
+
+		return Bundle.main.url(forResource: "blockerList", withExtension: "json")
 //		return Bundle.main.url(forResource: BlockListFileManager.ghosteryBlockListFileName, withExtension: "json")
 	}
 

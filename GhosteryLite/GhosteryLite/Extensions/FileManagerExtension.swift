@@ -9,7 +9,30 @@
 import Foundation
 
 extension FileManager {
+
+	func readJsonFile<T>(at fileUrl: URL?) -> T? {
+		guard fileExists(atPath: (fileUrl?.path)!) else { return nil }
+		do {
+			let fileData = try Data(contentsOf: fileUrl!)
+			return try JSONSerialization.jsonObject(with: fileData, options: .allowFragments) as? T
+		} catch {
+			print("Failure-----")
+			return nil
+		}
+	}
 	
+	func writeJsonFile<T>(at fileUrl: URL?, with data: T?) {
+		do {
+			let jsonData = try JSONSerialization.data(withJSONObject: data ?? [], options: JSONSerialization.WritingOptions.prettyPrinted)
+			if FileManager.default.createFile(atPath: (fileUrl?.path)!, contents: jsonData, attributes: nil) {
+			} else {
+				print("Failure-----")
+			}
+		} catch {
+			print("Failure-----")
+		}
+	}
+
 	public func createDirectoryIfNotExists(_ url: URL?, withIntermediateDirectories hasIntermediateDir: Bool) {
 		if !FileManager.default.fileExists(atPath: (url?.path)!) {
 			do {

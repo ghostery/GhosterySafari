@@ -1,1 +1,10 @@
-[]
+ [{
+  "trigger": {
+  "url-filter": "webkit.org",
+  "resource-type": ["image"]
+  },
+  "action": {
+  "selector": "#logo",
+  "type": "block"
+  }
+  }]

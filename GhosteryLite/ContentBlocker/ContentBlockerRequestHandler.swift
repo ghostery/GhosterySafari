@@ -11,12 +11,28 @@ import Foundation
 class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
 
     func beginRequest(with context: NSExtensionContext) {
-		let rules = AntiTrackingManager.shared.contentBlokerRules()
-		
-        let item = NSExtensionItem()
-        item.attachments = rules
+//		let rules = AntiTrackingManager.shared.contentBlokerRules()
 
-        context.completeRequest(returningItems: [item], completionHandler: nil)
-    }
+        let item = NSExtensionItem()
+		let groupIdentifier = "2UYYSSHVUH.Gh.GhosteryLite"
+		
+		let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupIdentifier)
+		let assetsFolder: URL? = groupStorageFolder?.appendingPathComponent("BlockListAssets")
+		
+		let p = assetsFolder?.appendingPathComponent("currentBlockList.json")
+
+		//		let p = categoryAssetsFolder?.appendingPathComponent("blockerList.json")
+
+//		let attachment = NSItemProvider(contentsOf: Bundle.main.url(forResource: "cat_audio_video_player", withExtension: "json"))!
+		let attachment = NSItemProvider(contentsOf: p)
+		item.attachments = [attachment]
+
+//        item.attachments = rules
+		context.completeRequest(returningItems: [item], completionHandler: {
+			(expired) -> Void in
+
+			print("Successfully reloaded static blocker list. (Expired? \(expired))")
+		})
+	}
 
 }

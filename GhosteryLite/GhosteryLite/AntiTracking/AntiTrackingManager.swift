@@ -12,8 +12,11 @@ import SafariServices
 class AntiTrackingManager {
 
 	static let shared = AntiTrackingManager()
+	
+	/* No need for now
 	private var currentDomain: String?
 	private var currentDomainConfig: DomainConfigObject?
+
 
 	func domainChanged(_ newDomain: String?) {
 		self.currentDomain = newDomain
@@ -22,17 +25,40 @@ class AntiTrackingManager {
 			})
 
 	}
+	*/
 
+	func reloadContentBlocker() {
+		if let config =  GlobalConfigDataSource.shared.getCurrentConfig() {
+			var fileNames = [String]()
+			for i in config.blockedCategories {
+				if let c = CategoryType(rawValue: i) {
+					fileNames.append(c.fileName())
+				}
+			}
+			BlockListFileManager.shared.generateCurrentBlockList(files: fileNames) {
+				SFContentBlockerManager.reloadContentBlocker(withIdentifier: "Gh.GhosteryLite.ContentBlocker", completionHandler: { (error) in
+					print("Reloading Content Blocker is failed ---- \(error)")
+				})
+			}
+		}
+	}
+
+	func getFilePath(fileName: String) -> URL? {
+		return Bundle.main.url(forResource: fileName, withExtension: "json", subdirectory: "BlockListAssets/BlockListByCategory")
+	}
+	
+
+	
 	func contentBlokerRules() -> [NSItemProvider] {
 		var resultRules = [NSItemProvider]()
-		if let domain = self.currentDomain,
-			let config = DomainConfigRepository.shared.getDomainConfig(domainName: domain) {
+		if let config =  GlobalConfigDataSource.shared.getCurrentConfig() {
 			let blockedCategories = config.blockedCategories
 			for i in blockedCategories {
 				if let c = CategoryType(rawValue: i),
 					let rulesURL = BlockListFileManager.shared.blockListURL(c),
 					let ip = NSItemProvider(contentsOf: rulesURL) {
-						resultRules.append(ip)
+						return [ip]
+//						resultRules.append(ip)
 				}
 			}
 		}

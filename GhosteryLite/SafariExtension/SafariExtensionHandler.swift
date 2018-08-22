@@ -31,6 +31,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         return SafariExtensionViewController.shared
 	}
 
+	/*
 	private func urlChanges(window: SFSafariWindow) {
 		window.getActiveTab { (tab) in
 			if let t = tab {
@@ -49,4 +50,5 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 			})
 		})
 	}
+*/
 }
