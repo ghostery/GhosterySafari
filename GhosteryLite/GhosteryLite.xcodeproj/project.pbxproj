@@ -57,7 +57,7 @@
 		4F931A292126E06000AF4226 /* DomainConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */; };
 		4F931A2A2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */; };
 		4F931A2B2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */; };
-		4FCEAA21212C9CE000AACE42 /* cat_audio_video_player.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FCEAA20212C9CE000AACE42 /* cat_audio_video_player.json */; };
+		4FCEAA23212E0CCE00AACE42 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FCEAA22212E0CCE00AACE42 /* Images.xcassets */; };
 		4FFD8314212B36BC0038149F /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8313212B36BC0038149F /* FileManagerExtension.swift */; };
 		4FFD8315212B36BC0038149F /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8313212B36BC0038149F /* FileManagerExtension.swift */; };
 		4FFD8316212B36BC0038149F /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8313212B36BC0038149F /* FileManagerExtension.swift */; };
@@ -74,9 +74,6 @@
 		4FFD834E212B602B0038149F /* GlobalConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */; };
 		4FFD834F212B602B0038149F /* GlobalConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */; };
 		4FFD8351212C6C740038149F /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8350212C6C740038149F /* WindowController.swift */; };
-		4FFD8353212C73C70038149F /* blockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD8352212C73C70038149F /* blockerList.json */; };
-		4FFD8354212C73C70038149F /* blockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD8352212C73C70038149F /* blockerList.json */; };
-		4FFD8355212C73C70038149F /* blockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD8352212C73C70038149F /* blockerList.json */; };
 		D146948444D48F136412C66E /* Pods_SafariExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6E6A3A7F09CA6028BBC263 /* Pods_SafariExtension.framework */; };
 		F124157D8C4330395AE8B7CF /* Pods_GhosteryLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E882B4CED52B6C3590AA9F5D /* Pods_GhosteryLite.framework */; };
 /* End PBXBuildFile section */
@@ -156,14 +153,13 @@
 		4F931A182125ADD500AF4226 /* CrudRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudRepository.swift; sourceTree = "<group>"; };
 		4F931A242126C8C900AF4226 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConfigDataSource.swift; sourceTree = "<group>"; };
-		4FCEAA20212C9CE000AACE42 /* cat_audio_video_player.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cat_audio_video_player.json; sourceTree = "<group>"; };
+		4FCEAA22212E0CCE00AACE42 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4FFD8313212B36BC0038149F /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 		4FFD8337212B4FF90038149F /* BlockListAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlockListAssets; sourceTree = "<group>"; };
 		4FFD8344212B53F40038149F /* safariContentBlocker.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = safariContentBlocker.json; path = BlockListAssets/safariContentBlocker.json; sourceTree = "<group>"; };
 		4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigRepository.swift; sourceTree = "<group>"; };
 		4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigDataSource.swift; sourceTree = "<group>"; };
 		4FFD8350212C6C740038149F /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		4FFD8352212C73C70038149F /* blockerList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = blockerList.json; sourceTree = "<group>"; };
 		871270F350184074300264CE /* Pods-GhosteryLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.release.xcconfig"; path = "Pods/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.release.xcconfig"; sourceTree = "<group>"; };
 		AB6E6A3A7F09CA6028BBC263 /* Pods_SafariExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafariExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B132EB5ADA4E362C9953CF32 /* Pods-SafariExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafariExtension/Pods-SafariExtension.release.xcconfig"; sourceTree = "<group>"; };
@@ -241,7 +237,6 @@
 		4F30491F2118982600BA3961 /* GhosteryLite */ = {
 			isa = PBXGroup;
 			children = (
-				4FFD8352212C73C70038149F /* blockerList.json */,
 				4F931A232126C8AF00AF4226 /* Common */,
 				4F3049A02119F4FC00BA3961 /* Extensions */,
 				4F30498A2119F46700BA3961 /* AntiTracking */,
@@ -277,6 +272,7 @@
 				4F3049412118983D00BA3961 /* script.js */,
 				4F3049432118983D00BA3961 /* ToolbarItemIcon.pdf */,
 				4F3049452118983D00BA3961 /* SafariExtension.entitlements */,
+				4FCEAA22212E0CCE00AACE42 /* Images.xcassets */,
 			);
 			path = SafariExtension;
 			sourceTree = "<group>";
@@ -284,7 +280,6 @@
 		4F3049532118985C00BA3961 /* ContentBlocker */ = {
 			isa = PBXGroup;
 			children = (
-				4FCEAA20212C9CE000AACE42 /* cat_audio_video_player.json */,
 				4F3049542118985C00BA3961 /* blockerList.json */,
 				4F3049562118985C00BA3961 /* ContentBlockerRequestHandler.swift */,
 				4F3049582118985C00BA3961 /* Info.plist */,
@@ -492,7 +487,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FFD8353212C73C70038149F /* blockerList.json in Resources */,
 				4FFD8338212B4FF90038149F /* BlockListAssets in Resources */,
 				4F3049252118982700BA3961 /* Assets.xcassets in Resources */,
 				4F3049282118982700BA3961 /* Main.storyboard in Resources */,
@@ -507,8 +501,8 @@
 				4FFD8346212B53F40038149F /* safariContentBlocker.json in Resources */,
 				4F3049442118983D00BA3961 /* ToolbarItemIcon.pdf in Resources */,
 				4FFD8339212B4FF90038149F /* BlockListAssets in Resources */,
+				4FCEAA23212E0CCE00AACE42 /* Images.xcassets in Resources */,
 				4F30493F2118983D00BA3961 /* SafariExtensionViewController.xib in Resources */,
-				4FFD8354212C73C70038149F /* blockerList.json in Resources */,
 				4F3049422118983D00BA3961 /* script.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,9 +513,7 @@
 			files = (
 				4FFD8347212B53F40038149F /* safariContentBlocker.json in Resources */,
 				4F3049552118985C00BA3961 /* blockerList.json in Resources */,
-				4FCEAA21212C9CE000AACE42 /* cat_audio_video_player.json in Resources */,
 				4FFD833A212B4FF90038149F /* BlockListAssets in Resources */,
-				4FFD8355212C73C70038149F /* blockerList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

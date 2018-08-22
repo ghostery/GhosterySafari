@@ -31,6 +31,10 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         return SafariExtensionViewController.shared
 	}
 
+	override func popoverWillShow(in window: SFSafariWindow) {
+		self.updatePopoverUrl(window)
+	}
+
 	/*
 	private func urlChanges(window: SFSafariWindow) {
 		window.getActiveTab { (tab) in
@@ -41,14 +45,25 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 			}
 		}
 	}
+*/
+	private func updatePopoverUrl(_ window: SFSafariWindow) {
+		window.getActiveTab { (tab) in
+			tab?.getActivePage(completionHandler: { (activePage) in
+				activePage?.getPropertiesWithCompletionHandler({ (properties) in
+					SafariExtensionViewController.shared.currentUrl = properties?.url?.normalizedHost
+					SafariExtensionViewController.shared.currentUrl = properties?.url?.normalizedHost
+				})
+			})
+		}
+	}
 
-	private func getTabURL(_ tab: SFSafariTab) {
-		tab.getActivePage(completionHandler: { (activePage) in
-			activePage?.getPropertiesWithCompletionHandler( { (properties) in
-				AntiTrackingManager.shared.domainChanged(properties?.url?.normalizedHost)
-				
+	private func reloadCurrentPage() {
+		SFSafariApplication.getActiveWindow(completionHandler: { (window) in
+			window?.getActiveTab(completionHandler: { (tab) in
+				tab?.getActivePage(completionHandler: { (page) in
+					page?.reload()
+				})
 			})
 		})
 	}
-*/
 }

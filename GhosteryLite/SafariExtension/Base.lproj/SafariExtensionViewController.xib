@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="SafariExtensionViewController" customModule="SafariExtension" customModuleProvider="target">
             <connections>
+                <outlet property="urlLabel" destination="b7q-eW-rBI" id="f5s-4p-C9V"/>
                 <outlet property="view" destination="c22-O7-iKe" id="vwT-Xx-Aiz"/>
             </connections>
         </customObject>

@@ -37,7 +37,11 @@ class AntiTrackingManager {
 			}
 			BlockListFileManager.shared.generateCurrentBlockList(files: fileNames) {
 				SFContentBlockerManager.reloadContentBlocker(withIdentifier: "Gh.GhosteryLite.ContentBlocker", completionHandler: { (error) in
-					print("Reloading Content Blocker is failed ---- \(error)")
+					if error != nil {
+						print("Reloading Content Blocker is failed ---- \(error)")
+					} else {
+						print("Success!")
+					}
 				})
 			}
 		}
