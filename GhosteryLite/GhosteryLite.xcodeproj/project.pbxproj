@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D99D75C212EFC44005D107D /* page_performance.js in Resources */ = {isa = PBXBuildFile; fileRef = 0D99D75B212EFC44005D107D /* page_performance.js */; };
 		3E9973FC6C3C5AE1182E8E7B /* Pods_ContentBlocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1C37253CAD1E7BF0CB1212 /* Pods_ContentBlocker.framework */; };
 		4F3049212118982600BA3961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049202118982600BA3961 /* AppDelegate.swift */; };
 		4F3049232118982600BA3961 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049222118982600BA3961 /* ViewController.swift */; };
@@ -16,7 +17,6 @@
 		4F30493A2118983D00BA3961 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049392118983D00BA3961 /* SafariExtensionHandler.swift */; };
 		4F30493C2118983D00BA3961 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30493B2118983D00BA3961 /* SafariExtensionViewController.swift */; };
 		4F30493F2118983D00BA3961 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F30493D2118983D00BA3961 /* SafariExtensionViewController.xib */; };
-		4F3049422118983D00BA3961 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049412118983D00BA3961 /* script.js */; };
 		4F3049442118983D00BA3961 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049432118983D00BA3961 /* ToolbarItemIcon.pdf */; };
 		4F3049482118983D00BA3961 /* SafariExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4F3049342118983D00BA3961 /* SafariExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4F3049522118985C00BA3961 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3049362118983D00BA3961 /* Cocoa.framework */; };
@@ -111,6 +111,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D99D75B212EFC44005D107D /* page_performance.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = page_performance.js; sourceTree = "<group>"; };
 		20D8DDE934AC7DA8B920E530 /* Pods-ContentBlocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.debug.xcconfig"; sourceTree = "<group>"; };
 		2B1C37253CAD1E7BF0CB1212 /* Pods_ContentBlocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContentBlocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F30491D2118982600BA3961 /* GhosteryLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhosteryLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,7 +127,6 @@
 		4F30493B2118983D00BA3961 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
 		4F30493E2118983D00BA3961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		4F3049402118983D00BA3961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4F3049412118983D00BA3961 /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
 		4F3049432118983D00BA3961 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		4F3049452118983D00BA3961 /* SafariExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SafariExtension.entitlements; sourceTree = "<group>"; };
 		4F3049512118985C00BA3961 /* ContentBlocker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentBlocker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,8 +269,8 @@
 				4F30493B2118983D00BA3961 /* SafariExtensionViewController.swift */,
 				4F30493D2118983D00BA3961 /* SafariExtensionViewController.xib */,
 				4F3049402118983D00BA3961 /* Info.plist */,
-				4F3049412118983D00BA3961 /* script.js */,
 				4F3049432118983D00BA3961 /* ToolbarItemIcon.pdf */,
+				0D99D75B212EFC44005D107D /* page_performance.js */,
 				4F3049452118983D00BA3961 /* SafariExtension.entitlements */,
 				4FCEAA22212E0CCE00AACE42 /* Images.xcassets */,
 			);
@@ -498,12 +498,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D99D75C212EFC44005D107D /* page_performance.js in Resources */,
 				4FFD8346212B53F40038149F /* safariContentBlocker.json in Resources */,
 				4F3049442118983D00BA3961 /* ToolbarItemIcon.pdf in Resources */,
 				4FFD8339212B4FF90038149F /* BlockListAssets in Resources */,
 				4FCEAA23212E0CCE00AACE42 /* Images.xcassets in Resources */,
 				4F30493F2118983D00BA3961 /* SafariExtensionViewController.xib in Resources */,
-				4F3049422118983D00BA3961 /* script.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -827,7 +827,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 2UYYSSHVUH;
+				DEVELOPMENT_TEAM = HPY23A294X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
@@ -855,7 +855,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 2UYYSSHVUH;
+				DEVELOPMENT_TEAM = HPY23A294X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
@@ -880,7 +880,7 @@
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2UYYSSHVUH;
+				DEVELOPMENT_TEAM = HPY23A294X;
 				INFOPLIST_FILE = SafariExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -902,7 +902,7 @@
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2UYYSSHVUH;
+				DEVELOPMENT_TEAM = HPY23A294X;
 				INFOPLIST_FILE = SafariExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -924,7 +924,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2UYYSSHVUH;
+				DEVELOPMENT_TEAM = HPY23A294X;
 				INFOPLIST_FILE = ContentBlocker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -946,7 +946,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2UYYSSHVUH;
+				DEVELOPMENT_TEAM = HPY23A294X;
 				INFOPLIST_FILE = ContentBlocker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
