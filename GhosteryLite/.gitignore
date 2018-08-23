@@ -1,8 +1,16 @@
 # Xcode
 build/
+DerivedData/
+
+# User settings
+xcuserdata/
 *.xcuserstate
-GhosteryLite.xcworkspace/
+*.xcworkspace/
 
 # Pods
 Podfile.lock
 Pods/
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
