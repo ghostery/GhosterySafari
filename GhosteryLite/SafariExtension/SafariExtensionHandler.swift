@@ -51,7 +51,6 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 			tab?.getActivePage(completionHandler: { (activePage) in
 				activePage?.getPropertiesWithCompletionHandler({ (properties) in
 					SafariExtensionViewController.shared.currentUrl = properties?.url?.normalizedHost
-					SafariExtensionViewController.shared.currentUrl = properties?.url?.normalizedHost
 				})
 			})
 		}
