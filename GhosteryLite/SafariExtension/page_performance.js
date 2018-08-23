@@ -22,20 +22,23 @@ const PageInfo = (function(window, document) {
 	 */
 	const analyzePageInfo = function() {
 		const { host, pathname, protocol } = document.location;
-		const pTime = (performance.timing.domContentLoadedEventStart - performance.timing.requestStart);
-		const pageLatency = pTime || 0;
+		// Note: Safari has limited support for PerformanceTimingAPI properties
+		const unfixedLatency = Number(performance.timing.domComplete - performance.timing.navigationStart) / 1000;
+		let pageLatency = 0;
 
-		// console.log('Sending latency from page_performance', pageLatency);
+		if (unfixedLatency >= 100) { // > 100 no decimal 
+			pageLatency = unfixedLatency.toFixed(); 
+		} else if (unfixedLatency >= 10 && unfixedLatency < 100) { // 100 > 10 use one decimal 
+			pageLatency = unfixedLatency.toFixed(1); 
+		} else if (unfixedLatency < 10) { // < 10s use two decimals 
+			pageLatency = unfixedLatency.toFixed(2); 
+		}
+
+		console.log('Sending latency from page_performance', pageLatency);
 
 		safari.extension.dispatchMessage('recordPageInfo', {
 			domain: `${protocol}//${host}${pathname}`,
-			latency: pageLatency,
-			performanceAPI: {
-				timing: {
-					navigationStart: performance.timing.navigationStart,
-					loadEventEnd: performance.timing.loadEventEnd
-				}
-			}
+			latency: pageLatency
 		});
 	};
 
@@ -61,9 +64,14 @@ const PageInfo = (function(window, document) {
 		 * Public API
 		 */
 		init() {
+			// only load on top-level domains
+			if (window.top !== window.parent) {
+				return;
+			}
 			_initialize();
 		}
 	};
 }(window, document));
+
 
 PageInfo.init();

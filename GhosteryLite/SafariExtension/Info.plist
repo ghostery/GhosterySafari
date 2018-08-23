@@ -48,8 +48,6 @@
 		</dict>
 		<key>SFSafariWebsiteAccess</key>
 		<dict>
-			<key>Allowed Domains</key>
-			<array/>
 			<key>Level</key>
 			<string>All</string>
 		</dict>
