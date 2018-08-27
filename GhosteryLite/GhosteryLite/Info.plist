@@ -28,5 +28,10 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>BebasNeue Book.otf</string>
+		<string>RobotoCondensed-Bold.ttf</string>
+	</array>
 </dict>
 </plist>
