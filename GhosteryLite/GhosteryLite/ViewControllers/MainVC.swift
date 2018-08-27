@@ -31,7 +31,7 @@ class MainVC: NSViewController {
 
 extension MainVC : SectionListVCDelegate {
     func sectionListVC(_ vc: SectionListVC, didSelectSectionItem item: MenuItem) {
-        
+        sectionDetailVC?.switchToViewController(withStoryboardId: item.storyboardId)
     }
 
 }

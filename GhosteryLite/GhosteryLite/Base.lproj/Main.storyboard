@@ -999,11 +999,133 @@
                     <view key="view" id="unE-H7-JsC">
                         <rect key="frame" x="0.0" y="0.0" width="624" height="576"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Cvp-fM-1dD">
+                                <rect key="frame" x="0.0" y="0.0" width="624" height="576"/>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Cvp-fM-1dD" firstAttribute="width" secondItem="unE-H7-JsC" secondAttribute="width" id="d7w-uY-Hln"/>
+                            <constraint firstItem="Cvp-fM-1dD" firstAttribute="centerX" secondItem="unE-H7-JsC" secondAttribute="centerX" id="h8f-Z5-1ZD"/>
+                            <constraint firstItem="Cvp-fM-1dD" firstAttribute="height" secondItem="unE-H7-JsC" secondAttribute="height" id="lpA-gd-xGX"/>
+                            <constraint firstItem="Cvp-fM-1dD" firstAttribute="centerY" secondItem="unE-H7-JsC" secondAttribute="centerY" id="zRn-bC-o4V"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="container" destination="Cvp-fM-1dD" id="UFN-gd-uG8"/>
+                    </connections>
                 </viewController>
                 <customObject id="Egb-9X-z5m" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="353" y="2032"/>
+        </scene>
+        <!--HomeVC-->
+        <scene sceneID="KF7-bx-kFP">
+            <objects>
+                <viewController storyboardIdentifier="HomeVC" id="oCc-SD-ZvT" customClass="HomeVC" customModule="GhosteryLite" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="N0H-ZH-Frp">
+                        <rect key="frame" x="0.0" y="0.0" width="624" height="576"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ea2-ia-FK0">
+                                <rect key="frame" x="292" y="280" width="40" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Home" id="Hrr-oe-AX4">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ea2-ia-FK0" firstAttribute="centerY" secondItem="N0H-ZH-Frp" secondAttribute="centerY" id="HaX-Kv-d9f"/>
+                            <constraint firstItem="ea2-ia-FK0" firstAttribute="centerX" secondItem="N0H-ZH-Frp" secondAttribute="centerX" id="ogv-Gb-02e"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="RlB-4e-iCi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-546" y="2741"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OZg-Yt-b5E">
+            <objects>
+                <viewController storyboardIdentifier="SettingsVC" id="KRU-g8-HE8" sceneMemberID="viewController">
+                    <view key="view" id="NLl-JR-CQR">
+                        <rect key="frame" x="0.0" y="0.0" width="624" height="576"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SzK-pn-sBH">
+                                <rect key="frame" x="285" y="280" width="55" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Settings" id="YUI-gO-LGp">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="SzK-pn-sBH" firstAttribute="centerX" secondItem="NLl-JR-CQR" secondAttribute="centerX" id="ayx-qB-Hq9"/>
+                            <constraint firstItem="SzK-pn-sBH" firstAttribute="centerY" secondItem="NLl-JR-CQR" secondAttribute="centerY" id="vpJ-cB-xHV"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="3pQ-XS-oxz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="184" y="2741"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vIt-mS-Xhd">
+            <objects>
+                <viewController storyboardIdentifier="TrustedSitesVC" id="LTy-Jl-Bl3" sceneMemberID="viewController">
+                    <view key="view" id="hzg-6t-EUG">
+                        <rect key="frame" x="0.0" y="0.0" width="624" height="576"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KFp-f7-xLr">
+                                <rect key="frame" x="270" y="280" width="84" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Trusted Sites" id="yhG-A7-8k8">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="KFp-f7-xLr" firstAttribute="centerY" secondItem="hzg-6t-EUG" secondAttribute="centerY" id="sAV-D3-1JJ"/>
+                            <constraint firstItem="KFp-f7-xLr" firstAttribute="centerX" secondItem="hzg-6t-EUG" secondAttribute="centerX" id="wpp-Ks-x4C"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="deN-pX-9nH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="974" y="2741"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="FT9-km-BrL">
+            <objects>
+                <viewController storyboardIdentifier="HelpVC" id="O7l-gC-ZX6" sceneMemberID="viewController">
+                    <view key="view" id="9uA-SM-6nW">
+                        <rect key="frame" x="0.0" y="0.0" width="624" height="576"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cPH-Tg-X2z">
+                                <rect key="frame" x="296" y="280" width="32" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Help" id="OIg-OH-ugF">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="cPH-Tg-X2z" firstAttribute="centerX" secondItem="9uA-SM-6nW" secondAttribute="centerX" id="EPU-sS-nd9"/>
+                            <constraint firstItem="cPH-Tg-X2z" firstAttribute="centerY" secondItem="9uA-SM-6nW" secondAttribute="centerY" id="IEf-81-O89"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="Hbf-ub-WCF" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1804" y="2741"/>
         </scene>
     </scenes>
     <resources>
