@@ -1027,20 +1027,150 @@
                         <rect key="frame" x="0.0" y="0.0" width="624" height="576"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ea2-ia-FK0">
-                                <rect key="frame" x="292" y="280" width="40" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Home" id="Hrr-oe-AX4">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                            <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="EDF-e3-gcK">
+                                <rect key="frame" x="0.0" y="0.0" width="624" height="576"/>
+                                <view key="contentView" id="kjk-tv-uI4">
+                                    <rect key="frame" x="0.0" y="0.0" width="624" height="576"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yNx-KH-9na">
+                                            <rect key="frame" x="212" y="507" width="187" height="39"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="You’ve gone Lite!" id="Z6K-0m-rr9">
+                                                <font key="font" size="24" name="Roboto-Regular"/>
+                                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kXc-rc-jc4">
+                                            <rect key="frame" x="212" y="432" width="354" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="350" id="M7N-Xu-k0z"/>
+                                                <constraint firstAttribute="height" constant="60" id="P46-fW-cYT"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Thanks for installing Ghostery Lite. You are now protected with our tailored default settings!" id="wYg-RX-1lu">
+                                                <font key="font" size="16" name="Roboto-Regular"/>
+                                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zWn-wq-jhK">
+                                            <rect key="frame" x="75" y="439" width="119" height="107"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ghosty-heart" id="rfl-3p-vbg"/>
+                                        </imageView>
+                                        <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="FUM-ps-RLK">
+                                            <rect key="frame" x="85" y="226" width="485" height="180"/>
+                                            <view key="contentView" id="TcR-Qq-LDZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="485" height="180"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6EM-ac-LEL">
+                                                        <rect key="frame" x="114" y="75" width="344" height="75"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="340" id="KRd-Ad-jMb"/>
+                                                            <constraint firstAttribute="height" constant="75" id="atR-f7-MJz"/>
+                                                        </constraints>
+                                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Want more control? Select the categories of tracker your wish to allow." id="8Rj-7U-bxz">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="4vx-Kz-K0s">
+                                                        <rect key="frame" x="115" y="35" width="114" height="26"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="114" id="YSf-rY-JnX"/>
+                                                            <constraint firstAttribute="height" constant="26" id="hfo-BG-QSv"/>
+                                                        </constraints>
+                                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="edit-settings-btn" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="WBJ-fQ-YXc">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="4vx-Kz-K0s" secondAttribute="bottom" constant="35" id="5FI-5G-hSc"/>
+                                                    <constraint firstItem="6EM-ac-LEL" firstAttribute="top" secondItem="TcR-Qq-LDZ" secondAttribute="top" constant="30" id="TEe-al-Ufj"/>
+                                                    <constraint firstItem="6EM-ac-LEL" firstAttribute="leading" secondItem="TcR-Qq-LDZ" secondAttribute="leading" constant="116" id="eJ8-jE-nF8"/>
+                                                    <constraint firstItem="4vx-Kz-K0s" firstAttribute="leading" secondItem="TcR-Qq-LDZ" secondAttribute="leading" constant="115" id="yHf-EB-4Rm"/>
+                                                </constraints>
+                                            </view>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="485" id="CJR-57-JKg"/>
+                                                <constraint firstAttribute="height" constant="180" id="v1M-WO-WM4"/>
+                                            </constraints>
+                                            <color key="fillColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                                        </box>
+                                        <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="5El-Pe-hcO">
+                                            <rect key="frame" x="85" y="31" width="485" height="180"/>
+                                            <view key="contentView" id="6C8-ZL-VKD">
+                                                <rect key="frame" x="0.0" y="0.0" width="485" height="180"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="h3W-zx-9pa">
+                                                        <rect key="frame" x="114" y="75" width="344" height="75"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="75" id="7BD-7q-EYO"/>
+                                                            <constraint firstAttribute="width" constant="340" id="nMO-kG-jCu"/>
+                                                        </constraints>
+                                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Do you know who to trust? Add or remove sites from your ‘Trusted’ list." id="yQ3-aG-UoO">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="8NS-D3-tnM">
+                                                        <rect key="frame" x="115" y="35" width="114" height="26"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="26" id="2Ys-6f-FnD"/>
+                                                            <constraint firstAttribute="width" constant="114" id="YUH-ey-h3K"/>
+                                                        </constraints>
+                                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="trusted-sites-btn" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="0cc-Uf-uAC">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="8NS-D3-tnM" secondAttribute="bottom" constant="35" id="1SO-hJ-KST"/>
+                                                    <constraint firstItem="8NS-D3-tnM" firstAttribute="leading" secondItem="6C8-ZL-VKD" secondAttribute="leading" constant="115" id="Asa-xe-uM3"/>
+                                                    <constraint firstItem="h3W-zx-9pa" firstAttribute="top" secondItem="6C8-ZL-VKD" secondAttribute="top" constant="30" id="XUx-Fq-9X5"/>
+                                                    <constraint firstItem="h3W-zx-9pa" firstAttribute="leading" secondItem="6C8-ZL-VKD" secondAttribute="leading" constant="116" id="mbD-sU-meR"/>
+                                                </constraints>
+                                            </view>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="485" id="4oP-Z3-iCO"/>
+                                                <constraint firstAttribute="height" constant="180" id="MwN-1P-dOB"/>
+                                            </constraints>
+                                            <color key="fillColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </box>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="FUM-ps-RLK" firstAttribute="top" secondItem="kjk-tv-uI4" secondAttribute="top" constant="170" id="9FQ-Lf-DcX"/>
+                                        <constraint firstItem="yNx-KH-9na" firstAttribute="top" secondItem="zWn-wq-jhK" secondAttribute="top" id="Ma9-8H-cBy"/>
+                                        <constraint firstItem="yNx-KH-9na" firstAttribute="leading" secondItem="zWn-wq-jhK" secondAttribute="trailing" constant="20" id="NKQ-qb-VOw"/>
+                                        <constraint firstItem="kXc-rc-jc4" firstAttribute="leading" secondItem="yNx-KH-9na" secondAttribute="leading" id="Qvp-04-unN"/>
+                                        <constraint firstItem="kXc-rc-jc4" firstAttribute="top" secondItem="yNx-KH-9na" secondAttribute="bottom" constant="15" id="Rgj-oQ-KDX"/>
+                                        <constraint firstItem="FUM-ps-RLK" firstAttribute="leading" secondItem="kjk-tv-uI4" secondAttribute="leading" constant="85" id="Wms-4Y-tm0"/>
+                                        <constraint firstItem="5El-Pe-hcO" firstAttribute="leading" secondItem="TcR-Qq-LDZ" secondAttribute="leading" id="crU-eO-kTt"/>
+                                        <constraint firstItem="zWn-wq-jhK" firstAttribute="top" secondItem="kjk-tv-uI4" secondAttribute="top" constant="30" id="fWa-e9-OTf"/>
+                                        <constraint firstItem="zWn-wq-jhK" firstAttribute="leading" secondItem="kjk-tv-uI4" secondAttribute="leading" constant="75" id="mYl-53-dTL"/>
+                                        <constraint firstItem="5El-Pe-hcO" firstAttribute="top" secondItem="TcR-Qq-LDZ" secondAttribute="bottom" constant="15" id="pWg-8a-RHS"/>
+                                    </constraints>
+                                </view>
+                                <color key="fillColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </box>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="ea2-ia-FK0" firstAttribute="centerY" secondItem="N0H-ZH-Frp" secondAttribute="centerY" id="HaX-Kv-d9f"/>
-                            <constraint firstItem="ea2-ia-FK0" firstAttribute="centerX" secondItem="N0H-ZH-Frp" secondAttribute="centerX" id="ogv-Gb-02e"/>
+                            <constraint firstItem="EDF-e3-gcK" firstAttribute="height" secondItem="N0H-ZH-Frp" secondAttribute="height" id="E8S-cq-J5W"/>
+                            <constraint firstItem="EDF-e3-gcK" firstAttribute="width" secondItem="N0H-ZH-Frp" secondAttribute="width" id="F1b-wk-0zn"/>
+                            <constraint firstItem="EDF-e3-gcK" firstAttribute="centerY" secondItem="N0H-ZH-Frp" secondAttribute="centerY" id="rdl-m4-ZDa"/>
+                            <constraint firstItem="EDF-e3-gcK" firstAttribute="centerX" secondItem="N0H-ZH-Frp" secondAttribute="centerX" id="u3K-Xj-bDY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="editSettingsText" destination="6EM-ac-LEL" id="w8W-du-Dv7"/>
+                        <outlet property="trustedSitesText" destination="h3W-zx-9pa" id="xaA-TN-imV"/>
+                    </connections>
                 </viewController>
                 <customObject id="RlB-4e-iCi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1129,6 +1259,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="edit-settings-btn" width="150" height="35"/>
+        <image name="ghosty-heart" width="119" height="107"/>
         <image name="lite-logo" width="31" height="35"/>
+        <image name="trusted-sites-btn" width="150" height="35"/>
     </resources>
 </document>

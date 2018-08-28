@@ -32,6 +32,8 @@
 	<array>
 		<string>BebasNeue Book.otf</string>
 		<string>RobotoCondensed-Bold.ttf</string>
+		<string>Roboto-Regular.ttf</string>
+		<string>Roboto-Medium.ttf</string>
 	</array>
 </dict>
 </plist>
