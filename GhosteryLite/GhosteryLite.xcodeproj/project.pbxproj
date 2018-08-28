@@ -13,10 +13,10 @@
 		1E597C2D2133F8170098631F /* SectionDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C2C2133F8170098631F /* SectionDetailVC.swift */; };
 		1E597C3621340D180098631F /* SectionItemCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C3421340D180098631F /* SectionItemCollectionViewItem.swift */; };
 		1E597C3721340D180098631F /* SectionItemCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E597C3521340D180098631F /* SectionItemCollectionViewItem.xib */; };
-		1E597C3C213419B80098631F /* NSColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C3B213419B80098631F /* NSColorExtension.swift */; };
 		1E597C4021341ED90098631F /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 1E597C3F21341ED90098631F /* Fonts */; };
 		1E597C422134407F0098631F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C412134407F0098631F /* HomeVC.swift */; };
 		1E597C4421344ACC0098631F /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4321344ACC0098631F /* MenuItem.swift */; };
+		1E597C4621354D830098631F /* NSColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4521354D820098631F /* NSColorExtension.swift */; };
 		3E9973FC6C3C5AE1182E8E7B /* Pods_ContentBlocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1C37253CAD1E7BF0CB1212 /* Pods_ContentBlocker.framework */; };
 		4F3049212118982600BA3961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049202118982600BA3961 /* AppDelegate.swift */; };
 		4F3049232118982600BA3961 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049222118982600BA3961 /* ViewController.swift */; };
@@ -124,10 +124,10 @@
 		1E597C2C2133F8170098631F /* SectionDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailVC.swift; sourceTree = "<group>"; };
 		1E597C3421340D180098631F /* SectionItemCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionItemCollectionViewItem.swift; sourceTree = "<group>"; };
 		1E597C3521340D180098631F /* SectionItemCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionItemCollectionViewItem.xib; sourceTree = "<group>"; };
-		1E597C3B213419B80098631F /* NSColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSColorExtension.swift; sourceTree = "<group>"; };
 		1E597C3F21341ED90098631F /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = SOURCE_ROOT; };
 		1E597C412134407F0098631F /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		1E597C4321344ACC0098631F /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		1E597C4521354D820098631F /* NSColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSColorExtension.swift; sourceTree = "<group>"; };
 		20D8DDE934AC7DA8B920E530 /* Pods-ContentBlocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.debug.xcconfig"; sourceTree = "<group>"; };
 		2B1C37253CAD1E7BF0CB1212 /* Pods_ContentBlocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContentBlocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F30491D2118982600BA3961 /* GhosteryLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhosteryLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -367,6 +367,7 @@
 		4F3049A02119F4FC00BA3961 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1E597C4521354D820098631F /* NSColorExtension.swift */,
 				4F3049A12119F4FC00BA3961 /* ArrayExtensions.swift */,
 				4F3049A22119F4FC00BA3961 /* DictionaryExtensions.swift */,
 				4F3049A32119F4FC00BA3961 /* URLExtension.swift */,
@@ -401,7 +402,6 @@
 			children = (
 				1E597C4321344ACC0098631F /* MenuItem.swift */,
 				4F931A242126C8C900AF4226 /* Constants.swift */,
-				1E597C3B213419B80098631F /* NSColorExtension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -653,7 +653,6 @@
 			files = (
 				4F3049A42119F4FC00BA3961 /* ArrayExtensions.swift in Sources */,
 				4F931A292126E06000AF4226 /* DomainConfigDataSource.swift in Sources */,
-				1E597C3C213419B80098631F /* NSColorExtension.swift in Sources */,
 				4F3049A52119F4FC00BA3961 /* DictionaryExtensions.swift in Sources */,
 				4F931A1521259BEC00AF4226 /* DomainConfigRepository.swift in Sources */,
 				4F3049972119F46700BA3961 /* TrackerListRegex.swift in Sources */,
@@ -666,6 +665,7 @@
 				4F30499A2119F46700BA3961 /* TrackerList.swift in Sources */,
 				1E597C4421344ACC0098631F /* MenuItem.swift in Sources */,
 				4F3049AF211B36E800BA3961 /* BlockListFileManager.swift in Sources */,
+				1E597C4621354D830098631F /* NSColorExtension.swift in Sources */,
 				4FFD8349212B5D430038149F /* GlobalConfigRepository.swift in Sources */,
 				1E597C422134407F0098631F /* HomeVC.swift in Sources */,
 				4F3049B4211C6D3200BA3961 /* AntiTrackingManager.swift in Sources */,
