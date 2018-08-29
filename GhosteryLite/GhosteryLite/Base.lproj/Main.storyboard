@@ -797,6 +797,22 @@
                                 <view key="contentView" id="0XP-OB-std" customClass="HUDView" customModule="GhosteryLite" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="800" height="576"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <containerView translatesAutoresizingMaskIntoConstraints="NO" id="95x-Mx-HUl">
+                                            <rect key="frame" x="203" y="115" width="415" height="386"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="386" id="gOr-0d-yum"/>
+                                                <constraint firstAttribute="width" constant="415" id="qKa-gL-R1e"/>
+                                            </constraints>
+                                            <connections>
+                                                <segue destination="aac-Lb-Acs" kind="embed" identifier="SafariExtensionPromptVC" id="UuZ-pc-kNa"/>
+                                            </connections>
+                                        </containerView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="95x-Mx-HUl" firstAttribute="centerX" secondItem="0XP-OB-std" secondAttribute="centerX" constant="10" id="aER-Vq-U8N"/>
+                                        <constraint firstItem="95x-Mx-HUl" firstAttribute="centerY" secondItem="0XP-OB-std" secondAttribute="centerY" constant="-20" id="fEb-CY-7pw"/>
+                                    </constraints>
                                 </view>
                                 <color key="fillColor" red="0.78431372549019607" green="0.7803921568627451" blue="0.76078431372549016" alpha="0.54000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                             </box>
@@ -952,7 +968,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902" y="1172"/>
+            <point key="canvasLocation" x="2587" y="1181"/>
         </scene>
         <!--Section ListVC-->
         <scene sceneID="bBe-1J-MUa">
@@ -1256,148 +1272,6 @@
             </objects>
             <point key="canvasLocation" x="-546" y="2741"/>
         </scene>
-        <!--Safari Extension PromptVC-->
-        <scene sceneID="saO-W0-KYA">
-            <objects>
-                <viewController storyboardIdentifier="SafariExtensionPromptVC" id="hrx-YC-uDS" customClass="SafariExtensionPromptVC" customModule="GhosteryLite" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" appearanceType="aqua" id="6O9-FU-K01">
-                        <rect key="frame" x="0.0" y="0.0" width="800" height="576"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <box boxType="custom" borderType="line" borderWidth="3" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="BhW-jX-a98">
-                                <rect key="frame" x="203" y="120" width="415" height="386"/>
-                                <view key="contentView" id="ZpT-tQ-VSc">
-                                    <rect key="frame" x="3" y="3" width="409" height="380"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kCL-BX-vpM">
-                                            <rect key="frame" x="175" y="271" width="58" height="64"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-ghostery" id="peg-Tt-S3M"/>
-                                        </imageView>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="k3h-uN-lGQ">
-                                            <rect key="frame" x="57" y="146" width="294" height="90"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="90" id="0bG-GF-qNP"/>
-                                                <constraint firstAttribute="width" constant="290" id="FR0-dK-l5w"/>
-                                            </constraints>
-                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Please enable Ghostery Lite Icon and Ghostery Lite extensions in your Safari preferences to begin." id="wUP-hl-w0Z">
-                                                <font key="font" size="18" name="Roboto-Medium"/>
-                                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jPI-8H-DJ2">
-                                            <rect key="frame" x="5" y="7" width="400" height="88"/>
-                                            <subviews>
-                                                <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wGS-UR-kwV">
-                                                    <rect key="frame" x="0.0" y="0.0" width="400" height="88"/>
-                                                    <subviews>
-                                                        <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="e9a-Ha-KR9">
-                                                            <rect key="frame" x="0.0" y="0.0" width="400" height="88"/>
-                                                            <view key="contentView" id="5Zf-ZL-mBB">
-                                                                <rect key="frame" x="0.0" y="0.0" width="400" height="88"/>
-                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                <subviews>
-                                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vaE-rZ-L3B">
-                                                                        <rect key="frame" x="165" y="7" width="71" height="32"/>
-                                                                        <buttonCell key="cell" type="bevel" title="Skip for now" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="sSc-P0-tPb">
-                                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                            <font key="font" size="12" name="Roboto-Regular"/>
-                                                                        </buttonCell>
-                                                                    </button>
-                                                                    <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="uoz-rJ-zx3">
-                                                                        <rect key="frame" x="13" y="35" width="375" height="38"/>
-                                                                        <view key="contentView" id="58b-eu-ZP1">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
-                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                            <subviews>
-                                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sgD-Iq-aAE">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
-                                                                                    <buttonCell key="cell" type="bevel" title="ENABLE GHOSTERY LITE" bezelStyle="rounded" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="8lW-uT-j6i">
-                                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                                        <font key="font" size="12" name="Roboto-Medium"/>
-                                                                                    </buttonCell>
-                                                                                    <connections>
-                                                                                        <action selector="enableGhosteryLite:" target="hrx-YC-uDS" id="J1D-GL-Pot"/>
-                                                                                    </connections>
-                                                                                </button>
-                                                                            </subviews>
-                                                                            <constraints>
-                                                                                <constraint firstItem="sgD-Iq-aAE" firstAttribute="centerY" secondItem="58b-eu-ZP1" secondAttribute="centerY" id="KfK-X1-Hjb"/>
-                                                                                <constraint firstItem="sgD-Iq-aAE" firstAttribute="centerX" secondItem="58b-eu-ZP1" secondAttribute="centerX" id="xy5-pK-vaF"/>
-                                                                            </constraints>
-                                                                        </view>
-                                                                        <constraints>
-                                                                            <constraint firstItem="sgD-Iq-aAE" firstAttribute="height" secondItem="uoz-rJ-zx3" secondAttribute="height" id="N8s-LK-egz"/>
-                                                                            <constraint firstAttribute="width" constant="375" id="SmX-f6-59u"/>
-                                                                            <constraint firstAttribute="height" constant="38" id="gq8-jv-TjL"/>
-                                                                            <constraint firstItem="sgD-Iq-aAE" firstAttribute="width" secondItem="uoz-rJ-zx3" secondAttribute="width" id="lVf-sw-06Z"/>
-                                                                        </constraints>
-                                                                        <color key="fillColor" red="0.5725490196078431" green="0.0" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    </box>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="vaE-rZ-L3B" firstAttribute="centerX" secondItem="5Zf-ZL-mBB" secondAttribute="centerX" id="0Ms-Iw-Y2E"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="vaE-rZ-L3B" secondAttribute="bottom" constant="7" id="K8Q-0h-b9I"/>
-                                                                    <constraint firstItem="uoz-rJ-zx3" firstAttribute="top" secondItem="5Zf-ZL-mBB" secondAttribute="top" constant="15" id="QAD-W2-npi"/>
-                                                                    <constraint firstItem="uoz-rJ-zx3" firstAttribute="centerX" secondItem="5Zf-ZL-mBB" secondAttribute="centerX" id="xCj-U3-b6N"/>
-                                                                </constraints>
-                                                            </view>
-                                                            <color key="fillColor" red="0.90588235294117647" green="0.92549019607843142" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </box>
-                                                    </subviews>
-                                                    <visibilityPriorities>
-                                                        <integer value="1000"/>
-                                                    </visibilityPriorities>
-                                                    <customSpacing>
-                                                        <real value="3.4028234663852886e+38"/>
-                                                    </customSpacing>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="88" id="79Z-ox-SM6"/>
-                                                <constraint firstAttribute="width" constant="400" id="vFm-cE-irS"/>
-                                            </constraints>
-                                            <visibilityPriorities>
-                                                <integer value="1000"/>
-                                            </visibilityPriorities>
-                                            <customSpacing>
-                                                <real value="3.4028234663852886e+38"/>
-                                            </customSpacing>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="kCL-BX-vpM" firstAttribute="top" secondItem="ZpT-tQ-VSc" secondAttribute="top" constant="45" id="4NH-IJ-9Ln"/>
-                                        <constraint firstItem="kCL-BX-vpM" firstAttribute="centerX" secondItem="ZpT-tQ-VSc" secondAttribute="centerX" id="GGa-ct-EYY"/>
-                                        <constraint firstItem="jPI-8H-DJ2" firstAttribute="centerX" secondItem="ZpT-tQ-VSc" secondAttribute="centerX" id="NKD-qN-DG3"/>
-                                        <constraint firstAttribute="bottom" secondItem="jPI-8H-DJ2" secondAttribute="bottom" constant="7" id="YQC-p9-jUd"/>
-                                        <constraint firstItem="k3h-uN-lGQ" firstAttribute="centerX" secondItem="ZpT-tQ-VSc" secondAttribute="centerX" id="awv-m5-U49"/>
-                                        <constraint firstItem="k3h-uN-lGQ" firstAttribute="top" secondItem="kCL-BX-vpM" secondAttribute="bottom" constant="35" id="dd7-1G-3r7"/>
-                                    </constraints>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="415" id="Ehg-ok-6AD"/>
-                                    <constraint firstAttribute="height" constant="386" id="Lsd-8s-4W3"/>
-                                </constraints>
-                                <color key="borderColor" red="0.57647058819999997" green="0.0039215686269999999" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="fillColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
-                            </box>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="BhW-jX-a98" firstAttribute="centerX" secondItem="6O9-FU-K01" secondAttribute="centerX" constant="10" id="RwW-At-KxT"/>
-                            <constraint firstItem="BhW-jX-a98" firstAttribute="centerY" secondItem="6O9-FU-K01" secondAttribute="centerY" constant="-25" id="d0n-0O-aHh"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="enableGhosteryLiteBtn" destination="sgD-Iq-aAE" id="6DK-5w-83A"/>
-                        <outlet property="enableGhosteryLiteText" destination="k3h-uN-lGQ" id="c0a-nK-p2O"/>
-                        <outlet property="skipButton" destination="vaE-rZ-L3B" id="WTY-VQ-oF1"/>
-                    </connections>
-                </viewController>
-                <customObject id="B1E-xW-HAA" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1165" y="1937"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="OZg-Yt-b5E">
             <objects>
@@ -1575,6 +1449,147 @@
                 <customObject id="Hbf-ub-WCF" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1804" y="2741"/>
+        </scene>
+        <!--Safari Extension PromptVC-->
+        <scene sceneID="Qau-T4-5y6">
+            <objects>
+                <viewController id="aac-Lb-Acs" customClass="SafariExtensionPromptVC" customModule="GhosteryLite" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="3qS-Yv-c2C">
+                        <rect key="frame" x="0.0" y="0.0" width="415" height="386"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box ambiguous="YES" boxType="custom" borderType="line" borderWidth="3" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Dba-jd-8JT">
+                                <rect key="frame" x="0.0" y="0.0" width="415" height="386"/>
+                                <view key="contentView" id="TgT-6w-5h8">
+                                    <rect key="frame" x="3" y="3" width="409" height="380"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pJz-QB-tX5">
+                                            <rect key="frame" x="175" y="271" width="58" height="64"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-ghostery" id="4cN-lD-chj"/>
+                                        </imageView>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="h4C-Ui-csD">
+                                            <rect key="frame" x="57" y="146" width="294" height="90"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="90" id="01j-uh-gKZ"/>
+                                                <constraint firstAttribute="width" constant="290" id="MAf-Xz-iYV"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Please enable Ghostery Lite Icon and Ghostery Lite extensions in your Safari preferences to begin." id="dEo-t5-f3x">
+                                                <font key="font" size="18" name="Roboto-Medium"/>
+                                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B60-Zy-4Mm">
+                                            <rect key="frame" x="5" y="7" width="400" height="88"/>
+                                            <subviews>
+                                                <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jqT-TS-yJS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="400" height="88"/>
+                                                    <subviews>
+                                                        <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="RAj-YN-Sdm">
+                                                            <rect key="frame" x="0.0" y="0.0" width="400" height="88"/>
+                                                            <view key="contentView" id="JGU-PU-YIR">
+                                                                <rect key="frame" x="0.0" y="0.0" width="400" height="88"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <subviews>
+                                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="79q-5M-au7">
+                                                                        <rect key="frame" x="165" y="7" width="71" height="32"/>
+                                                                        <buttonCell key="cell" type="bevel" title="Skip for now" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="2Jl-PZ-VFA">
+                                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                            <font key="font" size="12" name="Roboto-Regular"/>
+                                                                        </buttonCell>
+                                                                        <connections>
+                                                                            <action selector="skip:" target="aac-Lb-Acs" id="V30-Cg-LZq"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="VFy-d1-dX0">
+                                                                        <rect key="frame" x="13" y="35" width="375" height="38"/>
+                                                                        <view key="contentView" id="gNO-Jh-gLg">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
+                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                            <subviews>
+                                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gdw-SY-3yv">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
+                                                                                    <buttonCell key="cell" type="bevel" title="ENABLE GHOSTERY LITE" bezelStyle="rounded" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="XIq-Cy-agY">
+                                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                                        <font key="font" size="12" name="Roboto-Medium"/>
+                                                                                    </buttonCell>
+                                                                                    <connections>
+                                                                                        <action selector="enableGhosteryLite:" target="aac-Lb-Acs" id="rZX-mx-yHk"/>
+                                                                                    </connections>
+                                                                                </button>
+                                                                            </subviews>
+                                                                            <constraints>
+                                                                                <constraint firstItem="gdw-SY-3yv" firstAttribute="centerX" secondItem="gNO-Jh-gLg" secondAttribute="centerX" id="0j3-5e-IHr"/>
+                                                                                <constraint firstItem="gdw-SY-3yv" firstAttribute="centerY" secondItem="gNO-Jh-gLg" secondAttribute="centerY" id="tUf-KI-SY6"/>
+                                                                            </constraints>
+                                                                        </view>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="38" id="5Tb-La-2At"/>
+                                                                            <constraint firstAttribute="width" constant="375" id="XJG-fr-LYx"/>
+                                                                            <constraint firstItem="gdw-SY-3yv" firstAttribute="height" secondItem="VFy-d1-dX0" secondAttribute="height" id="e4j-Ay-i95"/>
+                                                                            <constraint firstItem="gdw-SY-3yv" firstAttribute="width" secondItem="VFy-d1-dX0" secondAttribute="width" id="yie-Nb-p5d"/>
+                                                                        </constraints>
+                                                                        <color key="fillColor" red="0.57254901960000004" green="0.0" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </box>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="79q-5M-au7" firstAttribute="centerX" secondItem="JGU-PU-YIR" secondAttribute="centerX" id="7Up-dS-0Dl"/>
+                                                                    <constraint firstItem="VFy-d1-dX0" firstAttribute="top" secondItem="JGU-PU-YIR" secondAttribute="top" constant="15" id="RZl-7u-HMd"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="79q-5M-au7" secondAttribute="bottom" constant="7" id="hKQ-0d-ubl"/>
+                                                                    <constraint firstItem="VFy-d1-dX0" firstAttribute="centerX" secondItem="JGU-PU-YIR" secondAttribute="centerX" id="ub1-NO-i7O"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <color key="fillColor" red="0.90588235289999997" green="0.92549019610000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </box>
+                                                    </subviews>
+                                                    <visibilityPriorities>
+                                                        <integer value="1000"/>
+                                                    </visibilityPriorities>
+                                                    <customSpacing>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                    </customSpacing>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="88" id="SWh-Cf-hkI"/>
+                                                <constraint firstAttribute="width" constant="400" id="nmh-Tl-Kiy"/>
+                                            </constraints>
+                                            <visibilityPriorities>
+                                                <integer value="1000"/>
+                                            </visibilityPriorities>
+                                            <customSpacing>
+                                                <real value="3.4028234663852886e+38"/>
+                                            </customSpacing>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="pJz-QB-tX5" firstAttribute="centerX" secondItem="TgT-6w-5h8" secondAttribute="centerX" id="HDl-Nb-ock"/>
+                                        <constraint firstItem="B60-Zy-4Mm" firstAttribute="centerX" secondItem="TgT-6w-5h8" secondAttribute="centerX" id="IzS-ud-Bcd"/>
+                                        <constraint firstItem="h4C-Ui-csD" firstAttribute="top" secondItem="pJz-QB-tX5" secondAttribute="bottom" constant="35" id="KFZ-xN-aVV"/>
+                                        <constraint firstAttribute="bottom" secondItem="B60-Zy-4Mm" secondAttribute="bottom" constant="7" id="Zuz-kb-fbV"/>
+                                        <constraint firstItem="pJz-QB-tX5" firstAttribute="top" secondItem="TgT-6w-5h8" secondAttribute="top" constant="45" id="nEa-9i-SaN"/>
+                                        <constraint firstItem="h4C-Ui-csD" firstAttribute="centerX" secondItem="TgT-6w-5h8" secondAttribute="centerX" id="oIS-SF-IOQ"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="386" id="5zR-fu-d5w"/>
+                                    <constraint firstAttribute="width" constant="415" id="RsX-OV-gDG"/>
+                                </constraints>
+                                <color key="borderColor" red="0.57647058819999997" green="0.0039215686269999999" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="fillColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </box>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="enableGhosteryLiteBtn" destination="gdw-SY-3yv" id="s5h-7u-EK6"/>
+                        <outlet property="enableGhosteryLiteText" destination="h4C-Ui-csD" id="6k9-WD-TNG"/>
+                        <outlet property="skipButton" destination="79q-5M-au7" id="eGW-q9-WiB"/>
+                    </connections>
+                </viewController>
+                <customObject id="Vch-So-Qde" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1036" y="1172"/>
         </scene>
     </scenes>
     <resources>

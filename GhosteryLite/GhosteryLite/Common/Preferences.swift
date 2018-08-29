@@ -11,11 +11,14 @@ import Cocoa
 class Preferences: NSObject {
     
     class func isAppFirstLaunch() -> Bool {
-        return true
-    }
-    
-    class func isSafariExtensionEnabled() -> Bool {
         return false
     }
     
+    class func isGhosteryLiteEnabled() -> Bool {
+        return false
+    }
+    
+    class func enableGhosteryLite() {
+        print("enableGhosteryLite")
+    }
 }

@@ -23,17 +23,14 @@ class HomeVC: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initComponents()
-        
-    }
-    override func viewWillAppear() {
-        super.viewWillAppear()
         if !Preferences.isAppFirstLaunch() {
-            self.SafariExtensionPromptView.isHidden = Preferences.isSafariExtensionEnabled()
+            self.SafariExtensionPromptView.isHidden = Preferences.isGhosteryLiteEnabled()
         }
     }
     
     @IBAction func enableGhosteryLite(_ sender: NSButton) {
-        print("enableGhosteryLite")
+        Preferences.enableGhosteryLite()
+        self.SafariExtensionPromptView.isHidden = true
     }
     
     private func initComponents() {

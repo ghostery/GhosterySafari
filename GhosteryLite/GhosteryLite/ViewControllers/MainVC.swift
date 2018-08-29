@@ -11,12 +11,13 @@ import Cocoa
 class MainVC: NSViewController {
     fileprivate var sectionListVC: SectionListVC? = nil
     fileprivate var sectionDetailVC: SectionDetailVC? = nil
+    fileprivate var safariExtensionPromptVC: SafariExtensionPromptVC? = nil
     @IBOutlet weak var overlayView: NSBox!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if Preferences.isAppFirstLaunch() {
-            showSafariExtensionPopOver()
+            overlayView.isHidden = false
         }
     }
     
@@ -27,17 +28,12 @@ class MainVC: NSViewController {
         } else if segue.identifier?.rawValue == "SectionDetailVC" {
             self.sectionDetailVC = segue.destinationController as? SectionDetailVC
             self.sectionListVC?.delegate = self
+        } else if segue.identifier?.rawValue == "SafariExtensionPromptVC" {
+            self.safariExtensionPromptVC = segue.destinationController as? SafariExtensionPromptVC
+            self.safariExtensionPromptVC?.delegate = self
         }
     }
     
-    private func showSafariExtensionPopOver() {
-        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
-        let identifier = NSStoryboard.SceneIdentifier(rawValue: "SafariExtensionPromptVC")
-        if let viewController = storyboard.instantiateController(withIdentifier: identifier) as? NSViewController {
-            overlayView.addSubview(viewController.view)
-            overlayView.isHidden = false
-        }
-    }
 }
 
 extension MainVC : SectionListVCDelegate {
@@ -48,4 +44,10 @@ extension MainVC : SectionListVCDelegate {
 
 extension MainVC : SectionDetailVCDelegate {
     
+}
+
+extension MainVC : SafariExtensionPromptVCDelegate {
+    func hideSafariExtensionPopOver() {
+        overlayView.isHidden = true
+    }
 }
