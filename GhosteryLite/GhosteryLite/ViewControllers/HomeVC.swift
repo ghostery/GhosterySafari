@@ -10,34 +10,62 @@ import Cocoa
 
 class HomeVC: NSViewController {
 
+    @IBOutlet weak var titleText: NSTextField!
+    @IBOutlet weak var subtitleText: NSTextField!
     @IBOutlet weak var editSettingsText: NSTextField!
+    @IBOutlet weak var editSettingsBtn: NSButton!
     @IBOutlet weak var trustedSitesText: NSTextField!
+    @IBOutlet weak var trustedSitesBtn: NSButton!
     @IBOutlet weak var SafariExtensionPromptView: NSBox!
+    @IBOutlet weak var enableGhosteryLitePromptText: NSTextField!
+    @IBOutlet weak var enableGhosteryLiteBtn: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
-        initComponent()
-        
+        initComponents()
         
     }
     override func viewWillAppear() {
         super.viewWillAppear()
-        self.SafariExtensionPromptView.isHidden = Preferences.isSafariExtensionEnabled()
+        if !Preferences.isAppFirstLaunch() {
+            self.SafariExtensionPromptView.isHidden = Preferences.isSafariExtensionEnabled()
+        }
     }
     
     @IBAction func enableGhosteryLite(_ sender: NSButton) {
         print("enableGhosteryLite")
     }
     
-    private func initComponent() {
-        editSettingsText.attributedStringValue = generateAttributedString(prefix: "Want more control? ", regularText: "Select the categories of tracker your wish to allow.")
-        trustedSitesText.attributedStringValue = generateAttributedString(prefix: "Do you know who to trust? ", regularText: "Add or remove sites from your ‘Trusted’ list.")
+    private func initComponents() {
+        titleText.stringValue = Strings.HomePanelTitle
+        subtitleText.stringValue = Strings.HomePanelSubtitle
+        enableGhosteryLitePromptText.stringValue = Strings.HomePanelEnableGhosteryLitePromptText
+        
+        editSettingsText.attributedStringValue = generateAttributedString(prefix: Strings.HomePanelSettingsDescriptionPrefix,
+                                                                          regularText: Strings.HomePanelSettingsDescription)
+        
+        trustedSitesText.attributedStringValue = generateAttributedString(prefix: Strings.HomePanelTrustedSitesDescriptionPrefix,
+                                                                          regularText: Strings.HomePanelTrustedSitesDescription)
+        
+        editSettingsBtn.attributedTitle = Strings.HomePanelEditSettingsButtonTitle.attributedString(withTextAlignment: .center,
+                                                                                                    fontName: "RobotoCondensed-Bold",
+                                                                                                    fontSize: 14.0,
+                                                                                                    fontColor: 0x930194)
+        
+        trustedSitesBtn.attributedTitle = Strings.HomePanelTrustedSitesButtonTitle.attributedString(withTextAlignment: .center,
+                                                                                                    fontName: "RobotoCondensed-Bold",
+                                                                                                    fontSize: 14.0,
+                                                                                                    fontColor: 0x930194)
+        
+        enableGhosteryLiteBtn.attributedTitle = Strings.HomePanelEnableGhosteryLiteButtonText.attributedString(withTextAlignment: .center,
+                                                                                                               fontName: "Roboto-Regular",
+                                                                                                               fontSize: 14.0,
+                                                                                                               fontColor: 0x4a4a4a)
     }
     
     private func generateAttributedString(prefix: String, regularText: String) -> NSAttributedString {
-        let prefixString = generateAttributedString(prefix, fontName: "Roboto-Medium")
-        let regularTextString = generateAttributedString(regularText, fontName: "Roboto-Regular")
+        let prefixString = prefix.attributedString(withTextAlignment: .left, fontName: "Roboto-Medium", fontSize: 16.0, fontColor: 0x4a4a4a)
+        let regularTextString = regularText.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16.0, fontColor: 0x4a4a4a)
         
         let attrString:NSMutableAttributedString = NSMutableAttributedString(attributedString: prefixString)
         attrString.append(regularTextString)
@@ -45,19 +73,5 @@ class HomeVC: NSViewController {
         return attrString
     }
     
-    private func generateAttributedString(_ text: String, fontName: String) -> NSAttributedString {
-        guard let font:NSFont = NSFont(name: fontName, size: 16.0) else {
-            return NSMutableAttributedString.init(string: text)
-        }
-        let textColor:NSColor = NSColor(rgb: 0x4a4a4a)
-        let textParagraph:NSMutableParagraphStyle = NSMutableParagraphStyle()
-        textParagraph.lineSpacing = 10.0  /*this sets the space BETWEEN lines to 10points*/
-        textParagraph.maximumLineHeight = 30.0/*this sets the MAXIMUM height of the lines to 12points*/
-        let attribs = [NSAttributedStringKey.font : font,
-                       NSAttributedStringKey.foregroundColor : textColor,
-                       NSAttributedStringKey.paragraphStyle : textParagraph]
-        let attrString:NSMutableAttributedString = NSMutableAttributedString.init(string: text, attributes: attribs)
-        return attrString
-    }
     
 }

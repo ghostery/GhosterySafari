@@ -17,13 +17,13 @@ public enum MenuItem {
     var title: String {
         switch self {
         case .home:
-            return "Home"
+            return Strings.SideMenuHomeTitle
         case .settings:
-            return "Settings"
+            return Strings.SideMenuSettingsTitle
         case .trustedSites:
-            return "Trusted Sites"
+            return Strings.SideMenuTrustedSitesTitle
         case .help:
-            return "Help"
+            return Strings.SideMenuHelpTitle
         }
     }
     

@@ -11,7 +11,7 @@ import Cocoa
 class Preferences: NSObject {
     
     class func isAppFirstLaunch() -> Bool {
-        return false
+        return true
     }
     class func isSafariExtensionEnabled() -> Bool {
         return false

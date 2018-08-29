@@ -4,6 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -1091,14 +1092,14 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="4vx-Kz-K0s">
-                                                        <rect key="frame" x="115" y="35" width="114" height="26"/>
+                                                        <rect key="frame" x="115" y="35" width="150" height="35"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="114" id="YSf-rY-JnX"/>
-                                                            <constraint firstAttribute="height" constant="26" id="hfo-BG-QSv"/>
+                                                            <constraint firstAttribute="width" constant="150" id="YSf-rY-JnX"/>
+                                                            <constraint firstAttribute="height" constant="35" id="hfo-BG-QSv"/>
                                                         </constraints>
                                                         <buttonCell key="cell" type="square" title="EDIT SETTINGS" bezelStyle="shadowlessSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="WBJ-fQ-YXc">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="system"/>
+                                                            <font key="font" size="14" name="RobotoCondensed-Bold"/>
                                                         </buttonCell>
                                                     </button>
                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IwD-Mi-Qew">
@@ -1140,14 +1141,14 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="8NS-D3-tnM">
-                                                        <rect key="frame" x="115" y="35" width="114" height="26"/>
+                                                        <rect key="frame" x="115" y="35" width="150" height="35"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="26" id="2Ys-6f-FnD"/>
-                                                            <constraint firstAttribute="width" constant="114" id="YUH-ey-h3K"/>
+                                                            <constraint firstAttribute="height" constant="35" id="2Ys-6f-FnD"/>
+                                                            <constraint firstAttribute="width" constant="150" id="YUH-ey-h3K"/>
                                                         </constraints>
                                                         <buttonCell key="cell" type="square" title="TRUSTED SITES" bezelStyle="shadowlessSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="0cc-Uf-uAC">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="system"/>
+                                                            <font key="font" size="14" name="RobotoCondensed-Bold"/>
                                                         </buttonCell>
                                                     </button>
                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Qt-qi-cLd">
@@ -1241,7 +1242,13 @@
                     </view>
                     <connections>
                         <outlet property="SafariExtensionPromptView" destination="Kbf-lj-k3C" id="7Z4-0K-28k"/>
+                        <outlet property="editSettingsBtn" destination="4vx-Kz-K0s" id="4X7-iQ-JzZ"/>
                         <outlet property="editSettingsText" destination="6EM-ac-LEL" id="w8W-du-Dv7"/>
+                        <outlet property="enableGhosteryLiteBtn" destination="PWY-pJ-6rD" id="chZ-hY-NbV"/>
+                        <outlet property="enableGhosteryLitePromptText" destination="zgV-gd-3qc" id="1Sk-hl-jTp"/>
+                        <outlet property="subtitleText" destination="kXc-rc-jc4" id="L8w-of-pKw"/>
+                        <outlet property="titleText" destination="yNx-KH-9na" id="jrx-4Z-PTu"/>
+                        <outlet property="trustedSitesBtn" destination="8NS-D3-tnM" id="iHC-Jb-AnO"/>
                         <outlet property="trustedSitesText" destination="h3W-zx-9pa" id="xaA-TN-imV"/>
                     </connections>
                 </viewController>
@@ -1258,17 +1265,17 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box boxType="custom" borderType="line" borderWidth="3" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="BhW-jX-a98">
-                                <rect key="frame" x="200" y="123" width="400" height="380"/>
+                                <rect key="frame" x="203" y="120" width="415" height="386"/>
                                 <view key="contentView" id="ZpT-tQ-VSc">
-                                    <rect key="frame" x="3" y="3" width="394" height="374"/>
+                                    <rect key="frame" x="3" y="3" width="409" height="380"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kCL-BX-vpM">
-                                            <rect key="frame" x="168" y="265" width="58" height="64"/>
+                                            <rect key="frame" x="175" y="271" width="58" height="64"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-ghostery" id="peg-Tt-S3M"/>
                                         </imageView>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="k3h-uN-lGQ">
-                                            <rect key="frame" x="50" y="140" width="294" height="90"/>
+                                            <rect key="frame" x="57" y="146" width="294" height="90"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="90" id="0bG-GF-qNP"/>
                                                 <constraint firstAttribute="width" constant="290" id="FR0-dK-l5w"/>
@@ -1279,57 +1286,113 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <box fixedFrame="YES" boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="e9a-Ha-KR9">
-                                            <rect key="frame" x="7" y="10" width="380" height="88"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <view key="contentView" ambiguous="YES" id="5Zf-ZL-mBB">
-                                                <rect key="frame" x="0.0" y="0.0" width="380" height="88"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <subviews>
-                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sgD-Iq-aAE">
-                                                        <rect key="frame" x="3" y="38" width="375" height="38"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <buttonCell key="cell" type="bevel" title="ENABLE GHOSTERY LITE" bezelStyle="rounded" image="enable-lite-purple-btn" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="8lW-uT-j6i">
-                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                        <connections>
-                                                            <action selector="enableGhosteryLite:" target="hrx-YC-uDS" id="J1D-GL-Pot"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vaE-rZ-L3B">
-                                                        <rect key="frame" x="140" y="9" width="100" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <buttonCell key="cell" type="bevel" title="Skip for now" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="sSc-P0-tPb">
-                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                    </button>
-                                                </subviews>
-                                            </view>
-                                            <color key="fillColor" red="0.90588235294117647" green="0.92549019607843142" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-                                        </box>
+                                        <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jPI-8H-DJ2">
+                                            <rect key="frame" x="5" y="7" width="400" height="88"/>
+                                            <subviews>
+                                                <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wGS-UR-kwV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="400" height="88"/>
+                                                    <subviews>
+                                                        <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="e9a-Ha-KR9">
+                                                            <rect key="frame" x="0.0" y="0.0" width="400" height="88"/>
+                                                            <view key="contentView" id="5Zf-ZL-mBB">
+                                                                <rect key="frame" x="0.0" y="0.0" width="400" height="88"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <subviews>
+                                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vaE-rZ-L3B">
+                                                                        <rect key="frame" x="165" y="7" width="71" height="32"/>
+                                                                        <buttonCell key="cell" type="bevel" title="Skip for now" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="sSc-P0-tPb">
+                                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                            <font key="font" size="12" name="Roboto-Regular"/>
+                                                                        </buttonCell>
+                                                                    </button>
+                                                                    <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="uoz-rJ-zx3">
+                                                                        <rect key="frame" x="13" y="35" width="375" height="38"/>
+                                                                        <view key="contentView" id="58b-eu-ZP1">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
+                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                            <subviews>
+                                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sgD-Iq-aAE">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
+                                                                                    <buttonCell key="cell" type="bevel" title="ENABLE GHOSTERY LITE" bezelStyle="rounded" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="8lW-uT-j6i">
+                                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                                        <font key="font" size="12" name="Roboto-Medium"/>
+                                                                                    </buttonCell>
+                                                                                    <connections>
+                                                                                        <action selector="enableGhosteryLite:" target="hrx-YC-uDS" id="J1D-GL-Pot"/>
+                                                                                    </connections>
+                                                                                </button>
+                                                                            </subviews>
+                                                                            <constraints>
+                                                                                <constraint firstItem="sgD-Iq-aAE" firstAttribute="centerY" secondItem="58b-eu-ZP1" secondAttribute="centerY" id="KfK-X1-Hjb"/>
+                                                                                <constraint firstItem="sgD-Iq-aAE" firstAttribute="centerX" secondItem="58b-eu-ZP1" secondAttribute="centerX" id="xy5-pK-vaF"/>
+                                                                            </constraints>
+                                                                        </view>
+                                                                        <constraints>
+                                                                            <constraint firstItem="sgD-Iq-aAE" firstAttribute="height" secondItem="uoz-rJ-zx3" secondAttribute="height" id="N8s-LK-egz"/>
+                                                                            <constraint firstAttribute="width" constant="375" id="SmX-f6-59u"/>
+                                                                            <constraint firstAttribute="height" constant="38" id="gq8-jv-TjL"/>
+                                                                            <constraint firstItem="sgD-Iq-aAE" firstAttribute="width" secondItem="uoz-rJ-zx3" secondAttribute="width" id="lVf-sw-06Z"/>
+                                                                        </constraints>
+                                                                        <color key="fillColor" red="0.5725490196078431" green="0.0" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </box>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="vaE-rZ-L3B" firstAttribute="centerX" secondItem="5Zf-ZL-mBB" secondAttribute="centerX" id="0Ms-Iw-Y2E"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="vaE-rZ-L3B" secondAttribute="bottom" constant="7" id="K8Q-0h-b9I"/>
+                                                                    <constraint firstItem="uoz-rJ-zx3" firstAttribute="top" secondItem="5Zf-ZL-mBB" secondAttribute="top" constant="15" id="QAD-W2-npi"/>
+                                                                    <constraint firstItem="uoz-rJ-zx3" firstAttribute="centerX" secondItem="5Zf-ZL-mBB" secondAttribute="centerX" id="xCj-U3-b6N"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <color key="fillColor" red="0.90588235294117647" green="0.92549019607843142" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </box>
+                                                    </subviews>
+                                                    <visibilityPriorities>
+                                                        <integer value="1000"/>
+                                                    </visibilityPriorities>
+                                                    <customSpacing>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                    </customSpacing>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="88" id="79Z-ox-SM6"/>
+                                                <constraint firstAttribute="width" constant="400" id="vFm-cE-irS"/>
+                                            </constraints>
+                                            <visibilityPriorities>
+                                                <integer value="1000"/>
+                                            </visibilityPriorities>
+                                            <customSpacing>
+                                                <real value="3.4028234663852886e+38"/>
+                                            </customSpacing>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="kCL-BX-vpM" firstAttribute="top" secondItem="ZpT-tQ-VSc" secondAttribute="top" constant="45" id="4NH-IJ-9Ln"/>
                                         <constraint firstItem="kCL-BX-vpM" firstAttribute="centerX" secondItem="ZpT-tQ-VSc" secondAttribute="centerX" id="GGa-ct-EYY"/>
+                                        <constraint firstItem="jPI-8H-DJ2" firstAttribute="centerX" secondItem="ZpT-tQ-VSc" secondAttribute="centerX" id="NKD-qN-DG3"/>
+                                        <constraint firstAttribute="bottom" secondItem="jPI-8H-DJ2" secondAttribute="bottom" constant="7" id="YQC-p9-jUd"/>
                                         <constraint firstItem="k3h-uN-lGQ" firstAttribute="centerX" secondItem="ZpT-tQ-VSc" secondAttribute="centerX" id="awv-m5-U49"/>
                                         <constraint firstItem="k3h-uN-lGQ" firstAttribute="top" secondItem="kCL-BX-vpM" secondAttribute="bottom" constant="35" id="dd7-1G-3r7"/>
                                     </constraints>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="400" id="Ehg-ok-6AD"/>
-                                    <constraint firstAttribute="height" constant="380" id="Lsd-8s-4W3"/>
+                                    <constraint firstAttribute="width" constant="415" id="Ehg-ok-6AD"/>
+                                    <constraint firstAttribute="height" constant="386" id="Lsd-8s-4W3"/>
                                 </constraints>
                                 <color key="borderColor" red="0.57647058819999997" green="0.0039215686269999999" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="fillColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                             </box>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="BhW-jX-a98" firstAttribute="centerX" secondItem="6O9-FU-K01" secondAttribute="centerX" id="RwW-At-KxT"/>
+                            <constraint firstItem="BhW-jX-a98" firstAttribute="centerX" secondItem="6O9-FU-K01" secondAttribute="centerX" constant="10" id="RwW-At-KxT"/>
                             <constraint firstItem="BhW-jX-a98" firstAttribute="centerY" secondItem="6O9-FU-K01" secondAttribute="centerY" constant="-25" id="d0n-0O-aHh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="enableGhosteryLiteBtn" destination="sgD-Iq-aAE" id="6DK-5w-83A"/>
+                        <outlet property="enableGhosteryLiteText" destination="k3h-uN-lGQ" id="c0a-nK-p2O"/>
+                        <outlet property="skipButton" destination="vaE-rZ-L3B" id="WTY-VQ-oF1"/>
+                    </connections>
                 </viewController>
                 <customObject id="B1E-xW-HAA" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1418,7 +1481,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="enable-lite-purple-btn" width="375" height="38"/>
         <image name="ghosty-heart" width="119" height="107"/>
         <image name="icon-ghostery" width="58" height="64"/>
         <image name="lite-logo" width="31" height="35"/>
