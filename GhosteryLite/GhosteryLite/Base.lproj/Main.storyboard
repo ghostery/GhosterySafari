@@ -791,17 +791,32 @@
                                 </view>
                                 <color key="fillColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </box>
+                            <box hidden="YES" boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="NWW-Wy-iqe">
+                                <rect key="frame" x="0.0" y="0.0" width="800" height="576"/>
+                                <view key="contentView" id="0XP-OB-std" customClass="HUDView" customModule="GhosteryLite" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="800" height="576"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="fillColor" red="0.78431372549019607" green="0.7803921568627451" blue="0.76078431372549016" alpha="0.54000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                            </box>
                         </subviews>
                         <constraints>
                             <constraint firstItem="5FX-lN-wZ1" firstAttribute="leading" secondItem="MJy-F2-kxK" secondAttribute="leading" id="3R6-0E-Ng4"/>
                             <constraint firstItem="CWC-pw-01r" firstAttribute="leading" secondItem="5FX-lN-wZ1" secondAttribute="trailing" id="6i4-72-ecb"/>
+                            <constraint firstItem="NWW-Wy-iqe" firstAttribute="height" secondItem="MJy-F2-kxK" secondAttribute="height" id="89J-lF-RJs"/>
                             <constraint firstItem="5FX-lN-wZ1" firstAttribute="top" secondItem="MJy-F2-kxK" secondAttribute="top" id="Dyl-H5-Kv7"/>
                             <constraint firstAttribute="trailing" secondItem="CWC-pw-01r" secondAttribute="trailing" id="SRX-0J-ixx"/>
+                            <constraint firstItem="NWW-Wy-iqe" firstAttribute="centerY" secondItem="MJy-F2-kxK" secondAttribute="centerY" id="hJF-Nv-2PT"/>
                             <constraint firstItem="5FX-lN-wZ1" firstAttribute="bottom" secondItem="CWC-pw-01r" secondAttribute="bottom" id="mc9-gM-g7V"/>
+                            <constraint firstItem="NWW-Wy-iqe" firstAttribute="centerX" secondItem="MJy-F2-kxK" secondAttribute="centerX" id="sSK-th-GN1"/>
                             <constraint firstItem="5FX-lN-wZ1" firstAttribute="top" secondItem="CWC-pw-01r" secondAttribute="top" id="tjb-CQ-2gM"/>
                             <constraint firstAttribute="bottom" secondItem="5FX-lN-wZ1" secondAttribute="bottom" id="uRv-7N-pum"/>
+                            <constraint firstItem="NWW-Wy-iqe" firstAttribute="width" secondItem="MJy-F2-kxK" secondAttribute="width" id="xEi-Np-PcH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="overlayView" destination="NWW-Wy-iqe" id="p7f-pc-1q4"/>
+                    </connections>
                 </viewController>
                 <customObject id="0iW-WQ-u2N" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1034,22 +1049,22 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yNx-KH-9na">
-                                            <rect key="frame" x="212" y="507" width="187" height="39"/>
+                                            <rect key="frame" x="212" y="511" width="185" height="35"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="You’ve gone Lite!" id="Z6K-0m-rr9">
                                                 <font key="font" size="24" name="Roboto-Regular"/>
-                                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kXc-rc-jc4">
-                                            <rect key="frame" x="212" y="432" width="354" height="60"/>
+                                            <rect key="frame" x="212" y="436" width="354" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="350" id="M7N-Xu-k0z"/>
                                                 <constraint firstAttribute="height" constant="60" id="P46-fW-cYT"/>
                                             </constraints>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Thanks for installing Ghostery Lite. You are now protected with our tailored default settings!" id="wYg-RX-1lu">
                                                 <font key="font" size="16" name="Roboto-Regular"/>
-                                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
@@ -1071,7 +1086,7 @@
                                                         </constraints>
                                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Want more control? Select the categories of tracker your wish to allow." id="8Rj-7U-bxz">
                                                             <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
@@ -1081,16 +1096,22 @@
                                                             <constraint firstAttribute="width" constant="114" id="YSf-rY-JnX"/>
                                                             <constraint firstAttribute="height" constant="26" id="hfo-BG-QSv"/>
                                                         </constraints>
-                                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="edit-settings-btn" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="WBJ-fQ-YXc">
+                                                        <buttonCell key="cell" type="square" title="EDIT SETTINGS" bezelStyle="shadowlessSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="WBJ-fQ-YXc">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
                                                     </button>
+                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IwD-Mi-Qew">
+                                                        <rect key="frame" x="32" y="66" width="48" height="48"/>
+                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="settings-icon" id="A8S-4J-pQn"/>
+                                                    </imageView>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="4vx-Kz-K0s" secondAttribute="bottom" constant="35" id="5FI-5G-hSc"/>
+                                                    <constraint firstItem="IwD-Mi-Qew" firstAttribute="leading" secondItem="TcR-Qq-LDZ" secondAttribute="leading" constant="32" id="62l-hG-UHy"/>
                                                     <constraint firstItem="6EM-ac-LEL" firstAttribute="top" secondItem="TcR-Qq-LDZ" secondAttribute="top" constant="30" id="TEe-al-Ufj"/>
                                                     <constraint firstItem="6EM-ac-LEL" firstAttribute="leading" secondItem="TcR-Qq-LDZ" secondAttribute="leading" constant="116" id="eJ8-jE-nF8"/>
+                                                    <constraint firstItem="IwD-Mi-Qew" firstAttribute="centerY" secondItem="TcR-Qq-LDZ" secondAttribute="centerY" id="j1R-Bj-8Ai"/>
                                                     <constraint firstItem="4vx-Kz-K0s" firstAttribute="leading" secondItem="TcR-Qq-LDZ" secondAttribute="leading" constant="115" id="yHf-EB-4Rm"/>
                                                 </constraints>
                                             </view>
@@ -1114,7 +1135,7 @@
                                                         </constraints>
                                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Do you know who to trust? Add or remove sites from your ‘Trusted’ list." id="yQ3-aG-UoO">
                                                             <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
@@ -1124,15 +1145,21 @@
                                                             <constraint firstAttribute="height" constant="26" id="2Ys-6f-FnD"/>
                                                             <constraint firstAttribute="width" constant="114" id="YUH-ey-h3K"/>
                                                         </constraints>
-                                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="trusted-sites-btn" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="0cc-Uf-uAC">
+                                                        <buttonCell key="cell" type="square" title="TRUSTED SITES" bezelStyle="shadowlessSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="0cc-Uf-uAC">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
                                                     </button>
+                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Qt-qi-cLd">
+                                                        <rect key="frame" x="32" y="62" width="46" height="57"/>
+                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="trusted-site-icon" id="xjP-Gq-LV8"/>
+                                                    </imageView>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="8NS-D3-tnM" secondAttribute="bottom" constant="35" id="1SO-hJ-KST"/>
+                                                    <constraint firstItem="5Qt-qi-cLd" firstAttribute="leading" secondItem="6C8-ZL-VKD" secondAttribute="leading" constant="32" id="3kr-Yq-1ar"/>
                                                     <constraint firstItem="8NS-D3-tnM" firstAttribute="leading" secondItem="6C8-ZL-VKD" secondAttribute="leading" constant="115" id="Asa-xe-uM3"/>
+                                                    <constraint firstItem="5Qt-qi-cLd" firstAttribute="centerY" secondItem="6C8-ZL-VKD" secondAttribute="centerY" id="R49-jk-MsK"/>
                                                     <constraint firstItem="h3W-zx-9pa" firstAttribute="top" secondItem="6C8-ZL-VKD" secondAttribute="top" constant="30" id="XUx-Fq-9X5"/>
                                                     <constraint firstItem="h3W-zx-9pa" firstAttribute="leading" secondItem="6C8-ZL-VKD" secondAttribute="leading" constant="116" id="mbD-sU-meR"/>
                                                 </constraints>
@@ -1143,16 +1170,61 @@
                                             </constraints>
                                             <color key="fillColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </box>
+                                        <box hidden="YES" boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Kbf-lj-k3C">
+                                            <rect key="frame" x="0.0" y="536" width="624" height="40"/>
+                                            <view key="contentView" id="glX-Nw-BPJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="624" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zgV-gd-3qc">
+                                                        <rect key="frame" x="13" y="9" width="599" height="21"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please enable the Ghostery Lite extensions in your Safari preferences to begin." id="aCq-yn-W9M">
+                                                            <font key="font" size="12" name="OpenSans-SemiBold"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="PWY-pJ-6rD">
+                                                        <rect key="frame" x="494" y="6" width="110" height="27"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="110" id="1yt-mN-Srb"/>
+                                                            <constraint firstAttribute="height" constant="27" id="EF0-Et-wnd"/>
+                                                        </constraints>
+                                                        <buttonCell key="cell" type="square" title="ENABLE LITE" bezelStyle="shadowlessSquare" image="white-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="J5T-oq-YPL">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="enableGhosteryLite:" target="oCc-SD-ZvT" id="Knp-ni-TR1"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="PWY-pJ-6rD" secondAttribute="trailing" constant="20" id="HPz-qI-YQH"/>
+                                                    <constraint firstItem="PWY-pJ-6rD" firstAttribute="centerY" secondItem="glX-Nw-BPJ" secondAttribute="centerY" id="KS1-Wu-QjG"/>
+                                                    <constraint firstItem="zgV-gd-3qc" firstAttribute="centerY" secondItem="glX-Nw-BPJ" secondAttribute="centerY" id="KYO-E6-KQA"/>
+                                                    <constraint firstItem="zgV-gd-3qc" firstAttribute="leading" secondItem="glX-Nw-BPJ" secondAttribute="leading" constant="15" id="eWN-gq-tRs"/>
+                                                    <constraint firstItem="zgV-gd-3qc" firstAttribute="centerX" secondItem="glX-Nw-BPJ" secondAttribute="centerX" id="kqe-5q-VEc"/>
+                                                </constraints>
+                                            </view>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="Cb5-Bo-ISF"/>
+                                            </constraints>
+                                            <color key="fillColor" red="0.74509803921568629" green="0.28627450980392155" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                                        </box>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="FUM-ps-RLK" firstAttribute="top" secondItem="kjk-tv-uI4" secondAttribute="top" constant="170" id="9FQ-Lf-DcX"/>
                                         <constraint firstItem="yNx-KH-9na" firstAttribute="top" secondItem="zWn-wq-jhK" secondAttribute="top" id="Ma9-8H-cBy"/>
                                         <constraint firstItem="yNx-KH-9na" firstAttribute="leading" secondItem="zWn-wq-jhK" secondAttribute="trailing" constant="20" id="NKQ-qb-VOw"/>
+                                        <constraint firstItem="Kbf-lj-k3C" firstAttribute="top" secondItem="kjk-tv-uI4" secondAttribute="top" id="Pxh-0V-SRn"/>
                                         <constraint firstItem="kXc-rc-jc4" firstAttribute="leading" secondItem="yNx-KH-9na" secondAttribute="leading" id="Qvp-04-unN"/>
                                         <constraint firstItem="kXc-rc-jc4" firstAttribute="top" secondItem="yNx-KH-9na" secondAttribute="bottom" constant="15" id="Rgj-oQ-KDX"/>
+                                        <constraint firstItem="Kbf-lj-k3C" firstAttribute="leading" secondItem="kjk-tv-uI4" secondAttribute="leading" id="VBA-oH-DlH"/>
                                         <constraint firstItem="FUM-ps-RLK" firstAttribute="leading" secondItem="kjk-tv-uI4" secondAttribute="leading" constant="85" id="Wms-4Y-tm0"/>
                                         <constraint firstItem="5El-Pe-hcO" firstAttribute="leading" secondItem="TcR-Qq-LDZ" secondAttribute="leading" id="crU-eO-kTt"/>
                                         <constraint firstItem="zWn-wq-jhK" firstAttribute="top" secondItem="kjk-tv-uI4" secondAttribute="top" constant="30" id="fWa-e9-OTf"/>
+                                        <constraint firstAttribute="trailing" secondItem="Kbf-lj-k3C" secondAttribute="trailing" id="hCd-FE-Jqd"/>
                                         <constraint firstItem="zWn-wq-jhK" firstAttribute="leading" secondItem="kjk-tv-uI4" secondAttribute="leading" constant="75" id="mYl-53-dTL"/>
                                         <constraint firstItem="5El-Pe-hcO" firstAttribute="top" secondItem="TcR-Qq-LDZ" secondAttribute="bottom" constant="15" id="pWg-8a-RHS"/>
                                     </constraints>
@@ -1168,6 +1240,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="SafariExtensionPromptView" destination="Kbf-lj-k3C" id="7Z4-0K-28k"/>
                         <outlet property="editSettingsText" destination="6EM-ac-LEL" id="w8W-du-Dv7"/>
                         <outlet property="trustedSitesText" destination="h3W-zx-9pa" id="xaA-TN-imV"/>
                     </connections>
@@ -1175,6 +1248,92 @@
                 <customObject id="RlB-4e-iCi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-546" y="2741"/>
+        </scene>
+        <!--Safari Extension PromptVC-->
+        <scene sceneID="saO-W0-KYA">
+            <objects>
+                <viewController storyboardIdentifier="SafariExtensionPromptVC" id="hrx-YC-uDS" customClass="SafariExtensionPromptVC" customModule="GhosteryLite" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" appearanceType="aqua" id="6O9-FU-K01">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="576"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box boxType="custom" borderType="line" borderWidth="3" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="BhW-jX-a98">
+                                <rect key="frame" x="200" y="123" width="400" height="380"/>
+                                <view key="contentView" id="ZpT-tQ-VSc">
+                                    <rect key="frame" x="3" y="3" width="394" height="374"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kCL-BX-vpM">
+                                            <rect key="frame" x="168" y="265" width="58" height="64"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-ghostery" id="peg-Tt-S3M"/>
+                                        </imageView>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="k3h-uN-lGQ">
+                                            <rect key="frame" x="50" y="140" width="294" height="90"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="90" id="0bG-GF-qNP"/>
+                                                <constraint firstAttribute="width" constant="290" id="FR0-dK-l5w"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Please enable Ghostery Lite Icon and Ghostery Lite extensions in your Safari preferences to begin." id="wUP-hl-w0Z">
+                                                <font key="font" size="18" name="Roboto-Medium"/>
+                                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <box fixedFrame="YES" boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="e9a-Ha-KR9">
+                                            <rect key="frame" x="7" y="10" width="380" height="88"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <view key="contentView" ambiguous="YES" id="5Zf-ZL-mBB">
+                                                <rect key="frame" x="0.0" y="0.0" width="380" height="88"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sgD-Iq-aAE">
+                                                        <rect key="frame" x="3" y="38" width="375" height="38"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="bevel" title="ENABLE GHOSTERY LITE" bezelStyle="rounded" image="enable-lite-purple-btn" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="8lW-uT-j6i">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="enableGhosteryLite:" target="hrx-YC-uDS" id="J1D-GL-Pot"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vaE-rZ-L3B">
+                                                        <rect key="frame" x="140" y="9" width="100" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="bevel" title="Skip for now" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="sSc-P0-tPb">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                    </button>
+                                                </subviews>
+                                            </view>
+                                            <color key="fillColor" red="0.90588235294117647" green="0.92549019607843142" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                        </box>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="kCL-BX-vpM" firstAttribute="top" secondItem="ZpT-tQ-VSc" secondAttribute="top" constant="45" id="4NH-IJ-9Ln"/>
+                                        <constraint firstItem="kCL-BX-vpM" firstAttribute="centerX" secondItem="ZpT-tQ-VSc" secondAttribute="centerX" id="GGa-ct-EYY"/>
+                                        <constraint firstItem="k3h-uN-lGQ" firstAttribute="centerX" secondItem="ZpT-tQ-VSc" secondAttribute="centerX" id="awv-m5-U49"/>
+                                        <constraint firstItem="k3h-uN-lGQ" firstAttribute="top" secondItem="kCL-BX-vpM" secondAttribute="bottom" constant="35" id="dd7-1G-3r7"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="Ehg-ok-6AD"/>
+                                    <constraint firstAttribute="height" constant="380" id="Lsd-8s-4W3"/>
+                                </constraints>
+                                <color key="borderColor" red="0.57647058819999997" green="0.0039215686269999999" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="fillColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="BhW-jX-a98" firstAttribute="centerX" secondItem="6O9-FU-K01" secondAttribute="centerX" id="RwW-At-KxT"/>
+                            <constraint firstItem="BhW-jX-a98" firstAttribute="centerY" secondItem="6O9-FU-K01" secondAttribute="centerY" constant="-25" id="d0n-0O-aHh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="B1E-xW-HAA" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1165" y="1937"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="OZg-Yt-b5E">
@@ -1259,9 +1418,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="edit-settings-btn" width="150" height="35"/>
+        <image name="enable-lite-purple-btn" width="375" height="38"/>
         <image name="ghosty-heart" width="119" height="107"/>
+        <image name="icon-ghostery" width="58" height="64"/>
         <image name="lite-logo" width="31" height="35"/>
-        <image name="trusted-sites-btn" width="150" height="35"/>
+        <image name="purple-btn-bg" width="150" height="35"/>
+        <image name="settings-icon" width="48" height="48"/>
+        <image name="trusted-site-icon" width="46" height="57"/>
+        <image name="white-btn-bg" width="112" height="28"/>
     </resources>
 </document>

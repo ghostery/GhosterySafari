@@ -11,10 +11,13 @@ import Cocoa
 class MainVC: NSViewController {
     fileprivate var sectionListVC: SectionListVC? = nil
     fileprivate var sectionDetailVC: SectionDetailVC? = nil
-
+    @IBOutlet weak var overlayView: NSBox!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        if Preferences.isAppFirstLaunch() {
+            showSafariExtensionPopOver()
+        }
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
@@ -26,14 +29,21 @@ class MainVC: NSViewController {
             self.sectionListVC?.delegate = self
         }
     }
+    
+    private func showSafariExtensionPopOver() {
+        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        let identifier = NSStoryboard.SceneIdentifier(rawValue: "SafariExtensionPromptVC")
+        if let viewController = storyboard.instantiateController(withIdentifier: identifier) as? NSViewController {
+            overlayView.addSubview(viewController.view)
+            overlayView.isHidden = false
+        }
+    }
 }
-
 
 extension MainVC : SectionListVCDelegate {
     func sectionListVC(_ vc: SectionListVC, didSelectSectionItem item: MenuItem) {
         sectionDetailVC?.switchToViewController(withStoryboardId: item.storyboardId)
     }
-
 }
 
 extension MainVC : SectionDetailVCDelegate {

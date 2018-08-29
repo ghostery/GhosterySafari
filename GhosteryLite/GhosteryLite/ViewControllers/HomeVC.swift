@@ -12,11 +12,22 @@ class HomeVC: NSViewController {
 
     @IBOutlet weak var editSettingsText: NSTextField!
     @IBOutlet weak var trustedSitesText: NSTextField!
+    @IBOutlet weak var SafariExtensionPromptView: NSBox!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         initComponent()
+        
+        
+    }
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        self.SafariExtensionPromptView.isHidden = Preferences.isSafariExtensionEnabled()
+    }
+    
+    @IBAction func enableGhosteryLite(_ sender: NSButton) {
+        print("enableGhosteryLite")
     }
     
     private func initComponent() {
@@ -48,4 +59,5 @@ class HomeVC: NSViewController {
         let attrString:NSMutableAttributedString = NSMutableAttributedString.init(string: text, attributes: attribs)
         return attrString
     }
+    
 }

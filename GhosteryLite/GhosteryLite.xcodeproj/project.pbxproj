@@ -17,6 +17,9 @@
 		1E597C422134407F0098631F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C412134407F0098631F /* HomeVC.swift */; };
 		1E597C4421344ACC0098631F /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4321344ACC0098631F /* MenuItem.swift */; };
 		1E597C4621354D830098631F /* NSColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4521354D820098631F /* NSColorExtension.swift */; };
+		1E597C4821354DE60098631F /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4721354DE60098631F /* Preferences.swift */; };
+		1E597C4A2135682B0098631F /* SafariExtensionPromptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C492135682B0098631F /* SafariExtensionPromptVC.swift */; };
+		1E597C5321359D000098631F /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C5221359D000098631F /* HUDView.swift */; };
 		3E9973FC6C3C5AE1182E8E7B /* Pods_ContentBlocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1C37253CAD1E7BF0CB1212 /* Pods_ContentBlocker.framework */; };
 		4F3049212118982600BA3961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049202118982600BA3961 /* AppDelegate.swift */; };
 		4F3049232118982600BA3961 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049222118982600BA3961 /* ViewController.swift */; };
@@ -128,6 +131,9 @@
 		1E597C412134407F0098631F /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		1E597C4321344ACC0098631F /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		1E597C4521354D820098631F /* NSColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSColorExtension.swift; sourceTree = "<group>"; };
+		1E597C4721354DE60098631F /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		1E597C492135682B0098631F /* SafariExtensionPromptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionPromptVC.swift; sourceTree = "<group>"; };
+		1E597C5221359D000098631F /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
 		20D8DDE934AC7DA8B920E530 /* Pods-ContentBlocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.debug.xcconfig"; sourceTree = "<group>"; };
 		2B1C37253CAD1E7BF0CB1212 /* Pods_ContentBlocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContentBlocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F30491D2118982600BA3961 /* GhosteryLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhosteryLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,6 +228,7 @@
 				1E597C2A2133F7FC0098631F /* SectionListVC.swift */,
 				1E597C2C2133F8170098631F /* SectionDetailVC.swift */,
 				1E597C412134407F0098631F /* HomeVC.swift */,
+				1E597C492135682B0098631F /* SafariExtensionPromptVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -231,6 +238,7 @@
 			children = (
 				1E597C3421340D180098631F /* SectionItemCollectionViewItem.swift */,
 				1E597C3521340D180098631F /* SectionItemCollectionViewItem.xib */,
+				1E597C5221359D000098631F /* HUDView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -402,6 +410,7 @@
 			children = (
 				1E597C4321344ACC0098631F /* MenuItem.swift */,
 				4F931A242126C8C900AF4226 /* Constants.swift */,
+				1E597C4721354DE60098631F /* Preferences.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -668,6 +677,7 @@
 				1E597C4621354D830098631F /* NSColorExtension.swift in Sources */,
 				4FFD8349212B5D430038149F /* GlobalConfigRepository.swift in Sources */,
 				1E597C422134407F0098631F /* HomeVC.swift in Sources */,
+				1E597C5321359D000098631F /* HUDView.swift in Sources */,
 				4F3049B4211C6D3200BA3961 /* AntiTrackingManager.swift in Sources */,
 				4F30499D2119F46700BA3961 /* TrackerListHosts.swift in Sources */,
 				4F3049992119F46700BA3961 /* TrackerListApp.swift in Sources */,
@@ -680,8 +690,10 @@
 				4F3049212118982600BA3961 /* AppDelegate.swift in Sources */,
 				1E597C2B2133F7FC0098631F /* SectionListVC.swift in Sources */,
 				4FFD8314212B36BC0038149F /* FileManagerExtension.swift in Sources */,
+				1E597C4821354DE60098631F /* Preferences.swift in Sources */,
 				4F30499E2119F46700BA3961 /* TrackerListHostPaths.swift in Sources */,
 				4F931A172125AD6500AF4226 /* RealmRepository.swift in Sources */,
+				1E597C4A2135682B0098631F /* SafariExtensionPromptVC.swift in Sources */,
 				1E597C292133F7C70098631F /* MainVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
