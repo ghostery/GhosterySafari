@@ -1452,28 +1452,125 @@
             </objects>
             <point key="canvasLocation" x="974" y="2741"/>
         </scene>
-        <!--View Controller-->
+        <!--HelpVC-->
         <scene sceneID="FT9-km-BrL">
             <objects>
-                <viewController storyboardIdentifier="HelpVC" id="O7l-gC-ZX6" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HelpVC" id="O7l-gC-ZX6" customClass="HelpVC" customModule="GhosteryLite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="9uA-SM-6nW">
                         <rect key="frame" x="0.0" y="0.0" width="624" height="576"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cPH-Tg-X2z">
-                                <rect key="frame" x="296" y="280" width="32" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Help" id="OIg-OH-ugF">
-                                    <font key="font" metaFont="system"/>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Olq-2d-bAe">
+                                <rect key="frame" x="55" y="437" width="120" height="107"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ghosty-heart-help" id="vvX-kQ-bSN"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="d01-sf-A44">
+                                <rect key="frame" x="185" y="444" width="364" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="360" id="hoF-nm-dB4"/>
+                                    <constraint firstAttribute="height" constant="100" id="ztQ-Dz-c7I"/>
+                                </constraints>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="9tv-f8-fCZ">
+                                    <font key="font" size="16" name="Roboto-Regular"/>
+                                    <string key="title">If you have encountered an issue, want to know more about Ghostery Lite and our other products or would like to get in touch, please follow the appropriate link below.</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="GGf-yh-WDN">
+                                <rect key="frame" x="55" y="363" width="250" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="0fV-Wg-X4X"/>
+                                    <constraint firstAttribute="height" constant="25" id="DnG-ON-sqt"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" title="Ghostery Support" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="BgZ-xj-F2J">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="16" name="Roboto-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="HelpLinkClicked:" target="O7l-gC-ZX6" id="feX-um-ahG"/>
+                                </connections>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="J30-pG-oZv">
+                                <rect key="frame" x="55" y="322" width="250" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="FW5-72-QHV"/>
+                                    <constraint firstAttribute="height" constant="25" id="mRe-RN-MsL"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" title="Ghostery Products" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="IW3-BT-Kt8">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="16" name="Roboto-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="HelpLinkClicked:" target="O7l-gC-ZX6" id="iVu-66-2Js"/>
+                                </connections>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="Z2x-ej-mQ8">
+                                <rect key="frame" x="55" y="281" width="250" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="47t-xs-M1I"/>
+                                    <constraint firstAttribute="width" constant="250" id="dFO-nV-j4K"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" title="Ghostery Blog" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="MdL-PO-b4U">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="16" name="Roboto-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="HelpLinkClicked:" target="O7l-gC-ZX6" id="3NA-2u-hsL"/>
+                                </connections>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="D5B-eQ-LSy">
+                                <rect key="frame" x="55" y="240" width="250" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="OvX-Lt-hK2"/>
+                                    <constraint firstAttribute="width" constant="250" id="TOk-P5-d8b"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" title="Ghostery FAQs" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="c4M-2c-co9">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="16" name="Roboto-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="HelpLinkClicked:" target="O7l-gC-ZX6" id="hiu-S4-hLk"/>
+                                </connections>
+                            </button>
+                            <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-3n-ed0">
+                                <rect key="frame" x="27" y="404" width="570" height="2"/>
+                                <view key="contentView" id="b3C-0y-Cve">
+                                    <rect key="frame" x="0.0" y="0.0" width="570" height="2"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="570" id="baS-66-Yng"/>
+                                    <constraint firstAttribute="height" constant="2" id="tWz-cn-qya"/>
+                                </constraints>
+                                <color key="borderColor" red="0.79607843137254897" green="0.83137254901960778" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="fillColor" red="0.79607843140000001" green="0.83137254900000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </box>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="cPH-Tg-X2z" firstAttribute="centerX" secondItem="9uA-SM-6nW" secondAttribute="centerX" id="EPU-sS-nd9"/>
-                            <constraint firstItem="cPH-Tg-X2z" firstAttribute="centerY" secondItem="9uA-SM-6nW" secondAttribute="centerY" id="IEf-81-O89"/>
+                            <constraint firstItem="GGf-yh-WDN" firstAttribute="leading" secondItem="Olq-2d-bAe" secondAttribute="leading" id="0vM-GL-OHV"/>
+                            <constraint firstItem="d01-sf-A44" firstAttribute="leading" secondItem="Olq-2d-bAe" secondAttribute="trailing" constant="12" id="3yR-x0-Bmd"/>
+                            <constraint firstItem="d01-sf-A44" firstAttribute="top" secondItem="Olq-2d-bAe" secondAttribute="top" id="5CM-7E-s5b"/>
+                            <constraint firstItem="Z2x-ej-mQ8" firstAttribute="leading" secondItem="J30-pG-oZv" secondAttribute="leading" id="8VE-5F-ZGN"/>
+                            <constraint firstItem="GGf-yh-WDN" firstAttribute="top" secondItem="b3C-0y-Cve" secondAttribute="bottom" constant="16" id="9Ia-2b-sXC"/>
+                            <constraint firstItem="Olq-2d-bAe" firstAttribute="top" secondItem="9uA-SM-6nW" secondAttribute="top" constant="32" id="Egp-gX-Mb8"/>
+                            <constraint firstItem="Olq-2d-bAe" firstAttribute="leading" secondItem="9uA-SM-6nW" secondAttribute="leading" constant="55" id="SwS-A3-ELp"/>
+                            <constraint firstItem="D5B-eQ-LSy" firstAttribute="top" secondItem="Z2x-ej-mQ8" secondAttribute="bottom" constant="16" id="XMX-eS-Mff"/>
+                            <constraint firstItem="J30-pG-oZv" firstAttribute="top" secondItem="GGf-yh-WDN" secondAttribute="bottom" constant="16" id="bre-oh-v1K"/>
+                            <constraint firstItem="D5B-eQ-LSy" firstAttribute="leading" secondItem="Z2x-ej-mQ8" secondAttribute="leading" id="rMz-8h-NBb"/>
+                            <constraint firstItem="ClR-3n-ed0" firstAttribute="top" secondItem="d01-sf-A44" secondAttribute="bottom" constant="38" id="umm-71-REr"/>
+                            <constraint firstItem="ClR-3n-ed0" firstAttribute="centerX" secondItem="9uA-SM-6nW" secondAttribute="centerX" id="vd1-ea-5o4"/>
+                            <constraint firstItem="J30-pG-oZv" firstAttribute="leading" secondItem="GGf-yh-WDN" secondAttribute="leading" id="vda-sf-ptW"/>
+                            <constraint firstItem="Z2x-ej-mQ8" firstAttribute="top" secondItem="J30-pG-oZv" secondAttribute="bottom" constant="16" id="zM1-eh-ldP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blogBtn" destination="Z2x-ej-mQ8" id="haR-cv-gVP"/>
+                        <outlet property="faqBtn" destination="D5B-eQ-LSy" id="jQL-hV-NmO"/>
+                        <outlet property="helpText" destination="d01-sf-A44" id="sGo-hz-lJo"/>
+                        <outlet property="productsBtn" destination="J30-pG-oZv" id="K1Q-fB-OlC"/>
+                        <outlet property="supportBtn" destination="GGf-yh-WDN" id="HnO-cE-DTx"/>
+                    </connections>
                 </viewController>
                 <customObject id="Hbf-ub-WCF" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1482,6 +1579,7 @@
     </scenes>
     <resources>
         <image name="ghosty-heart" width="119" height="107"/>
+        <image name="ghosty-heart-help" width="120" height="107"/>
         <image name="icon-ghostery" width="58" height="64"/>
         <image name="lite-logo" width="31" height="35"/>
         <image name="purple-btn-bg" width="150" height="35"/>

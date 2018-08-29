@@ -57,7 +57,7 @@ class HomeVC: NSViewController {
                                                                                                     fontSize: 14.0,
                                                                                                     fontColor: 0x930194)
         
-        enableGhosteryLiteBtn.attributedTitle = Strings.HomePanelEnableGhosteryLiteButtonText.attributedString(withTextAlignment: .center,
+        enableGhosteryLiteBtn.attributedTitle = Strings.HomePanelEnableGhosteryLiteButtonTitle.attributedString(withTextAlignment: .center,
                                                                                                                fontName: "Roboto-Regular",
                                                                                                                fontSize: 14.0,
                                                                                                                fontColor: 0x4a4a4a)

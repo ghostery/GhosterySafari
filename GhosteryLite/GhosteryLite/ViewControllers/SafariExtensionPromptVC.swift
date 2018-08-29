@@ -30,15 +30,17 @@ class SafariExtensionPromptVC: NSViewController {
     private func initComponents() {
         enableGhosteryLiteText.stringValue = Strings.SafariExtensionPromptText
         
-        enableGhosteryLiteBtn.attributedTitle = Strings.SafariExtensionPromptEnableGhosteryLiteButtonText.attributedString(withTextAlignment: .center,
+        enableGhosteryLiteBtn.attributedTitle = Strings.SafariExtensionPromptEnableGhosteryLiteButtonTitle.attributedString(withTextAlignment: .center,
                                                                                                                            fontName: "Roboto-Medium",
                                                                                                                            fontSize: 14.0,
-                                                                                                                           fontColor: 0xffffff)
+                                                                                                                           fontColor: 0xffffff,
+                                                                                                                           isUnderline: true)
         
-        skipButton.attributedTitle = Strings.SafariExtensionPromptSkipButtonText.attributedString(withTextAlignment: .center,
+        skipButton.attributedTitle = Strings.SafariExtensionPromptSkipButtonTitle.attributedString(withTextAlignment: .center,
                                                                                                   fontName: "Roboto-Regular",
                                                                                                   fontSize: 14.0,
-                                                                                                  fontColor: 0x4a4a4a)
+                                                                                                  fontColor: 0x4a4a4a,
+                                                                                                  isUnderline: true)
         
     }
 }

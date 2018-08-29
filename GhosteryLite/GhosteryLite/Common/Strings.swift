@@ -25,14 +25,23 @@ public struct Strings {
     public static let HomePanelTrustedSitesDescription = NSLocalizedString("Add or remove sites from your ‘Trusted’ list.", comment: "[Home panel] Trusted sites text")
     public static let HomePanelTrustedSitesButtonTitle = NSLocalizedString("TRUSTED SITES", comment: "[Home panel] Trusted sites button title")
     public static let HomePanelEnableGhosteryLitePromptText = NSLocalizedString("Please enable the Ghostery Lite extensions in your Safari preferences to begin.", comment: "[Home panel] Enable Ghostery Lite prompt text")
-    public static let HomePanelEnableGhosteryLiteButtonText = NSLocalizedString("ENABLE LITE", comment: "[Home panel] Enable Ghostery Lite button title")
+    public static let HomePanelEnableGhosteryLiteButtonTitle = NSLocalizedString("ENABLE LITE", comment: "[Home panel] Enable Ghostery Lite button title")
     
     
     
     //MARK:- Safari Extension Prompt
     public static let SafariExtensionPromptText = NSLocalizedString("Please enable Ghostery Lite Icon and Ghostery Lite extensions in your Safari preferences to begin.", comment: "[Safari Extension Prompt] text")
-    public static let SafariExtensionPromptEnableGhosteryLiteButtonText = NSLocalizedString("ENABLE GHOSTERY LITE", comment: "[Safari Extension Prompt]] Enable Ghostery Lite button title")
-    public static let SafariExtensionPromptSkipButtonText = NSLocalizedString("Skip for now", comment: "[Safari Extension Prompt] skip for now button title")
+    public static let SafariExtensionPromptEnableGhosteryLiteButtonTitle = NSLocalizedString("ENABLE GHOSTERY LITE", comment: "[Safari Extension Prompt]] Enable Ghostery Lite button title")
+    public static let SafariExtensionPromptSkipButtonTitle = NSLocalizedString("Skip for now", comment: "[Safari Extension Prompt] skip for now button title")
+
+    
+    //MARK:- Help Panel
+    public static let HelpPanelText = NSLocalizedString("If you have encountered an issue, want to know more about Ghostery Lite and our other products or would like to get in touch, please follow the appropriate link below.", comment: "[Help Panel] Help text")
+    public static let HelpPanelSupportButtonTitle = NSLocalizedString("Ghostery Support", comment: "[Help Panel] Ghostery Support button title")
+    public static let HelpPanelProductsButtonTitle = NSLocalizedString("Ghostery Products", comment: "[Help Panel] Ghostery Products button title")
+    public static let HelpPanelBlogButtonTitle = NSLocalizedString("Ghostery Blog", comment: "[Help Panel] Ghostery Blog button title")
+    public static let HelpPanelFaqsButtonTitle = NSLocalizedString("Ghostery FAQs", comment: "[Help Panel] Ghostery FAQs button title")
+
 
     
 }

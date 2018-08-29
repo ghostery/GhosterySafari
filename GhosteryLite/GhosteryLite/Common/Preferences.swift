@@ -13,6 +13,7 @@ class Preferences: NSObject {
     class func isAppFirstLaunch() -> Bool {
         return true
     }
+    
     class func isSafariExtensionEnabled() -> Bool {
         return false
     }
