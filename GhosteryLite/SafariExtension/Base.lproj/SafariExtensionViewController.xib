@@ -7,6 +7,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="SafariExtensionViewController" customModule="SafariExtension" customModuleProvider="target">
             <connections>
+                <outlet property="customConfigRadio" destination="Lda-Cg-OvN" id="ttz-2b-rRC"/>
+                <outlet property="defaultConfigRadio" destination="22k-0R-t4P" id="85a-Uz-clD"/>
                 <outlet property="pageLatencyImage" destination="l9i-jf-Gns" id="JqZ-0v-SAI"/>
                 <outlet property="pageLatencyLabel" destination="rAf-uz-UtS" id="KTZ-7J-x37"/>
                 <outlet property="urlLabel" destination="b7q-eW-rBI" id="f5s-4p-C9V"/>
@@ -64,6 +66,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" size="13" name="HelveticaNeue"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="defaultConfigPressedWithSender:" target="-2" id="fWp-cl-8J9"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lda-Cg-OvN">
                     <rect key="frame" x="9" y="219" width="173" height="18"/>
@@ -74,6 +79,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="customConfigPressedWithSender:" target="-2" id="u76-d0-Okw"/>
+                    </connections>
                 </button>
                 <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="xYa-rf-lU4">
                     <rect key="frame" x="5" y="203" width="190" height="5"/>

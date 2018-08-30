@@ -16,6 +16,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBOutlet var pageLatencyLabel: NSTextField!
 	@IBOutlet var pageLatencyImage: NSImageView!
 
+	@IBOutlet var defaultConfigRadio: NSButton!
+	@IBOutlet var customConfigRadio: NSButton!
+
 	var currentDomain: String? {
 		didSet {
 			urlLabel?.stringValue = currentDomain ?? ""
@@ -58,10 +61,24 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		openSettings()
 	}
 
+	@IBAction func defaultConfigPressed(sender: NSButton) {
+		if sender.state.rawValue == 1 {
+			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
+		} else {
+			self.customConfigRadio.state = NSControl.StateValue(rawValue: 1)
+		}
+	}
+
+	@IBAction func customConfigPressed(sender: NSButton) {
+		if sender.state.rawValue == 1 {
+			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 0)
+		} else {
+			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
+		}
+	}
+
 	func updatePageLatency(_ url: String, _ latency: String) {
 		self.currentUrl = url
-//		pageLatencyLabel?.stringValue = latency
-//		pageLatencyImage?.image = NSImage(byReferencingFile: PageLatencyDataSource.shared.latencyImageName(url))
 	}
 
 	private func openSettings() {

@@ -16,11 +16,20 @@ class GlobalConfigDataSource {
 		return GlobalConfigRepository.shared.globalConfig()
     }
 
-	func createConfigIfDoesNotExist() {
+	func switchConfigType(_ type: ConfigurationType) {
+		if let _ = self.getCurrentConfig() {
+			GlobalConfigRepository.shared.updateConfigType(type)
+		} else if type == .custom {
+			let _ = GlobalConfigRepository.shared.save(GlobalConfigObject(type: .custom))
+		}
+	}
+
+	// Temp method
+	func createConfigIfDoesNotExist(type: ConfigurationType = .byDefault) {
 		if let _ = self.getCurrentConfig() {
 			return
 		}
-		let _ = GlobalConfigRepository.shared.save(GlobalConfigObject(type: .byDefault))
+		let _ = GlobalConfigRepository.shared.save(GlobalConfigObject(type: type))
 	}
 
 	func isCategoryBlocked(_ categoryType: CategoryType) -> Bool {
@@ -35,4 +44,10 @@ class GlobalConfigDataSource {
 		return false
 	}
 
+	func isDefault() -> Bool {
+		if let c = self.getCurrentConfig() {
+			return c.configType.value == ConfigurationType.custom.rawValue
+		}
+		return true
+	}
 }
