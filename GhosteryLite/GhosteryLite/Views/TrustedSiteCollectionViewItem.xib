@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="TrustedSiteCollectionViewItem" customModule="GhosteryLite" customModuleProvider="target">
+            <connections>
+                <outlet property="siteLbl" destination="81H-G3-pLe" id="awc-lA-nu6"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="570" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="81H-G3-pLe">
+                    <rect key="frame" x="18" y="5" width="454" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="450" id="ceJ-hV-9Fp"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="label" id="ar2-8M-mTn">
+                        <font key="font" size="14" name="Roboto-Regular"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="hOl-t2-mBa">
+                    <rect key="frame" x="520" y="0.0" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="64y-ua-cGO"/>
+                        <constraint firstAttribute="width" constant="30" id="Kxy-uO-67o"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="delete-site-btn" imagePosition="only" alignment="center" inset="2" id="vw2-uJ-wkG">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="hOl-t2-mBa" secondAttribute="trailing" constant="20" id="1Kk-Rs-fvQ"/>
+                <constraint firstItem="81H-G3-pLe" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="78c-9V-Wp7"/>
+                <constraint firstItem="hOl-t2-mBa" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="rNl-4s-hNZ"/>
+                <constraint firstItem="81H-G3-pLe" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="rjh-b1-tKx"/>
+            </constraints>
+        </customView>
+        <collectionViewItem id="t92-yR-sHD" customClass="TrustedSiteCollectionViewItem" customModule="GhosteryLite" customModuleProvider="target">
+            <connections>
+                <outlet property="siteLbl" destination="81H-G3-pLe" id="LYq-Gx-US2"/>
+            </connections>
+        </collectionViewItem>
+    </objects>
+    <resources>
+        <image name="delete-site-btn" width="9" height="9"/>
+    </resources>
+</document>

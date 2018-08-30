@@ -28,5 +28,13 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>BebasNeue Book.ttf</string>
+		<string>RobotoCondensed-Bold.ttf</string>
+		<string>Roboto-Regular.ttf</string>
+		<string>Roboto-Medium.ttf</string>
+		<string>OpenSans-SemiBold.ttf</string>
+	</array>
 </dict>
 </plist>
