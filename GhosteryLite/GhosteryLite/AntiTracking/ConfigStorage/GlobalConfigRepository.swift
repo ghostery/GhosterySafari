@@ -73,4 +73,17 @@ class GlobalConfigRepository: RealmRepository<GlobalConfigObject, String> {
 			}
 		}
 	}
+
+	public func updateConfigType(_ type: ConfigurationType) {
+		if let c = self.globalConfig() {
+			let realm = try! Realm()
+			do {
+				try realm.write {
+					c.configType.value = type.rawValue
+				}
+			} catch let e as NSError {
+				print("Error on update -- \(e)")
+			}
+		}
+	}
 }

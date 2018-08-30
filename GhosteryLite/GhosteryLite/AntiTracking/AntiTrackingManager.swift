@@ -39,6 +39,14 @@ class AntiTrackingManager {
 		reloadContentBlocker()
 	}
 
+	func switchToDefault() {
+		
+	}
+
+	func switchToCustom() {
+		
+	}
+
 	func reloadContentBlocker() {
 		if self.isPaused {
 			loadDummyCB()
