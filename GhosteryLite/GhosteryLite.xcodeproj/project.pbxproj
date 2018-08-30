@@ -39,6 +39,7 @@
 		4F3049B4211C6D3200BA3961 /* AntiTrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* AntiTrackingManager.swift */; };
 		4F3049B5211C71CB00BA3961 /* AntiTrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* AntiTrackingManager.swift */; };
 		4F3049B6211C721D00BA3961 /* BlockListFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */; };
+		4F91F3222136DF0600056FDE /* PageLatencyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F91F3212136DF0600056FDE /* PageLatencyDataSource.swift */; };
 		4F931A1521259BEC00AF4226 /* DomainConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A1421259BEC00AF4226 /* DomainConfigRepository.swift */; };
 		4F931A172125AD6500AF4226 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A162125AD6500AF4226 /* RealmRepository.swift */; };
 		4F931A192125ADD500AF4226 /* CrudRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A182125ADD500AF4226 /* CrudRepository.swift */; };
@@ -64,9 +65,6 @@
 		4FFD8338212B4FF90038149F /* BlockListAssets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD8337212B4FF90038149F /* BlockListAssets */; };
 		4FFD8339212B4FF90038149F /* BlockListAssets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD8337212B4FF90038149F /* BlockListAssets */; };
 		4FFD833A212B4FF90038149F /* BlockListAssets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD8337212B4FF90038149F /* BlockListAssets */; };
-		4FFD8345212B53F40038149F /* safariContentBlocker.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD8344212B53F40038149F /* safariContentBlocker.json */; };
-		4FFD8346212B53F40038149F /* safariContentBlocker.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD8344212B53F40038149F /* safariContentBlocker.json */; };
-		4FFD8347212B53F40038149F /* safariContentBlocker.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD8344212B53F40038149F /* safariContentBlocker.json */; };
 		4FFD8349212B5D430038149F /* GlobalConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */; };
 		4FFD834A212B5D430038149F /* GlobalConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */; };
 		4FFD834B212B5D430038149F /* GlobalConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */; };
@@ -148,6 +146,7 @@
 		4F3049A32119F4FC00BA3961 /* URLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListFileManager.swift; sourceTree = "<group>"; };
 		4F3049B3211C6D3200BA3961 /* AntiTrackingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiTrackingManager.swift; sourceTree = "<group>"; };
+		4F91F3212136DF0600056FDE /* PageLatencyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageLatencyDataSource.swift; sourceTree = "<group>"; };
 		4F931A1421259BEC00AF4226 /* DomainConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConfigRepository.swift; sourceTree = "<group>"; };
 		4F931A162125AD6500AF4226 /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
 		4F931A182125ADD500AF4226 /* CrudRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudRepository.swift; sourceTree = "<group>"; };
@@ -156,7 +155,6 @@
 		4FCEAA22212E0CCE00AACE42 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4FFD8313212B36BC0038149F /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 		4FFD8337212B4FF90038149F /* BlockListAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlockListAssets; sourceTree = "<group>"; };
-		4FFD8344212B53F40038149F /* safariContentBlocker.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = safariContentBlocker.json; path = BlockListAssets/safariContentBlocker.json; sourceTree = "<group>"; };
 		4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigRepository.swift; sourceTree = "<group>"; };
 		4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigDataSource.swift; sourceTree = "<group>"; };
 		4FFD8350212C6C740038149F /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
@@ -273,6 +271,7 @@
 				0D99D75B212EFC44005D107D /* page_performance.js */,
 				4F3049452118983D00BA3961 /* SafariExtension.entitlements */,
 				4FCEAA22212E0CCE00AACE42 /* Images.xcassets */,
+				4F91F3212136DF0600056FDE /* PageLatencyDataSource.swift */,
 			);
 			path = SafariExtension;
 			sourceTree = "<group>";
@@ -360,7 +359,6 @@
 			isa = PBXGroup;
 			children = (
 				4FFD8337212B4FF90038149F /* BlockListAssets */,
-				4FFD8344212B53F40038149F /* safariContentBlocker.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -490,7 +488,6 @@
 				4FFD8338212B4FF90038149F /* BlockListAssets in Resources */,
 				4F3049252118982700BA3961 /* Assets.xcassets in Resources */,
 				4F3049282118982700BA3961 /* Main.storyboard in Resources */,
-				4FFD8345212B53F40038149F /* safariContentBlocker.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,7 +496,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D99D75C212EFC44005D107D /* page_performance.js in Resources */,
-				4FFD8346212B53F40038149F /* safariContentBlocker.json in Resources */,
 				4F3049442118983D00BA3961 /* ToolbarItemIcon.pdf in Resources */,
 				4FFD8339212B4FF90038149F /* BlockListAssets in Resources */,
 				4FCEAA23212E0CCE00AACE42 /* Images.xcassets in Resources */,
@@ -511,7 +507,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FFD8347212B53F40038149F /* safariContentBlocker.json in Resources */,
 				4F3049552118985C00BA3961 /* blockerList.json in Resources */,
 				4FFD833A212B4FF90038149F /* BlockListAssets in Resources */,
 			);
@@ -639,6 +634,7 @@
 				4F30493C2118983D00BA3961 /* SafariExtensionViewController.swift in Sources */,
 				4F30493A2118983D00BA3961 /* SafariExtensionHandler.swift in Sources */,
 				4F931A1E2125D3F500AF4226 /* AntiTrackingManager.swift in Sources */,
+				4F91F3222136DF0600056FDE /* PageLatencyDataSource.swift in Sources */,
 				4F931A1F2125D45400AF4226 /* DomainConfigRepository.swift in Sources */,
 				4F931A222126C23800AF4226 /* CrudRepository.swift in Sources */,
 				4FFD834A212B5D430038149F /* GlobalConfigRepository.swift in Sources */,
@@ -827,7 +823,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = HPY23A294X;
+				DEVELOPMENT_TEAM = 2UYYSSHVUH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
@@ -855,7 +851,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = HPY23A294X;
+				DEVELOPMENT_TEAM = 2UYYSSHVUH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
@@ -880,7 +876,7 @@
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HPY23A294X;
+				DEVELOPMENT_TEAM = 2UYYSSHVUH;
 				INFOPLIST_FILE = SafariExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -902,7 +898,7 @@
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HPY23A294X;
+				DEVELOPMENT_TEAM = 2UYYSSHVUH;
 				INFOPLIST_FILE = SafariExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -924,7 +920,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HPY23A294X;
+				DEVELOPMENT_TEAM = 2UYYSSHVUH;
 				INFOPLIST_FILE = ContentBlocker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -946,7 +942,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HPY23A294X;
+				DEVELOPMENT_TEAM = 2UYYSSHVUH;
 				INFOPLIST_FILE = ContentBlocker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

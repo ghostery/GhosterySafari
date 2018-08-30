@@ -12,9 +12,22 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 
     override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
         // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
+		/*
         page.getPropertiesWithCompletionHandler { properties in
             NSLog("The extension received a message (\(messageName)) from a script injected into (\(String(describing: properties?.url))) with userInfo (\(userInfo ?? [:]))")
         }
+*/
+		if messageName == "recordPageInfo" {
+			page.getPropertiesWithCompletionHandler { (properties) in
+				if let ui = userInfo,
+					let latency = ui["latency"] as? String,
+					let url = ui["domain"] as? String,
+					url == (properties?.url?.absoluteString ?? "") {
+					PageLatencyDataSource.shared.pageLoaded(url: url, latency: latency)
+					SafariExtensionViewController.shared.updatePageLatency(url, latency)
+				}
+			}
+		}
     }
 
     override func toolbarItemClicked(in window: SFSafariWindow) {
@@ -50,7 +63,8 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 		window.getActiveTab { (tab) in
 			tab?.getActivePage(completionHandler: { (activePage) in
 				activePage?.getPropertiesWithCompletionHandler({ (properties) in
-					SafariExtensionViewController.shared.currentUrl = properties?.url?.normalizedHost
+					SafariExtensionViewController.shared.currentUrl = properties?.url?.absoluteString ?? ""
+					SafariExtensionViewController.shared.currentDomain = properties?.url?.normalizedHost ?? ""
 				})
 			})
 		}
