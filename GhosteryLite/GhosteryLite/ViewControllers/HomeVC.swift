@@ -20,6 +20,9 @@ class HomeVC: NSViewController {
     @IBOutlet weak var enableGhosteryLitePromptText: NSTextField!
     @IBOutlet weak var enableGhosteryLiteBtn: NSButton!
     
+    
+    var delegate: SectionDetailVCDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initComponents()
@@ -31,6 +34,14 @@ class HomeVC: NSViewController {
     @IBAction func enableGhosteryLite(_ sender: NSButton) {
         Preferences.enableGhosteryLite()
         self.SafariExtensionPromptView.isHidden = true
+    }
+    
+    @IBAction func editSettingsClicked(_ sender: Any) {
+        self.delegate?.showSettingsPanel()
+    }
+    
+    @IBAction func trustedSitesClicked(_ sender: Any) {
+        self.delegate?.showTrustedSitesPanel()
     }
     
     private func initComponents() {

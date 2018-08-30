@@ -9,7 +9,9 @@
 import Cocoa
 
 protocol SectionDetailVCDelegate {
-
+    
+    func showSettingsPanel()
+    func showTrustedSitesPanel()
 }
 
 class SectionDetailVC: NSViewController {
@@ -40,6 +42,10 @@ class SectionDetailVC: NSViewController {
             let identifier = NSStoryboard.SceneIdentifier(rawValue: storyboardId)
             if let viewController = storyboard.instantiateController(withIdentifier: identifier) as? NSViewController {
                 viewControllers[storyboardId] = viewController
+                
+                if let homeVC = viewController as? HomeVC {
+                    homeVC.delegate = self.delegate
+                }
             }
         }
     }
@@ -52,3 +58,5 @@ class SectionDetailVC: NSViewController {
         }
     }
 }
+
+

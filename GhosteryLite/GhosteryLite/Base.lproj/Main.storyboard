@@ -1117,6 +1117,9 @@
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" size="14" name="RobotoCondensed-Bold"/>
                                                         </buttonCell>
+                                                        <connections>
+                                                            <action selector="editSettingsClicked:" target="oCc-SD-ZvT" id="Ek0-ju-ZmF"/>
+                                                        </connections>
                                                     </button>
                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IwD-Mi-Qew">
                                                         <rect key="frame" x="32" y="66" width="48" height="48"/>
@@ -1166,6 +1169,9 @@
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" size="14" name="RobotoCondensed-Bold"/>
                                                         </buttonCell>
+                                                        <connections>
+                                                            <action selector="trustedSitesClicked:" target="oCc-SD-ZvT" id="kMc-L7-e1N"/>
+                                                        </connections>
                                                     </button>
                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Qt-qi-cLd">
                                                         <rect key="frame" x="32" y="62" width="46" height="57"/>

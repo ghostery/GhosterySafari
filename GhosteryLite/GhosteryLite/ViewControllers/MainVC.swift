@@ -27,7 +27,7 @@ class MainVC: NSViewController {
             self.sectionListVC?.delegate = self
         } else if segue.identifier?.rawValue == "SectionDetailVC" {
             self.sectionDetailVC = segue.destinationController as? SectionDetailVC
-            self.sectionListVC?.delegate = self
+            self.sectionDetailVC?.delegate = self
         } else if segue.identifier?.rawValue == "SafariExtensionPromptVC" {
             self.safariExtensionPromptVC = segue.destinationController as? SafariExtensionPromptVC
             self.safariExtensionPromptVC?.delegate = self
@@ -43,7 +43,15 @@ extension MainVC : SectionListVCDelegate {
 }
 
 extension MainVC : SectionDetailVCDelegate {
+    func showSettingsPanel() {
+        self.sectionListVC?.selectItem(menuItem: .settings)
+//        self.switchToViewController(withStoryboardId: MenuItem.settings.storyboardId)
+    }
     
+    func showTrustedSitesPanel() {
+        self.sectionListVC?.selectItem(menuItem: .trustedSites)
+//        self.switchToViewController(withStoryboardId: MenuItem.trustedSites.storyboardId)
+    }
 }
 
 extension MainVC : SafariExtensionPromptVCDelegate {

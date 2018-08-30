@@ -26,7 +26,15 @@ class SectionListVC: NSViewController {
         })
     }
     
+    func selectItem(menuItem item: MenuItem) {
+        if let itemIndex = items.index(of: item) {
+            selectItem(atIndex: itemIndex)
+        }
+    }
+    
     private func selectItem(atIndex itemIndex: Int) {
+        self.collectionView.deselectItems(at: self.collectionView.selectionIndexPaths)
+        
         let indexPath = IndexPath(item: itemIndex, section: 0)
         let indexPathSet = Set<IndexPath>(arrayLiteral: indexPath)
         self.collectionView.selectItems(at: indexPathSet, scrollPosition: .top)
