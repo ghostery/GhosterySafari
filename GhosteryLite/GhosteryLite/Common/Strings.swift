@@ -44,4 +44,7 @@ public struct Strings {
 
 
     
+    //MARK:- Trusted Sites Panel
+    public static let TrustedSitesPanelText = NSLocalizedString("All the sites that you trust can be seen here. You can also add additional sites to your list using the field below:", comment: "[Trusted Sites Panel] Trusted Sites text")
+    public static let TrustedSitesPanelTrustSiteButtonTitle = NSLocalizedString("TRUST SITE", comment: "[Trusted Sites Panel] Trust site button title")
 }

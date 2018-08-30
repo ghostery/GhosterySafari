@@ -44,7 +44,6 @@ class SectionListVC: NSViewController {
 }
 
 
-
 // MARK:- Collection view data source
 // MARK:-
 extension SectionListVC : NSCollectionViewDataSource {
@@ -68,7 +67,7 @@ extension SectionListVC : NSCollectionViewDataSource {
         
         let item = self.items[indexPath.item]
         sectionItemView.update(item, for: indexPath)
-        return itemView
+        return sectionItemView
     }
 }
 

@@ -1086,8 +1086,8 @@
                                             </textFieldCell>
                                         </textField>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zWn-wq-jhK">
-                                            <rect key="frame" x="75" y="439" width="119" height="107"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ghosty-heart" id="rfl-3p-vbg"/>
+                                            <rect key="frame" x="75" y="440" width="119" height="106"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ghosty-home" id="rfl-3p-vbg"/>
                                         </imageView>
                                         <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="FUM-ps-RLK">
                                             <rect key="frame" x="85" y="226" width="485" height="180"/>
@@ -1305,28 +1305,122 @@
             </objects>
             <point key="canvasLocation" x="184" y="2741"/>
         </scene>
-        <!--View Controller-->
+        <!--Trusted SitesVC-->
         <scene sceneID="vIt-mS-Xhd">
             <objects>
-                <viewController storyboardIdentifier="TrustedSitesVC" id="LTy-Jl-Bl3" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrustedSitesVC" id="LTy-Jl-Bl3" customClass="TrustedSitesVC" customModule="GhosteryLite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="hzg-6t-EUG">
                         <rect key="frame" x="0.0" y="0.0" width="624" height="576"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KFp-f7-xLr">
-                                <rect key="frame" x="270" y="280" width="84" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Trusted Sites" id="yhG-A7-8k8">
-                                    <font key="font" metaFont="system"/>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QCj-UT-lns">
+                                <rect key="frame" x="55" y="438" width="119" height="106"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ghosty-trustedSites" id="xrC-CN-LvJ"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4fF-tz-VdL">
+                                <rect key="frame" x="184" y="469" width="364" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="360" id="7eo-Rs-sJS"/>
+                                    <constraint firstAttribute="height" constant="75" id="Ihq-pi-Nza"/>
+                                </constraints>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="All the sites that you trust can be seen here. You can also add additional sites to your list using the field below:" id="uVO-Aq-Xil">
+                                    <font key="font" size="16" name="Roboto-Regular"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="3q8-lj-Gd7">
+                                <rect key="frame" x="27" y="425" width="570" height="2"/>
+                                <view key="contentView" id="McC-du-hao">
+                                    <rect key="frame" x="0.0" y="0.0" width="570" height="2"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="570" id="Vcu-WQ-kiF"/>
+                                    <constraint firstAttribute="height" constant="2" id="qbE-Sb-nrZ"/>
+                                </constraints>
+                                <color key="borderColor" red="0.79607843140000001" green="0.83137254900000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="fillColor" red="0.79607843140000001" green="0.83137254900000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </box>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LAu-bc-Mwd">
+                                <rect key="frame" x="186" y="439" width="240" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="9tU-Rm-lor"/>
+                                    <constraint firstAttribute="width" constant="240" id="Ng3-oi-Ij1"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="T3b-MI-Yog">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textFieldCell>
+                            </textField>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="qwB-cC-fc2">
+                                <rect key="frame" x="451" y="439" width="112" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="Y1B-D4-RfT"/>
+                                    <constraint firstAttribute="width" constant="112" id="oO6-u7-LV4"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" title="TRUST SITE" bezelStyle="shadowlessSquare" image="trust-site-btn-inactive" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="C26-J2-vrI">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="12" name="Roboto-Medium"/>
+                                </buttonCell>
+                            </button>
+                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swm-qe-0kG">
+                                <rect key="frame" x="27" y="15" width="570" height="400"/>
+                                <clipView key="contentView" drawsBackground="NO" id="iHf-TW-qBy">
+                                    <rect key="frame" x="0.0" y="0.0" width="570" height="400"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView id="ovK-UL-rJ6">
+                                            <rect key="frame" x="0.0" y="0.0" width="570" height="158"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="M1d-oS-GDx">
+                                                <size key="itemSize" width="570" height="30"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="LTy-Jl-Bl3" id="ggP-Dt-giR"/>
+                                                <outlet property="delegate" destination="LTy-Jl-Bl3" id="Rjr-1h-A02"/>
+                                            </connections>
+                                        </collectionView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="72B-Pi-CsD"/>
+                                    <constraint firstAttribute="width" constant="570" id="We2-1D-Wmp"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Lkq-4U-sdJ">
+                                    <rect key="frame" x="1" y="383" width="568" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="r4a-dy-iJd">
+                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="KFp-f7-xLr" firstAttribute="centerY" secondItem="hzg-6t-EUG" secondAttribute="centerY" id="sAV-D3-1JJ"/>
-                            <constraint firstItem="KFp-f7-xLr" firstAttribute="centerX" secondItem="hzg-6t-EUG" secondAttribute="centerX" id="wpp-Ks-x4C"/>
+                            <constraint firstItem="swm-qe-0kG" firstAttribute="top" secondItem="McC-du-hao" secondAttribute="bottom" constant="10" id="J1f-g2-eHs"/>
+                            <constraint firstItem="3q8-lj-Gd7" firstAttribute="top" secondItem="LAu-bc-Mwd" secondAttribute="bottom" constant="12" id="Oek-7M-rDU"/>
+                            <constraint firstItem="3q8-lj-Gd7" firstAttribute="centerX" secondItem="hzg-6t-EUG" secondAttribute="centerX" id="Q39-QD-6TW"/>
+                            <constraint firstItem="4fF-tz-VdL" firstAttribute="top" secondItem="QCj-UT-lns" secondAttribute="top" id="TIs-m2-sVu"/>
+                            <constraint firstItem="QCj-UT-lns" firstAttribute="top" secondItem="hzg-6t-EUG" secondAttribute="top" constant="32" id="UzW-Ue-Qyb"/>
+                            <constraint firstItem="4fF-tz-VdL" firstAttribute="leading" secondItem="QCj-UT-lns" secondAttribute="trailing" constant="12" id="fly-Yr-RjD"/>
+                            <constraint firstItem="swm-qe-0kG" firstAttribute="centerX" secondItem="hzg-6t-EUG" secondAttribute="centerX" id="j9d-sr-998"/>
+                            <constraint firstItem="LAu-bc-Mwd" firstAttribute="leading" secondItem="4fF-tz-VdL" secondAttribute="leading" id="qjD-fs-neQ"/>
+                            <constraint firstItem="qwB-cC-fc2" firstAttribute="leading" secondItem="LAu-bc-Mwd" secondAttribute="trailing" constant="25" id="rgm-uT-zu6"/>
+                            <constraint firstItem="QCj-UT-lns" firstAttribute="leading" secondItem="hzg-6t-EUG" secondAttribute="leading" constant="55" id="vsS-M5-KED"/>
+                            <constraint firstItem="qwB-cC-fc2" firstAttribute="centerY" secondItem="LAu-bc-Mwd" secondAttribute="centerY" id="z2K-Rf-3NP"/>
+                            <constraint firstItem="LAu-bc-Mwd" firstAttribute="top" secondItem="4fF-tz-VdL" secondAttribute="bottom" constant="2" id="z6Z-wj-0bC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="trustSiteBtn" destination="qwB-cC-fc2" id="BK4-e5-xnG"/>
+                        <outlet property="trustedSiteTextField" destination="LAu-bc-Mwd" id="ePE-Jz-ckm"/>
+                        <outlet property="trustedSitesText" destination="4fF-tz-VdL" id="aqi-2k-P5e"/>
+                        <outlet property="trustedStiesCollectionView" destination="ovK-UL-rJ6" id="oRS-KP-WfP"/>
+                    </connections>
                 </viewController>
                 <customObject id="deN-pX-9nH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1342,7 +1436,7 @@
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Olq-2d-bAe">
                                 <rect key="frame" x="55" y="437" width="120" height="107"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ghosty-heart-help" id="vvX-kQ-bSN"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ghosty-help" id="vvX-kQ-bSN"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="d01-sf-A44">
                                 <rect key="frame" x="185" y="444" width="364" height="100"/>
@@ -1471,11 +1565,11 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pJz-QB-tX5">
-                                            <rect key="frame" x="175" y="271" width="58" height="64"/>
+                                            <rect key="frame" x="176" y="272" width="57" height="63"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-ghostery" id="4cN-lD-chj"/>
                                         </imageView>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="h4C-Ui-csD">
-                                            <rect key="frame" x="57" y="146" width="294" height="90"/>
+                                            <rect key="frame" x="57" y="147" width="294" height="90"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="90" id="01j-uh-gKZ"/>
                                                 <constraint firstAttribute="width" constant="290" id="MAf-Xz-iYV"/>
@@ -1599,12 +1693,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ghosty-heart" width="119" height="107"/>
-        <image name="ghosty-heart-help" width="120" height="107"/>
-        <image name="icon-ghostery" width="58" height="64"/>
+        <image name="ghosty-help" width="120" height="107"/>
+        <image name="ghosty-home" width="119" height="106"/>
+        <image name="ghosty-trustedSites" width="119" height="106"/>
+        <image name="icon-ghostery" width="57" height="63"/>
         <image name="lite-logo" width="31" height="35"/>
         <image name="purple-btn-bg" width="150" height="35"/>
         <image name="settings-icon" width="48" height="48"/>
+        <image name="trust-site-btn-inactive" width="112" height="28"/>
         <image name="trusted-site-icon" width="46" height="57"/>
         <image name="white-btn-bg" width="112" height="28"/>
     </resources>

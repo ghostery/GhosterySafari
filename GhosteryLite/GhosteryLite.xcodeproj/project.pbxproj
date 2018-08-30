@@ -11,6 +11,9 @@
 		1E14B73821368CD600E28C38 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73721368CD600E28C38 /* Strings.swift */; };
 		1E14B73D21369F5400E28C38 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73C21369F5400E28C38 /* StringExtension.swift */; };
 		1E14B73F2136BB6F00E28C38 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73E2136BB6F00E28C38 /* HelpVC.swift */; };
+		1E14B754213819A800E28C38 /* TrustedSitesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B752213819A800E28C38 /* TrustedSitesVC.swift */; };
+		1E14B7582138217800E28C38 /* TrustedSiteCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B7562138217800E28C38 /* TrustedSiteCollectionViewItem.swift */; };
+		1E14B7592138217800E28C38 /* TrustedSiteCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E14B7572138217800E28C38 /* TrustedSiteCollectionViewItem.xib */; };
 		1E597C292133F7C70098631F /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C282133F7C70098631F /* MainVC.swift */; };
 		1E597C2B2133F7FC0098631F /* SectionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C2A2133F7FC0098631F /* SectionListVC.swift */; };
 		1E597C2D2133F8170098631F /* SectionDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C2C2133F8170098631F /* SectionDetailVC.swift */; };
@@ -128,6 +131,9 @@
 		1E14B73721368CD600E28C38 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		1E14B73C21369F5400E28C38 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		1E14B73E2136BB6F00E28C38 /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
+		1E14B752213819A800E28C38 /* TrustedSitesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSitesVC.swift; sourceTree = "<group>"; };
+		1E14B7562138217800E28C38 /* TrustedSiteCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSiteCollectionViewItem.swift; sourceTree = "<group>"; };
+		1E14B7572138217800E28C38 /* TrustedSiteCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrustedSiteCollectionViewItem.xib; sourceTree = "<group>"; };
 		1E597C282133F7C70098631F /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		1E597C2A2133F7FC0098631F /* SectionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionListVC.swift; sourceTree = "<group>"; };
 		1E597C2C2133F8170098631F /* SectionDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailVC.swift; sourceTree = "<group>"; };
@@ -236,6 +242,7 @@
 				1E597C412134407F0098631F /* HomeVC.swift */,
 				1E597C492135682B0098631F /* SafariExtensionPromptVC.swift */,
 				1E14B73E2136BB6F00E28C38 /* HelpVC.swift */,
+				1E14B752213819A800E28C38 /* TrustedSitesVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -243,9 +250,11 @@
 		1E597C31213409F90098631F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1E597C5221359D000098631F /* HUDView.swift */,
 				1E597C3421340D180098631F /* SectionItemCollectionViewItem.swift */,
 				1E597C3521340D180098631F /* SectionItemCollectionViewItem.xib */,
-				1E597C5221359D000098631F /* HUDView.swift */,
+				1E14B7562138217800E28C38 /* TrustedSiteCollectionViewItem.swift */,
+				1E14B7572138217800E28C38 /* TrustedSiteCollectionViewItem.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -554,6 +563,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E14B7592138217800E28C38 /* TrustedSiteCollectionViewItem.xib in Resources */,
 				1E597C3721340D180098631F /* SectionItemCollectionViewItem.xib in Resources */,
 				4FFD8338212B4FF90038149F /* BlockListAssets in Resources */,
 				4F3049252118982700BA3961 /* Assets.xcassets in Resources */,
@@ -697,6 +707,7 @@
 				4F3049982119F46700BA3961 /* TrieNode.swift in Sources */,
 				4F30499B2119F46700BA3961 /* TrackerListPath.swift in Sources */,
 				4FFD834D212B602B0038149F /* GlobalConfigDataSource.swift in Sources */,
+				1E14B754213819A800E28C38 /* TrustedSitesVC.swift in Sources */,
 				4F931A252126C8C900AF4226 /* Constants.swift in Sources */,
 				4F3049962119F46700BA3961 /* TrackerListBug.swift in Sources */,
 				4F3049212118982600BA3961 /* AppDelegate.swift in Sources */,
@@ -704,6 +715,7 @@
 				4FFD8314212B36BC0038149F /* FileManagerExtension.swift in Sources */,
 				1E597C4821354DE60098631F /* Preferences.swift in Sources */,
 				4F30499E2119F46700BA3961 /* TrackerListHostPaths.swift in Sources */,
+				1E14B7582138217800E28C38 /* TrustedSiteCollectionViewItem.swift in Sources */,
 				4F931A172125AD6500AF4226 /* RealmRepository.swift in Sources */,
 				1E597C4A2135682B0098631F /* SafariExtensionPromptVC.swift in Sources */,
 				1E597C292133F7C70098631F /* MainVC.swift in Sources */,
