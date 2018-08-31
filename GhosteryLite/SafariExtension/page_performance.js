@@ -15,7 +15,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0
  */
-const PageInfo = (function(window, document) {
+var PageInfo = (function(window, document) {
 	let state = document.readyState;
 	/**
 	 * Calculate page domain and latency
@@ -34,7 +34,7 @@ const PageInfo = (function(window, document) {
 			pageLatency = unfixedLatency.toFixed(2); 
 		}
 
-		console.log('Sending latency from page_performance', pageLatency);
+		console.log('Sending latency from page_performance', pageLatency, host+pathname);
 
 		safari.extension.dispatchMessage('recordPageInfo', {
 			domain: `${protocol}//${host}${pathname}`,
@@ -65,13 +65,13 @@ const PageInfo = (function(window, document) {
 		 */
 		init() {
 			// only load on top-level domains
-			if (window.top !== window.parent) {
+			if (window !== window.parent || window.frameElement) {
 				return;
 			}
+
 			_initialize();
 		}
 	};
 }(window, document));
-
 
 PageInfo.init();
