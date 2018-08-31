@@ -1066,21 +1066,21 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yNx-KH-9na">
-                                            <rect key="frame" x="212" y="511" width="185" height="35"/>
+                                            <rect key="frame" x="212" y="517" width="182" height="29"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="You’ve gone Lite!" id="Z6K-0m-rr9">
-                                                <font key="font" size="24" name="Roboto-Regular"/>
+                                                <font key="font" metaFont="system" size="24"/>
                                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kXc-rc-jc4">
-                                            <rect key="frame" x="212" y="436" width="354" height="60"/>
+                                            <rect key="frame" x="212" y="442" width="354" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="350" id="M7N-Xu-k0z"/>
                                                 <constraint firstAttribute="height" constant="60" id="P46-fW-cYT"/>
                                             </constraints>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Thanks for installing Ghostery Lite. You are now protected with our tailored default settings!" id="wYg-RX-1lu">
-                                                <font key="font" size="16" name="Roboto-Regular"/>
+                                                <font key="font" metaFont="system" size="16"/>
                                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -1115,7 +1115,7 @@
                                                         </constraints>
                                                         <buttonCell key="cell" type="square" title="EDIT SETTINGS" bezelStyle="shadowlessSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="WBJ-fQ-YXc">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" size="14" name="RobotoCondensed-Bold"/>
+                                                            <font key="font" metaFont="system" size="14"/>
                                                         </buttonCell>
                                                         <connections>
                                                             <action selector="editSettingsClicked:" target="oCc-SD-ZvT" id="Ek0-ju-ZmF"/>
@@ -1167,7 +1167,7 @@
                                                         </constraints>
                                                         <buttonCell key="cell" type="square" title="TRUSTED SITES" bezelStyle="shadowlessSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="0cc-Uf-uAC">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" size="14" name="RobotoCondensed-Bold"/>
+                                                            <font key="font" metaFont="system" size="14"/>
                                                         </buttonCell>
                                                         <connections>
                                                             <action selector="trustedSitesClicked:" target="oCc-SD-ZvT" id="kMc-L7-e1N"/>
@@ -1200,9 +1200,9 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zgV-gd-3qc">
-                                                        <rect key="frame" x="13" y="9" width="599" height="21"/>
+                                                        <rect key="frame" x="13" y="12" width="599" height="16"/>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please enable the Ghostery Lite extensions in your Safari preferences to begin." id="aCq-yn-W9M">
-                                                            <font key="font" size="12" name="OpenSans-SemiBold"/>
+                                                            <font key="font" metaFont="cellTitle"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
@@ -1324,7 +1324,7 @@
                                     <constraint firstAttribute="height" constant="75" id="Ihq-pi-Nza"/>
                                 </constraints>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="All the sites that you trust can be seen here. You can also add additional sites to your list using the field below:" id="uVO-Aq-Xil">
-                                    <font key="font" size="16" name="Roboto-Regular"/>
+                                    <font key="font" metaFont="system" size="16"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -1362,8 +1362,11 @@
                                 </constraints>
                                 <buttonCell key="cell" type="square" title="TRUST SITE" bezelStyle="shadowlessSquare" image="trust-site-btn-inactive" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="C26-J2-vrI">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="12" name="Roboto-Medium"/>
+                                    <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="trustSiteButtonPressedWithSender:" target="LTy-Jl-Bl3" id="C2u-C2-tWT"/>
+                                </connections>
                             </button>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swm-qe-0kG">
                                 <rect key="frame" x="27" y="15" width="570" height="400"/>
@@ -1445,7 +1448,7 @@
                                     <constraint firstAttribute="height" constant="100" id="ztQ-Dz-c7I"/>
                                 </constraints>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="9tv-f8-fCZ">
-                                    <font key="font" size="16" name="Roboto-Regular"/>
+                                    <font key="font" metaFont="system" size="16"/>
                                     <string key="title">If you have encountered an issue, want to know more about Ghostery Lite and our other products or would like to get in touch, please follow the appropriate link below.</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1459,7 +1462,7 @@
                                 </constraints>
                                 <buttonCell key="cell" type="square" title="Ghostery Support" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="BgZ-xj-F2J">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="16" name="Roboto-Regular"/>
+                                    <font key="font" metaFont="system" size="16"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="HelpLinkClicked:" target="O7l-gC-ZX6" id="feX-um-ahG"/>
@@ -1473,7 +1476,7 @@
                                 </constraints>
                                 <buttonCell key="cell" type="square" title="Ghostery Products" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="IW3-BT-Kt8">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="16" name="Roboto-Regular"/>
+                                    <font key="font" metaFont="system" size="16"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="HelpLinkClicked:" target="O7l-gC-ZX6" id="iVu-66-2Js"/>
@@ -1487,7 +1490,7 @@
                                 </constraints>
                                 <buttonCell key="cell" type="square" title="Ghostery Blog" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="MdL-PO-b4U">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="16" name="Roboto-Regular"/>
+                                    <font key="font" metaFont="system" size="16"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="HelpLinkClicked:" target="O7l-gC-ZX6" id="3NA-2u-hsL"/>
@@ -1501,7 +1504,7 @@
                                 </constraints>
                                 <buttonCell key="cell" type="square" title="Ghostery FAQs" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="c4M-2c-co9">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="16" name="Roboto-Regular"/>
+                                    <font key="font" metaFont="system" size="16"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="HelpLinkClicked:" target="O7l-gC-ZX6" id="hiu-S4-hLk"/>
@@ -1575,7 +1578,7 @@
                                                 <constraint firstAttribute="width" constant="290" id="MAf-Xz-iYV"/>
                                             </constraints>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Please enable Ghostery Lite Icon and Ghostery Lite extensions in your Safari preferences to begin." id="dEo-t5-f3x">
-                                                <font key="font" size="18" name="Roboto-Medium"/>
+                                                <font key="font" metaFont="system" size="18"/>
                                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -1593,10 +1596,10 @@
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
                                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="79q-5M-au7">
-                                                                        <rect key="frame" x="165" y="7" width="71" height="32"/>
+                                                                        <rect key="frame" x="163" y="7" width="75" height="32"/>
                                                                         <buttonCell key="cell" type="bevel" title="Skip for now" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="2Jl-PZ-VFA">
                                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                            <font key="font" size="12" name="Roboto-Regular"/>
+                                                                            <font key="font" metaFont="cellTitle"/>
                                                                         </buttonCell>
                                                                         <connections>
                                                                             <action selector="skip:" target="aac-Lb-Acs" id="V30-Cg-LZq"/>
@@ -1612,7 +1615,7 @@
                                                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
                                                                                     <buttonCell key="cell" type="bevel" title="ENABLE GHOSTERY LITE" bezelStyle="rounded" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="XIq-Cy-agY">
                                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                                        <font key="font" size="12" name="Roboto-Medium"/>
+                                                                                        <font key="font" metaFont="cellTitle"/>
                                                                                     </buttonCell>
                                                                                     <connections>
                                                                                         <action selector="enableGhosteryLite:" target="aac-Lb-Acs" id="rZX-mx-yHk"/>

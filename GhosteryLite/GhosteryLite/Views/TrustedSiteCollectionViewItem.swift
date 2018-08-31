@@ -8,7 +8,13 @@
 
 import Cocoa
 
+protocol TrustedSiteDelegate: class {
+	func trustedSiteDidRemove(indexPath: IndexPath, url: String)
+}
+
 class TrustedSiteCollectionViewItem: NSCollectionViewItem {
+
+	weak var delegate: TrustedSiteDelegate?
 
     @IBOutlet weak var siteLbl: NSTextField!
     
@@ -23,4 +29,8 @@ class TrustedSiteCollectionViewItem: NSCollectionViewItem {
         self.siteLbl.stringValue = url
         self.indexPath = indexPath
     }
+
+	@IBAction func removeTrustedSite(_ sender: Any) {
+		self.delegate?.trustedSiteDidRemove(indexPath: self.indexPath, url: self.siteLbl.stringValue)
+	}
 }
