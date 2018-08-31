@@ -13,45 +13,43 @@ class AntiTrackingManager {
 
 	static let shared = AntiTrackingManager()
 	
-	private var isPaused: Bool = false
+	private var paused: Bool = false
 
-	/* No need for now
-	private var currentDomain: String?
-	private var currentDomainConfig: DomainConfigObject?
-
-
-	func domainChanged(_ newDomain: String?) {
-		self.currentDomain = newDomain
-		SFContentBlockerManager.reloadContentBlocker(withIdentifier: Constants.SafariContentBlockerID, completionHandler: { (error) in
-				print("\(error)")
-			})
-
+	func isPaused() -> Bool {
+		return self.paused
 	}
-	*/
+
+	func isDefaultConfigEnabled() -> Bool {
+		if let c = GlobalConfigManager.shared.getCurrentConfig() {
+			return c.configType.value == ConfigurationType.byDefault.rawValue
+		}
+		return true
+	}
 
 	func pause() {
-		self.isPaused = true
+		self.paused = true
 		reloadContentBlocker()
 	}
 
 	func resume() {
-		self.isPaused = false
+		self.paused = false
 		reloadContentBlocker()
 	}
 
 	func switchToDefault() {
-		
+		GlobalConfigManager.shared.switchToConfig(.byDefault)
 	}
 
 	func switchToCustom() {
-		
+		GlobalConfigManager.shared.switchToConfig(.custom)
 	}
 
 	func reloadContentBlocker() {
-		if self.isPaused {
+		if self.isPaused() {
 			loadDummyCB()
 		} else {
-			if let _ =  GlobalConfigDataSource.shared.getCurrentConfig() {
+			if let c = GlobalConfigManager.shared.getCurrentConfig(),
+				c.configType.value == ConfigurationType.custom.rawValue {
 				self.loadCustomCB()
 			} else {
 				self.loadDefaultCB()
@@ -68,7 +66,7 @@ class AntiTrackingManager {
 	}
 
 	private func loadCustomCB() {
-		if let config =  GlobalConfigDataSource.shared.getCurrentConfig() {
+		if let config = GlobalConfigManager.shared.getCurrentConfig() {
 			var fileNames = [String]()
 			for i in config.blockedCategories {
 				if let c = CategoryType(rawValue: i) {
@@ -80,6 +78,13 @@ class AntiTrackingManager {
 	}
 
 	private func loadDefaultCB() {
+		if let config = GlobalConfigManager.shared.getCurrentConfig() {
+			var fileNames = [String]()
+			for i in config.defaultBlockedCategories() {
+				fileNames.append(i.fileName())
+			}
+			self.updateAndReloadBlockList(fileNames: fileNames)
+		}
 	}
 
 	private func loadDummyCB() {
@@ -104,7 +109,7 @@ class AntiTrackingManager {
 
 	func contentBlokerRules() -> [NSItemProvider] {
 		var resultRules = [NSItemProvider]()
-		if let config =  GlobalConfigDataSource.shared.getCurrentConfig() {
+		if let config =  GlobalConfigManager.shared.getCurrentConfig() {
 			let blockedCategories = config.blockedCategories
 			for i in blockedCategories {
 				if let c = CategoryType(rawValue: i),

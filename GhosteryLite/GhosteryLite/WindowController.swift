@@ -32,7 +32,7 @@ class WindowController: NSWindowController {
 		// Tell Realm to use this new configuration object for the default Realm
 		Realm.Configuration.defaultConfiguration = config
 		let _ = try! Realm()
-		GlobalConfigDataSource.shared.createConfigIfDoesNotExist()
+		GlobalConfigManager.shared.createConfigIfDoesNotExist()
 	}
 
 }

@@ -8,19 +8,19 @@
 
 import Foundation
 
-class GlobalConfigDataSource {
+class GlobalConfigManager {
 	
-	static let shared = GlobalConfigDataSource()
+	static let shared = GlobalConfigManager()
 
 	func getCurrentConfig() -> GlobalConfigObject? {
 		return GlobalConfigRepository.shared.globalConfig()
     }
 
-	func switchConfigType(_ type: ConfigurationType) {
+	func switchToConfig(_ type: ConfigurationType) {
 		if let _ = self.getCurrentConfig() {
 			GlobalConfigRepository.shared.updateConfigType(type)
-		} else if type == .custom {
-			let _ = GlobalConfigRepository.shared.save(GlobalConfigObject(type: .custom))
+		} else {
+			let _ = GlobalConfigRepository.shared.save(GlobalConfigObject(type: type))
 		}
 	}
 

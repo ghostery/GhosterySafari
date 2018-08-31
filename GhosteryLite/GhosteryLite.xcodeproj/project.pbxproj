@@ -28,7 +28,6 @@
 		1E597C5321359D000098631F /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C5221359D000098631F /* HUDView.swift */; };
 		3E9973FC6C3C5AE1182E8E7B /* Pods_ContentBlocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1C37253CAD1E7BF0CB1212 /* Pods_ContentBlocker.framework */; };
 		4F3049212118982600BA3961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049202118982600BA3961 /* AppDelegate.swift */; };
-		4F3049232118982600BA3961 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049222118982600BA3961 /* ViewController.swift */; };
 		4F3049252118982700BA3961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049242118982700BA3961 /* Assets.xcassets */; };
 		4F3049282118982700BA3961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049262118982700BA3961 /* Main.storyboard */; };
 		4F3049372118983D00BA3961 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3049362118983D00BA3961 /* Cocoa.framework */; };
@@ -61,6 +60,7 @@
 		4F83ABAF2138583A00BC76E4 /* TrustedSitesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */; };
 		4F83ABB12138586A00BC76E4 /* TrustedSitesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABB02138586A00BC76E4 /* TrustedSitesDataSource.swift */; };
 		4F83ABB22138586A00BC76E4 /* TrustedSitesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABB02138586A00BC76E4 /* TrustedSitesDataSource.swift */; };
+		4F83ABB421393CF500BC76E4 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABB321393CF400BC76E4 /* SettingsVC.swift */; };
 		4F91F3222136DF0600056FDE /* PageLatencyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F91F3212136DF0600056FDE /* PageLatencyDataSource.swift */; };
 		4F931A1521259BEC00AF4226 /* DomainConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A1421259BEC00AF4226 /* DomainConfigRepository.swift */; };
 		4F931A172125AD6500AF4226 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A162125AD6500AF4226 /* RealmRepository.swift */; };
@@ -154,7 +154,6 @@
 		2B1C37253CAD1E7BF0CB1212 /* Pods_ContentBlocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContentBlocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F30491D2118982600BA3961 /* GhosteryLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhosteryLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3049202118982600BA3961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4F3049222118982600BA3961 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4F3049242118982700BA3961 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F3049272118982700BA3961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F3049292118982700BA3961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -188,6 +187,7 @@
 		4F3049B3211C6D3200BA3961 /* AntiTrackingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiTrackingManager.swift; sourceTree = "<group>"; };
 		4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSitesRepository.swift; sourceTree = "<group>"; };
 		4F83ABB02138586A00BC76E4 /* TrustedSitesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSitesDataSource.swift; sourceTree = "<group>"; };
+		4F83ABB321393CF400BC76E4 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		4F91F3212136DF0600056FDE /* PageLatencyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageLatencyDataSource.swift; sourceTree = "<group>"; };
 		4F931A1421259BEC00AF4226 /* DomainConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConfigRepository.swift; sourceTree = "<group>"; };
 		4F931A162125AD6500AF4226 /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
@@ -242,6 +242,7 @@
 		1E597C272133F79F0098631F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4F83ABB321393CF400BC76E4 /* SettingsVC.swift */,
 				1E597C282133F7C70098631F /* MainVC.swift */,
 				1E597C2A2133F7FC0098631F /* SectionListVC.swift */,
 				1E597C2C2133F8170098631F /* SectionDetailVC.swift */,
@@ -318,7 +319,6 @@
 				4F3049A02119F4FC00BA3961 /* Extensions */,
 				4F30498A2119F46700BA3961 /* AntiTracking */,
 				4F3049202118982600BA3961 /* AppDelegate.swift */,
-				4F3049222118982600BA3961 /* ViewController.swift */,
 				4F3049242118982700BA3961 /* Assets.xcassets */,
 				4F3049262118982700BA3961 /* Main.storyboard */,
 				4F3049292118982700BA3961 /* Info.plist */,
@@ -697,7 +697,6 @@
 				4F30499C2119F46700BA3961 /* PageTrackersFound.swift in Sources */,
 				4FFD8351212C6C740038149F /* WindowController.swift in Sources */,
 				4F3049A62119F4FC00BA3961 /* URLExtension.swift in Sources */,
-				4F3049232118982600BA3961 /* ViewController.swift in Sources */,
 				4F83ABB12138586A00BC76E4 /* TrustedSitesDataSource.swift in Sources */,
 				1E14B73821368CD600E28C38 /* Strings.swift in Sources */,
 				1E597C3621340D180098631F /* SectionItemCollectionViewItem.swift in Sources */,
@@ -729,6 +728,7 @@
 				4F931A172125AD6500AF4226 /* RealmRepository.swift in Sources */,
 				1E597C4A2135682B0098631F /* SafariExtensionPromptVC.swift in Sources */,
 				1E597C292133F7C70098631F /* MainVC.swift in Sources */,
+				4F83ABB421393CF500BC76E4 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

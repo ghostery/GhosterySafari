@@ -24,20 +24,24 @@ class GlobalConfigObject: RealmSwift.Object {
 	convenience init(type: ConfigurationType) {
 		self.init()
 		configType.value = type.rawValue
+		blockedCategories.append(CategoryType.advertising.rawValue)
+		blockedCategories.append(CategoryType.audioVideoPlayer.rawValue)
+		blockedCategories.append(CategoryType.comments.rawValue)
+		blockedCategories.append(CategoryType.customerInteraction.rawValue)
+		blockedCategories.append(CategoryType.essential.rawValue)
+		blockedCategories.append(CategoryType.pornvertising.rawValue)
+		blockedCategories.append(CategoryType.siteAnalytics.rawValue)
+		blockedCategories.append(CategoryType.socialMedia.rawValue)
 	}
 
 	override static func primaryKey() -> String? {
 		return "id"
 	}
 
-//	func switchCategory(type: CategoryType, isOn: Bool) {
-//		if isOn && !blockedCategories.contains(type.rawValue) {
-//			blockedCategories.append(type.rawValue)
-//		}
-//		if !isOn && blockedCategories.contains(type.rawValue) {
-//			blockedCategories.remove(at: type.rawValue)
-//		}
-//	}
+	func defaultBlockedCategories() -> [CategoryType] {
+		return [.advertising, .siteAnalytics, .pornvertising]
+	}
+
 }
 
 class GlobalConfigRepository: RealmRepository<GlobalConfigObject, String> {

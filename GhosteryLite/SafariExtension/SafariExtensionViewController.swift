@@ -34,15 +34,20 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.preferredContentSize = NSMakeSize(186, 273)
+		self.preferredContentSize = NSMakeSize(186, 282)
 		self.view.layer?.backgroundColor = NSColor.white.cgColor
 	}
 
 	override func viewWillAppear() {
 		super.viewWillAppear()
-		self.view.layer?.backgroundColor = NSColor.white.cgColor
-
 		urlLabel?.stringValue = self.currentDomain ?? ""
+		if AntiTrackingManager.shared.isDefaultConfigEnabled() {
+			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
+			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
+		} else {
+			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 0)
+			self.customConfigRadio.state = NSControl.StateValue(rawValue: 1)
+		}
 	}
 
 	@IBAction func pauseButtonPressed(sender: NSButton) {
@@ -64,16 +69,20 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBAction func defaultConfigPressed(sender: NSButton) {
 		if sender.state.rawValue == 1 {
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
+			AntiTrackingManager.shared.switchToDefault()
 		} else {
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 1)
+			AntiTrackingManager.shared.switchToCustom()
 		}
 	}
 
 	@IBAction func customConfigPressed(sender: NSButton) {
 		if sender.state.rawValue == 1 {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 0)
+			AntiTrackingManager.shared.switchToCustom()
 		} else {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
+			AntiTrackingManager.shared.switchToDefault()
 		}
 	}
 
