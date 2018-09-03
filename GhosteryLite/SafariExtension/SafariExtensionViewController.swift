@@ -44,6 +44,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.preferredContentSize = NSMakeSize(186, 282)
+		AntiTrackingManager.shared.configureRealm()
 	}
 
 	override func viewWillAppear() {
@@ -64,23 +65,22 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		self.isPaused = sender.state.rawValue == 1
 		if sender.state.rawValue == 1 {
 			self.pauseButton.toolTip = "Resume Ghostery Lite"
-//			AntiTrackingManager.shared.pause()
 			DistributedNotificationCenter.default().post(name: Constants.PauseNotificationName, object: "Gh.GhosteryLite.SafariExtension")
 		} else {
-//			AntiTrackingManager.shared.resume()
 			self.pauseButton.toolTip = "Pause Ghostery Lite"
 			DistributedNotificationCenter.default().post(name: Constants.ResumeNotificationName, object: "Gh.GhosteryLite.SafariExtension")
 		}
 	}
 
 	@IBAction func trustButtonPressed(sender: NSButton) {
+		let d = UserDefaults(suiteName: Constants.AppsGroupID)
+		d?.set(self.currentDomain ?? "", forKey: "domain")
+		d?.synchronize()
 		if sender.state.rawValue == 0 {
-			DistributedNotificationCenter.default().post(name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID, userInfo: ["domain": self.currentDomain ?? ""])
-//			post(name: Constants.ResumeNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+			DistributedNotificationCenter.default().post(name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
 		} else {
-			DistributedNotificationCenter.default().post(name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID, userInfo: ["domain": self.currentDomain ?? ""])
+			DistributedNotificationCenter.default().post(name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
 		}
-//		AntiTrackingManager.shared.trustDomain(domain: self.currentDomain ?? "")
 		updateTrustButtonTooltip()
 	}
 

@@ -22,6 +22,7 @@ class MainVC: NSViewController {
             overlayView.isHidden = false
         }
 		AntiTrackingManager.shared.configureRealm()
+		AntiTrackingManager.shared.subscribeForNotifications()
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {

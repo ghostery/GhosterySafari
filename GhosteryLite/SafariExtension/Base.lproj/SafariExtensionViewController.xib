@@ -103,6 +103,9 @@
                         <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="trustButtonPressedWithSender:" target="-2" id="vCr-kk-K2e"/>
+                    </connections>
                 </button>
                 <button toolTip="Pause Ghostery Lite" translatesAutoresizingMaskIntoConstraints="NO" id="JDN-jK-7IG">
                     <rect key="frame" x="140" y="282" width="22" height="22"/>
@@ -114,6 +117,9 @@
                         <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="pauseButtonPressedWithSender:" target="-2" id="xXU-fr-FHF"/>
+                    </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b7q-eW-rBI">
                     <rect key="frame" x="83" y="174" width="34" height="17"/>

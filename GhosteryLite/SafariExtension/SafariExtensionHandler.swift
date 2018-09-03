@@ -38,7 +38,10 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
         // This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
 		handleTabUrlChange(window) { (url) in
-			DistributedNotificationCenter.default().post(name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID, userInfo: ["domain": url?.normalizedHost ?? ""])
+			let d = UserDefaults(suiteName: Constants.AppsGroupID)
+			d?.set(url?.normalizedHost ?? "", forKey: "domain")
+			d?.synchronize()
+			DistributedNotificationCenter.default().post(name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
 		}
         validationHandler(true, "")
     }

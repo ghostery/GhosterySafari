@@ -20,8 +20,11 @@ class AntiTrackingManager {
 	private let resumeNotificationName = Notification.Name(rawValue: "GhosteryIsResumed")
 
 	init() {
+	}
+
+	func subscribeForNotifications() {
 		DistributedNotificationCenter.default().addObserver(self,
-														selector: #selector(self.pause),
+															selector: #selector(self.pause),
 															name: Constants.PauseNotificationName, object: "Gh.GhosteryLite.SafariExtension")
 		DistributedNotificationCenter.default().addObserver(self,
 															selector: #selector(self.resume),
@@ -36,11 +39,12 @@ class AntiTrackingManager {
 															selector: #selector(self.switchToCustom),
 															name: Constants.DomainChangedNotificationName, object: "Gh.GhosteryLite.SafariExtension")
 		DistributedNotificationCenter.default().addObserver(self,
-															selector: #selector(self.trustSiteNotification(_:)),
-															name: Constants.TrustDomainNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+															selector: #selector(self.trustSiteNotification),
+															name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
 		DistributedNotificationCenter.default().addObserver(self,
-															selector: #selector(self.untrustSiteNotification(_:)),
-															name: Constants.UntrustDomainNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+															selector: #selector(self.untrustSiteNotification),
+															name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.tabDomainIsChanged), name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
 	}
 
 	func configureRealm() {
@@ -93,16 +97,14 @@ class AntiTrackingManager {
 	}
 
 	@objc
-	func switchToDefault() {
-		GlobalConfigManager.shared.switchToConfig(.byDefault)
+	func switchToDefault() {		GlobalConfigManager.shared.switchToConfig(.byDefault)
 		let d = UserDefaults(suiteName: Constants.AppsGroupID)
 		d?.set(true, forKey: "isDefault")
 		d?.synchronize()
 	}
 
 	@objc
-	func switchToCustom() {
-		GlobalConfigManager.shared.switchToConfig(.custom)
+	func switchToCustom() {		GlobalConfigManager.shared.switchToConfig(.custom)
 		let d = UserDefaults(suiteName: Constants.AppsGroupID)
 		d?.set(false, forKey: "isDefault")
 		d?.synchronize()
@@ -146,26 +148,26 @@ class AntiTrackingManager {
 	}
 
 	@objc
-	func trustSiteNotification(_ userInfo: [AnyHashable : Any]? = nil) {
-		if let ui = userInfo,
-			let d = ui["domain"] as? String {
+	func trustSiteNotification() {
+		let d = UserDefaults(suiteName: Constants.AppsGroupID)
+		if let d = d?.value(forKey: "domain") as? String {
 			self.trustDomain(domain: d)
 		}
 	}
 
 	@objc
-	func untrustSiteNotification(_ userInfo: [AnyHashable : Any]? = nil) {
-		if let ui = userInfo,
-			let d = ui["domain"] as? String {
+	func untrustSiteNotification() {
+		let d = UserDefaults(suiteName: Constants.AppsGroupID)
+		if let d = d?.value(forKey: "domain") as? String {
 			self.untrustDomain(domain: d)
 		}
 	}
 
 	@objc
-	private func tabDomainIsChanged(_ userInfo: [AnyHashable : Any]? = nil) {
-		if let uf = userInfo,
-			let domain = uf["domain"] as? String {
-			if self.isTrustedDomain(domain: domain) {
+	private func tabDomainIsChanged() {
+		let d = UserDefaults(suiteName: Constants.AppsGroupID)
+		if let d = d?.value(forKey: "domain") as? String {
+			if self.isTrustedDomain(domain: d) {
 				loadDummyCB()
 				return
 			}
