@@ -1203,9 +1203,9 @@
                                                             <constraint firstAttribute="width" constant="150" id="YSf-rY-JnX"/>
                                                             <constraint firstAttribute="height" constant="35" id="hfo-BG-QSv"/>
                                                         </constraints>
-                                                        <buttonCell key="cell" type="square" title="EDIT SETTINGS" bezelStyle="shadowlessSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="WBJ-fQ-YXc">
+                                                        <buttonCell key="cell" type="smallSquare" title="EDIT SETTINGS" bezelStyle="smallSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="WBJ-fQ-YXc">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="system" size="14"/>
+                                                            <font key="font" metaFont="system"/>
                                                         </buttonCell>
                                                         <connections>
                                                             <action selector="editSettingsClicked:" target="oCc-SD-ZvT" id="Ek0-ju-ZmF"/>
@@ -1255,9 +1255,9 @@
                                                             <constraint firstAttribute="height" constant="35" id="2Ys-6f-FnD"/>
                                                             <constraint firstAttribute="width" constant="150" id="YUH-ey-h3K"/>
                                                         </constraints>
-                                                        <buttonCell key="cell" type="square" title="TRUSTED SITES" bezelStyle="shadowlessSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="0cc-Uf-uAC">
+                                                        <buttonCell key="cell" type="smallSquare" title="TRUSTED SITES" bezelStyle="smallSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="0cc-Uf-uAC">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="system" size="14"/>
+                                                            <font key="font" metaFont="system"/>
                                                         </buttonCell>
                                                         <connections>
                                                             <action selector="trustedSitesClicked:" target="oCc-SD-ZvT" id="kMc-L7-e1N"/>
