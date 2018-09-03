@@ -63,16 +63,25 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBAction func pauseButtonPressed(sender: NSButton) {
 		self.isPaused = sender.state.rawValue == 1
 		if sender.state.rawValue == 1 {
-			AntiTrackingManager.shared.pause()
+			self.pauseButton.toolTip = "Resume Ghostery Lite"
+//			AntiTrackingManager.shared.pause()
 			DistributedNotificationCenter.default().post(name: Constants.PauseNotificationName, object: "Gh.GhosteryLite.SafariExtension")
 		} else {
-			AntiTrackingManager.shared.resume()
+//			AntiTrackingManager.shared.resume()
+			self.pauseButton.toolTip = "Pause Ghostery Lite"
 			DistributedNotificationCenter.default().post(name: Constants.ResumeNotificationName, object: "Gh.GhosteryLite.SafariExtension")
 		}
 	}
 
 	@IBAction func trustButtonPressed(sender: NSButton) {
-		AntiTrackingManager.shared.trustDomain(domain: self.currentDomain ?? "")
+		if sender.state.rawValue == 0 {
+			DistributedNotificationCenter.default().post(name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID, userInfo: ["domain": self.currentDomain ?? ""])
+//			post(name: Constants.ResumeNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+		} else {
+			DistributedNotificationCenter.default().post(name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID, userInfo: ["domain": self.currentDomain ?? ""])
+		}
+//		AntiTrackingManager.shared.trustDomain(domain: self.currentDomain ?? "")
+		updateTrustButtonTooltip()
 	}
 
 	@IBAction func threedotsButtonPressed(sender: NSButton) {
@@ -124,6 +133,15 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 			} else {
 				self.trustSiteButton?.state = NSControl.StateValue(rawValue: 0)
 			}
+		}
+		updateTrustButtonTooltip()
+	}
+
+	private func updateTrustButtonTooltip() {
+		if trustSiteButton.state.rawValue == 0 {
+			self.trustSiteButton?.toolTip = "Always allow trackers and ads on this site."
+		} else {
+			self.trustSiteButton?.toolTip = "Trackers and ads allowed. Click to undo."
 		}
 	}
 }

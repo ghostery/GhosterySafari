@@ -30,15 +30,12 @@ class TrustedSitesVC: NSViewController {
 
 	override func viewWillAppear() {
 		super.viewWillAppear()
-		let x = AntiTrackingManager.shared.isTrustedDomain(domain: "hello.com")
-		print("Trusted ---- \(x)")
-		let y = AntiTrackingManager.shared.isTrustedDomain(domain: "hello1.com")
-		print("Trusted ---- \(y)")
 		updateData()
 	}
 
 	@IBAction func trustSiteButtonPressed(sender: NSButton) {
-		TrustedSitesDataSource.shared.trustSite(trustedSiteTextField.stringValue)
+		AntiTrackingManager.shared.trustDomain(domain: trustedSiteTextField.stringValue)
+//		TrustedSitesDataSource.shared.trustSite(trustedSiteTextField.stringValue)
 		updateData()
 		trustedSiteTextField.stringValue = ""
 	}
@@ -83,7 +80,7 @@ extension TrustedSitesVC : NSCollectionViewDataSource {
 extension TrustedSitesVC: TrustedSiteDelegate {
 
 	func trustedSiteDidRemove(indexPath: IndexPath, url: String) {
-		TrustedSitesDataSource.shared.untrustSite(self.trustedSites[indexPath.item])
+		AntiTrackingManager.shared.untrustDomain(domain: self.trustedSites[indexPath.item].name ?? "")
 		updateData()
 	}
 }

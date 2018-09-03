@@ -20,6 +20,30 @@ class AntiTrackingManager {
 	private let resumeNotificationName = Notification.Name(rawValue: "GhosteryIsResumed")
 
 	init() {
+		DistributedNotificationCenter.default().addObserver(self,
+														selector: #selector(self.pause),
+															name: Constants.PauseNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+		DistributedNotificationCenter.default().addObserver(self,
+															selector: #selector(self.resume),
+															name: Constants.ResumeNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+		DistributedNotificationCenter.default().addObserver(self,
+															selector: #selector(self.switchToDefault),
+															name: Constants.SwitchToDefaultNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+		DistributedNotificationCenter.default().addObserver(self,
+															selector: #selector(self.switchToCustom),
+															name: Constants.SwitchToCustomNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+		DistributedNotificationCenter.default().addObserver(self,
+															selector: #selector(self.switchToCustom),
+															name: Constants.DomainChangedNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+		DistributedNotificationCenter.default().addObserver(self,
+															selector: #selector(self.trustSiteNotification(_:)),
+															name: Constants.TrustDomainNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+		DistributedNotificationCenter.default().addObserver(self,
+															selector: #selector(self.untrustSiteNotification(_:)),
+															name: Constants.UntrustDomainNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+	}
+
+	func configureRealm() {
 		let config = Realm.Configuration(
 			// Set the new schema version. This must be greater than the previously used
 			// version (if you've never set a schema version before, the version is 0).
@@ -43,22 +67,6 @@ class AntiTrackingManager {
 		Realm.Configuration.defaultConfiguration.fileURL = realmPath
 		let _ = try! Realm()
 		GlobalConfigManager.shared.createConfigIfDoesNotExist()
-
-		DistributedNotificationCenter.default().addObserver(self,
-														selector: #selector(self.pause),
-															name: Constants.PauseNotificationName, object: "Gh.GhosteryLite.SafariExtension")
-		DistributedNotificationCenter.default().addObserver(self,
-															selector: #selector(self.resume),
-															name: Constants.ResumeNotificationName, object: "Gh.GhosteryLite.SafariExtension")
-		DistributedNotificationCenter.default().addObserver(self,
-															selector: #selector(self.switchToDefault),
-															name: Constants.SwitchToDefaultNotificationName, object: "Gh.GhosteryLite.SafariExtension")
-		DistributedNotificationCenter.default().addObserver(self,
-															selector: #selector(self.switchToCustom),
-															name: Constants.SwitchToCustomNotificationName, object: "Gh.GhosteryLite.SafariExtension")
-		DistributedNotificationCenter.default().addObserver(self,
-															selector: #selector(self.switchToCustom),
-															name: Constants.DomainChangedNotificationName, object: "Gh.GhosteryLite.SafariExtension")
 	}
 
 	func isPaused() -> Bool {
@@ -114,7 +122,11 @@ class AntiTrackingManager {
 	}
 
 	func trustDomain(domain: String) {
-		TrustedSitesDataSource.shared.trustSite(domain)
+		TrustedSitesDataSource.shared.addDomain(domain)
+	}
+
+	func untrustDomain(domain: String) {
+		TrustedSitesDataSource.shared.removeDomain(domain)
 	}
 
 	func isTrustedDomain(domain: String) -> Bool {
@@ -131,6 +143,22 @@ class AntiTrackingManager {
 
 	func getBlockListsMainFolder() -> String {
 		return "BlockListAssets"
+	}
+
+	@objc
+	func trustSiteNotification(_ userInfo: [AnyHashable : Any]? = nil) {
+		if let ui = userInfo,
+			let d = ui["domain"] as? String {
+			self.trustDomain(domain: d)
+		}
+	}
+
+	@objc
+	func untrustSiteNotification(_ userInfo: [AnyHashable : Any]? = nil) {
+		if let ui = userInfo,
+			let d = ui["domain"] as? String {
+			self.untrustDomain(domain: d)
+		}
 	}
 
 	@objc

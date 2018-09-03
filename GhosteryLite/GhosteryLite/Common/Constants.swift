@@ -21,6 +21,8 @@ struct Constants {
 	static let SwitchToDefaultNotificationName = Notification.Name(rawValue: "SwitchToDefaultConfig")
 	static let SwitchToCustomNotificationName = Notification.Name(rawValue: "SwitchToCustomConfig")
 	static let DomainChangedNotificationName = Notification.Name(rawValue: "TabDomainChanged")
+	static let TrustDomainNotificationName = Notification.Name(rawValue: "TrustDomain")
+	static let UntrustDomainNotificationName = Notification.Name(rawValue: "UntrustDomain")
 	static let NavigateToSettingsNotificationName = Notification.Name(rawValue: "NavigateToSettings")
 
 }

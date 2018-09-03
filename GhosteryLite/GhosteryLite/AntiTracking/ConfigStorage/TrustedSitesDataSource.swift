@@ -12,14 +12,20 @@ class TrustedSitesDataSource {
 
 	static let shared = TrustedSitesDataSource()
 
-	func trustSite(_ domain: String) {
+	func addDomain(_ domain: String) {
 		let obj = TrustedSitesRepository.shared.save(TrustedSiteObject(domain))
 		if obj == nil {
 			// Handle Error
 		}
 	}
 
-	func untrustSite(_ trustedSiteObj: TrustedSiteObject) {
+	func removeDomain(_ domain: String) {
+		if let obj = TrustedSitesRepository.shared.findTrustedSite(domain) {
+			self.removeObject(obj)
+		}
+	}
+
+	func removeObject(_ trustedSiteObj: TrustedSiteObject) {
 		TrustedSitesRepository.shared.delete(trustedSiteObj)
 	}
 
