@@ -37,6 +37,9 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 
     override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
         // This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
+		handleTabUrlChange(window) { (url) in
+			DistributedNotificationCenter.default().post(name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID, userInfo: ["domain": url?.normalizedHost ?? ""])
+		}
         validationHandler(true, "")
     }
 
@@ -60,11 +63,17 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 	}
 */
 	private func updatePopoverUrl(_ window: SFSafariWindow) {
+		handleTabUrlChange(window) { (url) in
+			SafariExtensionViewController.shared.currentUrl = url?.absoluteString ?? ""
+			SafariExtensionViewController.shared.currentDomain = url?.normalizedHost ?? ""
+		}
+	}
+
+	private func handleTabUrlChange(_ window: SFSafariWindow, handler: @escaping((URL?) -> Void)) {
 		window.getActiveTab { (tab) in
 			tab?.getActivePage(completionHandler: { (activePage) in
 				activePage?.getPropertiesWithCompletionHandler({ (properties) in
-					SafariExtensionViewController.shared.currentUrl = properties?.url?.absoluteString ?? ""
-					SafariExtensionViewController.shared.currentDomain = properties?.url?.normalizedHost ?? ""
+					handler(properties?.url)
 				})
 			})
 		}

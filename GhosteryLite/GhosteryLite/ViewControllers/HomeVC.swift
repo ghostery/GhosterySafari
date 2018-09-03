@@ -49,7 +49,7 @@ class HomeVC: NSViewController {
         titleText.stringValue = Strings.HomePanelTitle
         subtitleText.stringValue = Strings.HomePanelSubtitle
         enableGhosteryLitePromptText.stringValue = Strings.HomePanelEnableGhosteryLitePromptText
-        
+
         editSettingsText.attributedStringValue = generateAttributedString(prefix: Strings.HomePanelSettingsDescriptionPrefix,
                                                                           regularText: Strings.HomePanelSettingsDescription)
         

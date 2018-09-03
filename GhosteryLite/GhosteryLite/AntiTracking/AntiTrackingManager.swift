@@ -56,6 +56,9 @@ class AntiTrackingManager {
 		DistributedNotificationCenter.default().addObserver(self,
 															selector: #selector(self.switchToCustom),
 															name: Constants.SwitchToCustomNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+		DistributedNotificationCenter.default().addObserver(self,
+															selector: #selector(self.switchToCustom),
+															name: Constants.DomainChangedNotificationName, object: "Gh.GhosteryLite.SafariExtension")
 	}
 
 	func isPaused() -> Bool {
@@ -129,6 +132,18 @@ class AntiTrackingManager {
 
 	func getBlockListsMainFolder() -> String {
 		return "BlockListAssets"
+	}
+
+	@objc
+	private func tabDomainIsChanged(_ userInfo: [AnyHashable : Any]? = nil) {
+		if let uf = userInfo,
+			let domain = uf["domain"] as? String {
+			if self.isTrustedDomain(domain: domain) {
+				loadDummyCB()
+				return
+			}
+		}
+		self.reloadContentBlocker()
 	}
 
 	private func loadCustomCB() {
