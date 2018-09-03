@@ -68,8 +68,10 @@ class GlobalConfigRepository: RealmRepository<GlobalConfigObject, String> {
 			
 			if !isOn && c.blockedCategories.contains(type.rawValue) {
 				do {
-					try realm.write {
-						c.blockedCategories.remove(at: type.rawValue)
+					if let indx = c.blockedCategories.index(of: type.rawValue) {
+						try realm.write {
+							c.blockedCategories.remove(at: indx)
+						}
 					}
 				} catch let e as NSError {
 					print("Error on update -- \(e)")

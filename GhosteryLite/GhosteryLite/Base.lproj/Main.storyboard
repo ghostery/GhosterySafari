@@ -946,7 +946,7 @@
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="categoryPressedWithSender:" target="XfG-lQ-9wD" id="LbM-uH-Dk7"/>
+                                                <action selector="categoryPressedWithSender:" target="XfG-lQ-9wD" id="Yre-Rf-eYw"/>
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="Qyy-sP-LtW">

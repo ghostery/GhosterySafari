@@ -33,4 +33,10 @@ class TrustedSitesRepository: RealmRepository<TrustedSiteObject, String> {
 		return list
 	}
 
+	public func findTrustedSite(_ name: String) -> TrustedSiteObject? {
+		let realm = try! Realm()
+		
+		return realm.object(ofType: TrustedSiteObject.self, forPrimaryKey: name)
+	}
+
 }

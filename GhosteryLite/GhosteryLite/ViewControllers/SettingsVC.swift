@@ -26,11 +26,11 @@ class SettingsVC: NSViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		setupComponents()
 	}
 
 	override func viewWillAppear() {
 		super.viewWillAppear()
+		setupComponents()
 		updateCategoryCheckboxStates()
 		SFContentBlockerManager.getStateOfContentBlocker(withIdentifier: "Gh.GhosteryLite.ContentBlocker") { (state, error) in
 		}

@@ -26,8 +26,16 @@ class TrustedSitesVC: NSViewController {
                                                                                                       fontName: "Roboto-Medium",
                                                                                                       fontSize: 12.0,
                                                                                                       fontColor: 0x9b9b9b)
-		updateData()
     }
+
+	override func viewWillAppear() {
+		super.viewWillAppear()
+		let x = AntiTrackingManager.shared.isTrustedDomain(domain: "hello.com")
+		print("Trusted ---- \(x)")
+		let y = AntiTrackingManager.shared.isTrustedDomain(domain: "hello1.com")
+		print("Trusted ---- \(y)")
+		updateData()
+	}
 
 	@IBAction func trustSiteButtonPressed(sender: NSButton) {
 		TrustedSitesDataSource.shared.trustSite(trustedSiteTextField.stringValue)

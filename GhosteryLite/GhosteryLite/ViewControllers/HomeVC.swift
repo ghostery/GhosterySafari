@@ -27,12 +27,13 @@ class HomeVC: NSViewController {
         super.viewDidLoad()
         initComponents()
         if !Preferences.isAppFirstLaunch() {
-            self.SafariExtensionPromptView.isHidden = Preferences.isGhosteryLiteEnabled()
+			Preferences.areExtensionsEnabled { (contentBlockerEnabled, popoverEnabled, error) in
+				self.SafariExtensionPromptView.isHidden = contentBlockerEnabled || popoverEnabled
+			}
         }
     }
     
     @IBAction func enableGhosteryLite(_ sender: NSButton) {
-        Preferences.enableGhosteryLite()
         self.SafariExtensionPromptView.isHidden = true
     }
     

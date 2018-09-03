@@ -11,6 +11,8 @@
                 <outlet property="defaultConfigRadio" destination="22k-0R-t4P" id="85a-Uz-clD"/>
                 <outlet property="pageLatencyImage" destination="l9i-jf-Gns" id="JqZ-0v-SAI"/>
                 <outlet property="pageLatencyLabel" destination="rAf-uz-UtS" id="KTZ-7J-x37"/>
+                <outlet property="pauseButton" destination="JDN-jK-7IG" id="Xlt-4h-BAI"/>
+                <outlet property="trustSiteButton" destination="Ico-u6-0Jj" id="get-x0-rDZ"/>
                 <outlet property="urlLabel" destination="b7q-eW-rBI" id="f5s-4p-C9V"/>
                 <outlet property="view" destination="c22-O7-iKe" id="vwT-Xx-Aiz"/>
             </connections>
@@ -105,8 +107,8 @@
                         <constraint firstAttribute="width" constant="22" id="eAh-aF-a0r"/>
                         <constraint firstAttribute="height" constant="22" id="vIF-8L-wl1"/>
                     </constraints>
-                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="pauseButton" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="4KJ-Ox-ato">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="pauseButton" imagePosition="only" alignment="center" alternateImage="resumeButton" imageScaling="proportionallyUpOrDown" inset="2" id="4KJ-Ox-ato">
+                        <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
@@ -189,6 +191,7 @@
         <image name="meatBallsButton" width="22" height="7"/>
         <image name="noLatency" width="132" height="8"/>
         <image name="pauseButton" width="22" height="22"/>
+        <image name="resumeButton" width="22" height="22"/>
         <image name="trustSiteRing" width="14" height="14"/>
         <image name="trustedSiteRing" width="14" height="14"/>
     </resources>

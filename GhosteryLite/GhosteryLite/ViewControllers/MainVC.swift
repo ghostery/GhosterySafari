@@ -9,11 +9,13 @@
 import Cocoa
 
 class MainVC: NSViewController {
-    fileprivate var sectionListVC: SectionListVC? = nil
-    fileprivate var sectionDetailVC: SectionDetailVC? = nil
-    fileprivate var safariExtensionPromptVC: SafariExtensionPromptVC? = nil
-    @IBOutlet weak var overlayView: NSBox!
-    
+
+	fileprivate var sectionListVC: SectionListVC? = nil
+	fileprivate var sectionDetailVC: SectionDetailVC? = nil
+	fileprivate var safariExtensionPromptVC: SafariExtensionPromptVC? = nil
+
+	@IBOutlet weak var overlayView: NSBox!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         if Preferences.isAppFirstLaunch() {
@@ -33,7 +35,7 @@ class MainVC: NSViewController {
             self.safariExtensionPromptVC?.delegate = self
         }
     }
-    
+
 }
 
 extension MainVC : SectionListVCDelegate {
@@ -57,5 +59,6 @@ extension MainVC : SectionDetailVCDelegate {
 extension MainVC : SafariExtensionPromptVCDelegate {
     func hideSafariExtensionPopOver() {
         overlayView.isHidden = true
+		Preferences.firstLaunchFinished()
     }
 }

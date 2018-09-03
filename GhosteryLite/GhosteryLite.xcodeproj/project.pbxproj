@@ -54,7 +54,6 @@
 		4F3049A62119F4FC00BA3961 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A32119F4FC00BA3961 /* URLExtension.swift */; };
 		4F3049AF211B36E800BA3961 /* BlockListFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */; };
 		4F3049B4211C6D3200BA3961 /* AntiTrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* AntiTrackingManager.swift */; };
-		4F3049B5211C71CB00BA3961 /* AntiTrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* AntiTrackingManager.swift */; };
 		4F3049B6211C721D00BA3961 /* BlockListFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */; };
 		4F83ABAE2138583A00BC76E4 /* TrustedSitesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */; };
 		4F83ABAF2138583A00BC76E4 /* TrustedSitesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */; };
@@ -526,12 +525,18 @@
 							com.apple.ApplicationGroups.Mac = {
 								enabled = 1;
 							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
 						};
 					};
 					4F3049332118983D00BA3961 = {
 						CreatedOnToolsVersion = 9.4;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
+							com.apple.Sandbox = {
 								enabled = 1;
 							};
 						};
@@ -762,7 +767,6 @@
 				4F931A2B2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */,
 				4FFD8316212B36BC0038149F /* FileManagerExtension.swift in Sources */,
 				4F931A1B2125CB1900AF4226 /* RealmRepository.swift in Sources */,
-				4F3049B5211C71CB00BA3961 /* AntiTrackingManager.swift in Sources */,
 				4FFD834B212B5D430038149F /* GlobalConfigRepository.swift in Sources */,
 				4F931A1A2125C4A700AF4226 /* DomainConfigRepository.swift in Sources */,
 				4F3049B6211C721D00BA3961 /* BlockListFileManager.swift in Sources */,

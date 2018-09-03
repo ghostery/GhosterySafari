@@ -26,4 +26,8 @@ class TrustedSitesDataSource {
 	func allTrustedSites() -> [TrustedSiteObject] {
 		return TrustedSitesRepository.shared.trustedSites() ?? [TrustedSiteObject]()
 	}
+
+	func isTrusted(_ name: String) -> Bool {
+		return TrustedSitesRepository.shared.findTrustedSite(name) != nil
+	}
 }

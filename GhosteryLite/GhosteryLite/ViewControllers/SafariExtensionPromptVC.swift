@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SafariServices
 
 protocol SafariExtensionPromptVCDelegate {
     func hideSafariExtensionPopOver()
@@ -27,12 +28,22 @@ class SafariExtensionPromptVC: NSViewController {
 
     @IBAction func enableGhosteryLite(_ sender: NSButton) {
         self.delegate?.hideSafariExtensionPopOver()
-        Preferences.enableGhosteryLite()
+		SFSafariApplication.showPreferencesForExtension(withIdentifier: Constants.SafariContentBlockerID, completionHandler: { (error) in
+			if let e = error {
+				print("Error --- \(e)")
+			} else {
+				print("Success!!!")
+			}
+		})
     }
 
     @IBAction func skip(_ sender: NSButton) {
         self.delegate?.hideSafariExtensionPopOver()
     }
+
+	@IBAction func activateExtensionButtonClicked(_ sender: Any) {
+		
+	}
 
     private func initComponents() {
         enableGhosteryLiteText.stringValue = Strings.SafariExtensionPromptText

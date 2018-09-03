@@ -19,9 +19,16 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBOutlet var defaultConfigRadio: NSButton!
 	@IBOutlet var customConfigRadio: NSButton!
 
+	@IBOutlet var pauseButton: NSButton!
+
+	@IBOutlet var trustSiteButton: NSButton!
+
+	private var isPaused = false
+	
 	var currentDomain: String? {
 		didSet {
 			urlLabel?.stringValue = currentDomain ?? ""
+			updateTrustButtonState()
 		}
 	}
 
@@ -35,13 +42,14 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.preferredContentSize = NSMakeSize(186, 282)
-		self.view.layer?.backgroundColor = NSColor.white.cgColor
 	}
 
 	override func viewWillAppear() {
 		super.viewWillAppear()
+		self.view.layer?.backgroundColor = NSColor.white.cgColor
 		urlLabel?.stringValue = self.currentDomain ?? ""
-		if AntiTrackingManager.shared.isDefaultConfigEnabled() {
+		let d = UserDefaults(suiteName: Constants.AppsGroupID)
+		if d?.bool(forKey: "isDefault") ?? true {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
 		} else {
@@ -51,10 +59,13 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	}
 
 	@IBAction func pauseButtonPressed(sender: NSButton) {
-		if sender.isEnabled {
+		self.isPaused = sender.state.rawValue == 1
+		if sender.state.rawValue == 1 {
 			AntiTrackingManager.shared.pause()
+			DistributedNotificationCenter.default().post(name: Constants.PauseNotificationName, object: "Gh.GhosteryLite.SafariExtension")
 		} else {
 			AntiTrackingManager.shared.resume()
+			DistributedNotificationCenter.default().post(name: Constants.ResumeNotificationName, object: "Gh.GhosteryLite.SafariExtension")
 		}
 	}
 
@@ -69,7 +80,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBAction func defaultConfigPressed(sender: NSButton) {
 		if sender.state.rawValue == 1 {
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
-			AntiTrackingManager.shared.switchToDefault()
+			DistributedNotificationCenter.default().post(name: Constants.SwitchToDefaultNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+
+//			AntiTrackingManager.shared.switchToDefault()
 		} else {
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 1)
 			AntiTrackingManager.shared.switchToCustom()
@@ -79,7 +92,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBAction func customConfigPressed(sender: NSButton) {
 		if sender.state.rawValue == 1 {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 0)
-			AntiTrackingManager.shared.switchToCustom()
+			DistributedNotificationCenter.default().post(name: Constants.SwitchToCustomNotificationName, object: "Gh.GhosteryLite.SafariExtension")
 		} else {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
 			AntiTrackingManager.shared.switchToDefault()
@@ -92,5 +105,15 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
 	private func openSettings() {
 		
+	}
+
+	private func updateTrustButtonState() {
+		if let d = self.currentDomain {
+			if AntiTrackingManager.shared.isTrustedDomain(domain: d) {
+				self.trustSiteButton?.state = NSControl.StateValue(rawValue: 1)
+			} else {
+				self.trustSiteButton?.state = NSControl.StateValue(rawValue: 0)
+			}
+		}
 	}
 }

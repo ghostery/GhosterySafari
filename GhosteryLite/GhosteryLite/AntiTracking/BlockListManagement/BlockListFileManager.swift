@@ -62,16 +62,16 @@ final class BlockListFileManager {
 		}
 	}
 
-	func getFilePath(fileName: String) -> URL? {
-		return Bundle.main.url(forResource: fileName, withExtension: "json", subdirectory: "BlockListAssets/BlockListByCategory")
+	func getFilePath(fileName: String, folderName: String) -> URL? {
+		return Bundle.main.url(forResource: fileName, withExtension: "json", subdirectory: folderName)
 	}
 
-	func generateCurrentBlockList(files: [String], completion: @escaping () -> Void) {
+	func generateCurrentBlockList(files: [String], folderName: String, completion: @escaping () -> Void) {
 		DispatchQueue.global(qos: .background).async {
 			
 			var finalJSON = [[String: Any]]()
 			for f in files {
-				if let url = self.getFilePath(fileName: f) {
+				if let url = self.getFilePath(fileName: f, folderName: folderName) {
 					let nextChunk: [[String:Any]]? = FileManager.default.readJsonFile(at: url)
 					if let n = nextChunk {
 						finalJSON.append(contentsOf: n)
