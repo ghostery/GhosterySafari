@@ -83,11 +83,8 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		if sender.state.rawValue == 1 {
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
 			DistributedNotificationCenter.default().post(name: Constants.SwitchToDefaultNotificationName, object: "Gh.GhosteryLite.SafariExtension")
-
-//			AntiTrackingManager.shared.switchToDefault()
 		} else {
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 1)
-			AntiTrackingManager.shared.switchToCustom()
 		}
 	}
 
@@ -97,7 +94,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 			DistributedNotificationCenter.default().post(name: Constants.SwitchToCustomNotificationName, object: "Gh.GhosteryLite.SafariExtension")
 		} else {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
-			AntiTrackingManager.shared.switchToDefault()
 		}
 		if !UserDefaults.standard.bool(forKey: SafariExtensionViewController.CustomSettingsSelectedKey) {
 			self.openSettings()

@@ -28,13 +28,7 @@ class SafariExtensionPromptVC: NSViewController {
 
     @IBAction func enableGhosteryLite(_ sender: NSButton) {
         self.delegate?.hideSafariExtensionPopOver()
-		SFSafariApplication.showPreferencesForExtension(withIdentifier: Constants.SafariContentBlockerID, completionHandler: { (error) in
-			if let e = error {
-				print("Error --- \(e)")
-			} else {
-				print("Success!!!")
-			}
-		})
+		Preferences.showSafariPreferencesForExtension()
     }
 
     @IBAction func skip(_ sender: NSButton) {

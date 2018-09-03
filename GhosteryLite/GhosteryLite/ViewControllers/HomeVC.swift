@@ -38,6 +38,7 @@ class HomeVC: NSViewController {
     
     @IBAction func enableGhosteryLite(_ sender: NSButton) {
         self.SafariExtensionPromptView.isHidden = true
+		Preferences.showSafariPreferencesForExtension()
     }
     
     @IBAction func editSettingsClicked(_ sender: Any) {

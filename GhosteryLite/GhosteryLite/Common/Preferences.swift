@@ -60,4 +60,13 @@ class Preferences: NSObject {
 		}
 	}
 
+	class func showSafariPreferencesForExtension() {
+		SFSafariApplication.showPreferencesForExtension(withIdentifier: Constants.SafariContentBlockerID, completionHandler: { (error) in
+			if let e = error {
+				print("Error --- \(e)")
+			} else {
+				print("Success!!!")
+			}
+		})
+	}
 }
