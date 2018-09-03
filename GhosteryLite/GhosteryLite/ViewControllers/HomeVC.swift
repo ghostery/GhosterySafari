@@ -31,6 +31,9 @@ class HomeVC: NSViewController {
 				self.SafariExtensionPromptView.isHidden = contentBlockerEnabled || popoverEnabled
 			}
         }
+		DistributedNotificationCenter.default().addObserver(self,
+															selector: #selector(self.editSettingsClicked(_:)),
+															name: Constants.NavigateToSettingsNotificationName, object: "Gh.GhosteryLite.SafariExtension")
     }
     
     @IBAction func enableGhosteryLite(_ sender: NSButton) {

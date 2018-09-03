@@ -24,7 +24,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBOutlet var trustSiteButton: NSButton!
 
 	private var isPaused = false
-	
+
+	private static let CustomSettingsSelectedKey = "CustomSettingsSelectedOnce"
+
 	var currentDomain: String? {
 		didSet {
 			urlLabel?.stringValue = currentDomain ?? ""
@@ -97,6 +99,11 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
 			AntiTrackingManager.shared.switchToDefault()
 		}
+		if !UserDefaults.standard.bool(forKey: SafariExtensionViewController.CustomSettingsSelectedKey) {
+			self.openSettings()
+			UserDefaults.standard.set(true, forKey: SafariExtensionViewController.CustomSettingsSelectedKey)
+			UserDefaults.standard.synchronize()
+		}
 	}
 
 	func updatePageLatency(_ url: String, _ latency: String) {
@@ -104,7 +111,14 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	}
 
 	private func openSettings() {
-		
+		// TODO: launchApplication also activates the app, with options it only runs but doesn't acitvates, in future find a way to launch and open  with corresponding menu without notification
+//		let options = NSWorkspace.LaunchOptions(rawValue: 1000)
+//		NSWorkspace.shared.launchApplication(withBundleIdentifier: Constants.GhosteryLiteID, options: [options], additionalEventParamDescriptor: nil, launchIdentifier: nil)
+//		NSWorkspace.shared.launchApplication(withBundleIdentifier: Constants.GhosteryLiteID, options: [LaunchOptions], additionalEventParamDescriptor: <#T##NSAppleEventDescriptor?#>, launchIdentifier: AutoreleasingUnsafeMutablePointer<NSNumber?>?)
+		NSWorkspace.shared.launchApplication("GhosteryLite")
+		Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (_) in
+			DistributedNotificationCenter.default().post(name: Constants.NavigateToSettingsNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+		}
 	}
 
 	private func updateTrustButtonState() {

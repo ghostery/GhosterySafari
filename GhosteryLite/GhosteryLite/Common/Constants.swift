@@ -10,6 +10,7 @@ import Foundation
 
 struct Constants {
 
+	static let GhosteryLiteID = "Gh.GhosteryLite"
 	static let SafariContentBlockerID = "Gh.GhosteryLite.ContentBlocker"
 	static let SafariPopupExtensionID = "Gh.GhosteryLite.SafariExtension"
 
@@ -20,5 +21,6 @@ struct Constants {
 	static let SwitchToDefaultNotificationName = Notification.Name(rawValue: "SwitchToDefaultConfig")
 	static let SwitchToCustomNotificationName = Notification.Name(rawValue: "SwitchToCustomConfig")
 	static let DomainChangedNotificationName = Notification.Name(rawValue: "TabDomainChanged")
+	static let NavigateToSettingsNotificationName = Notification.Name(rawValue: "NavigateToSettings")
 
 }

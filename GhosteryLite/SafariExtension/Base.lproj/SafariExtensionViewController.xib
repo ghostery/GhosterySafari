@@ -58,6 +58,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="threedotsButtonPressedWithSender:" target="-2" id="aYS-DT-GyY"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="22k-0R-t4P">
                     <rect key="frame" x="9" y="242" width="173" height="18"/>

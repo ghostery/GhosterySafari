@@ -127,7 +127,6 @@ class AntiTrackingManager {
 	
 	func getCategoryBlockListsFolder() -> String {
 		return "BlockListAssets/BlockListByCategory"
-//		return Bundle.main.url(forResource: fileName, withExtension: "json", subdirectory: )
 	}
 
 	func getBlockListsMainFolder() -> String {
