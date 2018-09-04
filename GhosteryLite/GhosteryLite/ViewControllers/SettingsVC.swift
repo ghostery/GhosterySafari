@@ -11,8 +11,12 @@ import SafariServices
 
 class SettingsVC: NSViewController {
 
+	@IBOutlet weak var topTextLabel: NSTextField!
 	@IBOutlet var defaultRadio: NSButton!
+	@IBOutlet weak var defaultDescLabel: NSTextField!
 	@IBOutlet var customRadio: NSButton!
+
+	@IBOutlet weak var customDescLabel: NSTextField!
 
 	@IBOutlet var groupBox: NSBox!
 	@IBOutlet var adCheckbox: NSButton!
@@ -95,6 +99,11 @@ class SettingsVC: NSViewController {
 			self.customRadio.state = NSControl.StateValue(rawValue: 1)
 			self.groupBox.isHidden = false
 		}
+		self.defaultRadio.font = NSFont(name: "Roboto-Bold", size: 14)
+		self.customRadio.font = NSFont(name: "Roboto-Bold", size: 14)
+		self.topTextLabel.font = NSFont(name: "Roboto-Regular", size: 16)
+		self.defaultDescLabel.font = NSFont(name: "Roboto-Regular", size: 14)
+		self.customDescLabel.font = NSFont(name: "Roboto-Regular", size: 14)
 	}
 
 	private func updateCategoryCheckboxStates() {

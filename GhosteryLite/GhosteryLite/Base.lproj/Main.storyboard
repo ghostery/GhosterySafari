@@ -1048,13 +1048,16 @@
                         <outlet property="adultCheckbox" destination="jq0-cX-Poj" id="sg7-EO-5Ff"/>
                         <outlet property="audioVideoCheckbox" destination="uoe-bI-z7M" id="IMF-AP-Aq0"/>
                         <outlet property="commentsCheckbox" destination="NWS-6i-ZYt" id="GRD-Ye-HNg"/>
+                        <outlet property="customDescLabel" destination="i7J-qY-hF0" id="FYe-Jy-hgn"/>
                         <outlet property="customInterCheckbox" destination="tfb-4f-8qe" id="G0P-Ya-HD1"/>
                         <outlet property="customRadio" destination="LVb-pL-6ez" id="g7S-YR-2Fo"/>
+                        <outlet property="defaultDescLabel" destination="VW5-hv-OwS" id="0wJ-6w-9vA"/>
                         <outlet property="defaultRadio" destination="rKj-gW-VAB" id="9cj-y6-TGA"/>
                         <outlet property="essentialCheckbox" destination="cOs-rr-nNM" id="MFq-aQ-BxF"/>
                         <outlet property="groupBox" destination="4dn-Gg-Wy3" id="G70-pJ-F9V"/>
                         <outlet property="siteAnalyticsCheckbox" destination="Qyy-sP-LtW" id="4Q9-I4-Wi9"/>
                         <outlet property="socialMediaCheckbox" destination="6Y1-oA-mwM" id="AmR-j5-xXs"/>
+                        <outlet property="topTextLabel" destination="GzW-fZ-j1l" id="vgd-d2-eJk"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
