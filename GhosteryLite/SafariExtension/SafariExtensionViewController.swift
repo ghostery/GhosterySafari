@@ -52,7 +52,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		super.viewDidLoad()
 		self.preferredContentSize = NSMakeSize(186, 282)
 		AntiTrackingManager.shared.configureRealm()
-		self.liteLabel.font = NSFont(name: "BebasNeueBook", size: 18)
+		setupComponents()
 	}
 
 	override func viewWillAppear() {
@@ -172,10 +172,21 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		}
 	}
 
+	private func setupComponents() {
+		self.liteLabel.font = NSFont(name: "BebasNeueBook", size: 18)
+		self.defaultConfigRadio.font = NSFont(name: "OpenSans-Regular", size: 14)
+		self.customConfigRadio.font = NSFont(name: "OpenSans-Regular", size: 14)
+		self.urlLabel.font = NSFont(name: "OpenSans-Regular", size: 11)
+		self.pageLatencyLabel.font = NSFont(name: "Roboto-Regular", size: 18)
+		self.trustSiteButton.font = NSFont(name: "OpenSans-SemiBold", size: 11)
+		self.popupTitleLabel.font = NSFont(name: "OpenSans-SemiBold", size: 11)
+		self.popupReloadButton.font = NSFont(name: "OpenSans-SemiBold", size: 11)
+	}
+
 	private func showPausedPopup() {
 		let bgColor = NSColor(red: 0.976, green: 0.929, blue: 0.745, alpha: 1)
 		let title = "Ghostery Lite has been paused."
-		showPopup(bgColor, title: title)
+		showPopup(bgColor, title: title, fontColor: 0x4a4a4a)
 //		self.reloadPopupView.layer?.backgroundColor = NSColor(red: 0.976, green: 0.929, blue: 0.745, alpha: 1).cgColor
 //		self.reloadPopupView.isHidden = false
 	}
@@ -183,24 +194,30 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	private func showResumedPopup() {
 		let bgColor = NSColor(red: 0.976, green: 0.929, blue: 0.745, alpha: 1)
 		let title = "Ghostery Lite has been resumed."
-		showPopup(bgColor, title: title)
+		showPopup(bgColor, title: title, fontColor: 0x4a4a4a)
 	}
 
 	private func showTrustedPopup() {
 		let bgColor = NSColor(red: 0.156, green: 0.804, blue: 0.439, alpha: 1)
 		let title = "Site whitelisted."
-		showPopup(bgColor, title: title)
+		showPopup(bgColor, title: title, fontColor: 0xffffff)
 	}
 	
 	private func showUntrustedPopup() {
 		let bgColor = NSColor(red: 0.976, green: 0.929, blue: 0.745, alpha: 1)
 		let title = "Site no longer whitelisted."
-		showPopup(bgColor, title: title)
+		showPopup(bgColor, title: title, fontColor: 0x4a4a4a)
 	}
 
-	private func showPopup(_ backgroundColor: NSColor, title: String) {
+	private func showPopup(_ backgroundColor: NSColor, title: String, fontColor: Int) {
 		self.reloadPopupView.layer?.backgroundColor = backgroundColor.cgColor
 		self.popupTitleLabel.stringValue = title
+		self.popupTitleLabel.textColor = NSColor(rgb: fontColor)
+		self.popupReloadButton.attributedTitle = self.popupReloadButton.title.attributedString(withTextAlignment: .center,
+																   fontName: "OpenSans-SemiBold",
+																   fontSize: 11.0,
+																   fontColor: fontColor)
+//		self.popupReloadButton.bezelColor = fontColor
 		self.reloadPopupView.isHidden = false
 	}
 }

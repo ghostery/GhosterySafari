@@ -80,8 +80,8 @@
 		4F931A2A2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */; };
 		4F931A2B2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */; };
 		4FB1E6D2213E819F00136D2A /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 1E597C3F21341ED90098631F /* Fonts */; };
-		4FB1E6D4213E99E700136D2A /* ReloadPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB1E6D3213E99E700136D2A /* ReloadPopupView.swift */; };
-		4FB1E6D6213EA48000136D2A /* ReloadPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1E6D5213EA48000136D2A /* ReloadPopupView.xib */; };
+		4FB1E6D7213EBF5300136D2A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73C21369F5400E28C38 /* StringExtension.swift */; };
+		4FB1E6D8213EC6DC00136D2A /* NSColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4521354D820098631F /* NSColorExtension.swift */; };
 		4FCEAA23212E0CCE00AACE42 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FCEAA22212E0CCE00AACE42 /* Images.xcassets */; };
 		4FFD8314212B36BC0038149F /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8313212B36BC0038149F /* FileManagerExtension.swift */; };
 		4FFD8315212B36BC0038149F /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8313212B36BC0038149F /* FileManagerExtension.swift */; };
@@ -196,8 +196,6 @@
 		4F931A182125ADD500AF4226 /* CrudRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudRepository.swift; sourceTree = "<group>"; };
 		4F931A242126C8C900AF4226 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConfigDataSource.swift; sourceTree = "<group>"; };
-		4FB1E6D3213E99E700136D2A /* ReloadPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadPopupView.swift; sourceTree = "<group>"; };
-		4FB1E6D5213EA48000136D2A /* ReloadPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReloadPopupView.xib; sourceTree = "<group>"; };
 		4FCEAA22212E0CCE00AACE42 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4FFD8313212B36BC0038149F /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 		4FFD8337212B4FF90038149F /* BlockListAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlockListAssets; sourceTree = "<group>"; };
@@ -355,8 +353,6 @@
 				4F3049452118983D00BA3961 /* SafariExtension.entitlements */,
 				4FCEAA22212E0CCE00AACE42 /* Images.xcassets */,
 				4F91F3212136DF0600056FDE /* PageLatencyDataSource.swift */,
-				4FB1E6D3213E99E700136D2A /* ReloadPopupView.swift */,
-				4FB1E6D5213EA48000136D2A /* ReloadPopupView.xib */,
 			);
 			path = SafariExtension;
 			sourceTree = "<group>";
@@ -600,7 +596,6 @@
 				4F3049442118983D00BA3961 /* ToolbarItemIcon.pdf in Resources */,
 				4FFD8339212B4FF90038149F /* BlockListAssets in Resources */,
 				4FB1E6D2213E819F00136D2A /* Fonts in Resources */,
-				4FB1E6D6213EA48000136D2A /* ReloadPopupView.xib in Resources */,
 				4FCEAA23212E0CCE00AACE42 /* Images.xcassets in Resources */,
 				4F30493F2118983D00BA3961 /* SafariExtensionViewController.xib in Resources */,
 			);
@@ -750,10 +745,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FB1E6D8213EC6DC00136D2A /* NSColorExtension.swift in Sources */,
 				4F931A212125DA5200AF4226 /* BlockListFileManager.swift in Sources */,
 				4F30493C2118983D00BA3961 /* SafariExtensionViewController.swift in Sources */,
 				4F30493A2118983D00BA3961 /* SafariExtensionHandler.swift in Sources */,
-				4FB1E6D4213E99E700136D2A /* ReloadPopupView.swift in Sources */,
 				4F931A1E2125D3F500AF4226 /* AntiTrackingManager.swift in Sources */,
 				4F91F3222136DF0600056FDE /* PageLatencyDataSource.swift in Sources */,
 				4F83ABB22138586A00BC76E4 /* TrustedSitesDataSource.swift in Sources */,
@@ -764,6 +759,7 @@
 				4F83ABAF2138583A00BC76E4 /* TrustedSitesRepository.swift in Sources */,
 				4F931A1D2125D3DE00AF4226 /* URLExtension.swift in Sources */,
 				4F931A202125DA4100AF4226 /* RealmRepository.swift in Sources */,
+				4FB1E6D7213EBF5300136D2A /* StringExtension.swift in Sources */,
 				4FFD8315212B36BC0038149F /* FileManagerExtension.swift in Sources */,
 				4F931A2A2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */,
 				4F931A262126C95A00AF4226 /* Constants.swift in Sources */,
