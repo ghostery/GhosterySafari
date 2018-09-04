@@ -26,6 +26,12 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBOutlet weak var liteLabel: NSTextField!
 	private var isPaused = false
 
+	@IBOutlet weak var reloadPopupView: NSView!
+
+	@IBOutlet weak var popupTitleLabel: NSTextField!
+
+	@IBOutlet weak var popupReloadButton: NSButton!
+
 	private static let CustomSettingsSelectedKey = "CustomSettingsSelectedOnce"
 
 	var currentDomain: String? {
@@ -68,9 +74,11 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		if sender.state.rawValue == 1 {
 			self.pauseButton.toolTip = "Resume Ghostery Lite"
 			DistributedNotificationCenter.default().post(name: Constants.PauseNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+			self.showPausedPopup()
 		} else {
 			self.pauseButton.toolTip = "Pause Ghostery Lite"
 			DistributedNotificationCenter.default().post(name: Constants.ResumeNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+			self.showResumedPopup()
 		}
 	}
 
@@ -80,8 +88,10 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		d?.synchronize()
 		if sender.state.rawValue == 0 {
 			DistributedNotificationCenter.default().post(name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
+			self.showUntrustedPopup()
 		} else {
 			DistributedNotificationCenter.default().post(name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
+			self.showTrustedPopup()
 		}
 		updateTrustButtonTooltip()
 	}
@@ -111,6 +121,21 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 			UserDefaults.standard.set(true, forKey: SafariExtensionViewController.CustomSettingsSelectedKey)
 			UserDefaults.standard.synchronize()
 		}
+	}
+
+	@IBAction func reloadePage(_ sender: Any) {
+		self.reloadPopupView.isHidden = true
+		SFSafariApplication.getActiveWindow(completionHandler: { (window) in
+			window?.getActiveTab(completionHandler: { (tab) in
+				tab?.getActivePage(completionHandler: { (page) in
+					page?.reload()
+				})
+			})
+		})
+	}
+	
+	@IBAction func closePopup(_ sender: Any) {
+		self.reloadPopupView.isHidden = true
 	}
 
 	func updatePageLatency(_ url: String, _ latency: String) {
@@ -145,5 +170,37 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		} else {
 			self.trustSiteButton?.toolTip = "Trackers and ads allowed. Click to undo."
 		}
+	}
+
+	private func showPausedPopup() {
+		let bgColor = NSColor(red: 0.976, green: 0.929, blue: 0.745, alpha: 1)
+		let title = "Ghostery Lite has been paused."
+		showPopup(bgColor, title: title)
+//		self.reloadPopupView.layer?.backgroundColor = NSColor(red: 0.976, green: 0.929, blue: 0.745, alpha: 1).cgColor
+//		self.reloadPopupView.isHidden = false
+	}
+
+	private func showResumedPopup() {
+		let bgColor = NSColor(red: 0.976, green: 0.929, blue: 0.745, alpha: 1)
+		let title = "Ghostery Lite has been resumed."
+		showPopup(bgColor, title: title)
+	}
+
+	private func showTrustedPopup() {
+		let bgColor = NSColor(red: 0.156, green: 0.804, blue: 0.439, alpha: 1)
+		let title = "Site whitelisted."
+		showPopup(bgColor, title: title)
+	}
+	
+	private func showUntrustedPopup() {
+		let bgColor = NSColor(red: 0.976, green: 0.929, blue: 0.745, alpha: 1)
+		let title = "Site no longer whitelisted."
+		showPopup(bgColor, title: title)
+	}
+
+	private func showPopup(_ backgroundColor: NSColor, title: String) {
+		self.reloadPopupView.layer?.backgroundColor = backgroundColor.cgColor
+		self.popupTitleLabel.stringValue = title
+		self.reloadPopupView.isHidden = false
 	}
 }
