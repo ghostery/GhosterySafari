@@ -734,7 +734,7 @@
                                                         <constraint firstAttribute="width" constant="29" id="h2G-ZS-y5w"/>
                                                     </constraints>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="LITE" id="3t7-RU-1ni">
-                                                        <font key="font" size="24" name="BebasNeueBook"/>
+                                                        <font key="font" size="24" name="HelveticaNeue"/>
                                                         <color key="textColor" red="0.11372549019607843" green="0.68627450980392157" blue="0.92941176470588238" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
@@ -832,6 +832,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="liteLabel" destination="e2q-Aw-3KF" id="xj4-hc-lFx"/>
                         <outlet property="overlayView" destination="NWW-Wy-iqe" id="p7f-pc-1q4"/>
                     </connections>
                 </viewController>

@@ -23,6 +23,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
 	@IBOutlet var trustSiteButton: NSButton!
 
+	@IBOutlet weak var liteLabel: NSTextField!
 	private var isPaused = false
 
 	private static let CustomSettingsSelectedKey = "CustomSettingsSelectedOnce"
@@ -45,6 +46,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		super.viewDidLoad()
 		self.preferredContentSize = NSMakeSize(186, 282)
 		AntiTrackingManager.shared.configureRealm()
+		self.liteLabel.font = NSFont(name: "BebasNeueBook", size: 18)
 	}
 
 	override func viewWillAppear() {

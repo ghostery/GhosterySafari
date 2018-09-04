@@ -15,7 +15,8 @@ class MainVC: NSViewController {
 	fileprivate var safariExtensionPromptVC: SafariExtensionPromptVC? = nil
 
 	@IBOutlet weak var overlayView: NSBox!
-
+	@IBOutlet weak var liteLabel: NSTextField!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         if Preferences.isAppFirstLaunch() {
@@ -23,6 +24,7 @@ class MainVC: NSViewController {
         }
 		AntiTrackingManager.shared.configureRealm()
 		AntiTrackingManager.shared.subscribeForNotifications()
+		self.liteLabel.font = NSFont(name: "BebasNeueBook", size: 24)
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
