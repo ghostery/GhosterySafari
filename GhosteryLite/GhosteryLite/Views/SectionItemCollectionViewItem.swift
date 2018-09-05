@@ -12,6 +12,7 @@ class SectionItemCollectionViewItem: NSCollectionViewItem {
     
     @IBOutlet weak var lblTitle: NSTextField!
     @IBOutlet weak var imgIcon: NSImageView!
+    @IBOutlet weak var sideNavImgIcon: NSImageView!
     private var item: MenuItem? = nil
     private var indexPath: IndexPath!
     
@@ -31,6 +32,7 @@ class SectionItemCollectionViewItem: NSCollectionViewItem {
                 text.addAttributes(attrs, range: NSRange(location: 0, length: text.length))
             }
             self.lblTitle.attributedStringValue = text
+            self.sideNavImgIcon.isHidden = !isSelected
         }
     }
     
