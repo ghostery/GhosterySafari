@@ -24,8 +24,20 @@
                     </textFieldCell>
                 </textField>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7xO-K0-YGT">
-                    <rect key="frame" x="25" y="27" width="0.0" height="0.0"/>
+                    <rect key="frame" x="25" y="14" width="26" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="26" id="7J3-zL-0x3"/>
+                        <constraint firstAttribute="height" constant="26" id="X0I-Zo-rwy"/>
+                    </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="ZVW-OI-f5r"/>
+                </imageView>
+                <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D1k-2I-vqe">
+                    <rect key="frame" x="121" y="0.0" width="54" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="8mJ-lb-HYv"/>
+                        <constraint firstAttribute="width" constant="54" id="Gil-44-DVQ"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="side-nav" id="ah3-US-Ocd"/>
                 </imageView>
             </subviews>
             <constraints>
@@ -34,9 +46,10 @@
                 <constraint firstAttribute="width" constant="175" id="AHG-BT-KJt"/>
                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="buE-3N-PZV"/>
                 <constraint firstItem="Jly-Mf-FrK" firstAttribute="leading" secondItem="pN4-3q-kTx" secondAttribute="leading" constant="56" id="fiZ-eB-32j"/>
+                <constraint firstAttribute="trailing" secondItem="D1k-2I-vqe" secondAttribute="trailing" id="iYI-sX-zft"/>
                 <constraint firstItem="7xO-K0-YGT" firstAttribute="leading" secondItem="pN4-3q-kTx" secondAttribute="leading" constant="25" id="lcf-We-5vZ"/>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Jly-Mf-FrK" secondAttribute="bottom" constant="9" id="rQv-xa-H7r"/>
-                <constraint firstItem="Jly-Mf-FrK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="pN4-3q-kTx" secondAttribute="top" constant="9" id="vBI-eI-82D"/>
+                <constraint firstAttribute="bottom" secondItem="D1k-2I-vqe" secondAttribute="bottom" id="qga-C9-gUe"/>
+                <constraint firstItem="D1k-2I-vqe" firstAttribute="top" secondItem="pN4-3q-kTx" secondAttribute="top" id="sqW-aW-JfF"/>
             </constraints>
             <point key="canvasLocation" x="96" y="28"/>
         </customView>
@@ -44,8 +57,12 @@
             <connections>
                 <outlet property="imgIcon" destination="7xO-K0-YGT" id="PmS-Ha-eR7"/>
                 <outlet property="lblTitle" destination="Jly-Mf-FrK" id="9U6-u0-a7F"/>
+                <outlet property="sideNavImgIcon" destination="D1k-2I-vqe" id="YXh-hg-W0o"/>
                 <outlet property="view" destination="pN4-3q-kTx" id="3ek-ec-gVk"/>
             </connections>
         </collectionViewItem>
     </objects>
+    <resources>
+        <image name="side-nav" width="54" height="54"/>
+    </resources>
 </document>
