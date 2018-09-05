@@ -943,7 +943,7 @@
                                     <rect key="frame" x="1" y="1" width="470" height="157"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView toolTip="Includes advertising services such as data collection, behavioral analysis or retargeting." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cke-w1-Con">
+                                        <imageView toolTip="Enables websites to publish, distribute, and optimize video and audio content." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cke-w1-Con">
                                             <rect key="frame" x="445" y="103" width="9" height="10"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="5UE-RA-Agv"/>
@@ -970,12 +970,12 @@
                                                 <action selector="categoryPressedWithSender:" target="XfG-lQ-9wD" id="cJ9-ql-whb"/>
                                             </connections>
                                         </button>
-                                        <imageView toolTip="Includes advertising services such as data collection, behavioral analysis or retargeting." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VDK-om-yg2">
+                                        <imageView toolTip="Includes chat, email messaging, customer support, and other interaction tools." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VDK-om-yg2">
                                             <rect key="frame" x="223" y="74" width="9" height="10"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="giH-R0-xGw"/>
                                         </imageView>
-                                        <imageView toolTip="Includes advertising services such as data collection, behavioral analysis or retargeting." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V3t-dF-QL4">
+                                        <imageView toolTip="Provides advertising or advertising-related services such as data-collection, behavioral analysis, or re-targeting." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V3t-dF-QL4">
                                             <rect key="frame" x="165" y="135" width="9" height="10"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="5dA-2t-oQA"/>
@@ -1046,27 +1046,27 @@
                                                 <action selector="categoryPressedWithSender:" target="XfG-lQ-9wD" id="Acg-Eh-VTL"/>
                                             </connections>
                                         </button>
-                                        <imageView toolTip="Control which categories of tracker you block /allow in your custom settings." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="edo-Q1-18A">
+                                        <imageView toolTip="Collects and analyzes data related to site usage and performance." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="edo-Q1-18A">
                                             <rect key="frame" x="179" y="101" width="9" height="10"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="vgk-Nj-DUk"/>
                                         </imageView>
-                                        <imageView toolTip="Includes advertising services such as data collection, behavioral analysis or retargeting." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tD7-PD-U11">
+                                        <imageView toolTip="Integrates features related to social media sites." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tD7-PD-U11">
                                             <rect key="frame" x="174" y="36" width="9" height="10"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="u1f-Pf-mi4"/>
                                         </imageView>
-                                        <imageView toolTip="Includes advertising services such as data collection, behavioral analysis or retargeting." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="caT-UF-u5T">
+                                        <imageView toolTip="Includes tag managers, privacy notices, and technologies that are critical to the functionality of a website." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="caT-UF-u5T">
                                             <rect key="frame" x="384" y="136" width="9" height="10"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="8Wu-qV-53n"/>
                                         </imageView>
-                                        <imageView toolTip="Includes advertising services such as data collection, behavioral analysis or retargeting." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1rF-ap-Ve5">
+                                        <imageView toolTip="Delivers advertising technology designed specifically for adult content sites." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1rF-ap-Ve5">
                                             <rect key="frame" x="413" y="74" width="9" height="10"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="esl-tX-Gek"/>
                                         </imageView>
-                                        <imageView toolTip="Includes xxx services such as data collection, behavioral analysis or retargeting." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WNN-aY-BDO">
+                                        <imageView toolTip="Enables comments sections for articles and product reviews." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WNN-aY-BDO">
                                             <rect key="frame" x="395" y="37" width="9" height="10"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="cjQ-GI-0eE"/>
