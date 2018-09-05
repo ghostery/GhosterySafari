@@ -83,10 +83,12 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		if sender.state.rawValue == 1 {
 			self.pauseButton.toolTip = "Resume Ghostery Lite"
 			DistributedNotificationCenter.default().post(name: Constants.PauseNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+			self.trustSiteButton.isEnabled = false
 			self.showPausedPopup()
 		} else {
 			self.pauseButton.toolTip = "Pause Ghostery Lite"
 			DistributedNotificationCenter.default().post(name: Constants.ResumeNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+			self.trustSiteButton.isEnabled = true
 			self.showResumedPopup()
 		}
 	}
@@ -195,6 +197,13 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		self.trustSiteButton.font = NSFont(name: "OpenSans-SemiBold", size: 11)
 		self.popupTitleLabel.font = NSFont(name: "OpenSans-SemiBold", size: 11)
 		self.popupReloadButton.font = NSFont(name: "OpenSans-SemiBold", size: 11)
+		
+		let paragraphStyle = NSMutableParagraphStyle()
+		paragraphStyle.firstLineHeadIndent = 5.0
+		
+//		self.trustSiteButton.attributedTitle = NSAttributedString(string: trustSiteButton.title, attributes: [NSAttributedStringKey.paragraphStyle : paragraphStyle])
+
+		
 	}
 
 	private func showPausedPopup() {

@@ -30,7 +30,7 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="200" height="312"/>
+            <rect key="frame" x="0.0" y="0.0" width="220" height="312"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Iy-aV-wGF">
@@ -54,13 +54,13 @@
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="liteLogo" id="cUt-3I-AVa"/>
                 </imageView>
                 <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="upo-Zq-Mc1">
-                    <rect key="frame" x="5" y="270" width="190" height="5"/>
+                    <rect key="frame" x="5" y="270" width="210" height="5"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="OXM-RJ-Usm"/>
                     </constraints>
                 </box>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="sog-ga-TCe">
-                    <rect key="frame" x="172" y="288" width="22" height="7"/>
+                    <rect key="frame" x="192" y="288" width="22" height="7"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="7" id="ST1-xY-QKj"/>
                         <constraint firstAttribute="width" constant="22" id="jpA-1Z-n8v"/>
@@ -74,7 +74,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="22k-0R-t4P">
-                    <rect key="frame" x="9" y="242" width="173" height="18"/>
+                    <rect key="frame" x="9" y="242" width="193" height="18"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="Lfu-k9-tv6"/>
                     </constraints>
@@ -87,7 +87,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lda-Cg-OvN">
-                    <rect key="frame" x="9" y="219" width="173" height="18"/>
+                    <rect key="frame" x="9" y="219" width="193" height="18"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="lZf-S5-fTT"/>
                     </constraints>
@@ -100,17 +100,17 @@
                     </connections>
                 </button>
                 <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="xYa-rf-lU4">
-                    <rect key="frame" x="5" y="202" width="190" height="5"/>
+                    <rect key="frame" x="5" y="202" width="210" height="5"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="z3G-e2-Ras"/>
                     </constraints>
                 </box>
-                <button toolTip="111" verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ico-u6-0Jj">
-                    <rect key="frame" x="47" y="10" width="107" height="27"/>
+                <button toolTip="111" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ico-u6-0Jj">
+                    <rect key="frame" x="32" y="12" width="156" height="24"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="24" id="X4C-Ge-V8S"/>
+                        <constraint firstAttribute="height" constant="24" id="OiK-xf-oaE"/>
                     </constraints>
-                    <buttonCell key="cell" type="roundTextured" title="Trust Site" alternateTitle="Site Trusted" bezelStyle="texturedRounded" image="trustSiteRing" imagePosition="left" alignment="center" alternateImage="trustedSiteRing" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="B4q-Xk-a9k">
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="trustSiteButton" imagePosition="only" alignment="center" alternateImage="trustedButtonActive" imageScaling="proportionallyDown" inset="2" id="B4q-Xk-a9k">
                         <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -119,7 +119,7 @@
                     </connections>
                 </button>
                 <button toolTip="Pause Ghostery Lite" translatesAutoresizingMaskIntoConstraints="NO" id="JDN-jK-7IG">
-                    <rect key="frame" x="140" y="282" width="22" height="22"/>
+                    <rect key="frame" x="160" y="282" width="22" height="22"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="22" id="eAh-aF-a0r"/>
                         <constraint firstAttribute="height" constant="22" id="vIF-8L-wl1"/>
@@ -133,7 +133,7 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b7q-eW-rBI">
-                    <rect key="frame" x="83" y="171" width="34" height="17"/>
+                    <rect key="frame" x="93" y="171" width="34" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="rKH-Bm-E3E"/>
                     </constraints>
@@ -144,7 +144,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rAf-uz-UtS">
-                    <rect key="frame" x="88" y="140" width="25" height="23"/>
+                    <rect key="frame" x="98" y="140" width="25" height="23"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="23" id="JbI-R6-GHH"/>
                     </constraints>
@@ -155,7 +155,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cF2-v5-BPd">
-                    <rect key="frame" x="41" y="123" width="119" height="17"/>
+                    <rect key="frame" x="51" y="123" width="119" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="e12-lr-YBQ"/>
                     </constraints>
@@ -166,7 +166,7 @@
                     </textFieldCell>
                 </textField>
                 <imageView horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="l9i-jf-Gns">
-                    <rect key="frame" x="34" y="95" width="132" height="8"/>
+                    <rect key="frame" x="44" y="95" width="132" height="8"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="noLatency" id="hb8-G4-Jrh"/>
                 </imageView>
                 <imageView toolTip="Control which categories of tracker you block /allow in your custom settings." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NPW-Kh-cmC">
@@ -189,7 +189,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DKP-z8-cNs">
-                    <rect key="frame" x="147" y="78" width="31" height="17"/>
+                    <rect key="frame" x="167" y="78" width="31" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="kve-j6-9fm"/>
                     </constraints>
@@ -231,7 +231,7 @@
                             <rect key="frame" x="0.0" y="30" width="186" height="17"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="17" id="GC4-ne-8eX"/>
-                                <constraint firstAttribute="width" constant="182" id="fKS-yQ-QmZ"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="182" id="fKS-yQ-QmZ"/>
                             </constraints>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Ghostery Lite Title" id="CBJ-Qs-OqG">
                                 <font key="font" metaFont="system"/>
@@ -281,6 +281,7 @@
                 </textField>
             </subviews>
             <constraints>
+                <constraint firstItem="Ico-u6-0Jj" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="1de-fF-Wiy"/>
                 <constraint firstItem="Lda-Cg-OvN" firstAttribute="top" secondItem="22k-0R-t4P" secondAttribute="bottom" constant="7" id="1gL-gE-hAf"/>
                 <constraint firstItem="upo-Zq-Mc1" firstAttribute="top" secondItem="a6l-Sf-YbR" secondAttribute="bottom" constant="8" id="2v5-Lc-EqJ"/>
                 <constraint firstItem="Rlb-mT-MaB" firstAttribute="top" secondItem="upo-Zq-Mc1" secondAttribute="bottom" constant="-1" id="8wq-NY-5dY"/>
@@ -292,6 +293,7 @@
                 <constraint firstItem="BdJ-Az-y4r" firstAttribute="top" secondItem="l9i-jf-Gns" secondAttribute="bottom" id="FBG-7H-ZS8"/>
                 <constraint firstAttribute="trailing" secondItem="DKP-z8-cNs" secondAttribute="trailing" constant="24" id="GXZ-PG-9jk"/>
                 <constraint firstAttribute="trailing" secondItem="upo-Zq-Mc1" secondAttribute="trailing" constant="5" id="Htm-Av-o8j"/>
+                <constraint firstAttribute="bottom" secondItem="Ico-u6-0Jj" secondAttribute="bottom" constant="12" id="IrO-ei-2tx"/>
                 <constraint firstItem="a6l-Sf-YbR" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="Ldh-We-FAh"/>
                 <constraint firstAttribute="trailing" secondItem="22k-0R-t4P" secondAttribute="trailing" constant="20" id="LvV-Ju-fp2"/>
                 <constraint firstItem="rAf-uz-UtS" firstAttribute="top" secondItem="b7q-eW-rBI" secondAttribute="bottom" constant="8" id="NeN-N8-kHy"/>
@@ -312,12 +314,11 @@
                 <constraint firstAttribute="trailing" secondItem="xYa-rf-lU4" secondAttribute="trailing" constant="5" id="jQ3-KN-Pcr"/>
                 <constraint firstItem="4Iy-aV-wGF" firstAttribute="leading" secondItem="a6l-Sf-YbR" secondAttribute="trailing" constant="3" id="mIR-Ne-w9m"/>
                 <constraint firstItem="2ny-hN-rJo" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="11" id="mJN-fv-uWC"/>
-                <constraint firstItem="Ico-u6-0Jj" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="paX-Td-7lB"/>
                 <constraint firstItem="b7q-eW-rBI" firstAttribute="top" secondItem="xYa-rf-lU4" secondAttribute="bottom" constant="16" id="qlB-1x-f2f"/>
                 <constraint firstItem="upo-Zq-Mc1" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="5" id="r78-1v-Kbj"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2ny-hN-rJo" secondAttribute="trailing" constant="20" symbolic="YES" id="ran-JQ-ca8"/>
                 <constraint firstItem="4Iy-aV-wGF" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="rlC-qj-gGP"/>
                 <constraint firstItem="Rlb-mT-MaB" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="ruW-gD-izR"/>
-                <constraint firstAttribute="bottom" secondItem="Ico-u6-0Jj" secondAttribute="bottom" constant="12" id="s4u-tQ-ken"/>
                 <constraint firstItem="2ny-hN-rJo" firstAttribute="top" secondItem="BdJ-Az-y4r" secondAttribute="bottom" id="s6w-hA-s5d"/>
                 <constraint firstItem="l9i-jf-Gns" firstAttribute="top" secondItem="cF2-v5-BPd" secondAttribute="bottom" constant="20" id="tQd-ex-AZK"/>
                 <constraint firstItem="rAf-uz-UtS" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" constant="0.5" id="tpz-q6-cgd"/>
@@ -335,7 +336,7 @@
         <image name="noLatency" width="132" height="8"/>
         <image name="pauseButton" width="22" height="22"/>
         <image name="resumeButton" width="22" height="22"/>
-        <image name="trustSiteRing" width="14" height="14"/>
-        <image name="trustedSiteRing" width="14" height="14"/>
+        <image name="trustSiteButton" width="156" height="24"/>
+        <image name="trustedButtonActive" width="156" height="24"/>
     </resources>
 </document>
