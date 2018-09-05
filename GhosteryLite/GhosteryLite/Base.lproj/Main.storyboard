@@ -715,23 +715,26 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box boxType="custom" borderType="none" cornerRadius="4" title="Left Panel" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="5FX-lN-wZ1">
-                                <rect key="frame" x="0.0" y="0.0" width="176" height="576"/>
+                                <rect key="frame" x="0.0" y="0.0" width="175" height="576"/>
                                 <view key="contentView" id="Bk4-Cx-roK">
-                                    <rect key="frame" x="0.0" y="0.0" width="176" height="576"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="175" height="576"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="adR-zJ-9TD">
-                                            <rect key="frame" x="0.0" y="506" width="176" height="70"/>
+                                            <rect key="frame" x="0.0" y="506" width="175" height="70"/>
                                             <subviews>
                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h6l-pP-HvR">
                                                     <rect key="frame" x="55" y="15" width="31" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="O0P-yv-NlH"/>
+                                                        <constraint firstAttribute="width" constant="31" id="S6d-sI-UkB"/>
+                                                    </constraints>
                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="lite-logo" id="1Tz-pp-SSp"/>
                                                 </imageView>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e2q-Aw-3KF">
-                                                    <rect key="frame" x="85" y="18" width="33" height="29"/>
+                                                    <rect key="frame" x="85" y="18" width="52" height="29"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="29" id="RzQ-yY-vpK"/>
-                                                        <constraint firstAttribute="width" constant="29" id="h2G-ZS-y5w"/>
                                                     </constraints>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="LITE" id="3t7-RU-1ni">
                                                         <font key="font" size="24" name="HelveticaNeue"/>
@@ -741,6 +744,7 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e2q-Aw-3KF" secondAttribute="trailing" constant="20" symbolic="YES" id="Lce-DA-45Q"/>
                                                 <constraint firstAttribute="bottom" secondItem="h6l-pP-HvR" secondAttribute="bottom" constant="15" id="LzE-Br-jIc"/>
                                                 <constraint firstAttribute="height" constant="70" id="P99-Ik-oVj"/>
                                                 <constraint firstItem="h6l-pP-HvR" firstAttribute="leading" secondItem="adR-zJ-9TD" secondAttribute="leading" constant="55" id="eew-yb-w8M"/>
@@ -749,7 +753,7 @@
                                             </constraints>
                                         </customView>
                                         <containerView translatesAutoresizingMaskIntoConstraints="NO" id="XWR-G2-IGL" userLabel="Section List - Container View">
-                                            <rect key="frame" x="0.0" y="0.0" width="176" height="506"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="175" height="506"/>
                                             <connections>
                                                 <segue destination="DFu-k6-yE3" kind="embed" identifier="SectionListVC" id="2Hf-BS-sp4"/>
                                             </connections>
@@ -766,18 +770,18 @@
                                     </constraints>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="176" id="1td-5J-mAd"/>
+                                    <constraint firstAttribute="width" constant="175" id="1td-5J-mAd"/>
                                 </constraints>
                                 <color key="fillColor" red="0.90588235294117647" green="0.92549019607843142" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                             </box>
                             <box boxType="custom" borderType="none" cornerRadius="4" title="Right Panel" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="CWC-pw-01r">
-                                <rect key="frame" x="176" y="0.0" width="624" height="576"/>
+                                <rect key="frame" x="175" y="0.0" width="625" height="576"/>
                                 <view key="contentView" id="WEN-01-hNr">
-                                    <rect key="frame" x="0.0" y="0.0" width="624" height="576"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="625" height="576"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <containerView translatesAutoresizingMaskIntoConstraints="NO" id="fja-Zw-GJh" userLabel="Section Detail - Container View">
-                                            <rect key="frame" x="0.0" y="0.0" width="624" height="576"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="625" height="576"/>
                                             <connections>
                                                 <segue destination="xj7-Ms-XWF" kind="embed" identifier="SectionDetailVC" id="gXX-jo-R9U"/>
                                             </connections>
