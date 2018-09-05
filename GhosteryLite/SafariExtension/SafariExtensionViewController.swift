@@ -12,25 +12,31 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
     
     static let shared = SafariExtensionViewController()
 
-	@IBOutlet var urlLabel: NSTextField!
-	@IBOutlet var pageLatencyLabel: NSTextField!
-	@IBOutlet var pageLatencyImage: NSImageView!
+	@IBOutlet weak var liteLabel: NSTextField!
+	@IBOutlet var pauseButton: NSButton!
 
 	@IBOutlet var defaultConfigRadio: NSButton!
 	@IBOutlet var customConfigRadio: NSButton!
 
-	@IBOutlet var pauseButton: NSButton!
+	@IBOutlet var urlLabel: NSTextField!
+	@IBOutlet var pageLatencyValueLabel: NSTextField!
+	@IBOutlet var pageLatencyImage: NSImageView!
+	@IBOutlet weak var pageLatencyDescLabel: NSTextField!
+	
+	@IBOutlet weak var firstRangeLabel: NSTextField!
+	@IBOutlet weak var secondRangeLabel: NSTextField!
+	@IBOutlet weak var thirdRangeLabel: NSTextField!
+	@IBOutlet weak var secondsLabel: NSTextField!
+	
+	@IBOutlet weak var secondsLabelLeftOffset: NSLayoutConstraint!
 
 	@IBOutlet var trustSiteButton: NSButton!
 
-	@IBOutlet weak var liteLabel: NSTextField!
-	private var isPaused = false
-
 	@IBOutlet weak var reloadPopupView: NSView!
-
 	@IBOutlet weak var popupTitleLabel: NSTextField!
-
 	@IBOutlet weak var popupReloadButton: NSButton!
+
+	private var isPaused = false
 
 	private static let CustomSettingsSelectedKey = "CustomSettingsSelectedOnce"
 
@@ -43,14 +49,17 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
 	var currentUrl: String? {
 		didSet {
-			pageLatencyLabel?.stringValue = PageLatencyDataSource.shared.latencyFor(currentUrl ?? "")
-			pageLatencyImage?.image = NSImage(named: NSImage.Name(PageLatencyDataSource.shared.latencyImageName(currentUrl ?? "")))
+			pageLatencyValueLabel?.stringValue = PageLatencyDataSource.shared.latencyFor(currentUrl ?? "")
+			let params = PageLatencyDataSource.shared.latencyImageAndOffset(currentUrl ?? "")
+			pageLatencyImage?.image = NSImage(named: NSImage.Name(params.0))
+			secondsLabelLeftOffset.constant = params.1
+//			pageLatencyImage?.image = NSImage(named: NSImage.Name(PageLatencyDataSource.shared.latencyImageName(currentUrl ?? "")))
 		}
 	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.preferredContentSize = NSMakeSize(186, 282)
+		self.preferredContentSize = NSMakeSize(186, 302)
 		AntiTrackingManager.shared.configureRealm()
 		setupComponents()
 	}
@@ -177,7 +186,12 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		self.defaultConfigRadio.font = NSFont(name: "OpenSans-Regular", size: 14)
 		self.customConfigRadio.font = NSFont(name: "OpenSans-Regular", size: 14)
 		self.urlLabel.font = NSFont(name: "OpenSans-Regular", size: 11)
-		self.pageLatencyLabel.font = NSFont(name: "Roboto-Regular", size: 18)
+		self.pageLatencyValueLabel.font = NSFont(name: "Roboto-Regular", size: 18)
+		self.pageLatencyDescLabel.font = NSFont(name: "OpenSans-Regular", size: 11)
+		self.firstRangeLabel.font = NSFont(name: "OpenSans-Regular", size: 10)
+		self.secondRangeLabel.font = NSFont(name: "OpenSans-Regular", size: 10)
+		self.thirdRangeLabel.font = NSFont(name: "OpenSans-Regular", size: 10)
+		self.secondsLabel.font = NSFont(name: "Roboto-Regular", size: 9)
 		self.trustSiteButton.font = NSFont(name: "OpenSans-SemiBold", size: 11)
 		self.popupTitleLabel.font = NSFont(name: "OpenSans-SemiBold", size: 11)
 		self.popupReloadButton.font = NSFont(name: "OpenSans-SemiBold", size: 11)
@@ -187,8 +201,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		let bgColor = NSColor(red: 0.976, green: 0.929, blue: 0.745, alpha: 1)
 		let title = "Ghostery Lite has been paused."
 		showPopup(bgColor, title: title, fontColor: 0x4a4a4a)
-//		self.reloadPopupView.layer?.backgroundColor = NSColor(red: 0.976, green: 0.929, blue: 0.745, alpha: 1).cgColor
-//		self.reloadPopupView.isHidden = false
 	}
 
 	private func showResumedPopup() {
@@ -217,7 +229,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 																   fontName: "OpenSans-SemiBold",
 																   fontSize: 11.0,
 																   fontColor: fontColor)
-//		self.popupReloadButton.bezelColor = fontColor
 		self.reloadPopupView.isHidden = false
 	}
 }

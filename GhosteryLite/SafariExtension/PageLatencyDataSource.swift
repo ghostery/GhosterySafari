@@ -22,17 +22,18 @@ class PageLatencyDataSource {
 		return pageLatencies[url] ?? "--"
 	}
 
-	func latencyImageName(_ url: String) -> String {
+	func latencyImageAndOffset(_ url: String) -> (String, CGFloat) {
 		let pl = self.latencyFor(url)
 		if let ld = Double(pl) {
 			if ld <= 5.0 {
-				return "greenLatency"
+				return ("greenLatency", 14)
 			}
-			if ld <= 10 {
-				return "yellowLatency"
+			if ld < 10 {
+				return ("yellowLatency", 74)
 			}
-			return "redLatency"
+			return ("redLatency", 134)
 		}
-		return "noLatency"
+		return ("noLatency", -100)
 	}
+
 }
