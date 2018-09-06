@@ -30,6 +30,12 @@ class SettingsVC: NSViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		DistributedNotificationCenter.default().addObserver(self,
+															selector: #selector(self.updateRadioBoxesState),
+															name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().addObserver(self,
+															selector: #selector(self.updateRadioBoxesState),
+															name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
 	}
 
 	override func viewWillAppear() {
@@ -45,7 +51,12 @@ class SettingsVC: NSViewController {
 		// Update the view, if already loaded.
 		}
 	}
-	
+
+	deinit {
+		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
+	}
+
 	@IBAction func categoryPressed(sender: NSButton) {
 		var modifiedCat: CategoryType?
 		switch sender.tag {
@@ -90,6 +101,16 @@ class SettingsVC: NSViewController {
 	}
 
 	private func setupComponents() {
+		self.updateRadioBoxesState()
+		self.defaultRadio.font = NSFont(name: "Roboto-Bold", size: 14)
+		self.customRadio.font = NSFont(name: "Roboto-Bold", size: 14)
+		self.topTextLabel.font = NSFont(name: "Roboto-Regular", size: 16)
+		self.defaultDescLabel.font = NSFont(name: "Roboto-Regular", size: 14)
+		self.customDescLabel.font = NSFont(name: "Roboto-Regular", size: 14)
+	}
+
+	@objc
+	private func updateRadioBoxesState() {
 		if AntiTrackingManager.shared.isDefaultConfigEnabled() {
 			self.defaultRadio.state = NSControl.StateValue(rawValue: 1)
 			self.customRadio.state = NSControl.StateValue(rawValue: 0)
@@ -99,11 +120,6 @@ class SettingsVC: NSViewController {
 			self.customRadio.state = NSControl.StateValue(rawValue: 1)
 			self.groupBox.isHidden = false
 		}
-		self.defaultRadio.font = NSFont(name: "Roboto-Bold", size: 14)
-		self.customRadio.font = NSFont(name: "Roboto-Bold", size: 14)
-		self.topTextLabel.font = NSFont(name: "Roboto-Regular", size: 16)
-		self.defaultDescLabel.font = NSFont(name: "Roboto-Regular", size: 14)
-		self.customDescLabel.font = NSFont(name: "Roboto-Regular", size: 14)
 	}
 
 	private func updateCategoryCheckboxStates() {

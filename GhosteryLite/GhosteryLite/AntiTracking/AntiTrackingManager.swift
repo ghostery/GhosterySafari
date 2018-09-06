@@ -29,12 +29,12 @@ class AntiTrackingManager {
 		DistributedNotificationCenter.default().addObserver(self,
 															selector: #selector(self.resume),
 															name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().addObserver(self,
-															selector: #selector(self.switchToDefault),
-															name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().addObserver(self,
-															selector: #selector(self.switchToCustom),
-															name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
+//		DistributedNotificationCenter.default().addObserver(self,
+//															selector: #selector(self.switchToDefault),
+//															name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
+//		DistributedNotificationCenter.default().addObserver(self,
+//															selector: #selector(self.switchToCustom),
+//															name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
 		DistributedNotificationCenter.default().addObserver(self,
 															selector: #selector(self.tabDomainIsChanged),
 															name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
@@ -51,15 +51,15 @@ class AntiTrackingManager {
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.PauseNotificationName, object: Constants.SafariPopupExtensionID)
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
 		
-		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
+//		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
+//		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
 		
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
-
 	}
+
 	func configureRealm() {
 		let config = Realm.Configuration(
 			// Set the new schema version. This must be greater than the previously used

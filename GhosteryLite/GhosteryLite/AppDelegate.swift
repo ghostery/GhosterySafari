@@ -24,10 +24,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
+		DistributedNotificationCenter.default().addObserver(self,
+															selector: #selector(self.updateConfigState),
+															name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().addObserver(self,
+															selector: #selector(self.updateConfigState),
+															name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
 	}
 
 	func applicationWillTerminate(_ aNotification: Notification) {
 		// Insert code here to tear down your application
+		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
 	}
 
 	func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
@@ -41,6 +49,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		return true
 	}
 
+	@objc
 	func updateConfigState() {
 		if let m = self.protectionConfigMenu?.submenu {
 			if AntiTrackingManager.shared.isDefaultConfigEnabled() {
