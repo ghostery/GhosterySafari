@@ -14,8 +14,8 @@ class SettingsVC: NSViewController {
 	@IBOutlet weak var topTextLabel: NSTextField!
 	@IBOutlet var defaultRadio: NSButton!
 	@IBOutlet weak var defaultDescLabel: NSTextField!
-	@IBOutlet var customRadio: NSButton!
 
+	@IBOutlet var customRadio: NSButton!
 	@IBOutlet weak var customDescLabel: NSTextField!
 
 	@IBOutlet var groupBox: NSBox!
