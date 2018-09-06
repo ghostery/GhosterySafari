@@ -76,18 +76,19 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 0)
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 1)
 		}
+		self.reloadPopupView.isHidden = true
 	}
 
 	@IBAction func pauseButtonPressed(sender: NSButton) {
 		self.isPaused = sender.state.rawValue == 1
 		if sender.state.rawValue == 1 {
 			self.pauseButton.toolTip = "Resume Ghostery Lite"
-			DistributedNotificationCenter.default().post(name: Constants.PauseNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+			DistributedNotificationCenter.default().post(name: Constants.PauseNotificationName, object: Constants.SafariPopupExtensionID)
 			self.trustSiteButton.isEnabled = false
 			self.showPausedPopup()
 		} else {
 			self.pauseButton.toolTip = "Pause Ghostery Lite"
-			DistributedNotificationCenter.default().post(name: Constants.ResumeNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+			DistributedNotificationCenter.default().post(name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
 			self.trustSiteButton.isEnabled = true
 			self.showResumedPopup()
 		}
@@ -114,7 +115,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBAction func defaultConfigPressed(sender: NSButton) {
 		if sender.state.rawValue == 1 {
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
-			DistributedNotificationCenter.default().post(name: Constants.SwitchToDefaultNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+			DistributedNotificationCenter.default().post(name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
 		} else {
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 1)
 		}
@@ -123,7 +124,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBAction func customConfigPressed(sender: NSButton) {
 		if sender.state.rawValue == 1 {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 0)
-			DistributedNotificationCenter.default().post(name: Constants.SwitchToCustomNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+			DistributedNotificationCenter.default().post(name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
 		} else {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
 		}
@@ -160,7 +161,8 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 //		NSWorkspace.shared.launchApplication(withBundleIdentifier: Constants.GhosteryLiteID, options: [LaunchOptions], additionalEventParamDescriptor: <#T##NSAppleEventDescriptor?#>, launchIdentifier: AutoreleasingUnsafeMutablePointer<NSNumber?>?)
 		NSWorkspace.shared.launchApplication("GhosteryLite")
 		Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (_) in
-			DistributedNotificationCenter.default().post(name: Constants.NavigateToSettingsNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+			
+			DistributedNotificationCenter.default().post(name: Constants.NavigateToSettingsNotificationName, object: Constants.SafariPopupExtensionID)
 		}
 	}
 

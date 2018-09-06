@@ -33,7 +33,7 @@ class HomeVC: NSViewController {
         }
 		DistributedNotificationCenter.default().addObserver(self,
 															selector: #selector(self.editSettingsClicked(_:)),
-															name: Constants.NavigateToSettingsNotificationName, object: "Gh.GhosteryLite.SafariExtension")
+															name: Constants.NavigateToSettingsNotificationName, object: Constants.SafariPopupExtensionID)
     }
     
     @IBAction func enableGhosteryLite(_ sender: NSButton) {
