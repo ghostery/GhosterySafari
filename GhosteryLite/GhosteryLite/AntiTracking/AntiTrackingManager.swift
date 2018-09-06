@@ -36,7 +36,7 @@ class AntiTrackingManager {
 															selector: #selector(self.switchToCustom),
 															name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
 		DistributedNotificationCenter.default().addObserver(self,
-															selector: #selector(self.switchToCustom),
+															selector: #selector(self.tabDomainIsChanged),
 															name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
 		DistributedNotificationCenter.default().addObserver(self,
 															selector: #selector(self.trustSiteNotification),
@@ -112,17 +112,14 @@ class AntiTrackingManager {
 	@objc
 	func switchToDefault() {
 		GlobalConfigManager.shared.switchToConfig(.byDefault)
-		let d = UserDefaults(suiteName: Constants.AppsGroupID)
-		d?.set(true, forKey: "isDefault")
-		d?.synchronize()
+//		let d = UserDefaults(suiteName: Constants.AppsGroupID)
+//		d?.set(true, forKey: "isDefault")
+//		d?.synchronize()
 	}
 
 	@objc
 	func switchToCustom() {
 		GlobalConfigManager.shared.switchToConfig(.custom)
-		let d = UserDefaults(suiteName: Constants.AppsGroupID)
-		d?.set(false, forKey: "isDefault")
-		d?.synchronize()
 	}
 
 	func reloadContentBlocker() {

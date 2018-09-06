@@ -78,7 +78,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="Lfu-k9-tv6"/>
                     </constraints>
-                    <buttonCell key="cell" type="radio" title="Default Protection" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="CU4-2B-vbk">
+                    <buttonCell key="cell" type="radio" title="Default Protection" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="CU4-2B-vbk">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" size="13" name="HelveticaNeue"/>
                     </buttonCell>

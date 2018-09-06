@@ -15,4 +15,10 @@ class WindowController: NSWindowController {
 		super.windowWillLoad()
 	}
 
+	override func windowDidLoad() {
+		super.windowDidLoad()
+		let appDelegate = NSApplication.shared.delegate as? AppDelegate
+		appDelegate?.mainWindow = self.window
+	}
+
 }
