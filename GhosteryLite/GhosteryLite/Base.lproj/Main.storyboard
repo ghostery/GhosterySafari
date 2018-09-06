@@ -879,7 +879,7 @@
                                 </textFieldCell>
                             </textField>
                             <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="3q8-lj-Gd7">
-                                <rect key="frame" x="27" y="425" width="570" height="2"/>
+                                <rect key="frame" x="27" y="410" width="570" height="2"/>
                                 <view key="contentView" id="McC-du-hao">
                                     <rect key="frame" x="0.0" y="0.0" width="570" height="2"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -918,7 +918,7 @@
                                 </connections>
                             </button>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swm-qe-0kG">
-                                <rect key="frame" x="27" y="15" width="570" height="400"/>
+                                <rect key="frame" x="27" y="10" width="570" height="400"/>
                                 <clipView key="contentView" drawsBackground="NO" id="iHf-TW-qBy">
                                     <rect key="frame" x="0.0" y="0.0" width="570" height="400"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -951,10 +951,19 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4uz-3S-HSA">
+                                <rect key="frame" x="184" y="418" width="242" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="hp5-oU-rd6">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" red="0.90588235294117647" green="0.25098039215686274" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="swm-qe-0kG" firstAttribute="top" secondItem="McC-du-hao" secondAttribute="bottom" constant="10" id="J1f-g2-eHs"/>
-                            <constraint firstItem="3q8-lj-Gd7" firstAttribute="top" secondItem="LAu-bc-Mwd" secondAttribute="bottom" constant="12" id="Oek-7M-rDU"/>
+                            <constraint firstItem="swm-qe-0kG" firstAttribute="top" secondItem="McC-du-hao" secondAttribute="bottom" id="J1f-g2-eHs"/>
+                            <constraint firstItem="3q8-lj-Gd7" firstAttribute="top" secondItem="LAu-bc-Mwd" secondAttribute="bottom" constant="27" id="Oek-7M-rDU"/>
                             <constraint firstItem="3q8-lj-Gd7" firstAttribute="centerX" secondItem="hzg-6t-EUG" secondAttribute="centerX" id="Q39-QD-6TW"/>
                             <constraint firstItem="4fF-tz-VdL" firstAttribute="top" secondItem="QCj-UT-lns" secondAttribute="top" id="TIs-m2-sVu"/>
                             <constraint firstItem="QCj-UT-lns" firstAttribute="top" secondItem="hzg-6t-EUG" secondAttribute="top" constant="32" id="UzW-Ue-Qyb"/>
@@ -968,6 +977,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errorMessageLabel" destination="4uz-3S-HSA" id="xSC-hH-093"/>
                         <outlet property="trustSiteBtn" destination="qwB-cC-fc2" id="BK4-e5-xnG"/>
                         <outlet property="trustedSiteTextField" destination="LAu-bc-Mwd" id="ePE-Jz-ckm"/>
                         <outlet property="trustedSitesText" destination="4fF-tz-VdL" id="aqi-2k-P5e"/>

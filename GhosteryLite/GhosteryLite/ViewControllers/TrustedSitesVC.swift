@@ -15,6 +15,8 @@ class TrustedSitesVC: NSViewController {
     @IBOutlet weak var trustSiteBtn: NSButton!
     @IBOutlet weak var trustedStiesCollectionView: NSCollectionView!
 
+	@IBOutlet weak var errorMessageLabel: NSTextField!
+
 	private var trustedSites = [TrustedSiteObject]()
 
     override func viewDidLoad() {
@@ -26,6 +28,8 @@ class TrustedSitesVC: NSViewController {
                                                                                                       fontName: "Roboto-Medium",
                                                                                                       fontSize: 12.0,
                                                                                                       fontColor: 0x9b9b9b)
+		errorMessageLabel.font = NSFont(name: "Roboto-Regular", size: 10)
+		errorMessageLabel.stringValue = "Please enter a valid URL."
     }
 
 	override func viewWillAppear() {
@@ -34,6 +38,15 @@ class TrustedSitesVC: NSViewController {
 	}
 
 	@IBAction func trustSiteButtonPressed(sender: NSButton) {
+		if trustedSiteTextField.stringValue.trimmingCharacters(in: .whitespacesAndNewlines).count == 0 {
+			return
+		}
+		
+		guard self.isValid(url: trustedSiteTextField.stringValue) else {
+				self.errorMessageLabel.isHidden = false
+			return
+		}
+		self.errorMessageLabel.isHidden = true
 		AntiTrackingManager.shared.trustDomain(domain: trustedSiteTextField.stringValue)
 //		TrustedSitesDataSource.shared.trustSite(trustedSiteTextField.stringValue)
 		updateData()
@@ -44,6 +57,29 @@ class TrustedSitesVC: NSViewController {
 		self.trustedSites = TrustedSitesDataSource.shared.allTrustedSites()
 		trustedStiesCollectionView.reloadData()
 	}
+
+	// Move the logic to TrustSiteDS
+	private func isValid(url: String) -> Bool {
+		let host = removeUrlComponentsAfterHost(url: url)
+		let urlRegEx = "((?:http|https)://)?(((?:www)?|(?:[a-zA-z0-9]{1,})?)\\.)?[\\w\\d\\-_]+\\.(\\w{2,}?|(xn--\\w{2,})?)(\\.\\w{2})?(/(?<=/)(?:[\\w\\d\\-./_]+)?)?"
+		let urlTest = NSPredicate(format:"SELF MATCHES %@", urlRegEx)
+		let result = urlTest.evaluate(with: host)
+		return result
+	}
+
+	private func removeUrlComponentsAfterHost(url: String) -> String {
+		var host = ""
+		var firstSlashRange: Range<String.Index>?
+		if let protocolRange = url.range(of: "://") {
+			let searchRange = Range<String.Index>(uncheckedBounds: (lower: protocolRange.upperBound, upper: url.endIndex))
+			firstSlashRange = url.range(of: "/", options: .literal, range: searchRange, locale: Locale.current)
+		} else {
+			firstSlashRange = url.range(of: "/", options: .literal, range: nil, locale: Locale.current)
+		}
+		host = String(url[..<(firstSlashRange?.lowerBound ?? url.endIndex)])
+		return host
+	}
+
 }
 
 // MARK:- Collection view data source
