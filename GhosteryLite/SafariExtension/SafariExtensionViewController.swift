@@ -239,7 +239,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		self.popupReloadButton.attributedTitle = self.popupReloadButton.title.attributedString(withTextAlignment: .center,
 																   fontName: "OpenSans-SemiBold",
 																   fontSize: 11.0,
-																   fontColor: fontColor)
+																   fontColor: fontColor, isUnderline: true)
 		self.reloadPopupView.isHidden = false
 	}
 }
