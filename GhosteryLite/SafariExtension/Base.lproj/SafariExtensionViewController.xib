@@ -34,7 +34,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Iy-aV-wGF">
-                    <rect key="frame" x="29" y="281" width="31" height="23"/>
+                    <rect key="frame" x="31" y="281" width="31" height="23"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="23" id="gGb-vv-uJo"/>
                         <constraint firstAttribute="width" constant="27" id="gm6-3R-IrQ"/>
@@ -46,10 +46,10 @@
                     </textFieldCell>
                 </textField>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a6l-Sf-YbR">
-                    <rect key="frame" x="8" y="281" width="20" height="23"/>
+                    <rect key="frame" x="8" y="281" width="22" height="24"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="20" id="hGN-aY-Qxk"/>
-                        <constraint firstAttribute="height" constant="23" id="yNR-lz-Xi9"/>
+                        <constraint firstAttribute="width" constant="22" id="hGN-aY-Qxk"/>
+                        <constraint firstAttribute="height" constant="24" id="yNR-lz-Xi9"/>
                     </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="liteLogo" id="cUt-3I-AVa"/>
                 </imageView>
@@ -322,7 +322,7 @@
                 <constraint firstItem="2ny-hN-rJo" firstAttribute="top" secondItem="BdJ-Az-y4r" secondAttribute="bottom" id="s6w-hA-s5d"/>
                 <constraint firstItem="l9i-jf-Gns" firstAttribute="top" secondItem="cF2-v5-BPd" secondAttribute="bottom" constant="20" id="tQd-ex-AZK"/>
                 <constraint firstItem="rAf-uz-UtS" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" constant="0.5" id="tpz-q6-cgd"/>
-                <constraint firstItem="a6l-Sf-YbR" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="v40-uM-5Qm"/>
+                <constraint firstItem="a6l-Sf-YbR" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="7" id="v40-uM-5Qm"/>
                 <constraint firstItem="b7q-eW-rBI" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="yDG-sD-3Wo"/>
             </constraints>
             <point key="canvasLocation" x="139" y="265"/>
@@ -331,7 +331,7 @@
     <resources>
         <image name="closePopup" width="8" height="8"/>
         <image name="info" width="9" height="10"/>
-        <image name="liteLogo" width="22" height="25"/>
+        <image name="liteLogo" width="22" height="24"/>
         <image name="meatBallsButton" width="22" height="7"/>
         <image name="noLatency" width="132" height="8"/>
         <image name="pauseButton" width="22" height="22"/>
