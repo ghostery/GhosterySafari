@@ -211,10 +211,10 @@
                     </textFieldCell>
                 </textField>
                 <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rlb-mT-MaB">
-                    <rect key="frame" x="0.0" y="208" width="186" height="65"/>
+                    <rect key="frame" x="0.0" y="201" width="186" height="72"/>
                     <subviews>
                         <button translatesAutoresizingMaskIntoConstraints="NO" id="UaI-LL-OzT">
-                            <rect key="frame" x="173" y="50" width="8" height="8"/>
+                            <rect key="frame" x="173" y="59" width="8" height="8"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="8" id="uTb-XM-neq"/>
                                 <constraint firstAttribute="width" constant="8" id="vMV-tR-9Oa"/>
@@ -228,7 +228,7 @@
                             </connections>
                         </button>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="26T-rB-QRX">
-                            <rect key="frame" x="0.0" y="30" width="186" height="17"/>
+                            <rect key="frame" x="0.0" y="39" width="186" height="17"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="17" id="GC4-ne-8eX"/>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="182" id="fKS-yQ-QmZ"/>
@@ -240,7 +240,7 @@
                             </textFieldCell>
                         </textField>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6aT-bG-BUD">
-                            <rect key="frame" x="10" y="10" width="166" height="20"/>
+                            <rect key="frame" x="10" y="13" width="166" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="VhC-P8-YDI"/>
                             </constraints>
@@ -259,10 +259,10 @@
                         <constraint firstAttribute="trailing" secondItem="6aT-bG-BUD" secondAttribute="trailing" constant="10" id="Lzw-Vw-xzW"/>
                         <constraint firstItem="26T-rB-QRX" firstAttribute="leading" secondItem="Rlb-mT-MaB" secondAttribute="leading" constant="2" id="MrY-re-pLU"/>
                         <constraint firstItem="6aT-bG-BUD" firstAttribute="leading" secondItem="Rlb-mT-MaB" secondAttribute="leading" constant="10" id="Pml-od-rKI"/>
-                        <constraint firstAttribute="height" constant="65" id="WSs-ie-a0f"/>
-                        <constraint firstAttribute="bottom" secondItem="6aT-bG-BUD" secondAttribute="bottom" constant="10" id="h2T-WQ-Oq4"/>
+                        <constraint firstAttribute="height" constant="72" id="WSs-ie-a0f"/>
+                        <constraint firstAttribute="bottom" secondItem="6aT-bG-BUD" secondAttribute="bottom" constant="13" id="h2T-WQ-Oq4"/>
                         <constraint firstAttribute="width" constant="186" id="lsX-oD-1kQ"/>
-                        <constraint firstItem="UaI-LL-OzT" firstAttribute="top" secondItem="Rlb-mT-MaB" secondAttribute="top" constant="7" id="uRL-GI-24g"/>
+                        <constraint firstItem="UaI-LL-OzT" firstAttribute="top" secondItem="Rlb-mT-MaB" secondAttribute="top" constant="5" id="uRL-GI-24g"/>
                     </constraints>
                     <connections>
                         <outlet property="titleLabel" destination="26T-rB-QRX" id="OOO-pA-9w2"/>
