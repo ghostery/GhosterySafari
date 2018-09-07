@@ -21,15 +21,7 @@ class TrustedSitesVC: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        trustedSitesText.stringValue = Strings.TrustedSitesPanelText
-        
-        trustSiteBtn.attributedTitle = Strings.TrustedSitesPanelTrustSiteButtonTitle.attributedString(withTextAlignment: .center,
-                                                                                                      fontName: "Roboto-Medium",
-                                                                                                      fontSize: 12.0,
-                                                                                                      fontColor: 0x9b9b9b)
-		errorMessageLabel.font = NSFont(name: "Roboto-Regular", size: 10)
-		errorMessageLabel.stringValue = "Please enter a valid URL."
+        self.setupComponents()
     }
 
 	override func viewWillAppear() {
@@ -48,7 +40,6 @@ class TrustedSitesVC: NSViewController {
 		}
 		self.errorMessageLabel.isHidden = true
 		AntiTrackingManager.shared.trustDomain(domain: trustedSiteTextField.stringValue)
-//		TrustedSitesDataSource.shared.trustSite(trustedSiteTextField.stringValue)
 		updateData()
 		trustedSiteTextField.stringValue = ""
 	}
@@ -56,6 +47,17 @@ class TrustedSitesVC: NSViewController {
 	private func updateData() {
 		self.trustedSites = TrustedSitesDataSource.shared.allTrustedSites()
 		trustedStiesCollectionView.reloadData()
+	}
+
+	private func setupComponents() {
+		trustedSitesText.stringValue = Strings.TrustedSitesPanelText
+		trustedSitesText.font = NSFont(name: "Roboto-Regular", size: 16)
+		trustSiteBtn.attributedTitle = Strings.TrustedSitesPanelTrustSiteButtonTitle.attributedString(withTextAlignment: .center,
+																									  fontName: "Roboto-Medium",
+																									  fontSize: 12.0,
+																									  fontColor: 0x9b9b9b)
+		errorMessageLabel.font = NSFont(name: "Roboto-Regular", size: 10)
+		errorMessageLabel.stringValue = "Please enter a valid URL."
 	}
 
 	// Move the logic to TrustSiteDS

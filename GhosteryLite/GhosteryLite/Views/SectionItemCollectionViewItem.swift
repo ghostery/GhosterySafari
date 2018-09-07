@@ -30,6 +30,9 @@ class SectionItemCollectionViewItem: NSCollectionViewItem {
             if isSelected {
                 let attrs = [NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]
                 text.addAttributes(attrs, range: NSRange(location: 0, length: text.length))
+				if let f = NSFont(name: "RobotoCondensed-Bold", size: 14) {
+					text.addAttributes([NSAttributedStringKey.font : f], range: NSRange(location: 0, length: text.length))
+				}
             }
             self.lblTitle.attributedStringValue = text
             self.sideNavImgIcon.isHidden = !isSelected
@@ -39,6 +42,7 @@ class SectionItemCollectionViewItem: NSCollectionViewItem {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.wantsLayer = true
+		self.lblTitle.font = NSFont(name: "RobotoCondensed-Bold", size: 14)
     }
     
     func update(_ item: MenuItem, for indexPath: IndexPath?) {

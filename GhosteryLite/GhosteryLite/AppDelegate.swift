@@ -24,6 +24,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
+		// TODO: Refactor UserDefaults calls in sentralized Pref class
+		UserDefaults.standard.set(50, forKey: "NSInitialToolTipDelay")
+		UserDefaults.standard.synchronize()
 		DistributedNotificationCenter.default().addObserver(self,
 															selector: #selector(self.updateConfigState),
 															name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)

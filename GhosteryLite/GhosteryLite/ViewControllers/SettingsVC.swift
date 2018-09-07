@@ -102,11 +102,19 @@ class SettingsVC: NSViewController {
 
 	private func setupComponents() {
 		self.updateRadioBoxesState()
+		self.topTextLabel.font = NSFont(name: "Roboto-Regular", size: 16)
 		self.defaultRadio.font = NSFont(name: "Roboto-Bold", size: 14)
 		self.customRadio.font = NSFont(name: "Roboto-Bold", size: 14)
-		self.topTextLabel.font = NSFont(name: "Roboto-Regular", size: 16)
 		self.defaultDescLabel.font = NSFont(name: "Roboto-Regular", size: 14)
 		self.customDescLabel.font = NSFont(name: "Roboto-Regular", size: 14)
+		adCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
+		audioVideoCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
+		commentsCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
+		customInterCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
+		essentialCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
+		adultCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
+		siteAnalyticsCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
+		socialMediaCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
 	}
 
 	@objc
