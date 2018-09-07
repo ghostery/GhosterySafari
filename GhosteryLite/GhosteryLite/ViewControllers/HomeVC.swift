@@ -51,7 +51,7 @@ class HomeVC: NSViewController {
     
     private func initComponents() {
         titleText.stringValue = Strings.HomePanelTitle
-        subtitleText.stringValue = Strings.HomePanelSubtitle
+        subtitleText.attributedStringValue = Strings.HomePanelSubtitle.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: 0x4a4a4a, isUnderline: false, lineSpacing: 6)
         enableGhosteryLitePromptText.stringValue = Strings.HomePanelEnableGhosteryLitePromptText
 
         editSettingsText.attributedStringValue = generateAttributedString(prefix: Strings.HomePanelSettingsDescriptionPrefix,

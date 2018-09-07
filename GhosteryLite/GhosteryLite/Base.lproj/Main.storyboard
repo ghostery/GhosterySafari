@@ -635,34 +635,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="624" height="576"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="EDF-e3-gcK">
+                            <box boxType="custom" borderType="none" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="EDF-e3-gcK">
                                 <rect key="frame" x="0.0" y="0.0" width="624" height="576"/>
                                 <view key="contentView" id="kjk-tv-uI4">
                                     <rect key="frame" x="0.0" y="0.0" width="624" height="576"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yNx-KH-9na">
-                                            <rect key="frame" x="212" y="517" width="182" height="29"/>
+                                            <rect key="frame" x="178" y="515" width="182" height="29"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="29" id="Snp-zp-yw3"/>
+                                            </constraints>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="You’ve gone Lite!" id="Z6K-0m-rr9">
                                                 <font key="font" metaFont="system" size="24"/>
                                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kXc-rc-jc4">
-                                            <rect key="frame" x="212" y="442" width="354" height="60"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="350" id="M7N-Xu-k0z"/>
-                                                <constraint firstAttribute="height" constant="60" id="P46-fW-cYT"/>
-                                            </constraints>
-                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Thanks for installing Ghostery Lite. You are now protected with our tailored default settings!" id="wYg-RX-1lu">
-                                                <font key="font" metaFont="system" size="16"/>
-                                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zWn-wq-jhK">
-                                            <rect key="frame" x="75" y="440" width="119" height="106"/>
+                                            <rect key="frame" x="48" y="438" width="120" height="106"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="106" id="LwG-KE-Zo6"/>
+                                                <constraint firstAttribute="width" constant="120" id="tMQ-Jz-EfM"/>
+                                            </constraints>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ghosty-home" id="rfl-3p-vbg"/>
                                         </imageView>
                                         <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="FUM-ps-RLK">
@@ -811,23 +806,36 @@
                                             </constraints>
                                             <color key="fillColor" red="0.74509803921568629" green="0.28627450980392155" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
                                         </box>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kXc-rc-jc4">
+                                            <rect key="frame" x="178" y="438" width="364" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="9MO-Ry-wIj"/>
+                                                <constraint firstAttribute="width" constant="360" id="NQG-S6-19V"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Thanks for installing Ghostery Lite. You are now protected with our tailored default settings!" id="wYg-RX-1lu">
+                                                <font key="font" metaFont="system" size="16"/>
+                                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="kXc-rc-jc4" firstAttribute="top" secondItem="yNx-KH-9na" secondAttribute="bottom" constant="17" id="1jy-zP-9IZ"/>
                                         <constraint firstItem="FUM-ps-RLK" firstAttribute="top" secondItem="kjk-tv-uI4" secondAttribute="top" constant="170" id="9FQ-Lf-DcX"/>
-                                        <constraint firstItem="yNx-KH-9na" firstAttribute="top" secondItem="zWn-wq-jhK" secondAttribute="top" id="Ma9-8H-cBy"/>
-                                        <constraint firstItem="yNx-KH-9na" firstAttribute="leading" secondItem="zWn-wq-jhK" secondAttribute="trailing" constant="20" id="NKQ-qb-VOw"/>
+                                        <constraint firstItem="yNx-KH-9na" firstAttribute="top" secondItem="zWn-wq-jhK" secondAttribute="top" id="ACd-0H-4dl"/>
+                                        <constraint firstItem="zWn-wq-jhK" firstAttribute="leading" secondItem="kjk-tv-uI4" secondAttribute="leading" constant="48" id="BBF-cS-XOb"/>
                                         <constraint firstItem="Kbf-lj-k3C" firstAttribute="top" secondItem="kjk-tv-uI4" secondAttribute="top" id="Pxh-0V-SRn"/>
-                                        <constraint firstItem="kXc-rc-jc4" firstAttribute="leading" secondItem="yNx-KH-9na" secondAttribute="leading" id="Qvp-04-unN"/>
-                                        <constraint firstItem="kXc-rc-jc4" firstAttribute="top" secondItem="yNx-KH-9na" secondAttribute="bottom" constant="15" id="Rgj-oQ-KDX"/>
                                         <constraint firstItem="Kbf-lj-k3C" firstAttribute="leading" secondItem="kjk-tv-uI4" secondAttribute="leading" id="VBA-oH-DlH"/>
                                         <constraint firstItem="FUM-ps-RLK" firstAttribute="leading" secondItem="kjk-tv-uI4" secondAttribute="leading" constant="85" id="Wms-4Y-tm0"/>
                                         <constraint firstItem="5El-Pe-hcO" firstAttribute="leading" secondItem="TcR-Qq-LDZ" secondAttribute="leading" id="crU-eO-kTt"/>
-                                        <constraint firstItem="zWn-wq-jhK" firstAttribute="top" secondItem="kjk-tv-uI4" secondAttribute="top" constant="30" id="fWa-e9-OTf"/>
+                                        <constraint firstItem="yNx-KH-9na" firstAttribute="leading" secondItem="zWn-wq-jhK" secondAttribute="trailing" constant="12" id="dEe-H1-57j"/>
                                         <constraint firstAttribute="trailing" secondItem="Kbf-lj-k3C" secondAttribute="trailing" id="hCd-FE-Jqd"/>
-                                        <constraint firstItem="zWn-wq-jhK" firstAttribute="leading" secondItem="kjk-tv-uI4" secondAttribute="leading" constant="75" id="mYl-53-dTL"/>
+                                        <constraint firstItem="zWn-wq-jhK" firstAttribute="top" secondItem="kjk-tv-uI4" secondAttribute="top" constant="32" id="oOQ-hx-H9W"/>
                                         <constraint firstItem="5El-Pe-hcO" firstAttribute="top" secondItem="TcR-Qq-LDZ" secondAttribute="bottom" constant="15" id="pWg-8a-RHS"/>
+                                        <constraint firstItem="kXc-rc-jc4" firstAttribute="leading" secondItem="yNx-KH-9na" secondAttribute="leading" id="sn4-WC-U5Z"/>
                                     </constraints>
                                 </view>
+                                <color key="borderColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="fillColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </box>
                         </subviews>
@@ -1256,7 +1264,7 @@
     </scenes>
     <resources>
         <image name="ghosty-help" width="120" height="107"/>
-        <image name="ghosty-home" width="119" height="106"/>
+        <image name="ghosty-home" width="120" height="106"/>
         <image name="ghosty-trustedSites" width="119" height="106"/>
         <image name="icon-ghostery" width="57" height="63"/>
         <image name="info" width="9" height="10"/>
