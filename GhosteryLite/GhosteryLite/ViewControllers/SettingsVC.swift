@@ -28,6 +28,9 @@ class SettingsVC: NSViewController {
 	@IBOutlet var adultCheckbox: NSButton!
 	@IBOutlet var commentsCheckbox: NSButton!
 
+	@IBOutlet var savedBox: NSBox!
+	@IBOutlet var savedLabel: NSTextField!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		DistributedNotificationCenter.default().addObserver(self,
@@ -85,6 +88,7 @@ class SettingsVC: NSViewController {
 		if let m = modifiedCat {
 			let _ = GlobalConfigManager.shared.changeCategoryStatus(m, status: sender.state.rawValue == 0 ? false : true)
 			AntiTrackingManager.shared.reloadContentBlocker()
+			self.savedBox.isHidden = false
 		}
 	}
 
@@ -98,6 +102,7 @@ class SettingsVC: NSViewController {
 		AntiTrackingManager.shared.switchToCustom()
 		self.defaultRadio.state = NSControl.StateValue(rawValue: 0)
 		self.groupBox.isHidden = false
+		self.savedBox.isHidden = true
 	}
 
 	private func setupComponents() {
@@ -115,6 +120,9 @@ class SettingsVC: NSViewController {
 		adultCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
 		siteAnalyticsCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
 		socialMediaCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
+		self.savedLabel.textColor = NSColor(rgb: 0x67a73a)
+		self.savedLabel.font = NSFont(name: "Roboto-Regular", size: 14)
+		self.savedBox.isHidden = true
 	}
 
 	@objc
