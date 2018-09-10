@@ -199,7 +199,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		self.secondRangeLabel.font = NSFont(name: "OpenSans-Regular", size: 10)
 		self.thirdRangeLabel.font = NSFont(name: "OpenSans-Regular", size: 10)
 		self.secondsLabel.font = NSFont(name: "Roboto-Regular", size: 9)
-		self.trustSiteButton.font = NSFont(name: "OpenSans-SemiBold", size: 11)
+//		self.trustSiteButton.font = NSFont(name: "OpenSans-SemiBold", size: 11)
 		self.popupTitleLabel.font = NSFont(name: "OpenSans-SemiBold", size: 11)
 		self.popupReloadButton.font = NSFont(name: "OpenSans-SemiBold", size: 11)
 		
