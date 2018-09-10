@@ -41,8 +41,9 @@ class HelpVC: NSViewController {
     }
     
     private func initComponents() {
-        helpText.stringValue = Strings.HelpPanelText
-        
+//        helpText.stringValue = Strings.HelpPanelText
+		self.helpText.attributedStringValue = Strings.HelpPanelText.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: 0x4a4a4a, isUnderline: false, lineSpacing: 3)
+
         supportBtn.attributedTitle = Strings.HelpPanelSupportButtonTitle.attributedString(withTextAlignment: .left,
                                                                                           fontName: "Roboto-Regular",
                                                                                           fontSize: 14.0,

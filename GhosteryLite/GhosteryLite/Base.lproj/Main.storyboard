@@ -1080,17 +1080,17 @@
             <objects>
                 <viewController storyboardIdentifier="HelpVC" id="O7l-gC-ZX6" customClass="HelpVC" customModule="GhosteryLite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="9uA-SM-6nW">
-                        <rect key="frame" x="0.0" y="0.0" width="624" height="576"/>
+                        <rect key="frame" x="0.0" y="0.0" width="637" height="576"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Olq-2d-bAe">
-                                <rect key="frame" x="55" y="437" width="120" height="107"/>
+                                <rect key="frame" x="48" y="437" width="120" height="107"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ghosty-help" id="vvX-kQ-bSN"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="d01-sf-A44">
-                                <rect key="frame" x="185" y="444" width="364" height="100"/>
+                                <rect key="frame" x="179" y="444" width="413" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="360" id="hoF-nm-dB4"/>
+                                    <constraint firstAttribute="width" constant="409" id="hoF-nm-dB4"/>
                                     <constraint firstAttribute="height" constant="100" id="ztQ-Dz-c7I"/>
                                 </constraints>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="9tv-f8-fCZ">
@@ -1101,7 +1101,7 @@
                                 </textFieldCell>
                             </textField>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="GGf-yh-WDN">
-                                <rect key="frame" x="55" y="363" width="250" height="25"/>
+                                <rect key="frame" x="55" y="370" width="250" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="0fV-Wg-X4X"/>
                                     <constraint firstAttribute="height" constant="25" id="DnG-ON-sqt"/>
@@ -1115,7 +1115,7 @@
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="J30-pG-oZv">
-                                <rect key="frame" x="55" y="322" width="250" height="25"/>
+                                <rect key="frame" x="55" y="329" width="250" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="FW5-72-QHV"/>
                                     <constraint firstAttribute="height" constant="25" id="mRe-RN-MsL"/>
@@ -1129,7 +1129,7 @@
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="Z2x-ej-mQ8">
-                                <rect key="frame" x="55" y="281" width="250" height="25"/>
+                                <rect key="frame" x="55" y="288" width="250" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="47t-xs-M1I"/>
                                     <constraint firstAttribute="width" constant="250" id="dFO-nV-j4K"/>
@@ -1143,7 +1143,7 @@
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="D5B-eQ-LSy">
-                                <rect key="frame" x="55" y="240" width="250" height="25"/>
+                                <rect key="frame" x="55" y="247" width="250" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="OvX-Lt-hK2"/>
                                     <constraint firstAttribute="width" constant="250" id="TOk-P5-d8b"/>
@@ -1157,32 +1157,33 @@
                                 </connections>
                             </button>
                             <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-3n-ed0">
-                                <rect key="frame" x="27" y="404" width="570" height="2"/>
+                                <rect key="frame" x="34" y="411" width="570" height="1"/>
                                 <view key="contentView" id="b3C-0y-Cve">
-                                    <rect key="frame" x="0.0" y="0.0" width="570" height="2"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="570" height="1"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="570" id="baS-66-Yng"/>
-                                    <constraint firstAttribute="height" constant="2" id="tWz-cn-qya"/>
+                                    <constraint firstAttribute="height" constant="1" id="tWz-cn-qya"/>
                                 </constraints>
                                 <color key="borderColor" red="0.79607843137254897" green="0.83137254901960778" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="fillColor" red="0.79607843140000001" green="0.83137254900000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                             </box>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="GGf-yh-WDN" firstAttribute="leading" secondItem="Olq-2d-bAe" secondAttribute="leading" id="0vM-GL-OHV"/>
-                            <constraint firstItem="d01-sf-A44" firstAttribute="leading" secondItem="Olq-2d-bAe" secondAttribute="trailing" constant="12" id="3yR-x0-Bmd"/>
+                            <constraint firstItem="GGf-yh-WDN" firstAttribute="leading" secondItem="Olq-2d-bAe" secondAttribute="leading" constant="7" id="0vM-GL-OHV"/>
+                            <constraint firstItem="d01-sf-A44" firstAttribute="leading" secondItem="Olq-2d-bAe" secondAttribute="trailing" constant="13" id="3yR-x0-Bmd"/>
+                            <constraint firstAttribute="trailing" secondItem="ClR-3n-ed0" secondAttribute="trailing" constant="33" id="4jW-Xf-xsf"/>
                             <constraint firstItem="d01-sf-A44" firstAttribute="top" secondItem="Olq-2d-bAe" secondAttribute="top" id="5CM-7E-s5b"/>
                             <constraint firstItem="Z2x-ej-mQ8" firstAttribute="leading" secondItem="J30-pG-oZv" secondAttribute="leading" id="8VE-5F-ZGN"/>
                             <constraint firstItem="GGf-yh-WDN" firstAttribute="top" secondItem="b3C-0y-Cve" secondAttribute="bottom" constant="16" id="9Ia-2b-sXC"/>
                             <constraint firstItem="Olq-2d-bAe" firstAttribute="top" secondItem="9uA-SM-6nW" secondAttribute="top" constant="32" id="Egp-gX-Mb8"/>
-                            <constraint firstItem="Olq-2d-bAe" firstAttribute="leading" secondItem="9uA-SM-6nW" secondAttribute="leading" constant="55" id="SwS-A3-ELp"/>
+                            <constraint firstItem="Olq-2d-bAe" firstAttribute="leading" secondItem="9uA-SM-6nW" secondAttribute="leading" constant="48" id="SwS-A3-ELp"/>
                             <constraint firstItem="D5B-eQ-LSy" firstAttribute="top" secondItem="Z2x-ej-mQ8" secondAttribute="bottom" constant="16" id="XMX-eS-Mff"/>
                             <constraint firstItem="J30-pG-oZv" firstAttribute="top" secondItem="GGf-yh-WDN" secondAttribute="bottom" constant="16" id="bre-oh-v1K"/>
+                            <constraint firstItem="ClR-3n-ed0" firstAttribute="leading" secondItem="9uA-SM-6nW" secondAttribute="leading" constant="34" id="hkC-tT-pMc"/>
                             <constraint firstItem="D5B-eQ-LSy" firstAttribute="leading" secondItem="Z2x-ej-mQ8" secondAttribute="leading" id="rMz-8h-NBb"/>
-                            <constraint firstItem="ClR-3n-ed0" firstAttribute="top" secondItem="d01-sf-A44" secondAttribute="bottom" constant="38" id="umm-71-REr"/>
-                            <constraint firstItem="ClR-3n-ed0" firstAttribute="centerX" secondItem="9uA-SM-6nW" secondAttribute="centerX" id="vd1-ea-5o4"/>
+                            <constraint firstItem="ClR-3n-ed0" firstAttribute="top" secondItem="d01-sf-A44" secondAttribute="bottom" constant="32" id="umm-71-REr"/>
                             <constraint firstItem="J30-pG-oZv" firstAttribute="leading" secondItem="GGf-yh-WDN" secondAttribute="leading" id="vda-sf-ptW"/>
                             <constraint firstItem="Z2x-ej-mQ8" firstAttribute="top" secondItem="J30-pG-oZv" secondAttribute="bottom" constant="16" id="zM1-eh-ldP"/>
                         </constraints>
@@ -1197,7 +1198,7 @@
                 </viewController>
                 <customObject id="Hbf-ub-WCF" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1804" y="2741"/>
+            <point key="canvasLocation" x="1803.5" y="2741"/>
         </scene>
         <!--Safari Extension PromptVC-->
         <scene sceneID="Qau-T4-5y6">
