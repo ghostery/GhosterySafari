@@ -30,6 +30,7 @@ class TrustedSitesVC: NSViewController {
 	}
 
 	@IBAction func trustSiteButtonPressed(sender: NSButton) {
+		updateTrustBtnState(false)
 		if trustedSiteTextField.stringValue.trimmingCharacters(in: .whitespacesAndNewlines).count == 0 {
 			return
 		}
@@ -59,6 +60,7 @@ class TrustedSitesVC: NSViewController {
 																									  fontColor: 0x9b9b9b)
 		errorMessageLabel.font = NSFont(name: "Roboto-Regular", size: 10)
 		errorMessageLabel.stringValue = "Please enter a valid URL."
+		trustSiteBtn.attributedAlternateTitle = Strings.TrustedSitesPanelTrustSiteButtonTitle.attributedString(withTextAlignment: .center, fontName: "Roboto-Medium", fontSize: 12.0, fontColor: 0xffffff)
 	}
 
 	// Move the logic to TrustSiteDS
@@ -81,6 +83,11 @@ class TrustedSitesVC: NSViewController {
 		}
 		host = String(url[..<(firstSlashRange?.lowerBound ?? url.endIndex)])
 		return host
+	}
+
+	fileprivate func updateTrustBtnState(_ isEnabled: Bool) {
+		trustSiteBtn.isEnabled = isEnabled
+		trustSiteBtn.state = NSControl.StateValue(rawValue: isEnabled ? 1 : 0)
 	}
 
 }
@@ -111,7 +118,6 @@ extension TrustedSitesVC : NSCollectionViewDataSource {
 		if let n = obj.name {
 			trustedSiteView.update(n, for: indexPath)
 		}
-//        trustedSiteView.update("www.cnn.com", for: indexPath)
         return trustedSiteView
     }
 }
@@ -131,4 +137,11 @@ extension TrustedSitesVC : NSCollectionViewDelegate {
                         didSelectItemsAt indexPaths: Set<IndexPath>) {
         
     }
+}
+
+extension TrustedSitesVC: NSTextFieldDelegate {
+
+	override func controlTextDidChange(_ obj: Notification) {
+		self.updateTrustBtnState(trustedSiteTextField.stringValue != "")
+	}
 }
