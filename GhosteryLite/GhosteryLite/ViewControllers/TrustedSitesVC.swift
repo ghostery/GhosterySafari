@@ -51,6 +51,7 @@ class TrustedSitesVC: NSViewController {
 
 	private func setupComponents() {
 		trustedSitesText.stringValue = Strings.TrustedSitesPanelText
+		trustedSitesText.attributedStringValue = Strings.TrustedSitesPanelText.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: 0x4a4a4a, isUnderline: false, lineSpacing: 3)
 		trustedSitesText.font = NSFont(name: "Roboto-Regular", size: 16)
 		trustSiteBtn.attributedTitle = Strings.TrustedSitesPanelTrustSiteButtonTitle.attributedString(withTextAlignment: .center,
 																									  fontName: "Roboto-Medium",
