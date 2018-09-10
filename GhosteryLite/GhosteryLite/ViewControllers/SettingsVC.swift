@@ -107,11 +107,15 @@ class SettingsVC: NSViewController {
 
 	private func setupComponents() {
 		self.updateRadioBoxesState()
-		self.topTextLabel.font = NSFont(name: "Roboto-Regular", size: 16)
+		self.topTextLabel.attributedStringValue = self.topTextLabel.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: 0x4a4a4a, isUnderline: false, lineSpacing: 3)
+		
+//		attributedString()
+//		self.topTextLabel.font = NSFont(name: "Roboto-Regular", size: 16)
 		self.defaultRadio.font = NSFont(name: "Roboto-Bold", size: 14)
 		self.customRadio.font = NSFont(name: "Roboto-Bold", size: 14)
-		self.defaultDescLabel.font = NSFont(name: "Roboto-Regular", size: 14)
-		self.customDescLabel.font = NSFont(name: "Roboto-Regular", size: 14)
+		self.defaultDescLabel.attributedStringValue = self.defaultDescLabel.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14, fontColor: 0x4a4a4a, isUnderline: false, lineSpacing: 1)
+		self.customDescLabel.attributedStringValue = self.customDescLabel.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14, fontColor: 0x4a4a4a, isUnderline: false, lineSpacing: 1)
+
 		adCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
 		audioVideoCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
 		commentsCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
