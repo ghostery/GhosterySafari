@@ -27,6 +27,8 @@
 		1E597C4A2135682B0098631F /* SafariExtensionPromptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C492135682B0098631F /* SafariExtensionPromptVC.swift */; };
 		1E597C5321359D000098631F /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C5221359D000098631F /* HUDView.swift */; };
 		3E9973FC6C3C5AE1182E8E7B /* Pods_ContentBlocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1C37253CAD1E7BF0CB1212 /* Pods_ContentBlocker.framework */; };
+		4F0B87212146C91F00C79513 /* DarkMode.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4F0B871F2146C91E00C79513 /* DarkMode.pdf */; };
+		4F0B87222146C91F00C79513 /* Dark.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4F0B87202146C91F00C79513 /* Dark.pdf */; };
 		4F3049212118982600BA3961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049202118982600BA3961 /* AppDelegate.swift */; };
 		4F3049252118982700BA3961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049242118982700BA3961 /* Assets.xcassets */; };
 		4F3049282118982700BA3961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049262118982700BA3961 /* Main.storyboard */; };
@@ -154,6 +156,8 @@
 		1E597C5221359D000098631F /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
 		20D8DDE934AC7DA8B920E530 /* Pods-ContentBlocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.debug.xcconfig"; sourceTree = "<group>"; };
 		2B1C37253CAD1E7BF0CB1212 /* Pods_ContentBlocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContentBlocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F0B871F2146C91E00C79513 /* DarkMode.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = DarkMode.pdf; sourceTree = "<group>"; };
+		4F0B87202146C91F00C79513 /* Dark.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Dark.pdf; sourceTree = "<group>"; };
 		4F30491D2118982600BA3961 /* GhosteryLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhosteryLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3049202118982600BA3961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F3049242118982700BA3961 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -344,6 +348,8 @@
 		4F3049382118983D00BA3961 /* SafariExtension */ = {
 			isa = PBXGroup;
 			children = (
+				4F0B871F2146C91E00C79513 /* DarkMode.pdf */,
+				4F0B87202146C91F00C79513 /* Dark.pdf */,
 				4F3049392118983D00BA3961 /* SafariExtensionHandler.swift */,
 				4F30493B2118983D00BA3961 /* SafariExtensionViewController.swift */,
 				4F30493D2118983D00BA3961 /* SafariExtensionViewController.xib */,
@@ -593,6 +599,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D99D75C212EFC44005D107D /* page_performance.js in Resources */,
+				4F0B87212146C91F00C79513 /* DarkMode.pdf in Resources */,
+				4F0B87222146C91F00C79513 /* Dark.pdf in Resources */,
 				4F3049442118983D00BA3961 /* ToolbarItemIcon.pdf in Resources */,
 				4FFD8339212B4FF90038149F /* BlockListAssets in Resources */,
 				4FB1E6D2213E819F00136D2A /* Fonts in Resources */,

@@ -914,7 +914,7 @@
                                     </constraints>
                                 </view>
                                 <color key="borderColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="fillColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="fillColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </box>
                         </subviews>
                         <constraints>
@@ -988,6 +988,9 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="LTy-Jl-Bl3" id="5fJ-cY-fIx"/>
+                                </connections>
                             </textField>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="qwB-cC-fc2">
                                 <rect key="frame" x="451" y="421" width="112" height="28"/>
@@ -995,8 +998,8 @@
                                     <constraint firstAttribute="height" constant="28" id="Y1B-D4-RfT"/>
                                     <constraint firstAttribute="width" constant="112" id="oO6-u7-LV4"/>
                                 </constraints>
-                                <buttonCell key="cell" type="square" title="TRUST SITE" bezelStyle="shadowlessSquare" image="trust-site-btn-inactive" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="C26-J2-vrI">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="trust-site-btn-inactive" imagePosition="overlaps" alignment="center" alternateImage="trust-site-btn-active" enabled="NO" imageScaling="proportionallyDown" inset="2" id="C26-J2-vrI">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                                 <connections>
@@ -1038,7 +1041,7 @@
                                 </scroller>
                             </scrollView>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4uz-3S-HSA">
-                                <rect key="frame" x="184" y="418" width="242" height="17"/>
+                                <rect key="frame" x="184" y="398" width="242" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="hp5-oU-rd6">
                                     <font key="font" metaFont="system"/>
@@ -1353,6 +1356,7 @@
         <image name="purple-btn-bg" width="150" height="35"/>
         <image name="savedIcon" width="15" height="15"/>
         <image name="settings-icon" width="48" height="48"/>
+        <image name="trust-site-btn-active" width="112" height="28"/>
         <image name="trust-site-btn-inactive" width="112" height="28"/>
         <image name="trusted-site-icon" width="46" height="57"/>
         <image name="white-btn-bg" width="112" height="28"/>
