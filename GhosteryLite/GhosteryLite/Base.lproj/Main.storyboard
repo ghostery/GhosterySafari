@@ -998,9 +998,9 @@
                                     <constraint firstAttribute="height" constant="28" id="Y1B-D4-RfT"/>
                                     <constraint firstAttribute="width" constant="112" id="oO6-u7-LV4"/>
                                 </constraints>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="trust-site-btn-inactive" imagePosition="overlaps" alignment="center" alternateImage="trust-site-btn-active" enabled="NO" imageScaling="proportionallyDown" inset="2" id="C26-J2-vrI">
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="trust-site-btn-inactive" imagePosition="overlaps" alignment="center" alternateImage="trust-site-btn-active" enabled="NO" imageScaling="proportionallyDown" inset="2" id="C26-J2-vrI">
                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="cellTitle"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="trustSiteButtonPressedWithSender:" target="LTy-Jl-Bl3" id="C2u-C2-tWT"/>
