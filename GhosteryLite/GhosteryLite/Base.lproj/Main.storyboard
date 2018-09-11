@@ -641,8 +641,8 @@
                                         <collectionView selectable="YES" id="lpr-TR-JCt">
                                             <rect key="frame" x="0.0" y="0.0" width="176" height="158"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="lqU-Jq-XrJ">
-                                                <size key="itemSize" width="175" height="54"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" id="lqU-Jq-XrJ">
+                                                <size key="itemSize" width="175" height="70"/>
                                             </collectionViewFlowLayout>
                                             <color key="primaryBackgroundColor" red="0.37254901959999998" green="0.48627450979999998" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>

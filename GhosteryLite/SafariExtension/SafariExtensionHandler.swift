@@ -39,7 +39,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         // This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
 		handleTabUrlChange(window) { (url) in
 			let d = UserDefaults(suiteName: Constants.AppsGroupID)
-			d?.set(url?.normalizedHost ?? "", forKey: "domain")
+			d?.set(url?.normalizedHost ?? "", forKey: "newDomain")
 			d?.synchronize()
 			DistributedNotificationCenter.default().post(name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
 		}

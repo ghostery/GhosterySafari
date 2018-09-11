@@ -112,6 +112,7 @@ class AntiTrackingManager {
 	@objc
 	func switchToDefault() {
 		GlobalConfigManager.shared.switchToConfig(.byDefault)
+		self.reloadContentBlocker()
 //		let d = UserDefaults(suiteName: Constants.AppsGroupID)
 //		d?.set(true, forKey: "isDefault")
 //		d?.synchronize()
@@ -120,6 +121,7 @@ class AntiTrackingManager {
 	@objc
 	func switchToCustom() {
 		GlobalConfigManager.shared.switchToConfig(.custom)
+		self.reloadContentBlocker()
 	}
 
 	func reloadContentBlocker() {
@@ -178,7 +180,7 @@ class AntiTrackingManager {
 	@objc
 	private func tabDomainIsChanged() {
 		let d = UserDefaults(suiteName: Constants.AppsGroupID)
-		if let d = d?.value(forKey: "domain") as? String {
+		if let d = d?.value(forKey: "newDomain") as? String {
 			if self.isTrustedDomain(domain: d) {
 				loadDummyCB()
 				return

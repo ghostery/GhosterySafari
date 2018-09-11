@@ -78,9 +78,7 @@ final class BlockListFileManager {
 					}
 				}
 			}
-			let groupIdentifier = "2UYYSSHVUH.Gh.GhosteryLite"
-			
-			let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupIdentifier)
+			let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
 			let assetsFolder: URL? = groupStorageFolder?.appendingPathComponent("BlockListAssets")
 			let categoryAssetsFolder: URL? = assetsFolder?.appendingPathComponent("BlockListByCategory")
 			let currentBlockList = assetsFolder?.appendingPathComponent("currentBlockList.json")

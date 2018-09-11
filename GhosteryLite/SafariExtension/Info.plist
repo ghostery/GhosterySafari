@@ -46,7 +46,7 @@
 			<key>Image</key>
 			<string>DarkMode.pdf</string>
 			<key>Label</key>
-			<string>Your Button</string>
+			<string>A</string>
 		</dict>
 		<key>SFSafariWebsiteAccess</key>
 		<dict>
