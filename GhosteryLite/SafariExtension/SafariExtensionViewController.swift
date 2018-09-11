@@ -35,6 +35,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBOutlet weak var reloadPopupView: NSView!
 	@IBOutlet weak var popupTitleLabel: NSTextField!
 	@IBOutlet weak var popupReloadButton: NSButton!
+	@IBOutlet weak var popupCloseButton: NSButton!
 
 	private var isPaused = false
 
@@ -226,7 +227,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	private func showTrustedPopup() {
 		let bgColor = NSColor(red: 0.156, green: 0.804, blue: 0.439, alpha: 1)
 		let title = "Site whitelisted."
-		showPopup(bgColor, title: title, fontColor: 0xffffff)
+		showPopup(bgColor, title: title, fontColor: 0xffffff, image: "closePopupWhite")
 	}
 	
 	private func showUntrustedPopup() {
@@ -235,7 +236,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		showPopup(bgColor, title: title, fontColor: 0x4a4a4a)
 	}
 
-	private func showPopup(_ backgroundColor: NSColor, title: String, fontColor: Int) {
+	private func showPopup(_ backgroundColor: NSColor, title: String, fontColor: Int, image: String = "closePopup") {
 		self.reloadPopupView.layer?.backgroundColor = backgroundColor.cgColor
 		self.popupTitleLabel.stringValue = title
 		self.popupTitleLabel.textColor = NSColor(rgb: fontColor)
@@ -244,5 +245,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 																   fontSize: 11.0,
 																   fontColor: fontColor, isUnderline: true)
 		self.reloadPopupView.isHidden = false
+		self.popupCloseButton.image = NSImage(named: NSImage.Name(image))
 	}
 }
