@@ -27,8 +27,10 @@ class HomeVC: NSViewController {
         super.viewDidLoad()
         initComponents()
         if !Preferences.isAppFirstLaunch() {
-			Preferences.areExtensionsEnabled { (contentBlockerEnabled, popoverEnabled, error) in
-				self.SafariExtensionPromptView.isHidden = contentBlockerEnabled || popoverEnabled
+			DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+				Preferences.areExtensionsEnabled { (contentBlockerEnabled, popoverEnabled, error) in
+					self.SafariExtensionPromptView.isHidden = contentBlockerEnabled || popoverEnabled
+				}
 			}
         }
 		DistributedNotificationCenter.default().addObserver(self,
