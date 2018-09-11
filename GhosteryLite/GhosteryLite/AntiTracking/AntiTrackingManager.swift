@@ -16,9 +16,6 @@ class AntiTrackingManager {
 	
 	private var paused: Bool = false
 
-	private let pauseNotificationName = Notification.Name(rawValue: "GhosteryIsPaused")
-	private let resumeNotificationName = Notification.Name(rawValue: "GhosteryIsResumed")
-
 	init() {
 	}
 
@@ -166,6 +163,7 @@ class AntiTrackingManager {
 		let d = UserDefaults(suiteName: Constants.AppsGroupID)
 		if let d = d?.value(forKey: "domain") as? String {
 			self.trustDomain(domain: d)
+			loadDummyCB()
 		}
 	}
 
@@ -174,6 +172,7 @@ class AntiTrackingManager {
 		let d = UserDefaults(suiteName: Constants.AppsGroupID)
 		if let d = d?.value(forKey: "domain") as? String {
 			self.untrustDomain(domain: d)
+			reloadContentBlocker()
 		}
 	}
 

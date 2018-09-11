@@ -83,7 +83,10 @@ final class BlockListFileManager {
 			let categoryAssetsFolder: URL? = assetsFolder?.appendingPathComponent("BlockListByCategory")
 			let currentBlockList = assetsFolder?.appendingPathComponent("currentBlockList.json")
 			FileManager.default.createDirectoryIfNotExists(assetsFolder, withIntermediateDirectories: true)
-			FileManager.default.writeJsonFile(at: currentBlockList, with: finalJSON)
+			if let url = currentBlockList {
+				try? FileManager.default.removeItem(at: url)
+				FileManager.default.writeJsonFile(at: url, with: finalJSON)
+			}
 			DispatchQueue.main.async {
 				completion()
 			}
