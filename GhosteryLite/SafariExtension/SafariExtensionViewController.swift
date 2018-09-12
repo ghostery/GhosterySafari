@@ -85,11 +85,13 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		self.isPaused = sender.state.rawValue == 1
 		if sender.state.rawValue == 1 {
 			self.pauseButton.toolTip = "Resume Ghostery Lite"
+			AntiTrackingManager.shared.pause()
 			DistributedNotificationCenter.default().post(name: Constants.PauseNotificationName, object: Constants.SafariPopupExtensionID)
 			self.trustSiteButton.isEnabled = false
 			self.showPausedPopup()
 		} else {
 			self.pauseButton.toolTip = "Pause Ghostery Lite"
+			AntiTrackingManager.shared.resume()
 			DistributedNotificationCenter.default().post(name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
 			self.trustSiteButton.isEnabled = true
 			self.showResumedPopup()
@@ -97,15 +99,16 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	}
 
 	@IBAction func trustButtonPressed(sender: NSButton) {
-		let d = UserDefaults(suiteName: Constants.AppsGroupID)
-		d?.set(self.currentDomain ?? "", forKey: "domain")
-		d?.synchronize()
-		if sender.state.rawValue == 0 {
-			DistributedNotificationCenter.default().post(name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
-			self.showUntrustedPopup()
-		} else {
-			DistributedNotificationCenter.default().post(name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
-			self.showTrustedPopup()
+		if let x = self.currentDomain {
+			if sender.state.rawValue == 0 {
+				AntiTrackingManager.shared.untrustDomainAndReload(domain: x)
+				DistributedNotificationCenter.default().post(name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
+				self.showUntrustedPopup()
+			} else {
+				AntiTrackingManager.shared.trustDomainAndReload(domain: x)
+				DistributedNotificationCenter.default().post(name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
+				self.showTrustedPopup()
+			}
 		}
 		updateTrustButtonTooltip()
 	}
@@ -200,15 +203,11 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		self.secondRangeLabel.font = NSFont(name: "OpenSans-Regular", size: 10)
 		self.thirdRangeLabel.font = NSFont(name: "OpenSans-Regular", size: 10)
 		self.secondsLabel.font = NSFont(name: "Roboto-Regular", size: 9)
-//		self.trustSiteButton.font = NSFont(name: "OpenSans-SemiBold", size: 11)
 		self.popupTitleLabel.font = NSFont(name: "OpenSans-SemiBold", size: 11)
 		self.popupReloadButton.font = NSFont(name: "OpenSans-SemiBold", size: 11)
 		
 		let paragraphStyle = NSMutableParagraphStyle()
 		paragraphStyle.firstLineHeadIndent = 5.0
-		
-//		self.trustSiteButton.attributedTitle = NSAttributedString(string: trustSiteButton.title, attributes: [NSAttributedStringKey.paragraphStyle : paragraphStyle])
-
 		
 	}
 

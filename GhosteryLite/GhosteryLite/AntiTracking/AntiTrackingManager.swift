@@ -13,7 +13,7 @@ import RealmSwift
 class AntiTrackingManager {
 
 	static let shared = AntiTrackingManager()
-	
+
 	private var paused: Bool = false
 
 	init() {
@@ -21,17 +21,11 @@ class AntiTrackingManager {
 
 	func subscribeForNotifications() {
 		DistributedNotificationCenter.default().addObserver(self,
-															selector: #selector(self.pause),
+															selector: #selector(self.pauseNotification),
 															name: Constants.PauseNotificationName, object: Constants.SafariPopupExtensionID)
 		DistributedNotificationCenter.default().addObserver(self,
-															selector: #selector(self.resume),
+															selector: #selector(self.resumeNotification),
 															name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
-//		DistributedNotificationCenter.default().addObserver(self,
-//															selector: #selector(self.switchToDefault),
-//															name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
-//		DistributedNotificationCenter.default().addObserver(self,
-//															selector: #selector(self.switchToCustom),
-//															name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
 		DistributedNotificationCenter.default().addObserver(self,
 															selector: #selector(self.tabDomainIsChanged),
 															name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
@@ -48,7 +42,6 @@ class AntiTrackingManager {
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.PauseNotificationName, object: Constants.SafariPopupExtensionID)
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
 		
-//		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
 //		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
 		
@@ -107,6 +100,16 @@ class AntiTrackingManager {
 	}
 
 	@objc
+	func pauseNotification() {
+		self.paused = true
+	}
+	
+	@objc
+	func resumeNotification() {
+		self.paused = false
+	}
+
+	@objc
 	func switchToDefault() {
 		GlobalConfigManager.shared.switchToConfig(.byDefault)
 		self.reloadContentBlocker()
@@ -140,6 +143,16 @@ class AntiTrackingManager {
 
 	func untrustDomain(domain: String) {
 		TrustedSitesDataSource.shared.removeDomain(domain)
+	}
+
+	func trustDomainAndReload(domain: String) {
+		TrustedSitesDataSource.shared.addDomain(domain)
+		loadDummyCB()
+	}
+
+	func untrustDomainAndReload(domain: String) {
+		TrustedSitesDataSource.shared.removeDomain(domain)
+		self.reloadContentBlocker()
 	}
 
 	func isTrustedDomain(domain: String) -> Bool {
