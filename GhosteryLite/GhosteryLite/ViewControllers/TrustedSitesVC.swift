@@ -22,6 +22,12 @@ class TrustedSitesVC: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupComponents()
+		DistributedNotificationCenter.default().addObserver(self,
+															selector: #selector(self.updateData),
+															name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().addObserver(self,
+															selector: #selector(self.updateData),
+															name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
     }
 
 	override func viewWillAppear() {
@@ -29,6 +35,10 @@ class TrustedSitesVC: NSViewController {
 		updateData()
 	}
 
+	deinit {
+		DistributedNotificationCenter.default().removeObserver(self, name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().removeObserver(self, name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
+	}
 	@IBAction func trustSiteButtonPressed(sender: NSButton) {
 		guard trustedSiteTextField.stringValue.trimmingCharacters(in: .whitespacesAndNewlines).count != 0 &&
 			self.isValid(url: trustedSiteTextField.stringValue) else {
@@ -46,6 +56,7 @@ class TrustedSitesVC: NSViewController {
 		updateTrustBtnState(false)
 	}
 
+	@objc
 	private func updateData() {
 		self.trustedSites = TrustedSitesDataSource.shared.allTrustedSites()
 		trustedStiesCollectionView.reloadData()

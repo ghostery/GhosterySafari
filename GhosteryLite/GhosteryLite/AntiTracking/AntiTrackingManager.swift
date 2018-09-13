@@ -29,12 +29,6 @@ class AntiTrackingManager {
 		DistributedNotificationCenter.default().addObserver(self,
 															selector: #selector(self.tabDomainIsChanged),
 															name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().addObserver(self,
-															selector: #selector(self.trustSiteNotification),
-															name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().addObserver(self,
-															selector: #selector(self.untrustSiteNotification),
-															name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
 		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.tabDomainIsChanged), name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
 	}
 
@@ -45,8 +39,6 @@ class AntiTrackingManager {
 //		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
 		
-		DistributedNotificationCenter.default().removeObserver(self, name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().removeObserver(self, name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
 	}
 

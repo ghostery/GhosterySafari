@@ -92,7 +92,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="lZf-S5-fTT"/>
                     </constraints>
-                    <buttonCell key="cell" type="radio" title="Custom Protection" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="77T-OQ-Bj8">
+                    <buttonCell key="cell" type="radio" title="Cust" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="77T-OQ-Bj8">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -152,7 +152,7 @@
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="--" id="YJh-G4-Gpq">
                         <font key="font" metaFont="system" size="18"/>
                         <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cF2-v5-BPd">
