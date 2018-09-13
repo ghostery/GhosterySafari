@@ -30,19 +30,20 @@ class TrustedSitesVC: NSViewController {
 	}
 
 	@IBAction func trustSiteButtonPressed(sender: NSButton) {
-		updateTrustBtnState(false)
-		if trustedSiteTextField.stringValue.trimmingCharacters(in: .whitespacesAndNewlines).count == 0 {
-			return
-		}
-		
-		guard self.isValid(url: trustedSiteTextField.stringValue) else {
+		guard trustedSiteTextField.stringValue.trimmingCharacters(in: .whitespacesAndNewlines).count != 0 &&
+			self.isValid(url: trustedSiteTextField.stringValue) else {
 				self.errorMessageLabel.isHidden = false
 			return
 		}
-		self.errorMessageLabel.isHidden = true
-		AntiTrackingManager.shared.trustDomain(domain: trustedSiteTextField.stringValue)
-		updateData()
+		let str = trustedSiteTextField.stringValue.lowercased()
+		let regEx = try? NSRegularExpression(pattern: "(^https?://)?(www\\.)?", options: .caseInsensitive)
+		if let newStr = regEx?.stringByReplacingMatches(in: str, options: [], range: NSMakeRange(0, str.count), withTemplate: "") {
+			self.errorMessageLabel.isHidden = true
+			AntiTrackingManager.shared.trustDomain(domain: newStr)
+			updateData()
+		}
 		trustedSiteTextField.stringValue = ""
+		updateTrustBtnState(false)
 	}
 
 	private func updateData() {

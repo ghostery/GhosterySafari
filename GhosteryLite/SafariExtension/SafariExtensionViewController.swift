@@ -69,8 +69,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		super.viewWillAppear()
 		self.view.layer?.backgroundColor = NSColor.white.cgColor
 		urlLabel?.stringValue = self.currentDomain ?? ""
-//		let d = UserDefaults(suiteName: Constants.AppsGroupID)
-//		if d?.bool(forKey: "isDefault") ?? true {
 		if AntiTrackingManager.shared.isDefaultConfigEnabled() {
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
