@@ -191,9 +191,15 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	}
 
 	private func setupComponents() {
+		let defaultStr = "Default Protection"
+		self.defaultConfigRadio.attributedTitle = defaultStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: 0x4a4a4a)
+		let customStr = "Custom Protection"
+		self.customConfigRadio.attributedTitle = customStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: 0x4a4a4a)
 		self.liteLabel.font = NSFont(name: "BebasNeueBook", size: 18)
-		self.defaultConfigRadio.font = NSFont(name: "OpenSans-Regular", size: 14)
-		self.customConfigRadio.font = NSFont(name: "OpenSans-Regular", size: 14)
+//		self.defaultConfigRadio.font = NSFont(name: "OpenSans-Regular", size: 14)
+////		self.customConfigRadio.font = NSFont(name: "OpenSans-Regular", size: 14)
+////		self.customConfigRadio.stringValue = "Custom Protection"
+////		self.customConfigRadio.title = "Hello"
 		self.urlLabel.font = NSFont(name: "OpenSans-Regular", size: 11)
 		self.pageLatencyValueLabel.font = NSFont(name: "Roboto-Regular", size: 18)
 		self.pageLatencyDescLabel.font = NSFont(name: "OpenSans-Regular", size: 11)
@@ -203,10 +209,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		self.secondsLabel.font = NSFont(name: "Roboto-Regular", size: 9)
 		self.popupTitleLabel.font = NSFont(name: "OpenSans-SemiBold", size: 11)
 		self.popupReloadButton.font = NSFont(name: "OpenSans-SemiBold", size: 11)
-		
+
 		let paragraphStyle = NSMutableParagraphStyle()
 		paragraphStyle.firstLineHeadIndent = 5.0
-		
 	}
 
 	private func showPausedPopup() {
