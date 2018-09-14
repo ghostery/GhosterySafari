@@ -238,20 +238,20 @@ class AntiTrackingManager {
 		SFContentBlockerManager.reloadContentBlocker(withIdentifier: "Gh.GhosteryLite.ContentBlocker", completionHandler: { (error) in
 			if error != nil {
 				print("Reloading Content Blocker is failed ---- \(error)")
-				DispatchQueue.main.async {
-					let x = NSAlert()
-					x.messageText = "Faild"
-					x.addButton(withTitle: "OK")
-					x.runModal()
-				}
+//				DispatchQueue.main.async {
+//					let x = NSAlert()
+//					x.messageText = error.debugDescription
+//					x.addButton(withTitle: "OK")
+//					x.runModal()
+//				}
 				
 			} else {
-				DispatchQueue.main.async {
-				let x = NSAlert()
-				x.messageText = "Success"
-				x.addButton(withTitle: "OK")
-				x.runModal()
-				}
+//				DispatchQueue.main.async {
+//				let x = NSAlert()
+//				x.messageText = "Success"
+//				x.addButton(withTitle: "OK")
+//				x.runModal()
+//				}
 				print("Success!")
 			}
 		})

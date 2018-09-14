@@ -69,18 +69,20 @@ final class BlockListFileManager {
 	func generateCurrentBlockList(files: [String], folderName: String, completion: @escaping () -> Void) {
 		DispatchQueue.global(qos: .background).async {
 			
-			var finalJSON = [[String: Any]]()
+			var blockListJSON = [[String: Any]]()
 			for f in files {
 				if let url = self.getFilePath(fileName: f, folderName: folderName) {
 					let nextChunk: [[String:Any]]? = FileManager.default.readJsonFile(at: url)
 					if let n = nextChunk {
-						finalJSON.append(contentsOf: n)
+						blockListJSON.append(contentsOf: n)
 					}
 				}
 			}
-			if let r = WhiteListFileManager.shared.getActiveWhitelistRules() {
-				finalJSON = r
-			}
+			let r = WhiteListFileManager.shared.getActiveWhitelistRules()
+			let finalJSON: [[String: Any]]? = (blockListJSON ?? []) + (r ?? [])
+//			let finalJSON: [[String: Any]]? = (r ?? [])
+
+//				finalJSON = finalJSON + r
 			let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
 			let assetsFolder: URL? = groupStorageFolder?.appendingPathComponent("BlockListAssets")
 			let categoryAssetsFolder: URL? = assetsFolder?.appendingPathComponent("BlockListByCategory")

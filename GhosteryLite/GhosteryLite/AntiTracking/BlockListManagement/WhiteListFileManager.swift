@@ -66,7 +66,8 @@ class WhiteListFileManager {
 	}
 
 	private func prepareRule(_ domain: String)  -> [String: Any] {
-		let trigger: [String: Any] = ["url-filter": ".*", "if-domain": ["*\(domain)"]]
+		let trigger: [String: Any] = ["url-filter": ".*",
+									  "if-top-url": ["\(domain)"]]
 		let action = ["type": "ignore-previous-rules"]
 		return ["trigger": trigger, "action": action]
 	}
