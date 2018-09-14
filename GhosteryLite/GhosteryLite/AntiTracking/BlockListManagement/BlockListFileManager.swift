@@ -78,6 +78,9 @@ final class BlockListFileManager {
 					}
 				}
 			}
+			if let r = WhiteListFileManager.shared.getActiveWhitelistRules() {
+				finalJSON = r
+			}
 			let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
 			let assetsFolder: URL? = groupStorageFolder?.appendingPathComponent("BlockListAssets")
 			let categoryAssetsFolder: URL? = assetsFolder?.appendingPathComponent("BlockListByCategory")
@@ -94,11 +97,7 @@ final class BlockListFileManager {
 	}
 
 	func blockListURL(_ category: CategoryType) -> URL? {
-//		return BlockListFileManager.categoryAssetsFolder?.appendingPathComponent(category.fileName())
-//		return BlockListFileManager.categoryAssetsFolder?.appendingPathComponent("blockerList.json")
-
 		return Bundle.main.url(forResource: "blockerList", withExtension: "json")
-//		return Bundle.main.url(forResource: BlockListFileManager.ghosteryBlockListFileName, withExtension: "json")
 	}
 
 	private func versionExpired() -> Bool {

@@ -171,10 +171,10 @@
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="noLatency" id="hb8-G4-Jrh"/>
                 </imageView>
                 <imageView toolTip="Control which categories of tracker you block /allow in your custom settings." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NPW-Kh-cmC">
-                    <rect key="frame" x="155" y="228" width="9" height="10"/>
+                    <rect key="frame" x="155" y="228" width="13" height="15"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="10" id="BWI-sz-PMS"/>
-                        <constraint firstAttribute="width" constant="9" id="yjx-xA-LZf"/>
+                        <constraint firstAttribute="height" constant="15" id="BWI-sz-PMS"/>
+                        <constraint firstAttribute="width" constant="13" id="yjx-xA-LZf"/>
                     </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="YRt-Zr-e4d"/>
                 </imageView>
@@ -331,7 +331,7 @@
     </objects>
     <resources>
         <image name="closePopup" width="8" height="8"/>
-        <image name="info" width="9" height="10"/>
+        <image name="info" width="13" height="15"/>
         <image name="liteLogo" width="22" height="24"/>
         <image name="meatBallsButton" width="22" height="7"/>
         <image name="noLatency" width="132" height="8"/>

@@ -22,7 +22,6 @@ class MainVC: NSViewController {
         if Preferences.isAppFirstLaunch() {
             overlayView.isHidden = false
         }
-		AntiTrackingManager.shared.configureRealm()
 		AntiTrackingManager.shared.subscribeForNotifications()
 		self.liteLabel.font = NSFont(name: "BebasNeueBook", size: 24)
     }

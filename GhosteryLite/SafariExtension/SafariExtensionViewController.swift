@@ -61,7 +61,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.preferredContentSize = NSMakeSize(186, 302)
-		AntiTrackingManager.shared.configureRealm()
+		let _ = AntiTrackingManager.shared
 		setupComponents()
 	}
 
@@ -99,11 +99,11 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBAction func trustButtonPressed(sender: NSButton) {
 		if let x = self.currentDomain {
 			if sender.state.rawValue == 0 {
-				AntiTrackingManager.shared.untrustDomainAndReload(domain: x)
+				AntiTrackingManager.shared.untrustDomain(domain: x)
 				DistributedNotificationCenter.default().post(name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
 				self.showUntrustedPopup()
 			} else {
-				AntiTrackingManager.shared.trustDomainAndReload(domain: x)
+				AntiTrackingManager.shared.trustDomain(domain: x)
 				DistributedNotificationCenter.default().post(name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
 				self.showTrustedPopup()
 			}

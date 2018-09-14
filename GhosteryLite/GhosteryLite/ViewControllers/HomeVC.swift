@@ -27,7 +27,7 @@ class HomeVC: NSViewController {
         super.viewDidLoad()
         initComponents()
         if !Preferences.isAppFirstLaunch() {
-			DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+			DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
 				Preferences.areExtensionsEnabled { (contentBlockerEnabled, popoverEnabled, error) in
 					self.SafariExtensionPromptView.isHidden = contentBlockerEnabled || popoverEnabled
 				}

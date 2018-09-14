@@ -17,6 +17,8 @@ class AntiTrackingManager {
 	private var paused: Bool = false
 
 	init() {
+		configureRealm()
+		reloadContentBlocker()
 	}
 
 	func subscribeForNotifications() {
@@ -26,10 +28,10 @@ class AntiTrackingManager {
 		DistributedNotificationCenter.default().addObserver(self,
 															selector: #selector(self.resumeNotification),
 															name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().addObserver(self,
-															selector: #selector(self.tabDomainIsChanged),
-															name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.tabDomainIsChanged), name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
+//		DistributedNotificationCenter.default().addObserver(self,
+//															selector: #selector(self.tabDomainIsChanged),
+//															name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
+//		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.tabDomainIsChanged), name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
 	}
 
 	deinit {
@@ -37,9 +39,9 @@ class AntiTrackingManager {
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
 		
 //		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().removeObserver(self, name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
+//		DistributedNotificationCenter.default().removeObserver(self, name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
 		
-		DistributedNotificationCenter.default().removeObserver(self, name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
+//		DistributedNotificationCenter.default().removeObserver(self, name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
 	}
 
 	func configureRealm() {
@@ -105,9 +107,6 @@ class AntiTrackingManager {
 	func switchToDefault() {
 		GlobalConfigManager.shared.switchToConfig(.byDefault)
 		self.reloadContentBlocker()
-//		let d = UserDefaults(suiteName: Constants.AppsGroupID)
-//		d?.set(true, forKey: "isDefault")
-//		d?.synchronize()
 	}
 
 	@objc
@@ -131,21 +130,27 @@ class AntiTrackingManager {
 
 	func trustDomain(domain: String) {
 		TrustedSitesDataSource.shared.addDomain(domain)
+		WhiteListFileManager.shared.add(domain, completion: {
+			self.reloadContentBlocker()
+		})
 	}
 
 	func untrustDomain(domain: String) {
 		TrustedSitesDataSource.shared.removeDomain(domain)
+		WhiteListFileManager.shared.remove(domain, completion: {
+			self.reloadContentBlocker()
+		})
 	}
 
-	func trustDomainAndReload(domain: String) {
-		TrustedSitesDataSource.shared.addDomain(domain)
-		loadDummyCB()
-	}
-
-	func untrustDomainAndReload(domain: String) {
-		TrustedSitesDataSource.shared.removeDomain(domain)
-		self.reloadContentBlocker()
-	}
+//	func trustDomainAndReload(domain: String) {
+//		TrustedSitesDataSource.shared.addDomain(domain)
+//		loadDummyCB()
+//	}
+//
+//	func untrustDomainAndReload(domain: String) {
+//		TrustedSitesDataSource.shared.removeDomain(domain)
+//		self.reloadContentBlocker()
+//	}
 
 	func isTrustedDomain(domain: String) -> Bool {
 		return TrustedSitesDataSource.shared.isTrusted(domain)
@@ -233,7 +238,20 @@ class AntiTrackingManager {
 		SFContentBlockerManager.reloadContentBlocker(withIdentifier: "Gh.GhosteryLite.ContentBlocker", completionHandler: { (error) in
 			if error != nil {
 				print("Reloading Content Blocker is failed ---- \(error)")
+				DispatchQueue.main.async {
+					let x = NSAlert()
+					x.messageText = "Faild"
+					x.addButton(withTitle: "OK")
+					x.runModal()
+				}
+				
 			} else {
+				DispatchQueue.main.async {
+				let x = NSAlert()
+				x.messageText = "Success"
+				x.addButton(withTitle: "OK")
+				x.runModal()
+				}
 				print("Success!")
 			}
 		})

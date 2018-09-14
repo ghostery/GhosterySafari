@@ -41,7 +41,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 			let d = UserDefaults(suiteName: Constants.AppsGroupID)
 			d?.set(url?.normalizedHost ?? "", forKey: "newDomain")
 			d?.synchronize()
-			DistributedNotificationCenter.default().post(name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
+//			DistributedNotificationCenter.default().post(name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
 		}
         validationHandler(true, "")
     }
