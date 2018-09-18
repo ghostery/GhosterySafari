@@ -739,7 +739,7 @@
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ghosty-home" id="rfl-3p-vbg"/>
                                         </imageView>
                                         <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="FUM-ps-RLK">
-                                            <rect key="frame" x="85" y="226" width="485" height="180"/>
+                                            <rect key="frame" x="70" y="226" width="485" height="180"/>
                                             <view key="contentView" id="TcR-Qq-LDZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="485" height="180"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -791,7 +791,7 @@
                                             <color key="fillColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                                         </box>
                                         <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="5El-Pe-hcO">
-                                            <rect key="frame" x="85" y="31" width="485" height="180"/>
+                                            <rect key="frame" x="70" y="31" width="485" height="180"/>
                                             <view key="contentView" id="6C8-ZL-VKD">
                                                 <rect key="frame" x="0.0" y="0.0" width="485" height="180"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -842,7 +842,7 @@
                                             </constraints>
                                             <color key="fillColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </box>
-                                        <box hidden="YES" boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Kbf-lj-k3C">
+                                        <box hidden="YES" boxType="custom" borderType="none" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Kbf-lj-k3C">
                                             <rect key="frame" x="0.0" y="536" width="624" height="40"/>
                                             <view key="contentView" id="glX-Nw-BPJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="624" height="40"/>
@@ -903,8 +903,8 @@
                                         <constraint firstItem="yNx-KH-9na" firstAttribute="top" secondItem="zWn-wq-jhK" secondAttribute="top" id="ACd-0H-4dl"/>
                                         <constraint firstItem="zWn-wq-jhK" firstAttribute="leading" secondItem="kjk-tv-uI4" secondAttribute="leading" constant="48" id="BBF-cS-XOb"/>
                                         <constraint firstItem="Kbf-lj-k3C" firstAttribute="top" secondItem="kjk-tv-uI4" secondAttribute="top" id="Pxh-0V-SRn"/>
+                                        <constraint firstItem="FUM-ps-RLK" firstAttribute="centerX" secondItem="kjk-tv-uI4" secondAttribute="centerX" id="Svf-vG-hgL"/>
                                         <constraint firstItem="Kbf-lj-k3C" firstAttribute="leading" secondItem="kjk-tv-uI4" secondAttribute="leading" id="VBA-oH-DlH"/>
-                                        <constraint firstItem="FUM-ps-RLK" firstAttribute="leading" secondItem="kjk-tv-uI4" secondAttribute="leading" constant="85" id="Wms-4Y-tm0"/>
                                         <constraint firstItem="5El-Pe-hcO" firstAttribute="leading" secondItem="TcR-Qq-LDZ" secondAttribute="leading" id="crU-eO-kTt"/>
                                         <constraint firstItem="yNx-KH-9na" firstAttribute="leading" secondItem="zWn-wq-jhK" secondAttribute="trailing" constant="12" id="dEe-H1-57j"/>
                                         <constraint firstAttribute="trailing" secondItem="Kbf-lj-k3C" secondAttribute="trailing" id="hCd-FE-Jqd"/>
