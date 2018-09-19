@@ -409,12 +409,12 @@
                                             </connections>
                                         </button>
                                         <imageView toolTip="Includes chat, email messaging, customer support, and other interaction tools." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VDK-om-yg2">
-                                            <rect key="frame" x="226" y="86" width="13" height="15"/>
+                                            <rect key="frame" x="226" y="86" width="11" height="13"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="giH-R0-xGw"/>
                                         </imageView>
                                         <imageView toolTip="Provides advertising or advertising-related services such as data-collection, behavioral analysis, or re-targeting." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V3t-dF-QL4">
-                                            <rect key="frame" x="167" y="148" width="13" height="15"/>
+                                            <rect key="frame" x="167" y="148" width="11" height="13"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="5dA-2t-oQA"/>
                                         </imageView>
@@ -485,27 +485,27 @@
                                             </connections>
                                         </button>
                                         <imageView toolTip="Collects and analyzes data related to site usage and performance." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="edo-Q1-18A">
-                                            <rect key="frame" x="180" y="115" width="15" height="15"/>
+                                            <rect key="frame" x="180" y="115" width="11" height="13"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="vgk-Nj-DUk"/>
                                         </imageView>
                                         <imageView toolTip="Integrates features related to social media sites." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tD7-PD-U11">
-                                            <rect key="frame" x="176" y="48" width="13" height="15"/>
+                                            <rect key="frame" x="176" y="48" width="11" height="13"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="u1f-Pf-mi4"/>
                                         </imageView>
                                         <imageView toolTip="Includes tag managers, privacy notices, and technologies that are critical to the functionality of a website." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="caT-UF-u5T">
-                                            <rect key="frame" x="386" y="148" width="13" height="15"/>
+                                            <rect key="frame" x="386" y="148" width="11" height="13"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="8Wu-qV-53n"/>
                                         </imageView>
                                         <imageView toolTip="Delivers advertising technology designed specifically for adult content sites." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1rF-ap-Ve5">
-                                            <rect key="frame" x="415" y="86" width="13" height="15"/>
+                                            <rect key="frame" x="415" y="86" width="11" height="13"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="esl-tX-Gek"/>
                                         </imageView>
                                         <imageView toolTip="Enables comments sections for articles and product reviews." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WNN-aY-BDO">
-                                            <rect key="frame" x="397" y="49" width="13" height="15"/>
+                                            <rect key="frame" x="397" y="49" width="11" height="13"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="cjQ-GI-0eE"/>
                                         </imageView>
@@ -1351,7 +1351,7 @@
         <image name="ghosty-settings" width="119" height="106"/>
         <image name="ghosty-trustedSites" width="119" height="106"/>
         <image name="icon-ghostery" width="57" height="63"/>
-        <image name="info" width="13" height="15"/>
+        <image name="info" width="11" height="13"/>
         <image name="lite-logo" width="31" height="35"/>
         <image name="purple-btn-bg" width="150" height="35"/>
         <image name="savedIcon" width="15" height="15"/>
