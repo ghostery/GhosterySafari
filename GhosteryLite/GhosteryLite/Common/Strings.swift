@@ -16,13 +16,13 @@ public struct Strings {
     public static let SideMenuHelpTitle = NSLocalizedString("Help", comment: "Help panel title in the side menu")
     
     //MARK:- Home Panel
-    public static let HomePanelTitle = NSLocalizedString("You’ve gone Lite!", comment: "[Home panel] Title")
-    public static let HomePanelSubtitle = NSLocalizedString("Thanks for installing Ghostery Lite. You are now protected with our tailored default settings!", comment: "[Home panel] Subtitle")
-    public static let HomePanelSettingsDescriptionPrefix = NSLocalizedString("Want more control? ", comment: "[Home panel] Edit settings text prefix")
-    public static let HomePanelSettingsDescription = NSLocalizedString("Select the categories of tracker your wish to allow.", comment: "[Home panel] Edit settings text")
+    public static let HomePanelTitle = NSLocalizedString("Welcome to Ghostery Lite!", comment: "[Home panel] Title")
+    public static let HomePanelSubtitle = NSLocalizedString("Thanks for installing Ghostery Lite. You are now protected with our default settings!", comment: "[Home panel] Subtitle")
+    public static let HomePanelSettingsDescriptionPrefix = NSLocalizedString("Want to customize your tracker settings?", comment: "[Home panel] Edit settings text prefix")
+    public static let HomePanelSettingsDescription = NSLocalizedString("Select the tracker categories you would like to block or unblock.", comment: "[Home panel] Edit settings text")
     public static let HomePanelEditSettingsButtonTitle = NSLocalizedString("EDIT SETTINGS", comment: "[Home panel] Edit settings button title")
-    public static let HomePanelTrustedSitesDescriptionPrefix = NSLocalizedString("Do you know who to trust? ", comment: "[Home panel] Trusted sites text prefix")
-    public static let HomePanelTrustedSitesDescription = NSLocalizedString("Add or remove sites from your ‘Trusted’ list.", comment: "[Home panel] Trusted sites text")
+    public static let HomePanelTrustedSitesDescriptionPrefix = NSLocalizedString("Want to allow trackers on a site?", comment: "[Home panel] Trusted sites text prefix")
+    public static let HomePanelTrustedSitesDescription = NSLocalizedString(" Add or remove sites from your 'Trusted' list.", comment: "[Home panel] Trusted sites text")
     public static let HomePanelTrustedSitesButtonTitle = NSLocalizedString("TRUSTED SITES", comment: "[Home panel] Trusted sites button title")
     public static let HomePanelEnableGhosteryLitePromptText = NSLocalizedString("Please enable the Ghostery Lite extensions in your Safari preferences to begin.", comment: "[Home panel] Enable Ghostery Lite prompt text")
     public static let HomePanelEnableGhosteryLiteButtonTitle = NSLocalizedString("ENABLE LITE", comment: "[Home panel] Enable Ghostery Lite button title")
@@ -36,7 +36,7 @@ public struct Strings {
 
     
     //MARK:- Help Panel
-    public static let HelpPanelText = NSLocalizedString("If you have encountered an issue, want to know more about Ghostery Lite and our other products or would like to get in touch, please follow the appropriate link below.", comment: "[Help Panel] Help text")
+    public static let HelpPanelText = NSLocalizedString("If you have encountered an issue, would like to know more about Ghostery Lite and our other products or would like to get in touch, please follow the link below.", comment: "[Help Panel] Help text")
     public static let HelpPanelSupportButtonTitle = NSLocalizedString("Ghostery Support", comment: "[Help Panel] Ghostery Support button title")
     public static let HelpPanelProductsButtonTitle = NSLocalizedString("Ghostery Products", comment: "[Help Panel] Ghostery Products button title")
     public static let HelpPanelBlogButtonTitle = NSLocalizedString("Ghostery Blog", comment: "[Help Panel] Ghostery Blog button title")
@@ -45,6 +45,6 @@ public struct Strings {
 
     
     //MARK:- Trusted Sites Panel
-    public static let TrustedSitesPanelText = NSLocalizedString("All the sites that you trust can be seen here. You can also add additional sites to your list using the field below:", comment: "[Trusted Sites Panel] Trusted Sites text")
+    public static let TrustedSitesPanelText = NSLocalizedString("All the sites that you trust can be seen here. You can also add or remove additional sites from your list using the field below.", comment: "[Trusted Sites Panel] Trusted Sites text")
     public static let TrustedSitesPanelTrustSiteButtonTitle = NSLocalizedString("TRUST SITE", comment: "[Trusted Sites Panel] Trust site button title")
 }

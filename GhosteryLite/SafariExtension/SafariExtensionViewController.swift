@@ -186,7 +186,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		if trustSiteButton.state.rawValue == 0 {
 			self.trustSiteButton?.toolTip = "Always allow trackers and ads on this site."
 		} else {
-			self.trustSiteButton?.toolTip = "Trackers and ads allowed. Click to undo."
+			self.trustSiteButton?.toolTip = "Trackers and ads allows. Click to undo."
 		}
 	}
 

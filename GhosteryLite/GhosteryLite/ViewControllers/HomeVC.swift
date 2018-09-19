@@ -80,8 +80,8 @@ class HomeVC: NSViewController {
     }
     
     private func generateAttributedString(prefix: String, regularText: String) -> NSAttributedString {
-        let prefixString = prefix.attributedString(withTextAlignment: .left, fontName: "Roboto-Medium", fontSize: 16.0, fontColor: 0x4a4a4a)
-        let regularTextString = regularText.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16.0, fontColor: 0x4a4a4a)
+        let prefixString = prefix.attributedString(withTextAlignment: .left, fontName: "Roboto-Medium", fontSize: 16.0, fontColor: 0x4a4a4a, lineSpacing: 3.0)
+        let regularTextString = regularText.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16.0, fontColor: 0x4a4a4a, lineSpacing: 3.0)
         
         let attrString:NSMutableAttributedString = NSMutableAttributedString(attributedString: prefixString)
         attrString.append(regularTextString)
