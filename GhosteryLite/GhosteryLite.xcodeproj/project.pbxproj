@@ -84,6 +84,7 @@
 		4F931A292126E06000AF4226 /* DomainConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */; };
 		4F931A2A2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */; };
 		4F931A2B2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */; };
+		4F9984A1215515790011C3A9 /* TelemetryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9984A0215515790011C3A9 /* TelemetryService.swift */; };
 		4FB1E6D2213E819F00136D2A /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 1E597C3F21341ED90098631F /* Fonts */; };
 		4FB1E6D7213EBF5300136D2A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73C21369F5400E28C38 /* StringExtension.swift */; };
 		4FB1E6D8213EC6DC00136D2A /* NSColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4521354D820098631F /* NSColorExtension.swift */; };
@@ -204,6 +205,7 @@
 		4F931A182125ADD500AF4226 /* CrudRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudRepository.swift; sourceTree = "<group>"; };
 		4F931A242126C8C900AF4226 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConfigDataSource.swift; sourceTree = "<group>"; };
+		4F9984A0215515790011C3A9 /* TelemetryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemetryService.swift; sourceTree = "<group>"; };
 		4FCEAA22212E0CCE00AACE42 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4FFD8313212B36BC0038149F /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 		4FFD8337212B4FF90038149F /* BlockListAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlockListAssets; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 				4F931A242126C8C900AF4226 /* Constants.swift */,
 				1E597C4721354DE60098631F /* Preferences.swift */,
 				1E14B73721368CD600E28C38 /* Strings.swift */,
+				4F9984A0215515790011C3A9 /* TelemetryService.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -718,6 +721,7 @@
 				1E597C2D2133F8170098631F /* SectionDetailVC.swift in Sources */,
 				4F30499C2119F46700BA3961 /* PageTrackersFound.swift in Sources */,
 				4FFD8351212C6C740038149F /* WindowController.swift in Sources */,
+				4F9984A1215515790011C3A9 /* TelemetryService.swift in Sources */,
 				4F90DD81214BD75000E8BA6D /* WhiteListFileManager.swift in Sources */,
 				4F3049A62119F4FC00BA3961 /* URLExtension.swift in Sources */,
 				4F83ABB12138586A00BC76E4 /* TrustedSitesDataSource.swift in Sources */,
