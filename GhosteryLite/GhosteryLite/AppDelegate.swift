@@ -84,4 +84,10 @@ extension NSApplication {
 			sender.state = NSControl.StateValue(rawValue: 1)
 		}
 	}
+
+	@IBAction func showGhosteryHelp(_ sender: NSMenuItem) {
+		if let url = URL(string: "https://ghostery.zendesk.com/hc/en-us") {
+			NSWorkspace.shared.open(url)
+		}
+	}
 }
