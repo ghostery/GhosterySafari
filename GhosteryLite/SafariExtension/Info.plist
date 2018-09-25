@@ -46,10 +46,14 @@
 			<key>Image</key>
 			<string>DarkMode.pdf</string>
 			<key>Label</key>
-			<string>A</string>
+			<string>Ghostery Lite</string>
 		</dict>
 		<key>SFSafariWebsiteAccess</key>
 		<dict>
+			<key>Allowed Domains</key>
+			<array>
+				<string>*.*</string>
+			</array>
 			<key>Level</key>
 			<string>All</string>
 		</dict>
