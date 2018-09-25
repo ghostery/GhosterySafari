@@ -10,11 +10,11 @@ import Foundation
 
 struct Constants {
 
-	static let GhosteryLiteID = "Gh.GhosteryLite"
-	static let SafariContentBlockerID = "Gh.GhosteryLite.ContentBlocker"
-	static let SafariPopupExtensionID = "Gh.GhosteryLite.SafariExtension"
+	static let GhosteryLiteID = "com.ghostery.lite"
+	static let SafariContentBlockerID = "com.ghostery.lite.contentBlocker"
+	static let SafariPopupExtensionID = "com.ghostery.lite.safariExtension"
 
-	static let AppsGroupID = "2UYYSSHVUH.Gh.GhosteryLite"
+	static let AppsGroupID = "HPY23A294X.ghostery.lite"
 
 	static let PauseNotificationName = Notification.Name(rawValue: "GhosteryIsPaused")
 	static let ResumeNotificationName = Notification.Name(rawValue: "GhosteryIsResumed")

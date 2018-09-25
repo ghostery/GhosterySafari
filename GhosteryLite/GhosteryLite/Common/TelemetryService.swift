@@ -20,7 +20,7 @@ class TelemetryService {
 	static let shared = TelemetryService()
 
 	func sendSignal() {
-		let url = "https://staging-d.ghostery.com/install/all?gr=-1&v=1.0.0&l=en"
+		let url = "https://d.ghostery.com/install/all?gr=-1&v=235.123.154&l=en&ua=ghosteryLite"
 		Alamofire.request(url)
 			.validate()
 			.response(completionHandler: { (response) in
