@@ -14,9 +14,8 @@ class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
 //		let rules = AntiTrackingManager.shared.contentBlokerRules()
 
         let item = NSExtensionItem()
-		let groupIdentifier = "2UYYSSHVUH.Gh.GhosteryLite"
 		
-		let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupIdentifier)
+		let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
 		let assetsFolder: URL? = groupStorageFolder?.appendingPathComponent("BlockListAssets")
 		
 		let p = assetsFolder?.appendingPathComponent("currentBlockList.json")

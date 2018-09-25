@@ -46,9 +46,7 @@ enum CategoryType: Int {
 
 final class BlockListFileManager {
 
-	private static let groupIdentifier = "2UYYSSHVUH.Gh.GhosteryLite"
-
-	private static let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: BlockListFileManager.groupIdentifier)
+	private static let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
 	private static let assetsFolder: URL? = BlockListFileManager.groupStorageFolder?.appendingPathComponent("BlockListAssets")
 	private static let categoryAssetsFolder: URL? = BlockListFileManager.assetsFolder?.appendingPathComponent("BlockListByCategory")
 
