@@ -22,6 +22,24 @@ class Preferences: NSObject {
 		UserDefaults.standard.synchronize()
 	}
 
+	class func globalPreferences(key: String) -> Any? {
+		let d = UserDefaults(suiteName: Constants.AppsGroupID)
+		return d?.value(forKey: key)
+	}
+
+	class func updateGlobalPreferences(key: String, value: Any) {
+		let d = UserDefaults(suiteName: Constants.AppsGroupID)
+		d?.set(value, forKey: key)
+		d?.synchronize()
+	}
+
+	class func currentVersion() -> String {
+		if let shortVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+			return shortVersion
+		}
+		return ""
+	}
+
     class func areExtensionsEnabled(_ completion: @escaping(_ contentBlockerEnabled: Bool, _ menuEnabled: Bool, _ error: Error?) -> Void) {
 		var safariContentBlockerEnabled = false
 		var safariMenuEnabled = false
@@ -58,15 +76,5 @@ class Preferences: NSObject {
 		group.notify(queue: .main) {
 			completion(safariContentBlockerEnabled, safariMenuEnabled, err)
 		}
-	}
-
-	class func showSafariPreferencesForExtension() {
-		SFSafariApplication.showPreferencesForExtension(withIdentifier: Constants.SafariContentBlockerID, completionHandler: { (error) in
-			if let e = error {
-				print("Error --- \(e)")
-			} else {
-				print("Success!!!")
-			}
-		})
 	}
 }

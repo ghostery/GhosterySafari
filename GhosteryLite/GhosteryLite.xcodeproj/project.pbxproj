@@ -84,7 +84,12 @@
 		4F931A292126E06000AF4226 /* DomainConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */; };
 		4F931A2A2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */; };
 		4F931A2B2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */; };
-		4F9984A1215515790011C3A9 /* TelemetryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9984A0215515790011C3A9 /* TelemetryService.swift */; };
+		4F9CF8D8215A9367005B1C1B /* GhosteryLite.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4F9CF8D7215A9367005B1C1B /* GhosteryLite.xcconfig */; };
+		4F9CF8E1215BCD6A005B1C1B /* TelemetryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9CF8E0215BCD6A005B1C1B /* TelemetryService.swift */; };
+		4F9CF8E3215BCD97005B1C1B /* TelemetryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9CF8E2215BCD97005B1C1B /* TelemetryManager.swift */; };
+		4F9CF8E7215E57B6005B1C1B /* TelemetryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9CF8E2215BCD97005B1C1B /* TelemetryManager.swift */; };
+		4F9CF8E8215E57B9005B1C1B /* TelemetryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9CF8E0215BCD6A005B1C1B /* TelemetryService.swift */; };
+		4F9CF8E9215E580C005B1C1B /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4721354DE60098631F /* Preferences.swift */; };
 		4FB1E6D2213E819F00136D2A /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 1E597C3F21341ED90098631F /* Fonts */; };
 		4FB1E6D7213EBF5300136D2A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73C21369F5400E28C38 /* StringExtension.swift */; };
 		4FB1E6D8213EC6DC00136D2A /* NSColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4521354D820098631F /* NSColorExtension.swift */; };
@@ -205,7 +210,9 @@
 		4F931A182125ADD500AF4226 /* CrudRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudRepository.swift; sourceTree = "<group>"; };
 		4F931A242126C8C900AF4226 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConfigDataSource.swift; sourceTree = "<group>"; };
-		4F9984A0215515790011C3A9 /* TelemetryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemetryService.swift; sourceTree = "<group>"; };
+		4F9CF8D7215A9367005B1C1B /* GhosteryLite.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = GhosteryLite.xcconfig; sourceTree = "<group>"; };
+		4F9CF8E0215BCD6A005B1C1B /* TelemetryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelemetryService.swift; sourceTree = "<group>"; };
+		4F9CF8E2215BCD97005B1C1B /* TelemetryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemetryManager.swift; sourceTree = "<group>"; };
 		4FCEAA22212E0CCE00AACE42 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4FFD8313212B36BC0038149F /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 		4FFD8337212B4FF90038149F /* BlockListAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlockListAssets; sourceTree = "<group>"; };
@@ -324,6 +331,7 @@
 		4F30491F2118982600BA3961 /* GhosteryLite */ = {
 			isa = PBXGroup;
 			children = (
+				4F9CF8DF215BCC84005B1C1B /* Telemetry */,
 				1E597C3E21341ECA0098631F /* Common Resources */,
 				1E597C31213409F90098631F /* Views */,
 				1E597C272133F79F0098631F /* ViewControllers */,
@@ -336,6 +344,7 @@
 				4F3049292118982700BA3961 /* Info.plist */,
 				4F30492A2118982700BA3961 /* GhosteryLite.entitlements */,
 				4FFD8350212C6C740038149F /* WindowController.swift */,
+				4F9CF8D7215A9367005B1C1B /* GhosteryLite.xcconfig */,
 			);
 			path = GhosteryLite;
 			sourceTree = "<group>";
@@ -452,9 +461,17 @@
 				4F931A242126C8C900AF4226 /* Constants.swift */,
 				1E597C4721354DE60098631F /* Preferences.swift */,
 				1E14B73721368CD600E28C38 /* Strings.swift */,
-				4F9984A0215515790011C3A9 /* TelemetryService.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		4F9CF8DF215BCC84005B1C1B /* Telemetry */ = {
+			isa = PBXGroup;
+			children = (
+				4F9CF8E0215BCD6A005B1C1B /* TelemetryService.swift */,
+				4F9CF8E2215BCD97005B1C1B /* TelemetryManager.swift */,
+			);
+			path = Telemetry;
 			sourceTree = "<group>";
 		};
 		4FFD831A212B4ADE0038149F /* Resources */ = {
@@ -595,6 +612,7 @@
 			files = (
 				1E14B7592138217800E28C38 /* TrustedSiteCollectionViewItem.xib in Resources */,
 				1E597C3721340D180098631F /* SectionItemCollectionViewItem.xib in Resources */,
+				4F9CF8D8215A9367005B1C1B /* GhosteryLite.xcconfig in Resources */,
 				4FFD8338212B4FF90038149F /* BlockListAssets in Resources */,
 				4F3049252118982700BA3961 /* Assets.xcassets in Resources */,
 				1E597C4021341ED90098631F /* Fonts in Resources */,
@@ -715,13 +733,14 @@
 				4F3049A42119F4FC00BA3961 /* ArrayExtensions.swift in Sources */,
 				4F931A292126E06000AF4226 /* DomainConfigDataSource.swift in Sources */,
 				4F3049A52119F4FC00BA3961 /* DictionaryExtensions.swift in Sources */,
+				4F9CF8E3215BCD97005B1C1B /* TelemetryManager.swift in Sources */,
 				1E14B73D21369F5400E28C38 /* StringExtension.swift in Sources */,
 				4F931A1521259BEC00AF4226 /* DomainConfigRepository.swift in Sources */,
 				4F3049972119F46700BA3961 /* TrackerListRegex.swift in Sources */,
 				1E597C2D2133F8170098631F /* SectionDetailVC.swift in Sources */,
 				4F30499C2119F46700BA3961 /* PageTrackersFound.swift in Sources */,
 				4FFD8351212C6C740038149F /* WindowController.swift in Sources */,
-				4F9984A1215515790011C3A9 /* TelemetryService.swift in Sources */,
+				4F9CF8E1215BCD6A005B1C1B /* TelemetryService.swift in Sources */,
 				4F90DD81214BD75000E8BA6D /* WhiteListFileManager.swift in Sources */,
 				4F3049A62119F4FC00BA3961 /* URLExtension.swift in Sources */,
 				4F83ABB12138586A00BC76E4 /* TrustedSitesDataSource.swift in Sources */,
@@ -763,9 +782,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F9CF8E8215E57B9005B1C1B /* TelemetryService.swift in Sources */,
 				4FB1E6D8213EC6DC00136D2A /* NSColorExtension.swift in Sources */,
 				4F931A212125DA5200AF4226 /* BlockListFileManager.swift in Sources */,
 				4F90DD82214BDC8300E8BA6D /* WhiteListFileManager.swift in Sources */,
+				4F9CF8E7215E57B6005B1C1B /* TelemetryManager.swift in Sources */,
 				4F30493C2118983D00BA3961 /* SafariExtensionViewController.swift in Sources */,
 				4F30493A2118983D00BA3961 /* SafariExtensionHandler.swift in Sources */,
 				4F931A1E2125D3F500AF4226 /* AntiTrackingManager.swift in Sources */,
@@ -779,6 +800,7 @@
 				4F931A1D2125D3DE00AF4226 /* URLExtension.swift in Sources */,
 				4F931A202125DA4100AF4226 /* RealmRepository.swift in Sources */,
 				4FB1E6D7213EBF5300136D2A /* StringExtension.swift in Sources */,
+				4F9CF8E9215E580C005B1C1B /* Preferences.swift in Sources */,
 				4FFD8315212B36BC0038149F /* FileManagerExtension.swift in Sources */,
 				4F931A2A2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */,
 				4F931A262126C95A00AF4226 /* Constants.swift in Sources */,
@@ -971,7 +993,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\"";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\" \"-DSTAGING\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1021,6 +1043,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DSTAGING\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.safariExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1043,6 +1066,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DPROD\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.safariExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1065,6 +1089,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DSTAGING\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.contentBlocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1087,6 +1112,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DPROD\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.contentBlocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1094,6 +1120,133 @@
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
+		};
+		4F9CF8DB215B90E8005B1C1B /* Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Beta;
+		};
+		4F9CF8DC215B90E8005B1C1B /* Beta */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 871270F350184074300264CE /* Pods-GhosteryLite.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GhosteryLite/GhosteryLite.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = HPY23A294X;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+				);
+				INFOPLIST_FILE = GhosteryLite/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DSTAGING\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Beta;
+		};
+		4F9CF8DD215B90E8005B1C1B /* Beta */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B132EB5ADA4E362C9953CF32 /* Pods-SafariExtension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HPY23A294X;
+				INFOPLIST_FILE = SafariExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DSTAGING\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.safariExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Beta;
+		};
+		4F9CF8DE215B90E8005B1C1B /* Beta */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9E6DD48CC7939FB760044B0 /* Pods-ContentBlocker.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HPY23A294X;
+				INFOPLIST_FILE = ContentBlocker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DSTAGING\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.contentBlocker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Beta;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1103,6 +1256,7 @@
 			buildConfigurations = (
 				4F30492B2118982700BA3961 /* Debug */,
 				4F30492C2118982700BA3961 /* Release */,
+				4F9CF8DB215B90E8005B1C1B /* Beta */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1112,6 +1266,7 @@
 			buildConfigurations = (
 				4F30492E2118982700BA3961 /* Debug */,
 				4F30492F2118982700BA3961 /* Release */,
+				4F9CF8DC215B90E8005B1C1B /* Beta */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1121,6 +1276,7 @@
 			buildConfigurations = (
 				4F30494A2118983D00BA3961 /* Debug */,
 				4F30494B2118983D00BA3961 /* Release */,
+				4F9CF8DD215B90E8005B1C1B /* Beta */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1130,6 +1286,7 @@
 			buildConfigurations = (
 				4F30495E2118985C00BA3961 /* Debug */,
 				4F30495F2118985C00BA3961 /* Release */,
+				4F9CF8DE215B90E8005B1C1B /* Beta */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

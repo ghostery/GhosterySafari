@@ -17,10 +17,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 	func applicationDidBecomeActive(_ notification: Notification) {
 		self.updateConfigState()
+		TelemetryManager.shared.sendSignal(.active)
 	}
 
 	func applicationWillFinishLaunching(_ notification: Notification) {
 		self.updateConfigState()
+		TelemetryManager.shared.sendSignal(.install)
+		TelemetryManager.shared.sendSignal(.upgrade)
 	}
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {

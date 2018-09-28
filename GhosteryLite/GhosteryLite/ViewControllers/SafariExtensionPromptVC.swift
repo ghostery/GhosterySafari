@@ -28,7 +28,8 @@ class SafariExtensionPromptVC: NSViewController {
 
     @IBAction func enableGhosteryLite(_ sender: NSButton) {
         self.delegate?.hideSafariExtensionPopOver()
-		Preferences.showSafariPreferencesForExtension()
+		// Needs to be refactored
+		HomeVC.showSafariPreferencesForExtension()
     }
 
     @IBAction func skip(_ sender: NSButton) {

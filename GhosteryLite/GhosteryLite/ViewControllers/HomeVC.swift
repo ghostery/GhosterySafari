@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SafariServices
 
 class HomeVC: NSViewController {
 
@@ -37,10 +38,14 @@ class HomeVC: NSViewController {
 															selector: #selector(self.editSettingsClicked(_:)),
 															name: Constants.NavigateToSettingsNotificationName, object: Constants.SafariPopupExtensionID)
     }
-    
+
+	override func viewDidAppear() {
+		super.viewDidAppear()
+		TelemetryManager.shared.sendSignal(.engage)
+	}
     @IBAction func enableGhosteryLite(_ sender: NSButton) {
         self.SafariExtensionPromptView.isHidden = true
-		Preferences.showSafariPreferencesForExtension()
+		HomeVC.showSafariPreferencesForExtension()
     }
     
     @IBAction func editSettingsClicked(_ sender: Any) {
@@ -50,7 +55,17 @@ class HomeVC: NSViewController {
     @IBAction func trustedSitesClicked(_ sender: Any) {
         self.delegate?.showTrustedSitesPanel()
     }
-    
+	
+	class func showSafariPreferencesForExtension() {
+		SFSafariApplication.showPreferencesForExtension(withIdentifier: Constants.SafariContentBlockerID, completionHandler: { (error) in
+			if let e = error {
+				print("Error --- \(e)")
+			} else {
+				print("Success!!!")
+			}
+		})
+	}
+
     private func initComponents() {
         titleText.stringValue = Strings.HomePanelTitle
 		titleText.font = NSFont(name: "Roboto-Regular", size: 24)
