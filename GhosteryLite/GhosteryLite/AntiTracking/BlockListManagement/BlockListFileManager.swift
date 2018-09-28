@@ -55,9 +55,10 @@ final class BlockListFileManager {
 	static let shared = BlockListFileManager()
 
 	init() {
+		/*
 		if self.versionExpired() {
 			self.downloadNewBlockList()
-		}
+		}*/
 	}
 
 	func getFilePath(fileName: String, folderName: String) -> URL? {

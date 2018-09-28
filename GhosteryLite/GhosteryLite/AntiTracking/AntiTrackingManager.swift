@@ -235,7 +235,7 @@ class AntiTrackingManager {
 	}
 
 	private func reloadCBExtension() {
-		SFContentBlockerManager.reloadContentBlocker(withIdentifier: "Gh.GhosteryLite.ContentBlocker", completionHandler: { (error) in
+		SFContentBlockerManager.reloadContentBlocker(withIdentifier: Constants.SafariContentBlockerID, completionHandler: { (error) in
 			if error != nil {
 				print("Reloading Content Blocker is failed ---- \(error)")
 //				DispatchQueue.main.async {

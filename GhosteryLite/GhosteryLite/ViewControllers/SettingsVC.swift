@@ -45,7 +45,7 @@ class SettingsVC: NSViewController {
 		super.viewWillAppear()
 		setupComponents()
 		updateCategoryCheckboxStates()
-		SFContentBlockerManager.getStateOfContentBlocker(withIdentifier: "Gh.GhosteryLite.ContentBlocker") { (state, error) in
+		SFContentBlockerManager.getStateOfContentBlocker(withIdentifier: Constants.SafariContentBlockerID) { (state, error) in
 		}
 	}
 
