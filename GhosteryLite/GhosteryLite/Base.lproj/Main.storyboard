@@ -291,7 +291,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LVb-pL-6ez">
-                                <rect key="frame" x="92" y="212" width="69" height="18"/>
+                                <rect key="frame" x="92" y="232" width="69" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="bR7-aY-aO5"/>
                                 </constraints>
@@ -303,18 +303,6 @@
                                     <action selector="customSelected:" target="XfG-lQ-9wD" id="we0-eY-s0Y"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i7J-qY-hF0">
-                                <rect key="frame" x="111" y="136" width="465" height="69"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="69" id="TMF-lr-9Hy"/>
-                                </constraints>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="0KE-sx-Ohg">
-                                    <font key="font" metaFont="system"/>
-                                    <string key="title">Select the tracker categories that you would like to block or unblock. Please note that some sites may not load correctly depending on your custom settings. Learn More</string>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xMh-pp-Uek">
                                 <rect key="frame" x="48" y="437" width="120" height="107"/>
                                 <constraints>
@@ -363,7 +351,7 @@
                                 <color key="fillColor" red="0.79607843140000001" green="0.83137254900000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                             </box>
                             <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="m17-jn-QNs">
-                                <rect key="frame" x="32" y="243" width="552" height="1"/>
+                                <rect key="frame" x="32" y="261" width="552" height="1"/>
                                 <view key="contentView" id="pG2-QZ-QeY">
                                     <rect key="frame" x="0.0" y="0.0" width="552" height="1"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -379,15 +367,14 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="105" id="bdB-AN-zkx"/>
                                 </constraints>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="rfT-Ov-7Uc">
+                                <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" allowsEditingTextAttributes="YES" id="rfT-Ov-7Uc">
                                     <font key="font" metaFont="system"/>
-                                    <string key="title">Ghostery Lite's default settings have been tailored to provide fast, simple and safe browsing, allowing you to focus on exploring your favorite websites and online content. We block advertising, site analytics, and adult advertising trackers by default. Adapt your custom setup below, or simply start surfing. Learn More</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <box hidden="YES" appearanceType="aqua" fixedFrame="YES" boxType="custom" translatesAutoresizingMaskIntoConstraints="NO" id="4dn-Gg-Wy3">
-                                <rect key="frame" x="77" y="-30" width="533" height="171"/>
+                                <rect key="frame" x="77" y="-7" width="533" height="171"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" ambiguous="YES" id="2Ea-UR-Jyh">
                                     <rect key="frame" x="1" y="1" width="531" height="169"/>
@@ -572,6 +559,18 @@
                                 <color key="borderColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="fillColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </box>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i7J-qY-hF0">
+                                <rect key="frame" x="111" y="156" width="465" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="TMF-lr-9Hy"/>
+                                </constraints>
+                                <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" allowsEditingTextAttributes="YES" id="0KE-sx-Ohg">
+                                    <font key="font" metaFont="system"/>
+                                    <string key="title">Select the tracker categories that you would like to block or unblock. Please note that some sites may not load correctly depending on your custom settings. Learn More</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="GzW-fZ-j1l" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="32" id="0cr-LS-0br"/>
@@ -580,11 +579,11 @@
                             <constraint firstItem="xMh-pp-Uek" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="32" id="47C-uD-xuZ"/>
                             <constraint firstItem="VW5-hv-OwS" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="113" id="4fb-Xy-31e"/>
                             <constraint firstAttribute="trailing" secondItem="i7J-qY-hF0" secondAttribute="trailing" constant="43" id="517-Bh-wNL"/>
-                            <constraint firstItem="m17-jn-QNs" firstAttribute="top" secondItem="VW5-hv-OwS" secondAttribute="bottom" constant="13" id="62D-Aq-svT"/>
+                            <constraint firstItem="m17-jn-QNs" firstAttribute="top" secondItem="VW5-hv-OwS" secondAttribute="bottom" constant="-5" id="62D-Aq-svT"/>
                             <constraint firstItem="VW5-hv-OwS" firstAttribute="top" secondItem="rKj-gW-VAB" secondAttribute="bottom" constant="8" id="9cK-4I-WYh"/>
                             <constraint firstItem="i7J-qY-hF0" firstAttribute="top" secondItem="LVb-pL-6ez" secondAttribute="bottom" constant="8" id="Cbj-sL-FTk"/>
                             <constraint firstAttribute="trailing" secondItem="qEK-TC-RNc" secondAttribute="trailing" constant="33" id="D6L-3g-HIm"/>
-                            <constraint firstItem="LVb-pL-6ez" firstAttribute="top" secondItem="m17-jn-QNs" secondAttribute="bottom" constant="14" id="D6j-BE-tIW"/>
+                            <constraint firstItem="LVb-pL-6ez" firstAttribute="top" secondItem="m17-jn-QNs" secondAttribute="bottom" constant="12" id="D6j-BE-tIW"/>
                             <constraint firstItem="rKj-gW-VAB" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="93" id="D7c-3F-JlX"/>
                             <constraint firstAttribute="trailing" secondItem="m17-jn-QNs" secondAttribute="trailing" constant="33" id="FbD-jt-jTd"/>
                             <constraint firstAttribute="trailing" secondItem="VW5-hv-OwS" secondAttribute="trailing" constant="55" id="IUR-2y-Mhf"/>

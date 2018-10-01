@@ -109,12 +109,11 @@ class SettingsVC: NSViewController {
 		self.updateRadioBoxesState()
 		self.topTextLabel.attributedStringValue = self.topTextLabel.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: 0x4a4a4a, isUnderline: false, lineSpacing: 3)
 		
-//		attributedString()
-//		self.topTextLabel.font = NSFont(name: "Roboto-Regular", size: 16)
 		self.defaultRadio.font = NSFont(name: "Roboto-Bold", size: 14)
 		self.customRadio.font = NSFont(name: "Roboto-Bold", size: 14)
-		self.defaultDescLabel.attributedStringValue = self.defaultDescLabel.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14, fontColor: 0x4a4a4a, isUnderline: false, lineSpacing: 1)
-		self.customDescLabel.attributedStringValue = self.customDescLabel.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14, fontColor: 0x4a4a4a, isUnderline: false, lineSpacing: 1)
+		
+		self.setupTextField(textField: self.defaultDescLabel, mainText: Strings.SettingsPanelDefaultDescription, learnMoreText: Strings.LearnMore, urlString: "https://www.ghostery.com/faqs/")
+		self.setupTextField(textField: self.customDescLabel, mainText: Strings.SettingsPanelCustomDescription, learnMoreText: Strings.LearnMore, urlString: "https://www.ghostery.com/faqs/")
 
 		adCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
 		audioVideoCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
@@ -152,5 +151,23 @@ class SettingsVC: NSViewController {
 		siteAnalyticsCheckbox.state = NSControl.StateValue(GlobalConfigManager.shared.isCategoryBlocked(.siteAnalytics) ? 1 : 0)
 		socialMediaCheckbox.state = NSControl.StateValue(GlobalConfigManager.shared.isCategoryBlocked(.socialMedia) ? 1 : 0)
 	}
-}
 
+	private func setupTextField(textField: NSTextField, mainText: String, learnMoreText: String, urlString: String) {
+		let textColor: NSColor = NSColor(rgb: 0x4a4a4a)
+		let textParagraph: NSMutableParagraphStyle = NSMutableParagraphStyle()
+		textParagraph.lineSpacing = 1
+		textParagraph.maximumLineHeight = 30.0
+		textParagraph.alignment = .left
+		let font = NSFont(name: "Roboto-Regular", size: 14) ?? NSFont.systemFont(ofSize: 14)
+		let attribs: [NSAttributedStringKey : Any] = [NSAttributedStringKey.font : font,
+													  NSAttributedStringKey.foregroundColor : textColor,
+													  NSAttributedStringKey.paragraphStyle : textParagraph]
+		let str = "\(mainText) \(learnMoreText)"
+		let attrString: NSMutableAttributedString = NSMutableAttributedString.init(string: str, attributes: attribs)
+		let range = NSMakeRange(str.count - learnMoreText.count, Strings.LearnMore.count)
+		if let url = URL(string: urlString) {
+			attrString.addAttribute(NSAttributedStringKey.link, value: url, range: range)
+		}
+		textField.attributedStringValue = attrString
+	}
+}

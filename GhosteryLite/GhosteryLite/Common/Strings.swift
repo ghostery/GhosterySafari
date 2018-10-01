@@ -26,8 +26,11 @@ public struct Strings {
     public static let HomePanelTrustedSitesButtonTitle = NSLocalizedString("TRUSTED SITES", comment: "[Home panel] Trusted sites button title")
     public static let HomePanelEnableGhosteryLitePromptText = NSLocalizedString("Please enable the Ghostery Lite extensions in your Safari preferences to begin.", comment: "[Home panel] Enable Ghostery Lite prompt text")
     public static let HomePanelEnableGhosteryLiteButtonTitle = NSLocalizedString("ENABLE LITE", comment: "[Home panel] Enable Ghostery Lite button title")
-    
-    
+	
+	//MARK:- Sttings Panel
+	public static let SettingsPanelDefaultDescription = NSLocalizedString("Ghostery Lite’s default settings have been tailored to provide the cleanest, fastest and safest browsing experience, allowing you to focus on exploring your favorite websites and online content. We block advertising, site analytics and adult advertising trackers.", comment: "Description test on Settings pannel for Default settings")
+	public static let SettingsPanelCustomDescription = NSLocalizedString("Select the tracker categories that you would like to block or unblock. Please note that some sites may not load correctly depending on your custom settings.", comment: "Description test on Settings pannel for Custom settings")
+	public static let LearnMore = NSLocalizedString("Learn more", comment: "Link to learn more web page")
     
     //MARK:- Safari Extension Prompt
     public static let SafariExtensionPromptText = NSLocalizedString("Please enable Ghostery Lite Icon and Ghostery Lite extensions in your Safari preferences to begin.", comment: "[Safari Extension Prompt] text")
