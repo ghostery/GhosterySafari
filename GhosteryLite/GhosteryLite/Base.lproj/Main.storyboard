@@ -1005,14 +1005,14 @@
                                     <action selector="trustSiteButtonPressedWithSender:" target="LTy-Jl-Bl3" id="C2u-C2-tWT"/>
                                 </connections>
                             </button>
-                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swm-qe-0kG">
-                                <rect key="frame" x="34" y="-25" width="570" height="400"/>
+                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swm-qe-0kG">
+                                <rect key="frame" x="34" y="5" width="570" height="370"/>
                                 <clipView key="contentView" drawsBackground="NO" id="iHf-TW-qBy">
-                                    <rect key="frame" x="0.0" y="0.0" width="570" height="400"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="570" height="370"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="ovK-UL-rJ6">
-                                            <rect key="frame" x="0.0" y="0.0" width="570" height="158"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="570" height="370"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="M1d-oS-GDx">
                                                 <size key="itemSize" width="570" height="30"/>
@@ -1027,15 +1027,15 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="72B-Pi-CsD"/>
+                                    <constraint firstAttribute="height" constant="370" id="72B-Pi-CsD"/>
                                     <constraint firstAttribute="width" constant="570" id="We2-1D-Wmp"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Lkq-4U-sdJ">
-                                    <rect key="frame" x="1" y="383" width="568" height="16"/>
+                                    <rect key="frame" x="-100" y="-100" width="568" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="r4a-dy-iJd">
-                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <rect key="frame" x="554" y="0.0" width="16" height="370"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
