@@ -36,7 +36,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBOutlet weak var popupTitleLabel: NSTextField!
 	@IBOutlet weak var popupReloadButton: NSButton!
 	@IBOutlet weak var popupCloseButton: NSButton!
-
+	
 	private var isPaused = false
 
 	private static let CustomSettingsSelectedKey = "CustomSettingsSelectedOnce"
@@ -241,6 +241,11 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
 	private func showPopup(_ backgroundColor: NSColor, title: String, fontColor: Int, image: String = "closePopup") {
 		self.reloadPopupView.layer?.backgroundColor = backgroundColor.cgColor
+		let shadow =  NSShadow()
+		shadow.shadowBlurRadius = 4
+		shadow.shadowOffset = CGSize(width: 0, height: -2)
+		shadow.shadowColor = NSColor(rgb: 0x969696, alpha: 0.5)
+		self.reloadPopupView.shadow = shadow
 		self.popupTitleLabel.stringValue = title
 		self.popupTitleLabel.textColor = NSColor(rgb: fontColor)
 		self.popupReloadButton.attributedTitle = self.popupReloadButton.title.attributedString(withTextAlignment: .center,
