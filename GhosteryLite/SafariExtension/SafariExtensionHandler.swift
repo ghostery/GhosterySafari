@@ -19,16 +19,10 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 */
 		if messageName == "recordPageInfo" {
 			page.getPropertiesWithCompletionHandler { (properties) in
-				var scheme = properties?.url?.scheme ?? ""
-				if !scheme.isEmpty {
-					scheme.append("://")
-				}
-				let host = properties?.url?.host ?? ""
-				let path = properties?.url?.path ?? ""
 				if let ui = userInfo,
 					let latency = ui["latency"] as? String,
 					let url = ui["domain"] as? String,
-					url == "\(scheme)\(host)\(path)" {					PageLatencyDataSource.shared.pageLoaded(url: url, latency: latency)
+					url == properties?.url?.fullPath {					PageLatencyDataSource.shared.pageLoaded(url: url, latency: latency)
 					SafariExtensionViewController.shared.updatePageLatency(url, latency)
 				}
 			}
@@ -73,7 +67,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 */
 	private func updatePopoverUrl(_ window: SFSafariWindow) {
 		handleTabUrlChange(window) { (url) in
-			SafariExtensionViewController.shared.currentUrl = url?.absoluteString ?? ""
+			SafariExtensionViewController.shared.currentUrl = url?.fullPath ?? ""
 			SafariExtensionViewController.shared.currentDomain = url?.normalizedHost ?? ""
 		}
 	}

@@ -53,7 +53,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 			pageLatencyValueLabel?.stringValue = PageLatencyDataSource.shared.latencyFor(currentUrl ?? "")
 			let params = PageLatencyDataSource.shared.latencyImageAndOffset(currentUrl ?? "")
 			pageLatencyImage?.image = NSImage(named: NSImage.Name(params.0))
-			secondsLabelLeftOffset.constant = params.1
+			secondsLabelLeftOffset?.constant = params.1
 //			pageLatencyImage?.image = NSImage(named: NSImage.Name(PageLatencyDataSource.shared.latencyImageName(currentUrl ?? "")))
 		}
 	}

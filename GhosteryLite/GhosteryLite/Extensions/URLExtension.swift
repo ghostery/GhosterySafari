@@ -24,4 +24,14 @@ extension URL {
 		return host
 	}
 
+	public var fullPath: String {
+		var scheme = self.scheme ?? ""
+		if !scheme.isEmpty {
+			scheme.append("://")
+		}
+		let host = self.host ?? ""
+		let path = self.path ?? ""
+		return "\(scheme)\(host)\(path)"
+	}
+
 }
