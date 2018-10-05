@@ -19,11 +19,16 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 */
 		if messageName == "recordPageInfo" {
 			page.getPropertiesWithCompletionHandler { (properties) in
+				var scheme = properties?.url?.scheme ?? ""
+				if !scheme.isEmpty {
+					scheme.append("://")
+				}
+				let host = properties?.url?.host ?? ""
+				let path = properties?.url?.path ?? ""
 				if let ui = userInfo,
 					let latency = ui["latency"] as? String,
 					let url = ui["domain"] as? String,
-					url == (properties?.url?.absoluteString ?? "") {
-					PageLatencyDataSource.shared.pageLoaded(url: url, latency: latency)
+					url == "\(scheme)\(host)\(path)" {					PageLatencyDataSource.shared.pageLoaded(url: url, latency: latency)
 					SafariExtensionViewController.shared.updatePageLatency(url, latency)
 				}
 			}
