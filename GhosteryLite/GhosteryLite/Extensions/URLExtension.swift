@@ -30,8 +30,9 @@ extension URL {
 			scheme.append("://")
 		}
 		let host = self.host ?? ""
-		let path = self.path ?? ""
-		return "\(scheme)\(host)\(path)"
+		let regEx = try? NSRegularExpression(pattern: "/+$", options: .caseInsensitive)
+		let newPath = regEx?.stringByReplacingMatches(in: self.path, options: [], range: NSMakeRange(0, self.path.count), withTemplate: "") ?? ""
+		return "\(scheme)\(host)\(newPath)"
 	}
 
 }
