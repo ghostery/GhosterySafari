@@ -28,7 +28,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBOutlet weak var thirdRangeLabel: NSTextField!
 	@IBOutlet weak var secondsLabel: NSTextField!
 	
-	@IBOutlet weak var secondsLabelLeftOffset: NSLayoutConstraint!
+	@IBOutlet weak var secondsLabelLeftOffset: NSLayoutConstraint?
 
 	@IBOutlet var trustSiteButton: NSButton!
 
@@ -43,19 +43,23 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
 	var currentDomain: String? {
 		didSet {
-			urlLabel?.stringValue = currentDomain ?? ""
-			updateTrustButtonState()
+            DispatchQueue.main.async {
+                self.urlLabel?.stringValue = self.currentDomain ?? ""
+                self.updateTrustButtonState()
+            }
 		}
 	}
 
 	var currentUrl: String? {
 		didSet {
-			pageLatencyValueLabel?.stringValue = PageLatencyDataSource.shared.latencyFor(currentUrl ?? "")
-			let params = PageLatencyDataSource.shared.latencyImageAndOffset(currentUrl ?? "")
-			pageLatencyImage?.image = NSImage(named: NSImage.Name(params.0))
-			secondsLabelLeftOffset?.constant = params.1
-//			pageLatencyImage?.image = NSImage(named: NSImage.Name(PageLatencyDataSource.shared.latencyImageName(currentUrl ?? "")))
-		}
+            DispatchQueue.main.async {
+                self.pageLatencyValueLabel?.stringValue = PageLatencyDataSource.shared.latencyFor(self.currentUrl ?? "")
+                let params = PageLatencyDataSource.shared.latencyImageAndOffset(self.currentUrl ?? "")
+                self.pageLatencyImage?.image = NSImage(named: NSImage.Name(params.0))
+                self.secondsLabelLeftOffset?.constant = params.1
+//			    pageLatencyImage?.image = NSImage(named: NSImage.Name(PageLatencyDataSource.shared.latencyImageName(currentUrl ?? "")))
+            }
+        }
 	}
 
 	override func viewDidLoad() {
