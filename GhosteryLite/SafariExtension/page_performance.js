@@ -21,7 +21,8 @@ var PageInfo = (function(window, document) {
 	 * Calculate page domain and latency
 	 */
 	const analyzePageInfo = function() {
-		const { host, pathname, protocol } = document.location;
+		const { host, protocol } = document.location;
+		let pathname = document.location.pathname.replace(/\/+$/, ''); //remove trailing slash
 		// Note: Safari has limited support for PerformanceTimingAPI properties
 		const unfixedLatency = Number(performance.timing.domComplete - performance.timing.navigationStart) / 1000;
 		let pageLatency = 0;
