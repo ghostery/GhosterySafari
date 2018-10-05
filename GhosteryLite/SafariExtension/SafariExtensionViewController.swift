@@ -81,7 +81,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 0)
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 1)
 		}
-		self.reloadPopupView.isHidden = true
+        updateReloadPopupViewVisibility(isHidden: true)
 	}
 
 	@IBAction func pauseButtonPressed(sender: NSButton) {
@@ -146,7 +146,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	}
 
 	@IBAction func reloadePage(_ sender: Any) {
-		self.reloadPopupView.isHidden = true
+		updateReloadPopupViewVisibility(isHidden: true)
 		SFSafariApplication.getActiveWindow(completionHandler: { (window) in
 			window?.getActiveTab(completionHandler: { (tab) in
 				tab?.getActivePage(completionHandler: { (page) in
@@ -157,7 +157,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	}
 	
 	@IBAction func closePopup(_ sender: Any) {
-		self.reloadPopupView.isHidden = true
+		updateReloadPopupViewVisibility(isHidden: true)
 	}
 
 	func updatePageLatency(_ url: String, _ latency: String) {
@@ -256,7 +256,14 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 																   fontName: "OpenSans-SemiBold",
 																   fontSize: 11.0,
 																   fontColor: fontColor, isUnderline: true)
-		self.reloadPopupView.isHidden = false
+		updateReloadPopupViewVisibility(isHidden: false)
 		self.popupCloseButton.image = NSImage(named: NSImage.Name(image))
 	}
+    
+    private func updateReloadPopupViewVisibility(isHidden: Bool) {
+        self.reloadPopupView.isHidden = isHidden
+        
+        self.defaultConfigRadio.isHidden = !isHidden
+        self.customConfigRadio.isHidden = !isHidden
+    }
 }
