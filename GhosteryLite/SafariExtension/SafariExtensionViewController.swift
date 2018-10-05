@@ -36,6 +36,10 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBOutlet weak var popupTitleLabel: NSTextField!
 	@IBOutlet weak var popupReloadButton: NSButton!
 	@IBOutlet weak var popupCloseButton: NSButton!
+    
+    
+    @IBOutlet weak var topHorizontalLine: NSView!
+    @IBOutlet weak var middleHorizontalLine: NSView!
 	
 	private var isPaused = false
 
@@ -265,5 +269,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
         
         self.defaultConfigRadio.isHidden = !isHidden
         self.customConfigRadio.isHidden = !isHidden
+        self.topHorizontalLine.isHidden = !isHidden
+        self.middleHorizontalLine.isHidden = !isHidden
     }
 }

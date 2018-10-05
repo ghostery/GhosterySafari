@@ -11,6 +11,7 @@
                 <outlet property="defaultConfigRadio" destination="22k-0R-t4P" id="85a-Uz-clD"/>
                 <outlet property="firstRangeLabel" destination="BdJ-Az-y4r" id="i4V-Vq-iih"/>
                 <outlet property="liteLabel" destination="4Iy-aV-wGF" id="cZy-oI-cdg"/>
+                <outlet property="middleHorizontalLine" destination="xYa-rf-lU4" id="aPB-Hc-sAR"/>
                 <outlet property="pageLatencyDescLabel" destination="cF2-v5-BPd" id="2bC-Eq-cBK"/>
                 <outlet property="pageLatencyImage" destination="l9i-jf-Gns" id="JqZ-0v-SAI"/>
                 <outlet property="pageLatencyValueLabel" destination="rAf-uz-UtS" id="f1o-eB-EVz"/>
@@ -23,6 +24,7 @@
                 <outlet property="secondsLabel" destination="2ny-hN-rJo" id="6aS-Wu-64u"/>
                 <outlet property="secondsLabelLeftOffset" destination="mJN-fv-uWC" id="Kvz-Sm-96l"/>
                 <outlet property="thirdRangeLabel" destination="DKP-z8-cNs" id="79D-9d-BnJ"/>
+                <outlet property="topHorizontalLine" destination="upo-Zq-Mc1" id="RPE-9n-uMB"/>
                 <outlet property="trustSiteButton" destination="Ico-u6-0Jj" id="get-x0-rDZ"/>
                 <outlet property="urlLabel" destination="b7q-eW-rBI" id="f5s-4p-C9V"/>
                 <outlet property="view" destination="c22-O7-iKe" id="vwT-Xx-Aiz"/>
