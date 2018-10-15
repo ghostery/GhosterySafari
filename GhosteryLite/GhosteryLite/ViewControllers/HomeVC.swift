@@ -41,6 +41,7 @@ class HomeVC: NSViewController {
 		super.viewDidAppear()
 		TelemetryManager.shared.sendSignal(.engage)
 	}
+
     @IBAction func enableGhosteryLite(_ sender: NSButton) {
         self.SafariExtensionPromptView.isHidden = true
 		HomeVC.showSafariPreferencesForExtension()
