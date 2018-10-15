@@ -18,7 +18,7 @@ class TelemetryService {
 		case upgrade = "upgrade"
 		case uninstall = "uninstall"
 		case active = "active"
-		case engage = "engage"
+		case engage = "engaged"
 	}
 
 	struct Config {
@@ -54,16 +54,15 @@ class TelemetryService {
 		Alamofire.request(url)
 			.validate()
 			.response(completionHandler: { (response) in
-				print("\(response.error)")
-				if let d = response.data {
-					let str = String(data: d, encoding: .utf8)
-					print(str)
+				if let d = response.data,
+					let str = String(data: d, encoding: .utf8) {
+					print("\(str)")
 				}
 			})
 	}
 
 	private func generateSignalURL(_ type: SignalType, config: Config, params: Params) -> String {
-		let url = TelemetryService.telemetryAPIURL + "/\(type.rawValue)\(params.frequency)?gr=-1" +
+		let url = TelemetryService.telemetryAPIURL + "/\(type.rawValue)/\(params.frequency)?gr=-1" +
 			"&v=\(config.version)" +
 			"&os=\(config.os)" +
 			"&ir=\(config.installRand)" +
