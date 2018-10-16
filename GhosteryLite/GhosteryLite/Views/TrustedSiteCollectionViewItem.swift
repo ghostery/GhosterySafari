@@ -26,7 +26,7 @@ class TrustedSiteCollectionViewItem: NSCollectionViewItem {
     }
     
     func update(_ url: String, for indexPath: IndexPath?) {
-		self.siteLbl.attributedStringValue = url.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14, fontColor: 0x4a4a4a)
+		self.siteLbl.attributedStringValue = url.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14, fontColor: NSColor.panelTextColor())
         self.indexPath = indexPath
     }
 

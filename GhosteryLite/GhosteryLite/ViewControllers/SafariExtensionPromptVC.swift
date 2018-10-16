@@ -46,13 +46,13 @@ class SafariExtensionPromptVC: NSViewController {
         enableGhosteryLiteBtn.attributedTitle = Strings.SafariExtensionPromptEnableGhosteryLiteButtonTitle.attributedString(withTextAlignment: .center,
                                                                                                                            fontName: "Roboto-Medium",
                                                                                                                            fontSize: 14.0,
-                                                                                                                           fontColor: 0xffffff,
+                                                                                                                           fontColor: NSColor(rgb: 0xffffff),
                                                                                                                            isUnderline: true)
         
         skipButton.attributedTitle = Strings.SafariExtensionPromptSkipButtonTitle.attributedString(withTextAlignment: .center,
                                                                                                   fontName: "Roboto-Regular",
                                                                                                   fontSize: 14.0,
-                                                                                                  fontColor: 0x4a4a4a,
+                                                                                                  fontColor: NSColor(rgb: 0x4a4a4a),
                                                                                                   isUnderline: true)
         
     }

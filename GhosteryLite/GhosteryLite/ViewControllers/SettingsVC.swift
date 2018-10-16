@@ -107,7 +107,7 @@ class SettingsVC: NSViewController {
 
 	private func setupComponents() {
 		self.updateRadioBoxesState()
-		self.topTextLabel.attributedStringValue = self.topTextLabel.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: 0x4a4a4a, isUnderline: false, lineSpacing: 3)
+		self.topTextLabel.attributedStringValue = self.topTextLabel.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 3)
 		
 		self.defaultRadio.font = NSFont(name: "Roboto-Bold", size: 14)
 		self.customRadio.font = NSFont(name: "Roboto-Bold", size: 14)
@@ -153,7 +153,7 @@ class SettingsVC: NSViewController {
 	}
 
 	private func setupTextField(textField: NSTextField, mainText: String, learnMoreText: String, urlString: String) {
-		let textColor: NSColor = NSColor(rgb: 0x4a4a4a)
+		let textColor: NSColor = NSColor.panelTextColor()
 		let textParagraph: NSMutableParagraphStyle = NSMutableParagraphStyle()
 		textParagraph.lineSpacing = 1
 		textParagraph.maximumLineHeight = 30.0

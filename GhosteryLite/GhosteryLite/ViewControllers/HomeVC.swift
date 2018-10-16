@@ -68,7 +68,7 @@ class HomeVC: NSViewController {
     private func initComponents() {
         titleText.stringValue = Strings.HomePanelTitle
 		titleText.font = NSFont(name: "Roboto-Regular", size: 24)
-        subtitleText.attributedStringValue = Strings.HomePanelSubtitle.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: 0x4a4a4a, isUnderline: false, lineSpacing: 6)
+        subtitleText.attributedStringValue = Strings.HomePanelSubtitle.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 6)
         enableGhosteryLitePromptText.stringValue = Strings.HomePanelEnableGhosteryLitePromptText
 
         editSettingsText.attributedStringValue = generateAttributedString(prefix: Strings.HomePanelSettingsDescriptionPrefix,
@@ -80,28 +80,29 @@ class HomeVC: NSViewController {
         editSettingsBtn.attributedTitle = Strings.HomePanelEditSettingsButtonTitle.attributedString(withTextAlignment: .center,
                                                                                                     fontName: "RobotoCondensed-Bold",
                                                                                                     fontSize: 14.0,
-                                                                                                    fontColor: 0x930194)
+                                                                                                    fontColor: NSColor(rgb: 0x930194))
         
         trustedSitesBtn.attributedTitle = Strings.HomePanelTrustedSitesButtonTitle.attributedString(withTextAlignment: .center,
                                                                                                     fontName: "RobotoCondensed-Bold",
                                                                                                     fontSize: 14.0,
-                                                                                                    fontColor: 0x930194)
+                                                                                                    fontColor: NSColor(rgb: 0x930194))
         
         enableGhosteryLiteBtn.attributedTitle = Strings.HomePanelEnableGhosteryLiteButtonTitle.attributedString(withTextAlignment: .center,
                                                                                                                fontName: "Roboto-Regular",
                                                                                                                fontSize: 14.0,
-                                                                                                               fontColor: 0x4a4a4a)
+                                                                                                               fontColor: NSColor(rgb: 0x4a4a4a))
     }
     
     private func generateAttributedString(prefix: String, regularText: String) -> NSAttributedString {
-        let prefixString = prefix.attributedString(withTextAlignment: .left, fontName: "Roboto-Medium", fontSize: 16.0, fontColor: 0x4a4a4a, lineSpacing: 12.0)
-        let regularTextString = " \(regularText)".attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16.0, fontColor: 0x4a4a4a, lineSpacing: 12.0)
+        let prefixString = prefix.attributedString(withTextAlignment: .left, fontName: "Roboto-Medium", fontSize: 16.0, fontColor: NSColor.panelTextColor(), lineSpacing: 12.0)
+        let regularTextString = " \(regularText)".attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16.0, fontColor: NSColor.panelTextColor(), lineSpacing: 12.0)
         
         let attrString:NSMutableAttributedString = NSMutableAttributedString(attributedString: prefixString)
         attrString.append(regularTextString)
         
         return attrString
     }
+
     
     
 }

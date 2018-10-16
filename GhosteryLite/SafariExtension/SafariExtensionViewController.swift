@@ -201,9 +201,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
 	private func setupComponents() {
 		let defaultStr = "Default Protection"
-		self.defaultConfigRadio.attributedTitle = defaultStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: 0x4a4a4a)
+		self.defaultConfigRadio.attributedTitle = defaultStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(rgb: 0x4a4a4a))
 		let customStr = "Custom Protection"
-		self.customConfigRadio.attributedTitle = customStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: 0x4a4a4a)
+		self.customConfigRadio.attributedTitle = customStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(rgb: 0x4a4a4a))
 		self.liteLabel.font = NSFont(name: "BebasNeueBook", size: 18)
 //		self.defaultConfigRadio.font = NSFont(name: "OpenSans-Regular", size: 14)
 ////		self.customConfigRadio.font = NSFont(name: "OpenSans-Regular", size: 14)
@@ -259,7 +259,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		self.popupReloadButton.attributedTitle = self.popupReloadButton.title.attributedString(withTextAlignment: .center,
 																   fontName: "OpenSans-SemiBold",
 																   fontSize: 11.0,
-																   fontColor: fontColor, isUnderline: true)
+																   fontColor: NSColor(rgb: fontColor), isUnderline: true)
 		updateReloadPopupViewVisibility(isHidden: false)
 		self.popupCloseButton.image = NSImage(named: NSImage.Name(image))
 	}

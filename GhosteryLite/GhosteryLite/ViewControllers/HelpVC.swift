@@ -42,33 +42,33 @@ class HelpVC: NSViewController {
     
     private func initComponents() {
 //        helpText.stringValue = Strings.HelpPanelText
-		self.helpText.attributedStringValue = Strings.HelpPanelText.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: 0x4a4a4a, isUnderline: false, lineSpacing: 3)
+		self.helpText.attributedStringValue = Strings.HelpPanelText.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 3)
 
         supportBtn.attributedTitle = Strings.HelpPanelSupportButtonTitle.attributedString(withTextAlignment: .left,
                                                                                           fontName: "Roboto-Regular",
                                                                                           fontSize: 14.0,
-                                                                                          fontColor: 0x00aef0,
+                                                                                          fontColor: NSColor(named: NSColor.Name("linkColor")) ?? NSColor.linkColor,
                                                                                           isUnderline: true)
         
         
         productsBtn.attributedTitle = Strings.HelpPanelProductsButtonTitle.attributedString(withTextAlignment: .left,
                                                                                             fontName: "Roboto-Regular",
                                                                                             fontSize: 14.0,
-                                                                                            fontColor: 0x00aef0,
+                                                                                            fontColor: NSColor(named: NSColor.Name("linkColor")) ?? NSColor.linkColor,
                                                                                             isUnderline: true)
         
         
         blogBtn.attributedTitle = Strings.HelpPanelBlogButtonTitle.attributedString(withTextAlignment: .left,
                                                                                     fontName: "Roboto-Regular",
                                                                                     fontSize: 14.0,
-                                                                                    fontColor: 0x00aef0,
+                                                                                    fontColor: NSColor(named: NSColor.Name("linkColor")) ?? NSColor.linkColor,
                                                                                     isUnderline: true)
         
         
         faqBtn.attributedTitle = Strings.HelpPanelFaqsButtonTitle.attributedString(withTextAlignment: .left,
                                                                                    fontName: "Roboto-Regular",
                                                                                    fontSize: 14.0,
-                                                                                   fontColor: 0x00aef0,
+                                                                                   fontColor: NSColor(named: NSColor.Name("linkColor")) ?? NSColor.linkColor,
                                                                                    isUnderline: true)
         
     }

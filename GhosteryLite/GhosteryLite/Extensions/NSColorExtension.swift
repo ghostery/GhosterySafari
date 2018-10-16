@@ -19,4 +19,8 @@ extension NSColor {
             blue: CGFloat((rgb & 0x0000FF) >> 0)  / 255.0,
             alpha: alpha)
     }
+
+    public static func panelTextColor() -> NSColor {
+        return NSColor(named: NSColor.Name("panelText")) ?? NSColor.white
+    }
 }

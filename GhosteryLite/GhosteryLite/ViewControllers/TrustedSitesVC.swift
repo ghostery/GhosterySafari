@@ -39,6 +39,7 @@ class TrustedSitesVC: NSViewController {
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
 	}
+
 	@IBAction func trustSiteButtonPressed(sender: NSButton) {
 		guard trustedSiteTextField.stringValue.trimmingCharacters(in: .whitespacesAndNewlines).count != 0 &&
 			self.isValid(url: trustedSiteTextField.stringValue) else {
@@ -63,16 +64,18 @@ class TrustedSitesVC: NSViewController {
 	}
 
 	private func setupComponents() {
+        trustedStiesCollectionView.backgroundColors = [NSColor.clear]
+        trustedSiteTextField.backgroundColor = NSColor.clear
 		trustedSitesText.stringValue = Strings.TrustedSitesPanelText
-		trustedSitesText.attributedStringValue = Strings.TrustedSitesPanelText.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: 0x4a4a4a, isUnderline: false, lineSpacing: 3)
+		trustedSitesText.attributedStringValue = Strings.TrustedSitesPanelText.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 3)
 		trustedSitesText.font = NSFont(name: "Roboto-Regular", size: 16)
 		trustSiteBtn.attributedTitle = Strings.TrustedSitesPanelTrustSiteButtonTitle.attributedString(withTextAlignment: .center,
 																									  fontName: "Roboto-Medium",
 																									  fontSize: 12.0,
-																									  fontColor: 0x9b9b9b)
+																									  fontColor: NSColor(named: NSColor.Name("trustBtnText")) ?? NSColor.black)
 		errorMessageLabel.font = NSFont(name: "Roboto-Regular", size: 10)
 		errorMessageLabel.stringValue = "Please enter a valid URL."
-		trustSiteBtn.attributedAlternateTitle = Strings.TrustedSitesPanelTrustSiteButtonTitle.attributedString(withTextAlignment: .center, fontName: "Roboto-Medium", fontSize: 12.0, fontColor: 0xffffff)
+		trustSiteBtn.attributedAlternateTitle = Strings.TrustedSitesPanelTrustSiteButtonTitle.attributedString(withTextAlignment: .center, fontName: "Roboto-Medium", fontSize: 12.0, fontColor: NSColor(rgb: 0xffffff))
 	}
 
 	// Move the logic to TrustSiteDS
