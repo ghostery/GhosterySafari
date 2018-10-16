@@ -75,7 +75,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
 	override func viewWillAppear() {
 		super.viewWillAppear()
-		TelemetryManager.shared.sendSignal(.engage)
+		TelemetryManager.shared.sendSignal(.engage, ghostrank: 2)
 		self.view.layer?.backgroundColor = NSColor.white.cgColor
 		urlLabel?.stringValue = self.currentDomain ?? ""
 		if AntiTrackingManager.shared.isDefaultConfigEnabled() {

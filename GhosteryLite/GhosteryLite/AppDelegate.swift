@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 	func applicationDidBecomeActive(_ notification: Notification) {
 		self.updateConfigState()
-		TelemetryManager.shared.sendSignal(.active)
+		TelemetryManager.shared.sendSignal(.active, ghostrank: 3)
 	}
 
 	func applicationWillFinishLaunching(_ notification: Notification) {

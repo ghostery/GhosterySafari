@@ -35,7 +35,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     }
 
     override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
-		TelemetryManager.shared.sendSignal(.active)
+		TelemetryManager.shared.sendSignal(.active, ghostrank: 2)
 
         // This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
 		handleTabUrlChange(window) { (url) in

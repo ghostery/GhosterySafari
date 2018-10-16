@@ -48,21 +48,21 @@ class TelemetryManager {
 		self.config = TelemetryService.Config(version: Preferences.currentVersion(), installRand: TelemetryManager.getInstallRand(), installDate: id!)
 	}
 
-	func sendSignal(_ type: TelemetryService.SignalType) {
+	func sendSignal(_ type: TelemetryService.SignalType, ghostrank: Int? = nil) {
 		switch type {
 		case .install:
 			if self.isNewInstall() {
-				TelemetryService.shared.sendSignal(type, config: self.config, params: self.generateParams(type, frequency: nil))
+				TelemetryService.shared.sendSignal(type, config: self.config, params: self.generateParams(type, frequency: nil, ghostrank: ghostrank))
 				self.updateInstallParams()
 			}
 		case .upgrade:
 			if self.isNewVersion() {
-				TelemetryService.shared.sendSignal(type, config: self.config, params: self.generateParams(type, frequency: nil))
+				TelemetryService.shared.sendSignal(type, config: self.config, params: self.generateParams(type, frequency: nil, ghostrank: ghostrank))
 				Preferences.updateGlobalPreferences(key: lastVersionKey, value: self.config.version)
 			}
 		case .active, .engage:
 			for f in self.getFrequencies(type) {
-				TelemetryService.shared.sendSignal(type, config: self.config, params: self.generateParams(type, frequency: f))
+				TelemetryService.shared.sendSignal(type, config: self.config, params: self.generateParams(type, frequency: f, ghostrank: ghostrank))
 				Preferences.updateGlobalPreferences(key: "\(type.rawValue)_\(f.rawValue)", value: Date())
 			}
 		default:
@@ -70,7 +70,7 @@ class TelemetryManager {
 		}
 	}
 
-	private func generateParams(_ type: TelemetryService.SignalType, frequency: Frequency?) -> TelemetryService.Params {
+	private func generateParams(_ type: TelemetryService.SignalType, frequency: Frequency?, ghostrank: Int?) -> TelemetryService.Params {
 		var r = -1
 		let freq = frequency?.rawValue ?? "all"
 		if let f = frequency,
@@ -78,7 +78,7 @@ class TelemetryManager {
 			let d = Preferences.globalPreferences(key: "\(type.rawValue)_\(f.rawValue)")as? Date {
 			r = -Int(d.timeIntervalSinceNow / 86400)
 		}
-		return TelemetryService.Params(recency: r, frequency: freq)
+		return TelemetryService.Params(recency: r, frequency: freq, ghostrank: ghostrank)
 	}
 
 	private func isNewInstall() -> Bool {

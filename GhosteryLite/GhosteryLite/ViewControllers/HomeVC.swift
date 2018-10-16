@@ -39,7 +39,7 @@ class HomeVC: NSViewController {
 
 	override func viewDidAppear() {
 		super.viewDidAppear()
-		TelemetryManager.shared.sendSignal(.engage)
+		TelemetryManager.shared.sendSignal(.engage, ghostrank: 3)
 	}
 
     @IBAction func enableGhosteryLite(_ sender: NSButton) {

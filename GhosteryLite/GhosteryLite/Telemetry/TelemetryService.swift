@@ -39,6 +39,7 @@ class TelemetryService {
 	struct Params {
 		let recency: Int
 		let frequency: String
+		let ghostrank: Int?
 	}
 
 	static let shared = TelemetryService()
@@ -62,7 +63,8 @@ class TelemetryService {
 	}
 
 	private func generateSignalURL(_ type: SignalType, config: Config, params: Params) -> String {
-		let url = TelemetryService.telemetryAPIURL + "/\(type.rawValue)/\(params.frequency)?gr=-1" +
+		let gr = params.ghostrank != nil ? params.ghostrank! : -1
+		let url = TelemetryService.telemetryAPIURL + "/\(type.rawValue)/\(params.frequency)?gr=\(gr)" +
 			"&v=\(config.version)" +
 			"&os=\(config.os)" +
 			"&ir=\(config.installRand)" +
