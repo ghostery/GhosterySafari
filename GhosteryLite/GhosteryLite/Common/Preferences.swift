@@ -40,6 +40,13 @@ class Preferences: NSObject {
 		return ""
 	}
 
+	class func currentBuildNumber() -> String {
+		if let version = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
+			return version
+		}
+		return ""
+	}
+
     class func areExtensionsEnabled(_ completion: @escaping(_ contentBlockerEnabled: Bool, _ menuEnabled: Bool, _ error: Error?) -> Void) {
 		var safariContentBlockerEnabled = false
 		var safariMenuEnabled = false

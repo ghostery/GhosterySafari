@@ -11,6 +11,7 @@ import Foundation
 let installDateKey = "installDate"
 let lastVersionKey = "lastVersion"
 let installRandKey = "installRand"
+let buildVersionKey = "lastBuildVersion"
 
 class TelemetryManager {
 
@@ -58,8 +59,9 @@ class TelemetryManager {
 		case .upgrade:
 			if self.isNewVersion() {
 				TelemetryService.shared.sendSignal(type, config: self.config, params: self.generateParams(type, frequency: nil, ghostrank: ghostrank))
-				Preferences.updateGlobalPreferences(key: lastVersionKey, value: self.config.version)
 			}
+			Preferences.updateGlobalPreferences(key: lastVersionKey, value: self.config.version)
+			Preferences.updateGlobalPreferences(key: buildVersionKey, value: Preferences.currentBuildNumber())
 		case .active, .engage:
 			if let gr = ghostrank {
 				for f in self.getFrequencies(type, ghostrank: gr) {
@@ -89,7 +91,11 @@ class TelemetryManager {
 
 	private func isNewVersion() -> Bool {
 		let lastVersion = Preferences.globalPreferences(key: lastVersionKey) as? String
-		return lastVersion != nil && Preferences.currentVersion() != lastVersion!
+		if lastVersion == nil || Preferences.currentVersion() == lastVersion! {
+			let lastBuildNumber = Preferences.globalPreferences(key: buildVersionKey) as? String
+			return lastBuildNumber != nil && Preferences.currentBuildNumber() != lastBuildNumber!
+		}
+		return true
 	}
 
 	private func getFrequencies(_ type: TelemetryService.SignalType, ghostrank: Int) -> [Frequency] {
