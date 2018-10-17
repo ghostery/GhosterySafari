@@ -76,7 +76,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	override func viewWillAppear() {
 		super.viewWillAppear()
 		TelemetryManager.shared.sendSignal(.engage, ghostrank: 2)
-		self.view.layer?.backgroundColor = NSColor.white.cgColor
+		self.view.layer?.backgroundColor = NSColor(named: NSColor.Name("backgroundColor"))?.cgColor
 		urlLabel?.stringValue = self.currentDomain ?? ""
 		if AntiTrackingManager.shared.isDefaultConfigEnabled() {
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
@@ -201,9 +201,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
 	private func setupComponents() {
 		let defaultStr = "Default Protection"
-		self.defaultConfigRadio.attributedTitle = defaultStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(rgb: 0x4a4a4a))
+		self.defaultConfigRadio.attributedTitle = defaultStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(named: NSColor.Name("radioTextColor")) ?? NSColor.white)
 		let customStr = "Custom Protection"
-		self.customConfigRadio.attributedTitle = customStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(rgb: 0x4a4a4a))
+		self.customConfigRadio.attributedTitle = customStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(named: NSColor.Name("radioTextColor")) ?? NSColor.white)
 		self.liteLabel.font = NSFont(name: "BebasNeueBook", size: 18)
 //		self.defaultConfigRadio.font = NSFont(name: "OpenSans-Regular", size: 14)
 ////		self.customConfigRadio.font = NSFont(name: "OpenSans-Regular", size: 14)
