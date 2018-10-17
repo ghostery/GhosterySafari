@@ -61,9 +61,11 @@ class TelemetryManager {
 				Preferences.updateGlobalPreferences(key: lastVersionKey, value: self.config.version)
 			}
 		case .active, .engage:
-			for f in self.getFrequencies(type) {
-				TelemetryService.shared.sendSignal(type, config: self.config, params: self.generateParams(type, frequency: f, ghostrank: ghostrank))
-				Preferences.updateGlobalPreferences(key: "\(type.rawValue)_\(f.rawValue)", value: Date())
+			if let gr = ghostrank {
+				for f in self.getFrequencies(type, ghostrank: gr) {
+					TelemetryService.shared.sendSignal(type, config: self.config, params: self.generateParams(type, frequency: f, ghostrank: ghostrank))
+					Preferences.updateGlobalPreferences(key: "\(type.rawValue)_\(gr)_\(f.rawValue)", value: Date())
+				}
 			}
 		default:
 			return
@@ -90,11 +92,11 @@ class TelemetryManager {
 		return lastVersion != nil && Preferences.currentVersion() != lastVersion!
 	}
 
-	private func getFrequencies(_ type: TelemetryService.SignalType) -> [Frequency] {
+	private func getFrequencies(_ type: TelemetryService.SignalType, ghostrank: Int) -> [Frequency] {
 		let allFrequencies: [Frequency] = [.daily, .weekly, .monthly]
 		var result = [Frequency]()
 		for i in allFrequencies {
-			let p = Preferences.globalPreferences(key: "\(type.rawValue)_\(i.rawValue)") as? Date
+			let p = Preferences.globalPreferences(key: "\(type.rawValue)_\(ghostrank)_\(i.rawValue)") as? Date
 			if p == nil || i.isExpired(p!) {
 				result.append(i)
 			}

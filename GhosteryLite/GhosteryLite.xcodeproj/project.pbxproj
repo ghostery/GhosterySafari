@@ -165,6 +165,7 @@
 		1E597C5221359D000098631F /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
 		20D8DDE934AC7DA8B920E530 /* Pods-ContentBlocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.debug.xcconfig"; sourceTree = "<group>"; };
 		2B1C37253CAD1E7BF0CB1212 /* Pods_ContentBlocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContentBlocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45465B015FB0387B14C76708 /* Pods-SafariExtension.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.beta.xcconfig"; path = "Pods/Target Support Files/Pods-SafariExtension/Pods-SafariExtension.beta.xcconfig"; sourceTree = "<group>"; };
 		4F0B871F2146C91E00C79513 /* DarkMode.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = DarkMode.pdf; sourceTree = "<group>"; };
 		4F0B87202146C91F00C79513 /* Dark.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Dark.pdf; sourceTree = "<group>"; };
 		4F30491D2118982600BA3961 /* GhosteryLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhosteryLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,9 +221,11 @@
 		4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigDataSource.swift; sourceTree = "<group>"; };
 		4FFD8350212C6C740038149F /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		871270F350184074300264CE /* Pods-GhosteryLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.release.xcconfig"; path = "Pods/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.release.xcconfig"; sourceTree = "<group>"; };
+		A731A8006D7B9D054132A29D /* Pods-ContentBlocker.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.beta.xcconfig"; path = "Pods/Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.beta.xcconfig"; sourceTree = "<group>"; };
 		AB6E6A3A7F09CA6028BBC263 /* Pods_SafariExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafariExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B132EB5ADA4E362C9953CF32 /* Pods-SafariExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafariExtension/Pods-SafariExtension.release.xcconfig"; sourceTree = "<group>"; };
 		C0ED2F60680AAB12316E2515 /* Pods-SafariExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafariExtension/Pods-SafariExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		D3F0021FDBEB150F527E8B1D /* Pods-GhosteryLite.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.beta.xcconfig"; path = "Pods/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.beta.xcconfig"; sourceTree = "<group>"; };
 		E4F7CCF571DEB0BE3D51F755 /* Pods-GhosteryLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.debug.xcconfig"; sourceTree = "<group>"; };
 		E882B4CED52B6C3590AA9F5D /* Pods_GhosteryLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GhosteryLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E6DD48CC7939FB760044B0 /* Pods-ContentBlocker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.release.xcconfig"; path = "Pods/Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.release.xcconfig"; sourceTree = "<group>"; };
@@ -302,6 +305,9 @@
 				F9E6DD48CC7939FB760044B0 /* Pods-ContentBlocker.release.xcconfig */,
 				C0ED2F60680AAB12316E2515 /* Pods-SafariExtension.debug.xcconfig */,
 				B132EB5ADA4E362C9953CF32 /* Pods-SafariExtension.release.xcconfig */,
+				A731A8006D7B9D054132A29D /* Pods-ContentBlocker.beta.xcconfig */,
+				D3F0021FDBEB150F527E8B1D /* Pods-GhosteryLite.beta.xcconfig */,
+				45465B015FB0387B14C76708 /* Pods-SafariExtension.beta.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1176,7 +1182,7 @@
 		};
 		4F9CF8DC215B90E8005B1C1B /* Beta */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 871270F350184074300264CE /* Pods-GhosteryLite.release.xcconfig */;
+			baseConfigurationReference = D3F0021FDBEB150F527E8B1D /* Pods-GhosteryLite.beta.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1204,7 +1210,7 @@
 		};
 		4F9CF8DD215B90E8005B1C1B /* Beta */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B132EB5ADA4E362C9953CF32 /* Pods-SafariExtension.release.xcconfig */;
+			baseConfigurationReference = 45465B015FB0387B14C76708 /* Pods-SafariExtension.beta.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -1227,7 +1233,7 @@
 		};
 		4F9CF8DE215B90E8005B1C1B /* Beta */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9E6DD48CC7939FB760044B0 /* Pods-ContentBlocker.release.xcconfig */;
+			baseConfigurationReference = A731A8006D7B9D054132A29D /* Pods-ContentBlocker.beta.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
