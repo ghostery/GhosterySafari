@@ -76,16 +76,16 @@ class HomeVC: NSViewController {
         
         trustedSitesText.attributedStringValue = generateAttributedString(prefix: Strings.HomePanelTrustedSitesDescriptionPrefix,
                                                                           regularText: Strings.HomePanelTrustedSitesDescription)
-        
+        let textColor = NSColor(named: NSColor.Name("homeBtnTextColor")) ?? NSColor.black
         editSettingsBtn.attributedTitle = Strings.HomePanelEditSettingsButtonTitle.attributedString(withTextAlignment: .center,
                                                                                                     fontName: "RobotoCondensed-Bold",
                                                                                                     fontSize: 14.0,
-                                                                                                    fontColor: NSColor(rgb: 0x930194))
+                                                                                                    fontColor: textColor)
         
         trustedSitesBtn.attributedTitle = Strings.HomePanelTrustedSitesButtonTitle.attributedString(withTextAlignment: .center,
                                                                                                     fontName: "RobotoCondensed-Bold",
                                                                                                     fontSize: 14.0,
-                                                                                                    fontColor: NSColor(rgb: 0x930194))
+                                                                                                    fontColor: textColor)
         
         enableGhosteryLiteBtn.attributedTitle = Strings.HomePanelEnableGhosteryLiteButtonTitle.attributedString(withTextAlignment: .center,
                                                                                                                fontName: "Roboto-Regular",
