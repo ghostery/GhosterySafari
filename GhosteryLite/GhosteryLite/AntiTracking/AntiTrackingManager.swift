@@ -205,6 +205,10 @@ class AntiTrackingManager {
 				loadDummyCB()
 				return
 			}
+			if config.blockedCategories.count == CategoryType.allCategoriesCount() {
+				loadFullList()
+				return
+			}
 			for i in config.blockedCategories {
 				if let c = CategoryType(rawValue: i) {
 					fileNames.append(c.fileName())
@@ -226,6 +230,10 @@ class AntiTrackingManager {
 
 	private func loadDummyCB() {
 		self.updateAndReloadBlockList(fileNames: ["emptyRules"], folderName: getBlockListsMainFolder())
+	}
+
+	private func loadFullList() {
+		self.updateAndReloadBlockList(fileNames: ["safariContentBlocker"], folderName: getBlockListsMainFolder())
 	}
 
 	private func updateAndReloadBlockList(fileNames: [String], folderName: String) {

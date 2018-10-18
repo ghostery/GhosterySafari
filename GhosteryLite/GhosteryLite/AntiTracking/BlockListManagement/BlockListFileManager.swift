@@ -20,6 +20,10 @@ enum CategoryType: Int {
 	case socialMedia
 	case uncategorized
 
+	static func allCategoriesCount() -> Int {
+		return 8
+	}
+
 	func fileName() -> String {
 		switch self {
 		case .advertising:
