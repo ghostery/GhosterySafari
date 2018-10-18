@@ -115,7 +115,19 @@ class SettingsVC: NSViewController {
 		self.setupTextField(textField: self.defaultDescLabel, mainText: Strings.SettingsPanelDefaultDescription, learnMoreText: Strings.LearnMore, urlString: "https://www.ghostery.com/faqs/")
 		self.setupTextField(textField: self.customDescLabel, mainText: Strings.SettingsPanelCustomDescription, learnMoreText: Strings.LearnMore, urlString: "https://www.ghostery.com/faqs/")
 
-		adCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
+        adCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
+//        if #available(OSX 10.14, *) {
+//            adCheckbox.contentTintColor = NSColor.purple
+//        }
+//        let str = "Block: Advertising"
+//        adCheckbox.title = ""
+//        if #available(OSX 10.14, *) {
+//            adCheckbox.contentTintColor = NSColor.white
+//        }
+//        let textColor: NSColor = NSColor.panelTextColor()
+//
+//        adCheckbox.attributedTitle = str.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14, fontColor: textColor)
+
 		audioVideoCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
 		commentsCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
 		customInterCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)

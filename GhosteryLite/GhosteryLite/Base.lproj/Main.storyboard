@@ -347,8 +347,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="CxD-WT-edt"/>
                                 </constraints>
-                                <color key="borderColor" red="0.79607843140000001" green="0.83137254900000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="fillColor" red="0.79607843140000001" green="0.83137254900000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="borderColor" name="linebreakColor"/>
+                                <color key="fillColor" name="linebreakColor"/>
                             </box>
                             <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="m17-jn-QNs">
                                 <rect key="frame" x="32" y="261" width="552" height="1"/>
@@ -359,8 +359,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="BGj-xV-HxD"/>
                                 </constraints>
-                                <color key="borderColor" red="0.79607843140000001" green="0.83137254900000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="fillColor" red="0.79607843140000001" green="0.83137254900000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="borderColor" name="linebreakColor"/>
+                                <color key="fillColor" name="linebreakColor"/>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VW5-hv-OwS">
                                 <rect key="frame" x="111" y="257" width="453" height="105"/>
@@ -373,7 +373,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <box hidden="YES" appearanceType="aqua" fixedFrame="YES" boxType="custom" translatesAutoresizingMaskIntoConstraints="NO" id="4dn-Gg-Wy3">
+                            <box hidden="YES" fixedFrame="YES" boxType="custom" translatesAutoresizingMaskIntoConstraints="NO" id="4dn-Gg-Wy3">
                                 <rect key="frame" x="77" y="-7" width="533" height="171"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" ambiguous="YES" id="2Ea-UR-Jyh">
@@ -392,6 +392,7 @@
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <color key="contentTintColor" name="panelText"/>
                                             <connections>
                                                 <action selector="categoryPressedWithSender:" target="XfG-lQ-9wD" id="Yre-Rf-eYw"/>
                                             </connections>
@@ -557,7 +558,6 @@
                                     </constraints>
                                 </view>
                                 <color key="borderColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="fillColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i7J-qY-hF0">
                                 <rect key="frame" x="111" y="156" width="465" height="69"/>
@@ -973,8 +973,8 @@
                                     <constraint firstAttribute="width" constant="570" id="Vcu-WQ-kiF"/>
                                     <constraint firstAttribute="height" constant="1" id="qbE-Sb-nrZ"/>
                                 </constraints>
-                                <color key="borderColor" red="0.79607843140000001" green="0.83137254900000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="fillColor" red="0.79607843140000001" green="0.83137254900000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="borderColor" name="linebreakColor"/>
+                                <color key="fillColor" name="linebreakColor"/>
                             </box>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LAu-bc-Mwd">
                                 <rect key="frame" x="186" y="416" width="240" height="28"/>
@@ -1169,8 +1169,8 @@
                                     <constraint firstAttribute="width" constant="570" id="baS-66-Yng"/>
                                     <constraint firstAttribute="height" constant="1" id="tWz-cn-qya"/>
                                 </constraints>
-                                <color key="borderColor" red="0.79607843137254897" green="0.83137254901960778" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="fillColor" red="0.79607843140000001" green="0.83137254900000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="borderColor" name="linebreakColor"/>
+                                <color key="fillColor" name="linebreakColor"/>
                             </box>
                         </subviews>
                         <constraints>
@@ -1360,6 +1360,9 @@
         <image name="trust-site-btn-inactive" width="112" height="28"/>
         <image name="trusted-site-icon" width="46" height="57"/>
         <image name="white-btn-bg" width="112" height="28"/>
+        <namedColor name="linebreakColor">
+            <color red="0.79607843137254897" green="0.83137254901960789" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="menuHeader">
             <color red="0.90588235294117647" green="0.92549019607843142" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
