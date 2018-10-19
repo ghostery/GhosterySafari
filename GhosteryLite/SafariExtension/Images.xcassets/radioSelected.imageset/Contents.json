@@ -18,7 +18,7 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "radio-button-selected.png",
+      "filename" : "main-ui-default-2.png",
       "appearances" : [
         {
           "appearance" : "luminosity",
@@ -45,7 +45,7 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "radio-button-selected@2x.png",
+      "filename" : "main-ui-default@2x-2.png",
       "appearances" : [
         {
           "appearance" : "luminosity",

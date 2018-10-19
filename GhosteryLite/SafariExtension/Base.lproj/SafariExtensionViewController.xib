@@ -338,7 +338,7 @@
     </objects>
     <resources>
         <image name="closePopup" width="8" height="8"/>
-        <image name="info" width="11" height="13"/>
+        <image name="info" width="22" height="26"/>
         <image name="liteLogo" width="22" height="24"/>
         <image name="meatBallsButton" width="22" height="7"/>
         <image name="noLatency" width="132" height="8"/>
