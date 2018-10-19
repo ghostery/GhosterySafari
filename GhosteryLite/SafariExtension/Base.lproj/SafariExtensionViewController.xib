@@ -84,9 +84,9 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="Lfu-k9-tv6"/>
                     </constraints>
-                    <buttonCell key="cell" type="bevel" title="Default Protection" bezelStyle="regularSquare" image="radioNotSelected" imagePosition="left" alignment="left" alternateImage="radioSelected" inset="2" id="CU4-2B-vbk">
+                    <buttonCell key="cell" type="bevel" title="Default Protection" bezelStyle="regularSquare" image="radioNotSelected" imagePosition="left" alternateImage="radioSelected" inset="2" id="CU4-2B-vbk">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" size="13" name="HelveticaNeue"/>
+                        <font key="font" metaFont="system"/>
                     </buttonCell>
                     <color key="contentTintColor" name="findHighlightColor" catalog="System" colorSpace="catalog"/>
                     <connections>
@@ -252,7 +252,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="VhC-P8-YDI"/>
                             </constraints>
-                            <buttonCell key="cell" type="bevel" title="Reload To See Changes" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="VMK-Ic-2R4">
+                            <buttonCell key="cell" type="bevel" title="Reload To See Changes" bezelStyle="rounded" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="VMK-Ic-2R4">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
@@ -338,7 +338,7 @@
     </objects>
     <resources>
         <image name="closePopup" width="8" height="8"/>
-        <image name="info" width="22" height="26"/>
+        <image name="info" width="11" height="13"/>
         <image name="liteLogo" width="22" height="24"/>
         <image name="meatBallsButton" width="22" height="7"/>
         <image name="noLatency" width="132" height="8"/>

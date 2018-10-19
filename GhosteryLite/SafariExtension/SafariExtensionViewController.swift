@@ -125,13 +125,13 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	}
 
 	@IBAction func defaultConfigPressed(sender: NSButton) {
-		if sender.state.rawValue == 1 {
+		if sender.state.rawValue == 1{
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
 			DistributedNotificationCenter.default().post(name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
 			AntiTrackingManager.shared.switchToDefault()
-		}/* else {
-			self.customConfigRadio.state = NSControl.StateValue(rawValue: 1)
-		}*/
+		} else {
+			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
+		}
 	}
 
 	@IBAction func customConfigPressed(sender: NSButton) {
@@ -139,9 +139,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 0)
 			DistributedNotificationCenter.default().post(name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
 			AntiTrackingManager.shared.switchToCustom()
-		} /* else {
-			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
-		}*/
+        } else {
+            self.customConfigRadio.state = NSControl.StateValue(rawValue: 1)
+        }
 		if !UserDefaults.standard.bool(forKey: SafariExtensionViewController.CustomSettingsSelectedKey) {
 			self.openSettings()
 			UserDefaults.standard.set(true, forKey: SafariExtensionViewController.CustomSettingsSelectedKey)
