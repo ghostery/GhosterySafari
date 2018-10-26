@@ -79,7 +79,7 @@ class TelemetryManager {
 		let freq = frequency?.rawValue ?? "all"
 		if let f = frequency,
 			type == .active && f == .daily,
-			let d = Preferences.globalPreferences(key: "\(type.rawValue)_\(f.rawValue)")as? Date {
+			let d = Preferences.globalPreferences(key: "\(type.rawValue)_\(ghostrank!)_\(f.rawValue)") as? Date {
 			r = -Int(d.timeIntervalSinceNow / 86400)
 		}
 		return TelemetryService.Params(recency: r, frequency: freq, ghostrank: ghostrank)
