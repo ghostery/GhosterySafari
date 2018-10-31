@@ -28,6 +28,19 @@ public struct Strings {
     public static let HomePanelEnableGhosteryLiteButtonTitle = NSLocalizedString("ENABLE LITE", comment: "[Home panel] Enable Ghostery Lite button title")
 	
 	//MARK:- Sttings Panel
+	public static let SettingsPanelTitle = NSLocalizedString("With Ghostery Lite's default settings you're protected and ready to browse. If you want to change your tracker-blocker settings, our custom settings allow you to block or unblock specific categories of trackers and ads.", comment: "Settings panel")
+	public static let SettinsPanelDefault = NSLocalizedString("Default", comment: "Default radio title")
+	public static let SettinsPanelCustom = NSLocalizedString("Custom", comment: "Custom radio title")
+	public static let SettinsPanelAdvertising = NSLocalizedString("Block: Advertising", comment: "Advertising category checkbox")
+	public static let SettinsPanelAnalytics = NSLocalizedString("Block: Site Analytics", comment: "Analytics category checkbox")
+	public static let SettinsPanelCustomer = NSLocalizedString("Block: Customer Interaction", comment: "Customer Interaction category checkbox")
+	public static let SettinsPanelMedia = NSLocalizedString("Block: Social Media", comment: "Social Media category checkbox")
+	public static let SettinsPanelEssential = NSLocalizedString("Block: Essential", comment: "Essential category checkbox")
+	public static let SettinsPanelAudioVideo = NSLocalizedString("Block: Audio/Video Player", comment: "Audio/Video category checkbox")
+	public static let SettinsPanelAdult = NSLocalizedString("Block: Adult Content", comment: "Adult Content category checkbox")
+	public static let SettinsPanelComments = NSLocalizedString("Block: Comments", comment: "Comments category checkbox")
+	public static let SettinsPanelSaved = NSLocalizedString("Saved", comment: "Notification on Custom configuration change")
+
 	public static let SettingsPanelDefaultDescription = NSLocalizedString("Ghostery Lite’s default settings have been tailored to provide the cleanest, fastest and safest browsing experience, allowing you to focus on exploring your favorite websites and online content. We block advertising, site analytics and adult advertising trackers.", comment: "Description test on Settings pannel for Default settings")
 	public static let SettingsPanelCustomDescription = NSLocalizedString("Select the tracker categories that you would like to block or unblock. Please note that some sites may not load correctly depending on your custom settings.", comment: "Description test on Settings pannel for Custom settings")
 	public static let LearnMore = NSLocalizedString("Learn more", comment: "Link to learn more web page")
@@ -50,4 +63,5 @@ public struct Strings {
     //MARK:- Trusted Sites Panel
     public static let TrustedSitesPanelText = NSLocalizedString("All the sites that you trust can be seen here. You can also add or remove additional sites from your list using the field below.", comment: "[Trusted Sites Panel] Trusted Sites text")
     public static let TrustedSitesPanelTrustSiteButtonTitle = NSLocalizedString("TRUST SITE", comment: "[Trusted Sites Panel] Trust site button title")
+	public static let TrustedSitesPanelErrorMessage = NSLocalizedString("Please enter a valid URL.", comment: "Error message in case if entered URL is invalid")
 }

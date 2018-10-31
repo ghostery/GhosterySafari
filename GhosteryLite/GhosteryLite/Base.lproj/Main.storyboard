@@ -291,11 +291,11 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LVb-pL-6ez">
-                                <rect key="frame" x="92" y="232" width="69" height="18"/>
+                                <rect key="frame" x="92" y="232" width="46" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="bR7-aY-aO5"/>
                                 </constraints>
-                                <buttonCell key="cell" type="radio" title="Custom" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="E3u-jU-cgo">
+                                <buttonCell key="cell" type="radio" title="Cus" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="E3u-jU-cgo">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -318,19 +318,18 @@
                                     <constraint firstAttribute="height" constant="113" id="HC6-I2-B00"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="and-wP-lp0"/>
                                 </constraints>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="Pl8-CX-f6l">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Settings title" id="Pl8-CX-f6l">
                                     <font key="font" metaFont="system" size="16"/>
-                                    <string key="title">With Ghostery Lite's default settings you're protected and ready to browse. If you want to change your tracker-blocker settings, our custom settings allow you to block or unblock specific categories of trackers and ads.</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rKj-gW-VAB">
-                                <rect key="frame" x="92" y="369" width="66" height="18"/>
+                                <rect key="frame" x="92" y="369" width="44" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="WrX-eY-Y3a"/>
                                 </constraints>
-                                <buttonCell key="cell" type="radio" title="Default" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="3wz-JW-Z1K">
+                                <buttonCell key="cell" type="radio" title="Def" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="3wz-JW-Z1K">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -388,7 +387,7 @@
                                         <button verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="9dj-E3-uka">
                                             <rect key="frame" x="33" y="140" width="143" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="check" title="Block: Advertising" bezelStyle="regularSquare" imagePosition="left" inset="2" id="phd-zp-sTL">
+                                            <buttonCell key="cell" type="check" title="Block:" bezelStyle="regularSquare" imagePosition="left" inset="2" id="phd-zp-sTL">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -532,7 +531,7 @@
                                                             <constraint firstAttribute="width" constant="38" id="Vf3-Um-vOw"/>
                                                             <constraint firstAttribute="height" constant="17" id="mhg-Gd-OGA"/>
                                                         </constraints>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Saved" id="erL-oh-W9i">
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="SV" id="erL-oh-W9i">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -564,9 +563,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="69" id="TMF-lr-9Hy"/>
                                 </constraints>
-                                <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" allowsEditingTextAttributes="YES" id="0KE-sx-Ohg">
+                                <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" title="Custom Desc" allowsEditingTextAttributes="YES" id="0KE-sx-Ohg">
                                     <font key="font" metaFont="system"/>
-                                    <string key="title">Select the tracker categories that you would like to block or unblock. Please note that some sites may not load correctly depending on your custom settings. Learn More</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -652,11 +650,11 @@
                                     </subviews>
                                     <color key="backgroundColor" name="menuListBackground"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="8vT-27-btR">
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="8vT-27-btR">
                                     <rect key="frame" x="-100" y="-100" width="174" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="eYG-LN-SxE">
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="eYG-LN-SxE">
                                     <rect key="frame" x="234" y="1" width="15" height="143"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -719,11 +717,11 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yNx-KH-9na">
-                                            <rect key="frame" x="178" y="509" width="182" height="35"/>
+                                            <rect key="frame" x="178" y="509" width="43" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="Snp-zp-yw3"/>
                                             </constraints>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="You’ve gone Lite!" id="Z6K-0m-rr9">
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="abc" id="Z6K-0m-rr9">
                                                 <font key="font" metaFont="system" size="24"/>
                                                 <color key="textColor" name="panelText"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -761,7 +759,7 @@
                                                             <constraint firstAttribute="width" constant="150" id="YSf-rY-JnX"/>
                                                             <constraint firstAttribute="height" constant="35" id="hfo-BG-QSv"/>
                                                         </constraints>
-                                                        <buttonCell key="cell" type="smallSquare" title="EDIT SETTINGS" bezelStyle="smallSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="WBJ-fQ-YXc">
+                                                        <buttonCell key="cell" type="smallSquare" title="Edit" bezelStyle="smallSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="WBJ-fQ-YXc">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
@@ -813,7 +811,7 @@
                                                             <constraint firstAttribute="height" constant="35" id="2Ys-6f-FnD"/>
                                                             <constraint firstAttribute="width" constant="150" id="YUH-ey-h3K"/>
                                                         </constraints>
-                                                        <buttonCell key="cell" type="smallSquare" title="TRUSTED SITES" bezelStyle="smallSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="0cc-Uf-uAC">
+                                                        <buttonCell key="cell" type="smallSquare" title="trust" bezelStyle="smallSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="0cc-Uf-uAC">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
@@ -849,7 +847,7 @@
                                                 <subviews>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zgV-gd-3qc">
                                                         <rect key="frame" x="13" y="12" width="598" height="16"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please enable the Ghostery Lite extensions in your Safari preferences to begin." id="aCq-yn-W9M">
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="enable Ghosty" id="aCq-yn-W9M">
                                                             <font key="font" metaFont="cellTitle"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -861,7 +859,7 @@
                                                             <constraint firstAttribute="width" constant="110" id="1yt-mN-Srb"/>
                                                             <constraint firstAttribute="height" constant="27" id="EF0-Et-wnd"/>
                                                         </constraints>
-                                                        <buttonCell key="cell" type="square" title="ENABLE LITE" bezelStyle="shadowlessSquare" image="white-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="J5T-oq-YPL">
+                                                        <buttonCell key="cell" type="square" title="ENABLE" bezelStyle="shadowlessSquare" image="white-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="J5T-oq-YPL">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
@@ -889,7 +887,7 @@
                                                 <constraint firstAttribute="height" constant="60" id="9MO-Ry-wIj"/>
                                                 <constraint firstAttribute="width" constant="360" id="NQG-S6-19V"/>
                                             </constraints>
-                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Thanks for installing Ghostery Lite. You are now protected with our tailored default settings!" id="wYg-RX-1lu">
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title=" " id="wYg-RX-1lu">
                                                 <font key="font" metaFont="system" size="16"/>
                                                 <color key="textColor" name="panelText"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1031,11 +1029,11 @@
                                     <constraint firstAttribute="height" constant="370" id="72B-Pi-CsD"/>
                                     <constraint firstAttribute="width" constant="570" id="We2-1D-Wmp"/>
                                 </constraints>
-                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Lkq-4U-sdJ">
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Lkq-4U-sdJ">
                                     <rect key="frame" x="-100" y="-100" width="568" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="r4a-dy-iJd">
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="r4a-dy-iJd">
                                     <rect key="frame" x="554" y="0.0" width="16" height="370"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -1070,7 +1068,7 @@
                         <outlet property="errorMessageLabel" destination="4uz-3S-HSA" id="xSC-hH-093"/>
                         <outlet property="trustSiteBtn" destination="qwB-cC-fc2" id="BK4-e5-xnG"/>
                         <outlet property="trustedSiteTextField" destination="LAu-bc-Mwd" id="ePE-Jz-ckm"/>
-                        <outlet property="trustedSitesText" destination="4fF-tz-VdL" id="aqi-2k-P5e"/>
+                        <outlet property="trustedSitesTitle" destination="4fF-tz-VdL" id="CP0-Gd-LJ5"/>
                         <outlet property="trustedStiesCollectionView" destination="ovK-UL-rJ6" id="oRS-KP-WfP"/>
                     </connections>
                 </viewController>
@@ -1096,9 +1094,8 @@
                                     <constraint firstAttribute="width" constant="409" id="hoF-nm-dB4"/>
                                     <constraint firstAttribute="height" constant="100" id="ztQ-Dz-c7I"/>
                                 </constraints>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="9tv-f8-fCZ">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Help Desc" id="9tv-f8-fCZ">
                                     <font key="font" metaFont="system" size="16"/>
-                                    <string key="title">If you have encountered an issue, want to know more about Ghostery Lite and our other products or would like to get in touch, please follow the appropriate link below.</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -1109,7 +1106,7 @@
                                     <constraint firstAttribute="width" constant="250" id="0fV-Wg-X4X"/>
                                     <constraint firstAttribute="height" constant="25" id="DnG-ON-sqt"/>
                                 </constraints>
-                                <buttonCell key="cell" type="square" title="Ghostery Support" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="BgZ-xj-F2J">
+                                <buttonCell key="cell" type="square" title="Support" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="BgZ-xj-F2J">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="16"/>
                                 </buttonCell>
@@ -1123,7 +1120,7 @@
                                     <constraint firstAttribute="width" constant="250" id="FW5-72-QHV"/>
                                     <constraint firstAttribute="height" constant="25" id="mRe-RN-MsL"/>
                                 </constraints>
-                                <buttonCell key="cell" type="square" title="Ghostery Products" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="IW3-BT-Kt8">
+                                <buttonCell key="cell" type="square" title="Products" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="IW3-BT-Kt8">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="16"/>
                                 </buttonCell>
@@ -1137,7 +1134,7 @@
                                     <constraint firstAttribute="height" constant="25" id="47t-xs-M1I"/>
                                     <constraint firstAttribute="width" constant="250" id="dFO-nV-j4K"/>
                                 </constraints>
-                                <buttonCell key="cell" type="square" title="Ghostery Blog" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="MdL-PO-b4U">
+                                <buttonCell key="cell" type="square" title="Blog" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="MdL-PO-b4U">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="16"/>
                                 </buttonCell>
@@ -1151,7 +1148,7 @@
                                     <constraint firstAttribute="height" constant="25" id="OvX-Lt-hK2"/>
                                     <constraint firstAttribute="width" constant="250" id="TOk-P5-d8b"/>
                                 </constraints>
-                                <buttonCell key="cell" type="square" title="Ghostery FAQs" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="c4M-2c-co9">
+                                <buttonCell key="cell" type="square" title="FAQs" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="c4M-2c-co9">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="16"/>
                                 </buttonCell>
@@ -1227,7 +1224,7 @@
                                                 <constraint firstAttribute="height" constant="90" id="01j-uh-gKZ"/>
                                                 <constraint firstAttribute="width" constant="290" id="MAf-Xz-iYV"/>
                                             </constraints>
-                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Please enable Ghostery Lite Icon and Ghostery Lite extensions in your Safari preferences to begin." id="dEo-t5-f3x">
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="OnBoarding" id="dEo-t5-f3x">
                                                 <font key="font" metaFont="system" size="18"/>
                                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1246,7 +1243,7 @@
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
                                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="79q-5M-au7">
-                                                                        <rect key="frame" x="162" y="7" width="75" height="16"/>
+                                                                        <rect key="frame" x="162" y="7" width="75" height="32"/>
                                                                         <buttonCell key="cell" type="bevel" title="Skip for now" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="2Jl-PZ-VFA">
                                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                             <font key="font" metaFont="cellTitle"/>
@@ -1263,7 +1260,7 @@
                                                                             <subviews>
                                                                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gdw-SY-3yv">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
-                                                                                    <buttonCell key="cell" type="bevel" title="ENABLE GHOSTERY LITE" bezelStyle="rounded" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="XIq-Cy-agY">
+                                                                                    <buttonCell key="cell" type="bevel" title="ENABLE" bezelStyle="rounded" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="XIq-Cy-agY">
                                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                                         <font key="font" metaFont="cellTitle"/>
                                                                                     </buttonCell>

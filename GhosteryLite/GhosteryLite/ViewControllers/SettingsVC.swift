@@ -107,36 +107,35 @@ class SettingsVC: NSViewController {
 
 	private func setupComponents() {
 		self.updateRadioBoxesState()
-		self.topTextLabel.attributedStringValue = self.topTextLabel.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 3)
+		self.topTextLabel.attributedStringValue = Strings.SettingsPanelTitle.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 3)
 		
 		self.defaultRadio.font = NSFont(name: "Roboto-Bold", size: 14)
+		self.defaultRadio.title = Strings.SettinsPanelDefault
 		self.customRadio.font = NSFont(name: "Roboto-Bold", size: 14)
-		
+		self.customRadio.title = Strings.SettinsPanelCustom
+	
 		self.setupTextField(textField: self.defaultDescLabel, mainText: Strings.SettingsPanelDefaultDescription, learnMoreText: Strings.LearnMore, urlString: "https://www.ghostery.com/faqs/")
 		self.setupTextField(textField: self.customDescLabel, mainText: Strings.SettingsPanelCustomDescription, learnMoreText: Strings.LearnMore, urlString: "https://www.ghostery.com/faqs/")
 
         adCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
-//        if #available(OSX 10.14, *) {
-//            adCheckbox.contentTintColor = NSColor.purple
-//        }
-//        let str = "Block: Advertising"
-//        adCheckbox.title = ""
-//        if #available(OSX 10.14, *) {
-//            adCheckbox.contentTintColor = NSColor.white
-//        }
-//        let textColor: NSColor = NSColor.panelTextColor()
-//
-//        adCheckbox.attributedTitle = str.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14, fontColor: textColor)
-
+		adCheckbox.title = Strings.SettinsPanelAdvertising
 		audioVideoCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
+		audioVideoCheckbox.title = Strings.SettinsPanelAudioVideo
 		commentsCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
+		commentsCheckbox.title = Strings.SettinsPanelComments
 		customInterCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
+		customInterCheckbox.title = Strings.SettinsPanelCustomer
 		essentialCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
+		essentialCheckbox.title = Strings.SettinsPanelEssential
 		adultCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
+		adultCheckbox.title = Strings.SettinsPanelAdult
 		siteAnalyticsCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
+		siteAnalyticsCheckbox.title = Strings.SettinsPanelAnalytics
 		socialMediaCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
+		socialMediaCheckbox.title = Strings.SettinsPanelMedia
 		self.savedLabel.textColor = NSColor(rgb: 0x67a73a)
 		self.savedLabel.font = NSFont(name: "Roboto-Regular", size: 14)
+		self.savedLabel.stringValue = Strings.SettinsPanelSaved
 		self.savedBox.isHidden = true
 	}
 

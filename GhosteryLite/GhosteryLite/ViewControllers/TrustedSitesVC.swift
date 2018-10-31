@@ -10,7 +10,7 @@ import Cocoa
 
 class TrustedSitesVC: NSViewController {
 
-    @IBOutlet weak var trustedSitesText: NSTextField!
+    @IBOutlet weak var trustedSitesTitle: NSTextField!
     @IBOutlet weak var trustedSiteTextField: NSTextField!
     @IBOutlet weak var trustSiteBtn: NSButton!
     @IBOutlet weak var trustedStiesCollectionView: NSCollectionView!
@@ -66,15 +66,14 @@ class TrustedSitesVC: NSViewController {
 	private func setupComponents() {
         trustedStiesCollectionView.backgroundColors = [NSColor.clear]
         trustedSiteTextField.backgroundColor = NSColor.clear
-		trustedSitesText.stringValue = Strings.TrustedSitesPanelText
-		trustedSitesText.attributedStringValue = Strings.TrustedSitesPanelText.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 3)
-		trustedSitesText.font = NSFont(name: "Roboto-Regular", size: 16)
+		trustedSitesTitle.attributedStringValue = Strings.TrustedSitesPanelText.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 3)
+		trustedSitesTitle.font = NSFont(name: "Roboto-Regular", size: 16)
 		trustSiteBtn.attributedTitle = Strings.TrustedSitesPanelTrustSiteButtonTitle.attributedString(withTextAlignment: .center,
 																									  fontName: "Roboto-Medium",
 																									  fontSize: 12.0,
 																									  fontColor: NSColor(named: NSColor.Name("trustBtnText")) ?? NSColor.black)
 		errorMessageLabel.font = NSFont(name: "Roboto-Regular", size: 10)
-		errorMessageLabel.stringValue = "Please enter a valid URL."
+		errorMessageLabel.stringValue = Strings.TrustedSitesPanelErrorMessage
 		trustSiteBtn.attributedAlternateTitle = Strings.TrustedSitesPanelTrustSiteButtonTitle.attributedString(withTextAlignment: .center, fontName: "Roboto-Medium", fontSize: 12.0, fontColor: NSColor(rgb: 0xffffff))
 	}
 
