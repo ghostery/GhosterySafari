@@ -57,6 +57,7 @@
 		4F3049AF211B36E800BA3961 /* BlockListFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */; };
 		4F3049B4211C6D3200BA3961 /* AntiTrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* AntiTrackingManager.swift */; };
 		4F3049B6211C721D00BA3961 /* BlockListFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */; };
+		4F51EDC82191A0C60032DCDF /* TrustButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F51EDC72191A0C60032DCDF /* TrustButtonCell.swift */; };
 		4F83ABAE2138583A00BC76E4 /* TrustedSitesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */; };
 		4F83ABAF2138583A00BC76E4 /* TrustedSitesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */; };
 		4F83ABB12138586A00BC76E4 /* TrustedSitesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABB02138586A00BC76E4 /* TrustedSitesDataSource.swift */; };
@@ -90,6 +91,7 @@
 		4F9CF8E7215E57B6005B1C1B /* TelemetryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9CF8E2215BCD97005B1C1B /* TelemetryManager.swift */; };
 		4F9CF8E8215E57B9005B1C1B /* TelemetryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9CF8E0215BCD6A005B1C1B /* TelemetryService.swift */; };
 		4F9CF8E9215E580C005B1C1B /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4721354DE60098631F /* Preferences.swift */; };
+		4F9FC0E92189FECA0069461C /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FC0E82189FECA0069461C /* Strings.swift */; };
 		4FB1E6D2213E819F00136D2A /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 1E597C3F21341ED90098631F /* Fonts */; };
 		4FB1E6D7213EBF5300136D2A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73C21369F5400E28C38 /* StringExtension.swift */; };
 		4FB1E6D8213EC6DC00136D2A /* NSColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4521354D820098631F /* NSColorExtension.swift */; };
@@ -201,6 +203,7 @@
 		4F3049A32119F4FC00BA3961 /* URLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListFileManager.swift; sourceTree = "<group>"; };
 		4F3049B3211C6D3200BA3961 /* AntiTrackingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiTrackingManager.swift; sourceTree = "<group>"; };
+		4F51EDC72191A0C60032DCDF /* TrustButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustButtonCell.swift; sourceTree = "<group>"; };
 		4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSitesRepository.swift; sourceTree = "<group>"; };
 		4F83ABB02138586A00BC76E4 /* TrustedSitesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSitesDataSource.swift; sourceTree = "<group>"; };
 		4F83ABB321393CF400BC76E4 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -214,6 +217,7 @@
 		4F9CF8D7215A9367005B1C1B /* GhosteryLite.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = GhosteryLite.xcconfig; sourceTree = "<group>"; };
 		4F9CF8E0215BCD6A005B1C1B /* TelemetryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelemetryService.swift; sourceTree = "<group>"; };
 		4F9CF8E2215BCD97005B1C1B /* TelemetryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemetryManager.swift; sourceTree = "<group>"; };
+		4F9FC0E82189FECA0069461C /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		4FCEAA22212E0CCE00AACE42 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4FFD8313212B36BC0038149F /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 		4FFD8337212B4FF90038149F /* BlockListAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlockListAssets; sourceTree = "<group>"; };
@@ -380,6 +384,8 @@
 				4F3049452118983D00BA3961 /* SafariExtension.entitlements */,
 				4FCEAA22212E0CCE00AACE42 /* Images.xcassets */,
 				4F91F3212136DF0600056FDE /* PageLatencyDataSource.swift */,
+				4F9FC0E82189FECA0069461C /* Strings.swift */,
+				4F51EDC72191A0C60032DCDF /* TrustButtonCell.swift */,
 			);
 			path = SafariExtension;
 			sourceTree = "<group>";
@@ -802,6 +808,7 @@
 				4F931A222126C23800AF4226 /* CrudRepository.swift in Sources */,
 				4FFD834A212B5D430038149F /* GlobalConfigRepository.swift in Sources */,
 				4FFD834E212B602B0038149F /* GlobalConfigDataSource.swift in Sources */,
+				4F51EDC82191A0C60032DCDF /* TrustButtonCell.swift in Sources */,
 				4F83ABAF2138583A00BC76E4 /* TrustedSitesRepository.swift in Sources */,
 				4F931A1D2125D3DE00AF4226 /* URLExtension.swift in Sources */,
 				4F931A202125DA4100AF4226 /* RealmRepository.swift in Sources */,
@@ -810,6 +817,7 @@
 				4FFD8315212B36BC0038149F /* FileManagerExtension.swift in Sources */,
 				4F931A2A2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */,
 				4F931A262126C95A00AF4226 /* Constants.swift in Sources */,
+				4F9FC0E92189FECA0069461C /* Strings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

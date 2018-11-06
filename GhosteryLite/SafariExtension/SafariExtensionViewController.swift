@@ -8,8 +8,9 @@
 
 import SafariServices
 
+
 class SafariExtensionViewController: SFSafariExtensionViewController {
-    
+
     static let shared = SafariExtensionViewController()
 
 	@IBOutlet weak var liteLabel: NSTextField!
@@ -17,6 +18,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
 	@IBOutlet var defaultConfigRadio: NSButton!
 	@IBOutlet var customConfigRadio: NSButton!
+	@IBOutlet var customConfigInfo: NSImageView!
 
 	@IBOutlet var urlLabel: NSTextField!
 	@IBOutlet var pageLatencyValueLabel: NSTextField!
@@ -61,7 +63,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
                 let params = PageLatencyDataSource.shared.latencyImageAndOffset(self.currentUrl ?? "")
                 self.pageLatencyImage?.image = NSImage(named: NSImage.Name(params.0))
                 self.secondsLabelLeftOffset?.constant = params.1
-//			    pageLatencyImage?.image = NSImage(named: NSImage.Name(PageLatencyDataSource.shared.latencyImageName(currentUrl ?? "")))
             }
         }
 	}
@@ -91,13 +92,13 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBAction func pauseButtonPressed(sender: NSButton) {
 		self.isPaused = sender.state.rawValue == 1
 		if sender.state.rawValue == 1 {
-			self.pauseButton.toolTip = "Resume Ghostery Lite"
+			self.pauseButton.toolTip = Strings.ResumeTooltip
 			AntiTrackingManager.shared.pause()
 			DistributedNotificationCenter.default().post(name: Constants.PauseNotificationName, object: Constants.SafariPopupExtensionID)
 			self.trustSiteButton.isEnabled = false
 			self.showPausedPopup()
 		} else {
-			self.pauseButton.toolTip = "Pause Ghostery Lite"
+			self.pauseButton.toolTip = Strings.PauseTooltip
 			AntiTrackingManager.shared.resume()
 			DistributedNotificationCenter.default().post(name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
 			self.trustSiteButton.isEnabled = true
@@ -175,7 +176,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 //		NSWorkspace.shared.launchApplication(withBundleIdentifier: Constants.GhosteryLiteID, options: [LaunchOptions], additionalEventParamDescriptor: <#T##NSAppleEventDescriptor?#>, launchIdentifier: AutoreleasingUnsafeMutablePointer<NSNumber?>?)
 		NSWorkspace.shared.launchApplication("GhosteryLite")
 		Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (_) in
-			
 			DistributedNotificationCenter.default().post(name: Constants.NavigateToSettingsNotificationName, object: Constants.SafariPopupExtensionID)
 		}
 	}
@@ -193,57 +193,70 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
 	private func updateTrustButtonTooltip() {
 		if trustSiteButton.state.rawValue == 0 {
-			self.trustSiteButton?.toolTip = "Always allow trackers and ads on this site."
+			self.trustSiteButton?.toolTip = Strings.TrustSiteTooltip
+			//"Always allow trackers and ads on this site."
 		} else {
-			self.trustSiteButton?.toolTip = "Trackers and ads allows. Click to undo."
+			self.trustSiteButton?.toolTip = Strings.UntrustSiteTooltip //"Trackers and ads allows. Click to undo."
 		}
 	}
 
 	private func setupComponents() {
-		let defaultStr = "Default Protection"
+		let defaultStr = Strings.DefaultConfigTitle // "Default Protection"
 		self.defaultConfigRadio.attributedTitle = defaultStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(named: NSColor.Name("radioTextColor")) ?? NSColor.white)
-		let customStr = "Custom Protection"
+		let customStr = Strings.CustomConfigTitle // "Custom Protection"
 		self.customConfigRadio.attributedTitle = customStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(named: NSColor.Name("radioTextColor")) ?? NSColor.white)
+		self.customConfigInfo.toolTip = Strings.CustomConfigInfoTooltip
 		self.liteLabel.font = NSFont(name: "BebasNeueBook", size: 18)
-//		self.defaultConfigRadio.font = NSFont(name: "OpenSans-Regular", size: 14)
-////		self.customConfigRadio.font = NSFont(name: "OpenSans-Regular", size: 14)
-////		self.customConfigRadio.stringValue = "Custom Protection"
-////		self.customConfigRadio.title = "Hello"
 		self.urlLabel.font = NSFont(name: "OpenSans-Regular", size: 11)
 		self.pageLatencyValueLabel.font = NSFont(name: "Roboto-Regular", size: 18)
 		self.pageLatencyDescLabel.font = NSFont(name: "OpenSans-Regular", size: 11)
+		self.pageLatencyDescLabel.stringValue = Strings.LatencyDescription
 		self.firstRangeLabel.font = NSFont(name: "OpenSans-Regular", size: 10)
 		self.secondRangeLabel.font = NSFont(name: "OpenSans-Regular", size: 10)
 		self.thirdRangeLabel.font = NSFont(name: "OpenSans-Regular", size: 10)
 		self.secondsLabel.font = NSFont(name: "Roboto-Regular", size: 9)
+		self.secondsLabel.stringValue = Strings.SecondsTitle
 		self.popupTitleLabel.font = NSFont(name: "OpenSans-SemiBold", size: 11)
 		self.popupReloadButton.font = NSFont(name: "OpenSans-SemiBold", size: 11)
 
 		let paragraphStyle = NSMutableParagraphStyle()
 		paragraphStyle.firstLineHeadIndent = 5.0
+		self.trustSiteButton?.attributedTitle = Strings.TrustActionTitle.attributedString(withTextAlignment: .center,
+														fontName: "OpenSans-SemiBold",
+														fontSize: 11.0,
+														fontColor: NSColor(named: NSColor.Name("trustBtnTitleColor")) ?? NSColor.black,
+														lineSpacing: 0)
+		self.trustSiteButton?.attributedAlternateTitle = Strings.UntrustActionTitle.attributedString(withTextAlignment: .center,
+															fontName: "OpenSans-SemiBold",
+															fontSize: 11.0,
+															fontColor:NSColor(named: NSColor.Name("untrustBtnTitleColor")) ?? NSColor.white,
+															lineSpacing: 0)
+
+		// TODO: refactor the method, not to call press action
+		self.pauseButtonPressed(sender: self.pauseButton)
 	}
 
 	private func showPausedPopup() {
 		let bgColor = NSColor(red: 0.976, green: 0.929, blue: 0.745, alpha: 1)
-		let title = "Ghostery Lite has been paused."
+		let title = Strings.PausedPopupMessage //"Ghostery Lite has been paused."
 		showPopup(bgColor, title: title, fontColor: 0x4a4a4a)
 	}
 
 	private func showResumedPopup() {
 		let bgColor = NSColor(red: 0.976, green: 0.929, blue: 0.745, alpha: 1)
-		let title = "Ghostery Lite has been resumed."
+		let title = Strings.ResumedPopupMessage //"Ghostery Lite has been resumed."
 		showPopup(bgColor, title: title, fontColor: 0x4a4a4a)
 	}
 
 	private func showTrustedPopup() {
 		let bgColor = NSColor(red: 0.156, green: 0.804, blue: 0.439, alpha: 1)
-		let title = "Site whitelisted."
+		let title = Strings.TrustedPopupMessage //"Site whitelisted."
 		showPopup(bgColor, title: title, fontColor: 0xffffff, image: "closePopupWhite")
 	}
 	
 	private func showUntrustedPopup() {
 		let bgColor = NSColor(red: 0.976, green: 0.929, blue: 0.745, alpha: 1)
-		let title = "Site no longer whitelisted."
+		let title = Strings.UntrustedPopupMessage // "Site no longer whitelisted."
 		showPopup(bgColor, title: title, fontColor: 0x4a4a4a)
 	}
 
@@ -256,7 +269,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		self.reloadPopupView.shadow = shadow
 		self.popupTitleLabel.stringValue = title
 		self.popupTitleLabel.textColor = NSColor(rgb: fontColor)
-		self.popupReloadButton.attributedTitle = self.popupReloadButton.title.attributedString(withTextAlignment: .center,
+		self.popupReloadButton.attributedTitle = Strings.ReloadPopupButtonTitle.attributedString(withTextAlignment: .center,
 																   fontName: "OpenSans-SemiBold",
 																   fontSize: 11.0,
 																   fontColor: NSColor(rgb: fontColor), isUnderline: true)
@@ -266,7 +279,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
     
     private func updateReloadPopupViewVisibility(isHidden: Bool) {
         self.reloadPopupView.isHidden = isHidden
-        
         self.defaultConfigRadio.isHidden = !isHidden
         self.customConfigRadio.isHidden = !isHidden
         self.topHorizontalLine.isHidden = !isHidden
