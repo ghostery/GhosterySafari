@@ -42,15 +42,6 @@
 		4F3049552118985C00BA3961 /* blockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049542118985C00BA3961 /* blockerList.json */; };
 		4F3049572118985C00BA3961 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049562118985C00BA3961 /* ContentBlockerRequestHandler.swift */; };
 		4F30495C2118985C00BA3961 /* ContentBlocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4F3049512118985C00BA3961 /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		4F3049962119F46700BA3961 /* TrackerListBug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30498C2119F46700BA3961 /* TrackerListBug.swift */; };
-		4F3049972119F46700BA3961 /* TrackerListRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30498D2119F46700BA3961 /* TrackerListRegex.swift */; };
-		4F3049982119F46700BA3961 /* TrieNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30498E2119F46700BA3961 /* TrieNode.swift */; };
-		4F3049992119F46700BA3961 /* TrackerListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30498F2119F46700BA3961 /* TrackerListApp.swift */; };
-		4F30499A2119F46700BA3961 /* TrackerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049902119F46700BA3961 /* TrackerList.swift */; };
-		4F30499B2119F46700BA3961 /* TrackerListPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049912119F46700BA3961 /* TrackerListPath.swift */; };
-		4F30499C2119F46700BA3961 /* PageTrackersFound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049922119F46700BA3961 /* PageTrackersFound.swift */; };
-		4F30499D2119F46700BA3961 /* TrackerListHosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049932119F46700BA3961 /* TrackerListHosts.swift */; };
-		4F30499E2119F46700BA3961 /* TrackerListHostPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049942119F46700BA3961 /* TrackerListHostPaths.swift */; };
 		4F3049A42119F4FC00BA3961 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A12119F4FC00BA3961 /* ArrayExtensions.swift */; };
 		4F3049A52119F4FC00BA3961 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A22119F4FC00BA3961 /* DictionaryExtensions.swift */; };
 		4F3049A62119F4FC00BA3961 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A32119F4FC00BA3961 /* URLExtension.swift */; };
@@ -189,15 +180,6 @@
 		4F3049562118985C00BA3961 /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
 		4F3049582118985C00BA3961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3049592118985C00BA3961 /* ContentBlocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContentBlocker.entitlements; sourceTree = "<group>"; };
-		4F30498C2119F46700BA3961 /* TrackerListBug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerListBug.swift; sourceTree = "<group>"; };
-		4F30498D2119F46700BA3961 /* TrackerListRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerListRegex.swift; sourceTree = "<group>"; };
-		4F30498E2119F46700BA3961 /* TrieNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieNode.swift; sourceTree = "<group>"; };
-		4F30498F2119F46700BA3961 /* TrackerListApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerListApp.swift; sourceTree = "<group>"; };
-		4F3049902119F46700BA3961 /* TrackerList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerList.swift; sourceTree = "<group>"; };
-		4F3049912119F46700BA3961 /* TrackerListPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerListPath.swift; sourceTree = "<group>"; };
-		4F3049922119F46700BA3961 /* PageTrackersFound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageTrackersFound.swift; sourceTree = "<group>"; };
-		4F3049932119F46700BA3961 /* TrackerListHosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerListHosts.swift; sourceTree = "<group>"; };
-		4F3049942119F46700BA3961 /* TrackerListHostPaths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerListHostPaths.swift; sourceTree = "<group>"; };
 		4F3049A12119F4FC00BA3961 /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		4F3049A22119F4FC00BA3961 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
 		4F3049A32119F4FC00BA3961 /* URLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
@@ -407,26 +389,9 @@
 				4FFD831A212B4ADE0038149F /* Resources */,
 				4F4BE2DF212595AE00FEE71E /* ConfigStorage */,
 				4F3049AB211B368000BA3961 /* BlockListManagement */,
-				4F30498B2119F46700BA3961 /* TrackingManagement */,
 				4F3049B3211C6D3200BA3961 /* AntiTrackingManager.swift */,
 			);
 			path = AntiTracking;
-			sourceTree = "<group>";
-		};
-		4F30498B2119F46700BA3961 /* TrackingManagement */ = {
-			isa = PBXGroup;
-			children = (
-				4F30498C2119F46700BA3961 /* TrackerListBug.swift */,
-				4F30498D2119F46700BA3961 /* TrackerListRegex.swift */,
-				4F30498E2119F46700BA3961 /* TrieNode.swift */,
-				4F30498F2119F46700BA3961 /* TrackerListApp.swift */,
-				4F3049902119F46700BA3961 /* TrackerList.swift */,
-				4F3049912119F46700BA3961 /* TrackerListPath.swift */,
-				4F3049922119F46700BA3961 /* PageTrackersFound.swift */,
-				4F3049932119F46700BA3961 /* TrackerListHosts.swift */,
-				4F3049942119F46700BA3961 /* TrackerListHostPaths.swift */,
-			);
-			path = TrackingManagement;
 			sourceTree = "<group>";
 		};
 		4F3049A02119F4FC00BA3961 /* Extensions */ = {
@@ -748,9 +713,7 @@
 				4F9CF8E3215BCD97005B1C1B /* TelemetryManager.swift in Sources */,
 				1E14B73D21369F5400E28C38 /* StringExtension.swift in Sources */,
 				4F931A1521259BEC00AF4226 /* DomainConfigRepository.swift in Sources */,
-				4F3049972119F46700BA3961 /* TrackerListRegex.swift in Sources */,
 				1E597C2D2133F8170098631F /* SectionDetailVC.swift in Sources */,
-				4F30499C2119F46700BA3961 /* PageTrackersFound.swift in Sources */,
 				4FFD8351212C6C740038149F /* WindowController.swift in Sources */,
 				4F9CF8E1215BCD6A005B1C1B /* TelemetryService.swift in Sources */,
 				4F90DD81214BD75000E8BA6D /* WhiteListFileManager.swift in Sources */,
@@ -758,7 +721,6 @@
 				4F83ABB12138586A00BC76E4 /* TrustedSitesDataSource.swift in Sources */,
 				1E14B73821368CD600E28C38 /* Strings.swift in Sources */,
 				1E597C3621340D180098631F /* SectionItemCollectionViewItem.swift in Sources */,
-				4F30499A2119F46700BA3961 /* TrackerList.swift in Sources */,
 				1E597C4421344ACC0098631F /* MenuItem.swift in Sources */,
 				4F3049AF211B36E800BA3961 /* BlockListFileManager.swift in Sources */,
 				4F83ABAE2138583A00BC76E4 /* TrustedSitesRepository.swift in Sources */,
@@ -768,20 +730,14 @@
 				1E14B73F2136BB6F00E28C38 /* HelpVC.swift in Sources */,
 				1E597C5321359D000098631F /* HUDView.swift in Sources */,
 				4F3049B4211C6D3200BA3961 /* AntiTrackingManager.swift in Sources */,
-				4F30499D2119F46700BA3961 /* TrackerListHosts.swift in Sources */,
-				4F3049992119F46700BA3961 /* TrackerListApp.swift in Sources */,
 				4F931A192125ADD500AF4226 /* CrudRepository.swift in Sources */,
-				4F3049982119F46700BA3961 /* TrieNode.swift in Sources */,
-				4F30499B2119F46700BA3961 /* TrackerListPath.swift in Sources */,
 				4FFD834D212B602B0038149F /* GlobalConfigDataSource.swift in Sources */,
 				1E14B754213819A800E28C38 /* TrustedSitesVC.swift in Sources */,
 				4F931A252126C8C900AF4226 /* Constants.swift in Sources */,
-				4F3049962119F46700BA3961 /* TrackerListBug.swift in Sources */,
 				4F3049212118982600BA3961 /* AppDelegate.swift in Sources */,
 				1E597C2B2133F7FC0098631F /* SectionListVC.swift in Sources */,
 				4FFD8314212B36BC0038149F /* FileManagerExtension.swift in Sources */,
 				1E597C4821354DE60098631F /* Preferences.swift in Sources */,
-				4F30499E2119F46700BA3961 /* TrackerListHostPaths.swift in Sources */,
 				1E14B7582138217800E28C38 /* TrustedSiteCollectionViewItem.swift in Sources */,
 				4F931A172125AD6500AF4226 /* RealmRepository.swift in Sources */,
 				1E597C4A2135682B0098631F /* SafariExtensionPromptVC.swift in Sources */,

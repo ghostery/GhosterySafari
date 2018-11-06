@@ -156,4 +156,14 @@ final class FileDownloader {
 			return "http://staging-cdn.ghostery.com/update"
 		#endif
 	}
+
+	class func getVersionPath() -> String {
+		#if PROD
+			return "https://cdn.ghostery.com/update/version"
+		#else
+			return "https://staging-cdn.ghostery.com/update/version"
+		#endif
+	}
+	//safariContentBlockerVersion
+	//safariCategoryVersion
 }
