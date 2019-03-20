@@ -46,6 +46,10 @@ enum CategoryType: Int {
 			return "cat_unclassifed"
 		}
 	}
+
+	static func allCases() -> [CategoryType] {
+		return [.advertising, .audioVideoPlayer, .comments, .customerInteraction, .essential, .pornvertising, .siteAnalytics, .socialMedia, .uncategorized]
+	}
 }
 
 final class BlockListFileManager {
@@ -56,13 +60,72 @@ final class BlockListFileManager {
 
 	private static let ghosteryBlockListFileName = "ghostery_content_blocker"
 
+	private static let blockListVersionKey = "safariContentBlockerVersion"
+	private static let categoryBlockListVersionKey = "safariCategoryVersion"
+
 	static let shared = BlockListFileManager()
 
 	init() {
-		/*
-		if self.versionExpired() {
-			self.downloadNewBlockList()
-		}*/
+	}
+
+	func updateBlockLists() {
+		FileDownloader.downloadBlockListVersion { (err, json) in
+			if let categoryListVersion = self.intValueFromJson(json, key: BlockListFileManager.categoryBlockListVersionKey) {
+				if self.isCategoryBlockListVersionChanged(categoryListVersion) {
+					self.updateCategoryBlockLists()
+					Preferences.updateGlobalPreferences(key: BlockListFileManager.categoryBlockListVersionKey, value: categoryListVersion)
+				}
+			}
+			if let blockListVersion = self.intValueFromJson(json, key: BlockListFileManager.blockListVersionKey) {
+				if self.isFullBlockListVersionChanged(blockListVersion) {
+					self.updateFullBlockList()
+					Preferences.updateGlobalPreferences(key: BlockListFileManager.blockListVersionKey, value: blockListVersion)
+				}
+			}
+		}
+	}
+
+	private func isCategoryBlockListVersionChanged(_ newVersion: Int) -> Bool {
+		if let oldVersion = Preferences.globalPreferences(key: BlockListFileManager.categoryBlockListVersionKey) as? Int {
+			return newVersion != oldVersion
+		}
+		return true
+	}
+
+	private func intValueFromJson(_ json: Any?, key: String) -> Int? {
+		if let jsonData = json as? [String: Any] {
+			return jsonData[BlockListFileManager.blockListVersionKey] as? Int
+		}
+		return nil
+	}
+
+	private func isFullBlockListVersionChanged(_ newVersion: Int) -> Bool {
+		if let oldVersion = Preferences.globalPreferences(key: BlockListFileManager.blockListVersionKey) as? Int {
+			return newVersion != oldVersion
+		}
+		return true
+	}
+
+	func updateFullBlockList() {
+		let fullBlockListName = "safariContentBlocker"
+		self.downloadAndSaveFile(fullBlockListName)
+	}
+
+	func updateCategoryBlockLists() {
+		for type in CategoryType.allCases() {
+			self.downloadAndSaveFile(type.fileName())
+		}
+	}
+
+	private func downloadAndSaveFile(_ fileName: String) {
+		FileDownloader.downloadBlockList(fileName) { (err, data) in
+			if let e = err {
+				print("\(fileName) file download is failed: \(e)")
+			}
+			if let d = data {
+				FileManager.default.writeFile(d, name: "\(fileName).json", in: BlockListFileManager.assetsFolder)
+			}
+		}
 	}
 
 	func getFilePath(fileName: String, folderName: String) -> URL? {
@@ -82,10 +145,8 @@ final class BlockListFileManager {
 				}
 			}
 			let r = WhiteListFileManager.shared.getActiveWhitelistRules()
-			let finalJSON: [[String: Any]]? = (blockListJSON ?? []) + (r ?? [])
-//			let finalJSON: [[String: Any]]? = (r ?? [])
+			let finalJSON: [[String: Any]] = (blockListJSON ?? []) + (r ?? [])
 
-//				finalJSON = finalJSON + r
 			let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
 			let assetsFolder: URL? = groupStorageFolder?.appendingPathComponent("BlockListAssets")
 			let categoryAssetsFolder: URL? = assetsFolder?.appendingPathComponent("BlockListByCategory")
@@ -105,37 +166,23 @@ final class BlockListFileManager {
 		return Bundle.main.url(forResource: "blockerList", withExtension: "json")
 	}
 
-	private func versionExpired() -> Bool {
-		return true
-	}
-
-	private func downloadNewBlockList() {
-		FileDownloader.download("hello") { (error, data) in
-			if let error = error {
-				// TODO: error handling
-			} else {
-				let blockListFilesFolder = BlockListFileManager.assetsFolder
-				FileManager.default.createDirectoryIfNotExists(blockListFilesFolder, withIntermediateDirectories: true)
-				let fileURL = blockListFilesFolder?.appendingPathComponent("filename.json")
-				if FileManager.default.createFile(atPath: (fileURL?.path)!, contents: data, attributes: nil) {
-				} else {
-					print("FileUpdate failed")
-				}
-			}
-		}
-	}
 }
 
 public enum FileDownloaderError: Error {
-	case invalidAPIUrl
+	case invalidFileUrl
 }
 
 final class FileDownloader {
 
-	class func download(_ filePath: String, completion: @escaping (Error?, Data?) -> Void) {
-		let urlString = getBasePath()
-		guard let url = URL(string: "\(urlString)\(filePath)") else {
-			completion(FileDownloaderError.invalidAPIUrl, nil)
+	class func downloadBlockListVersion(completion: @escaping (Error?, Any?) -> Void) {
+		FileDownloader.loadJSONFile(FileDownloader.getVersionPath()) { (err, data) in
+			completion(err, data)
+		}
+	}
+
+	private class func loadJSONFile(_ url: String, completion: @escaping (Error?, Any?) -> Void) {
+		guard let url = URL(string: url) else {
+			completion(FileDownloaderError.invalidFileUrl, nil)
 			return
 		}
 		Alamofire.request(url)
@@ -145,15 +192,35 @@ final class FileDownloader {
 					completion(response.result.error, nil)
 					return
 				}
+				completion(nil, response.result.value)
+		}
+	}
+
+	class func downloadBlockList(_ fileName: String, completion: @escaping (Error?, Data?) -> Void) {
+		let urlString = "\(FileDownloader.getBasePath())/\(fileName)"
+		guard let url = URL(string: urlString ) else {
+			completion(FileDownloaderError.invalidFileUrl, nil)
+			return
+		}
+		
+		Alamofire.request(url)
+			.validate()
+			.response { response in
+				if let err = response.error {
+					// TODO: Integrate proper logging
+					print("File downloading is failed: \(err)")
+					completion(err, nil)
+					return
+				}
 				completion(nil, response.data)
 		}
 	}
 
 	class func getBasePath() -> String {
 		#if PROD
-			return "http://cdn.ghostery.com/update/"
+			return "https://cdn.ghostery.com/update/safari"
 		#else
-			return "http://staging-cdn.ghostery.com/update"
+			return "https://staging-cdn.ghostery.com/update/safari"
 		#endif
 	}
 

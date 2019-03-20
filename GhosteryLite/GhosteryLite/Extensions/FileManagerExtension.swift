@@ -33,6 +33,17 @@ extension FileManager {
 		}
 	}
 
+	func writeFile(_ data: Data, name fileName: String, in directory: URL?) {
+		FileManager.default.createDirectoryIfNotExists(directory, withIntermediateDirectories: true)
+		
+		let fileURL = directory?.appendingPathComponent("\(fileName)")
+		if FileManager.default.createFile(atPath: (fileURL?.path)!, contents: data, attributes: nil) {
+			print("File is written successfully")
+		} else {
+			print("Unable to write the data to file")
+		}
+	}
+
 	public func createDirectoryIfNotExists(_ url: URL?, withIntermediateDirectories hasIntermediateDir: Bool) {
 		if !FileManager.default.fileExists(atPath: (url?.path)!) {
 			do {

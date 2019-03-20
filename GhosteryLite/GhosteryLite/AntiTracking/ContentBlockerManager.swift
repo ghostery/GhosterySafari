@@ -1,5 +1,5 @@
 //
-//  AntiTrackingManager.swift
+//  ContentBlockerManager.swift
 //  GhosteryLite
 //
 //  Created by Sahakyan on 8/9/18.
@@ -10,9 +10,9 @@ import Foundation
 import SafariServices
 import RealmSwift
 
-class AntiTrackingManager {
+class ContentBlockerManager {
 
-	static let shared = AntiTrackingManager()
+	static let shared = ContentBlockerManager()
 
 	private var paused: Bool = false
 
@@ -68,6 +68,10 @@ class AntiTrackingManager {
 		Realm.Configuration.defaultConfiguration.fileURL = realmPath
 		let _ = try! Realm()
 		GlobalConfigManager.shared.createConfigIfDoesNotExist()
+	}
+
+	func updateBlockLists() {
+		BlockListFileManager.shared.updateBlockLists()
 	}
 
 	func isPaused() -> Bool {
@@ -141,16 +145,6 @@ class AntiTrackingManager {
 			self.reloadContentBlocker()
 		})
 	}
-
-//	func trustDomainAndReload(domain: String) {
-//		TrustedSitesDataSource.shared.addDomain(domain)
-//		loadDummyCB()
-//	}
-//
-//	func untrustDomainAndReload(domain: String) {
-//		TrustedSitesDataSource.shared.removeDomain(domain)
-//		self.reloadContentBlocker()
-//	}
 
 	func isTrustedDomain(domain: String) -> Bool {
 		return TrustedSitesDataSource.shared.isTrusted(domain)
@@ -246,20 +240,7 @@ class AntiTrackingManager {
 		SFContentBlockerManager.reloadContentBlocker(withIdentifier: Constants.SafariContentBlockerID, completionHandler: { (error) in
 			if error != nil {
 				print("Reloading Content Blocker is failed ---- \(error)")
-//				DispatchQueue.main.async {
-//					let x = NSAlert()
-//					x.messageText = error.debugDescription
-//					x.addButton(withTitle: "OK")
-//					x.runModal()
-//				}
-				
 			} else {
-//				DispatchQueue.main.async {
-//				let x = NSAlert()
-//				x.messageText = "Success"
-//				x.addButton(withTitle: "OK")
-//				x.runModal()
-//				}
 				print("Success!")
 			}
 		})

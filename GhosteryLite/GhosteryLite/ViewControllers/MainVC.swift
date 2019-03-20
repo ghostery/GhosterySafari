@@ -24,7 +24,7 @@ class MainVC: NSViewController {
         }
 //		TelemetryService.shared.sendSignal()
 
-		AntiTrackingManager.shared.subscribeForNotifications()
+		ContentBlockerManager.shared.subscribeForNotifications()
 		self.liteLabel.font = NSFont(name: "BebasNeueBook", size: 24)
     }
     

@@ -70,7 +70,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.preferredContentSize = NSMakeSize(186, 302)
-		let _ = AntiTrackingManager.shared
+		let _ = ContentBlockerManager.shared
 		setupComponents()
 	}
 
@@ -79,7 +79,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		TelemetryManager.shared.sendSignal(.engage, ghostrank: 2)
 		self.view.layer?.backgroundColor = NSColor(named: NSColor.Name("backgroundColor"))?.cgColor
 		urlLabel?.stringValue = self.currentDomain ?? ""
-		if AntiTrackingManager.shared.isDefaultConfigEnabled() {
+		if ContentBlockerManager.shared.isDefaultConfigEnabled() {
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
 		} else {
@@ -93,13 +93,13 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		self.isPaused = sender.state.rawValue == 1
 		if sender.state.rawValue == 1 {
 			self.pauseButton.toolTip = Strings.ResumeTooltip
-			AntiTrackingManager.shared.pause()
+			ContentBlockerManager.shared.pause()
 			DistributedNotificationCenter.default().post(name: Constants.PauseNotificationName, object: Constants.SafariPopupExtensionID)
 			self.trustSiteButton.isEnabled = false
 			self.showPausedPopup()
 		} else {
 			self.pauseButton.toolTip = Strings.PauseTooltip
-			AntiTrackingManager.shared.resume()
+			ContentBlockerManager.shared.resume()
 			DistributedNotificationCenter.default().post(name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
 			self.trustSiteButton.isEnabled = true
 			self.showResumedPopup()
@@ -109,11 +109,11 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBAction func trustButtonPressed(sender: NSButton) {
 		if let x = self.currentDomain {
 			if sender.state.rawValue == 0 {
-				AntiTrackingManager.shared.untrustDomain(domain: x)
+				ContentBlockerManager.shared.untrustDomain(domain: x)
 				DistributedNotificationCenter.default().post(name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
 				self.showUntrustedPopup()
 			} else {
-				AntiTrackingManager.shared.trustDomain(domain: x)
+				ContentBlockerManager.shared.trustDomain(domain: x)
 				DistributedNotificationCenter.default().post(name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
 				self.showTrustedPopup()
 			}
@@ -129,7 +129,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		if sender.state.rawValue == 1{
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
 			DistributedNotificationCenter.default().post(name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
-			AntiTrackingManager.shared.switchToDefault()
+			ContentBlockerManager.shared.switchToDefault()
 		} else {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
 		}
@@ -139,7 +139,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		if sender.state.rawValue == 1 {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 0)
 			DistributedNotificationCenter.default().post(name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
-			AntiTrackingManager.shared.switchToCustom()
+			ContentBlockerManager.shared.switchToCustom()
         } else {
             self.customConfigRadio.state = NSControl.StateValue(rawValue: 1)
         }
@@ -182,7 +182,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
 	private func updateTrustButtonState() {
 		if let d = self.currentDomain {
-			if AntiTrackingManager.shared.isTrustedDomain(domain: d) {
+			if ContentBlockerManager.shared.isTrustedDomain(domain: d) {
 				self.trustSiteButton?.state = NSControl.StateValue(rawValue: 1)
 			} else {
 				self.trustSiteButton?.state = NSControl.StateValue(rawValue: 0)

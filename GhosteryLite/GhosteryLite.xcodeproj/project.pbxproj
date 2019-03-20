@@ -46,8 +46,7 @@
 		4F3049A52119F4FC00BA3961 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A22119F4FC00BA3961 /* DictionaryExtensions.swift */; };
 		4F3049A62119F4FC00BA3961 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A32119F4FC00BA3961 /* URLExtension.swift */; };
 		4F3049AF211B36E800BA3961 /* BlockListFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */; };
-		4F3049B4211C6D3200BA3961 /* AntiTrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* AntiTrackingManager.swift */; };
-		4F3049B6211C721D00BA3961 /* BlockListFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */; };
+		4F3049B4211C6D3200BA3961 /* ContentBlockerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* ContentBlockerManager.swift */; };
 		4F51EDC82191A0C60032DCDF /* TrustButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F51EDC72191A0C60032DCDF /* TrustButtonCell.swift */; };
 		4F83ABAE2138583A00BC76E4 /* TrustedSitesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */; };
 		4F83ABAF2138583A00BC76E4 /* TrustedSitesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */; };
@@ -61,11 +60,10 @@
 		4F931A1521259BEC00AF4226 /* DomainConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A1421259BEC00AF4226 /* DomainConfigRepository.swift */; };
 		4F931A172125AD6500AF4226 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A162125AD6500AF4226 /* RealmRepository.swift */; };
 		4F931A192125ADD500AF4226 /* CrudRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A182125ADD500AF4226 /* CrudRepository.swift */; };
-		4F931A1A2125C4A700AF4226 /* DomainConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A1421259BEC00AF4226 /* DomainConfigRepository.swift */; };
 		4F931A1B2125CB1900AF4226 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A162125AD6500AF4226 /* RealmRepository.swift */; };
 		4F931A1C2125CB1D00AF4226 /* CrudRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A182125ADD500AF4226 /* CrudRepository.swift */; };
 		4F931A1D2125D3DE00AF4226 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A32119F4FC00BA3961 /* URLExtension.swift */; };
-		4F931A1E2125D3F500AF4226 /* AntiTrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* AntiTrackingManager.swift */; };
+		4F931A1E2125D3F500AF4226 /* ContentBlockerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* ContentBlockerManager.swift */; };
 		4F931A1F2125D45400AF4226 /* DomainConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A1421259BEC00AF4226 /* DomainConfigRepository.swift */; };
 		4F931A202125DA4100AF4226 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A162125AD6500AF4226 /* RealmRepository.swift */; };
 		4F931A212125DA5200AF4226 /* BlockListFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */; };
@@ -75,7 +73,6 @@
 		4F931A272126C95B00AF4226 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A242126C8C900AF4226 /* Constants.swift */; };
 		4F931A292126E06000AF4226 /* DomainConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */; };
 		4F931A2A2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */; };
-		4F931A2B2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */; };
 		4F9CF8D8215A9367005B1C1B /* GhosteryLite.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4F9CF8D7215A9367005B1C1B /* GhosteryLite.xcconfig */; };
 		4F9CF8E1215BCD6A005B1C1B /* TelemetryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9CF8E0215BCD6A005B1C1B /* TelemetryService.swift */; };
 		4F9CF8E3215BCD97005B1C1B /* TelemetryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9CF8E2215BCD97005B1C1B /* TelemetryManager.swift */; };
@@ -95,10 +92,8 @@
 		4FFD833A212B4FF90038149F /* BlockListAssets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD8337212B4FF90038149F /* BlockListAssets */; };
 		4FFD8349212B5D430038149F /* GlobalConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */; };
 		4FFD834A212B5D430038149F /* GlobalConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */; };
-		4FFD834B212B5D430038149F /* GlobalConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */; };
 		4FFD834D212B602B0038149F /* GlobalConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */; };
 		4FFD834E212B602B0038149F /* GlobalConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */; };
-		4FFD834F212B602B0038149F /* GlobalConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */; };
 		4FFD8351212C6C740038149F /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8350212C6C740038149F /* WindowController.swift */; };
 		D146948444D48F136412C66E /* Pods_SafariExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6E6A3A7F09CA6028BBC263 /* Pods_SafariExtension.framework */; };
 		F124157D8C4330395AE8B7CF /* Pods_GhosteryLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E882B4CED52B6C3590AA9F5D /* Pods_GhosteryLite.framework */; };
@@ -184,7 +179,7 @@
 		4F3049A22119F4FC00BA3961 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
 		4F3049A32119F4FC00BA3961 /* URLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListFileManager.swift; sourceTree = "<group>"; };
-		4F3049B3211C6D3200BA3961 /* AntiTrackingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiTrackingManager.swift; sourceTree = "<group>"; };
+		4F3049B3211C6D3200BA3961 /* ContentBlockerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerManager.swift; sourceTree = "<group>"; };
 		4F51EDC72191A0C60032DCDF /* TrustButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustButtonCell.swift; sourceTree = "<group>"; };
 		4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSitesRepository.swift; sourceTree = "<group>"; };
 		4F83ABB02138586A00BC76E4 /* TrustedSitesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSitesDataSource.swift; sourceTree = "<group>"; };
@@ -389,7 +384,7 @@
 				4FFD831A212B4ADE0038149F /* Resources */,
 				4F4BE2DF212595AE00FEE71E /* ConfigStorage */,
 				4F3049AB211B368000BA3961 /* BlockListManagement */,
-				4F3049B3211C6D3200BA3961 /* AntiTrackingManager.swift */,
+				4F3049B3211C6D3200BA3961 /* ContentBlockerManager.swift */,
 			);
 			path = AntiTracking;
 			sourceTree = "<group>";
@@ -729,7 +724,7 @@
 				1E597C422134407F0098631F /* HomeVC.swift in Sources */,
 				1E14B73F2136BB6F00E28C38 /* HelpVC.swift in Sources */,
 				1E597C5321359D000098631F /* HUDView.swift in Sources */,
-				4F3049B4211C6D3200BA3961 /* AntiTrackingManager.swift in Sources */,
+				4F3049B4211C6D3200BA3961 /* ContentBlockerManager.swift in Sources */,
 				4F931A192125ADD500AF4226 /* CrudRepository.swift in Sources */,
 				4FFD834D212B602B0038149F /* GlobalConfigDataSource.swift in Sources */,
 				1E14B754213819A800E28C38 /* TrustedSitesVC.swift in Sources */,
@@ -757,7 +752,7 @@
 				4F9CF8E7215E57B6005B1C1B /* TelemetryManager.swift in Sources */,
 				4F30493C2118983D00BA3961 /* SafariExtensionViewController.swift in Sources */,
 				4F30493A2118983D00BA3961 /* SafariExtensionHandler.swift in Sources */,
-				4F931A1E2125D3F500AF4226 /* AntiTrackingManager.swift in Sources */,
+				4F931A1E2125D3F500AF4226 /* ContentBlockerManager.swift in Sources */,
 				4F91F3222136DF0600056FDE /* PageLatencyDataSource.swift in Sources */,
 				4F83ABB22138586A00BC76E4 /* TrustedSitesDataSource.swift in Sources */,
 				4F931A1F2125D45400AF4226 /* DomainConfigRepository.swift in Sources */,
@@ -781,13 +776,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F931A2B2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */,
 				4FFD8316212B36BC0038149F /* FileManagerExtension.swift in Sources */,
 				4F931A1B2125CB1900AF4226 /* RealmRepository.swift in Sources */,
-				4FFD834B212B5D430038149F /* GlobalConfigRepository.swift in Sources */,
-				4F931A1A2125C4A700AF4226 /* DomainConfigRepository.swift in Sources */,
-				4F3049B6211C721D00BA3961 /* BlockListFileManager.swift in Sources */,
-				4FFD834F212B602B0038149F /* GlobalConfigDataSource.swift in Sources */,
 				4F931A272126C95B00AF4226 /* Constants.swift in Sources */,
 				4F90DD83214BDE0900E8BA6D /* WhiteListFileManager.swift in Sources */,
 				4F3049572118985C00BA3961 /* ContentBlockerRequestHandler.swift in Sources */,
@@ -1027,7 +1017,7 @@
 			baseConfigurationReference = B132EB5ADA4E362C9953CF32 /* Pods-SafariExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				INFOPLIST_FILE = SafariExtension/Info.plist;
@@ -1177,7 +1167,7 @@
 			baseConfigurationReference = 45465B015FB0387B14C76708 /* Pods-SafariExtension.beta.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				INFOPLIST_FILE = SafariExtension/Info.plist;

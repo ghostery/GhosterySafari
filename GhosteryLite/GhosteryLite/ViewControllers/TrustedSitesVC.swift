@@ -50,7 +50,7 @@ class TrustedSitesVC: NSViewController {
 		let regEx = try? NSRegularExpression(pattern: "(^https?://)?(www\\.)?", options: .caseInsensitive)
 		if let newStr = regEx?.stringByReplacingMatches(in: str, options: [], range: NSMakeRange(0, str.count), withTemplate: "") {
 			self.errorMessageLabel.isHidden = true
-			AntiTrackingManager.shared.trustDomain(domain: newStr)
+			ContentBlockerManager.shared.trustDomain(domain: newStr)
 			updateData()
 		}
 		trustedSiteTextField.stringValue = ""
@@ -139,7 +139,7 @@ extension TrustedSitesVC : NSCollectionViewDataSource {
 extension TrustedSitesVC: TrustedSiteDelegate {
 
 	func trustedSiteDidRemove(indexPath: IndexPath, url: String) {
-		AntiTrackingManager.shared.untrustDomain(domain: self.trustedSites[indexPath.item].name ?? "")
+		ContentBlockerManager.shared.untrustDomain(domain: self.trustedSites[indexPath.item].name ?? "")
 		updateData()
 	}
 }

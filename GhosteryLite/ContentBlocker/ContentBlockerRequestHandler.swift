@@ -11,7 +11,7 @@ import Foundation
 class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
 
     func beginRequest(with context: NSExtensionContext) {
-//		let rules = AntiTrackingManager.shared.contentBlokerRules()
+//		let rules = ContentBlockerManager.shared.contentBlokerRules()
 
         let item = NSExtensionItem()
 		

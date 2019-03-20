@@ -87,19 +87,19 @@ class SettingsVC: NSViewController {
 		}
 		if let m = modifiedCat {
 			let _ = GlobalConfigManager.shared.changeCategoryStatus(m, status: sender.state.rawValue == 0 ? false : true)
-			AntiTrackingManager.shared.reloadContentBlocker()
+			ContentBlockerManager.shared.reloadContentBlocker()
 			self.savedBox.isHidden = false
 		}
 	}
 
 	@IBAction func defaultSelected(_ sender: Any) {
-		AntiTrackingManager.shared.switchToDefault()
+		ContentBlockerManager.shared.switchToDefault()
 		self.customRadio.state = NSControl.StateValue(rawValue: 0)
 		self.groupBox.isHidden = true
 	}
 
 	@IBAction func customSelected(_ sender: Any) {
-		AntiTrackingManager.shared.switchToCustom()
+		ContentBlockerManager.shared.switchToCustom()
 		self.defaultRadio.state = NSControl.StateValue(rawValue: 0)
 		self.groupBox.isHidden = false
 		self.savedBox.isHidden = true
@@ -141,7 +141,7 @@ class SettingsVC: NSViewController {
 
 	@objc
 	private func updateRadioBoxesState() {
-		if AntiTrackingManager.shared.isDefaultConfigEnabled() {
+		if ContentBlockerManager.shared.isDefaultConfigEnabled() {
 			self.defaultRadio.state = NSControl.StateValue(rawValue: 1)
 			self.customRadio.state = NSControl.StateValue(rawValue: 0)
 			self.groupBox.isHidden = true

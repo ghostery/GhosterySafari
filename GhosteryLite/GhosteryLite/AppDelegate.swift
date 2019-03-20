@@ -36,6 +36,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		DistributedNotificationCenter.default().addObserver(self,
 															selector: #selector(self.updateConfigState),
 															name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
+		ContentBlockerManager.shared.updateBlockLists()
 	}
 
 	func applicationWillTerminate(_ aNotification: Notification) {
@@ -58,7 +59,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	@objc
 	func updateConfigState() {
 		if let m = self.protectionConfigMenu?.submenu {
-			if AntiTrackingManager.shared.isDefaultConfigEnabled() {
+			if ContentBlockerManager.shared.isDefaultConfigEnabled() {
 				m.items[0].state = NSControl.StateValue(rawValue: 1)
 				m.items[1].state = NSControl.StateValue(rawValue: 0)
 			} else {
@@ -72,7 +73,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 extension NSApplication {
 	@IBAction func defaultConfigSelected(_ sender: NSMenuItem) {
 		print("Default")
-		AntiTrackingManager.shared.switchToDefault()
+		ContentBlockerManager.shared.switchToDefault()
 		if let m = sender.parent?.submenu {
 			m.items[1].state = NSControl.StateValue(rawValue: 0)
 			sender.state = NSControl.StateValue(rawValue: 1)
@@ -81,7 +82,7 @@ extension NSApplication {
 
 	@IBAction func customConfigSelected(_ sender: NSMenuItem) {
 		print("Custom")
-		AntiTrackingManager.shared.switchToCustom()
+		ContentBlockerManager.shared.switchToCustom()
 		if let m = sender.parent?.submenu {
 			m.items[0].state = NSControl.StateValue(rawValue: 0)
 			sender.state = NSControl.StateValue(rawValue: 1)
