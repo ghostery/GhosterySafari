@@ -11,8 +11,6 @@ import Foundation
 class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
 
     func beginRequest(with context: NSExtensionContext) {
-//		let rules = ContentBlockerManager.shared.contentBlokerRules()
-
         let item = NSExtensionItem()
 		
 		let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
@@ -20,13 +18,9 @@ class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
 		
 		let p = assetsFolder?.appendingPathComponent("currentBlockList.json")
 
-		//		let p = categoryAssetsFolder?.appendingPathComponent("blockerList.json")
-
-//		let attachment = NSItemProvider(contentsOf: Bundle.main.url(forResource: "cat_audio_video_player", withExtension: "json"))!
 		let attachment = NSItemProvider(contentsOf: p)
-		item.attachments = [attachment] as! [NSItemProvider]
+		item.attachments = [attachment] as? [NSItemProvider]
 
-//        item.attachments = rules
 		context.completeRequest(returningItems: [item], completionHandler: {
 			(expired) -> Void in
 
