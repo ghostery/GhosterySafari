@@ -323,7 +323,7 @@
 				1E597C272133F79F0098631F /* ViewControllers */,
 				4F931A232126C8AF00AF4226 /* Common */,
 				4F3049A02119F4FC00BA3961 /* Extensions */,
-				4F30498A2119F46700BA3961 /* AntiTracking */,
+				4F30498A2119F46700BA3961 /* TrackerBlocking */,
 				4F3049202118982600BA3961 /* AppDelegate.swift */,
 				4F3049242118982700BA3961 /* Assets.xcassets */,
 				4F3049262118982700BA3961 /* Main.storyboard */,
@@ -377,7 +377,7 @@
 			path = ContentBlocker;
 			sourceTree = "<group>";
 		};
-		4F30498A2119F46700BA3961 /* AntiTracking */ = {
+		4F30498A2119F46700BA3961 /* TrackerBlocking */ = {
 			isa = PBXGroup;
 			children = (
 				4FFD831A212B4ADE0038149F /* Resources */,
@@ -385,7 +385,7 @@
 				4F3049AB211B368000BA3961 /* BlockListManagement */,
 				4F3049B3211C6D3200BA3961 /* ContentBlockerManager.swift */,
 			);
-			path = AntiTracking;
+			path = TrackerBlocking;
 			sourceTree = "<group>";
 		};
 		4F3049A02119F4FC00BA3961 /* Extensions */ = {
