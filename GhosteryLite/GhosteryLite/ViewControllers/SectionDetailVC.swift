@@ -35,11 +35,11 @@ class SectionDetailVC: NSViewController {
     }
     
     private func initViewControllers() {
-        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
         
         for menuItem in MenuItem.toArray() {
             let storyboardId = menuItem.storyboardId
-            let identifier = NSStoryboard.SceneIdentifier(rawValue: storyboardId)
+            let identifier = storyboardId
             if let viewController = storyboard.instantiateController(withIdentifier: identifier) as? NSViewController {
                 viewControllers[storyboardId] = viewController
                 

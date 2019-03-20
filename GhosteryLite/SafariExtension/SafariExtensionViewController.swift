@@ -61,7 +61,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
             DispatchQueue.main.async {
                 self.pageLatencyValueLabel?.stringValue = PageLatencyDataSource.shared.latencyFor(self.currentUrl ?? "")
                 let params = PageLatencyDataSource.shared.latencyImageAndOffset(self.currentUrl ?? "")
-                self.pageLatencyImage?.image = NSImage(named: NSImage.Name(params.0))
+                self.pageLatencyImage?.image = NSImage(named: params.0)
                 self.secondsLabelLeftOffset?.constant = params.1
             }
         }
@@ -77,7 +77,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	override func viewWillAppear() {
 		super.viewWillAppear()
 		TelemetryManager.shared.sendSignal(.engage, ghostrank: 2)
-		self.view.layer?.backgroundColor = NSColor(named: NSColor.Name("backgroundColor"))?.cgColor
+		self.view.layer?.backgroundColor = NSColor(named: "backgroundColor")?.cgColor
 		urlLabel?.stringValue = self.currentDomain ?? ""
 		if ContentBlockerManager.shared.isDefaultConfigEnabled() {
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
@@ -202,9 +202,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
 	private func setupComponents() {
 		let defaultStr = Strings.DefaultConfigTitle // "Default Protection"
-		self.defaultConfigRadio.attributedTitle = defaultStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(named: NSColor.Name("radioTextColor")) ?? NSColor.white)
+		self.defaultConfigRadio.attributedTitle = defaultStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(named: "radioTextColor") ?? NSColor.white)
 		let customStr = Strings.CustomConfigTitle // "Custom Protection"
-		self.customConfigRadio.attributedTitle = customStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(named: NSColor.Name("radioTextColor")) ?? NSColor.white)
+		self.customConfigRadio.attributedTitle = customStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(named: "radioTextColor") ?? NSColor.white)
 		self.customConfigInfo.toolTip = Strings.CustomConfigInfoTooltip
 		self.liteLabel.font = NSFont(name: "BebasNeueBook", size: 18)
 		self.urlLabel.font = NSFont(name: "OpenSans-Regular", size: 11)
@@ -224,12 +224,12 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		self.trustSiteButton?.attributedTitle = Strings.TrustActionTitle.attributedString(withTextAlignment: .center,
 														fontName: "OpenSans-SemiBold",
 														fontSize: 11.0,
-														fontColor: NSColor(named: NSColor.Name("trustBtnTitleColor")) ?? NSColor.black,
+														fontColor: NSColor(named: "trustBtnTitleColor") ?? NSColor.black,
 														lineSpacing: 0)
 		self.trustSiteButton?.attributedAlternateTitle = Strings.UntrustActionTitle.attributedString(withTextAlignment: .center,
 															fontName: "OpenSans-SemiBold",
 															fontSize: 11.0,
-															fontColor:NSColor(named: NSColor.Name("untrustBtnTitleColor")) ?? NSColor.white,
+															fontColor:NSColor(named: "untrustBtnTitleColor") ?? NSColor.white,
 															lineSpacing: 0)
 
 		// TODO: refactor the method, not to call press action
@@ -274,7 +274,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 																   fontSize: 11.0,
 																   fontColor: NSColor(rgb: fontColor), isUnderline: true)
 		updateReloadPopupViewVisibility(isHidden: false)
-		self.popupCloseButton.image = NSImage(named: NSImage.Name(image))
+		self.popupCloseButton.image = NSImage(named: image)
 	}
     
     private func updateReloadPopupViewVisibility(isHidden: Bool) {

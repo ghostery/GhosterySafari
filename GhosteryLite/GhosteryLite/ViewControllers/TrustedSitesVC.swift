@@ -71,7 +71,7 @@ class TrustedSitesVC: NSViewController {
 		trustSiteBtn.attributedTitle = Strings.TrustedSitesPanelTrustSiteButtonTitle.attributedString(withTextAlignment: .center,
 																									  fontName: "Roboto-Medium",
 																									  fontSize: 12.0,
-																									  fontColor: NSColor(named: NSColor.Name("trustBtnText")) ?? NSColor.black)
+																									  fontColor: NSColor(named: "trustBtnText") ?? NSColor.black)
 		errorMessageLabel.font = NSFont(name: "Roboto-Regular", size: 10)
 		errorMessageLabel.stringValue = Strings.TrustedSitesPanelErrorMessage
 		trustSiteBtn.attributedAlternateTitle = Strings.TrustedSitesPanelTrustSiteButtonTitle.attributedString(withTextAlignment: .center, fontName: "Roboto-Medium", fontSize: 12.0, fontColor: NSColor(rgb: 0xffffff))
@@ -155,7 +155,7 @@ extension TrustedSitesVC : NSCollectionViewDelegate {
 
 extension TrustedSitesVC: NSTextFieldDelegate {
 
-	override func controlTextDidChange(_ obj: Notification) {
+	func controlTextDidChange(_ obj: Notification) {
 		self.updateTrustBtnState(trustedSiteTextField.stringValue != "")
 	}
 }

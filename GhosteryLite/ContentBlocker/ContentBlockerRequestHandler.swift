@@ -24,7 +24,7 @@ class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
 
 //		let attachment = NSItemProvider(contentsOf: Bundle.main.url(forResource: "cat_audio_video_player", withExtension: "json"))!
 		let attachment = NSItemProvider(contentsOf: p)
-		item.attachments = [attachment]
+		item.attachments = [attachment] as! [NSItemProvider]
 
 //        item.attachments = rules
 		context.completeRequest(returningItems: [item], completionHandler: {
