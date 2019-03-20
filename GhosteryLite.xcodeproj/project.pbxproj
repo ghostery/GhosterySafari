@@ -39,7 +39,6 @@
 		4F3049442118983D00BA3961 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049432118983D00BA3961 /* ToolbarItemIcon.pdf */; };
 		4F3049482118983D00BA3961 /* SafariExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4F3049342118983D00BA3961 /* SafariExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4F3049522118985C00BA3961 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3049362118983D00BA3961 /* Cocoa.framework */; };
-		4F3049552118985C00BA3961 /* blockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049542118985C00BA3961 /* blockerList.json */; };
 		4F3049572118985C00BA3961 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049562118985C00BA3961 /* ContentBlockerRequestHandler.swift */; };
 		4F30495C2118985C00BA3961 /* ContentBlocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4F3049512118985C00BA3961 /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4F3049A42119F4FC00BA3961 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A12119F4FC00BA3961 /* ArrayExtensions.swift */; };
@@ -170,7 +169,6 @@
 		4F3049432118983D00BA3961 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		4F3049452118983D00BA3961 /* SafariExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SafariExtension.entitlements; sourceTree = "<group>"; };
 		4F3049512118985C00BA3961 /* ContentBlocker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentBlocker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F3049542118985C00BA3961 /* blockerList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = blockerList.json; sourceTree = "<group>"; };
 		4F3049562118985C00BA3961 /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
 		4F3049582118985C00BA3961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3049592118985C00BA3961 /* ContentBlocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContentBlocker.entitlements; sourceTree = "<group>"; };
@@ -369,7 +367,6 @@
 		4F3049532118985C00BA3961 /* ContentBlocker */ = {
 			isa = PBXGroup;
 			children = (
-				4F3049542118985C00BA3961 /* blockerList.json */,
 				4F3049562118985C00BA3961 /* ContentBlockerRequestHandler.swift */,
 				4F3049582118985C00BA3961 /* Info.plist */,
 				4F3049592118985C00BA3961 /* ContentBlocker.entitlements */,
@@ -612,7 +609,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F3049552118985C00BA3961 /* blockerList.json in Resources */,
 				4FFD833A212B4FF90038149F /* BlockListAssets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

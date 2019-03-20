@@ -27,7 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		// TODO: Refactor UserDefaults calls in sentralized Pref class
+		// TODO: Refactor UserDefaults calls in centralized Pref class
 		UserDefaults.standard.set(50, forKey: "NSInitialToolTipDelay")
 		UserDefaults.standard.synchronize()
 		DistributedNotificationCenter.default().addObserver(self,

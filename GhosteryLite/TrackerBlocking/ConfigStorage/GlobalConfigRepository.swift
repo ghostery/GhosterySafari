@@ -50,7 +50,7 @@ class GlobalConfigRepository: RealmRepository<GlobalConfigObject, String> {
 
 	public func globalConfig() -> GlobalConfigObject? {
 		let list: [GlobalConfigObject] = self.findAll()
-		return list.count > 0 ? list[0] as? GlobalConfigObject : nil
+		return list.count > 0 ? list[0] : nil
 	}
 
 	public func updateCategoryStatus(type: CategoryType, isOn: Bool) {

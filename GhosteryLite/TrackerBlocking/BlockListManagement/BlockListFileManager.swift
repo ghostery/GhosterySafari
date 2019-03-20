@@ -57,16 +57,12 @@ final class BlockListFileManager {
 	private static let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
 	private static let assetsFolder: URL? = BlockListFileManager.groupStorageFolder?.appendingPathComponent("BlockListAssets")
 	private static let categoryAssetsFolder: URL? = BlockListFileManager.assetsFolder?.appendingPathComponent("BlockListByCategory")
-
-	private static let ghosteryBlockListFileName = "ghostery_content_blocker"
-
 	private static let blockListVersionKey = "safariContentBlockerVersion"
 	private static let categoryBlockListVersionKey = "safariCategoryVersion"
 
 	static let shared = BlockListFileManager()
 
-	init() {
-	}
+	init() {}
 
 	func updateBlockLists() {
 		FileDownloader.downloadBlockListVersion { (err, json) in
@@ -123,6 +119,7 @@ final class BlockListFileManager {
 				print("\(fileName) file download is failed: \(e)")
 			}
 			if let d = data {
+				print("Downloading \(fileName)")
 				FileManager.default.writeFile(d, name: "\(fileName).json", in: BlockListFileManager.assetsFolder)
 			}
 		}
@@ -145,11 +142,10 @@ final class BlockListFileManager {
 				}
 			}
 			let r = WhiteListFileManager.shared.getActiveWhitelistRules()
-			let finalJSON: [[String: Any]] = (blockListJSON ?? []) + (r ?? [])
+			let finalJSON: [[String: Any]] = blockListJSON + (r ?? [])
 
 			let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
 			let assetsFolder: URL? = groupStorageFolder?.appendingPathComponent("BlockListAssets")
-			let categoryAssetsFolder: URL? = assetsFolder?.appendingPathComponent("BlockListByCategory")
 			let currentBlockList = assetsFolder?.appendingPathComponent("currentBlockList.json")
 			FileManager.default.createDirectoryIfNotExists(assetsFolder, withIntermediateDirectories: true)
 			if let url = currentBlockList {
@@ -161,11 +157,6 @@ final class BlockListFileManager {
 			}
 		}
 	}
-
-	func blockListURL(_ category: CategoryType) -> URL? {
-		return Bundle.main.url(forResource: "blockerList", withExtension: "json")
-	}
-
 }
 
 public enum FileDownloaderError: Error {
@@ -208,7 +199,7 @@ final class FileDownloader {
 			.response { response in
 				if let err = response.error {
 					// TODO: Integrate proper logging
-					print("File downloading is failed: \(err)")
+					print("File downloading failed: \(err)")
 					completion(err, nil)
 					return
 				}

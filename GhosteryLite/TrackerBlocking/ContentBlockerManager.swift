@@ -239,26 +239,10 @@ class ContentBlockerManager {
 	private func reloadCBExtension() {
 		SFContentBlockerManager.reloadContentBlocker(withIdentifier: Constants.SafariContentBlockerID, completionHandler: { (error) in
 			if error != nil {
-				print("Reloading Content Blocker is failed ---- \(error)")
+				print("Reloading Content Blocker failed ---- \(error.debugDescription)")
 			} else {
 				print("Success!")
 			}
 		})
-	}
-
-	func contentBlokerRules() -> [NSItemProvider] {
-		var resultRules = [NSItemProvider]()
-		if let config =  GlobalConfigManager.shared.getCurrentConfig() {
-			let blockedCategories = config.blockedCategories
-			for i in blockedCategories {
-				if let c = CategoryType(rawValue: i),
-					let rulesURL = BlockListFileManager.shared.blockListURL(c),
-					let ip = NSItemProvider(contentsOf: rulesURL) {
-						return [ip]
-//						resultRules.append(ip)
-				}
-			}
-		}
-		return resultRules
 	}
 }
