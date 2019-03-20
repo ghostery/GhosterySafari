@@ -73,7 +73,6 @@
 		4F931A272126C95B00AF4226 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A242126C8C900AF4226 /* Constants.swift */; };
 		4F931A292126E06000AF4226 /* DomainConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */; };
 		4F931A2A2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */; };
-		4F9CF8D8215A9367005B1C1B /* GhosteryLite.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4F9CF8D7215A9367005B1C1B /* GhosteryLite.xcconfig */; };
 		4F9CF8E1215BCD6A005B1C1B /* TelemetryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9CF8E0215BCD6A005B1C1B /* TelemetryService.swift */; };
 		4F9CF8E3215BCD97005B1C1B /* TelemetryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9CF8E2215BCD97005B1C1B /* TelemetryManager.swift */; };
 		4F9CF8E7215E57B6005B1C1B /* TelemetryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9CF8E2215BCD97005B1C1B /* TelemetryManager.swift */; };
@@ -522,11 +521,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Ghostery;
 				TargetAttributes = {
 					4F30491C2118982600BA3961 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 1010;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.Mac = {
 								enabled = 1;
@@ -538,6 +538,7 @@
 					};
 					4F3049332118983D00BA3961 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 1010;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.Mac = {
 								enabled = 1;
@@ -549,6 +550,7 @@
 					};
 					4F3049502118985C00BA3961 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 1010;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.Mac = {
 								enabled = 1;
@@ -584,7 +586,6 @@
 			files = (
 				1E14B7592138217800E28C38 /* TrustedSiteCollectionViewItem.xib in Resources */,
 				1E597C3721340D180098631F /* SectionItemCollectionViewItem.xib in Resources */,
-				4F9CF8D8215A9367005B1C1B /* GhosteryLite.xcconfig in Resources */,
 				4FFD8338212B4FF90038149F /* BlockListAssets in Resources */,
 				4F3049252118982700BA3961 /* Assets.xcassets in Resources */,
 				1E597C4021341ED90098631F /* Fonts in Resources */,
@@ -643,7 +644,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -656,7 +657,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		74A204C459E2813E667F381E /* [CP] Check Pods Manifest.lock */ = {
@@ -957,7 +958,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -985,7 +986,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -1008,7 +1009,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1031,7 +1032,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -1054,7 +1055,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1077,7 +1078,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -1158,7 +1159,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Beta;
 		};
@@ -1181,7 +1182,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Beta;
 		};
@@ -1204,7 +1205,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Beta;
 		};

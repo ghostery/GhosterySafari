@@ -18,10 +18,10 @@ extension String {
         textParagraph.lineSpacing = lineSpacing /*this sets the space BETWEEN lines to 10points*/
         textParagraph.maximumLineHeight = 30.0 /*this sets the MAXIMUM height of the lines to 12points*/
         textParagraph.alignment = textAlignment
-        let attribs: [NSAttributedStringKey : Any] = [NSAttributedStringKey.font : font,
-                                                      NSAttributedStringKey.foregroundColor : textColor,
-                                                      NSAttributedStringKey.paragraphStyle : textParagraph,
-                                                      NSAttributedStringKey.underlineStyle : isUnderline ? NSUnderlineStyle.styleSingle.rawValue : NSUnderlineStyle.styleNone.rawValue]
+        let attribs: [NSAttributedString.Key : Any] = [NSAttributedString.Key.font : font,
+                                                      NSAttributedString.Key.foregroundColor : textColor,
+                                                      NSAttributedString.Key.paragraphStyle : textParagraph,
+                                                      NSAttributedString.Key.underlineStyle : isUnderline ? NSUnderlineStyle.single.rawValue : 0]
         let attrString:NSAttributedString = NSAttributedString.init(string: self, attributes: attribs)
         return attrString
     }

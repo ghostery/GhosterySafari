@@ -22,16 +22,16 @@ class SectionItemCollectionViewItem: NSCollectionViewItem {
             lblTitle.textColor = isSelected ? NSColor.white : NSColor(rgb: 0xa9b9be)
             
             if let item = self.item {
-                self.imgIcon.image = NSImage(named: NSImage.Name(rawValue: item.iconName(active: isSelected)))
+                self.imgIcon.image = NSImage(named: item.iconName(active: isSelected))
             }
             
             // set title text & underline style
             let text = NSMutableAttributedString(string: lblTitle.stringValue)
             if isSelected {
-                let attrs = [NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]
+                let attrs = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
                 text.addAttributes(attrs, range: NSRange(location: 0, length: text.length))
 				if let f = NSFont(name: "RobotoCondensed-Bold", size: 14) {
-					text.addAttributes([NSAttributedStringKey.font : f], range: NSRange(location: 0, length: text.length))
+					text.addAttributes([NSAttributedString.Key.font : f], range: NSRange(location: 0, length: text.length))
 				}
             }
             self.lblTitle.attributedStringValue = text
@@ -49,7 +49,7 @@ class SectionItemCollectionViewItem: NSCollectionViewItem {
         self.item = item
         self.indexPath = indexPath
         self.lblTitle.stringValue = item.title
-        self.imgIcon.image = NSImage(named: NSImage.Name(rawValue: item.iconName(active: false)))
+        self.imgIcon.image = NSImage(named: item.iconName(active: false))
     }
     
 }

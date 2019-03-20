@@ -21,6 +21,6 @@ extension NSColor {
     }
 
     public static func panelTextColor() -> NSColor {
-        return NSColor(named: NSColor.Name("panelText")) ?? NSColor.white
+        return NSColor(named: "panelText") ?? NSColor.white
     }
 }

@@ -170,14 +170,14 @@ class SettingsVC: NSViewController {
 		textParagraph.maximumLineHeight = 30.0
 		textParagraph.alignment = .left
 		let font = NSFont(name: "Roboto-Regular", size: 14) ?? NSFont.systemFont(ofSize: 14)
-		let attribs: [NSAttributedStringKey : Any] = [NSAttributedStringKey.font : font,
-													  NSAttributedStringKey.foregroundColor : textColor,
-													  NSAttributedStringKey.paragraphStyle : textParagraph]
+		let attribs: [NSAttributedString.Key : Any] = [NSAttributedString.Key.font : font,
+													  NSAttributedString.Key.foregroundColor : textColor,
+													  NSAttributedString.Key.paragraphStyle : textParagraph]
 		let str = "\(mainText) \(learnMoreText)"
 		let attrString: NSMutableAttributedString = NSMutableAttributedString.init(string: str, attributes: attribs)
 		let range = NSMakeRange(str.count - learnMoreText.count, Strings.LearnMore.count)
 		if let url = URL(string: urlString) {
-			attrString.addAttribute(NSAttributedStringKey.link, value: url, range: range)
+			attrString.addAttribute(NSAttributedString.Key.link, value: url, range: range)
 		}
 		textField.attributedStringValue = attrString
 	}

@@ -29,13 +29,13 @@ class MainVC: NSViewController {
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-        if segue.identifier?.rawValue == "SectionListVC" {
+        if segue.identifier == "SectionListVC" {
             self.sectionListVC = segue.destinationController as? SectionListVC
             self.sectionListVC?.delegate = self
-        } else if segue.identifier?.rawValue == "SectionDetailVC" {
+        } else if segue.identifier == "SectionDetailVC" {
             self.sectionDetailVC = segue.destinationController as? SectionDetailVC
             self.sectionDetailVC?.delegate = self
-        } else if segue.identifier?.rawValue == "SafariExtensionPromptVC" {
+        } else if segue.identifier == "SafariExtensionPromptVC" {
             self.safariExtensionPromptVC = segue.destinationController as? SafariExtensionPromptVC
             self.safariExtensionPromptVC?.delegate = self
         }
