@@ -130,6 +130,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D2AA0BD2243DA0C0055B6B8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		0D2AA0BF2243DB130055B6B8 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = /Users/christophertino/Documents/htdocs/GhosterySafari/.gitignore; sourceTree = "<absolute>"; };
+		0D2AA0C02243DB160055B6B8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = /Users/christophertino/Documents/htdocs/GhosterySafari/README.md; sourceTree = "<absolute>"; };
+		0D2AA0C12243E4F40055B6B8 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		0D99D75B212EFC44005D107D /* page_performance.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = page_performance.js; sourceTree = "<group>"; };
 		1E14B73721368CD600E28C38 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		1E14B73C21369F5400E28C38 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -299,6 +303,10 @@
 				4F3049352118983D00BA3961 /* Frameworks */,
 				4F30491E2118982600BA3961 /* Products */,
 				35CAFFFF61FA043B926A6BE3 /* Pods */,
+				0D2AA0BF2243DB130055B6B8 /* .gitignore */,
+				0D2AA0BD2243DA0C0055B6B8 /* LICENSE */,
+				0D2AA0C12243E4F40055B6B8 /* Podfile */,
+				0D2AA0C02243DB160055B6B8 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
