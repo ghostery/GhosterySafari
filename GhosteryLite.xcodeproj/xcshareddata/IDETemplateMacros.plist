@@ -5,6 +5,7 @@
 <key>FILEHEADER</key>
 <string>
 // ___FILEBASENAME___
+// ___TARGETNAME___
 //
 // Ghostery Lite for Safari
 // https://www.ghostery.com/

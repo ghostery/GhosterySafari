@@ -23,7 +23,7 @@ class HelpVC: NSViewController {
     
     @IBAction func HelpLinkClicked(_ sender: NSButton) {
         if sender == supportBtn {
-            openURL("https://ghostery.zendesk.com/hc/en-us")
+            openURL("https://www.ghostery.com/support/")
         } else if sender == productsBtn {
             openURL("https://www.ghostery.com/products/")
         } else if sender == blogBtn {

@@ -90,7 +90,7 @@ extension NSApplication {
 	}
 
 	@IBAction func showGhosteryHelp(_ sender: NSMenuItem) {
-		if let url = URL(string: "https://ghostery.zendesk.com/hc/en-us") {
+		if let url = URL(string: "https://www.ghostery.com/support/") {
 			NSWorkspace.shared.open(url)
 		}
 	}
