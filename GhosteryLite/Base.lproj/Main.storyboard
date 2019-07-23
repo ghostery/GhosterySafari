@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -650,11 +650,11 @@
                                     </subviews>
                                     <color key="backgroundColor" name="menuListBackground"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="8vT-27-btR">
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="8vT-27-btR">
                                     <rect key="frame" x="-100" y="-100" width="174" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="eYG-LN-SxE">
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="eYG-LN-SxE">
                                     <rect key="frame" x="234" y="1" width="15" height="143"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -1029,11 +1029,11 @@
                                     <constraint firstAttribute="height" constant="370" id="72B-Pi-CsD"/>
                                     <constraint firstAttribute="width" constant="570" id="We2-1D-Wmp"/>
                                 </constraints>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Lkq-4U-sdJ">
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Lkq-4U-sdJ">
                                     <rect key="frame" x="-100" y="-100" width="568" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="r4a-dy-iJd">
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="r4a-dy-iJd">
                                     <rect key="frame" x="554" y="0.0" width="16" height="370"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -1243,7 +1243,7 @@
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
                                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="79q-5M-au7">
-                                                                        <rect key="frame" x="162" y="7" width="75" height="32"/>
+                                                                        <rect key="frame" x="162" y="7" width="75" height="16"/>
                                                                         <buttonCell key="cell" type="bevel" title="Skip for now" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="2Jl-PZ-VFA">
                                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                             <font key="font" metaFont="cellTitle"/>
@@ -1348,7 +1348,7 @@
         <image name="ghosty-settings" width="119" height="106"/>
         <image name="ghosty-trustedSites" width="119" height="106"/>
         <image name="icon-ghostery" width="57" height="63"/>
-        <image name="info" width="22" height="26"/>
+        <image name="info" width="11" height="13"/>
         <image name="lite-logo" width="31" height="35"/>
         <image name="purple-btn-bg" width="150" height="35"/>
         <image name="savedIcon" width="15" height="15"/>

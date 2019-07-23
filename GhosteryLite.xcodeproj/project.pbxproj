@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D99D75C212EFC44005D107D /* page_performance.js in Resources */ = {isa = PBXBuildFile; fileRef = 0D99D75B212EFC44005D107D /* page_performance.js */; };
+		0DF65C4B22E793850076A4BD /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF65C4A22E793840076A4BD /* Strings.swift */; };
 		17A72D1E0BB616CEEADB5E9E /* Pods_SafariExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B01B319DD3094D9A57BE2C0 /* Pods_SafariExtension.framework */; };
 		1E14B73821368CD600E28C38 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73721368CD600E28C38 /* Strings.swift */; };
 		1E14B73D21369F5400E28C38 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73C21369F5400E28C38 /* StringExtension.swift */; };
@@ -28,7 +29,6 @@
 		1E597C4A2135682B0098631F /* SafariExtensionPromptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C492135682B0098631F /* SafariExtensionPromptVC.swift */; };
 		1E597C5321359D000098631F /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C5221359D000098631F /* HUDView.swift */; };
 		4F0B87212146C91F00C79513 /* DarkMode.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4F0B871F2146C91E00C79513 /* DarkMode.pdf */; };
-		4F0B87222146C91F00C79513 /* Dark.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4F0B87202146C91F00C79513 /* Dark.pdf */; };
 		4F3049212118982600BA3961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049202118982600BA3961 /* AppDelegate.swift */; };
 		4F3049252118982700BA3961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049242118982700BA3961 /* Assets.xcassets */; };
 		4F3049282118982700BA3961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049262118982700BA3961 /* Main.storyboard */; };
@@ -36,7 +36,6 @@
 		4F30493A2118983D00BA3961 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049392118983D00BA3961 /* SafariExtensionHandler.swift */; };
 		4F30493C2118983D00BA3961 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30493B2118983D00BA3961 /* SafariExtensionViewController.swift */; };
 		4F30493F2118983D00BA3961 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F30493D2118983D00BA3961 /* SafariExtensionViewController.xib */; };
-		4F3049442118983D00BA3961 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049432118983D00BA3961 /* ToolbarItemIcon.pdf */; };
 		4F3049482118983D00BA3961 /* SafariExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4F3049342118983D00BA3961 /* SafariExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4F3049522118985C00BA3961 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3049362118983D00BA3961 /* Cocoa.framework */; };
 		4F3049572118985C00BA3961 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049562118985C00BA3961 /* ContentBlockerRequestHandler.swift */; };
@@ -77,7 +76,6 @@
 		4F9CF8E7215E57B6005B1C1B /* TelemetryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9CF8E2215BCD97005B1C1B /* TelemetryManager.swift */; };
 		4F9CF8E8215E57B9005B1C1B /* TelemetryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9CF8E0215BCD6A005B1C1B /* TelemetryService.swift */; };
 		4F9CF8E9215E580C005B1C1B /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4721354DE60098631F /* Preferences.swift */; };
-		4F9FC0E92189FECA0069461C /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FC0E82189FECA0069461C /* Strings.swift */; };
 		4FB1E6D2213E819F00136D2A /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 1E597C3F21341ED90098631F /* Fonts */; };
 		4FB1E6D7213EBF5300136D2A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73C21369F5400E28C38 /* StringExtension.swift */; };
 		4FB1E6D8213EC6DC00136D2A /* NSColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4521354D820098631F /* NSColorExtension.swift */; };
@@ -135,6 +133,7 @@
 		0D2AA0C02243DB160055B6B8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = /Users/christophertino/Documents/htdocs/GhosterySafari/README.md; sourceTree = "<absolute>"; };
 		0D2AA0C12243E4F40055B6B8 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		0D99D75B212EFC44005D107D /* page_performance.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = page_performance.js; sourceTree = "<group>"; };
+		0DF65C4A22E793840076A4BD /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		1E14B73721368CD600E28C38 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		1E14B73C21369F5400E28C38 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		1E14B73E2136BB6F00E28C38 /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
@@ -158,7 +157,6 @@
 		416FEF6B2A946C5A86DE12F0 /* Pods_GhosteryLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GhosteryLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		476E93B1B9ACB16DEBE286F7 /* Pods_ContentBlocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContentBlocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F0B871F2146C91E00C79513 /* DarkMode.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = DarkMode.pdf; sourceTree = "<group>"; };
-		4F0B87202146C91F00C79513 /* Dark.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Dark.pdf; sourceTree = "<group>"; };
 		4F30491D2118982600BA3961 /* GhosteryLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhosteryLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3049202118982600BA3961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F3049242118982700BA3961 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,7 +169,6 @@
 		4F30493B2118983D00BA3961 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
 		4F30493E2118983D00BA3961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		4F3049402118983D00BA3961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4F3049432118983D00BA3961 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		4F3049452118983D00BA3961 /* SafariExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SafariExtension.entitlements; sourceTree = "<group>"; };
 		4F3049512118985C00BA3961 /* ContentBlocker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentBlocker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3049562118985C00BA3961 /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
@@ -196,7 +193,6 @@
 		4F9CF8D7215A9367005B1C1B /* GhosteryLite.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = GhosteryLite.xcconfig; sourceTree = "<group>"; };
 		4F9CF8E0215BCD6A005B1C1B /* TelemetryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelemetryService.swift; sourceTree = "<group>"; };
 		4F9CF8E2215BCD97005B1C1B /* TelemetryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemetryManager.swift; sourceTree = "<group>"; };
-		4F9FC0E82189FECA0069461C /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		4FCEAA22212E0CCE00AACE42 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4FFD8313212B36BC0038149F /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 		4FFD8337212B4FF90038149F /* BlockListAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlockListAssets; sourceTree = "<group>"; };
@@ -243,16 +239,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DF65C4C22E793910076A4BD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0DF65C4A22E793840076A4BD /* Strings.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0DF65C4D22E793AF0076A4BD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4F30493D2118983D00BA3961 /* SafariExtensionViewController.xib */,
+				4F30493B2118983D00BA3961 /* SafariExtensionViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0DF65C4E22E793CD0076A4BD /* ContentScripts */ = {
+			isa = PBXGroup;
+			children = (
+				0D99D75B212EFC44005D107D /* page_performance.js */,
+			);
+			path = ContentScripts;
+			sourceTree = "<group>";
+		};
+		0DF65C4F22E7946A0076A4BD /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				4F0B871F2146C91E00C79513 /* DarkMode.pdf */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		0DF65C5022E7948C0076A4BD /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				4F51EDC72191A0C60032DCDF /* TrustButtonCell.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
 		1E597C272133F79F0098631F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				4F83ABB321393CF400BC76E4 /* SettingsVC.swift */,
-				1E597C282133F7C70098631F /* MainVC.swift */,
-				1E597C2A2133F7FC0098631F /* SectionListVC.swift */,
-				1E597C2C2133F8170098631F /* SectionDetailVC.swift */,
-				1E597C412134407F0098631F /* HomeVC.swift */,
-				1E597C492135682B0098631F /* SafariExtensionPromptVC.swift */,
 				1E14B73E2136BB6F00E28C38 /* HelpVC.swift */,
+				1E597C412134407F0098631F /* HomeVC.swift */,
+				1E597C282133F7C70098631F /* MainVC.swift */,
+				1E597C492135682B0098631F /* SafariExtensionPromptVC.swift */,
+				1E597C2C2133F8170098631F /* SectionDetailVC.swift */,
+				1E597C2A2133F7FC0098631F /* SectionListVC.swift */,
+				4F83ABB321393CF400BC76E4 /* SettingsVC.swift */,
 				1E14B752213819A800E28C38 /* TrustedSitesVC.swift */,
 			);
 			path = ViewControllers;
@@ -281,16 +318,16 @@
 		4F3049142118982600BA3961 = {
 			isa = PBXGroup;
 			children = (
-				4F30491F2118982600BA3961 /* GhosteryLite */,
-				4F3049382118983D00BA3961 /* SafariExtension */,
 				4F3049532118985C00BA3961 /* ContentBlocker */,
 				4F3049352118983D00BA3961 /* Frameworks */,
+				4F30491F2118982600BA3961 /* GhosteryLite */,
+				F4855C8DECF2664CDA321D57 /* Pods */,
 				4F30491E2118982600BA3961 /* Products */,
+				4F3049382118983D00BA3961 /* SafariExtension */,
 				0D2AA0BF2243DB130055B6B8 /* .gitignore */,
 				0D2AA0BD2243DA0C0055B6B8 /* LICENSE */,
 				0D2AA0C12243E4F40055B6B8 /* Podfile */,
 				0D2AA0C02243DB160055B6B8 /* README.md */,
-				F4855C8DECF2664CDA321D57 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -307,20 +344,20 @@
 		4F30491F2118982600BA3961 /* GhosteryLite */ = {
 			isa = PBXGroup;
 			children = (
-				4F9CF8DF215BCC84005B1C1B /* Telemetry */,
-				1E597C3E21341ECA0098631F /* Common Resources */,
-				1E597C31213409F90098631F /* Views */,
-				1E597C272133F79F0098631F /* ViewControllers */,
 				4F931A232126C8AF00AF4226 /* Common */,
+				1E597C3E21341ECA0098631F /* Common Resources */,
 				4F3049A02119F4FC00BA3961 /* Extensions */,
+				4F9CF8DF215BCC84005B1C1B /* Telemetry */,
 				4F30498A2119F46700BA3961 /* TrackerBlocking */,
+				1E597C272133F79F0098631F /* ViewControllers */,
+				1E597C31213409F90098631F /* Views */,
 				4F3049202118982600BA3961 /* AppDelegate.swift */,
 				4F3049242118982700BA3961 /* Assets.xcassets */,
-				4F3049262118982700BA3961 /* Main.storyboard */,
-				4F3049292118982700BA3961 /* Info.plist */,
 				4F30492A2118982700BA3961 /* GhosteryLite.entitlements */,
-				4FFD8350212C6C740038149F /* WindowController.swift */,
 				4F9CF8D7215A9367005B1C1B /* GhosteryLite.xcconfig */,
+				4F3049292118982700BA3961 /* Info.plist */,
+				4F3049262118982700BA3961 /* Main.storyboard */,
+				4FFD8350212C6C740038149F /* WindowController.swift */,
 			);
 			path = GhosteryLite;
 			sourceTree = "<group>";
@@ -339,19 +376,16 @@
 		4F3049382118983D00BA3961 /* SafariExtension */ = {
 			isa = PBXGroup;
 			children = (
-				4F0B871F2146C91E00C79513 /* DarkMode.pdf */,
-				4F0B87202146C91F00C79513 /* Dark.pdf */,
-				4F3049392118983D00BA3961 /* SafariExtensionHandler.swift */,
-				4F30493B2118983D00BA3961 /* SafariExtensionViewController.swift */,
-				4F30493D2118983D00BA3961 /* SafariExtensionViewController.xib */,
-				4F3049402118983D00BA3961 /* Info.plist */,
-				4F3049432118983D00BA3961 /* ToolbarItemIcon.pdf */,
-				0D99D75B212EFC44005D107D /* page_performance.js */,
-				4F3049452118983D00BA3961 /* SafariExtension.entitlements */,
+				0DF65C4C22E793910076A4BD /* Common */,
+				0DF65C4F22E7946A0076A4BD /* Icons */,
+				0DF65C4E22E793CD0076A4BD /* ContentScripts */,
+				0DF65C4D22E793AF0076A4BD /* ViewControllers */,
+				0DF65C5022E7948C0076A4BD /* ViewComponents */,
 				4FCEAA22212E0CCE00AACE42 /* Images.xcassets */,
 				4F91F3212136DF0600056FDE /* PageLatencyDataSource.swift */,
-				4F9FC0E82189FECA0069461C /* Strings.swift */,
-				4F51EDC72191A0C60032DCDF /* TrustButtonCell.swift */,
+				4F3049392118983D00BA3961 /* SafariExtensionHandler.swift */,
+				4F3049402118983D00BA3961 /* Info.plist */,
+				4F3049452118983D00BA3961 /* SafariExtension.entitlements */,
 			);
 			path = SafariExtension;
 			sourceTree = "<group>";
@@ -359,9 +393,9 @@
 		4F3049532118985C00BA3961 /* ContentBlocker */ = {
 			isa = PBXGroup;
 			children = (
+				4F3049592118985C00BA3961 /* ContentBlocker.entitlements */,
 				4F3049562118985C00BA3961 /* ContentBlockerRequestHandler.swift */,
 				4F3049582118985C00BA3961 /* Info.plist */,
-				4F3049592118985C00BA3961 /* ContentBlocker.entitlements */,
 			);
 			path = ContentBlocker;
 			sourceTree = "<group>";
@@ -380,12 +414,12 @@
 		4F3049A02119F4FC00BA3961 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				1E597C4521354D820098631F /* NSColorExtension.swift */,
 				4F3049A12119F4FC00BA3961 /* ArrayExtensions.swift */,
 				4F3049A22119F4FC00BA3961 /* DictionaryExtensions.swift */,
-				4F3049A32119F4FC00BA3961 /* URLExtension.swift */,
 				4FFD8313212B36BC0038149F /* FileManagerExtension.swift */,
+				1E597C4521354D820098631F /* NSColorExtension.swift */,
 				1E14B73C21369F5400E28C38 /* StringExtension.swift */,
+				4F3049A32119F4FC00BA3961 /* URLExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -417,8 +451,8 @@
 		4F931A232126C8AF00AF4226 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				1E597C4321344ACC0098631F /* MenuItem.swift */,
 				4F931A242126C8C900AF4226 /* Constants.swift */,
+				1E597C4321344ACC0098631F /* MenuItem.swift */,
 				1E597C4721354DE60098631F /* Preferences.swift */,
 				1E14B73721368CD600E28C38 /* Strings.swift */,
 			);
@@ -428,8 +462,8 @@
 		4F9CF8DF215BCC84005B1C1B /* Telemetry */ = {
 			isa = PBXGroup;
 			children = (
-				4F9CF8E0215BCD6A005B1C1B /* TelemetryService.swift */,
 				4F9CF8E2215BCD97005B1C1B /* TelemetryManager.swift */,
+				4F9CF8E0215BCD6A005B1C1B /* TelemetryService.swift */,
 			);
 			path = Telemetry;
 			sourceTree = "<group>";
@@ -604,8 +638,6 @@
 			files = (
 				0D99D75C212EFC44005D107D /* page_performance.js in Resources */,
 				4F0B87212146C91F00C79513 /* DarkMode.pdf in Resources */,
-				4F0B87222146C91F00C79513 /* Dark.pdf in Resources */,
-				4F3049442118983D00BA3961 /* ToolbarItemIcon.pdf in Resources */,
 				4FFD8339212B4FF90038149F /* BlockListAssets in Resources */,
 				4FB1E6D2213E819F00136D2A /* Fonts in Resources */,
 				4FCEAA23212E0CCE00AACE42 /* Images.xcassets in Resources */,
@@ -767,6 +799,7 @@
 				4F931A1E2125D3F500AF4226 /* ContentBlockerManager.swift in Sources */,
 				4F91F3222136DF0600056FDE /* PageLatencyDataSource.swift in Sources */,
 				4F83ABB22138586A00BC76E4 /* TrustedSitesDataSource.swift in Sources */,
+				0DF65C4B22E793850076A4BD /* Strings.swift in Sources */,
 				4F931A1F2125D45400AF4226 /* DomainConfigRepository.swift in Sources */,
 				4F931A222126C23800AF4226 /* CrudRepository.swift in Sources */,
 				4FFD834A212B5D430038149F /* GlobalConfigRepository.swift in Sources */,
@@ -780,7 +813,6 @@
 				4FFD8315212B36BC0038149F /* FileManagerExtension.swift in Sources */,
 				4F931A2A2126E06000AF4226 /* DomainConfigDataSource.swift in Sources */,
 				4F931A262126C95A00AF4226 /* Constants.swift in Sources */,
-				4F9FC0E92189FECA0069461C /* Strings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
