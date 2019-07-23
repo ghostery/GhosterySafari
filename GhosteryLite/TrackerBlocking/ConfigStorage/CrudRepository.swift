@@ -33,13 +33,13 @@ protocol CrudRepository {
 	///
 	/// - Parameter obj: Entity
 	/// - Returns: Saved Entity
-	func save(_ obj: T ) -> T
+	func save(_ obj: T) -> T
 	
 	
 	/// Deletes given entity
 	///
 	/// - Parameter obj: The entity
-	func delete(_ obj: T )
+	func delete(_ obj: T)
 	
 	
 	/// Deleted all entities

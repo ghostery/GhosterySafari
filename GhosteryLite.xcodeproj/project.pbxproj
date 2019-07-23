@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0D99D75C212EFC44005D107D /* page_performance.js in Resources */ = {isa = PBXBuildFile; fileRef = 0D99D75B212EFC44005D107D /* page_performance.js */; };
+		17A72D1E0BB616CEEADB5E9E /* Pods_SafariExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B01B319DD3094D9A57BE2C0 /* Pods_SafariExtension.framework */; };
 		1E14B73821368CD600E28C38 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73721368CD600E28C38 /* Strings.swift */; };
 		1E14B73D21369F5400E28C38 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73C21369F5400E28C38 /* StringExtension.swift */; };
 		1E14B73F2136BB6F00E28C38 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73E2136BB6F00E28C38 /* HelpVC.swift */; };
@@ -26,7 +27,6 @@
 		1E597C4821354DE60098631F /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4721354DE60098631F /* Preferences.swift */; };
 		1E597C4A2135682B0098631F /* SafariExtensionPromptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C492135682B0098631F /* SafariExtensionPromptVC.swift */; };
 		1E597C5321359D000098631F /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C5221359D000098631F /* HUDView.swift */; };
-		3E9973FC6C3C5AE1182E8E7B /* Pods_ContentBlocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1C37253CAD1E7BF0CB1212 /* Pods_ContentBlocker.framework */; };
 		4F0B87212146C91F00C79513 /* DarkMode.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4F0B871F2146C91E00C79513 /* DarkMode.pdf */; };
 		4F0B87222146C91F00C79513 /* Dark.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4F0B87202146C91F00C79513 /* Dark.pdf */; };
 		4F3049212118982600BA3961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049202118982600BA3961 /* AppDelegate.swift */; };
@@ -93,8 +93,8 @@
 		4FFD834D212B602B0038149F /* GlobalConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */; };
 		4FFD834E212B602B0038149F /* GlobalConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */; };
 		4FFD8351212C6C740038149F /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8350212C6C740038149F /* WindowController.swift */; };
-		D146948444D48F136412C66E /* Pods_SafariExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6E6A3A7F09CA6028BBC263 /* Pods_SafariExtension.framework */; };
-		F124157D8C4330395AE8B7CF /* Pods_GhosteryLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E882B4CED52B6C3590AA9F5D /* Pods_GhosteryLite.framework */; };
+		558D7A066EFE2DF888DD23A1 /* Pods_ContentBlocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 476E93B1B9ACB16DEBE286F7 /* Pods_ContentBlocker.framework */; };
+		6D1BEB655BE064272AE00802 /* Pods_GhosteryLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416FEF6B2A946C5A86DE12F0 /* Pods_GhosteryLite.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,9 +153,10 @@
 		1E597C4721354DE60098631F /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		1E597C492135682B0098631F /* SafariExtensionPromptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionPromptVC.swift; sourceTree = "<group>"; };
 		1E597C5221359D000098631F /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
-		20D8DDE934AC7DA8B920E530 /* Pods-ContentBlocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.debug.xcconfig"; sourceTree = "<group>"; };
-		2B1C37253CAD1E7BF0CB1212 /* Pods_ContentBlocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContentBlocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		45465B015FB0387B14C76708 /* Pods-SafariExtension.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.beta.xcconfig"; path = "Pods/Target Support Files/Pods-SafariExtension/Pods-SafariExtension.beta.xcconfig"; sourceTree = "<group>"; };
+		2B01B319DD3094D9A57BE2C0 /* Pods_SafariExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafariExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4088FBAFDB2D94D0F1C61192 /* Pods-GhosteryLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.release.xcconfig"; path = "Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.release.xcconfig"; sourceTree = "<group>"; };
+		416FEF6B2A946C5A86DE12F0 /* Pods_GhosteryLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GhosteryLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		476E93B1B9ACB16DEBE286F7 /* Pods_ContentBlocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContentBlocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F0B871F2146C91E00C79513 /* DarkMode.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = DarkMode.pdf; sourceTree = "<group>"; };
 		4F0B87202146C91F00C79513 /* Dark.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Dark.pdf; sourceTree = "<group>"; };
 		4F30491D2118982600BA3961 /* GhosteryLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhosteryLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,15 +203,14 @@
 		4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigRepository.swift; sourceTree = "<group>"; };
 		4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigDataSource.swift; sourceTree = "<group>"; };
 		4FFD8350212C6C740038149F /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		871270F350184074300264CE /* Pods-GhosteryLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.release.xcconfig"; path = "Pods/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.release.xcconfig"; sourceTree = "<group>"; };
-		A731A8006D7B9D054132A29D /* Pods-ContentBlocker.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.beta.xcconfig"; path = "Pods/Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.beta.xcconfig"; sourceTree = "<group>"; };
-		AB6E6A3A7F09CA6028BBC263 /* Pods_SafariExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafariExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B132EB5ADA4E362C9953CF32 /* Pods-SafariExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafariExtension/Pods-SafariExtension.release.xcconfig"; sourceTree = "<group>"; };
-		C0ED2F60680AAB12316E2515 /* Pods-SafariExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafariExtension/Pods-SafariExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		D3F0021FDBEB150F527E8B1D /* Pods-GhosteryLite.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.beta.xcconfig"; path = "Pods/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.beta.xcconfig"; sourceTree = "<group>"; };
-		E4F7CCF571DEB0BE3D51F755 /* Pods-GhosteryLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.debug.xcconfig"; sourceTree = "<group>"; };
-		E882B4CED52B6C3590AA9F5D /* Pods_GhosteryLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GhosteryLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F9E6DD48CC7939FB760044B0 /* Pods-ContentBlocker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.release.xcconfig"; path = "Pods/Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.release.xcconfig"; sourceTree = "<group>"; };
+		7389B97FB06620D5762A4E25 /* Pods-SafariExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.debug.xcconfig"; path = "Target Support Files/Pods-SafariExtension/Pods-SafariExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		86042B50A1FB9B9C1014EEE0 /* Pods-ContentBlocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.debug.xcconfig"; path = "Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.debug.xcconfig"; sourceTree = "<group>"; };
+		87A9A3E43D86007493CC7235 /* Pods-GhosteryLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.debug.xcconfig"; path = "Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.debug.xcconfig"; sourceTree = "<group>"; };
+		8FD817DD235C511B81A341EE /* Pods-ContentBlocker.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.beta.xcconfig"; path = "Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.beta.xcconfig"; sourceTree = "<group>"; };
+		9E4FB5F1BE8B4AD764226AFC /* Pods-GhosteryLite.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.beta.xcconfig"; path = "Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.beta.xcconfig"; sourceTree = "<group>"; };
+		BCE9E34ABE89EFE08D5C88DF /* Pods-SafariExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.release.xcconfig"; path = "Target Support Files/Pods-SafariExtension/Pods-SafariExtension.release.xcconfig"; sourceTree = "<group>"; };
+		D9725BE29FF14A9F88B5C82A /* Pods-SafariExtension.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.beta.xcconfig"; path = "Target Support Files/Pods-SafariExtension/Pods-SafariExtension.beta.xcconfig"; sourceTree = "<group>"; };
+		FCE253C13034619F7D7895A4 /* Pods-ContentBlocker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.release.xcconfig"; path = "Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,7 +218,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F124157D8C4330395AE8B7CF /* Pods_GhosteryLite.framework in Frameworks */,
+				6D1BEB655BE064272AE00802 /* Pods_GhosteryLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,7 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3049372118983D00BA3961 /* Cocoa.framework in Frameworks */,
-				D146948444D48F136412C66E /* Pods_SafariExtension.framework in Frameworks */,
+				17A72D1E0BB616CEEADB5E9E /* Pods_SafariExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,7 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3049522118985C00BA3961 /* Cocoa.framework in Frameworks */,
-				3E9973FC6C3C5AE1182E8E7B /* Pods_ContentBlocker.framework in Frameworks */,
+				558D7A066EFE2DF888DD23A1 /* Pods_ContentBlocker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,22 +278,6 @@
 			name = "Common Resources";
 			sourceTree = "<group>";
 		};
-		35CAFFFF61FA043B926A6BE3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E4F7CCF571DEB0BE3D51F755 /* Pods-GhosteryLite.debug.xcconfig */,
-				871270F350184074300264CE /* Pods-GhosteryLite.release.xcconfig */,
-				20D8DDE934AC7DA8B920E530 /* Pods-ContentBlocker.debug.xcconfig */,
-				F9E6DD48CC7939FB760044B0 /* Pods-ContentBlocker.release.xcconfig */,
-				C0ED2F60680AAB12316E2515 /* Pods-SafariExtension.debug.xcconfig */,
-				B132EB5ADA4E362C9953CF32 /* Pods-SafariExtension.release.xcconfig */,
-				A731A8006D7B9D054132A29D /* Pods-ContentBlocker.beta.xcconfig */,
-				D3F0021FDBEB150F527E8B1D /* Pods-GhosteryLite.beta.xcconfig */,
-				45465B015FB0387B14C76708 /* Pods-SafariExtension.beta.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		4F3049142118982600BA3961 = {
 			isa = PBXGroup;
 			children = (
@@ -302,11 +286,11 @@
 				4F3049532118985C00BA3961 /* ContentBlocker */,
 				4F3049352118983D00BA3961 /* Frameworks */,
 				4F30491E2118982600BA3961 /* Products */,
-				35CAFFFF61FA043B926A6BE3 /* Pods */,
 				0D2AA0BF2243DB130055B6B8 /* .gitignore */,
 				0D2AA0BD2243DA0C0055B6B8 /* LICENSE */,
 				0D2AA0C12243E4F40055B6B8 /* Podfile */,
 				0D2AA0C02243DB160055B6B8 /* README.md */,
+				F4855C8DECF2664CDA321D57 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -345,9 +329,9 @@
 			isa = PBXGroup;
 			children = (
 				4F3049362118983D00BA3961 /* Cocoa.framework */,
-				E882B4CED52B6C3590AA9F5D /* Pods_GhosteryLite.framework */,
-				2B1C37253CAD1E7BF0CB1212 /* Pods_ContentBlocker.framework */,
-				AB6E6A3A7F09CA6028BBC263 /* Pods_SafariExtension.framework */,
+				476E93B1B9ACB16DEBE286F7 /* Pods_ContentBlocker.framework */,
+				416FEF6B2A946C5A86DE12F0 /* Pods_GhosteryLite.framework */,
+				2B01B319DD3094D9A57BE2C0 /* Pods_SafariExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -458,6 +442,22 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		F4855C8DECF2664CDA321D57 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86042B50A1FB9B9C1014EEE0 /* Pods-ContentBlocker.debug.xcconfig */,
+				FCE253C13034619F7D7895A4 /* Pods-ContentBlocker.release.xcconfig */,
+				8FD817DD235C511B81A341EE /* Pods-ContentBlocker.beta.xcconfig */,
+				87A9A3E43D86007493CC7235 /* Pods-GhosteryLite.debug.xcconfig */,
+				4088FBAFDB2D94D0F1C61192 /* Pods-GhosteryLite.release.xcconfig */,
+				9E4FB5F1BE8B4AD764226AFC /* Pods-GhosteryLite.beta.xcconfig */,
+				7389B97FB06620D5762A4E25 /* Pods-SafariExtension.debug.xcconfig */,
+				BCE9E34ABE89EFE08D5C88DF /* Pods-SafariExtension.release.xcconfig */,
+				D9725BE29FF14A9F88B5C82A /* Pods-SafariExtension.beta.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -465,12 +465,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F30492D2118982700BA3961 /* Build configuration list for PBXNativeTarget "GhosteryLite" */;
 			buildPhases = (
-				74A204C459E2813E667F381E /* [CP] Check Pods Manifest.lock */,
+				2B7A9A3C8F4C3E875B0DF0B5 /* [CP] Check Pods Manifest.lock */,
 				4F3049192118982600BA3961 /* Sources */,
 				4F30491A2118982600BA3961 /* Frameworks */,
 				4F30491B2118982600BA3961 /* Resources */,
 				4F30494C2118983D00BA3961 /* Embed App Extensions */,
-				57269BFA53F7F09A9825ABEB /* [CP] Embed Pods Frameworks */,
+				BBB443A1F44D1DEF49EA6308 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -487,7 +487,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F3049492118983D00BA3961 /* Build configuration list for PBXNativeTarget "SafariExtension" */;
 			buildPhases = (
-				CC2D4694AF65C856ED99B336 /* [CP] Check Pods Manifest.lock */,
+				48F31CBE354EFF1211D64306 /* [CP] Check Pods Manifest.lock */,
 				4F3049302118983D00BA3961 /* Sources */,
 				4F3049312118983D00BA3961 /* Frameworks */,
 				4F3049322118983D00BA3961 /* Resources */,
@@ -505,7 +505,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F30495D2118985C00BA3961 /* Build configuration list for PBXNativeTarget "ContentBlocker" */;
 			buildPhases = (
-				0E9736C7FFCEDE606EE4EC75 /* [CP] Check Pods Manifest.lock */,
+				2025E59B7AF5CF634111B064 /* [CP] Check Pods Manifest.lock */,
 				4F30494D2118985C00BA3961 /* Sources */,
 				4F30494E2118985C00BA3961 /* Frameworks */,
 				4F30494F2118985C00BA3961 /* Resources */,
@@ -531,7 +531,7 @@
 				TargetAttributes = {
 					4F30491C2118982600BA3961 = {
 						CreatedOnToolsVersion = 9.4;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.Mac = {
 								enabled = 1;
@@ -543,7 +543,7 @@
 					};
 					4F3049332118983D00BA3961 = {
 						CreatedOnToolsVersion = 9.4;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.Mac = {
 								enabled = 1;
@@ -555,7 +555,7 @@
 					};
 					4F3049502118985C00BA3961 = {
 						CreatedOnToolsVersion = 9.4;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.Mac = {
 								enabled = 1;
@@ -624,16 +624,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E9736C7FFCEDE606EE4EC75 /* [CP] Check Pods Manifest.lock */ = {
+		2025E59B7AF5CF634111B064 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ContentBlocker-checkManifestLockResult.txt",
 			);
@@ -642,38 +646,20 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		57269BFA53F7F09A9825ABEB /* [CP] Embed Pods Frameworks */ = {
+		2B7A9A3C8F4C3E875B0DF0B5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		74A204C459E2813E667F381E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-GhosteryLite-checkManifestLockResult.txt",
 			);
@@ -682,22 +668,43 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CC2D4694AF65C856ED99B336 /* [CP] Check Pods Manifest.lock */ = {
+		48F31CBE354EFF1211D64306 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SafariExtension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBB443A1F44D1DEF49EA6308 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -940,9 +947,8 @@
 		};
 		4F30492E2118982700BA3961 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4F7CCF571DEB0BE3D51F755 /* Pods-GhosteryLite.debug.xcconfig */;
+			baseConfigurationReference = 87A9A3E43D86007493CC7235 /* Pods-GhosteryLite.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GhosteryLite/GhosteryLite.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -962,15 +968,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		4F30492F2118982700BA3961 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 871270F350184074300264CE /* Pods-GhosteryLite.release.xcconfig */;
+			baseConfigurationReference = 4088FBAFDB2D94D0F1C61192 /* Pods-GhosteryLite.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GhosteryLite/GhosteryLite.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -990,13 +995,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 		4F30494A2118983D00BA3961 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C0ED2F60680AAB12316E2515 /* Pods-SafariExtension.debug.xcconfig */;
+			baseConfigurationReference = 7389B97FB06620D5762A4E25 /* Pods-SafariExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -1013,16 +1018,16 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		4F30494B2118983D00BA3961 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B132EB5ADA4E362C9953CF32 /* Pods-SafariExtension.release.xcconfig */;
+			baseConfigurationReference = BCE9E34ABE89EFE08D5C88DF /* Pods-SafariExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				INFOPLIST_FILE = SafariExtension/Info.plist;
@@ -1036,13 +1041,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 		4F30495E2118985C00BA3961 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20D8DDE934AC7DA8B920E530 /* Pods-ContentBlocker.debug.xcconfig */;
+			baseConfigurationReference = 86042B50A1FB9B9C1014EEE0 /* Pods-ContentBlocker.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -1059,13 +1064,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		4F30495F2118985C00BA3961 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9E6DD48CC7939FB760044B0 /* Pods-ContentBlocker.release.xcconfig */;
+			baseConfigurationReference = FCE253C13034619F7D7895A4 /* Pods-ContentBlocker.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -1082,7 +1087,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1141,9 +1146,8 @@
 		};
 		4F9CF8DC215B90E8005B1C1B /* Beta */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3F0021FDBEB150F527E8B1D /* Pods-GhosteryLite.beta.xcconfig */;
+			baseConfigurationReference = 9E4FB5F1BE8B4AD764226AFC /* Pods-GhosteryLite.beta.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GhosteryLite/GhosteryLite.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -1163,16 +1167,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Beta;
 		};
 		4F9CF8DD215B90E8005B1C1B /* Beta */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45465B015FB0387B14C76708 /* Pods-SafariExtension.beta.xcconfig */;
+			baseConfigurationReference = D9725BE29FF14A9F88B5C82A /* Pods-SafariExtension.beta.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				INFOPLIST_FILE = SafariExtension/Info.plist;
@@ -1186,13 +1190,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Beta;
 		};
 		4F9CF8DE215B90E8005B1C1B /* Beta */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A731A8006D7B9D054132A29D /* Pods-ContentBlocker.beta.xcconfig */;
+			baseConfigurationReference = 8FD817DD235C511B81A341EE /* Pods-ContentBlocker.beta.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -1209,7 +1213,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Beta;
 		};

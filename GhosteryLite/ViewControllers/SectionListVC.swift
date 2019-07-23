@@ -27,7 +27,7 @@ class SectionListVC: NSViewController {
     }
     
     func selectItem(menuItem item: MenuItem) {
-        if let itemIndex = items.index(of: item) {
+        if let itemIndex = items.firstIndex(of: item) {
             selectItem(atIndex: itemIndex)
         }
     }
