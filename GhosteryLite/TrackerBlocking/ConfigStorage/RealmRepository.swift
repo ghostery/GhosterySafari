@@ -14,35 +14,35 @@ class RealmRepository<T, ID> : CrudRepository {
 	typealias T = Object
 	typealias ID = Int
 	
-	func save(_ obj: T) -> T {
+	func save(_ obj: Object) -> Object {
 		let realm = try! Realm()
 		try! realm.write {
-			realm.add(obj as Object, update: true)
+			realm.add(obj, update: .modified)
 		}
 		
 		return obj
 	}
 	
-	func save(_ objs: [T]) {
+	func save(_ objs: [Object]) {
 		let realm = try! Realm()
 		try! realm.write {
-			realm.add(objs, update: true)
+			realm.add(objs, update: .modified)
 		}
 	}
 	
-	func findOne(id: ID) -> T? {
+	func findOne(id: Int) -> Object? {
 		let realm = try! Realm()
 		
-		return realm.object(ofType: T.self, forPrimaryKey: id)
+		return realm.object(ofType: Object.self, forPrimaryKey: id as Int)
 	}
 	
-	func findAll<T: Object>() -> [T] {
+	func findAll<T>() -> [T] where T : Object {
 		let realm = try! Realm()
-		
+
 		return Array(realm.objects(T.self))
 	}
-	
-	func delete(_ obj: T ) {
+
+	func delete(_ obj: Object) {
 		let realm = try! Realm()
 		
 		try! realm.write {
