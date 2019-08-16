@@ -51,7 +51,7 @@ $ pod install
 See [LICENSE](LICENSE)
 
 ## Tracker Databases
-The [databases](/⁨GhosteryLite⁩/TrackerBlocking⁩/BlockListAssets⁩) folder contains JSON skeletons to show the schema expected by the content blocker. Ghostery's production tracker databases have been purposely excluded from this project, as they remain proprietary to Ghostery, Inc.
+The [databases](https://github.com/ghostery/GhosterySafari/tree/master/GhosteryLite/TrackerBlocking/BlockListAssets) folder contains JSON skeletons to show the schema expected by the content blocker. Ghostery's production tracker databases have been purposely excluded from this project, as they remain proprietary to Ghostery, Inc.
 
 **Copyright Notice**
 
