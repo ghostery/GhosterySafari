@@ -9,51 +9,40 @@
 import SafariServices
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
-
-    override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
-        // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
-		/*
-        page.getPropertiesWithCompletionHandler { properties in
-            NSLog("The extension received a message (\(messageName)) from a script injected into (\(String(describing: properties?.url))) with userInfo (\(userInfo ?? [:]))")
-        }
-*/
+	// This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
+	override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
 		if messageName == "recordPageInfo" {
 			page.getPropertiesWithCompletionHandler { (properties) in
 				if let ui = userInfo,
 					let latency = ui["latency"] as? String,
 					let url = ui["domain"] as? String,
-					url == properties?.url?.fullPath {					PageLatencyDataSource.shared.pageLoaded(url: url, latency: latency)
+					url == properties?.url?.fullPath {
+					PageLatencyDataSource.shared.pageLoaded(url: url, latency: latency)
 					SafariExtensionViewController.shared.updatePageLatency(url, latency)
 				}
 			}
 		}
-    }
+	}
 
-    override func toolbarItemClicked(in window: SFSafariWindow) {
-        // This method will be called when your toolbar item is clicked.
-        NSLog("The extension's toolbar item was clicked")
-    }
-
-    override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
+	 // This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
+	override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
 		TelemetryManager.shared.sendSignal(.active, ghostrank: 2)
-
-        // This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
 		handleTabUrlChange(window) { (url) in
 			let d = UserDefaults(suiteName: Constants.AppsGroupID)
 			d?.set(url?.normalizedHost ?? "", forKey: "newDomain")
 			d?.synchronize()
 		}
-        validationHandler(true, "")
-    }
+		validationHandler(true, "")
+	}
 
 	override func popoverViewController() -> SFSafariExtensionViewController {
-        return SafariExtensionViewController.shared
+		return SafariExtensionViewController.shared
 	}
 
 	override func popoverWillShow(in window: SFSafariWindow) {
 		self.updatePopoverUrl(window)
 	}
-
+	
 	/*
 	private func urlChanges(window: SFSafariWindow) {
 		window.getActiveTab { (tab) in
