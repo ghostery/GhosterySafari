@@ -11,12 +11,15 @@ import Foundation
 extension FileManager {
 
 	func readJsonFile<T>(at fileUrl: URL?) -> T? {
-		guard fileExists(atPath: (fileUrl?.path)!) else { return nil }
+		guard fileExists(atPath: (fileUrl?.path)!) else {
+			print("FileManager.readJsonFile: \(String(describing: fileUrl?.path)) does not exist")
+			return nil
+		}
 		do {
 			let fileData = try Data(contentsOf: fileUrl!)
 			return try JSONSerialization.jsonObject(with: fileData, options: .allowFragments) as? T
 		} catch {
-			print("Failure-----")
+			print("FileManager.readJsonFile error")
 			return nil
 		}
 	}
@@ -26,10 +29,10 @@ extension FileManager {
 			let jsonData = try JSONSerialization.data(withJSONObject: data ?? [], options: JSONSerialization.WritingOptions.prettyPrinted)
 			if FileManager.default.createFile(atPath: (fileUrl?.path)!, contents: jsonData, attributes: [FileAttributeKey.posixPermissions: 0o777]) {
 			} else {
-				print("Failure-----")
+				print("FileManager.writeJsonFile error")
 			}
 		} catch {
-			print("Failure-----")
+			print("FileManager.writeJsonFile error")
 		}
 	}
 
@@ -38,9 +41,9 @@ extension FileManager {
 		
 		let fileURL = directory?.appendingPathComponent("\(fileName)")
 		if FileManager.default.createFile(atPath: (fileURL?.path)!, contents: data, attributes: nil) {
-			print("File is written successfully")
+			print("FileManager.writeFile: \(fileName) written successfully")
 		} else {
-			print("Unable to write the data to file")
+			print("FileManager.writeFile: Unable to write the data to \(fileName)")
 		}
 	}
 
@@ -49,7 +52,7 @@ extension FileManager {
 			do {
 				try FileManager.default.createDirectory(at: url!, withIntermediateDirectories: hasIntermediateDir, attributes: nil)
 			} catch {
-				print("Fail")
+				print("FileManager.createDirectoryIfNotExists error")
 			}
 		}
 	}

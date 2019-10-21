@@ -54,7 +54,7 @@ class SectionDetailVC: NSViewController {
         if let oldView: NSView = container.subviews.first {
             oldView.removeFromSuperview()
         } else {
-            print("No previous view found")
+            print("SectionDetailVC.removePreviousView: No previous view found")
         }
     }
 }

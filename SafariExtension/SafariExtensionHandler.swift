@@ -24,7 +24,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 		}
 	}
 
-	 // This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
+	// This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
 	override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
 		TelemetryManager.shared.sendSignal(.active, ghostrank: 2)
 		handleTabUrlChange(window) { (url) in
@@ -42,18 +42,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 	override func popoverWillShow(in window: SFSafariWindow) {
 		self.updatePopoverUrl(window)
 	}
-	
-	/*
-	private func urlChanges(window: SFSafariWindow) {
-		window.getActiveTab { (tab) in
-			if let t = tab {
-				self.getTabURL(t)
-			} else {
-				AntiTrackingManager.shared.domainChanged(nil)
-			}
-		}
-	}
-*/
+
 	private func updatePopoverUrl(_ window: SFSafariWindow) {
 		handleTabUrlChange(window) { (url) in
 			SafariExtensionViewController.shared.currentUrl = url?.fullPath ?? ""

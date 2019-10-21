@@ -10,8 +10,8 @@ import Foundation
 
 class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
 
-    func beginRequest(with context: NSExtensionContext) {
-        let item = NSExtensionItem()
+	func beginRequest(with context: NSExtensionContext) {
+		let item = NSExtensionItem()
 		
 		let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
 		let assetsFolder: URL? = groupStorageFolder?.appendingPathComponent("BlockListAssets")

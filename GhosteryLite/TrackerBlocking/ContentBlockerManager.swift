@@ -149,10 +149,6 @@ class ContentBlockerManager {
 	func isTrustedDomain(domain: String) -> Bool {
 		return TrustedSitesDataSource.shared.isTrusted(domain)
 	}
-
-	func getFilePath(fileName: String) -> URL? {
-		return Bundle.main.url(forResource: fileName, withExtension: "json", subdirectory: "BlockListAssets/BlockListByCategory")
-	}
 	
 	func getCategoryBlockListsFolder() -> String {
 		return "BlockListAssets/BlockListByCategory"
@@ -231,6 +227,7 @@ class ContentBlockerManager {
 	}
 
 	private func updateAndReloadBlockList(fileNames: [String], folderName: String) {
+		print("ContentBlockerManager.updateAndReloadBlockList: Generating new block list...")
 		BlockListFileManager.shared.generateCurrentBlockList(files: fileNames, folderName: folderName) {
 			self.reloadCBExtension()
 		}
@@ -239,9 +236,9 @@ class ContentBlockerManager {
 	private func reloadCBExtension() {
 		SFContentBlockerManager.reloadContentBlocker(withIdentifier: Constants.SafariContentBlockerID, completionHandler: { (error) in
 			if error != nil {
-				print("Reloading Content Blocker failed ---- \(error.debugDescription)")
+				print("ContentBlockerManager.reloadCBExtension: Reloading Content Blocker failed ---- \(error.debugDescription)")
 			} else {
-				print("Success!")
+				print("ContentBlockerManager.reloadCBExtension: Successfully reloaded Content Blocker!")
 			}
 		})
 	}

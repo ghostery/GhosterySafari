@@ -83,6 +83,7 @@ final class BlockListFileManager {
 
 	private func isCategoryBlockListVersionChanged(_ newVersion: Int) -> Bool {
 		if let oldVersion = Preferences.globalPreferences(key: BlockListFileManager.categoryBlockListVersionKey) as? Int {
+			print("isCategoryBlockListVersionChanged: Old version \(oldVersion) New version \(newVersion)")
 			return newVersion != oldVersion
 		}
 		return true
@@ -97,6 +98,7 @@ final class BlockListFileManager {
 
 	private func isFullBlockListVersionChanged(_ newVersion: Int) -> Bool {
 		if let oldVersion = Preferences.globalPreferences(key: BlockListFileManager.blockListVersionKey) as? Int {
+			print("isFullBlockListVersionChanged: Old version \(oldVersion) New version \(newVersion)")
 			return newVersion != oldVersion
 		}
 		return true
@@ -104,35 +106,50 @@ final class BlockListFileManager {
 
 	func updateFullBlockList() {
 		let fullBlockListName = "safariContentBlocker"
-		self.downloadAndSaveFile(fullBlockListName)
+		self.downloadAndSaveFile(fullBlockListName, BlockListFileManager.assetsFolder)
 	}
 
 	func updateCategoryBlockLists() {
 		for type in CategoryType.allCases() {
-			self.downloadAndSaveFile(type.fileName())
+			self.downloadAndSaveFile(type.fileName(), BlockListFileManager.categoryAssetsFolder)
 		}
 	}
 
-	private func downloadAndSaveFile(_ fileName: String) {
+	
+	/// Download content blocker json file and save to Group Container directory
+	/// - Parameter fileName: The name of the json file
+	/// - Parameter folder: The folder location in Group Containers
+	private func downloadAndSaveFile(_ fileName: String, _ folder: URL?) {
 		FileDownloader.downloadBlockList(fileName) { (err, data) in
 			if let e = err {
-				print("\(fileName) file download is failed: \(e)")
+				print("BlockListFileManager.downloadAndSaveFile: \(fileName) file download failed: \(e)")
 			}
 			if let d = data {
-				print("Downloading \(fileName)")
-				FileManager.default.writeFile(d, name: "\(fileName).json", in: BlockListFileManager.assetsFolder)
+				print("BlockListFileManager.downloadAndSaveFile: \(fileName)")
+				FileManager.default.writeFile(d, name: "\(fileName).json", in: folder)
 			}
 		}
 	}
 
+	
+	/// Fetch the path of the Content Blocker file from the Group Container folder
+	/// - Parameter fileName: The name of the content blocker json file
+	/// - Parameter folderName: The name of the assests folder in Group Containers
 	func getFilePath(fileName: String, folderName: String) -> URL? {
-		return Bundle.main.url(forResource: fileName, withExtension: "json", subdirectory: folderName)
+		let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
+		let assetsFolder: URL? = groupStorageFolder?.appendingPathComponent(folderName)
+		return assetsFolder?.appendingPathComponent("\(fileName).json")
 	}
 
+	
+	/// Combine all active block lists into currentBlockList.json
+	/// - Parameter files: List of files to activate
+	/// - Parameter folderName: Folder location of the files
+	/// - Parameter completion: Completion callback
 	func generateCurrentBlockList(files: [String], folderName: String, completion: @escaping () -> Void) {
 		DispatchQueue.global(qos: .background).async {
-			
 			var blockListJSON = [[String: Any]]()
+			// Build category lists into a single block list
 			for f in files {
 				if let url = self.getFilePath(fileName: f, folderName: folderName) {
 					let nextChunk: [[String:Any]]? = FileManager.default.readJsonFile(at: url)
@@ -141,13 +158,15 @@ final class BlockListFileManager {
 					}
 				}
 			}
-			let r = WhiteListFileManager.shared.getActiveWhitelistRules()
-			let finalJSON: [[String: Any]] = blockListJSON + (r ?? [])
+			// Handle site whitelisting
+			let whitelist = WhiteListFileManager.shared.getActiveWhitelistRules()
+			let finalJSON: [[String: Any]] = blockListJSON + (whitelist ?? [])
 
 			let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
 			let assetsFolder: URL? = groupStorageFolder?.appendingPathComponent("BlockListAssets")
 			let currentBlockList = assetsFolder?.appendingPathComponent("currentBlockList.json")
 			FileManager.default.createDirectoryIfNotExists(assetsFolder, withIntermediateDirectories: true)
+			// Write the finalJSON to currentBlockList.json in the Container
 			if let url = currentBlockList {
 				try? FileManager.default.removeItem(at: url)
 				FileManager.default.writeJsonFile(at: url, with: finalJSON)
@@ -166,13 +185,7 @@ public enum FileDownloaderError: Error {
 final class FileDownloader {
 
 	class func downloadBlockListVersion(completion: @escaping (Error?, Any?) -> Void) {
-		FileDownloader.loadJSONFile(FileDownloader.getVersionPath()) { (err, data) in
-			completion(err, data)
-		}
-	}
-
-	private class func loadJSONFile(_ url: String, completion: @escaping (Error?, Any?) -> Void) {
-		guard let url = URL(string: url) else {
+		guard let url = URL(string: FileDownloader.getVersionPath()) else {
 			completion(FileDownloaderError.invalidFileUrl, nil)
 			return
 		}
@@ -180,9 +193,11 @@ final class FileDownloader {
 			.validate()
 			.responseJSON { (response) in
 				guard response.result.isSuccess else {
+					print("FileDownloader.downloadBlockListVersion error: \(String(describing: response.result.error))")
 					completion(response.result.error, nil)
 					return
 				}
+				print("FileDownloader.downloadBlockListVersion: Successfully downloaded version file.")
 				completion(nil, response.result.value)
 		}
 	}
@@ -198,11 +213,11 @@ final class FileDownloader {
 			.validate()
 			.response { response in
 				if let err = response.error {
-					// TODO: Integrate proper logging
-					print("File downloading failed: \(err)")
+					print("FileDownloader.downloadBlockList: \(fileName) download failed: \(err)")
 					completion(err, nil)
 					return
 				}
+				print("FileDownloader.downloadBlockList: Successfully downloaded \(fileName)")
 				completion(nil, response.data)
 		}
 	}
@@ -222,6 +237,4 @@ final class FileDownloader {
 			return "https://staging-cdn.ghostery.com/update/version"
 		#endif
 	}
-	//safariContentBlockerVersion
-	//safariCategoryVersion
 }
