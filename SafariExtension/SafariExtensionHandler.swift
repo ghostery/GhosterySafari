@@ -34,6 +34,13 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 		}
 		validationHandler(true, "")
 	}
+	
+	// Called when the Content Blocker matches a URL on a given page
+	override func contentBlocker(withIdentifier contentBlockerIdentifier: String, blockedResourcesWith urls: [URL], on page: SFSafariPage) {
+		for u in urls {
+			print("pattern matched \(u.absoluteString)")
+		}
+	}
 
 	override func popoverViewController() -> SFSafariExtensionViewController {
 		return SafariExtensionViewController.shared
