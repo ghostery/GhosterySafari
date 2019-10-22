@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D3FBAFA235F6EAA0054822A /* SafariExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D588D9C235E3FBB0003668C /* SafariExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0D3FBAFD235F6EB10054822A /* ContentBlocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D588D9D235E3FBB0003668C /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0D3FBB02235F701F0054822A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3FBB00235F70030054822A /* Cocoa.framework */; };
+		0D3FBB04235F74940054822A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3FBB00235F70030054822A /* Cocoa.framework */; };
+		0D588E82235E46870003668C /* PageLatencyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D588E81235E46870003668C /* PageLatencyDataSource.swift */; };
+		0D588E84235E4C2F0003668C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0D588E83235E4C2F0003668C /* Fonts */; };
+		0D588E85235E4C2F0003668C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0D588E83235E4C2F0003668C /* Fonts */; };
 		0D99D75C212EFC44005D107D /* page_performance.js in Resources */ = {isa = PBXBuildFile; fileRef = 0D99D75B212EFC44005D107D /* page_performance.js */; };
 		0DF65C4B22E793850076A4BD /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF65C4A22E793840076A4BD /* Strings.swift */; };
-		17A72D1E0BB616CEEADB5E9E /* Pods_SafariExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B01B319DD3094D9A57BE2C0 /* Pods_SafariExtension.framework */; };
 		1E14B73821368CD600E28C38 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73721368CD600E28C38 /* Strings.swift */; };
 		1E14B73D21369F5400E28C38 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73C21369F5400E28C38 /* StringExtension.swift */; };
 		1E14B73F2136BB6F00E28C38 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73E2136BB6F00E28C38 /* HelpVC.swift */; };
@@ -21,7 +27,6 @@
 		1E597C2D2133F8170098631F /* SectionDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C2C2133F8170098631F /* SectionDetailVC.swift */; };
 		1E597C3621340D180098631F /* SectionItemCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C3421340D180098631F /* SectionItemCollectionViewItem.swift */; };
 		1E597C3721340D180098631F /* SectionItemCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E597C3521340D180098631F /* SectionItemCollectionViewItem.xib */; };
-		1E597C4021341ED90098631F /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 1E597C3F21341ED90098631F /* Fonts */; };
 		1E597C422134407F0098631F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C412134407F0098631F /* HomeVC.swift */; };
 		1E597C4421344ACC0098631F /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4321344ACC0098631F /* MenuItem.swift */; };
 		1E597C4621354D830098631F /* NSColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4521354D820098631F /* NSColorExtension.swift */; };
@@ -32,14 +37,10 @@
 		4F3049212118982600BA3961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049202118982600BA3961 /* AppDelegate.swift */; };
 		4F3049252118982700BA3961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049242118982700BA3961 /* Assets.xcassets */; };
 		4F3049282118982700BA3961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049262118982700BA3961 /* Main.storyboard */; };
-		4F3049372118983D00BA3961 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3049362118983D00BA3961 /* Cocoa.framework */; };
 		4F30493A2118983D00BA3961 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049392118983D00BA3961 /* SafariExtensionHandler.swift */; };
 		4F30493C2118983D00BA3961 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30493B2118983D00BA3961 /* SafariExtensionViewController.swift */; };
 		4F30493F2118983D00BA3961 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F30493D2118983D00BA3961 /* SafariExtensionViewController.xib */; };
-		4F3049482118983D00BA3961 /* SafariExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4F3049342118983D00BA3961 /* SafariExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		4F3049522118985C00BA3961 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3049362118983D00BA3961 /* Cocoa.framework */; };
 		4F3049572118985C00BA3961 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049562118985C00BA3961 /* ContentBlockerRequestHandler.swift */; };
-		4F30495C2118985C00BA3961 /* ContentBlocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4F3049512118985C00BA3961 /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4F3049A42119F4FC00BA3961 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A12119F4FC00BA3961 /* ArrayExtensions.swift */; };
 		4F3049A52119F4FC00BA3961 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A22119F4FC00BA3961 /* DictionaryExtensions.swift */; };
 		4F3049A62119F4FC00BA3961 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A32119F4FC00BA3961 /* URLExtension.swift */; };
@@ -53,13 +54,9 @@
 		4F83ABB421393CF500BC76E4 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABB321393CF400BC76E4 /* SettingsVC.swift */; };
 		4F90DD81214BD75000E8BA6D /* WhiteListFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90DD80214BD74F00E8BA6D /* WhiteListFileManager.swift */; };
 		4F90DD82214BDC8300E8BA6D /* WhiteListFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90DD80214BD74F00E8BA6D /* WhiteListFileManager.swift */; };
-		4F90DD83214BDE0900E8BA6D /* WhiteListFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90DD80214BD74F00E8BA6D /* WhiteListFileManager.swift */; };
-		4F91F3222136DF0600056FDE /* PageLatencyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F91F3212136DF0600056FDE /* PageLatencyDataSource.swift */; };
 		4F931A1521259BEC00AF4226 /* DomainConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A1421259BEC00AF4226 /* DomainConfigRepository.swift */; };
 		4F931A172125AD6500AF4226 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A162125AD6500AF4226 /* RealmRepository.swift */; };
 		4F931A192125ADD500AF4226 /* CrudRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A182125ADD500AF4226 /* CrudRepository.swift */; };
-		4F931A1B2125CB1900AF4226 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A162125AD6500AF4226 /* RealmRepository.swift */; };
-		4F931A1C2125CB1D00AF4226 /* CrudRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A182125ADD500AF4226 /* CrudRepository.swift */; };
 		4F931A1D2125D3DE00AF4226 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A32119F4FC00BA3961 /* URLExtension.swift */; };
 		4F931A1E2125D3F500AF4226 /* ContentBlockerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* ContentBlockerManager.swift */; };
 		4F931A1F2125D45400AF4226 /* DomainConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A1421259BEC00AF4226 /* DomainConfigRepository.swift */; };
@@ -76,34 +73,31 @@
 		4F9CF8E7215E57B6005B1C1B /* TelemetryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9CF8E2215BCD97005B1C1B /* TelemetryManager.swift */; };
 		4F9CF8E8215E57B9005B1C1B /* TelemetryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9CF8E0215BCD6A005B1C1B /* TelemetryService.swift */; };
 		4F9CF8E9215E580C005B1C1B /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4721354DE60098631F /* Preferences.swift */; };
-		4FB1E6D2213E819F00136D2A /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 1E597C3F21341ED90098631F /* Fonts */; };
 		4FB1E6D7213EBF5300136D2A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73C21369F5400E28C38 /* StringExtension.swift */; };
 		4FB1E6D8213EC6DC00136D2A /* NSColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4521354D820098631F /* NSColorExtension.swift */; };
 		4FCEAA23212E0CCE00AACE42 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FCEAA22212E0CCE00AACE42 /* Images.xcassets */; };
 		4FFD8314212B36BC0038149F /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8313212B36BC0038149F /* FileManagerExtension.swift */; };
 		4FFD8315212B36BC0038149F /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8313212B36BC0038149F /* FileManagerExtension.swift */; };
-		4FFD8316212B36BC0038149F /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8313212B36BC0038149F /* FileManagerExtension.swift */; };
 		4FFD8338212B4FF90038149F /* BlockListAssets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD8337212B4FF90038149F /* BlockListAssets */; };
-		4FFD8339212B4FF90038149F /* BlockListAssets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD8337212B4FF90038149F /* BlockListAssets */; };
-		4FFD833A212B4FF90038149F /* BlockListAssets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD8337212B4FF90038149F /* BlockListAssets */; };
 		4FFD8349212B5D430038149F /* GlobalConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */; };
 		4FFD834A212B5D430038149F /* GlobalConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */; };
 		4FFD834D212B602B0038149F /* GlobalConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */; };
 		4FFD834E212B602B0038149F /* GlobalConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */; };
 		4FFD8351212C6C740038149F /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8350212C6C740038149F /* WindowController.swift */; };
-		558D7A066EFE2DF888DD23A1 /* Pods_ContentBlocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 476E93B1B9ACB16DEBE286F7 /* Pods_ContentBlocker.framework */; };
-		6D1BEB655BE064272AE00802 /* Pods_GhosteryLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416FEF6B2A946C5A86DE12F0 /* Pods_GhosteryLite.framework */; };
+		79686DAB627B7B89937A3AC6 /* Pods_GhosteryLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DA3ABA53D5C7DCB0D1B603 /* Pods_GhosteryLite.framework */; };
+		9A9004E49F4C7672C35BEA38 /* Pods_SafariExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6117CFC407319CA1DFE71597 /* Pods_SafariExtension.framework */; };
+		A634593A5E35D69E5D96E767 /* Pods_ContentBlocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64DB274A4D740BF1987CFB6 /* Pods_ContentBlocker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4F3049462118983D00BA3961 /* PBXContainerItemProxy */ = {
+		0D3FBAFB235F6EAA0054822A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4F3049152118982600BA3961 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4F3049332118983D00BA3961;
 			remoteInfo = SafariExtension;
 		};
-		4F30495A2118985C00BA3961 /* PBXContainerItemProxy */ = {
+		0D3FBAFE235F6EB10054822A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4F3049152118982600BA3961 /* Project object */;
 			proxyType = 1;
@@ -119,8 +113,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				4F3049482118983D00BA3961 /* SafariExtension.appex in Embed App Extensions */,
-				4F30495C2118985C00BA3961 /* ContentBlocker.appex in Embed App Extensions */,
+				0D3FBAFA235F6EAA0054822A /* SafariExtension.appex in Embed App Extensions */,
+				0D3FBAFD235F6EB10054822A /* ContentBlocker.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,8 +124,15 @@
 /* Begin PBXFileReference section */
 		0D2AA0BD2243DA0C0055B6B8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0D2AA0BF2243DB130055B6B8 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = /Users/christophertino/Documents/htdocs/GhosterySafari/.gitignore; sourceTree = "<absolute>"; };
-		0D2AA0C02243DB160055B6B8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = /Users/christophertino/Documents/htdocs/GhosterySafari/README.md; sourceTree = "<absolute>"; };
+		0D3FBB00235F70030054822A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		0D588D9B235E3FBB0003668C /* GhosteryLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhosteryLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D588D9C235E3FBB0003668C /* SafariExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SafariExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D588D9D235E3FBB0003668C /* ContentBlocker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentBlocker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D588E81235E46870003668C /* PageLatencyDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageLatencyDataSource.swift; sourceTree = "<group>"; };
+		0D588E83235E4C2F0003668C /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		0D588E88235E50B20003668C /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		0D99D75B212EFC44005D107D /* page_performance.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = page_performance.js; sourceTree = "<group>"; };
+		0DCADD5F235E5EE300F00AB4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0DF65C4A22E793840076A4BD /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		1E14B73721368CD600E28C38 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		1E14B73C21369F5400E28C38 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -144,32 +145,24 @@
 		1E597C2C2133F8170098631F /* SectionDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailVC.swift; sourceTree = "<group>"; };
 		1E597C3421340D180098631F /* SectionItemCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionItemCollectionViewItem.swift; sourceTree = "<group>"; };
 		1E597C3521340D180098631F /* SectionItemCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionItemCollectionViewItem.xib; sourceTree = "<group>"; };
-		1E597C3F21341ED90098631F /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = SOURCE_ROOT; };
 		1E597C412134407F0098631F /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		1E597C4321344ACC0098631F /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		1E597C4521354D820098631F /* NSColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSColorExtension.swift; sourceTree = "<group>"; };
 		1E597C4721354DE60098631F /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		1E597C492135682B0098631F /* SafariExtensionPromptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionPromptVC.swift; sourceTree = "<group>"; };
 		1E597C5221359D000098631F /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
-		2B01B319DD3094D9A57BE2C0 /* Pods_SafariExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafariExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4088FBAFDB2D94D0F1C61192 /* Pods-GhosteryLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.release.xcconfig"; path = "Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.release.xcconfig"; sourceTree = "<group>"; };
-		416FEF6B2A946C5A86DE12F0 /* Pods_GhosteryLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GhosteryLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		476E93B1B9ACB16DEBE286F7 /* Pods_ContentBlocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContentBlocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22DA3ABA53D5C7DCB0D1B603 /* Pods_GhosteryLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GhosteryLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F0B871F2146C91E00C79513 /* DarkMode.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = DarkMode.pdf; sourceTree = "<group>"; };
-		4F30491D2118982600BA3961 /* GhosteryLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhosteryLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3049202118982600BA3961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F3049242118982700BA3961 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F3049272118982700BA3961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F3049292118982700BA3961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F30492A2118982700BA3961 /* GhosteryLite.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GhosteryLite.entitlements; sourceTree = "<group>"; };
-		4F3049342118983D00BA3961 /* SafariExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SafariExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F3049362118983D00BA3961 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4F3049392118983D00BA3961 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
 		4F30493B2118983D00BA3961 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
 		4F30493E2118983D00BA3961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		4F3049402118983D00BA3961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3049452118983D00BA3961 /* SafariExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SafariExtension.entitlements; sourceTree = "<group>"; };
-		4F3049512118985C00BA3961 /* ContentBlocker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentBlocker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3049562118985C00BA3961 /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
 		4F3049582118985C00BA3961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3049592118985C00BA3961 /* ContentBlocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContentBlocker.entitlements; sourceTree = "<group>"; };
@@ -183,7 +176,6 @@
 		4F83ABB02138586A00BC76E4 /* TrustedSitesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSitesDataSource.swift; sourceTree = "<group>"; };
 		4F83ABB321393CF400BC76E4 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		4F90DD80214BD74F00E8BA6D /* WhiteListFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteListFileManager.swift; sourceTree = "<group>"; };
-		4F91F3212136DF0600056FDE /* PageLatencyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageLatencyDataSource.swift; sourceTree = "<group>"; };
 		4F931A1421259BEC00AF4226 /* DomainConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConfigRepository.swift; sourceTree = "<group>"; };
 		4F931A162125AD6500AF4226 /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
 		4F931A182125ADD500AF4226 /* CrudRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudRepository.swift; sourceTree = "<group>"; };
@@ -197,14 +189,17 @@
 		4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigRepository.swift; sourceTree = "<group>"; };
 		4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigDataSource.swift; sourceTree = "<group>"; };
 		4FFD8350212C6C740038149F /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		7389B97FB06620D5762A4E25 /* Pods-SafariExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.debug.xcconfig"; path = "Target Support Files/Pods-SafariExtension/Pods-SafariExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		86042B50A1FB9B9C1014EEE0 /* Pods-ContentBlocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.debug.xcconfig"; path = "Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.debug.xcconfig"; sourceTree = "<group>"; };
-		87A9A3E43D86007493CC7235 /* Pods-GhosteryLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.debug.xcconfig"; path = "Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.debug.xcconfig"; sourceTree = "<group>"; };
-		8FD817DD235C511B81A341EE /* Pods-ContentBlocker.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.beta.xcconfig"; path = "Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.beta.xcconfig"; sourceTree = "<group>"; };
-		9E4FB5F1BE8B4AD764226AFC /* Pods-GhosteryLite.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.beta.xcconfig"; path = "Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.beta.xcconfig"; sourceTree = "<group>"; };
-		BCE9E34ABE89EFE08D5C88DF /* Pods-SafariExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.release.xcconfig"; path = "Target Support Files/Pods-SafariExtension/Pods-SafariExtension.release.xcconfig"; sourceTree = "<group>"; };
-		D9725BE29FF14A9F88B5C82A /* Pods-SafariExtension.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.beta.xcconfig"; path = "Target Support Files/Pods-SafariExtension/Pods-SafariExtension.beta.xcconfig"; sourceTree = "<group>"; };
-		FCE253C13034619F7D7895A4 /* Pods-ContentBlocker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.release.xcconfig"; path = "Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.release.xcconfig"; sourceTree = "<group>"; };
+		6117CFC407319CA1DFE71597 /* Pods_SafariExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafariExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62EF13D2D847E7A2F853D6C4 /* Pods-ContentBlocker.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.beta.xcconfig"; path = "Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.beta.xcconfig"; sourceTree = "<group>"; };
+		858FFCBB9605BB25A6C51E13 /* Pods-SafariExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.debug.xcconfig"; path = "Target Support Files/Pods-SafariExtension/Pods-SafariExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		A64DB274A4D740BF1987CFB6 /* Pods_ContentBlocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContentBlocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE8C203CDD8EB3F4808E1038 /* Pods-GhosteryLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.release.xcconfig"; path = "Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.release.xcconfig"; sourceTree = "<group>"; };
+		B7D9479CCF21968976F7F179 /* Pods-ContentBlocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.debug.xcconfig"; path = "Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.debug.xcconfig"; sourceTree = "<group>"; };
+		C6694363738FEA258BEAA85D /* Pods-SafariExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.release.xcconfig"; path = "Target Support Files/Pods-SafariExtension/Pods-SafariExtension.release.xcconfig"; sourceTree = "<group>"; };
+		CB19F6B42B92975B6A6C7B57 /* Pods-ContentBlocker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContentBlocker.release.xcconfig"; path = "Target Support Files/Pods-ContentBlocker/Pods-ContentBlocker.release.xcconfig"; sourceTree = "<group>"; };
+		DF99D1A8764CDA0819B39FBB /* Pods-SafariExtension.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.beta.xcconfig"; path = "Target Support Files/Pods-SafariExtension/Pods-SafariExtension.beta.xcconfig"; sourceTree = "<group>"; };
+		F348C24C4B7D9DED318436C3 /* Pods-GhosteryLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.debug.xcconfig"; path = "Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.debug.xcconfig"; sourceTree = "<group>"; };
+		FB216CBA35157C4445AE8BD5 /* Pods-GhosteryLite.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.beta.xcconfig"; path = "Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.beta.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,7 +207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D1BEB655BE064272AE00802 /* Pods_GhosteryLite.framework in Frameworks */,
+				79686DAB627B7B89937A3AC6 /* Pods_GhosteryLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,8 +215,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F3049372118983D00BA3961 /* Cocoa.framework in Frameworks */,
-				17A72D1E0BB616CEEADB5E9E /* Pods_SafariExtension.framework in Frameworks */,
+				0D3FBB02235F701F0054822A /* Cocoa.framework in Frameworks */,
+				9A9004E49F4C7672C35BEA38 /* Pods_SafariExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,14 +224,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F3049522118985C00BA3961 /* Cocoa.framework in Frameworks */,
-				558D7A066EFE2DF888DD23A1 /* Pods_ContentBlocker.framework in Frameworks */,
+				0D3FBB04235F74940054822A /* Cocoa.framework in Frameworks */,
+				A634593A5E35D69E5D96E767 /* Pods_ContentBlocker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D588DA1235E41D10003668C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D588D9B235E3FBB0003668C /* GhosteryLite.app */,
+				0D588D9C235E3FBB0003668C /* SafariExtension.appex */,
+				0D588D9D235E3FBB0003668C /* ContentBlocker.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D588E80235E46870003668C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0D588E81235E46870003668C /* PageLatencyDataSource.swift */,
+			);
+			name = Models;
+			path = SafariExtension/Models;
+			sourceTree = SOURCE_ROOT;
+		};
 		0DF65C4C22E793910076A4BD /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +292,17 @@
 			path = ViewComponents;
 			sourceTree = "<group>";
 		};
+		12C745E560D59A7A5C913F04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D3FBB00235F70030054822A /* Cocoa.framework */,
+				A64DB274A4D740BF1987CFB6 /* Pods_ContentBlocker.framework */,
+				22DA3ABA53D5C7DCB0D1B603 /* Pods_GhosteryLite.framework */,
+				6117CFC407319CA1DFE71597 /* Pods_SafariExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1E597C272133F79F0098631F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,83 +330,55 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		1E597C3E21341ECA0098631F /* Common Resources */ = {
-			isa = PBXGroup;
-			children = (
-				1E597C3F21341ED90098631F /* Fonts */,
-			);
-			name = "Common Resources";
-			sourceTree = "<group>";
-		};
 		4F3049142118982600BA3961 = {
 			isa = PBXGroup;
 			children = (
 				4F3049532118985C00BA3961 /* ContentBlocker */,
-				4F3049352118983D00BA3961 /* Frameworks */,
 				4F30491F2118982600BA3961 /* GhosteryLite */,
-				F4855C8DECF2664CDA321D57 /* Pods */,
-				4F30491E2118982600BA3961 /* Products */,
 				4F3049382118983D00BA3961 /* SafariExtension */,
 				0D2AA0BF2243DB130055B6B8 /* .gitignore */,
+				0D588E88235E50B20003668C /* CHANGELOG.md */,
 				0D2AA0BD2243DA0C0055B6B8 /* LICENSE */,
-				0D2AA0C02243DB160055B6B8 /* README.md */,
+				0DCADD5F235E5EE300F00AB4 /* README.md */,
+				B0A62A735027E637D6286513 /* Pods */,
+				12C745E560D59A7A5C913F04 /* Frameworks */,
+				0D588DA1235E41D10003668C /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		4F30491E2118982600BA3961 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4F30491D2118982600BA3961 /* GhosteryLite.app */,
-				4F3049342118983D00BA3961 /* SafariExtension.appex */,
-				4F3049512118985C00BA3961 /* ContentBlocker.appex */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		4F30491F2118982600BA3961 /* GhosteryLite */ = {
 			isa = PBXGroup;
 			children = (
 				4F931A232126C8AF00AF4226 /* Common */,
-				1E597C3E21341ECA0098631F /* Common Resources */,
 				4F3049A02119F4FC00BA3961 /* Extensions */,
+				0D588E83235E4C2F0003668C /* Fonts */,
 				4F9CF8DF215BCC84005B1C1B /* Telemetry */,
 				4F30498A2119F46700BA3961 /* TrackerBlocking */,
 				1E597C272133F79F0098631F /* ViewControllers */,
 				1E597C31213409F90098631F /* Views */,
-				4F3049202118982600BA3961 /* AppDelegate.swift */,
 				4F3049242118982700BA3961 /* Assets.xcassets */,
+				4F3049202118982600BA3961 /* AppDelegate.swift */,
+				4FFD8350212C6C740038149F /* WindowController.swift */,
+				4F3049262118982700BA3961 /* Main.storyboard */,
 				4F30492A2118982700BA3961 /* GhosteryLite.entitlements */,
 				4F3049292118982700BA3961 /* Info.plist */,
-				4F3049262118982700BA3961 /* Main.storyboard */,
-				4FFD8350212C6C740038149F /* WindowController.swift */,
 			);
 			path = GhosteryLite;
-			sourceTree = "<group>";
-		};
-		4F3049352118983D00BA3961 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4F3049362118983D00BA3961 /* Cocoa.framework */,
-				476E93B1B9ACB16DEBE286F7 /* Pods_ContentBlocker.framework */,
-				416FEF6B2A946C5A86DE12F0 /* Pods_GhosteryLite.framework */,
-				2B01B319DD3094D9A57BE2C0 /* Pods_SafariExtension.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		4F3049382118983D00BA3961 /* SafariExtension */ = {
 			isa = PBXGroup;
 			children = (
 				0DF65C4C22E793910076A4BD /* Common */,
-				0DF65C4F22E7946A0076A4BD /* Icons */,
 				0DF65C4E22E793CD0076A4BD /* ContentScripts */,
-				0DF65C4D22E793AF0076A4BD /* ViewControllers */,
+				0DF65C4F22E7946A0076A4BD /* Icons */,
+				0D588E80235E46870003668C /* Models */,
 				0DF65C5022E7948C0076A4BD /* ViewComponents */,
+				0DF65C4D22E793AF0076A4BD /* ViewControllers */,
 				4FCEAA22212E0CCE00AACE42 /* Images.xcassets */,
-				4F91F3212136DF0600056FDE /* PageLatencyDataSource.swift */,
 				4F3049392118983D00BA3961 /* SafariExtensionHandler.swift */,
-				4F3049402118983D00BA3961 /* Info.plist */,
 				4F3049452118983D00BA3961 /* SafariExtension.entitlements */,
+				4F3049402118983D00BA3961 /* Info.plist */,
 			);
 			path = SafariExtension;
 			sourceTree = "<group>";
@@ -399,7 +396,7 @@
 		4F30498A2119F46700BA3961 /* TrackerBlocking */ = {
 			isa = PBXGroup;
 			children = (
-				4FFD831A212B4ADE0038149F /* Resources */,
+				4FFD8337212B4FF90038149F /* BlockListAssets */,
 				4F4BE2DF212595AE00FEE71E /* ConfigStorage */,
 				4F3049AB211B368000BA3961 /* BlockListManagement */,
 				4F3049B3211C6D3200BA3961 /* ContentBlockerManager.swift */,
@@ -464,26 +461,18 @@
 			path = Telemetry;
 			sourceTree = "<group>";
 		};
-		4FFD831A212B4ADE0038149F /* Resources */ = {
+		B0A62A735027E637D6286513 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4FFD8337212B4FF90038149F /* BlockListAssets */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		F4855C8DECF2664CDA321D57 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				86042B50A1FB9B9C1014EEE0 /* Pods-ContentBlocker.debug.xcconfig */,
-				FCE253C13034619F7D7895A4 /* Pods-ContentBlocker.release.xcconfig */,
-				8FD817DD235C511B81A341EE /* Pods-ContentBlocker.beta.xcconfig */,
-				87A9A3E43D86007493CC7235 /* Pods-GhosteryLite.debug.xcconfig */,
-				4088FBAFDB2D94D0F1C61192 /* Pods-GhosteryLite.release.xcconfig */,
-				9E4FB5F1BE8B4AD764226AFC /* Pods-GhosteryLite.beta.xcconfig */,
-				7389B97FB06620D5762A4E25 /* Pods-SafariExtension.debug.xcconfig */,
-				BCE9E34ABE89EFE08D5C88DF /* Pods-SafariExtension.release.xcconfig */,
-				D9725BE29FF14A9F88B5C82A /* Pods-SafariExtension.beta.xcconfig */,
+				B7D9479CCF21968976F7F179 /* Pods-ContentBlocker.debug.xcconfig */,
+				CB19F6B42B92975B6A6C7B57 /* Pods-ContentBlocker.release.xcconfig */,
+				62EF13D2D847E7A2F853D6C4 /* Pods-ContentBlocker.beta.xcconfig */,
+				F348C24C4B7D9DED318436C3 /* Pods-GhosteryLite.debug.xcconfig */,
+				AE8C203CDD8EB3F4808E1038 /* Pods-GhosteryLite.release.xcconfig */,
+				FB216CBA35157C4445AE8BD5 /* Pods-GhosteryLite.beta.xcconfig */,
+				858FFCBB9605BB25A6C51E13 /* Pods-SafariExtension.debug.xcconfig */,
+				C6694363738FEA258BEAA85D /* Pods-SafariExtension.release.xcconfig */,
+				DF99D1A8764CDA0819B39FBB /* Pods-SafariExtension.beta.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -505,12 +494,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				4F3049472118983D00BA3961 /* PBXTargetDependency */,
-				4F30495B2118985C00BA3961 /* PBXTargetDependency */,
+				0D3FBAFC235F6EAA0054822A /* PBXTargetDependency */,
+				0D3FBAFF235F6EB10054822A /* PBXTargetDependency */,
 			);
 			name = GhosteryLite;
 			productName = GhosteryLite;
-			productReference = 4F30491D2118982600BA3961 /* GhosteryLite.app */;
+			productReference = 0D588D9B235E3FBB0003668C /* GhosteryLite.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4F3049332118983D00BA3961 /* SafariExtension */ = {
@@ -528,7 +517,7 @@
 			);
 			name = SafariExtension;
 			productName = SafariExtension;
-			productReference = 4F3049342118983D00BA3961 /* SafariExtension.appex */;
+			productReference = 0D588D9C235E3FBB0003668C /* SafariExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		4F3049502118985C00BA3961 /* ContentBlocker */ = {
@@ -546,7 +535,7 @@
 			);
 			name = ContentBlocker;
 			productName = ContentBlocker;
-			productReference = 4F3049512118985C00BA3961 /* ContentBlocker.appex */;
+			productReference = 0D588D9D235E3FBB0003668C /* ContentBlocker.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -595,7 +584,7 @@
 				};
 			};
 			buildConfigurationList = 4F3049182118982600BA3961 /* Build configuration list for PBXProject "GhosteryLite" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -603,7 +592,7 @@
 				Base,
 			);
 			mainGroup = 4F3049142118982600BA3961;
-			productRefGroup = 4F30491E2118982600BA3961 /* Products */;
+			productRefGroup = 4F3049142118982600BA3961;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -622,8 +611,8 @@
 				1E14B7592138217800E28C38 /* TrustedSiteCollectionViewItem.xib in Resources */,
 				1E597C3721340D180098631F /* SectionItemCollectionViewItem.xib in Resources */,
 				4FFD8338212B4FF90038149F /* BlockListAssets in Resources */,
+				0D588E84235E4C2F0003668C /* Fonts in Resources */,
 				4F3049252118982700BA3961 /* Assets.xcassets in Resources */,
-				1E597C4021341ED90098631F /* Fonts in Resources */,
 				4F3049282118982700BA3961 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,8 +623,7 @@
 			files = (
 				0D99D75C212EFC44005D107D /* page_performance.js in Resources */,
 				4F0B87212146C91F00C79513 /* DarkMode.pdf in Resources */,
-				4FFD8339212B4FF90038149F /* BlockListAssets in Resources */,
-				4FB1E6D2213E819F00136D2A /* Fonts in Resources */,
+				0D588E85235E4C2F0003668C /* Fonts in Resources */,
 				4FCEAA23212E0CCE00AACE42 /* Images.xcassets in Resources */,
 				4F30493F2118983D00BA3961 /* SafariExtensionViewController.xib in Resources */,
 			);
@@ -645,7 +633,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FFD833A212B4FF90038149F /* BlockListAssets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -789,11 +776,11 @@
 				4FB1E6D8213EC6DC00136D2A /* NSColorExtension.swift in Sources */,
 				4F931A212125DA5200AF4226 /* BlockListFileManager.swift in Sources */,
 				4F90DD82214BDC8300E8BA6D /* WhiteListFileManager.swift in Sources */,
+				0D588E82235E46870003668C /* PageLatencyDataSource.swift in Sources */,
 				4F9CF8E7215E57B6005B1C1B /* TelemetryManager.swift in Sources */,
 				4F30493C2118983D00BA3961 /* SafariExtensionViewController.swift in Sources */,
 				4F30493A2118983D00BA3961 /* SafariExtensionHandler.swift in Sources */,
 				4F931A1E2125D3F500AF4226 /* ContentBlockerManager.swift in Sources */,
-				4F91F3222136DF0600056FDE /* PageLatencyDataSource.swift in Sources */,
 				4F83ABB22138586A00BC76E4 /* TrustedSitesDataSource.swift in Sources */,
 				0DF65C4B22E793850076A4BD /* Strings.swift in Sources */,
 				4F931A1F2125D45400AF4226 /* DomainConfigRepository.swift in Sources */,
@@ -816,27 +803,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FFD8316212B36BC0038149F /* FileManagerExtension.swift in Sources */,
-				4F931A1B2125CB1900AF4226 /* RealmRepository.swift in Sources */,
 				4F931A272126C95B00AF4226 /* Constants.swift in Sources */,
-				4F90DD83214BDE0900E8BA6D /* WhiteListFileManager.swift in Sources */,
 				4F3049572118985C00BA3961 /* ContentBlockerRequestHandler.swift in Sources */,
-				4F931A1C2125CB1D00AF4226 /* CrudRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4F3049472118983D00BA3961 /* PBXTargetDependency */ = {
+		0D3FBAFC235F6EAA0054822A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4F3049332118983D00BA3961 /* SafariExtension */;
-			targetProxy = 4F3049462118983D00BA3961 /* PBXContainerItemProxy */;
+			targetProxy = 0D3FBAFB235F6EAA0054822A /* PBXContainerItemProxy */;
 		};
-		4F30495B2118985C00BA3961 /* PBXTargetDependency */ = {
+		0D3FBAFF235F6EB10054822A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4F3049502118985C00BA3961 /* ContentBlocker */;
-			targetProxy = 4F30495A2118985C00BA3961 /* PBXContainerItemProxy */;
+			targetProxy = 0D3FBAFE235F6EB10054822A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -892,7 +875,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -952,7 +935,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -975,13 +958,14 @@
 		};
 		4F30492E2118982700BA3961 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87A9A3E43D86007493CC7235 /* Pods-GhosteryLite.debug.xcconfig */;
+			baseConfigurationReference = F348C24C4B7D9DED318436C3 /* Pods-GhosteryLite.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GhosteryLite/GhosteryLite.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -993,6 +977,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\" \"-DSTAGING\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1003,13 +988,14 @@
 		};
 		4F30492F2118982700BA3961 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4088FBAFDB2D94D0F1C61192 /* Pods-GhosteryLite.release.xcconfig */;
+			baseConfigurationReference = AE8C203CDD8EB3F4808E1038 /* Pods-GhosteryLite.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GhosteryLite/GhosteryLite.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1021,6 +1007,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DPROD\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1031,11 +1018,12 @@
 		};
 		4F30494A2118983D00BA3961 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7389B97FB06620D5762A4E25 /* Pods-SafariExtension.debug.xcconfig */;
+			baseConfigurationReference = 858FFCBB9605BB25A6C51E13 /* Pods-SafariExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = SafariExtension/Info.plist;
@@ -1044,6 +1032,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DSTAGING\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.safariExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1055,11 +1044,12 @@
 		};
 		4F30494B2118983D00BA3961 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BCE9E34ABE89EFE08D5C88DF /* Pods-SafariExtension.release.xcconfig */;
+			baseConfigurationReference = C6694363738FEA258BEAA85D /* Pods-SafariExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = SafariExtension/Info.plist;
@@ -1068,6 +1058,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DPROD\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.safariExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1079,11 +1070,12 @@
 		};
 		4F30495E2118985C00BA3961 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86042B50A1FB9B9C1014EEE0 /* Pods-ContentBlocker.debug.xcconfig */;
+			baseConfigurationReference = B7D9479CCF21968976F7F179 /* Pods-ContentBlocker.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlocker/Info.plist;
@@ -1092,6 +1084,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DSTAGING\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.contentBlocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1103,11 +1096,12 @@
 		};
 		4F30495F2118985C00BA3961 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCE253C13034619F7D7895A4 /* Pods-ContentBlocker.release.xcconfig */;
+			baseConfigurationReference = CB19F6B42B92975B6A6C7B57 /* Pods-ContentBlocker.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlocker/Info.plist;
@@ -1116,6 +1110,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DPROD\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.contentBlocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1157,7 +1152,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1180,13 +1175,14 @@
 		};
 		4F9CF8DC215B90E8005B1C1B /* Beta */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E4FB5F1BE8B4AD764226AFC /* Pods-GhosteryLite.beta.xcconfig */;
+			baseConfigurationReference = FB216CBA35157C4445AE8BD5 /* Pods-GhosteryLite.beta.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GhosteryLite/GhosteryLite.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1198,6 +1194,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DSTAGING\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1208,11 +1205,12 @@
 		};
 		4F9CF8DD215B90E8005B1C1B /* Beta */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9725BE29FF14A9F88B5C82A /* Pods-SafariExtension.beta.xcconfig */;
+			baseConfigurationReference = DF99D1A8764CDA0819B39FBB /* Pods-SafariExtension.beta.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = SafariExtension/Info.plist;
@@ -1221,6 +1219,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DSTAGING\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.safariExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1232,11 +1231,12 @@
 		};
 		4F9CF8DE215B90E8005B1C1B /* Beta */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8FD817DD235C511B81A341EE /* Pods-ContentBlocker.beta.xcconfig */;
+			baseConfigurationReference = 62EF13D2D847E7A2F853D6C4 /* Pods-ContentBlocker.beta.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlocker/Info.plist;
@@ -1245,6 +1245,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DSTAGING\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.contentBlocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";

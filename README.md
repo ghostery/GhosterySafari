@@ -34,9 +34,18 @@ $ pod install
 
 + Run 'GhosteryLite' from XCode
 
+### Clean Install
+
++ In Xcode > Product Menu > Clean Build Folder
++ Under `~/Library/Containers/` and `~/Library/Application Scripts/`
+	+ Remove any `com.ghostery.lite.*` direcotries
++ Under `~/Library/Group Containers/`
++ 	Remove any `HPY23A294X.ghostery.lite.*` directories
+
 ## Compatibility
 
 + Safari: 12+
++ Mac Mojave 10.14+
 
 ## Links
 + [Website](https://ghostery.com/)
