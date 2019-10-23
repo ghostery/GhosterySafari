@@ -236,7 +236,7 @@ class ContentBlockerManager {
 	private func reloadCBExtension() {
 		SFContentBlockerManager.reloadContentBlocker(withIdentifier: Constants.SafariContentBlockerID, completionHandler: { (error) in
 			if error != nil {
-				print("ContentBlockerManager.reloadCBExtension: Reloading Content Blocker failed ---- \(error.debugDescription)")
+				print("ContentBlockerManager.reloadCBExtension: Reloading Content Blocker failed with error \(String(describing: error))")
 			} else {
 				print("ContentBlockerManager.reloadCBExtension: Successfully reloaded Content Blocker!")
 			}

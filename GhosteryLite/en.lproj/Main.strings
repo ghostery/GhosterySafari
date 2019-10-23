@@ -1,0 +1,219 @@
+
+/* Class = "NSTextFieldCell"; title = "Custom Desc"; ObjectID = "0KE-sx-Ohg"; */
+"0KE-sx-Ohg.title" = "Custom Desc";
+
+/* Class = "NSButtonCell"; title = "trust"; ObjectID = "0cc-Uf-uAC"; */
+"0cc-Uf-uAC.title" = "trust";
+
+/* Class = "NSMenuItem"; title = "Ghostery Lite"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "Ghostery Lite";
+
+/* Class = "NSImageView"; ibShadowedToolTip = "Delivers advertising technology designed specifically for adult content sites."; ObjectID = "1rF-ap-Ve5"; */
+"1rF-ap-Ve5.ibShadowedToolTip" = "Delivers advertising technology designed specifically for adult content sites.";
+
+/* Class = "NSButtonCell"; title = "Skip for now"; ObjectID = "2Jl-PZ-VFA"; */
+"2Jl-PZ-VFA.title" = "Skip for now";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "3q8-lj-Gd7"; */
+"3q8-lj-Gd7.title" = "Box";
+
+/* Class = "NSTextFieldCell"; title = "LITE"; ObjectID = "3t7-RU-1ni"; */
+"3t7-RU-1ni.title" = "LITE";
+
+/* Class = "NSButtonCell"; title = "Def"; ObjectID = "3wz-JW-Z1K"; */
+"3wz-JW-Z1K.title" = "Def";
+
+/* Class = "NSMenuItem"; title = "Quit GhosteryLite"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Quit GhosteryLite";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "5El-Pe-hcO"; */
+"5El-Pe-hcO.title" = "Box";
+
+/* Class = "NSBox"; title = "Left Panel"; ObjectID = "5FX-lN-wZ1"; */
+"5FX-lN-wZ1.title" = "Left Panel";
+
+/* Class = "NSMenuItem"; title = "About GhosteryLite"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "About GhosteryLite";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "8mP-p1-C2C"; */
+"8mP-p1-C2C.title" = "Help";
+
+/* Class = "NSTextFieldCell"; title = "Help Desc"; ObjectID = "9tv-f8-fCZ"; */
+"9tv-f8-fCZ.title" = "Help Desc";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "Main Menu";
+
+/* Class = "NSMenuItem"; title = "Protection"; ObjectID = "BOF-NM-1cW"; */
+"BOF-NM-1cW.title" = "Protection";
+
+/* Class = "NSButtonCell"; title = "Support"; ObjectID = "BgZ-xj-F2J"; */
+"BgZ-xj-F2J.title" = "Support";
+
+/* Class = "NSBox"; title = "Right Panel"; ObjectID = "CWC-pw-01r"; */
+"CWC-pw-01r.title" = "Right Panel";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "ClR-3n-ed0"; */
+"ClR-3n-ed0.title" = "Box";
+
+/* Class = "NSMenuItem"; title = "Settings"; ObjectID = "DDT-NI-FKo"; */
+"DDT-NI-FKo.title" = "Settings";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "Dba-jd-8JT"; */
+"Dba-jd-8JT.title" = "Box";
+
+/* Class = "NSButtonCell"; title = "Cus"; ObjectID = "E3u-jU-cgo"; */
+"E3u-jU-cgo.title" = "Cus";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "EDF-e3-gcK"; */
+"EDF-e3-gcK.title" = "Box";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
+"F2S-fz-NVQ.title" = "Help";
+
+/* Class = "NSMenuItem"; title = "Ghostery Lite Help"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "Ghostery Lite Help";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "FUM-ps-RLK"; */
+"FUM-ps-RLK.title" = "Box";
+
+/* Class = "NSWindow"; title = "Ghostery Lite"; ObjectID = "IQv-IB-iLA"; */
+"IQv-IB-iLA.title" = "Ghostery Lite";
+
+/* Class = "NSButtonCell"; title = "Products"; ObjectID = "IW3-BT-Kt8"; */
+"IW3-BT-Kt8.title" = "Products";
+
+/* Class = "NSButtonCell"; title = "ENABLE"; ObjectID = "J5T-oq-YPL"; */
+"J5T-oq-YPL.title" = "ENABLE";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "Kbf-lj-k3C"; */
+"Kbf-lj-k3C.title" = "Box";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "LE2-aR-0XJ"; */
+"LE2-aR-0XJ.title" = "Bring All to Front";
+
+/* Class = "NSButtonCell"; title = "Block: Essential"; ObjectID = "MXn-Zo-X8B"; */
+"MXn-Zo-X8B.title" = "Block: Essential";
+
+/* Class = "NSButtonCell"; title = "Blog"; ObjectID = "MdL-PO-b4U"; */
+"MdL-PO-b4U.title" = "Blog";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
+"NMo-om-nkz.title" = "Services";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "NWW-Wy-iqe"; */
+"NWW-Wy-iqe.title" = "Box";
+
+/* Class = "NSButtonCell"; title = "Block: Adult Content"; ObjectID = "O3s-iH-PLS"; */
+"O3s-iH-PLS.title" = "Block: Adult Content";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "OY7-WF-poV"; */
+"OY7-WF-poV.title" = "Minimize";
+
+/* Class = "NSTextFieldCell"; title = "Settings title"; ObjectID = "Pl8-CX-f6l"; */
+"Pl8-CX-f6l.title" = "Settings title";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "R4o-n2-Eq4"; */
+"R4o-n2-Eq4.title" = "Zoom";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "RAj-YN-Sdm"; */
+"RAj-YN-Sdm.title" = "Box";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
+"Td7-aD-5lo.title" = "Window";
+
+/* Class = "NSImageView"; ibShadowedToolTip = "Provides advertising or advertising-related services such as data-collection, behavioral analysis, or re-targeting."; ObjectID = "V3t-dF-QL4"; */
+"V3t-dF-QL4.ibShadowedToolTip" = "Provides advertising or advertising-related services such as data-collection, behavioral analysis, or re-targeting.";
+
+/* Class = "NSImageView"; ibShadowedToolTip = "Includes chat, email messaging, customer support, and other interaction tools."; ObjectID = "VDK-om-yg2"; */
+"VDK-om-yg2.ibShadowedToolTip" = "Includes chat, email messaging, customer support, and other interaction tools.";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "VFy-d1-dX0"; */
+"VFy-d1-dX0.title" = "Box";
+
+/* Class = "NSMenuItem"; title = "Trusted Sites"; ObjectID = "VKp-9U-kay"; */
+"VKp-9U-kay.title" = "Trusted Sites";
+
+/* Class = "NSButtonCell"; title = "Edit"; ObjectID = "WBJ-fQ-YXc"; */
+"WBJ-fQ-YXc.title" = "Edit";
+
+/* Class = "NSImageView"; ibShadowedToolTip = "Enables comments sections for articles and product reviews."; ObjectID = "WNN-aY-BDO"; */
+"WNN-aY-BDO.ibShadowedToolTip" = "Enables comments sections for articles and product reviews.";
+
+/* Class = "NSButtonCell"; title = "ENABLE"; ObjectID = "XIq-Cy-agY"; */
+"XIq-Cy-agY.title" = "ENABLE";
+
+/* Class = "NSTextFieldCell"; title = "abc"; ObjectID = "Z6K-0m-rr9"; */
+"Z6K-0m-rr9.title" = "abc";
+
+/* Class = "NSTextFieldCell"; title = "enable Ghosty"; ObjectID = "aCq-yn-W9M"; */
+"aCq-yn-W9M.title" = "enable Ghosty";
+
+/* Class = "NSButtonCell"; title = "Block: Site Analytics"; ObjectID = "aDg-VX-FLP"; */
+"aDg-VX-FLP.title" = "Block: Site Analytics";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "aUF-d1-5bR"; */
+"aUF-d1-5bR.title" = "Window";
+
+/* Class = "NSButtonCell"; title = "Block: Customer Interaction"; ObjectID = "bgP-eI-vT7"; */
+"bgP-eI-vT7.title" = "Block: Customer Interaction";
+
+/* Class = "NSButtonCell"; title = "Block: Social Media"; ObjectID = "c0M-zC-Od5"; */
+"c0M-zC-Od5.title" = "Block: Social Media";
+
+/* Class = "NSButtonCell"; title = "FAQs"; ObjectID = "c4M-2c-co9"; */
+"c4M-2c-co9.title" = "FAQs";
+
+/* Class = "NSImageView"; ibShadowedToolTip = "Includes tag managers, privacy notices, and technologies that are critical to the functionality of a website."; ObjectID = "caT-UF-u5T"; */
+"caT-UF-u5T.ibShadowedToolTip" = "Includes tag managers, privacy notices, and technologies that are critical to the functionality of a website.";
+
+/* Class = "NSImageView"; ibShadowedToolTip = "Enables websites to publish, distribute, and optimize video and audio content."; ObjectID = "cke-w1-Con"; */
+"cke-w1-Con.ibShadowedToolTip" = "Enables websites to publish, distribute, and optimize video and audio content.";
+
+/* Class = "NSTextFieldCell"; title = "OnBoarding"; ObjectID = "dEo-t5-f3x"; */
+"dEo-t5-f3x.title" = "OnBoarding";
+
+/* Class = "NSImageView"; ibShadowedToolTip = "Collects and analyzes data related to site usage and performance."; ObjectID = "edo-Q1-18A"; */
+"edo-Q1-18A.ibShadowedToolTip" = "Collects and analyzes data related to site usage and performance.";
+
+/* Class = "NSTextFieldCell"; title = "SV"; ObjectID = "erL-oh-W9i"; */
+"erL-oh-W9i.title" = "SV";
+
+/* Class = "NSMenuItem"; title = "Default"; ObjectID = "gCL-WT-jjt"; */
+"gCL-WT-jjt.title" = "Default";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
+"hz9-B4-Xy5.title" = "Services";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "m17-jn-QNs"; */
+"m17-jn-QNs.title" = "Box";
+
+/* Class = "NSMenuItem"; title = "Custom"; ObjectID = "mye-Gf-T1p"; */
+"mye-Gf-T1p.title" = "Custom";
+
+/* Class = "NSButtonCell"; title = "Block:"; ObjectID = "phd-zp-sTL"; */
+"phd-zp-sTL.title" = "Block:";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "qEK-TC-RNc"; */
+"qEK-TC-RNc.title" = "Box";
+
+/* Class = "NSButtonCell"; title = "Block: Audio/Video Player"; ObjectID = "r8b-df-JUE"; */
+"r8b-df-JUE.title" = "Block: Audio/Video Player";
+
+/* Class = "NSImageView"; ibShadowedToolTip = "Integrates features related to social media sites."; ObjectID = "tD7-PD-U11"; */
+"tD7-PD-U11.ibShadowedToolTip" = "Integrates features related to social media sites.";
+
+/* Class = "NSMenu"; title = "Ghostery Lite"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "Ghostery Lite";
+
+/* Class = "NSTextFieldCell"; title = "All the sites that you trust can be seen here. You can also add additional sites to your list using the field below:"; ObjectID = "uVO-Aq-Xil"; */
+"uVO-Aq-Xil.title" = "All the sites that you trust can be seen here. You can also add additional sites to your list using the field below:";
+
+/* Class = "NSTextFieldCell"; title = " "; ObjectID = "wYg-RX-1lu"; */
+"wYg-RX-1lu.title" = " ";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
+"wpr-3q-Mcd.title" = "Help";
+
+/* Class = "NSButtonCell"; title = "Block: Comments"; ObjectID = "ylv-lj-W0x"; */
+"ylv-lj-W0x.title" = "Block: Comments";

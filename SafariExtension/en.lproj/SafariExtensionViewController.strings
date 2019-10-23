@@ -1,0 +1,45 @@
+
+/* Class = "NSTextFieldCell"; title = "LITE"; ObjectID = "2Ec-kd-q2K"; */
+"2Ec-kd-q2K.title" = "LITE";
+
+/* Class = "NSButtonCell"; title = "Custom Protection"; ObjectID = "77T-OQ-Bj8"; */
+"77T-OQ-Bj8.title" = "Custom Protection";
+
+/* Class = "NSButtonCell"; title = "Trust Site"; ObjectID = "B4q-Xk-a9k"; */
+"B4q-Xk-a9k.title" = "Trust Site";
+
+/* Class = "NSTextFieldCell"; title = "Reload Message"; ObjectID = "CBJ-Qs-OqG"; */
+"CBJ-Qs-OqG.title" = "Reload Message";
+
+/* Class = "NSButtonCell"; title = "Default Protection"; ObjectID = "CU4-2B-vbk"; */
+"CU4-2B-vbk.title" = "Default Protection";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Pause"; ObjectID = "JDN-jK-7IG"; */
+"JDN-jK-7IG.ibShadowedToolTip" = "Pause";
+
+/* Class = "NSTextFieldCell"; title = "0 - 5"; ObjectID = "NOp-rL-LpQ"; */
+"NOp-rL-LpQ.title" = "0 - 5";
+
+/* Class = "NSImageView"; ibShadowedToolTip = "Desc"; ObjectID = "NPW-Kh-cmC"; */
+"NPW-Kh-cmC.ibShadowedToolTip" = "Desc";
+
+/* Class = "NSTextFieldCell"; title = "5 - 10"; ObjectID = "T1f-fI-7Bm"; */
+"T1f-fI-7Bm.title" = "5 - 10";
+
+/* Class = "NSButtonCell"; title = "Reload"; ObjectID = "VMK-Ic-2R4"; */
+"VMK-Ic-2R4.title" = "Reload";
+
+/* Class = "NSTextFieldCell"; title = "--"; ObjectID = "YJh-G4-Gpq"; */
+"YJh-G4-Gpq.title" = "--";
+
+/* Class = "NSTextFieldCell"; title = "10 +"; ObjectID = "kzX-gm-dga"; */
+"kzX-gm-dga.title" = "10 +";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Website URL"; ObjectID = "oIv-xw-QGv"; */
+"oIv-xw-QGv.placeholderString" = "Website URL";
+
+/* Class = "NSTextFieldCell"; title = "Seconds load time"; ObjectID = "qiI-a6-bvL"; */
+"qiI-a6-bvL.title" = "Seconds load time";
+
+/* Class = "NSTextFieldCell"; title = "seconds"; ObjectID = "seQ-fv-OFw"; */
+"seQ-fv-OFw.title" = "seconds";

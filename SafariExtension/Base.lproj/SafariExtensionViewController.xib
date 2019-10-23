@@ -85,7 +85,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="Lfu-k9-tv6"/>
                     </constraints>
-                    <buttonCell key="cell" type="bevel" title="Default" bezelStyle="regularSquare" image="radioNotSelected" imagePosition="left" alternateImage="radioSelected" inset="2" id="CU4-2B-vbk">
+                    <buttonCell key="cell" type="bevel" title="Default Protection" bezelStyle="regularSquare" image="radioNotSelected" imagePosition="left" alternateImage="radioSelected" inset="2" id="CU4-2B-vbk">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -99,7 +99,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="lZf-S5-fTT"/>
                     </constraints>
-                    <buttonCell key="cell" type="bevel" title="Custom" bezelStyle="regularSquare" image="radioNotSelected" imagePosition="left" alternateImage="radioSelected" state="on" inset="2" id="77T-OQ-Bj8">
+                    <buttonCell key="cell" type="bevel" title="Custom Protection" bezelStyle="regularSquare" image="radioNotSelected" imagePosition="left" alternateImage="radioSelected" state="on" inset="2" id="77T-OQ-Bj8">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -119,7 +119,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="OiK-xf-oaE"/>
                     </constraints>
-                    <buttonCell key="cell" type="square" title="ABC" alternateTitle="bcd" bezelStyle="shadowlessSquare" image="trustSiteButton" imagePosition="overlaps" alignment="center" alternateImage="trustedButtonActive" imageScaling="proportionallyDown" inset="2" id="B4q-Xk-a9k" customClass="TrustButtonCell" customModule="SafariExtension" customModuleProvider="target">
+                    <buttonCell key="cell" type="square" title="Trust Site" bezelStyle="shadowlessSquare" image="trustSiteButton" imagePosition="overlaps" alignment="center" alternateImage="trustedButtonActive" imageScaling="proportionallyDown" inset="2" id="B4q-Xk-a9k" customClass="TrustButtonCell" customModule="SafariExtension" customModuleProvider="target">
                         <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -142,11 +142,11 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b7q-eW-rBI">
-                    <rect key="frame" x="93" y="171" width="34" height="17"/>
+                    <rect key="frame" x="67" y="171" width="86" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="rKH-Bm-E3E"/>
                     </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="URL" id="oIv-xw-QGv">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" placeholderString="Website URL" id="oIv-xw-QGv">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="infoTextColor"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -164,11 +164,11 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cF2-v5-BPd">
-                    <rect key="frame" x="78" y="123" width="64" height="17"/>
+                    <rect key="frame" x="50" y="123" width="120" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="e12-lr-YBQ"/>
                     </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="load time" id="qiI-a6-bvL">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Seconds load time" id="qiI-a6-bvL">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="infoTextColor"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

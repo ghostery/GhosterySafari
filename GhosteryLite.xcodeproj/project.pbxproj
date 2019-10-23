@@ -11,6 +11,8 @@
 		0D3FBAFD235F6EB10054822A /* ContentBlocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D588D9D235E3FBB0003668C /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D3FBB02235F701F0054822A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3FBB00235F70030054822A /* Cocoa.framework */; };
 		0D3FBB04235F74940054822A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3FBB00235F70030054822A /* Cocoa.framework */; };
+		0D3FBB2C2360B4FE0054822A /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D3FBB2E2360B4FE0054822A /* SafariExtensionViewController.xib */; };
+		0D3FBB312360B5320054822A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D3FBB332360B5320054822A /* Main.storyboard */; };
 		0D588E82235E46870003668C /* PageLatencyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D588E81235E46870003668C /* PageLatencyDataSource.swift */; };
 		0D588E84235E4C2F0003668C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0D588E83235E4C2F0003668C /* Fonts */; };
 		0D588E85235E4C2F0003668C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0D588E83235E4C2F0003668C /* Fonts */; };
@@ -36,10 +38,8 @@
 		4F0B87212146C91F00C79513 /* DarkMode.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4F0B871F2146C91E00C79513 /* DarkMode.pdf */; };
 		4F3049212118982600BA3961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049202118982600BA3961 /* AppDelegate.swift */; };
 		4F3049252118982700BA3961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049242118982700BA3961 /* Assets.xcassets */; };
-		4F3049282118982700BA3961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049262118982700BA3961 /* Main.storyboard */; };
 		4F30493A2118983D00BA3961 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049392118983D00BA3961 /* SafariExtensionHandler.swift */; };
 		4F30493C2118983D00BA3961 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30493B2118983D00BA3961 /* SafariExtensionViewController.swift */; };
-		4F30493F2118983D00BA3961 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F30493D2118983D00BA3961 /* SafariExtensionViewController.xib */; };
 		4F3049572118985C00BA3961 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049562118985C00BA3961 /* ContentBlockerRequestHandler.swift */; };
 		4F3049A42119F4FC00BA3961 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A12119F4FC00BA3961 /* ArrayExtensions.swift */; };
 		4F3049A52119F4FC00BA3961 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A22119F4FC00BA3961 /* DictionaryExtensions.swift */; };
@@ -123,8 +123,12 @@
 
 /* Begin PBXFileReference section */
 		0D2AA0BD2243DA0C0055B6B8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		0D2AA0BF2243DB130055B6B8 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = /Users/christophertino/Documents/htdocs/GhosterySafari/.gitignore; sourceTree = "<absolute>"; };
 		0D3FBB00235F70030054822A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		0D3FBB05235F99450054822A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0D3FBB2D2360B4FE0054822A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
+		0D3FBB322360B5320054822A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0D3FBB382360B60B0054822A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		0D3FBB3C2360FA7F0054822A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SafariExtensionViewController.strings; sourceTree = "<group>"; };
 		0D588D9B235E3FBB0003668C /* GhosteryLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhosteryLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D588D9C235E3FBB0003668C /* SafariExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SafariExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D588D9D235E3FBB0003668C /* ContentBlocker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentBlocker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,12 +159,10 @@
 		4F0B871F2146C91E00C79513 /* DarkMode.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = DarkMode.pdf; sourceTree = "<group>"; };
 		4F3049202118982600BA3961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F3049242118982700BA3961 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4F3049272118982700BA3961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F3049292118982700BA3961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F30492A2118982700BA3961 /* GhosteryLite.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GhosteryLite.entitlements; sourceTree = "<group>"; };
 		4F3049392118983D00BA3961 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
 		4F30493B2118983D00BA3961 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
-		4F30493E2118983D00BA3961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		4F3049402118983D00BA3961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3049452118983D00BA3961 /* SafariExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SafariExtension.entitlements; sourceTree = "<group>"; };
 		4F3049562118985C00BA3961 /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
@@ -232,6 +234,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D3FBB06235F9F140054822A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4FCEAA22212E0CCE00AACE42 /* Images.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		0D588DA1235E41D10003668C /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,13 +269,12 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		0DF65C4D22E793AF0076A4BD /* ViewControllers */ = {
+		0DF65C4D22E793AF0076A4BD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4F30493D2118983D00BA3961 /* SafariExtensionViewController.xib */,
 				4F30493B2118983D00BA3961 /* SafariExtensionViewController.swift */,
 			);
-			path = ViewControllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		0DF65C4E22E793CD0076A4BD /* ContentScripts */ = {
@@ -284,12 +293,12 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
-		0DF65C5022E7948C0076A4BD /* ViewComponents */ = {
+		0DF65C5022E7948C0076A4BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				4F51EDC72191A0C60032DCDF /* TrustButtonCell.swift */,
 			);
-			path = ViewComponents;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		12C745E560D59A7A5C913F04 /* Frameworks */ = {
@@ -336,7 +345,7 @@
 				4F3049532118985C00BA3961 /* ContentBlocker */,
 				4F30491F2118982600BA3961 /* GhosteryLite */,
 				4F3049382118983D00BA3961 /* SafariExtension */,
-				0D2AA0BF2243DB130055B6B8 /* .gitignore */,
+				0D3FBB05235F99450054822A /* .gitignore */,
 				0D588E88235E50B20003668C /* CHANGELOG.md */,
 				0D2AA0BD2243DA0C0055B6B8 /* LICENSE */,
 				0DCADD5F235E5EE300F00AB4 /* README.md */,
@@ -349,19 +358,19 @@
 		4F30491F2118982600BA3961 /* GhosteryLite */ = {
 			isa = PBXGroup;
 			children = (
+				4F3049202118982600BA3961 /* AppDelegate.swift */,
+				4F3049242118982700BA3961 /* Assets.xcassets */,
 				4F931A232126C8AF00AF4226 /* Common */,
 				4F3049A02119F4FC00BA3961 /* Extensions */,
 				0D588E83235E4C2F0003668C /* Fonts */,
+				4F30492A2118982700BA3961 /* GhosteryLite.entitlements */,
+				4F3049292118982700BA3961 /* Info.plist */,
+				0D3FBB332360B5320054822A /* Main.storyboard */,
 				4F9CF8DF215BCC84005B1C1B /* Telemetry */,
 				4F30498A2119F46700BA3961 /* TrackerBlocking */,
 				1E597C272133F79F0098631F /* ViewControllers */,
 				1E597C31213409F90098631F /* Views */,
-				4F3049242118982700BA3961 /* Assets.xcassets */,
-				4F3049202118982600BA3961 /* AppDelegate.swift */,
 				4FFD8350212C6C740038149F /* WindowController.swift */,
-				4F3049262118982700BA3961 /* Main.storyboard */,
-				4F30492A2118982700BA3961 /* GhosteryLite.entitlements */,
-				4F3049292118982700BA3961 /* Info.plist */,
 			);
 			path = GhosteryLite;
 			sourceTree = "<group>";
@@ -371,14 +380,15 @@
 			children = (
 				0DF65C4C22E793910076A4BD /* Common */,
 				0DF65C4E22E793CD0076A4BD /* ContentScripts */,
+				0DF65C4D22E793AF0076A4BD /* Controllers */,
 				0DF65C4F22E7946A0076A4BD /* Icons */,
-				0D588E80235E46870003668C /* Models */,
-				0DF65C5022E7948C0076A4BD /* ViewComponents */,
-				0DF65C4D22E793AF0076A4BD /* ViewControllers */,
-				4FCEAA22212E0CCE00AACE42 /* Images.xcassets */,
-				4F3049392118983D00BA3961 /* SafariExtensionHandler.swift */,
-				4F3049452118983D00BA3961 /* SafariExtension.entitlements */,
 				4F3049402118983D00BA3961 /* Info.plist */,
+				0D588E80235E46870003668C /* Models */,
+				0D3FBB06235F9F140054822A /* Resources */,
+				4F3049452118983D00BA3961 /* SafariExtension.entitlements */,
+				4F3049392118983D00BA3961 /* SafariExtensionHandler.swift */,
+				0D3FBB2E2360B4FE0054822A /* SafariExtensionViewController.xib */,
+				0DF65C5022E7948C0076A4BD /* Views */,
 			);
 			path = SafariExtension;
 			sourceTree = "<group>";
@@ -611,9 +621,9 @@
 				1E14B7592138217800E28C38 /* TrustedSiteCollectionViewItem.xib in Resources */,
 				1E597C3721340D180098631F /* SectionItemCollectionViewItem.xib in Resources */,
 				4FFD8338212B4FF90038149F /* BlockListAssets in Resources */,
+				0D3FBB312360B5320054822A /* Main.storyboard in Resources */,
 				0D588E84235E4C2F0003668C /* Fonts in Resources */,
 				4F3049252118982700BA3961 /* Assets.xcassets in Resources */,
-				4F3049282118982700BA3961 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,11 +631,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D3FBB2C2360B4FE0054822A /* SafariExtensionViewController.xib in Resources */,
 				0D99D75C212EFC44005D107D /* page_performance.js in Resources */,
 				4F0B87212146C91F00C79513 /* DarkMode.pdf in Resources */,
 				0D588E85235E4C2F0003668C /* Fonts in Resources */,
 				4FCEAA23212E0CCE00AACE42 /* Images.xcassets in Resources */,
-				4F30493F2118983D00BA3961 /* SafariExtensionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -824,20 +834,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4F3049262118982700BA3961 /* Main.storyboard */ = {
+		0D3FBB2E2360B4FE0054822A /* SafariExtensionViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4F3049272118982700BA3961 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4F30493D2118983D00BA3961 /* SafariExtensionViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4F30493E2118983D00BA3961 /* Base */,
+				0D3FBB2D2360B4FE0054822A /* Base */,
+				0D3FBB3C2360FA7F0054822A /* en */,
 			);
 			name = SafariExtensionViewController.xib;
+			sourceTree = "<group>";
+		};
+		0D3FBB332360B5320054822A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D3FBB322360B5320054822A /* Base */,
+				0D3FBB382360B60B0054822A /* en */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -847,6 +859,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -907,6 +920,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1124,6 +1138,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

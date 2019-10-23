@@ -40,7 +40,7 @@ $ pod install
 + Under `~/Library/Containers/` and `~/Library/Application Scripts/`
 	+ Remove any `com.ghostery.lite.*` direcotries
 + Under `~/Library/Group Containers/`
-+ 	Remove any `HPY23A294X.ghostery.lite.*` directories
+	+ Remove any `HPY23A294X.ghostery.lite.*` directories
 
 ## Compatibility
 
