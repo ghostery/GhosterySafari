@@ -1,15 +1,21 @@
 //
-//  FileManagerExtension.swift
-//  GhosteryLite
+// FileManagerExtension
+// GhosteryLite
 //
-//  Created by Sahakyan on 8/20/18.
-//  Copyright © 2018 Ghostery. All rights reserved.
+// Ghostery Lite for Safari
+// https://www.ghostery.com/
+//
+// Copyright 2019 Ghostery, Inc. All rights reserved.
+//
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0
 //
 
 import Foundation
 
 extension FileManager {
-
+	
 	func readJsonFile<T>(at fileUrl: URL?) -> T? {
 		guard fileExists(atPath: (fileUrl?.path)!) else {
 			print("FileManager.readJsonFile: \(String(describing: fileUrl?.path)) does not exist")
@@ -35,7 +41,7 @@ extension FileManager {
 			print("FileManager.writeJsonFile error")
 		}
 	}
-
+	
 	func writeFile(_ data: Data, name fileName: String, in directory: URL?) {
 		FileManager.default.createDirectoryIfNotExists(directory, withIntermediateDirectories: true)
 		
@@ -46,7 +52,7 @@ extension FileManager {
 			print("FileManager.writeFile: Unable to write the data to \(fileName)")
 		}
 	}
-
+	
 	public func createDirectoryIfNotExists(_ url: URL?, withIntermediateDirectories hasIntermediateDir: Bool) {
 		if !FileManager.default.fileExists(atPath: (url?.path)!) {
 			do {

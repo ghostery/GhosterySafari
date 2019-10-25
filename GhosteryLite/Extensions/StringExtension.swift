@@ -1,5 +1,5 @@
 //
-// StringExtension.swift
+// StringExtension
 // Ghostery Lite
 //
 // Ghostery Lite for Safari
@@ -35,9 +35,9 @@ extension String {
 		textParagraph.maximumLineHeight = 30.0
 		textParagraph.alignment = textAlignment
 		let attribs: [NSAttributedString.Key : Any] = [NSAttributedString.Key.font : font,
-													NSAttributedString.Key.foregroundColor : textColor,
-													NSAttributedString.Key.paragraphStyle : textParagraph,
-													NSAttributedString.Key.underlineStyle : isUnderline ? NSUnderlineStyle.single.rawValue : 0]
+													   NSAttributedString.Key.foregroundColor : textColor,
+													   NSAttributedString.Key.paragraphStyle : textParagraph,
+													   NSAttributedString.Key.underlineStyle : isUnderline ? NSUnderlineStyle.single.rawValue : 0]
 		let attrString:NSAttributedString = NSAttributedString.init(string: self, attributes: attribs)
 		return attrString
 	}

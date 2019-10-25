@@ -1,15 +1,21 @@
 //
-//  URLExtension.swift
-//  GhosteryLite
+// URLExtension
+// GhosteryLite
 //
-//  Created by Sahakyan on 8/7/18.
-//  Copyright © 2018 Ghostery. All rights reserved.
+// Ghostery Lite for Safari
+// https://www.ghostery.com/
+//
+// Copyright 2019 Ghostery, Inc. All rights reserved.
+//
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0
 //
 
 import Foundation
 
 extension URL {
-
+	
 	public var normalizedHost: String? {
 		// Use components.host instead of self.host since the former correctly preserves
 		// brackets for IPv6 hosts, whereas the latter strips them.
@@ -23,7 +29,7 @@ extension URL {
 		
 		return host
 	}
-
+	
 	public var fullPath: String {
 		var scheme = self.scheme ?? ""
 		if !scheme.isEmpty {
@@ -34,5 +40,5 @@ extension URL {
 		let newPath = regEx?.stringByReplacingMatches(in: self.path, options: [], range: NSMakeRange(0, self.path.count), withTemplate: "") ?? ""
 		return "\(scheme)\(host)\(newPath)"
 	}
-
+	
 }

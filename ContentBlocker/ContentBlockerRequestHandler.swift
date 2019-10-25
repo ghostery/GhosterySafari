@@ -1,5 +1,5 @@
 //
-// ContentBlockerRequestHandler.swift
+// ContentBlockerRequestHandler
 // ContentBlocker
 //
 // Ghostery Lite for Safari
@@ -15,7 +15,7 @@
 import Foundation
 
 class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
-
+	/// Tells the extension to prepare for a host app’s request.
 	func beginRequest(with context: NSExtensionContext) {
 		let item = NSExtensionItem()
 		

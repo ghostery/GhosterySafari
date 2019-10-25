@@ -1,0 +1,56 @@
+//
+// HelpViewController
+// GhosteryLite
+//
+// Ghostery Lite for Safari
+// https://www.ghostery.com/
+//
+// Copyright 2019 Ghostery, Inc. All rights reserved.
+//
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0
+//
+
+import Cocoa
+
+class HelpViewController: NSViewController {
+	
+	@IBOutlet weak var helpText: NSTextField!
+	@IBOutlet weak var supportBtn: NSButton!
+	@IBOutlet weak var productsBtn: NSButton!
+	@IBOutlet weak var blogBtn: NSButton!
+	@IBOutlet weak var faqBtn: NSButton!
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		initComponents()
+	}
+	
+	@IBAction func HelpLinkClicked(_ sender: NSButton) {
+		if sender == supportBtn {
+			openURL("https://www.ghostery.com/support/")
+		} else if sender == productsBtn {
+			openURL("https://www.ghostery.com/products/")
+		} else if sender == blogBtn {
+			openURL("https://www.ghostery.com/blog/")
+		} else if sender == faqBtn {
+			openURL("https://www.ghostery.com/faqs/")
+		}
+	}
+	
+	private func openURL(_ urlString: String) {
+		if let url = URL(string: urlString) {
+			NSWorkspace.shared.open(url)
+		}
+	}
+	
+	private func initComponents() {
+		self.helpText.attributedStringValue = Strings.HelpPanelText.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 3)
+		supportBtn.attributedTitle = Strings.HelpPanelSupportButtonTitle.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(named: "linkColor") ?? NSColor.blue, isUnderline: true)
+		productsBtn.attributedTitle = Strings.HelpPanelProductsButtonTitle.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(named: "linkColor") ?? NSColor.blue, isUnderline: true)
+		blogBtn.attributedTitle = Strings.HelpPanelBlogButtonTitle.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(named: "linkColor") ?? NSColor.blue, isUnderline: true)
+		faqBtn.attributedTitle = Strings.HelpPanelFaqsButtonTitle.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(named: "linkColor") ?? NSColor.blue, isUnderline: true)
+	}
+}
+

@@ -1,5 +1,5 @@
 //
-// PageLoadingTime.swift
+// PageLoadingTime
 // SafariExtension
 //
 // Ghostery Lite for Safari
