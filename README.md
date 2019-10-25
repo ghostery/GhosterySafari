@@ -38,7 +38,7 @@ $ pod install
 
 + In Xcode > Product Menu > Clean Build Folder
 + Under `~/Library/Containers/` and `~/Library/Application Scripts/`
-	+ Remove any `com.ghostery.lite.*` direcotries
+	+ Remove any `com.ghostery.lite.*` directories
 + Under `~/Library/Group Containers/`
 	+ Remove any `HPY23A294X.ghostery.lite.*` directories
 

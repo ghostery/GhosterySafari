@@ -268,6 +268,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		0D027955236289D5007D5F66 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4F3049592118985C00BA3961 /* ContentBlocker.entitlements */,
+				4F3049582118985C00BA3961 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		0D3FBB06235F9F140054822A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,9 +393,8 @@
 		4F3049532118985C00BA3961 /* ContentBlocker */ = {
 			isa = PBXGroup;
 			children = (
-				4F3049592118985C00BA3961 /* ContentBlocker.entitlements */,
+				0D027955236289D5007D5F66 /* SupportingFiles */,
 				4F3049562118985C00BA3961 /* ContentBlockerRequestHandler.swift */,
-				4F3049582118985C00BA3961 /* Info.plist */,
 			);
 			path = ContentBlocker;
 			sourceTree = "<group>";
@@ -1073,13 +1081,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B7D9479CCF21968976F7F179 /* Pods-ContentBlocker.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_ENTITLEMENTS = ContentBlocker/SupportingFiles/ContentBlocker.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = ContentBlocker/Info.plist;
+				INFOPLIST_FILE = ContentBlocker/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1099,13 +1107,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CB19F6B42B92975B6A6C7B57 /* Pods-ContentBlocker.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_ENTITLEMENTS = ContentBlocker/SupportingFiles/ContentBlocker.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = ContentBlocker/Info.plist;
+				INFOPLIST_FILE = ContentBlocker/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1235,13 +1243,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 62EF13D2D847E7A2F853D6C4 /* Pods-ContentBlocker.beta.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_ENTITLEMENTS = ContentBlocker/SupportingFiles/ContentBlocker.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = ContentBlocker/Info.plist;
+				INFOPLIST_FILE = ContentBlocker/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
