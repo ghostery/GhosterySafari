@@ -8,20 +8,23 @@
 /* Class = "NSButtonCell"; title = "Trust Site"; ObjectID = "B4q-Xk-a9k"; */
 "B4q-Xk-a9k.title" = "Trust Site";
 
-/* Class = "NSTextFieldCell"; title = "Reload Message"; ObjectID = "CBJ-Qs-OqG"; */
-"CBJ-Qs-OqG.title" = "Reload Message";
+/* Class = "NSTextFieldCell"; title = "Reload To See Changes"; ObjectID = "CBJ-Qs-OqG"; */
+"CBJ-Qs-OqG.title" = "Reload To See Changes";
 
 /* Class = "NSButtonCell"; title = "Default Protection"; ObjectID = "CU4-2B-vbk"; */
 "CU4-2B-vbk.title" = "Default Protection";
 
-/* Class = "NSButton"; ibShadowedToolTip = "Pause"; ObjectID = "JDN-jK-7IG"; */
-"JDN-jK-7IG.ibShadowedToolTip" = "Pause";
+/* Class = "NSButton"; ibShadowedToolTip = "Always allow trackers and ads on this site."; ObjectID = "Ico-u6-0Jj"; */
+"Ico-u6-0Jj.ibShadowedToolTip" = "Always allow trackers and ads on this site.";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Pause Ghostery Lite"; ObjectID = "JDN-jK-7IG"; */
+"JDN-jK-7IG.ibShadowedToolTip" = "Pause Ghostery Lite";
 
 /* Class = "NSTextFieldCell"; title = "0 - 5"; ObjectID = "NOp-rL-LpQ"; */
 "NOp-rL-LpQ.title" = "0 - 5";
 
-/* Class = "NSImageView"; ibShadowedToolTip = "Desc"; ObjectID = "NPW-Kh-cmC"; */
-"NPW-Kh-cmC.ibShadowedToolTip" = "Desc";
+/* Class = "NSImageView"; ibShadowedToolTip = "Control which categories of tracker you block/allow in your custom settings."; ObjectID = "NPW-Kh-cmC"; */
+"NPW-Kh-cmC.ibShadowedToolTip" = "Control which categories of tracker you block/allow in your custom settings.";
 
 /* Class = "NSTextFieldCell"; title = "5 - 10"; ObjectID = "T1f-fI-7Bm"; */
 "T1f-fI-7Bm.title" = "5 - 10";
@@ -43,3 +46,12 @@
 
 /* Class = "NSTextFieldCell"; title = "seconds"; ObjectID = "seQ-fv-OFw"; */
 "seQ-fv-OFw.title" = "seconds";
+
+/* Safari Extension - Dynamic Strings */
+"trusted.tooltip" = "Trackers and ads allowed. Click to undo.";
+"trusted.button" = "Site Trusted";
+"button.resume.tooltip" = "Resume Ghostery Lite";
+"paused.message" = "Ghostery Lite has been paused.";
+"resumed.message" = "Ghostery Lite has been resumed.";
+"whitelisted.message" = "Site whitelisted.";
+"untrusted.message" = "Site no longer whitelisted.";

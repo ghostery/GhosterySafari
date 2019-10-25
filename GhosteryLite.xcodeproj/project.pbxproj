@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D02795023624099007D5F66 /* ghostery_icon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0D02794F23624099007D5F66 /* ghostery_icon.pdf */; };
 		0D3FBAFA235F6EAA0054822A /* SafariExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D588D9C235E3FBB0003668C /* SafariExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D3FBAFD235F6EB10054822A /* ContentBlocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D588D9D235E3FBB0003668C /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D3FBB02235F701F0054822A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3FBB00235F70030054822A /* Cocoa.framework */; };
@@ -17,7 +18,6 @@
 		0D588E84235E4C2F0003668C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0D588E83235E4C2F0003668C /* Fonts */; };
 		0D588E85235E4C2F0003668C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0D588E83235E4C2F0003668C /* Fonts */; };
 		0D99D75C212EFC44005D107D /* page_performance.js in Resources */ = {isa = PBXBuildFile; fileRef = 0D99D75B212EFC44005D107D /* page_performance.js */; };
-		0DF65C4B22E793850076A4BD /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF65C4A22E793840076A4BD /* Strings.swift */; };
 		1E14B73821368CD600E28C38 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73721368CD600E28C38 /* Strings.swift */; };
 		1E14B73D21369F5400E28C38 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73C21369F5400E28C38 /* StringExtension.swift */; };
 		1E14B73F2136BB6F00E28C38 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73E2136BB6F00E28C38 /* HelpVC.swift */; };
@@ -35,7 +35,6 @@
 		1E597C4821354DE60098631F /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4721354DE60098631F /* Preferences.swift */; };
 		1E597C4A2135682B0098631F /* SafariExtensionPromptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C492135682B0098631F /* SafariExtensionPromptVC.swift */; };
 		1E597C5321359D000098631F /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C5221359D000098631F /* HUDView.swift */; };
-		4F0B87212146C91F00C79513 /* DarkMode.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4F0B871F2146C91E00C79513 /* DarkMode.pdf */; };
 		4F3049212118982600BA3961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049202118982600BA3961 /* AppDelegate.swift */; };
 		4F3049252118982700BA3961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049242118982700BA3961 /* Assets.xcassets */; };
 		4F30493A2118983D00BA3961 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049392118983D00BA3961 /* SafariExtensionHandler.swift */; };
@@ -122,13 +121,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D02794E2361D3ED007D5F66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SafariExtensionViewController.strings; sourceTree = "<group>"; };
+		0D02794F23624099007D5F66 /* ghostery_icon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ghostery_icon.pdf; sourceTree = "<group>"; };
 		0D2AA0BD2243DA0C0055B6B8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0D3FBB00235F70030054822A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0D3FBB05235F99450054822A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0D3FBB2D2360B4FE0054822A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		0D3FBB322360B5320054822A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D3FBB382360B60B0054822A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		0D3FBB3C2360FA7F0054822A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SafariExtensionViewController.strings; sourceTree = "<group>"; };
 		0D588D9B235E3FBB0003668C /* GhosteryLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhosteryLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D588D9C235E3FBB0003668C /* SafariExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SafariExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D588D9D235E3FBB0003668C /* ContentBlocker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentBlocker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,7 +137,6 @@
 		0D588E88235E50B20003668C /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		0D99D75B212EFC44005D107D /* page_performance.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = page_performance.js; sourceTree = "<group>"; };
 		0DCADD5F235E5EE300F00AB4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		0DF65C4A22E793840076A4BD /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		1E14B73721368CD600E28C38 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		1E14B73C21369F5400E28C38 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		1E14B73E2136BB6F00E28C38 /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
@@ -156,7 +155,6 @@
 		1E597C492135682B0098631F /* SafariExtensionPromptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionPromptVC.swift; sourceTree = "<group>"; };
 		1E597C5221359D000098631F /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
 		22DA3ABA53D5C7DCB0D1B603 /* Pods_GhosteryLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GhosteryLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F0B871F2146C91E00C79513 /* DarkMode.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = DarkMode.pdf; sourceTree = "<group>"; };
 		4F3049202118982600BA3961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F3049242118982700BA3961 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F3049292118982700BA3961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -234,10 +232,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D02795123624B45007D5F66 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4F3049402118983D00BA3961 /* Info.plist */,
+				4F3049452118983D00BA3961 /* SafariExtension.entitlements */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		0D02795223624D82007D5F66 /* PageLatency */ = {
+			isa = PBXGroup;
+			children = (
+				0D588E81235E46870003668C /* PageLatencyDataSource.swift */,
+			);
+			path = PageLatency;
+			sourceTree = "<group>";
+		};
+		0D02795323624D8E007D5F66 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0D02795423626D52007D5F66 /* Cells */,
+				4F30493B2118983D00BA3961 /* SafariExtensionViewController.swift */,
+				4F3049392118983D00BA3961 /* SafariExtensionHandler.swift */,
+				0D3FBB2E2360B4FE0054822A /* SafariExtensionViewController.xib */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		0D02795423626D52007D5F66 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4F51EDC72191A0C60032DCDF /* TrustButtonCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		0D3FBB06235F9F140054822A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				4FCEAA22212E0CCE00AACE42 /* Images.xcassets */,
+				0D02794F23624099007D5F66 /* ghostery_icon.pdf */,
+				0D99D75B212EFC44005D107D /* page_performance.js */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -252,53 +288,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0D588E80235E46870003668C /* Models */ = {
+		0DF65C4D22E793AF0076A4BD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				0D588E81235E46870003668C /* PageLatencyDataSource.swift */,
+				0D02795323624D8E007D5F66 /* Extension */,
+				0D02795223624D82007D5F66 /* PageLatency */,
 			);
-			name = Models;
-			path = SafariExtension/Models;
-			sourceTree = SOURCE_ROOT;
-		};
-		0DF65C4C22E793910076A4BD /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				0DF65C4A22E793840076A4BD /* Strings.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		0DF65C4D22E793AF0076A4BD /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				4F30493B2118983D00BA3961 /* SafariExtensionViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		0DF65C4E22E793CD0076A4BD /* ContentScripts */ = {
-			isa = PBXGroup;
-			children = (
-				0D99D75B212EFC44005D107D /* page_performance.js */,
-			);
-			path = ContentScripts;
-			sourceTree = "<group>";
-		};
-		0DF65C4F22E7946A0076A4BD /* Icons */ = {
-			isa = PBXGroup;
-			children = (
-				4F0B871F2146C91E00C79513 /* DarkMode.pdf */,
-			);
-			path = Icons;
-			sourceTree = "<group>";
-		};
-		0DF65C5022E7948C0076A4BD /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				4F51EDC72191A0C60032DCDF /* TrustButtonCell.swift */,
-			);
-			path = Views;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		12C745E560D59A7A5C913F04 /* Frameworks */ = {
@@ -378,17 +374,9 @@
 		4F3049382118983D00BA3961 /* SafariExtension */ = {
 			isa = PBXGroup;
 			children = (
-				0DF65C4C22E793910076A4BD /* Common */,
-				0DF65C4E22E793CD0076A4BD /* ContentScripts */,
-				0DF65C4D22E793AF0076A4BD /* Controllers */,
-				0DF65C4F22E7946A0076A4BD /* Icons */,
-				4F3049402118983D00BA3961 /* Info.plist */,
-				0D588E80235E46870003668C /* Models */,
+				0DF65C4D22E793AF0076A4BD /* Modules */,
 				0D3FBB06235F9F140054822A /* Resources */,
-				4F3049452118983D00BA3961 /* SafariExtension.entitlements */,
-				4F3049392118983D00BA3961 /* SafariExtensionHandler.swift */,
-				0D3FBB2E2360B4FE0054822A /* SafariExtensionViewController.xib */,
-				0DF65C5022E7948C0076A4BD /* Views */,
+				0D02795123624B45007D5F66 /* SupportingFiles */,
 			);
 			path = SafariExtension;
 			sourceTree = "<group>";
@@ -631,9 +619,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D02795023624099007D5F66 /* ghostery_icon.pdf in Resources */,
 				0D3FBB2C2360B4FE0054822A /* SafariExtensionViewController.xib in Resources */,
 				0D99D75C212EFC44005D107D /* page_performance.js in Resources */,
-				4F0B87212146C91F00C79513 /* DarkMode.pdf in Resources */,
 				0D588E85235E4C2F0003668C /* Fonts in Resources */,
 				4FCEAA23212E0CCE00AACE42 /* Images.xcassets in Resources */,
 			);
@@ -792,7 +780,6 @@
 				4F30493A2118983D00BA3961 /* SafariExtensionHandler.swift in Sources */,
 				4F931A1E2125D3F500AF4226 /* ContentBlockerManager.swift in Sources */,
 				4F83ABB22138586A00BC76E4 /* TrustedSitesDataSource.swift in Sources */,
-				0DF65C4B22E793850076A4BD /* Strings.swift in Sources */,
 				4F931A1F2125D45400AF4226 /* DomainConfigRepository.swift in Sources */,
 				4F931A222126C23800AF4226 /* CrudRepository.swift in Sources */,
 				4FFD834A212B5D430038149F /* GlobalConfigRepository.swift in Sources */,
@@ -838,7 +825,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0D3FBB2D2360B4FE0054822A /* Base */,
-				0D3FBB3C2360FA7F0054822A /* en */,
+				0D02794E2361D3ED007D5F66 /* en */,
 			);
 			name = SafariExtensionViewController.xib;
 			sourceTree = "<group>";
@@ -1034,13 +1021,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 858FFCBB9605BB25A6C51E13 /* Pods-SafariExtension.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_ENTITLEMENTS = SafariExtension/SupportingFiles/SafariExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = SafariExtension/Info.plist;
+				INFOPLIST_FILE = SafariExtension/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1060,13 +1047,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C6694363738FEA258BEAA85D /* Pods-SafariExtension.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_ENTITLEMENTS = SafariExtension/SupportingFiles/SafariExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = SafariExtension/Info.plist;
+				INFOPLIST_FILE = SafariExtension/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1222,13 +1209,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DF99D1A8764CDA0819B39FBB /* Pods-SafariExtension.beta.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = SafariExtension/SafariExtension.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_ENTITLEMENTS = SafariExtension/SupportingFiles/SafariExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = SafariExtension/Info.plist;
+				INFOPLIST_FILE = SafariExtension/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

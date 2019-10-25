@@ -1,15 +1,21 @@
 //
-//  SafariExtensionHandler.swift
-//  SafariExtension
+// SafariExtensionHandler.swift
+// SafariExtension
 //
-//  Created by Sahakyan on 8/6/18.
-//  Copyright © 2018 Ghostery. All rights reserved.
+// Ghostery Lite for Safari
+// https://www.ghostery.com/
+//
+// Copyright 2019 Ghostery, Inc. All rights reserved.
+//
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0
 //
 
 import SafariServices
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
-	// This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
+	/// This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
 	override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
 		if messageName == "recordPageInfo" {
 			page.getPropertiesWithCompletionHandler { (properties) in
@@ -24,7 +30,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 		}
 	}
 
-	// This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
+	/// This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
 	override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
 		TelemetryManager.shared.sendSignal(.active, ghostrank: 2)
 		handleTabUrlChange(window) { (url) in
@@ -35,7 +41,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 		validationHandler(true, "")
 	}
 	
-	// Called when the Content Blocker matches a URL on a given page
+	/// Called when the Content Blocker matches a URL on a given page
 	override func contentBlocker(withIdentifier contentBlockerIdentifier: String, blockedResourcesWith urls: [URL], on page: SFSafariPage) {
 		for u in urls {
 			print("pattern matched \(u.absoluteString)")
