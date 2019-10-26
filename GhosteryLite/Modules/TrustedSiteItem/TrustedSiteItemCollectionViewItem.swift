@@ -20,7 +20,7 @@ protocol TrustedSiteItemDelegate: class {
 
 class TrustedSiteItemCollectionViewItem: NSCollectionViewItem {
 	
-	weak var delegate: TrustedSiteDelegate?
+	weak var delegate: TrustedSiteItemDelegate?
 	
 	@IBOutlet weak var siteLbl: NSTextField!
 	

@@ -131,9 +131,11 @@ extension TrustedSitesViewController : NSCollectionViewDataSource {
 	func collectionView(_ collectionView: NSCollectionView,
 						itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
 		let trustedSiteItemCollectionView = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TrustedSiteItemCollectionViewItem"), for: indexPath)
-		guard let trustedSiteView = trustedSiteCollectionView as? TrustedSiteItemCollectionViewItem else { return trustedSiteCollectionView }
+		guard let trustedSiteView = trustedSiteItemCollectionView as? TrustedSiteItemCollectionViewItem else {
+			return trustedSiteItemCollectionView
+		}
 		trustedSiteView.delegate = self
-		//TODOL update the cell with the actual data
+		//TODO: update the cell with the actual data
 		let obj = self.trustedSites[indexPath.item]
 		if let n = obj.name {
 			trustedSiteView.update(n, for: indexPath)
@@ -142,7 +144,7 @@ extension TrustedSitesViewController : NSCollectionViewDataSource {
 	}
 }
 
-extension TrustedSitesViewController: TrustedSiteDelegate {
+extension TrustedSitesViewController: TrustedSiteItemDelegate {
 	
 	func trustedSiteDidRemove(indexPath: IndexPath, url: String) {
 		ContentBlockerManager.shared.untrustDomain(domain: self.trustedSites[indexPath.item].name ?? "")
