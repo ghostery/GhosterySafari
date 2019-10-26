@@ -298,7 +298,6 @@
 		0D02795823632F84007D5F66 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				4F3049AB211B368000BA3961 /* ContentBlocking */,
 				0D02795A23634277007D5F66 /* DetailView */,
 				0D02795C236342D7007D5F66 /* HelpView */,
 				0D02795D236342DC007D5F66 /* HomeView */,
@@ -307,8 +306,6 @@
 				0D02795923634271007D5F66 /* MenuView */,
 				0D02796323634662007D5F66 /* ModalView */,
 				0D02795F236342F5007D5F66 /* SettingsView */,
-				4F4BE2DF212595AE00FEE71E /* Storage */,
-				4F9CF8DF215BCC84005B1C1B /* Telemetry */,
 				0D02796123634306007D5F66 /* TrustedSiteItem */,
 				0D027960236342FE007D5F66 /* TrustedSitesView */,
 				0D027962236345EF007D5F66 /* Window */,
@@ -424,6 +421,18 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		0D02797023650B49007D5F66 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				4F931A182125ADD500AF4226 /* CrudRepository.swift */,
+				4F931A1421259BEC00AF4226 /* DomainConfigRepository.swift */,
+				4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */,
+				4F931A162125AD6500AF4226 /* RealmRepository.swift */,
+				4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		0D3FBB06235F9F140054822A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -484,10 +493,13 @@
 			isa = PBXGroup;
 			children = (
 				0D02796523634CF1007D5F66 /* Application */,
+				4F3049AB211B368000BA3961 /* ContentBlocking */,
+				4F4BE2DF212595AE00FEE71E /* DataPersistence */,
 				4F3049A02119F4FC00BA3961 /* Extensions */,
 				0D02795823632F84007D5F66 /* Modules */,
 				0D02795623632D9A007D5F66 /* Resources */,
 				0D02795723632DA3007D5F66 /* SupportingFiles */,
+				4F9CF8DF215BCC84005B1C1B /* Telemetry */,
 				4F931A232126C8AF00AF4226 /* Utils */,
 			);
 			path = GhosteryLite;
@@ -537,19 +549,15 @@
 			path = ContentBlocking;
 			sourceTree = "<group>";
 		};
-		4F4BE2DF212595AE00FEE71E /* Storage */ = {
+		4F4BE2DF212595AE00FEE71E /* DataPersistence */ = {
 			isa = PBXGroup;
 			children = (
-				4F931A182125ADD500AF4226 /* CrudRepository.swift */,
+				0D02797023650B49007D5F66 /* Repositories */,
 				4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */,
-				4F931A1421259BEC00AF4226 /* DomainConfigRepository.swift */,
 				4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */,
-				4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */,
-				4F931A162125AD6500AF4226 /* RealmRepository.swift */,
 				4F83ABB02138586A00BC76E4 /* TrustedSitesDataSource.swift */,
-				4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */,
 			);
-			path = Storage;
+			path = DataPersistence;
 			sourceTree = "<group>";
 		};
 		4F931A232126C8AF00AF4226 /* Utils */ = {

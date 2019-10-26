@@ -137,7 +137,6 @@ final class BlockListFileManager {
 		}
 	}
 	
-	
 	/// Fetch the path of the Content Blocker file from the Group Container folder
 	/// - Parameter fileName: The name of the content blocker json file
 	/// - Parameter folderName: The name of the assests folder in Group Containers
@@ -146,7 +145,6 @@ final class BlockListFileManager {
 		let assetsFolder: URL? = groupStorageFolder?.appendingPathComponent(folderName)
 		return assetsFolder?.appendingPathComponent("\(fileName).json")
 	}
-	
 	
 	/// Combine all active block lists into currentBlockList.json
 	/// - Parameter files: List of files to activate
