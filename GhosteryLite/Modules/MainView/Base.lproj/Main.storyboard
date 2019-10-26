@@ -282,10 +282,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="1172"/>
         </scene>
-        <!--SettingsVC-->
+        <!--Settings View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController storyboardIdentifier="SettingsVC" id="XfG-lQ-9wD" customClass="SettingsVC" customModule="GhosteryLite" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="XfG-lQ-9wD" customClass="SettingsViewController" customModule="GhosteryLite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="617" height="576"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -705,7 +705,7 @@
         <!--Home View Controller-->
         <scene sceneID="KF7-bx-kFP">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" id="oCc-SD-ZvT" customClass="HomeViewController" customModule="GhosteryLite" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="oCc-SD-ZvT" customClass="HomeViewController" customModule="GhosteryLite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="N0H-ZH-Frp">
                         <rect key="frame" x="0.0" y="0.0" width="624" height="576"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -937,10 +937,10 @@
             </objects>
             <point key="canvasLocation" x="-546" y="2741"/>
         </scene>
-        <!--Trusted SitesVC-->
+        <!--Trusted Sites View Controller-->
         <scene sceneID="vIt-mS-Xhd">
             <objects>
-                <viewController storyboardIdentifier="TrustedSitesVC" id="LTy-Jl-Bl3" customClass="TrustedSitesVC" customModule="GhosteryLite" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrustedSitesViewController" id="LTy-Jl-Bl3" customClass="TrustedSitesViewController" customModule="GhosteryLite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="hzg-6t-EUG">
                         <rect key="frame" x="0.0" y="0.0" width="637" height="576"/>
                         <autoresizingMask key="autoresizingMask"/>

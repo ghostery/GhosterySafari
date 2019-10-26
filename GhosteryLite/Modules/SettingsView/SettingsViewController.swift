@@ -15,7 +15,7 @@
 import Cocoa
 import SafariServices
 
-class SettingsVC: NSViewController {
+class SettingsViewController: NSViewController {
 	
 	@IBOutlet weak var topTextLabel: NSTextField!
 	@IBOutlet var defaultRadio: NSButton!

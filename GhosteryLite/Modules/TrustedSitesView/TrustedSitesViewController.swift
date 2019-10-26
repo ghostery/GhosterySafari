@@ -1,5 +1,5 @@
 //
-// TrustedSitesVC
+// TrustedSitesViewController
 // GhosteryLite
 //
 // Ghostery Lite for Safari
@@ -14,7 +14,7 @@
 
 import Cocoa
 
-class TrustedSitesVC: NSViewController {
+class TrustedSitesViewController: NSViewController {
 	
 	@IBOutlet weak var trustedSitesTitle: NSTextField!
 	@IBOutlet weak var trustedSiteTextField: NSTextField!
@@ -114,7 +114,7 @@ class TrustedSitesVC: NSViewController {
 
 // MARK:- Collection view data source
 // MARK:-
-extension TrustedSitesVC : NSCollectionViewDataSource {
+extension TrustedSitesViewController : NSCollectionViewDataSource {
 	
 	// Section Header Count
 	func numberOfSections(in collectionView: NSCollectionView) -> Int {
@@ -130,8 +130,8 @@ extension TrustedSitesVC : NSCollectionViewDataSource {
 	// Section Item
 	func collectionView(_ collectionView: NSCollectionView,
 						itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-		let trustedSiteCollectionView = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TrustedSiteCollectionViewItem"), for: indexPath)
-		guard let trustedSiteView = trustedSiteCollectionView as? TrustedSiteCollectionViewItem else { return trustedSiteCollectionView }
+		let trustedSiteItemCollectionView = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TrustedSiteItemCollectionViewItem"), for: indexPath)
+		guard let trustedSiteView = trustedSiteCollectionView as? TrustedSiteItemCollectionViewItem else { return trustedSiteCollectionView }
 		trustedSiteView.delegate = self
 		//TODOL update the cell with the actual data
 		let obj = self.trustedSites[indexPath.item]
@@ -142,7 +142,7 @@ extension TrustedSitesVC : NSCollectionViewDataSource {
 	}
 }
 
-extension TrustedSitesVC: TrustedSiteDelegate {
+extension TrustedSitesViewController: TrustedSiteDelegate {
 	
 	func trustedSiteDidRemove(indexPath: IndexPath, url: String) {
 		ContentBlockerManager.shared.untrustDomain(domain: self.trustedSites[indexPath.item].name ?? "")
@@ -152,14 +152,14 @@ extension TrustedSitesVC: TrustedSiteDelegate {
 
 // MARK:- Collection view delegate
 // MARK:-
-extension TrustedSitesVC : NSCollectionViewDelegate {
+extension TrustedSitesViewController : NSCollectionViewDelegate {
 	func collectionView(_ collectionView: NSCollectionView,
 						didSelectItemsAt indexPaths: Set<IndexPath>) {
 		
 	}
 }
 
-extension TrustedSitesVC: NSTextFieldDelegate {
+extension TrustedSitesViewController: NSTextFieldDelegate {
 	
 	func controlTextDidChange(_ obj: Notification) {
 		self.updateTrustBtnState(trustedSiteTextField.stringValue != "")

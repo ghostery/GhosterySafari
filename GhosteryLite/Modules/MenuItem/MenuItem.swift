@@ -38,9 +38,9 @@ public enum MenuItem {
 			case .home:
 				return "HomeViewController"
 			case .settings:
-				return "SettingsVC"
+				return "SettingsViewController"
 			case .trustedSites:
-				return "TrustedSitesVC"
+				return "TrustedSitesViewController"
 			case .help:
 				return "HelpViewController"
 		}

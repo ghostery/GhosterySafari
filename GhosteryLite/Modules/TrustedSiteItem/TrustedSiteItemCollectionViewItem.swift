@@ -1,5 +1,5 @@
 //
-// TrustedSiteCollectionViewItem
+// TrustedSiteItemCollectionViewItem
 // GhosteryLite
 //
 // Ghostery Lite for Safari
@@ -14,11 +14,11 @@
 
 import Cocoa
 
-protocol TrustedSiteDelegate: class {
+protocol TrustedSiteItemDelegate: class {
 	func trustedSiteDidRemove(indexPath: IndexPath, url: String)
 }
 
-class TrustedSiteCollectionViewItem: NSCollectionViewItem {
+class TrustedSiteItemCollectionViewItem: NSCollectionViewItem {
 	
 	weak var delegate: TrustedSiteDelegate?
 	

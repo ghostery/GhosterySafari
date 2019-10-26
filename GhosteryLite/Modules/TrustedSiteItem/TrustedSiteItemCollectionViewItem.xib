@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="TrustedSiteCollectionViewItem" customModule="GhosteryLite" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="TrustedSiteItemCollectionViewItem" customModule="GhosteryLite" customModuleProvider="target">
             <connections>
                 <outlet property="siteLbl" destination="81H-G3-pLe" id="awc-lA-nu6"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
@@ -18,12 +19,12 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="81H-G3-pLe">
-                    <rect key="frame" x="18" y="6" width="454" height="18"/>
+                    <rect key="frame" x="18" y="7" width="454" height="17"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="450" id="ceJ-hV-9Fp"/>
                     </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="label" id="ar2-8M-mTn">
-                        <font key="font" metaFont="system" size="14"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="ar2-8M-mTn">
+                        <font key="font" metaFont="menu" size="14"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -49,8 +50,9 @@
                 <constraint firstItem="hOl-t2-mBa" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="rNl-4s-hNZ"/>
                 <constraint firstItem="81H-G3-pLe" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="rjh-b1-tKx"/>
             </constraints>
+            <point key="canvasLocation" x="140" y="153"/>
         </customView>
-        <collectionViewItem id="t92-yR-sHD" customClass="TrustedSiteCollectionViewItem" customModule="GhosteryLite" customModuleProvider="target">
+        <collectionViewItem id="t92-yR-sHD" customClass="TrustedSiteItemCollectionViewItem" customModule="GhosteryLite" customModuleProvider="target">
             <connections>
                 <outlet property="siteLbl" destination="81H-G3-pLe" id="LYq-Gx-US2"/>
             </connections>
