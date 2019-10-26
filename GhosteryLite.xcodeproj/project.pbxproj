@@ -298,6 +298,7 @@
 		0D02795823632F84007D5F66 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4F3049AB211B368000BA3961 /* ContentBlocking */,
 				0D02795A23634277007D5F66 /* DetailView */,
 				0D02795C236342D7007D5F66 /* HelpView */,
 				0D02795D236342DC007D5F66 /* HomeView */,
@@ -306,8 +307,8 @@
 				0D02795923634271007D5F66 /* MenuView */,
 				0D02796323634662007D5F66 /* ModalView */,
 				0D02795F236342F5007D5F66 /* SettingsView */,
+				4F4BE2DF212595AE00FEE71E /* Storage */,
 				4F9CF8DF215BCC84005B1C1B /* Telemetry */,
-				4F30498A2119F46700BA3961 /* TrackerBlocking */,
 				0D02796123634306007D5F66 /* TrustedSiteItem */,
 				0D027960236342FE007D5F66 /* TrustedSitesView */,
 				0D027962236345EF007D5F66 /* Window */,
@@ -512,16 +513,6 @@
 			path = ContentBlocker;
 			sourceTree = "<group>";
 		};
-		4F30498A2119F46700BA3961 /* TrackerBlocking */ = {
-			isa = PBXGroup;
-			children = (
-				4F4BE2DF212595AE00FEE71E /* ConfigStorage */,
-				4F3049AB211B368000BA3961 /* BlockListManagement */,
-				4F3049B3211C6D3200BA3961 /* ContentBlockerManager.swift */,
-			);
-			path = TrackerBlocking;
-			sourceTree = "<group>";
-		};
 		4F3049A02119F4FC00BA3961 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -536,16 +527,17 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		4F3049AB211B368000BA3961 /* BlockListManagement */ = {
+		4F3049AB211B368000BA3961 /* ContentBlocking */ = {
 			isa = PBXGroup;
 			children = (
 				4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */,
 				4F90DD80214BD74F00E8BA6D /* WhiteListFileManager.swift */,
+				4F3049B3211C6D3200BA3961 /* ContentBlockerManager.swift */,
 			);
-			path = BlockListManagement;
+			path = ContentBlocking;
 			sourceTree = "<group>";
 		};
-		4F4BE2DF212595AE00FEE71E /* ConfigStorage */ = {
+		4F4BE2DF212595AE00FEE71E /* Storage */ = {
 			isa = PBXGroup;
 			children = (
 				4F931A182125ADD500AF4226 /* CrudRepository.swift */,
@@ -557,7 +549,7 @@
 				4F83ABB02138586A00BC76E4 /* TrustedSitesDataSource.swift */,
 				4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */,
 			);
-			path = ConfigStorage;
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		4F931A232126C8AF00AF4226 /* Utils */ = {
