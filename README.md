@@ -36,11 +36,12 @@ $ pod install
 
 ### Clean Install
 
-+ In Xcode > Product Menu > Clean Build Folder
-+ Under `~/Library/Containers/` and `~/Library/Application Scripts/`
-	+ Remove any `com.ghostery.lite.*` directories
-+ Under `~/Library/Group Containers/`
-	+ Remove any `HPY23A294X.ghostery.lite.*` directories
+In Xcode, use `CMD + SHFT + K` to execute 'Clean Build Folder'. Then run:  
+
+```sh
+# Clean Ghostery Lite from ~/Library
+$ make clean
+```
 
 ## Compatibility
 

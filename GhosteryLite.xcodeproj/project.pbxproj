@@ -128,6 +128,7 @@
 		0D02796A2363826C007D5F66 /* NSApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSApplicationExtension.swift; sourceTree = "<group>"; };
 		0D02796C23638895007D5F66 /* MenuItemCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCollectionViewItem.swift; sourceTree = "<group>"; };
 		0D02796E23638C19007D5F66 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		0D0279742365184E007D5F66 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		0D2AA0BD2243DA0C0055B6B8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0D3FBB00235F70030054822A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0D3FBB05235F99450054822A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -482,6 +483,7 @@
 				0D3FBB05235F99450054822A /* .gitignore */,
 				0D588E88235E50B20003668C /* CHANGELOG.md */,
 				0D2AA0BD2243DA0C0055B6B8 /* LICENSE */,
+				0D0279742365184E007D5F66 /* Makefile */,
 				0DCADD5F235E5EE300F00AB4 /* README.md */,
 				B0A62A735027E637D6286513 /* Pods */,
 				12C745E560D59A7A5C913F04 /* Frameworks */,
