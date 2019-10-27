@@ -46,12 +46,3 @@
 
 /* Class = "NSTextFieldCell"; title = "seconds"; ObjectID = "seQ-fv-OFw"; */
 "seQ-fv-OFw.title" = "seconds";
-
-/* Safari Extension - Dynamic Strings */
-"trusted.tooltip" = "Trackers and ads allowed. Click to undo.";
-"trusted.button" = "Site Trusted";
-"button.resume.tooltip" = "Resume Ghostery Lite";
-"paused.message" = "Ghostery Lite has been paused.";
-"resumed.message" = "Ghostery Lite has been resumed.";
-"whitelisted.message" = "Site whitelisted.";
-"untrusted.message" = "Site no longer whitelisted.";

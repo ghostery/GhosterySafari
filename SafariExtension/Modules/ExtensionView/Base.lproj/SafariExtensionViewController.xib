@@ -59,7 +59,7 @@
                         <color key="backgroundColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </textFieldCell>
                 </textField>
-                <button toolTip="Pause Ghostery Lite" translatesAutoresizingMaskIntoConstraints="NO" id="JDN-jK-7IG">
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="JDN-jK-7IG">
                     <rect key="frame" x="160" y="282" width="22" height="22"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="22" id="eAh-aF-a0r"/>
@@ -216,7 +216,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button toolTip="Always allow trackers and ads on this site." verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ico-u6-0Jj">
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ico-u6-0Jj">
                     <rect key="frame" x="32" y="12" width="156" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="OiK-xf-oaE"/>

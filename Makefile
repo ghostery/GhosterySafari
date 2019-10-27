@@ -1,6 +1,6 @@
 # Makefile
 # Used by Xcode build schemes:
-# Pre-Action: `make --directory ${PROJECT_DIR} clean`
+# Pre-Action: `make --directory ${PROJECT_DIR} clean bugs`
 # Post-Action: `make --directory ${PROJECT_DIR} restore`
 #
 # Ghostery Lite for Safari

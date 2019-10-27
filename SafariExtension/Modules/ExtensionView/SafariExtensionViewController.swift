@@ -97,7 +97,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 			self.trustSiteButton.isEnabled = false
 			self.showPausedPopup()
 		} else {
-			self.pauseButton.toolTip = NSLocalizedString("CU4-2B-vbk.title", comment: "Tooltip on pause button")
+			self.pauseButton.toolTip = NSLocalizedString("button.pause.tooltip", comment: "Tooltip on pause button")
 			ContentBlockerManager.shared.resume()
 			DistributedNotificationCenter.default().post(name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
 			self.trustSiteButton.isEnabled = true
@@ -193,17 +193,16 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	/// Update the Trust Site tooltip when trust state changes
 	private func updateTrustButtonTooltip() {
 		if trustSiteButton.state.rawValue == 0 {
-			self.trustSiteButton?.toolTip = NSLocalizedString("Ico-u6-0Jj.ibShadowedToolTip", comment: "Tooltip on Trust site button")
-				
+			self.trustSiteButton?.toolTip = NSLocalizedString("trust.tooltip", comment: "Tooltip on Trust site button")
 		} else {
 			self.trustSiteButton?.toolTip = NSLocalizedString("trusted.tooltip", comment: "Tooltip on Trusted Site button")
 		}
 	}
 
 	private func setupComponents() {
-		let defaultStr = NSLocalizedString("CU4-2B-vbk.title", comment: "Default config radio text")
+		let defaultStr = self.defaultConfigRadio.title
 		self.defaultConfigRadio.attributedTitle = defaultStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(named: "radioTextColor") ?? NSColor.white)
-		let customStr = NSLocalizedString("77T-OQ-Bj8.title", comment: "Custom config radio text")
+		let customStr = self.customConfigRadio.title
 		self.customConfigRadio.attributedTitle = customStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(named: "radioTextColor") ?? NSColor.white)
 
 		self.liteLabel.font = NSFont(name: "BebasNeueBook", size: 18)
@@ -220,7 +219,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		let paragraphStyle = NSMutableParagraphStyle()
 		paragraphStyle.firstLineHeadIndent = 5.0
 		
-		let trustSiteTitle = NSLocalizedString("B4q-Xk-a9k.title", comment: "Trust Site button title")
+		let trustSiteTitle = self.trustSiteButton.title
 		self.trustSiteButton?.attributedTitle = trustSiteTitle.attributedString(withTextAlignment: .center,
 														fontName: "OpenSans-SemiBold",
 														fontSize: 11.0,
@@ -270,7 +269,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		self.reloadPopupView.shadow = shadow
 		self.popupTitleLabel.stringValue = title
 		self.popupTitleLabel.textColor = NSColor(rgb: fontColor)
-		let reloadButton = NSLocalizedString("CBJ-Qs-OqG.title", comment: "Text on reload button")
+		let reloadButton = self.popupReloadButton.title
 		self.popupReloadButton.attributedTitle = reloadButton.attributedString(withTextAlignment: .center, fontName: "OpenSans-SemiBold", fontSize: 11.0, fontColor: NSColor(rgb: fontColor), isUnderline: true)
 		updateReloadPopupViewVisibility(isHidden: false)
 		self.popupCloseButton.image = NSImage(named: image)

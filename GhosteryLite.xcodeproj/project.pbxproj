@@ -13,6 +13,7 @@
 		0D02796B2363826C007D5F66 /* NSApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D02796A2363826C007D5F66 /* NSApplicationExtension.swift */; };
 		0D02796D23638895007D5F66 /* MenuItemCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D02796C23638895007D5F66 /* MenuItemCollectionViewItem.swift */; };
 		0D02796F23638C19007D5F66 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D02796E23638C19007D5F66 /* MenuViewController.swift */; };
+		0D027978236538A9007D5F66 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D027976236538A8007D5F66 /* Localizable.strings */; };
 		0D3FBAFA235F6EAA0054822A /* SafariExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D588D9C235E3FBB0003668C /* SafariExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D3FBAFD235F6EB10054822A /* ContentBlocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D588D9D235E3FBB0003668C /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D3FBB02235F701F0054822A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3FBB00235F70030054822A /* Cocoa.framework */; };
@@ -129,6 +130,7 @@
 		0D02796C23638895007D5F66 /* MenuItemCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCollectionViewItem.swift; sourceTree = "<group>"; };
 		0D02796E23638C19007D5F66 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0D0279742365184E007D5F66 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		0D027977236538A8007D5F66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0D2AA0BD2243DA0C0055B6B8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0D3FBB00235F70030054822A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0D3FBB05235F99450054822A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				0D02795423626D52007D5F66 /* Cells */,
 				4F30493B2118983D00BA3961 /* SafariExtensionViewController.swift */,
 				0D3FBB2E2360B4FE0054822A /* SafariExtensionViewController.xib */,
+				0D027976236538A8007D5F66 /* Localizable.strings */,
 			);
 			path = ExtensionView;
 			sourceTree = "<group>";
@@ -742,6 +745,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D02795023624099007D5F66 /* ghostery_icon.pdf in Resources */,
+				0D027978236538A9007D5F66 /* Localizable.strings in Resources */,
 				0D3FBB2C2360B4FE0054822A /* SafariExtensionViewController.xib in Resources */,
 				0D99D75C212EFC44005D107D /* page_performance.js in Resources */,
 				0D588E85235E4C2F0003668C /* Fonts in Resources */,
@@ -943,6 +947,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0D027976236538A8007D5F66 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D027977236538A8007D5F66 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		0D3FBB2E2360B4FE0054822A /* SafariExtensionViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
