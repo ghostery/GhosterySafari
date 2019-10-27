@@ -14,12 +14,6 @@
 /* Class = "NSButtonCell"; title = "Default Protection"; ObjectID = "CU4-2B-vbk"; */
 "CU4-2B-vbk.title" = "Default Protection";
 
-/* Class = "NSButton"; ibShadowedToolTip = "Always allow trackers and ads on this site."; ObjectID = "Ico-u6-0Jj"; */
-"Ico-u6-0Jj.ibShadowedToolTip" = "Always allow trackers and ads on this site.";
-
-/* Class = "NSButton"; ibShadowedToolTip = "Pause Ghostery Lite"; ObjectID = "JDN-jK-7IG"; */
-"JDN-jK-7IG.ibShadowedToolTip" = "Pause Ghostery Lite";
-
 /* Class = "NSTextFieldCell"; title = "0 - 5"; ObjectID = "NOp-rL-LpQ"; */
 "NOp-rL-LpQ.title" = "0 - 5";
 
