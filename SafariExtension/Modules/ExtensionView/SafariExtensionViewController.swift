@@ -169,7 +169,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	}
 
 	private func openSettings() {
-		// TODO: launchApplication also activates the app, with options it only runs but doesn't acitvates, in future find a way to launch and open  with corresponding menu without notification
+		// TODO: launchApplication also activates the app, with options it only runs but doesn't activate, in future find a way to launch and open  with corresponding menu without notification
 		//	let options = NSWorkspace.LaunchOptions(rawValue: 1000)
 		//	NSWorkspace.shared.launchApplication(withBundleIdentifier: Constants.GhosteryLiteID, options: [options], additionalEventParamDescriptor: nil, launchIdentifier: nil)
 		//	NSWorkspace.shared.launchApplication(withBundleIdentifier: Constants.GhosteryLiteID, options: [LaunchOptions], additionalEventParamDescriptor: <#T##NSAppleEventDescriptor?#>, launchIdentifier: AutoreleasingUnsafeMutablePointer<NSNumber?>?)
