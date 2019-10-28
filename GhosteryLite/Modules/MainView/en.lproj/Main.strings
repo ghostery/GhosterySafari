@@ -1,6 +1,6 @@
 
-/* Class = "NSTextFieldCell"; title = "Custom Desc"; ObjectID = "0KE-sx-Ohg"; */
-"0KE-sx-Ohg.title" = "Custom Desc";
+/* Class = "NSTextFieldCell"; title = "Select the tracker categories that you would like to block or unblock. Please note that some sites may not load correctly depending on your custom settings."; ObjectID = "0KE-sx-Ohg"; */
+"0KE-sx-Ohg.title" = "Select the tracker categories that you would like to block or unblock. Please note that some sites may not load correctly depending on your custom settings.";
 
 /* Class = "NSButtonCell"; title = "trust"; ObjectID = "0cc-Uf-uAC"; */
 "0cc-Uf-uAC.title" = "trust";
@@ -20,8 +20,11 @@
 /* Class = "NSTextFieldCell"; title = "LITE"; ObjectID = "3t7-RU-1ni"; */
 "3t7-RU-1ni.title" = "LITE";
 
-/* Class = "NSButtonCell"; title = "Def"; ObjectID = "3wz-JW-Z1K"; */
-"3wz-JW-Z1K.title" = "Def";
+/* Class = "NSButtonCell"; title = "Default"; ObjectID = "3wz-JW-Z1K"; */
+"3wz-JW-Z1K.title" = "Default";
+
+/* Class = "NSBox"; title = "Category Box"; ObjectID = "4dn-Gg-Wy3"; */
+"4dn-Gg-Wy3.title" = "Category Box";
 
 /* Class = "NSMenuItem"; title = "Quit GhosteryLite"; ObjectID = "4sb-4s-VLi"; */
 "4sb-4s-VLi.title" = "Quit GhosteryLite";
@@ -62,8 +65,8 @@
 /* Class = "NSBox"; title = "Box"; ObjectID = "Dba-jd-8JT"; */
 "Dba-jd-8JT.title" = "Box";
 
-/* Class = "NSButtonCell"; title = "Cus"; ObjectID = "E3u-jU-cgo"; */
-"E3u-jU-cgo.title" = "Cus";
+/* Class = "NSButtonCell"; title = "Custom"; ObjectID = "E3u-jU-cgo"; */
+"E3u-jU-cgo.title" = "Custom";
 
 /* Class = "NSBox"; title = "Box"; ObjectID = "EDF-e3-gcK"; */
 "EDF-e3-gcK.title" = "Box";
@@ -110,8 +113,8 @@
 /* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "OY7-WF-poV"; */
 "OY7-WF-poV.title" = "Minimize";
 
-/* Class = "NSTextFieldCell"; title = "Settings title"; ObjectID = "Pl8-CX-f6l"; */
-"Pl8-CX-f6l.title" = "Settings title";
+/* Class = "NSTextFieldCell"; title = "With Ghostery Lite's default settings you're protected and ready to browse. If you want to change your tracker-blocker settings, our custom settings allow you to block or unblock specific categories of trackers and ads."; ObjectID = "Pl8-CX-f6l"; */
+"Pl8-CX-f6l.title" = "With Ghostery Lite's default settings you're protected and ready to browse. If you want to change your tracker-blocker settings, our custom settings allow you to block or unblock specific categories of trackers and ads.";
 
 /* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "R4o-n2-Eq4"; */
 "R4o-n2-Eq4.title" = "Zoom";
@@ -176,8 +179,8 @@
 /* Class = "NSImageView"; ibShadowedToolTip = "Collects and analyzes data related to site usage and performance."; ObjectID = "edo-Q1-18A"; */
 "edo-Q1-18A.ibShadowedToolTip" = "Collects and analyzes data related to site usage and performance.";
 
-/* Class = "NSTextFieldCell"; title = "SV"; ObjectID = "erL-oh-W9i"; */
-"erL-oh-W9i.title" = "SV";
+/* Class = "NSTextFieldCell"; title = "Saved"; ObjectID = "erL-oh-W9i"; */
+"erL-oh-W9i.title" = "Saved";
 
 /* Class = "NSMenuItem"; title = "Default"; ObjectID = "gCL-WT-jjt"; */
 "gCL-WT-jjt.title" = "Default";
@@ -185,20 +188,23 @@
 /* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
 "hz9-B4-Xy5.title" = "Services";
 
-/* Class = "NSBox"; title = "Box"; ObjectID = "m17-jn-QNs"; */
-"m17-jn-QNs.title" = "Box";
+/* Class = "NSBox"; title = "Bottom Line"; ObjectID = "m17-jn-QNs"; */
+"m17-jn-QNs.title" = "Bottom Line";
 
 /* Class = "NSMenuItem"; title = "Custom"; ObjectID = "mye-Gf-T1p"; */
 "mye-Gf-T1p.title" = "Custom";
 
-/* Class = "NSButtonCell"; title = "Block:"; ObjectID = "phd-zp-sTL"; */
-"phd-zp-sTL.title" = "Block:";
+/* Class = "NSButtonCell"; title = "Block: Advertising"; ObjectID = "phd-zp-sTL"; */
+"phd-zp-sTL.title" = "Block: Advertising";
 
-/* Class = "NSBox"; title = "Box"; ObjectID = "qEK-TC-RNc"; */
-"qEK-TC-RNc.title" = "Box";
+/* Class = "NSBox"; title = "Top Line"; ObjectID = "qEK-TC-RNc"; */
+"qEK-TC-RNc.title" = "Top Line";
 
 /* Class = "NSButtonCell"; title = "Block: Audio/Video Player"; ObjectID = "r8b-df-JUE"; */
 "r8b-df-JUE.title" = "Block: Audio/Video Player";
+
+/* Class = "NSTextFieldCell"; title = "Ghostery Lite’s default settings have been tailored to provide the cleanest, fastest and safest browsing experience, allowing you to focus on exploring your favorite websites and online content. We block advertising, site analytics and adult advertising trackers."; ObjectID = "rfT-Ov-7Uc"; */
+"rfT-Ov-7Uc.title" = "Ghostery Lite’s default settings have been tailored to provide the cleanest, fastest and safest browsing experience, allowing you to focus on exploring your favorite websites and online content. We block advertising, site analytics and adult advertising trackers.";
 
 /* Class = "NSImageView"; ibShadowedToolTip = "Integrates features related to social media sites."; ObjectID = "tD7-PD-U11"; */
 "tD7-PD-U11.ibShadowedToolTip" = "Integrates features related to social media sites.";

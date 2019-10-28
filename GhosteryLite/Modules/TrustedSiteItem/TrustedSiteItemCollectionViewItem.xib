@@ -19,12 +19,12 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="81H-G3-pLe">
-                    <rect key="frame" x="18" y="7" width="454" height="17"/>
+                    <rect key="frame" x="18" y="7" width="504" height="16"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="450" id="ceJ-hV-9Fp"/>
+                        <constraint firstAttribute="width" constant="500" id="ceJ-hV-9Fp"/>
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="ar2-8M-mTn">
-                        <font key="font" metaFont="menu" size="14"/>
+                        <font key="font" size="14" name="Roboto-Regular"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>

@@ -24,7 +24,7 @@ class SettingsViewController: NSViewController {
 	@IBOutlet var customRadio: NSButton!
 	@IBOutlet weak var customDescLabel: NSTextField!
 	
-	@IBOutlet var groupBox: NSBox!
+	@IBOutlet var categoryBox: NSBox!
 	@IBOutlet var adCheckbox: NSButton!
 	@IBOutlet var siteAnalyticsCheckbox: NSButton!
 	@IBOutlet var customInterCheckbox: NSButton!
@@ -101,47 +101,38 @@ class SettingsViewController: NSViewController {
 	@IBAction func defaultSelected(_ sender: Any) {
 		ContentBlockerManager.shared.switchToDefault()
 		self.customRadio.state = NSControl.StateValue(rawValue: 0)
-		self.groupBox.isHidden = true
+		self.categoryBox.isHidden = true
 	}
 	
 	@IBAction func customSelected(_ sender: Any) {
 		ContentBlockerManager.shared.switchToCustom()
 		self.defaultRadio.state = NSControl.StateValue(rawValue: 0)
-		self.groupBox.isHidden = false
+		self.categoryBox.isHidden = false
 		self.savedBox.isHidden = true
 	}
 	
 	private func setupComponents() {
 		self.updateRadioBoxesState()
-		self.topTextLabel.attributedStringValue = Strings.SettingsPanelTitle.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 3)
+		let settingsTitle = self.topTextLabel.stringValue
+		self.topTextLabel.attributedStringValue = settingsTitle.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 3)
 		
 		self.defaultRadio.font = NSFont(name: "Roboto-Bold", size: 14)
-		self.defaultRadio.title = Strings.SettinsPanelDefault
 		self.customRadio.font = NSFont(name: "Roboto-Bold", size: 14)
-		self.customRadio.title = Strings.SettinsPanelCustom
 		
-		self.setupTextField(textField: self.defaultDescLabel, mainText: Strings.SettingsPanelDefaultDescription, learnMoreText: Strings.LearnMore, urlString: "https://www.ghostery.com/faqs/")
-		self.setupTextField(textField: self.customDescLabel, mainText: Strings.SettingsPanelCustomDescription, learnMoreText: Strings.LearnMore, urlString: "https://www.ghostery.com/faqs/")
+		let learnMore = NSLocalizedString("learn.more.link", comment: "Link to learn more URL")
+		self.setupTextField(textField: self.defaultDescLabel, mainText: self.defaultDescLabel.stringValue, learnMoreText: learnMore, urlString: "https://www.ghostery.com/faqs/")
+		self.setupTextField(textField: self.customDescLabel, mainText: self.customDescLabel.stringValue, learnMoreText: learnMore, urlString: "https://www.ghostery.com/faqs/")
 		
 		adCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
-		adCheckbox.title = Strings.SettinsPanelAdvertising
 		audioVideoCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
-		audioVideoCheckbox.title = Strings.SettinsPanelAudioVideo
 		commentsCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
-		commentsCheckbox.title = Strings.SettinsPanelComments
 		customInterCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
-		customInterCheckbox.title = Strings.SettinsPanelCustomer
 		essentialCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
-		essentialCheckbox.title = Strings.SettinsPanelEssential
 		adultCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
-		adultCheckbox.title = Strings.SettinsPanelAdult
 		siteAnalyticsCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
-		siteAnalyticsCheckbox.title = Strings.SettinsPanelAnalytics
 		socialMediaCheckbox.font = NSFont(name: "Roboto-Regular", size: 14)
-		socialMediaCheckbox.title = Strings.SettinsPanelMedia
 		self.savedLabel.textColor = NSColor(rgb: 0x67a73a)
 		self.savedLabel.font = NSFont(name: "Roboto-Regular", size: 14)
-		self.savedLabel.stringValue = Strings.SettinsPanelSaved
 		self.savedBox.isHidden = true
 	}
 	
@@ -150,11 +141,11 @@ class SettingsViewController: NSViewController {
 		if ContentBlockerManager.shared.isDefaultConfigEnabled() {
 			self.defaultRadio.state = NSControl.StateValue(rawValue: 1)
 			self.customRadio.state = NSControl.StateValue(rawValue: 0)
-			self.groupBox.isHidden = true
+			self.categoryBox.isHidden = true
 		} else {
 			self.defaultRadio.state = NSControl.StateValue(rawValue: 0)
 			self.customRadio.state = NSControl.StateValue(rawValue: 1)
-			self.groupBox.isHidden = false
+			self.categoryBox.isHidden = false
 		}
 	}
 	
@@ -176,12 +167,10 @@ class SettingsViewController: NSViewController {
 		textParagraph.maximumLineHeight = 30.0
 		textParagraph.alignment = .left
 		let font = NSFont(name: "Roboto-Regular", size: 14) ?? NSFont.systemFont(ofSize: 14)
-		let attribs: [NSAttributedString.Key : Any] = [NSAttributedString.Key.font : font,
-													   NSAttributedString.Key.foregroundColor : textColor,
-													   NSAttributedString.Key.paragraphStyle : textParagraph]
+		let attribs: [NSAttributedString.Key : Any] = [NSAttributedString.Key.font : font, NSAttributedString.Key.foregroundColor : textColor, NSAttributedString.Key.paragraphStyle : textParagraph]
 		let str = "\(mainText) \(learnMoreText)"
 		let attrString: NSMutableAttributedString = NSMutableAttributedString.init(string: str, attributes: attribs)
-		let range = NSMakeRange(str.count - learnMoreText.count, Strings.LearnMore.count)
+		let range = NSMakeRange(str.count - learnMoreText.count, learnMoreText.count)
 		if let url = URL(string: urlString) {
 			attrString.addAttribute(NSAttributedString.Key.link, value: url, range: range)
 		}
