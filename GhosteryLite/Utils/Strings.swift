@@ -33,11 +33,4 @@ public struct Strings {
 	public static let HelpPanelProductsButtonTitle = NSLocalizedString("Ghostery Products", comment: "[Help Panel] Ghostery Products button title")
 	public static let HelpPanelBlogButtonTitle = NSLocalizedString("Ghostery Blog", comment: "[Help Panel] Ghostery Blog button title")
 	public static let HelpPanelFaqsButtonTitle = NSLocalizedString("Ghostery FAQs", comment: "[Help Panel] Ghostery FAQs button title")
-	
-	
-	
-	//MARK:- Trusted Sites Panel
-	public static let TrustedSitesPanelText = NSLocalizedString("All the sites that you trust can be seen here. You can also add or remove additional sites from your list using the field below.", comment: "[Trusted Sites Panel] Trusted Sites text")
-	public static let TrustedSitesPanelTrustSiteButtonTitle = NSLocalizedString("TRUST SITE", comment: "[Trusted Sites Panel] Trust site button title")
-	public static let TrustedSitesPanelErrorMessage = NSLocalizedString("Please enter a valid URL.", comment: "Error message in case if entered URL is invalid")
 }

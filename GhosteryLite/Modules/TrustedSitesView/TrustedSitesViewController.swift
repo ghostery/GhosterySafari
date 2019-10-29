@@ -72,15 +72,10 @@ class TrustedSitesViewController: NSViewController {
 	private func setupComponents() {
 		trustedStiesCollectionView.backgroundColors = [NSColor.clear]
 		trustedSiteTextField.backgroundColor = NSColor.clear
-		trustedSitesTitle.attributedStringValue = Strings.TrustedSitesPanelText.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 3)
-		trustedSitesTitle.font = NSFont(name: "Roboto-Regular", size: 16)
-		trustSiteBtn.attributedTitle = Strings.TrustedSitesPanelTrustSiteButtonTitle.attributedString(withTextAlignment: .center,
-																									  fontName: "Roboto-Medium",
-																									  fontSize: 12.0,
-																									  fontColor: NSColor(named: "trustBtnText") ?? NSColor.black)
+		trustedSitesTitle.attributedStringValue = trustedSitesTitle.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 3)
+		trustSiteBtn.attributedTitle = trustSiteBtn.stringValue.attributedString(withTextAlignment: .center, fontName: "Roboto-Medium", fontSize: 12.0, fontColor: NSColor(named: "trustBtnText") ?? NSColor.black)
 		errorMessageLabel.font = NSFont(name: "Roboto-Regular", size: 10)
-		errorMessageLabel.stringValue = Strings.TrustedSitesPanelErrorMessage
-		trustSiteBtn.attributedAlternateTitle = Strings.TrustedSitesPanelTrustSiteButtonTitle.attributedString(withTextAlignment: .center, fontName: "Roboto-Medium", fontSize: 12.0, fontColor: NSColor(rgb: 0xffffff))
+		trustSiteBtn.attributedAlternateTitle = trustSiteBtn.stringValue.attributedString(withTextAlignment: .center, fontName: "Roboto-Medium", fontSize: 12.0, fontColor: NSColor(rgb: 0xffffff))
 	}
 	
 	// Move the logic to TrustSiteDS
