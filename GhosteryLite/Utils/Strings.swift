@@ -21,18 +21,6 @@ public struct Strings {
 	public static let SideMenuTrustedSitesTitle = NSLocalizedString("Trusted Sites", comment: "Trusted Sites panel title in the side menu")
 	public static let SideMenuHelpTitle = NSLocalizedString("Help", comment: "Help panel title in the side menu")
 	
-	//MARK:- Home Panel
-	public static let HomePanelTitle = NSLocalizedString("Welcome to Ghostery Lite!", comment: "[Home panel] Title")
-	public static let HomePanelSubtitle = NSLocalizedString("Thanks for installing Ghostery Lite. You are now protected with our default settings!", comment: "[Home panel] Subtitle")
-	public static let HomePanelSettingsDescriptionPrefix = NSLocalizedString("Want to customize your tracker settings?", comment: "[Home panel] Edit settings text prefix")
-	public static let HomePanelSettingsDescription = NSLocalizedString("Select the tracker categories you would like to block or unblock.", comment: "[Home panel] Edit settings text")
-	public static let HomePanelEditSettingsButtonTitle = NSLocalizedString("EDIT SETTINGS", comment: "[Home panel] Edit settings button title")
-	public static let HomePanelTrustedSitesDescriptionPrefix = NSLocalizedString("Want to allow trackers on a site?", comment: "[Home panel] Trusted sites text prefix")
-	public static let HomePanelTrustedSitesDescription = NSLocalizedString(" Add or remove sites from your 'Trusted' list.", comment: "[Home panel] Trusted sites text")
-	public static let HomePanelTrustedSitesButtonTitle = NSLocalizedString("TRUSTED SITES", comment: "[Home panel] Trusted sites button title")
-	public static let HomePanelEnableGhosteryLitePromptText = NSLocalizedString("Please enable the Ghostery Lite extensions in your Safari preferences to begin.", comment: "[Home panel] Enable Ghostery Lite prompt text")
-	public static let HomePanelEnableGhosteryLiteButtonTitle = NSLocalizedString("ENABLE LITE", comment: "[Home panel] Enable Ghostery Lite button title")
-	
 	//MARK:- Safari Extension Prompt
 	public static let SafariExtensionPromptText = NSLocalizedString("Please enable Ghostery Lite Icon and Ghostery Lite extensions in your Safari preferences to begin.", comment: "[Safari Extension Prompt] text")
 	public static let SafariExtensionPromptEnableGhosteryLiteButtonTitle = NSLocalizedString("ENABLE GHOSTERY LITE", comment: "[Safari Extension Prompt]] Enable Ghostery Lite button title")
