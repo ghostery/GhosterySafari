@@ -25,12 +25,4 @@ public struct Strings {
 	public static let SafariExtensionPromptText = NSLocalizedString("Please enable Ghostery Lite Icon and Ghostery Lite extensions in your Safari preferences to begin.", comment: "[Safari Extension Prompt] text")
 	public static let SafariExtensionPromptEnableGhosteryLiteButtonTitle = NSLocalizedString("ENABLE GHOSTERY LITE", comment: "[Safari Extension Prompt]] Enable Ghostery Lite button title")
 	public static let SafariExtensionPromptSkipButtonTitle = NSLocalizedString("Skip for now", comment: "[Safari Extension Prompt] skip for now button title")
-	
-	
-	//MARK:- Help Panel
-	public static let HelpPanelText = NSLocalizedString("If you have encountered an issue, would like to know more about Ghostery Lite and our other products or would like to get in touch, please follow the link below.", comment: "[Help Panel] Help text")
-	public static let HelpPanelSupportButtonTitle = NSLocalizedString("Ghostery Support", comment: "[Help Panel] Ghostery Support button title")
-	public static let HelpPanelProductsButtonTitle = NSLocalizedString("Ghostery Products", comment: "[Help Panel] Ghostery Products button title")
-	public static let HelpPanelBlogButtonTitle = NSLocalizedString("Ghostery Blog", comment: "[Help Panel] Ghostery Blog button title")
-	public static let HelpPanelFaqsButtonTitle = NSLocalizedString("Ghostery FAQs", comment: "[Help Panel] Ghostery FAQs button title")
 }

@@ -1107,7 +1107,7 @@
         <scene sceneID="FT9-km-BrL">
             <objects>
                 <viewController storyboardIdentifier="HelpViewController" id="O7l-gC-ZX6" customClass="HelpViewController" customModule="GhosteryLite" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" misplaced="YES" id="9uA-SM-6nW">
+                    <view key="view" id="9uA-SM-6nW">
                         <rect key="frame" x="0.0" y="0.0" width="625" height="576"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -1116,103 +1116,93 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ghosty-help" id="vvX-kQ-bSN"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="d01-sf-A44">
-                                <rect key="frame" x="179" y="444" width="413" height="100"/>
+                                <rect key="frame" x="181" y="444" width="414" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="409" id="hoF-nm-dB4"/>
+                                    <constraint firstAttribute="width" constant="410" id="hoF-nm-dB4"/>
                                     <constraint firstAttribute="height" constant="100" id="ztQ-Dz-c7I"/>
                                 </constraints>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Help Desc" id="9tv-f8-fCZ">
-                                    <font key="font" metaFont="system" size="16"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="9tv-f8-fCZ">
+                                    <font key="font" size="16" name="Roboto-Regular"/>
+                                    <string key="title">If you have encountered an issue, would like to know more about Ghostery Lite and our other products or would like to get in touch, please follow the link below.</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="GGf-yh-WDN">
-                                <rect key="frame" x="55" y="370" width="250" height="25"/>
+                            <box boxType="custom" borderType="none" cornerRadius="4" title="Divider" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-3n-ed0">
+                                <rect key="frame" x="32" y="413" width="561" height="1"/>
+                                <view key="contentView" id="b3C-0y-Cve">
+                                    <rect key="frame" x="0.0" y="0.0" width="561" height="1"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="0fV-Wg-X4X"/>
-                                    <constraint firstAttribute="height" constant="25" id="DnG-ON-sqt"/>
+                                    <constraint firstAttribute="width" constant="561" id="baS-66-Yng"/>
+                                    <constraint firstAttribute="height" constant="1" id="tWz-cn-qya"/>
                                 </constraints>
-                                <buttonCell key="cell" type="square" title="Support" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="BgZ-xj-F2J">
+                                <color key="borderColor" name="linebreakColor"/>
+                                <color key="fillColor" name="linebreakColor"/>
+                            </box>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="GGf-yh-WDN">
+                                <rect key="frame" x="48" y="372" width="113" height="16"/>
+                                <buttonCell key="cell" type="square" title="Ghostery Support" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="BgZ-xj-F2J">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system" size="16"/>
+                                    <font key="font" size="14" name="Roboto-Regular"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="HelpLinkClicked:" target="O7l-gC-ZX6" id="feX-um-ahG"/>
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="J30-pG-oZv">
-                                <rect key="frame" x="55" y="329" width="250" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="FW5-72-QHV"/>
-                                    <constraint firstAttribute="height" constant="25" id="mRe-RN-MsL"/>
-                                </constraints>
-                                <buttonCell key="cell" type="square" title="Products" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="IW3-BT-Kt8">
+                                <rect key="frame" x="48" y="331" width="120" height="16"/>
+                                <buttonCell key="cell" type="square" title="Ghostery Products" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="IW3-BT-Kt8">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system" size="16"/>
+                                    <font key="font" size="14" name="Roboto-Regular"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="HelpLinkClicked:" target="O7l-gC-ZX6" id="iVu-66-2Js"/>
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="Z2x-ej-mQ8">
-                                <rect key="frame" x="55" y="288" width="250" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="47t-xs-M1I"/>
-                                    <constraint firstAttribute="width" constant="250" id="dFO-nV-j4K"/>
-                                </constraints>
-                                <buttonCell key="cell" type="square" title="Blog" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="MdL-PO-b4U">
+                                <rect key="frame" x="48" y="290" width="92" height="16"/>
+                                <buttonCell key="cell" type="square" title="Ghostery Blog" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="MdL-PO-b4U">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system" size="16"/>
+                                    <font key="font" size="14" name="Roboto-Regular"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="HelpLinkClicked:" target="O7l-gC-ZX6" id="3NA-2u-hsL"/>
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="D5B-eQ-LSy">
-                                <rect key="frame" x="55" y="247" width="250" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="OvX-Lt-hK2"/>
-                                    <constraint firstAttribute="width" constant="250" id="TOk-P5-d8b"/>
-                                </constraints>
-                                <buttonCell key="cell" type="square" title="FAQs" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="c4M-2c-co9">
+                                <rect key="frame" x="48" y="249" width="96" height="16"/>
+                                <buttonCell key="cell" type="square" title="Ghostery FAQs" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="c4M-2c-co9">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system" size="16"/>
+                                    <font key="font" size="14" name="Roboto-Regular"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="HelpLinkClicked:" target="O7l-gC-ZX6" id="hiu-S4-hLk"/>
                                 </connections>
                             </button>
-                            <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-3n-ed0">
-                                <rect key="frame" x="34" y="411" width="570" height="1"/>
-                                <view key="contentView" id="b3C-0y-Cve">
-                                    <rect key="frame" x="0.0" y="0.0" width="570" height="1"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="570" id="baS-66-Yng"/>
-                                    <constraint firstAttribute="height" constant="1" id="tWz-cn-qya"/>
-                                </constraints>
-                                <color key="borderColor" name="linebreakColor"/>
-                                <color key="fillColor" name="linebreakColor"/>
-                            </box>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="GGf-yh-WDN" firstAttribute="leading" secondItem="Olq-2d-bAe" secondAttribute="leading" constant="7" id="0vM-GL-OHV"/>
-                            <constraint firstItem="d01-sf-A44" firstAttribute="leading" secondItem="Olq-2d-bAe" secondAttribute="trailing" constant="13" id="3yR-x0-Bmd"/>
-                            <constraint firstAttribute="trailing" secondItem="ClR-3n-ed0" secondAttribute="trailing" constant="33" id="4jW-Xf-xsf"/>
+                            <constraint firstItem="GGf-yh-WDN" firstAttribute="leading" secondItem="Olq-2d-bAe" secondAttribute="leading" id="0vM-GL-OHV"/>
+                            <constraint firstItem="d01-sf-A44" firstAttribute="leading" secondItem="Olq-2d-bAe" secondAttribute="trailing" constant="15" id="3yR-x0-Bmd"/>
+                            <constraint firstAttribute="trailing" secondItem="ClR-3n-ed0" secondAttribute="trailing" constant="32" id="4jW-Xf-xsf"/>
                             <constraint firstItem="d01-sf-A44" firstAttribute="top" secondItem="Olq-2d-bAe" secondAttribute="top" id="5CM-7E-s5b"/>
-                            <constraint firstItem="Z2x-ej-mQ8" firstAttribute="leading" secondItem="J30-pG-oZv" secondAttribute="leading" id="8VE-5F-ZGN"/>
-                            <constraint firstItem="GGf-yh-WDN" firstAttribute="top" secondItem="b3C-0y-Cve" secondAttribute="bottom" constant="16" id="9Ia-2b-sXC"/>
+                            <constraint firstItem="Z2x-ej-mQ8" firstAttribute="leading" secondItem="Olq-2d-bAe" secondAttribute="leading" id="8VE-5F-ZGN"/>
+                            <constraint firstItem="GGf-yh-WDN" firstAttribute="top" secondItem="b3C-0y-Cve" secondAttribute="bottom" constant="25" id="9Ia-2b-sXC"/>
                             <constraint firstItem="Olq-2d-bAe" firstAttribute="top" secondItem="9uA-SM-6nW" secondAttribute="top" constant="32" id="Egp-gX-Mb8"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="D5B-eQ-LSy" secondAttribute="trailing" constant="20" symbolic="YES" id="Htq-w0-ovU"/>
                             <constraint firstItem="Olq-2d-bAe" firstAttribute="leading" secondItem="9uA-SM-6nW" secondAttribute="leading" constant="48" id="SwS-A3-ELp"/>
-                            <constraint firstItem="D5B-eQ-LSy" firstAttribute="top" secondItem="Z2x-ej-mQ8" secondAttribute="bottom" constant="16" id="XMX-eS-Mff"/>
-                            <constraint firstItem="J30-pG-oZv" firstAttribute="top" secondItem="GGf-yh-WDN" secondAttribute="bottom" constant="16" id="bre-oh-v1K"/>
-                            <constraint firstItem="ClR-3n-ed0" firstAttribute="leading" secondItem="9uA-SM-6nW" secondAttribute="leading" constant="34" id="hkC-tT-pMc"/>
-                            <constraint firstItem="D5B-eQ-LSy" firstAttribute="leading" secondItem="Z2x-ej-mQ8" secondAttribute="leading" id="rMz-8h-NBb"/>
-                            <constraint firstItem="ClR-3n-ed0" firstAttribute="top" secondItem="d01-sf-A44" secondAttribute="bottom" constant="32" id="umm-71-REr"/>
-                            <constraint firstItem="J30-pG-oZv" firstAttribute="leading" secondItem="GGf-yh-WDN" secondAttribute="leading" id="vda-sf-ptW"/>
-                            <constraint firstItem="Z2x-ej-mQ8" firstAttribute="top" secondItem="J30-pG-oZv" secondAttribute="bottom" constant="16" id="zM1-eh-ldP"/>
+                            <constraint firstItem="D5B-eQ-LSy" firstAttribute="top" secondItem="Z2x-ej-mQ8" secondAttribute="bottom" constant="25" id="XMX-eS-Mff"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="d01-sf-A44" secondAttribute="trailing" constant="20" symbolic="YES" id="ZuT-NJ-oB0"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="J30-pG-oZv" secondAttribute="trailing" constant="20" symbolic="YES" id="boo-HO-1tJ"/>
+                            <constraint firstItem="J30-pG-oZv" firstAttribute="top" secondItem="GGf-yh-WDN" secondAttribute="bottom" constant="25" id="bre-oh-v1K"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GGf-yh-WDN" secondAttribute="trailing" constant="20" symbolic="YES" id="hPS-gj-ae3"/>
+                            <constraint firstItem="ClR-3n-ed0" firstAttribute="leading" secondItem="9uA-SM-6nW" secondAttribute="leading" constant="32" id="hkC-tT-pMc"/>
+                            <constraint firstItem="D5B-eQ-LSy" firstAttribute="leading" secondItem="Olq-2d-bAe" secondAttribute="leading" id="rMz-8h-NBb"/>
+                            <constraint firstItem="ClR-3n-ed0" firstAttribute="top" secondItem="d01-sf-A44" secondAttribute="bottom" constant="30" id="umm-71-REr"/>
+                            <constraint firstItem="J30-pG-oZv" firstAttribute="leading" secondItem="Olq-2d-bAe" secondAttribute="leading" id="vda-sf-ptW"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Z2x-ej-mQ8" secondAttribute="trailing" constant="20" symbolic="YES" id="xbZ-XM-riA"/>
+                            <constraint firstItem="Z2x-ej-mQ8" firstAttribute="top" secondItem="J30-pG-oZv" secondAttribute="bottom" constant="25" id="zM1-eh-ldP"/>
                         </constraints>
                     </view>
                     <connections>

@@ -41,8 +41,8 @@
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "8mP-p1-C2C"; */
 "8mP-p1-C2C.title" = "Help";
 
-/* Class = "NSTextFieldCell"; title = "Help Desc"; ObjectID = "9tv-f8-fCZ"; */
-"9tv-f8-fCZ.title" = "Help Desc";
+/* Class = "NSTextFieldCell"; title = "If you have encountered an issue, would like to know more about Ghostery Lite and our other products or would like to get in touch, please follow the link below."; ObjectID = "9tv-f8-fCZ"; */
+"9tv-f8-fCZ.title" = "If you have encountered an issue, would like to know more about Ghostery Lite and our other products or would like to get in touch, please follow the link below.";
 
 /* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
 "AYu-sK-qS6.title" = "Main Menu";
@@ -50,8 +50,8 @@
 /* Class = "NSMenuItem"; title = "Protection"; ObjectID = "BOF-NM-1cW"; */
 "BOF-NM-1cW.title" = "Protection";
 
-/* Class = "NSButtonCell"; title = "Support"; ObjectID = "BgZ-xj-F2J"; */
-"BgZ-xj-F2J.title" = "Support";
+/* Class = "NSButtonCell"; title = "Ghostery Support"; ObjectID = "BgZ-xj-F2J"; */
+"BgZ-xj-F2J.title" = "Ghostery Support";
 
 /* Class = "NSButtonCell"; title = "TRUST SITE"; ObjectID = "C26-J2-vrI"; */
 "C26-J2-vrI.title" = "TRUST SITE";
@@ -83,8 +83,8 @@
 /* Class = "NSWindow"; title = "Ghostery Lite"; ObjectID = "IQv-IB-iLA"; */
 "IQv-IB-iLA.title" = "Ghostery Lite";
 
-/* Class = "NSButtonCell"; title = "Products"; ObjectID = "IW3-BT-Kt8"; */
-"IW3-BT-Kt8.title" = "Products";
+/* Class = "NSButtonCell"; title = "Ghostery Products"; ObjectID = "IW3-BT-Kt8"; */
+"IW3-BT-Kt8.title" = "Ghostery Products";
 
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "LE2-aR-0XJ"; */
 "LE2-aR-0XJ.title" = "Bring All to Front";
@@ -95,8 +95,8 @@
 /* Class = "NSButtonCell"; title = "Block: Essential"; ObjectID = "MXn-Zo-X8B"; */
 "MXn-Zo-X8B.title" = "Block: Essential";
 
-/* Class = "NSButtonCell"; title = "Blog"; ObjectID = "MdL-PO-b4U"; */
-"MdL-PO-b4U.title" = "Blog";
+/* Class = "NSButtonCell"; title = "Ghostery Blog"; ObjectID = "MdL-PO-b4U"; */
+"MdL-PO-b4U.title" = "Ghostery Blog";
 
 /* Class = "NSButtonCell"; title = "TRUSTED SITES"; ObjectID = "N8X-rV-l18"; */
 "N8X-rV-l18.title" = "TRUSTED SITES";
@@ -164,8 +164,8 @@
 /* Class = "NSButtonCell"; title = "Block: Social Media"; ObjectID = "c0M-zC-Od5"; */
 "c0M-zC-Od5.title" = "Block: Social Media";
 
-/* Class = "NSButtonCell"; title = "FAQs"; ObjectID = "c4M-2c-co9"; */
-"c4M-2c-co9.title" = "FAQs";
+/* Class = "NSButtonCell"; title = "Ghostery FAQs"; ObjectID = "c4M-2c-co9"; */
+"c4M-2c-co9.title" = "Ghostery FAQs";
 
 /* Class = "NSImageView"; ibShadowedToolTip = "Includes tag managers, privacy notices, and technologies that are critical to the functionality of a website."; ObjectID = "caT-UF-u5T"; */
 "caT-UF-u5T.ibShadowedToolTip" = "Includes tag managers, privacy notices, and technologies that are critical to the functionality of a website.";

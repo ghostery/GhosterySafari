@@ -46,11 +46,11 @@ class HelpViewController: NSViewController {
 	}
 	
 	private func initComponents() {
-		self.helpText.attributedStringValue = Strings.HelpPanelText.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 3)
-		supportBtn.attributedTitle = Strings.HelpPanelSupportButtonTitle.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(named: "linkColor") ?? NSColor.blue, isUnderline: true)
-		productsBtn.attributedTitle = Strings.HelpPanelProductsButtonTitle.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(named: "linkColor") ?? NSColor.blue, isUnderline: true)
-		blogBtn.attributedTitle = Strings.HelpPanelBlogButtonTitle.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(named: "linkColor") ?? NSColor.blue, isUnderline: true)
-		faqBtn.attributedTitle = Strings.HelpPanelFaqsButtonTitle.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(named: "linkColor") ?? NSColor.blue, isUnderline: true)
+		self.helpText.attributedStringValue = self.helpText.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 3)
+		supportBtn.attributedTitle = supportBtn.title.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(named: "linkColor") ?? NSColor.blue, isUnderline: true)
+		productsBtn.attributedTitle = productsBtn.title.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(named: "linkColor") ?? NSColor.blue, isUnderline: true)
+		blogBtn.attributedTitle = blogBtn.title.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(named: "linkColor") ?? NSColor.blue, isUnderline: true)
+		faqBtn.attributedTitle = faqBtn.title.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(named: "linkColor") ?? NSColor.blue, isUnderline: true)
 	}
 }
 
