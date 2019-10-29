@@ -325,7 +325,7 @@
                                 <color key="fillColor" name="linebreakColor"/>
                             </box>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rKj-gW-VAB">
-                                <rect key="frame" x="92" y="388" width="68" height="18"/>
+                                <rect key="frame" x="74" y="388" width="68" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="WrX-eY-Y3a"/>
                                 </constraints>
@@ -351,7 +351,7 @@
                                 <color key="fillColor" name="linebreakColor"/>
                             </box>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LVb-pL-6ez">
-                                <rect key="frame" x="92" y="246" width="71" height="18"/>
+                                <rect key="frame" x="74" y="246" width="71" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="bR7-aY-aO5"/>
                                 </constraints>
@@ -364,7 +364,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i7J-qY-hF0">
-                                <rect key="frame" x="111" y="170" width="484" height="69"/>
+                                <rect key="frame" x="93" y="170" width="484" height="69"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="69" id="TMF-lr-9Hy"/>
                                     <constraint firstAttribute="width" constant="480" id="pec-pi-fgV"/>
@@ -383,7 +383,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="9dj-E3-uka">
-                                            <rect key="frame" x="111" y="124" width="134" height="18"/>
+                                            <rect key="frame" x="93" y="124" width="134" height="18"/>
                                             <buttonCell key="cell" type="check" title="Block: Advertising" bezelStyle="regularSquare" imagePosition="left" inset="2" id="phd-zp-sTL">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" size="14" name="Roboto-Regular"/>
@@ -393,13 +393,8 @@
                                                 <action selector="categoryPressedWithSender:" target="XfG-lQ-9wD" id="Yre-Rf-eYw"/>
                                             </connections>
                                         </button>
-                                        <imageView toolTip="Provides advertising or advertising-related services such as data-collection, behavioral analysis, or re-targeting." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V3t-dF-QL4" userLabel="Ad Icon">
-                                            <rect key="frame" x="175" y="131" width="11" height="13"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="5dA-2t-oQA"/>
-                                        </imageView>
                                         <button verticalHuggingPriority="750" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="Qyy-sP-LtW">
-                                            <rect key="frame" x="111" y="91" width="148" height="18"/>
+                                            <rect key="frame" x="93" y="91" width="148" height="18"/>
                                             <buttonCell key="cell" type="check" title="Block: Site Analytics" bezelStyle="regularSquare" imagePosition="left" inset="2" id="aDg-VX-FLP">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" size="14" name="Roboto-Regular"/>
@@ -408,13 +403,12 @@
                                                 <action selector="categoryPressedWithSender:" target="XfG-lQ-9wD" id="cJ9-ql-whb"/>
                                             </connections>
                                         </button>
-                                        <imageView toolTip="Collects and analyzes data related to site usage and performance." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="edo-Q1-18A" userLabel="Site Analytics Icon">
-                                            <rect key="frame" x="184" y="101" width="11" height="13"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <imageView toolTip="Collects and analyzes data related to site usage and performance." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="edo-Q1-18A" userLabel="Site Analytics Icon">
+                                            <rect key="frame" x="244" y="101" width="11" height="13"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="vgk-Nj-DUk"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="tfb-4f-8qe" userLabel="Customer Interaction Checkbox">
-                                            <rect key="frame" x="111" y="58" width="195" height="18"/>
+                                            <rect key="frame" x="93" y="58" width="195" height="18"/>
                                             <buttonCell key="cell" type="check" title="Block: Customer Interaction" bezelStyle="regularSquare" imagePosition="left" inset="2" id="bgP-eI-vT7">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" size="14" name="Roboto-Regular"/>
@@ -423,13 +417,12 @@
                                                 <action selector="categoryPressedWithSender:" target="XfG-lQ-9wD" id="x7K-sX-1mr"/>
                                             </connections>
                                         </button>
-                                        <imageView toolTip="Includes chat, email messaging, customer support, and other interaction tools." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VDK-om-yg2" userLabel="Customer Interaction Icon">
-                                            <rect key="frame" x="215" y="70" width="11" height="13"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <imageView toolTip="Includes chat, email messaging, customer support, and other interaction tools." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VDK-om-yg2" userLabel="Customer Interaction Icon">
+                                            <rect key="frame" x="291" y="68" width="11" height="13"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="giH-R0-xGw"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="6Y1-oA-mwM">
-                                            <rect key="frame" x="111" y="25" width="144" height="18"/>
+                                            <rect key="frame" x="93" y="25" width="144" height="18"/>
                                             <buttonCell key="cell" type="check" title="Block: Social Media" bezelStyle="regularSquare" imagePosition="left" inset="2" id="c0M-zC-Od5">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" size="14" name="Roboto-Regular"/>
@@ -438,13 +431,12 @@
                                                 <action selector="categoryPressedWithSender:" target="XfG-lQ-9wD" id="Wqm-qr-0Xc"/>
                                             </connections>
                                         </button>
-                                        <imageView toolTip="Integrates features related to social media sites." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tD7-PD-U11" userLabel="Social Media Icon">
-                                            <rect key="frame" x="184" y="32" width="11" height="13"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <imageView toolTip="Integrates features related to social media sites." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tD7-PD-U11" userLabel="Social Media Icon">
+                                            <rect key="frame" x="240" y="35" width="11" height="13"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="u1f-Pf-mi4"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="cOs-rr-nNM">
-                                            <rect key="frame" x="361" y="124" width="120" height="18"/>
+                                            <rect key="frame" x="368" y="124" width="120" height="18"/>
                                             <buttonCell key="cell" type="check" title="Block: Essential" bezelStyle="regularSquare" imagePosition="left" inset="2" id="MXn-Zo-X8B">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" size="14" name="Roboto-Regular"/>
@@ -453,13 +445,12 @@
                                                 <action selector="categoryPressedWithSender:" target="XfG-lQ-9wD" id="hPg-R2-ncB"/>
                                             </connections>
                                         </button>
-                                        <imageView toolTip="Includes tag managers, privacy notices, and technologies that are critical to the functionality of a website." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="caT-UF-u5T" userLabel="Essential Icon">
-                                            <rect key="frame" x="394" y="131" width="11" height="13"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <imageView toolTip="Includes tag managers, privacy notices, and technologies that are critical to the functionality of a website." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="caT-UF-u5T" userLabel="Essential Icon">
+                                            <rect key="frame" x="491" y="134" width="11" height="13"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="8Wu-qV-53n"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="uoe-bI-z7M">
-                                            <rect key="frame" x="361" y="91" width="183" height="18"/>
+                                            <rect key="frame" x="368" y="91" width="183" height="18"/>
                                             <buttonCell key="cell" type="check" title="Block: Audio/Video Player" bezelStyle="regularSquare" imagePosition="left" inset="2" id="r8b-df-JUE">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" size="14" name="Roboto-Regular"/>
@@ -468,13 +459,12 @@
                                                 <action selector="categoryPressedWithSender:" target="XfG-lQ-9wD" id="MKm-La-JzZ"/>
                                             </connections>
                                         </button>
-                                        <imageView toolTip="Enables websites to publish, distribute, and optimize video and audio content." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cke-w1-Con" userLabel="Audio Video Icon">
-                                            <rect key="frame" x="453" y="101" width="9" height="13"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <imageView toolTip="Enables websites to publish, distribute, and optimize video and audio content." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cke-w1-Con" userLabel="Audio Video Icon">
+                                            <rect key="frame" x="554" y="101" width="11" height="13"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="5UE-RA-Agv"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="jq0-cX-Poj">
-                                            <rect key="frame" x="361" y="58" width="149" height="18"/>
+                                            <rect key="frame" x="368" y="58" width="149" height="18"/>
                                             <buttonCell key="cell" type="check" title="Block: Adult Content" bezelStyle="regularSquare" imagePosition="left" inset="2" id="O3s-iH-PLS">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" size="14" name="Roboto-Regular"/>
@@ -483,13 +473,12 @@
                                                 <action selector="categoryPressedWithSender:" target="XfG-lQ-9wD" id="RkZ-AF-lRg"/>
                                             </connections>
                                         </button>
-                                        <imageView toolTip="Delivers advertising technology designed specifically for adult content sites." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1rF-ap-Ve5" userLabel="Adult Icon">
-                                            <rect key="frame" x="416" y="70" width="11" height="13"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <imageView toolTip="Delivers advertising technology designed specifically for adult content sites." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1rF-ap-Ve5" userLabel="Adult Icon">
+                                            <rect key="frame" x="520" y="68" width="11" height="13"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="esl-tX-Gek"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="NWS-6i-ZYt">
-                                            <rect key="frame" x="361" y="25" width="132" height="18"/>
+                                            <rect key="frame" x="368" y="25" width="132" height="18"/>
                                             <buttonCell key="cell" type="check" title="Block: Comments" bezelStyle="regularSquare" imagePosition="left" inset="2" id="ylv-lj-W0x">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" size="14" name="Roboto-Regular"/>
@@ -498,27 +487,26 @@
                                                 <action selector="categoryPressedWithSender:" target="XfG-lQ-9wD" id="Acg-Eh-VTL"/>
                                             </connections>
                                         </button>
-                                        <imageView toolTip="Enables comments sections for articles and product reviews." horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WNN-aY-BDO" userLabel="Comments Icon">
-                                            <rect key="frame" x="398" y="33" width="11" height="13"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <imageView toolTip="Enables comments sections for articles and product reviews." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WNN-aY-BDO" userLabel="Comments Icon">
+                                            <rect key="frame" x="503" y="35" width="11" height="13"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="cjQ-GI-0eE"/>
                                         </imageView>
-                                        <box hidden="YES" canDrawConcurrently="YES" ambiguous="YES" borderType="none" titlePosition="noTitle" transparent="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PZ4-ye-KpA">
-                                            <rect key="frame" x="525" y="-4" width="100" height="36"/>
+                                        <box hidden="YES" canDrawConcurrently="YES" borderType="none" titlePosition="noTitle" transparent="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PZ4-ye-KpA">
+                                            <rect key="frame" x="505" y="-4" width="121" height="36"/>
                                             <view key="contentView" id="5jb-33-TXX">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="121" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P6S-FQ-3Yy">
-                                                        <rect key="frame" x="32" y="16" width="42" height="16"/>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="P6S-FQ-3Yy">
+                                                        <rect key="frame" x="40" y="13" width="42" height="16"/>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Saved" id="erL-oh-W9i">
                                                             <font key="font" size="14" name="Roboto-Regular"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
-                                                    <button ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="daM-hk-uH6">
-                                                        <rect key="frame" x="11" y="17" width="15" height="15"/>
+                                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="daM-hk-uH6">
+                                                        <rect key="frame" x="17" y="14" width="15" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="15" id="9RT-Pc-PN6"/>
                                                             <constraint firstAttribute="width" constant="15" id="AK7-UD-5u1"/>
@@ -530,35 +518,60 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="P6S-FQ-3Yy" firstAttribute="leading" secondItem="daM-hk-uH6" secondAttribute="trailing" constant="15" id="Nfa-pU-cS0"/>
+                                                    <constraint firstItem="P6S-FQ-3Yy" firstAttribute="leading" secondItem="daM-hk-uH6" secondAttribute="trailing" constant="10" id="Nfa-pU-cS0"/>
+                                                    <constraint firstItem="P6S-FQ-3Yy" firstAttribute="centerY" secondItem="daM-hk-uH6" secondAttribute="centerY" id="YM7-g5-psf"/>
+                                                    <constraint firstItem="P6S-FQ-3Yy" firstAttribute="centerX" secondItem="5jb-33-TXX" secondAttribute="centerX" id="har-eY-f4t"/>
+                                                    <constraint firstItem="P6S-FQ-3Yy" firstAttribute="top" secondItem="5jb-33-TXX" secondAttribute="top" constant="7" id="vlm-4Q-aQR"/>
                                                 </constraints>
                                             </view>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="Gi4-R2-8sN"/>
-                                                <constraint firstAttribute="width" constant="100" id="hcK-4Q-YaP"/>
+                                                <constraint firstAttribute="width" constant="115" id="hcK-4Q-YaP"/>
                                             </constraints>
                                         </box>
+                                        <imageView toolTip="Provides advertising or advertising-related services such as data-collection, behavioral analysis, or re-targeting." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V3t-dF-QL4" userLabel="Ad Icon">
+                                            <rect key="frame" x="230" y="134" width="11" height="13"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="5dA-2t-oQA"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="6Y1-oA-mwM" firstAttribute="top" secondItem="tfb-4f-8qe" secondAttribute="bottom" constant="19" id="0zp-hd-VZQ"/>
                                         <constraint firstItem="cOs-rr-nNM" firstAttribute="top" secondItem="2Ea-UR-Jyh" secondAttribute="top" constant="13" id="1Wo-Bc-wbX"/>
-                                        <constraint firstItem="cOs-rr-nNM" firstAttribute="leading" secondItem="9dj-E3-uka" secondAttribute="leading" constant="250" id="5DZ-ll-R8a"/>
+                                        <constraint firstAttribute="trailing" secondItem="PZ4-ye-KpA" secondAttribute="trailing" id="426-gF-b79"/>
+                                        <constraint firstItem="cOs-rr-nNM" firstAttribute="leading" secondItem="9dj-E3-uka" secondAttribute="leading" constant="275" id="5DZ-ll-R8a"/>
                                         <constraint firstItem="Qyy-sP-LtW" firstAttribute="leading" secondItem="9dj-E3-uka" secondAttribute="leading" id="5XJ-Xo-4CA"/>
+                                        <constraint firstItem="cke-w1-Con" firstAttribute="centerY" secondItem="uoe-bI-z7M" secondAttribute="top" id="6nd-jc-bbI"/>
+                                        <constraint firstItem="uoe-bI-z7M" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Qyy-sP-LtW" secondAttribute="trailing" constant="8" symbolic="YES" id="6tx-UO-DPq"/>
                                         <constraint firstItem="cOs-rr-nNM" firstAttribute="top" secondItem="9dj-E3-uka" secondAttribute="top" id="CjV-dn-2Sm"/>
                                         <constraint firstItem="9dj-E3-uka" firstAttribute="top" secondItem="2Ea-UR-Jyh" secondAttribute="top" constant="13" id="Dsp-41-J0J"/>
-                                        <constraint firstItem="9dj-E3-uka" firstAttribute="leading" secondItem="2Ea-UR-Jyh" secondAttribute="leading" constant="113" id="Hqv-4S-CzQ"/>
-                                        <constraint firstItem="uoe-bI-z7M" firstAttribute="leading" secondItem="Qyy-sP-LtW" secondAttribute="leading" constant="250" id="P1k-bu-Vbs"/>
-                                        <constraint firstItem="NWS-6i-ZYt" firstAttribute="leading" secondItem="6Y1-oA-mwM" secondAttribute="leading" constant="250" id="P42-SQ-Irn"/>
-                                        <constraint firstItem="PZ4-ye-KpA" firstAttribute="leading" relation="lessThanOrEqual" secondItem="2Ea-UR-Jyh" secondAttribute="leading" constant="20" symbolic="YES" id="R3q-Ho-0PG"/>
+                                        <constraint firstItem="9dj-E3-uka" firstAttribute="leading" secondItem="2Ea-UR-Jyh" secondAttribute="leading" constant="95" id="Hqv-4S-CzQ"/>
+                                        <constraint firstItem="uoe-bI-z7M" firstAttribute="leading" secondItem="Qyy-sP-LtW" secondAttribute="leading" constant="275" id="P1k-bu-Vbs"/>
+                                        <constraint firstItem="NWS-6i-ZYt" firstAttribute="leading" secondItem="6Y1-oA-mwM" secondAttribute="leading" constant="275" id="P42-SQ-Irn"/>
+                                        <constraint firstItem="edo-Q1-18A" firstAttribute="centerY" secondItem="Qyy-sP-LtW" secondAttribute="top" id="PgM-1W-ujR"/>
+                                        <constraint firstItem="caT-UF-u5T" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cOs-rr-nNM" secondAttribute="trailing" constant="5" id="YJm-ir-V4A"/>
                                         <constraint firstItem="Qyy-sP-LtW" firstAttribute="top" secondItem="9dj-E3-uka" secondAttribute="bottom" constant="19" id="YVr-Le-gsy"/>
                                         <constraint firstItem="jq0-cX-Poj" firstAttribute="top" secondItem="tfb-4f-8qe" secondAttribute="top" id="ZZp-P5-kR1"/>
                                         <constraint firstItem="NWS-6i-ZYt" firstAttribute="top" secondItem="6Y1-oA-mwM" secondAttribute="top" id="aXS-4d-dKO"/>
+                                        <constraint firstItem="1rF-ap-Ve5" firstAttribute="centerY" secondItem="jq0-cX-Poj" secondAttribute="top" id="bKA-Tt-4s3"/>
+                                        <constraint firstItem="tD7-PD-U11" firstAttribute="leading" secondItem="6Y1-oA-mwM" secondAttribute="trailing" constant="5" id="bap-A2-PAR"/>
                                         <constraint firstItem="tfb-4f-8qe" firstAttribute="top" secondItem="Qyy-sP-LtW" secondAttribute="bottom" constant="19" id="crq-qH-2UO"/>
                                         <constraint firstAttribute="bottom" secondItem="PZ4-ye-KpA" secondAttribute="bottom" id="dEw-Jr-b7W"/>
                                         <constraint firstItem="6Y1-oA-mwM" firstAttribute="leading" secondItem="9dj-E3-uka" secondAttribute="leading" id="eFD-aN-yH8"/>
+                                        <constraint firstItem="edo-Q1-18A" firstAttribute="leading" secondItem="Qyy-sP-LtW" secondAttribute="trailing" constant="5" id="erW-er-TRe"/>
+                                        <constraint firstItem="cke-w1-Con" firstAttribute="leading" secondItem="uoe-bI-z7M" secondAttribute="trailing" constant="5" id="hTc-xw-Mzq"/>
+                                        <constraint firstItem="V3t-dF-QL4" firstAttribute="leading" secondItem="9dj-E3-uka" secondAttribute="trailing" constant="5" id="hdO-uj-fou"/>
+                                        <constraint firstItem="VDK-om-yg2" firstAttribute="centerY" secondItem="tfb-4f-8qe" secondAttribute="top" id="he7-dm-Qh4"/>
+                                        <constraint firstItem="V3t-dF-QL4" firstAttribute="centerY" secondItem="9dj-E3-uka" secondAttribute="top" id="j8y-TD-1vq"/>
+                                        <constraint firstItem="1rF-ap-Ve5" firstAttribute="leading" secondItem="jq0-cX-Poj" secondAttribute="trailing" constant="5" id="m5A-yT-Y13"/>
+                                        <constraint firstItem="tD7-PD-U11" firstAttribute="centerY" secondItem="6Y1-oA-mwM" secondAttribute="top" id="mMD-0a-4c7"/>
                                         <constraint firstItem="uoe-bI-z7M" firstAttribute="top" secondItem="Qyy-sP-LtW" secondAttribute="top" id="mbr-Ff-K5y"/>
-                                        <constraint firstItem="jq0-cX-Poj" firstAttribute="leading" secondItem="tfb-4f-8qe" secondAttribute="leading" constant="250" id="oie-j4-Rez"/>
+                                        <constraint firstItem="jq0-cX-Poj" firstAttribute="leading" secondItem="tfb-4f-8qe" secondAttribute="leading" constant="275" id="oie-j4-Rez"/>
+                                        <constraint firstItem="WNN-aY-BDO" firstAttribute="centerY" secondItem="NWS-6i-ZYt" secondAttribute="top" id="qTm-U6-hTz"/>
                                         <constraint firstItem="tfb-4f-8qe" firstAttribute="leading" secondItem="9dj-E3-uka" secondAttribute="leading" id="sX1-xV-TKb"/>
+                                        <constraint firstItem="WNN-aY-BDO" firstAttribute="leading" secondItem="NWS-6i-ZYt" secondAttribute="trailing" constant="5" id="twE-lO-Bjk"/>
+                                        <constraint firstItem="caT-UF-u5T" firstAttribute="leading" secondItem="cOs-rr-nNM" secondAttribute="trailing" priority="250" constant="5" id="uWv-p9-E1K"/>
+                                        <constraint firstItem="VDK-om-yg2" firstAttribute="leading" secondItem="tfb-4f-8qe" secondAttribute="trailing" constant="5" id="w36-Up-FTx"/>
+                                        <constraint firstItem="caT-UF-u5T" firstAttribute="centerY" secondItem="cOs-rr-nNM" secondAttribute="top" id="x3C-RC-JzM"/>
                                     </constraints>
                                 </view>
                                 <constraints>
@@ -567,7 +580,7 @@
                                 <color key="borderColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VW5-hv-OwS">
-                                <rect key="frame" x="111" y="291" width="484" height="90"/>
+                                <rect key="frame" x="93" y="291" width="484" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="480" id="OM8-ow-MWe"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="bdB-AN-zkx"/>
@@ -583,16 +596,16 @@
                         <constraints>
                             <constraint firstItem="xMh-pp-Uek" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="48" id="3Xe-xo-R0w"/>
                             <constraint firstItem="xMh-pp-Uek" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="32" id="47C-uD-xuZ"/>
-                            <constraint firstItem="VW5-hv-OwS" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="113" id="4fb-Xy-31e"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="i7J-qY-hF0" secondAttribute="trailing" constant="32" id="517-Bh-wNL"/>
+                            <constraint firstItem="VW5-hv-OwS" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="95" id="4fb-Xy-31e"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="i7J-qY-hF0" secondAttribute="trailing" constant="20" symbolic="YES" id="517-Bh-wNL"/>
                             <constraint firstItem="4dn-Gg-Wy3" firstAttribute="top" secondItem="i7J-qY-hF0" secondAttribute="bottom" constant="15" id="5FR-07-Yex"/>
                             <constraint firstItem="VW5-hv-OwS" firstAttribute="top" secondItem="rKj-gW-VAB" secondAttribute="bottom" constant="8" id="9cK-4I-WYh"/>
                             <constraint firstItem="i7J-qY-hF0" firstAttribute="top" secondItem="LVb-pL-6ez" secondAttribute="bottom" constant="8" id="Cbj-sL-FTk"/>
                             <constraint firstAttribute="trailing" secondItem="qEK-TC-RNc" secondAttribute="trailing" constant="32" id="D6L-3g-HIm"/>
                             <constraint firstItem="LVb-pL-6ez" firstAttribute="top" secondItem="m17-jn-QNs" secondAttribute="bottom" constant="12" id="D6j-BE-tIW"/>
-                            <constraint firstItem="rKj-gW-VAB" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="93" id="D7c-3F-JlX"/>
+                            <constraint firstItem="rKj-gW-VAB" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="75" id="D7c-3F-JlX"/>
                             <constraint firstAttribute="trailing" secondItem="m17-jn-QNs" secondAttribute="trailing" constant="32" id="FbD-jt-jTd"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VW5-hv-OwS" secondAttribute="trailing" constant="32" id="IUR-2y-Mhf"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VW5-hv-OwS" secondAttribute="trailing" constant="20" symbolic="YES" id="IUR-2y-Mhf"/>
                             <constraint firstItem="GzW-fZ-j1l" firstAttribute="top" secondItem="xMh-pp-Uek" secondAttribute="top" id="NGO-nm-c3W"/>
                             <constraint firstItem="qEK-TC-RNc" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="32" id="PSE-MU-aDh"/>
                             <constraint firstAttribute="trailing" secondItem="4dn-Gg-Wy3" secondAttribute="trailing" id="R4u-b5-DNd"/>
@@ -600,13 +613,13 @@
                             <constraint firstItem="rKj-gW-VAB" firstAttribute="top" secondItem="qEK-TC-RNc" secondAttribute="bottom" constant="12" id="VDI-ph-oOs"/>
                             <constraint firstItem="m17-jn-QNs" firstAttribute="top" secondItem="VW5-hv-OwS" secondAttribute="bottom" constant="15" id="ViP-9I-hYW"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LVb-pL-6ez" secondAttribute="trailing" constant="20" symbolic="YES" id="Y5L-1V-fFm"/>
-                            <constraint firstItem="i7J-qY-hF0" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="113" id="cNI-ih-n9H"/>
+                            <constraint firstItem="i7J-qY-hF0" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="95" id="cNI-ih-n9H"/>
                             <constraint firstItem="qEK-TC-RNc" firstAttribute="top" secondItem="xMh-pp-Uek" secondAttribute="bottom" constant="19" id="cc6-PO-N4k"/>
                             <constraint firstItem="4dn-Gg-Wy3" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="e7R-C6-N9D"/>
                             <constraint firstItem="m17-jn-QNs" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="32" id="hxm-98-0It"/>
                             <constraint firstItem="GzW-fZ-j1l" firstAttribute="leading" secondItem="xMh-pp-Uek" secondAttribute="trailing" constant="15" id="iCo-WJ-Zgu"/>
                             <constraint firstItem="GzW-fZ-j1l" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="trailing" constant="32" id="iKA-3P-Wr7"/>
-                            <constraint firstItem="LVb-pL-6ez" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="93" id="vYB-y7-HxQ"/>
+                            <constraint firstItem="LVb-pL-6ez" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="75" id="vYB-y7-HxQ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -859,7 +872,7 @@
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zgV-gd-3qc">
                                                         <rect key="frame" x="13" y="13" width="598" height="15"/>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="enable Ghosty" id="aCq-yn-W9M">
-                                                            <font key="font" metaFont="controlContent"/>
+                                                            <font key="font" metaFont="label" size="12"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
