@@ -73,9 +73,9 @@ class TrustedSitesViewController: NSViewController {
 		trustedStiesCollectionView.backgroundColors = [NSColor.clear]
 		trustedSiteTextField.backgroundColor = NSColor.clear
 		trustedSitesTitle.attributedStringValue = trustedSitesTitle.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 3)
-		trustSiteBtn.attributedTitle = trustSiteBtn.stringValue.attributedString(withTextAlignment: .center, fontName: "Roboto-Medium", fontSize: 12.0, fontColor: NSColor(named: "trustBtnText") ?? NSColor.black)
+		trustSiteBtn.attributedTitle = trustSiteBtn.title.attributedString(withTextAlignment: .center, fontName: "Roboto-Medium", fontSize: 12.0, fontColor: NSColor(named: "trustBtnText") ?? NSColor.black)
 		errorMessageLabel.font = NSFont(name: "Roboto-Regular", size: 10)
-		trustSiteBtn.attributedAlternateTitle = trustSiteBtn.stringValue.attributedString(withTextAlignment: .center, fontName: "Roboto-Medium", fontSize: 12.0, fontColor: NSColor(rgb: 0xffffff))
+		trustSiteBtn.attributedAlternateTitle = trustSiteBtn.title.attributedString(withTextAlignment: .center, fontName: "Roboto-Medium", fontSize: 12.0, fontColor: NSColor(rgb: 0xffffff))
 	}
 	
 	// Move the logic to TrustSiteDS

@@ -730,244 +730,226 @@
         <scene sceneID="KF7-bx-kFP">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="oCc-SD-ZvT" customClass="HomeViewController" customModule="GhosteryLite" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="N0H-ZH-Frp">
+                    <view key="view" id="Uyn-1K-HI6">
                         <rect key="frame" x="0.0" y="0.0" width="625" height="576"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
-                            <box boxType="custom" borderType="none" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="EDF-e3-gcK">
-                                <rect key="frame" x="0.0" y="0.0" width="625" height="576"/>
-                                <view key="contentView" id="kjk-tv-uI4">
-                                    <rect key="frame" x="0.0" y="0.0" width="625" height="576"/>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GpV-SG-xme">
+                                <rect key="frame" x="48" y="438" width="120" height="106"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="106" id="E99-Ry-Z9j"/>
+                                    <constraint firstAttribute="width" constant="120" id="vrg-3N-clG"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ghosty-home" id="bP0-tC-lQ8"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nNK-J5-s6c">
+                                <rect key="frame" x="181" y="509" width="284" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="7qC-BQ-X1R"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Welcome to Ghostery Lite!" id="Lxj-pw-A6c">
+                                    <font key="font" size="24" name="Roboto-Regular"/>
+                                    <color key="textColor" name="panelText"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WF8-1w-fw2">
+                                <rect key="frame" x="181" y="432" width="364" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="J7Y-rl-aXp"/>
+                                    <constraint firstAttribute="width" constant="360" id="x63-Yc-VJQ"/>
+                                </constraints>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Thanks for installing Ghostery Lite. You are now protected with our default settings!" id="Nj1-99-0ia">
+                                    <font key="font" size="16" name="Roboto-Regular"/>
+                                    <color key="textColor" name="panelText"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <box boxType="custom" borderType="none" translatesAutoresizingMaskIntoConstraints="NO" id="tKh-LQ-WJY" userLabel="Enable Ghostery Banner">
+                                <rect key="frame" x="0.0" y="536" width="626" height="40"/>
+                                <view key="contentView" id="0ss-bE-TGG">
+                                    <rect key="frame" x="0.0" y="0.0" width="626" height="40"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zWn-wq-jhK">
-                                            <rect key="frame" x="48" y="438" width="120" height="106"/>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eaA-8t-yl9">
+                                            <rect key="frame" x="13" y="13" width="461" height="15"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="106" id="LwG-KE-Zo6"/>
-                                                <constraint firstAttribute="width" constant="120" id="tMQ-Jz-EfM"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="456" id="iSh-eo-CwR"/>
                                             </constraints>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ghosty-home" id="rfl-3p-vbg"/>
-                                        </imageView>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yNx-KH-9na">
-                                            <rect key="frame" x="181" y="509" width="284" height="35"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="35" id="Snp-zp-yw3"/>
-                                            </constraints>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Welcome to Ghostery Lite!" id="Z6K-0m-rr9">
-                                                <font key="font" size="24" name="Roboto-Regular"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please enable the Ghostery Lite extensions in your Safari preferences to begin." id="6N3-zF-kcF">
+                                                <font key="font" size="13" name="Roboto-Medium"/>
                                                 <color key="textColor" name="panelText"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kXc-rc-jc4">
-                                            <rect key="frame" x="181" y="432" width="364" height="60"/>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="hDO-qs-AJP">
+                                            <rect key="frame" x="494" y="7" width="112" height="27"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="60" id="9MO-Ry-wIj"/>
-                                                <constraint firstAttribute="width" constant="360" id="NQG-S6-19V"/>
+                                                <constraint firstAttribute="height" constant="27" id="3jo-GR-cft"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="xfL-Xz-hwa"/>
                                             </constraints>
-                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Thanks for installing Ghostery Lite. You are now protected with our default settings!" id="wYg-RX-1lu">
-                                                <font key="font" size="16" name="Roboto-Regular"/>
-                                                <color key="textColor" name="panelText"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <box boxType="custom" borderType="none" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Kbf-lj-k3C">
-                                            <rect key="frame" x="0.0" y="536" width="625" height="40"/>
-                                            <view key="contentView" id="glX-Nw-BPJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="625" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <subviews>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zgV-gd-3qc">
-                                                        <rect key="frame" x="13" y="13" width="460" height="14"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="456" id="RVG-RI-3Oq"/>
-                                                        </constraints>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please enable the Ghostery Lite extensions in your Safari preferences to begin." id="aCq-yn-W9M">
-                                                            <font key="font" size="12" name="Roboto-Regular"/>
-                                                            <color key="textColor" name="panelText"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="PWY-pJ-6rD">
-                                                        <rect key="frame" x="493" y="7" width="112" height="27"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="1yt-mN-Srb"/>
-                                                            <constraint firstAttribute="height" constant="27" id="EF0-Et-wnd"/>
-                                                        </constraints>
-                                                        <buttonCell key="cell" type="square" title="ENABLE LITE" bezelStyle="shadowlessSquare" image="white-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="J5T-oq-YPL">
-                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" size="14" name="Roboto-Regular"/>
-                                                        </buttonCell>
-                                                        <color key="contentTintColor" name="homeBtnTextColor"/>
-                                                        <connections>
-                                                            <action selector="enableGhosteryLite:" target="oCc-SD-ZvT" id="Knp-ni-TR1"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="PWY-pJ-6rD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zgV-gd-3qc" secondAttribute="trailing" constant="8" symbolic="YES" id="9dK-qh-BAY"/>
-                                                    <constraint firstAttribute="trailing" secondItem="PWY-pJ-6rD" secondAttribute="trailing" constant="20" id="HPz-qI-YQH"/>
-                                                    <constraint firstItem="PWY-pJ-6rD" firstAttribute="centerY" secondItem="glX-Nw-BPJ" secondAttribute="centerY" id="KS1-Wu-QjG"/>
-                                                    <constraint firstItem="zgV-gd-3qc" firstAttribute="centerY" secondItem="glX-Nw-BPJ" secondAttribute="centerY" id="KYO-E6-KQA"/>
-                                                    <constraint firstItem="zgV-gd-3qc" firstAttribute="leading" secondItem="glX-Nw-BPJ" secondAttribute="leading" constant="15" id="eWN-gq-tRs"/>
-                                                    <constraint firstItem="zgV-gd-3qc" firstAttribute="centerX" secondItem="glX-Nw-BPJ" secondAttribute="centerX" constant="-69.5" id="kqe-5q-VEc"/>
-                                                </constraints>
-                                            </view>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="Cb5-Bo-ISF"/>
-                                            </constraints>
-                                            <color key="fillColor" red="0.74509803921568629" green="0.28627450980392155" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
-                                        </box>
-                                        <box boxType="custom" borderType="none" cornerRadius="4" title="Edit Settings" translatesAutoresizingMaskIntoConstraints="NO" id="FUM-ps-RLK">
-                                            <rect key="frame" x="48" y="233" width="530" height="180"/>
-                                            <view key="contentView" id="TcR-Qq-LDZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="530" height="180"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <subviews>
-                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IwD-Mi-Qew">
-                                                        <rect key="frame" x="30" y="66" width="48" height="48"/>
-                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="settings-icon" id="A8S-4J-pQn"/>
-                                                    </imageView>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6EM-ac-LEL">
-                                                        <rect key="frame" x="111" y="74" width="381" height="76"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="377" id="KRd-Ad-jMb"/>
-                                                            <constraint firstAttribute="height" constant="76" id="atR-f7-MJz"/>
-                                                        </constraints>
-                                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Want to customize your tracker settings? Select the tracker categories you would like to block or unblock." id="8Rj-7U-bxz">
-                                                            <font key="font" size="16" name="Roboto-Medium"/>
-                                                            <color key="textColor" name="panelText"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="4vx-Kz-K0s">
-                                                        <rect key="frame" x="113" y="29" width="150" height="35"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="YSf-rY-JnX"/>
-                                                            <constraint firstAttribute="height" constant="35" id="hfo-BG-QSv"/>
-                                                        </constraints>
-                                                        <buttonCell key="cell" type="smallSquare" title="EDIT SETTINGS" bezelStyle="smallSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="WBJ-fQ-YXc">
-                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" size="14" name="RobotoCondensed-Bold"/>
-                                                        </buttonCell>
-                                                        <color key="contentTintColor" name="homeBtnTextColor"/>
-                                                        <connections>
-                                                            <action selector="editSettingsClicked:" target="oCc-SD-ZvT" id="Ek0-ju-ZmF"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6EM-ac-LEL" secondAttribute="trailing" constant="20" symbolic="YES" id="2dq-qH-oh2"/>
-                                                    <constraint firstItem="IwD-Mi-Qew" firstAttribute="leading" secondItem="TcR-Qq-LDZ" secondAttribute="leading" constant="30" id="62l-hG-UHy"/>
-                                                    <constraint firstItem="6EM-ac-LEL" firstAttribute="top" secondItem="TcR-Qq-LDZ" secondAttribute="top" constant="30" id="TEe-al-Ufj"/>
-                                                    <constraint firstItem="6EM-ac-LEL" firstAttribute="leading" secondItem="IwD-Mi-Qew" secondAttribute="trailing" constant="35" id="eJ8-jE-nF8"/>
-                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4vx-Kz-K0s" secondAttribute="trailing" constant="20" symbolic="YES" id="iAW-st-EPl"/>
-                                                    <constraint firstItem="IwD-Mi-Qew" firstAttribute="centerY" secondItem="TcR-Qq-LDZ" secondAttribute="centerY" id="j1R-Bj-8Ai"/>
-                                                    <constraint firstItem="4vx-Kz-K0s" firstAttribute="top" secondItem="6EM-ac-LEL" secondAttribute="bottom" constant="10" id="tLJ-SH-lUZ"/>
-                                                    <constraint firstItem="4vx-Kz-K0s" firstAttribute="leading" secondItem="IwD-Mi-Qew" secondAttribute="trailing" constant="35" id="yHf-EB-4Rm"/>
-                                                </constraints>
-                                            </view>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="530" id="CJR-57-JKg"/>
-                                                <constraint firstAttribute="height" constant="180" id="v1M-WO-WM4"/>
-                                            </constraints>
-                                            <color key="fillColor" name="panelBoxBackground"/>
-                                        </box>
-                                        <box boxType="custom" borderType="none" cornerRadius="4" title="Trusted Sites" translatesAutoresizingMaskIntoConstraints="NO" id="5El-Pe-hcO">
-                                            <rect key="frame" x="48" y="33" width="530" height="180"/>
-                                            <view key="contentView" id="6C8-ZL-VKD">
-                                                <rect key="frame" x="0.0" y="0.0" width="530" height="180"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <subviews>
-                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Qt-qi-cLd">
-                                                        <rect key="frame" x="30" y="62" width="46" height="57"/>
-                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="trusted-site-icon" id="xjP-Gq-LV8"/>
-                                                    </imageView>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="h3W-zx-9pa">
-                                                        <rect key="frame" x="104" y="74" width="373" height="76"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="76" id="7BD-7q-EYO"/>
-                                                            <constraint firstAttribute="width" constant="369" id="nMO-kG-jCu"/>
-                                                        </constraints>
-                                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Want to allow trackers on a site? Add or remove sites from your 'Trusted' list." id="yQ3-aG-UoO">
-                                                            <font key="font" size="16" name="Roboto-Medium"/>
-                                                            <color key="textColor" name="panelText"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="8NS-D3-tnM">
-                                                        <rect key="frame" x="106" y="29" width="150" height="35"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="35" id="2Ys-6f-FnD"/>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="YUH-ey-h3K"/>
-                                                        </constraints>
-                                                        <buttonCell key="cell" type="smallSquare" title="TRUSTED SITES" bezelStyle="smallSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="0cc-Uf-uAC">
-                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" size="14" name="RobotoCondensed-Bold"/>
-                                                        </buttonCell>
-                                                        <color key="contentTintColor" name="homeBtnTextColor"/>
-                                                        <connections>
-                                                            <action selector="trustedSitesClicked:" target="oCc-SD-ZvT" id="kMc-L7-e1N"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="5Qt-qi-cLd" firstAttribute="leading" secondItem="6C8-ZL-VKD" secondAttribute="leading" constant="30" id="3kr-Yq-1ar"/>
-                                                    <constraint firstItem="8NS-D3-tnM" firstAttribute="leading" secondItem="5Qt-qi-cLd" secondAttribute="trailing" constant="30" id="Asa-xe-uM3"/>
-                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="h3W-zx-9pa" secondAttribute="trailing" constant="20" symbolic="YES" id="Gcu-xT-8a3"/>
-                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8NS-D3-tnM" secondAttribute="trailing" constant="20" symbolic="YES" id="LTj-SC-gJE"/>
-                                                    <constraint firstItem="8NS-D3-tnM" firstAttribute="top" secondItem="h3W-zx-9pa" secondAttribute="bottom" constant="10" id="LqZ-pP-8HR"/>
-                                                    <constraint firstItem="5Qt-qi-cLd" firstAttribute="centerY" secondItem="6C8-ZL-VKD" secondAttribute="centerY" id="R49-jk-MsK"/>
-                                                    <constraint firstItem="h3W-zx-9pa" firstAttribute="top" secondItem="6C8-ZL-VKD" secondAttribute="top" constant="30" id="XUx-Fq-9X5"/>
-                                                    <constraint firstItem="h3W-zx-9pa" firstAttribute="leading" secondItem="5Qt-qi-cLd" secondAttribute="trailing" constant="30" id="mbD-sU-meR"/>
-                                                </constraints>
-                                            </view>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="530" id="4oP-Z3-iCO"/>
-                                                <constraint firstAttribute="height" constant="180" id="MwN-1P-dOB"/>
-                                            </constraints>
-                                            <color key="fillColor" name="panelBoxBackground"/>
-                                        </box>
+                                            <buttonCell key="cell" type="square" title="ENABLE LITE" bezelStyle="shadowlessSquare" image="white-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="y0w-zA-czl">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" size="14" name="Roboto-Regular"/>
+                                            </buttonCell>
+                                            <color key="contentTintColor" name="homeBtnTextColor"/>
+                                            <connections>
+                                                <action selector="enableGhosteryLite:" target="oCc-SD-ZvT" id="VLp-wR-TBE"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="kXc-rc-jc4" firstAttribute="top" secondItem="yNx-KH-9na" secondAttribute="bottom" constant="17" id="1jy-zP-9IZ"/>
-                                        <constraint firstItem="FUM-ps-RLK" firstAttribute="top" secondItem="zWn-wq-jhK" secondAttribute="bottom" constant="25" id="9FQ-Lf-DcX"/>
-                                        <constraint firstItem="yNx-KH-9na" firstAttribute="top" secondItem="zWn-wq-jhK" secondAttribute="top" id="ACd-0H-4dl"/>
-                                        <constraint firstItem="zWn-wq-jhK" firstAttribute="leading" secondItem="kjk-tv-uI4" secondAttribute="leading" constant="48" id="BBF-cS-XOb"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yNx-KH-9na" secondAttribute="trailing" constant="20" symbolic="YES" id="JVd-GH-k4Q"/>
-                                        <constraint firstItem="Kbf-lj-k3C" firstAttribute="top" secondItem="kjk-tv-uI4" secondAttribute="top" id="Pxh-0V-SRn"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kXc-rc-jc4" secondAttribute="trailing" constant="20" symbolic="YES" id="QUO-FJ-uyg"/>
-                                        <constraint firstItem="FUM-ps-RLK" firstAttribute="centerX" secondItem="kjk-tv-uI4" secondAttribute="centerX" id="Svf-vG-hgL"/>
-                                        <constraint firstItem="Kbf-lj-k3C" firstAttribute="leading" secondItem="kjk-tv-uI4" secondAttribute="leading" id="VBA-oH-DlH"/>
-                                        <constraint firstItem="5El-Pe-hcO" firstAttribute="leading" secondItem="TcR-Qq-LDZ" secondAttribute="leading" id="crU-eO-kTt"/>
-                                        <constraint firstItem="yNx-KH-9na" firstAttribute="leading" secondItem="zWn-wq-jhK" secondAttribute="trailing" constant="15" id="dEe-H1-57j"/>
-                                        <constraint firstAttribute="trailing" secondItem="Kbf-lj-k3C" secondAttribute="trailing" id="hCd-FE-Jqd"/>
-                                        <constraint firstItem="zWn-wq-jhK" firstAttribute="top" secondItem="kjk-tv-uI4" secondAttribute="top" constant="32" id="oOQ-hx-H9W"/>
-                                        <constraint firstItem="5El-Pe-hcO" firstAttribute="top" secondItem="TcR-Qq-LDZ" secondAttribute="bottom" constant="20" id="pWg-8a-RHS"/>
-                                        <constraint firstItem="kXc-rc-jc4" firstAttribute="leading" secondItem="yNx-KH-9na" secondAttribute="leading" id="sn4-WC-U5Z"/>
+                                        <constraint firstItem="hDO-qs-AJP" firstAttribute="centerY" secondItem="0ss-bE-TGG" secondAttribute="centerY" id="6mE-KS-L0L"/>
+                                        <constraint firstAttribute="trailing" secondItem="hDO-qs-AJP" secondAttribute="trailing" constant="20" id="PFY-UK-Gui"/>
+                                        <constraint firstItem="eaA-8t-yl9" firstAttribute="centerY" secondItem="0ss-bE-TGG" secondAttribute="centerY" id="Wtr-oM-BTF"/>
+                                        <constraint firstItem="eaA-8t-yl9" firstAttribute="leading" secondItem="0ss-bE-TGG" secondAttribute="leading" constant="15" id="dVu-cR-3gf"/>
+                                        <constraint firstItem="hDO-qs-AJP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eaA-8t-yl9" secondAttribute="trailing" constant="8" symbolic="YES" id="rNV-N6-O3A"/>
+                                        <constraint firstItem="eaA-8t-yl9" firstAttribute="centerX" secondItem="0ss-bE-TGG" secondAttribute="centerX" constant="-69.5" id="xlX-z6-ESA"/>
                                     </constraints>
                                 </view>
-                                <color key="borderColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="fillColor" name="panelBackground"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4Al-RY-0rZ"/>
+                                </constraints>
+                                <color key="fillColor" red="0.74509803919999995" green="0.28627450980000002" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </box>
+                            <box boxType="custom" borderType="none" cornerRadius="4" title="Edit Settings" translatesAutoresizingMaskIntoConstraints="NO" id="2yc-pE-DGl">
+                                <rect key="frame" x="48" y="233" width="530" height="180"/>
+                                <view key="contentView" id="ugN-13-jQb">
+                                    <rect key="frame" x="0.0" y="0.0" width="530" height="180"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x6R-h9-8FG">
+                                            <rect key="frame" x="30" y="66" width="48" height="48"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="settings-icon" id="xIY-G3-Tbj"/>
+                                        </imageView>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aFr-mY-22K">
+                                            <rect key="frame" x="111" y="74" width="381" height="76"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="76" id="Cee-s7-4R3"/>
+                                                <constraint firstAttribute="width" constant="377" id="utq-Sj-Kwh"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Want to customize your tracker settings? Select the tracker categories you would like to block or unblock." id="Xyh-1f-Gqv">
+                                                <font key="font" size="16" name="Roboto-Medium"/>
+                                                <color key="textColor" name="panelText"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="Auf-25-vuC">
+                                            <rect key="frame" x="113" y="29" width="150" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="LRX-WB-gVJ"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="f7J-fq-jXS"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="smallSquare" title="EDIT SETTINGS" bezelStyle="smallSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="rMH-QB-Bjg">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" size="14" name="RobotoCondensed-Bold"/>
+                                            </buttonCell>
+                                            <color key="contentTintColor" name="homeBtnTextColor"/>
+                                            <connections>
+                                                <action selector="editSettingsClicked:" target="oCc-SD-ZvT" id="dvg-6s-UbT"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="aFr-mY-22K" firstAttribute="leading" secondItem="x6R-h9-8FG" secondAttribute="trailing" constant="35" id="Kzy-Gj-he2"/>
+                                        <constraint firstItem="x6R-h9-8FG" firstAttribute="centerY" secondItem="ugN-13-jQb" secondAttribute="centerY" id="Tbi-dx-Ama"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Auf-25-vuC" secondAttribute="trailing" constant="20" symbolic="YES" id="Zgd-pk-IGo"/>
+                                        <constraint firstItem="Auf-25-vuC" firstAttribute="top" secondItem="aFr-mY-22K" secondAttribute="bottom" constant="10" id="df1-I6-ImP"/>
+                                        <constraint firstItem="aFr-mY-22K" firstAttribute="top" secondItem="ugN-13-jQb" secondAttribute="top" constant="30" id="hl6-vH-hDO"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aFr-mY-22K" secondAttribute="trailing" constant="20" symbolic="YES" id="yAV-Rm-Dkh"/>
+                                        <constraint firstItem="x6R-h9-8FG" firstAttribute="leading" secondItem="ugN-13-jQb" secondAttribute="leading" constant="30" id="yMx-s7-eGV"/>
+                                        <constraint firstItem="Auf-25-vuC" firstAttribute="leading" secondItem="x6R-h9-8FG" secondAttribute="trailing" constant="35" id="yre-KJ-kSo"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="530" id="UV9-IA-Q5R"/>
+                                    <constraint firstAttribute="height" constant="180" id="fcw-Pu-VDd"/>
+                                </constraints>
+                                <color key="fillColor" name="panelBoxBackground"/>
+                            </box>
+                            <box boxType="custom" borderType="none" cornerRadius="4" title="Trusted Sites" translatesAutoresizingMaskIntoConstraints="NO" id="I5w-kK-sPE">
+                                <rect key="frame" x="48" y="33" width="530" height="180"/>
+                                <view key="contentView" id="tKn-Cu-dQ1">
+                                    <rect key="frame" x="0.0" y="0.0" width="530" height="180"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sQb-r1-DJ3">
+                                            <rect key="frame" x="30" y="62" width="46" height="57"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="trusted-site-icon" id="OiP-Jy-Wiy"/>
+                                        </imageView>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CIW-BN-MI7">
+                                            <rect key="frame" x="104" y="74" width="373" height="76"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="76" id="Uls-JP-bsO"/>
+                                                <constraint firstAttribute="width" constant="369" id="fMJ-2j-z7J"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Want to allow trackers on a site? Add or remove sites from your 'Trusted' list." id="acO-0Z-yHY">
+                                                <font key="font" size="16" name="Roboto-Medium"/>
+                                                <color key="textColor" name="panelText"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="PAN-CY-Rm1">
+                                            <rect key="frame" x="106" y="29" width="150" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="6Ts-gu-aqP"/>
+                                                <constraint firstAttribute="height" constant="35" id="t1t-79-cSX"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="smallSquare" title="TRUSTED SITES" bezelStyle="smallSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="N8X-rV-l18">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" size="14" name="RobotoCondensed-Bold"/>
+                                            </buttonCell>
+                                            <color key="contentTintColor" name="homeBtnTextColor"/>
+                                            <connections>
+                                                <action selector="trustedSitesClicked:" target="oCc-SD-ZvT" id="7kN-h0-vxK"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PAN-CY-Rm1" secondAttribute="trailing" constant="20" symbolic="YES" id="4bz-e2-FAH"/>
+                                        <constraint firstItem="PAN-CY-Rm1" firstAttribute="leading" secondItem="sQb-r1-DJ3" secondAttribute="trailing" constant="30" id="4p4-nF-WG8"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CIW-BN-MI7" secondAttribute="trailing" constant="20" symbolic="YES" id="Rme-Zj-C8I"/>
+                                        <constraint firstItem="sQb-r1-DJ3" firstAttribute="centerY" secondItem="tKn-Cu-dQ1" secondAttribute="centerY" id="VC2-MB-HE7"/>
+                                        <constraint firstItem="CIW-BN-MI7" firstAttribute="leading" secondItem="sQb-r1-DJ3" secondAttribute="trailing" constant="30" id="pDM-0e-1p3"/>
+                                        <constraint firstItem="CIW-BN-MI7" firstAttribute="top" secondItem="tKn-Cu-dQ1" secondAttribute="top" constant="30" id="tkv-Dq-ljK"/>
+                                        <constraint firstItem="PAN-CY-Rm1" firstAttribute="top" secondItem="CIW-BN-MI7" secondAttribute="bottom" constant="10" id="wyO-gc-LYa"/>
+                                        <constraint firstItem="sQb-r1-DJ3" firstAttribute="leading" secondItem="tKn-Cu-dQ1" secondAttribute="leading" constant="30" id="yRY-Jv-Zul"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="530" id="3iY-tj-HzX"/>
+                                    <constraint firstAttribute="height" constant="180" id="58F-kh-yuQ"/>
+                                </constraints>
+                                <color key="fillColor" name="panelBoxBackground"/>
                             </box>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="EDF-e3-gcK" firstAttribute="height" secondItem="N0H-ZH-Frp" secondAttribute="height" id="E8S-cq-J5W"/>
-                            <constraint firstItem="EDF-e3-gcK" firstAttribute="width" secondItem="N0H-ZH-Frp" secondAttribute="width" id="F1b-wk-0zn"/>
-                            <constraint firstItem="EDF-e3-gcK" firstAttribute="centerY" secondItem="N0H-ZH-Frp" secondAttribute="centerY" id="rdl-m4-ZDa"/>
-                            <constraint firstItem="EDF-e3-gcK" firstAttribute="centerX" secondItem="N0H-ZH-Frp" secondAttribute="centerX" id="u3K-Xj-bDY"/>
+                            <constraint firstItem="I5w-kK-sPE" firstAttribute="leading" secondItem="ugN-13-jQb" secondAttribute="leading" id="0GP-nP-DjP"/>
+                            <constraint firstItem="tKh-LQ-WJY" firstAttribute="centerX" secondItem="Uyn-1K-HI6" secondAttribute="centerX" id="1F4-7x-FPd"/>
+                            <constraint firstItem="I5w-kK-sPE" firstAttribute="top" secondItem="ugN-13-jQb" secondAttribute="bottom" constant="20" id="9BR-7a-S12"/>
+                            <constraint firstItem="nNK-J5-s6c" firstAttribute="top" secondItem="GpV-SG-xme" secondAttribute="top" id="9N3-Hx-RUa"/>
+                            <constraint firstItem="WF8-1w-fw2" firstAttribute="leading" secondItem="nNK-J5-s6c" secondAttribute="leading" id="BQp-a2-6FR"/>
+                            <constraint firstItem="2yc-pE-DGl" firstAttribute="centerX" secondItem="Uyn-1K-HI6" secondAttribute="centerX" id="L0T-O2-JOk"/>
+                            <constraint firstItem="WF8-1w-fw2" firstAttribute="top" secondItem="nNK-J5-s6c" secondAttribute="bottom" constant="17" id="SIl-pb-Nez"/>
+                            <constraint firstItem="2yc-pE-DGl" firstAttribute="top" secondItem="GpV-SG-xme" secondAttribute="bottom" constant="25" id="W3H-OW-Uhv"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WF8-1w-fw2" secondAttribute="trailing" constant="20" symbolic="YES" id="X8z-r7-6JA"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nNK-J5-s6c" secondAttribute="trailing" constant="20" symbolic="YES" id="cTo-wF-d9W"/>
+                            <constraint firstItem="tKh-LQ-WJY" firstAttribute="top" secondItem="Uyn-1K-HI6" secondAttribute="top" id="enj-gv-aGz"/>
+                            <constraint firstItem="nNK-J5-s6c" firstAttribute="leading" secondItem="GpV-SG-xme" secondAttribute="trailing" constant="15" id="ggL-4i-G0y"/>
+                            <constraint firstItem="GpV-SG-xme" firstAttribute="leading" secondItem="Uyn-1K-HI6" secondAttribute="leading" constant="48" id="tB5-a6-dl8"/>
+                            <constraint firstItem="GpV-SG-xme" firstAttribute="top" secondItem="Uyn-1K-HI6" secondAttribute="top" constant="32" id="x9I-ot-VOd"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="SafariExtensionPromptView" destination="Kbf-lj-k3C" id="7Z4-0K-28k"/>
-                        <outlet property="editSettingsBtn" destination="4vx-Kz-K0s" id="4X7-iQ-JzZ"/>
-                        <outlet property="editSettingsText" destination="6EM-ac-LEL" id="w8W-du-Dv7"/>
-                        <outlet property="enableGhosteryLiteBtn" destination="PWY-pJ-6rD" id="chZ-hY-NbV"/>
-                        <outlet property="enableGhosteryLitePromptText" destination="zgV-gd-3qc" id="1Sk-hl-jTp"/>
-                        <outlet property="subtitleText" destination="kXc-rc-jc4" id="L8w-of-pKw"/>
-                        <outlet property="titleText" destination="yNx-KH-9na" id="jrx-4Z-PTu"/>
-                        <outlet property="trustedSitesBtn" destination="8NS-D3-tnM" id="iHC-Jb-AnO"/>
-                        <outlet property="trustedSitesText" destination="h3W-zx-9pa" id="xaA-TN-imV"/>
+                        <outlet property="SafariExtensionPromptView" destination="tKh-LQ-WJY" id="Ran-hV-YP6"/>
+                        <outlet property="editSettingsBtn" destination="Auf-25-vuC" id="sgw-20-yty"/>
+                        <outlet property="editSettingsText" destination="aFr-mY-22K" id="en3-kO-nxV"/>
+                        <outlet property="enableGhosteryLiteBtn" destination="hDO-qs-AJP" id="iEx-8n-DjF"/>
+                        <outlet property="enableGhosteryLitePromptText" destination="eaA-8t-yl9" id="GFa-8x-ZWe"/>
+                        <outlet property="subtitleText" destination="WF8-1w-fw2" id="wPe-83-a9m"/>
+                        <outlet property="titleText" destination="nNK-J5-s6c" id="pBQ-Bv-smw"/>
+                        <outlet property="trustedSitesBtn" destination="PAN-CY-Rm1" id="Mcr-b8-17p"/>
+                        <outlet property="trustedSitesText" destination="CIW-BN-MI7" id="t9p-FA-gJO"/>
                     </connections>
                 </viewController>
                 <customObject id="RlB-4e-iCi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

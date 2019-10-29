@@ -80,10 +80,10 @@ class HomeViewController: NSViewController {
 			
 		let textColor = NSColor(named: "homeBtnTextColor") ?? NSColor.black
 		
-		editSettingsBtn.attributedTitle = editSettingsBtn.stringValue.attributedString(withTextAlignment: .center, fontName: "RobotoCondensed-Bold", fontSize: 14.0, fontColor: textColor)
+		editSettingsBtn.attributedTitle = editSettingsBtn.title.attributedString(withTextAlignment: .center, fontName: "RobotoCondensed-Bold", fontSize: 14.0, fontColor: textColor)
 		
-		trustedSitesBtn.attributedTitle = trustedSitesBtn.stringValue.attributedString(withTextAlignment: .center, fontName: "RobotoCondensed-Bold", fontSize: 14.0, fontColor: textColor)
+		trustedSitesBtn.attributedTitle = trustedSitesBtn.title.attributedString(withTextAlignment: .center, fontName: "RobotoCondensed-Bold", fontSize: 14.0, fontColor: textColor)
 		
-		enableGhosteryLiteBtn.attributedTitle = enableGhosteryLiteBtn.stringValue.attributedString(withTextAlignment: .center, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(rgb: 0x4a4a4a))
+		enableGhosteryLiteBtn.attributedTitle = enableGhosteryLiteBtn.title.attributedString(withTextAlignment: .center, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(rgb: 0x4a4a4a))
 	}
 }
