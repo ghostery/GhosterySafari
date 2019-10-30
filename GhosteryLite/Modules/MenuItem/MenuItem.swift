@@ -23,13 +23,13 @@ public enum MenuItem {
 	var title: String {
 		switch self {
 			case .home:
-				return Strings.SideMenuHomeTitle
+				return NSLocalizedString("home.menu", comment: "Home panel title in the side menu")
 			case .settings:
-				return Strings.SideMenuSettingsTitle
+				return NSLocalizedString("settings.menu", comment: "Settings panel title in the side menu")
 			case .trustedSites:
-				return Strings.SideMenuTrustedSitesTitle
+				return NSLocalizedString("trusted.sites.menu", comment: "Trusted Sites panel title in the side menu")
 			case .help:
-				return Strings.SideMenuHelpTitle
+				return NSLocalizedString("help.menu", comment: "Help panel title in the side menu")
 		}
 	}
 	
