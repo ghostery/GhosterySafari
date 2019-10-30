@@ -34,7 +34,7 @@ class ModalViewController: NSViewController {
 	
 	@IBAction func enableGhosteryLite(_ sender: NSButton) {
 		self.delegate?.hideSafariExtensionPopOver()
-		// Needs to be refactored
+		// TODO: Needs to be refactored
 		HomeViewController.showSafariPreferencesForExtension()
 	}
 	
@@ -42,24 +42,9 @@ class ModalViewController: NSViewController {
 		self.delegate?.hideSafariExtensionPopOver()
 	}
 	
-	@IBAction func activateExtensionButtonClicked(_ sender: Any) {
-		
-	}
-	
 	private func initComponents() {
-		enableGhosteryLiteText.stringValue = Strings.SafariExtensionPromptText
+		enableGhosteryLiteBtn.attributedTitle = enableGhosteryLiteBtn.title.attributedString(withTextAlignment: .center, fontName: "Roboto-Medium", fontSize: 14.0, fontColor: NSColor(rgb: 0xffffff), isUnderline: true)
 		
-		enableGhosteryLiteBtn.attributedTitle = Strings.SafariExtensionPromptEnableGhosteryLiteButtonTitle.attributedString(withTextAlignment: .center,
-																															fontName: "Roboto-Medium",
-																															fontSize: 14.0,
-																															fontColor: NSColor(rgb: 0xffffff),
-																															isUnderline: true)
-		
-		skipButton.attributedTitle = Strings.SafariExtensionPromptSkipButtonTitle.attributedString(withTextAlignment: .center,
-																								   fontName: "Roboto-Regular",
-																								   fontSize: 14.0,
-																								   fontColor: NSColor(rgb: 0x4a4a4a),
-																								   isUnderline: true)
-		
+		skipButton.attributedTitle = skipButton.title.attributedString(withTextAlignment: .center, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(rgb: 0x4a4a4a), isUnderline: true)
 	}
 }

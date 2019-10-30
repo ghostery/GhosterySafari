@@ -1225,7 +1225,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="415" height="386"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <box ambiguous="YES" boxType="custom" borderType="line" borderWidth="3" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Dba-jd-8JT">
+                            <box boxType="custom" borderType="line" borderWidth="3" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Dba-jd-8JT">
                                 <rect key="frame" x="0.0" y="0.0" width="415" height="386"/>
                                 <view key="contentView" id="TgT-6w-5h8">
                                     <rect key="frame" x="3" y="3" width="409" height="380"/>
@@ -1235,108 +1235,88 @@
                                             <rect key="frame" x="176" y="272" width="57" height="63"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-ghostery" id="4cN-lD-chj"/>
                                         </imageView>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="h4C-Ui-csD">
-                                            <rect key="frame" x="58" y="147" width="294" height="90"/>
+                                        <box boxType="custom" borderType="none" cornerRadius="4" title="Bottom Box" translatesAutoresizingMaskIntoConstraints="NO" id="RAj-YN-Sdm">
+                                            <rect key="frame" x="5" y="5" width="399" height="88"/>
+                                            <view key="contentView" id="JGU-PU-YIR">
+                                                <rect key="frame" x="0.0" y="0.0" width="399" height="88"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <box boxType="custom" borderType="none" cornerRadius="4" title="Enable Button" translatesAutoresizingMaskIntoConstraints="NO" id="VFy-d1-dX0">
+                                                        <rect key="frame" x="12" y="35" width="375" height="38"/>
+                                                        <view key="contentView" id="gNO-Jh-gLg">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gdw-SY-3yv">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
+                                                                    <buttonCell key="cell" type="bevel" title="ENABLE GHOSTERY LITE" bezelStyle="rounded" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="XIq-Cy-agY">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" size="14" name="Roboto-Medium"/>
+                                                                    </buttonCell>
+                                                                    <color key="contentTintColor" name="linkColor"/>
+                                                                    <connections>
+                                                                        <action selector="enableGhosteryLite:" target="aac-Lb-Acs" id="rZX-mx-yHk"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="gdw-SY-3yv" firstAttribute="centerX" secondItem="gNO-Jh-gLg" secondAttribute="centerX" id="0j3-5e-IHr"/>
+                                                                <constraint firstItem="gdw-SY-3yv" firstAttribute="centerY" secondItem="gNO-Jh-gLg" secondAttribute="centerY" id="tUf-KI-SY6"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="38" id="5Tb-La-2At"/>
+                                                            <constraint firstAttribute="width" constant="375" id="XJG-fr-LYx"/>
+                                                            <constraint firstItem="gdw-SY-3yv" firstAttribute="height" secondItem="VFy-d1-dX0" secondAttribute="height" id="e4j-Ay-i95"/>
+                                                            <constraint firstItem="gdw-SY-3yv" firstAttribute="width" secondItem="VFy-d1-dX0" secondAttribute="width" id="yie-Nb-p5d"/>
+                                                        </constraints>
+                                                        <color key="fillColor" red="0.57254901960000004" green="0.0" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </box>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="79q-5M-au7">
+                                                        <rect key="frame" x="159" y="7" width="82" height="16"/>
+                                                        <buttonCell key="cell" type="bevel" title="Skip for now" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="2Jl-PZ-VFA">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" size="14" name="Roboto-Regular"/>
+                                                        </buttonCell>
+                                                        <color key="contentTintColor" name="homeBtnTextColor"/>
+                                                        <connections>
+                                                            <action selector="skip:" target="aac-Lb-Acs" id="V30-Cg-LZq"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="79q-5M-au7" firstAttribute="top" secondItem="VFy-d1-dX0" secondAttribute="bottom" constant="12" id="1Kv-Ja-gPC"/>
+                                                    <constraint firstItem="79q-5M-au7" firstAttribute="centerX" secondItem="JGU-PU-YIR" secondAttribute="centerX" id="9iD-0n-39O"/>
+                                                    <constraint firstItem="VFy-d1-dX0" firstAttribute="top" secondItem="JGU-PU-YIR" secondAttribute="top" constant="15" id="RZl-7u-HMd"/>
+                                                    <constraint firstItem="VFy-d1-dX0" firstAttribute="centerX" secondItem="JGU-PU-YIR" secondAttribute="centerX" id="gCs-vN-4vl"/>
+                                                    <constraint firstAttribute="bottom" secondItem="79q-5M-au7" secondAttribute="bottom" constant="7" id="hKQ-0d-ubl"/>
+                                                </constraints>
+                                            </view>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="90" id="01j-uh-gKZ"/>
-                                                <constraint firstAttribute="width" constant="290" id="MAf-Xz-iYV"/>
+                                                <constraint firstAttribute="width" constant="399" id="eEm-ha-0w2"/>
                                             </constraints>
-                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="OnBoarding" id="dEo-t5-f3x">
-                                                <font key="font" metaFont="system" size="18"/>
+                                            <color key="fillColor" red="0.90588235289999997" green="0.92549019610000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </box>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h4C-Ui-csD">
+                                            <rect key="frame" x="60" y="153" width="290" height="84"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="286" id="1PV-M1-xhm"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="84" id="OOo-Pq-vhl"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Please enable Ghostery Lite UI and Ghostery Lite Content Blocker extensions in your Safari preferences to begin." id="dEo-t5-f3x">
+                                                <font key="font" size="18" name="Roboto-Regular"/>
                                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B60-Zy-4Mm">
-                                            <rect key="frame" x="5" y="7" width="400" height="88"/>
-                                            <subviews>
-                                                <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jqT-TS-yJS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="400" height="88"/>
-                                                    <subviews>
-                                                        <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="RAj-YN-Sdm">
-                                                            <rect key="frame" x="0.0" y="0.0" width="400" height="88"/>
-                                                            <view key="contentView" id="JGU-PU-YIR">
-                                                                <rect key="frame" x="0.0" y="0.0" width="400" height="88"/>
-                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                <subviews>
-                                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="79q-5M-au7">
-                                                                        <rect key="frame" x="162" y="7" width="75" height="15"/>
-                                                                        <buttonCell key="cell" type="bevel" title="Skip for now" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="2Jl-PZ-VFA">
-                                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                            <font key="font" metaFont="label" size="12"/>
-                                                                        </buttonCell>
-                                                                        <connections>
-                                                                            <action selector="skip:" target="aac-Lb-Acs" id="V30-Cg-LZq"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                    <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="VFy-d1-dX0">
-                                                                        <rect key="frame" x="12" y="35" width="375" height="38"/>
-                                                                        <view key="contentView" id="gNO-Jh-gLg">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
-                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                            <subviews>
-                                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gdw-SY-3yv">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
-                                                                                    <buttonCell key="cell" type="bevel" title="ENABLE" bezelStyle="rounded" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="XIq-Cy-agY">
-                                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                                        <font key="font" metaFont="label" size="12"/>
-                                                                                    </buttonCell>
-                                                                                    <connections>
-                                                                                        <action selector="enableGhosteryLite:" target="aac-Lb-Acs" id="rZX-mx-yHk"/>
-                                                                                    </connections>
-                                                                                </button>
-                                                                            </subviews>
-                                                                            <constraints>
-                                                                                <constraint firstItem="gdw-SY-3yv" firstAttribute="centerX" secondItem="gNO-Jh-gLg" secondAttribute="centerX" id="0j3-5e-IHr"/>
-                                                                                <constraint firstItem="gdw-SY-3yv" firstAttribute="centerY" secondItem="gNO-Jh-gLg" secondAttribute="centerY" id="tUf-KI-SY6"/>
-                                                                            </constraints>
-                                                                        </view>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="38" id="5Tb-La-2At"/>
-                                                                            <constraint firstAttribute="width" constant="375" id="XJG-fr-LYx"/>
-                                                                            <constraint firstItem="gdw-SY-3yv" firstAttribute="height" secondItem="VFy-d1-dX0" secondAttribute="height" id="e4j-Ay-i95"/>
-                                                                            <constraint firstItem="gdw-SY-3yv" firstAttribute="width" secondItem="VFy-d1-dX0" secondAttribute="width" id="yie-Nb-p5d"/>
-                                                                        </constraints>
-                                                                        <color key="fillColor" red="0.57254901960000004" green="0.0" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    </box>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="79q-5M-au7" firstAttribute="centerX" secondItem="JGU-PU-YIR" secondAttribute="centerX" id="7Up-dS-0Dl"/>
-                                                                    <constraint firstItem="VFy-d1-dX0" firstAttribute="top" secondItem="JGU-PU-YIR" secondAttribute="top" constant="15" id="RZl-7u-HMd"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="79q-5M-au7" secondAttribute="bottom" constant="7" id="hKQ-0d-ubl"/>
-                                                                    <constraint firstItem="VFy-d1-dX0" firstAttribute="centerX" secondItem="JGU-PU-YIR" secondAttribute="centerX" id="ub1-NO-i7O"/>
-                                                                </constraints>
-                                                            </view>
-                                                            <color key="fillColor" red="0.90588235289999997" green="0.92549019610000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </box>
-                                                    </subviews>
-                                                    <visibilityPriorities>
-                                                        <integer value="1000"/>
-                                                    </visibilityPriorities>
-                                                    <customSpacing>
-                                                        <real value="3.4028234663852886e+38"/>
-                                                    </customSpacing>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="88" id="SWh-Cf-hkI"/>
-                                                <constraint firstAttribute="width" constant="400" id="nmh-Tl-Kiy"/>
-                                            </constraints>
-                                            <visibilityPriorities>
-                                                <integer value="1000"/>
-                                            </visibilityPriorities>
-                                            <customSpacing>
-                                                <real value="3.4028234663852886e+38"/>
-                                            </customSpacing>
-                                        </stackView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="RAj-YN-Sdm" secondAttribute="bottom" constant="5" id="160-2P-dbb"/>
+                                        <constraint firstItem="RAj-YN-Sdm" firstAttribute="centerX" secondItem="TgT-6w-5h8" secondAttribute="centerX" id="8gg-eP-fTy"/>
+                                        <constraint firstItem="h4C-Ui-csD" firstAttribute="centerX" secondItem="TgT-6w-5h8" secondAttribute="centerX" id="Ajp-f6-vpD"/>
                                         <constraint firstItem="pJz-QB-tX5" firstAttribute="centerX" secondItem="TgT-6w-5h8" secondAttribute="centerX" id="HDl-Nb-ock"/>
-                                        <constraint firstItem="B60-Zy-4Mm" firstAttribute="centerX" secondItem="TgT-6w-5h8" secondAttribute="centerX" id="IzS-ud-Bcd"/>
                                         <constraint firstItem="h4C-Ui-csD" firstAttribute="top" secondItem="pJz-QB-tX5" secondAttribute="bottom" constant="35" id="KFZ-xN-aVV"/>
-                                        <constraint firstAttribute="bottom" secondItem="B60-Zy-4Mm" secondAttribute="bottom" constant="7" id="Zuz-kb-fbV"/>
                                         <constraint firstItem="pJz-QB-tX5" firstAttribute="top" secondItem="TgT-6w-5h8" secondAttribute="top" constant="45" id="nEa-9i-SaN"/>
-                                        <constraint firstItem="h4C-Ui-csD" firstAttribute="centerX" secondItem="TgT-6w-5h8" secondAttribute="centerX" id="oIS-SF-IOQ"/>
                                     </constraints>
                                 </view>
                                 <constraints>
@@ -1347,6 +1327,10 @@
                                 <color key="fillColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                             </box>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="Dba-jd-8JT" firstAttribute="leading" secondItem="3qS-Yv-c2C" secondAttribute="leading" id="fyV-L6-XDU"/>
+                            <constraint firstItem="Dba-jd-8JT" firstAttribute="top" secondItem="3qS-Yv-c2C" secondAttribute="top" id="y3B-mv-cP3"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="enableGhosteryLiteBtn" destination="gdw-SY-3yv" id="s5h-7u-EK6"/>
@@ -1356,7 +1340,7 @@
                 </viewController>
                 <customObject id="Vch-So-Qde" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902" y="1172"/>
+            <point key="canvasLocation" x="901.5" y="1172"/>
         </scene>
     </scenes>
     <resources>
@@ -1379,6 +1363,9 @@
         </namedColor>
         <namedColor name="linebreakColor">
             <color red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="0.34999999403953552" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="linkColor">
+            <color red="0.85490196078431369" green="0.95686274509803926" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="menuHeader">
             <color red="0.2627450980392157" green="0.29411764705882354" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -21,8 +21,4 @@ public struct Strings {
 	public static let SideMenuTrustedSitesTitle = NSLocalizedString("Trusted Sites", comment: "Trusted Sites panel title in the side menu")
 	public static let SideMenuHelpTitle = NSLocalizedString("Help", comment: "Help panel title in the side menu")
 	
-	//MARK:- Safari Extension Prompt
-	public static let SafariExtensionPromptText = NSLocalizedString("Please enable Ghostery Lite Icon and Ghostery Lite extensions in your Safari preferences to begin.", comment: "[Safari Extension Prompt] text")
-	public static let SafariExtensionPromptEnableGhosteryLiteButtonTitle = NSLocalizedString("ENABLE GHOSTERY LITE", comment: "[Safari Extension Prompt]] Enable Ghostery Lite button title")
-	public static let SafariExtensionPromptSkipButtonTitle = NSLocalizedString("Skip for now", comment: "[Safari Extension Prompt] skip for now button title")
 }

@@ -59,8 +59,8 @@
 /* Class = "NSBox"; title = "Right Panel"; ObjectID = "CWC-pw-01r"; */
 "CWC-pw-01r.title" = "Right Panel";
 
-/* Class = "NSBox"; title = "Box"; ObjectID = "ClR-3n-ed0"; */
-"ClR-3n-ed0.title" = "Box";
+/* Class = "NSBox"; title = "Divider"; ObjectID = "ClR-3n-ed0"; */
+"ClR-3n-ed0.title" = "Divider";
 
 /* Class = "NSMenuItem"; title = "Settings"; ObjectID = "DDT-NI-FKo"; */
 "DDT-NI-FKo.title" = "Settings";
@@ -122,8 +122,8 @@
 /* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "R4o-n2-Eq4"; */
 "R4o-n2-Eq4.title" = "Zoom";
 
-/* Class = "NSBox"; title = "Box"; ObjectID = "RAj-YN-Sdm"; */
-"RAj-YN-Sdm.title" = "Box";
+/* Class = "NSBox"; title = "Bottom Box"; ObjectID = "RAj-YN-Sdm"; */
+"RAj-YN-Sdm.title" = "Bottom Box";
 
 /* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
 "Td7-aD-5lo.title" = "Window";
@@ -134,8 +134,8 @@
 /* Class = "NSImageView"; ibShadowedToolTip = "Includes chat, email messaging, customer support, and other interaction tools."; ObjectID = "VDK-om-yg2"; */
 "VDK-om-yg2.ibShadowedToolTip" = "Includes chat, email messaging, customer support, and other interaction tools.";
 
-/* Class = "NSBox"; title = "Box"; ObjectID = "VFy-d1-dX0"; */
-"VFy-d1-dX0.title" = "Box";
+/* Class = "NSBox"; title = "Enable Button"; ObjectID = "VFy-d1-dX0"; */
+"VFy-d1-dX0.title" = "Enable Button";
 
 /* Class = "NSMenuItem"; title = "Trusted Sites"; ObjectID = "VKp-9U-kay"; */
 "VKp-9U-kay.title" = "Trusted Sites";
@@ -143,8 +143,8 @@
 /* Class = "NSImageView"; ibShadowedToolTip = "Enables comments sections for articles and product reviews."; ObjectID = "WNN-aY-BDO"; */
 "WNN-aY-BDO.ibShadowedToolTip" = "Enables comments sections for articles and product reviews.";
 
-/* Class = "NSButtonCell"; title = "ENABLE"; ObjectID = "XIq-Cy-agY"; */
-"XIq-Cy-agY.title" = "ENABLE";
+/* Class = "NSButtonCell"; title = "ENABLE GHOSTERY LITE"; ObjectID = "XIq-Cy-agY"; */
+"XIq-Cy-agY.title" = "ENABLE GHOSTERY LITE";
 
 /* Class = "NSTextFieldCell"; title = "Want to customize your tracker settings? Select the tracker categories you would like to block or unblock."; ObjectID = "Xyh-1f-Gqv"; */
 "Xyh-1f-Gqv.title" = "Want to customize your tracker settings? Select the tracker categories you would like to block or unblock.";
@@ -173,8 +173,8 @@
 /* Class = "NSImageView"; ibShadowedToolTip = "Enables websites to publish, distribute, and optimize video and audio content."; ObjectID = "cke-w1-Con"; */
 "cke-w1-Con.ibShadowedToolTip" = "Enables websites to publish, distribute, and optimize video and audio content.";
 
-/* Class = "NSTextFieldCell"; title = "OnBoarding"; ObjectID = "dEo-t5-f3x"; */
-"dEo-t5-f3x.title" = "OnBoarding";
+/* Class = "NSTextFieldCell"; title = "Please enable Ghostery Lite UI and Ghostery Lite Content Blocker extensions in your Safari preferences to begin."; ObjectID = "dEo-t5-f3x"; */
+"dEo-t5-f3x.title" = "Please enable Ghostery Lite UI and Ghostery Lite Content Blocker extensions in your Safari preferences to begin.";
 
 /* Class = "NSImageView"; ibShadowedToolTip = "Collects and analyzes data related to site usage and performance."; ObjectID = "edo-Q1-18A"; */
 "edo-Q1-18A.ibShadowedToolTip" = "Collects and analyzes data related to site usage and performance.";
