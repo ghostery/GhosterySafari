@@ -73,7 +73,7 @@
                         <action selector="pauseButtonPressedWithSender:" target="-2" id="xXU-fr-FHF"/>
                     </connections>
                 </button>
-                <button translatesAutoresizingMaskIntoConstraints="NO" id="sog-ga-TCe">
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="sog-ga-TCe" userLabel="Menu Button">
                     <rect key="frame" x="192" y="288" width="22" height="7"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="7" id="ST1-xY-QKj"/>
@@ -94,7 +94,7 @@
                     </constraints>
                 </box>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="22k-0R-t4P">
-                    <rect key="frame" x="10" y="243" width="190" height="16"/>
+                    <rect key="frame" x="10" y="243" width="142" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="Lfu-k9-tv6"/>
                     </constraints>
@@ -108,7 +108,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lda-Cg-OvN">
-                    <rect key="frame" x="10" y="220" width="190" height="16"/>
+                    <rect key="frame" x="10" y="220" width="145" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="lZf-S5-fTT"/>
                     </constraints>
@@ -121,8 +121,8 @@
                         <action selector="customConfigPressedWithSender:" target="-2" id="u76-d0-Okw"/>
                     </connections>
                 </button>
-                <imageView toolTip="Control which categories of tracker you block/allow in your custom settings." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NPW-Kh-cmC">
-                    <rect key="frame" x="155" y="228" width="11" height="13"/>
+                <imageView toolTip="Control which categories of tracker you block/allow in your custom settings." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NPW-Kh-cmC" userLabel="Custom Config Icon">
+                    <rect key="frame" x="160" y="230" width="11" height="13"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="13" id="BWI-sz-PMS"/>
                         <constraint firstAttribute="width" constant="11" id="yjx-xA-LZf"/>
@@ -252,7 +252,7 @@
                                 <constraint firstAttribute="height" constant="17" id="GC4-ne-8eX"/>
                             </constraints>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Reload To See Changes" id="CBJ-Qs-OqG">
-                                <font key="font" size="11" name="OpenSans-SemiBold"/>
+                                <font key="font" size="12" name="OpenSans-SemiBold"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
@@ -272,16 +272,19 @@
                         </button>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="6aT-bG-BUD" firstAttribute="top" secondItem="26T-rB-QRX" secondAttribute="bottom" constant="6" id="4xk-Gv-G0D"/>
                         <constraint firstAttribute="width" constant="220" id="6fO-BI-YHO"/>
-                        <constraint firstAttribute="trailing" secondItem="26T-rB-QRX" secondAttribute="trailing" constant="10" id="B04-wm-IRu"/>
                         <constraint firstItem="26T-rB-QRX" firstAttribute="top" secondItem="UaI-LL-OzT" secondAttribute="bottom" constant="3" id="CH3-Xe-cnb"/>
                         <constraint firstAttribute="trailing" secondItem="UaI-LL-OzT" secondAttribute="trailing" constant="5" id="Ct4-zd-iPn"/>
-                        <constraint firstAttribute="trailing" secondItem="6aT-bG-BUD" secondAttribute="trailing" constant="10" id="Lzw-Vw-xzW"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6aT-bG-BUD" secondAttribute="trailing" id="Lzw-Vw-xzW"/>
                         <constraint firstItem="26T-rB-QRX" firstAttribute="leading" secondItem="Rlb-mT-MaB" secondAttribute="leading" constant="10" id="MrY-re-pLU"/>
+                        <constraint firstItem="6aT-bG-BUD" firstAttribute="centerX" secondItem="Rlb-mT-MaB" secondAttribute="centerX" id="NnU-f6-bd5"/>
                         <constraint firstItem="6aT-bG-BUD" firstAttribute="leading" secondItem="Rlb-mT-MaB" secondAttribute="leading" constant="10" id="Pml-od-rKI"/>
                         <constraint firstAttribute="height" constant="72" id="WSs-ie-a0f"/>
                         <constraint firstAttribute="bottom" secondItem="6aT-bG-BUD" secondAttribute="bottom" constant="13" id="h2T-WQ-Oq4"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="26T-rB-QRX" secondAttribute="trailing" id="sgn-bH-QRN"/>
                         <constraint firstItem="UaI-LL-OzT" firstAttribute="top" secondItem="Rlb-mT-MaB" secondAttribute="top" constant="5" id="uRL-GI-24g"/>
+                        <constraint firstItem="26T-rB-QRX" firstAttribute="centerX" secondItem="Rlb-mT-MaB" secondAttribute="centerX" id="wFO-GD-GTP"/>
                     </constraints>
                 </customView>
             </subviews>
@@ -292,21 +295,21 @@
                 <constraint firstItem="Rlb-mT-MaB" firstAttribute="top" secondItem="upo-Zq-Mc1" secondAttribute="bottom" constant="-1" id="8wq-NY-5dY"/>
                 <constraint firstItem="BdJ-Az-y4r" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="21" id="Alk-VY-yEg"/>
                 <constraint firstItem="sog-ga-TCe" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="17" id="BpM-I6-bVT"/>
-                <constraint firstItem="xYa-rf-lU4" firstAttribute="top" secondItem="NPW-Kh-cmC" secondAttribute="bottom" constant="23" id="DA6-4i-byY"/>
-                <constraint firstItem="NPW-Kh-cmC" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="155" id="DQW-s6-3ra"/>
+                <constraint firstItem="Lda-Cg-OvN" firstAttribute="top" secondItem="NPW-Kh-cmC" secondAttribute="centerY" id="DA6-4i-byY"/>
+                <constraint firstItem="NPW-Kh-cmC" firstAttribute="leading" secondItem="Lda-Cg-OvN" secondAttribute="trailing" constant="5" id="DQW-s6-3ra"/>
                 <constraint firstItem="cF2-v5-BPd" firstAttribute="top" secondItem="rAf-uz-UtS" secondAttribute="bottom" id="DlM-M0-TZI"/>
                 <constraint firstItem="BdJ-Az-y4r" firstAttribute="top" secondItem="l9i-jf-Gns" secondAttribute="bottom" id="FBG-7H-ZS8"/>
                 <constraint firstAttribute="trailing" secondItem="DKP-z8-cNs" secondAttribute="trailing" constant="21" id="GXZ-PG-9jk"/>
                 <constraint firstAttribute="trailing" secondItem="upo-Zq-Mc1" secondAttribute="trailing" constant="5" id="Htm-Av-o8j"/>
                 <constraint firstAttribute="bottom" secondItem="Ico-u6-0Jj" secondAttribute="bottom" constant="12" id="IrO-ei-2tx"/>
                 <constraint firstItem="a6l-Sf-YbR" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="Ldh-We-FAh"/>
-                <constraint firstAttribute="trailing" secondItem="22k-0R-t4P" secondAttribute="trailing" constant="20" id="LvV-Ju-fp2"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="22k-0R-t4P" secondAttribute="trailing" constant="20" symbolic="YES" id="LvV-Ju-fp2"/>
                 <constraint firstItem="rAf-uz-UtS" firstAttribute="top" secondItem="b7q-eW-rBI" secondAttribute="bottom" constant="8" id="NeN-N8-kHy"/>
-                <constraint firstAttribute="trailing" secondItem="JDN-jK-7IG" secondAttribute="trailing" constant="38" id="NqO-Op-26U"/>
+                <constraint firstItem="sog-ga-TCe" firstAttribute="leading" secondItem="JDN-jK-7IG" secondAttribute="trailing" constant="10" id="NqO-Op-26U"/>
                 <constraint firstItem="WaM-fO-tkH" firstAttribute="top" secondItem="l9i-jf-Gns" secondAttribute="bottom" id="NuE-M2-sCK"/>
                 <constraint firstItem="DKP-z8-cNs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WaM-fO-tkH" secondAttribute="trailing" id="Qeo-M5-0cY"/>
                 <constraint firstItem="xYa-rf-lU4" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="5" id="R2w-UP-yst"/>
-                <constraint firstAttribute="trailing" secondItem="Lda-Cg-OvN" secondAttribute="trailing" constant="20" id="RpA-di-0Bd"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NPW-Kh-cmC" secondAttribute="trailing" constant="20" symbolic="YES" id="TU1-9k-GwP"/>
                 <constraint firstItem="l9i-jf-Gns" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="V1a-aQ-toa"/>
                 <constraint firstItem="DKP-z8-cNs" firstAttribute="top" secondItem="l9i-jf-Gns" secondAttribute="bottom" id="XmX-jJ-d8V"/>
                 <constraint firstItem="Lda-Cg-OvN" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="10" id="YDH-vL-YAq"/>
