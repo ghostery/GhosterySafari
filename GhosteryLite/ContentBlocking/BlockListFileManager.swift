@@ -70,7 +70,10 @@ final class BlockListFileManager {
 	
 	init() {}
 	
+	
+	/// Check for new Block List versions on CDN and trigger an update if a newer version exists
 	func updateBlockLists() {
+		print("BlockListFileManager.updateBlockLists: Checking for block list updates...")
 		FileDownloader.downloadBlockListVersion { (err, json) in
 			if let categoryListVersion = self.intValueFromJson(json, key: BlockListFileManager.categoryBlockListVersionKey) {
 				if self.isCategoryBlockListVersionChanged(categoryListVersion) {
@@ -121,8 +124,7 @@ final class BlockListFileManager {
 		}
 	}
 	
-	
-	/// Download content blocker json file and save to Group Container directory
+	/// Download block list json file and save to Group Container directory
 	/// - Parameter fileName: The name of the json file
 	/// - Parameter folder: The folder location in Group Containers
 	private func downloadAndSaveFile(_ fileName: String, _ folder: URL?) {
@@ -131,14 +133,14 @@ final class BlockListFileManager {
 				print("BlockListFileManager.downloadAndSaveFile: \(fileName) file download failed: \(e)")
 			}
 			if let d = data {
-				print("BlockListFileManager.downloadAndSaveFile: \(fileName)")
+				// print("BlockListFileManager.downloadAndSaveFile: \(fileName)")
 				FileManager.default.writeFile(d, name: "\(fileName).json", in: folder)
 			}
 		}
 	}
 	
-	/// Fetch the path of the Content Blocker file from the Group Container folder
-	/// - Parameter fileName: The name of the content blocker json file
+	/// Fetch the path of the block list file from the Group Container folder
+	/// - Parameter fileName: The name of the block listr json file
 	/// - Parameter folderName: The name of the assests folder in Group Containers
 	func getFilePath(fileName: String, folderName: String) -> URL? {
 		let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)

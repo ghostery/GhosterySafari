@@ -34,20 +34,14 @@ class ContentBlockerManager {
 		DistributedNotificationCenter.default().addObserver(self,
 															selector: #selector(self.resumeNotification),
 															name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
-		//		DistributedNotificationCenter.default().addObserver(self,
-		//															selector: #selector(self.tabDomainIsChanged),
-		//															name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
-		//		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.tabDomainIsChanged), name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
+		// DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.tabDomainIsChanged), name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
 	}
 	
 	deinit {
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.PauseNotificationName, object: Constants.SafariPopupExtensionID)
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
-		
-		//		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
-		//		DistributedNotificationCenter.default().removeObserver(self, name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
-		
-		//		DistributedNotificationCenter.default().removeObserver(self, name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
+		//	DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
+		//	DistributedNotificationCenter.default().removeObserver(self, name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
 	}
 	
 	func configureRealm() {
@@ -194,6 +188,8 @@ class ContentBlockerManager {
 		self.reloadContentBlocker()
 	}
 	
+	
+	/// Load a custom block list file based on user's selected categories
 	private func loadCustomCB() {
 		if let config = GlobalConfigManager.shared.getCurrentConfig() {
 			var fileNames = [String]()
@@ -210,28 +206,40 @@ class ContentBlockerManager {
 					fileNames.append(c.fileName())
 				}
 			}
+			// Trigger a Content Blocker reload
 			self.updateAndReloadBlockList(fileNames: fileNames, folderName: getCategoryBlockListsFolder())
 		}
 	}
 	
+	
+	/// Load the default block list file consisting of the default categories only
 	private func loadDefaultCB() {
 		if let config = GlobalConfigManager.shared.getCurrentConfig() {
 			var fileNames = [String]()
 			for i in config.defaultBlockedCategories() {
 				fileNames.append(i.fileName())
 			}
+			// Trigger a Content Blocker reload
 			self.updateAndReloadBlockList(fileNames: fileNames, folderName: getCategoryBlockListsFolder())
 		}
 	}
 	
+	
+	/// Load an empty block list file.  Used during  pause and site whitelist scenarios
 	private func loadDummyCB() {
 		self.updateAndReloadBlockList(fileNames: ["emptyRules"], folderName: getBlockListsMainFolder())
 	}
 	
+	
+	/// Load the full block list (all categories)
 	private func loadFullList() {
 		self.updateAndReloadBlockList(fileNames: ["safariContentBlocker"], folderName: getBlockListsMainFolder())
 	}
 	
+	
+	/// Trigger a Content Blocker reload
+	/// - Parameter fileNames: The block list json filenames to be loaded
+	/// - Parameter folderName: The name of the folder where the json files are located on disk
 	private func updateAndReloadBlockList(fileNames: [String], folderName: String) {
 		print("ContentBlockerManager.updateAndReloadBlockList: Generating new block list...")
 		BlockListFileManager.shared.generateCurrentBlockList(files: fileNames, folderName: folderName) {
@@ -239,7 +247,10 @@ class ContentBlockerManager {
 		}
 	}
 	
+	
+	/// Reload the Content Blocker extension
 	private func reloadCBExtension() {
+		print("ContentBlockerManager.reloadCBExtension: Reloading Content Blocker...")
 		SFContentBlockerManager.reloadContentBlocker(withIdentifier: Constants.SafariContentBlockerID, completionHandler: { (error) in
 			if error != nil {
 				print("ContentBlockerManager.reloadCBExtension: Reloading Content Blocker failed with error \(String(describing: error))")

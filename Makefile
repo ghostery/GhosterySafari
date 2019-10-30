@@ -26,7 +26,7 @@ clean:
 	rm -rf ~/Library/Group\ Containers/HPY23A294X.ghostery.lite/
 
 bugs:
-	@echo "Fetching Safari Content Blocker files..."
+	@echo "Fetching Safari block list json files..."
 	curl "https://cdn.ghostery.com/update/safari/safariContentBlocker" -o $(DB_DIR)/safariContentBlocker.json --compressed --fail
 	curl "https://cdn.ghostery.com/update/safari/cat_advertising" -o $(DB_DIR)/BlockListByCategory/cat_advertising.json --compressed --fail
 	curl "https://cdn.ghostery.com/update/safari/cat_audio_video_player" -o $(DB_DIR)/BlockListByCategory/cat_audio_video_player.json --compressed --fail
@@ -38,7 +38,7 @@ bugs:
 	curl "https://cdn.ghostery.com/update/safari/cat_social_media" -o $(DB_DIR)/BlockListByCategory/cat_social_media.json --compressed --fail
 
 restore:
-	@echo "Restore default Content Blocker files..."
+	@echo "Restore default block list files..."
 	git checkout -- ${DB_DIR}
 
 .PHONY: clean

@@ -33,11 +33,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
+		print("AppDelegate.applicationDidFinishLaunching: Ghostery Lite launched successfully")
 		// TODO: Refactor UserDefaults calls in centralized Pref class
 		UserDefaults.standard.set(50, forKey: "NSInitialToolTipDelay")
 		UserDefaults.standard.synchronize()
 		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateConfigState), name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
 		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateConfigState), name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
+		// Check for new Block Lists on CDN
 		ContentBlockerManager.shared.updateBlockLists()
 	}
 	

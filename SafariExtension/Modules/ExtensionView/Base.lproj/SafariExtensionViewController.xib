@@ -247,7 +247,7 @@
                             </connections>
                         </button>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="26T-rB-QRX">
-                            <rect key="frame" x="8" y="39" width="204" height="17"/>
+                            <rect key="frame" x="40" y="39" width="140" height="17"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="17" id="GC4-ne-8eX"/>
                             </constraints>
@@ -258,7 +258,7 @@
                             </textFieldCell>
                         </textField>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6aT-bG-BUD">
-                            <rect key="frame" x="10" y="13" width="200" height="20"/>
+                            <rect key="frame" x="87" y="13" width="46" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="VhC-P8-YDI"/>
                             </constraints>
@@ -276,13 +276,9 @@
                         <constraint firstAttribute="width" constant="220" id="6fO-BI-YHO"/>
                         <constraint firstItem="26T-rB-QRX" firstAttribute="top" secondItem="UaI-LL-OzT" secondAttribute="bottom" constant="3" id="CH3-Xe-cnb"/>
                         <constraint firstAttribute="trailing" secondItem="UaI-LL-OzT" secondAttribute="trailing" constant="5" id="Ct4-zd-iPn"/>
-                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6aT-bG-BUD" secondAttribute="trailing" id="Lzw-Vw-xzW"/>
-                        <constraint firstItem="26T-rB-QRX" firstAttribute="leading" secondItem="Rlb-mT-MaB" secondAttribute="leading" constant="10" id="MrY-re-pLU"/>
                         <constraint firstItem="6aT-bG-BUD" firstAttribute="centerX" secondItem="Rlb-mT-MaB" secondAttribute="centerX" id="NnU-f6-bd5"/>
-                        <constraint firstItem="6aT-bG-BUD" firstAttribute="leading" secondItem="Rlb-mT-MaB" secondAttribute="leading" constant="10" id="Pml-od-rKI"/>
                         <constraint firstAttribute="height" constant="72" id="WSs-ie-a0f"/>
                         <constraint firstAttribute="bottom" secondItem="6aT-bG-BUD" secondAttribute="bottom" constant="13" id="h2T-WQ-Oq4"/>
-                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="26T-rB-QRX" secondAttribute="trailing" id="sgn-bH-QRN"/>
                         <constraint firstItem="UaI-LL-OzT" firstAttribute="top" secondItem="Rlb-mT-MaB" secondAttribute="top" constant="5" id="uRL-GI-24g"/>
                         <constraint firstItem="26T-rB-QRX" firstAttribute="centerX" secondItem="Rlb-mT-MaB" secondAttribute="centerX" id="wFO-GD-GTP"/>
                     </constraints>

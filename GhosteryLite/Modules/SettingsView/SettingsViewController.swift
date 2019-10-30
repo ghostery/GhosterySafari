@@ -39,20 +39,14 @@ class SettingsViewController: NSViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		DistributedNotificationCenter.default().addObserver(self,
-															selector: #selector(self.updateRadioBoxesState),
-															name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().addObserver(self,
-															selector: #selector(self.updateRadioBoxesState),
-															name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateRadioBoxesState), name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateRadioBoxesState), name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
 	}
 	
 	override func viewWillAppear() {
 		super.viewWillAppear()
 		setupComponents()
 		updateCategoryCheckboxStates()
-		SFContentBlockerManager.getStateOfContentBlocker(withIdentifier: Constants.SafariContentBlockerID) { (state, error) in
-		}
 	}
 	
 	override var representedObject: Any? {

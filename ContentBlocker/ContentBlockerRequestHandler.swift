@@ -29,8 +29,7 @@ class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
 
 		context.completeRequest(returningItems: [item], completionHandler: {
 			(expired) -> Void in
-
-			print("Successfully reloaded static blocker list. (Expired? \(expired))")
+			print("Successfully reloaded static block list. (Expired? \(expired))")
 		})
 	}
 

@@ -83,7 +83,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "# Clean Ghostery Lite from ~/Library&#10;make --directory ${PROJECT_DIR} clean&#10;"
+               scriptText = "# Clean Ghostery Lite from ~/Library&#10;#make --directory ${PROJECT_DIR} clean&#10;"
                shellToInvoke = "/bin/zsh">
                <EnvironmentBuildable>
                   <BuildableReference

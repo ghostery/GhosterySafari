@@ -43,9 +43,16 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 	
 	/// Called when the Content Blocker matches a URL on a given page
 	override func contentBlocker(withIdentifier contentBlockerIdentifier: String, blockedResourcesWith urls: [URL], on page: SFSafariPage) {
-		for u in urls {
-			print("pattern matched \(u.absoluteString)")
-		}
+		// TODO: Implement this in a future version
+		//	for u in urls {
+		//		print("pattern matched \(u.absoluteString)")
+		//	}
+	}
+	
+	/// Called when page navigation has been triggered
+	override func page(_ page: SFSafariPage, willNavigateTo url: URL?) {
+		// TODO: Implement this in a future version
+		// print("navigating to \(url?.absoluteString ?? "")")
 	}
 
 	override func popoverViewController() -> SFSafariExtensionViewController {
