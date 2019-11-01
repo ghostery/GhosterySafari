@@ -65,7 +65,7 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2019 Ghostery, Inc. All rights reserved.</string>
 	<key>NSHumanReadableDescription</key>
-	<string>Ghostery Lite 1.0 allows you to manage the app from within Safari: pause Ghostery Lite, trust sites, and customize your tracker blocking settings.</string>
+	<string>Ghostery Lite allows you to manage the app from within Safari: pause, trust sites, and customize your tracker blocking settings.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>BebasNeue Book.ttf</string>
