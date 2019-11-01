@@ -20,31 +20,7 @@ class TrustedSitesViewController: NSViewController {
 	@IBOutlet weak var trustedSiteTextField: NSTextField!
 	@IBOutlet weak var trustSiteBtn: NSButton!
 	@IBOutlet weak var trustedStiesCollectionView: NSCollectionView!
-	
 	@IBOutlet weak var errorMessageLabel: NSTextField!
-	
-	private var trustedSites = [TrustedSiteObject]()
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		self.setupComponents()
-		DistributedNotificationCenter.default().addObserver(self,
-															selector: #selector(self.updateData),
-															name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().addObserver(self,
-															selector: #selector(self.updateData),
-															name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
-	}
-	
-	override func viewWillAppear() {
-		super.viewWillAppear()
-		updateData()
-	}
-	
-	deinit {
-		DistributedNotificationCenter.default().removeObserver(self, name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().removeObserver(self, name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
-	}
 	
 	@IBAction func trustSiteButtonPressed(sender: NSButton) {
 		guard trustedSiteTextField.stringValue.trimmingCharacters(in: .whitespacesAndNewlines).count != 0 &&
@@ -61,6 +37,25 @@ class TrustedSitesViewController: NSViewController {
 		}
 		trustedSiteTextField.stringValue = ""
 		updateTrustBtnState(false)
+	}
+	
+	private var trustedSites = [TrustedSiteObject]()
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		self.setupComponents()
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateData), name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateData), name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
+	}
+	
+	override func viewWillAppear() {
+		super.viewWillAppear()
+		updateData()
+	}
+	
+	deinit {
+		DistributedNotificationCenter.default().removeObserver(self, name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().removeObserver(self, name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
 	}
 	
 	@objc
@@ -81,7 +76,7 @@ class TrustedSitesViewController: NSViewController {
 	// Move the logic to TrustSiteDS
 	private func isValid(url: String) -> Bool {
 		let host = removeUrlComponentsAfterHost(url: url)
-		let urlRegEx = "((?:http|https)://)?(((?:www)?|(?:[a-zA-z0-9]{1,})?)\\.)?[\\w\\d\\-_]+\\.(\\w{2,}?|(xn--\\w{2,})?)(\\.\\w{2})?(/(?<=/)(?:[\\w\\d\\-./_]+)?)?"
+		let urlRegEx = "^(https?://)?(www\\.)?([-a-z0-9]{1,63}\\.)*?[a-z0-9][-a-z0-9]{0,61}[a-z0-9]\\.[a-z]{2,6}(/[-\\w@\\+\\.~#\\?&/=%]*)?$"
 		let urlTest = NSPredicate(format:"SELF MATCHES %@", urlRegEx)
 		let result = urlTest.evaluate(with: host)
 		return result
@@ -104,21 +99,18 @@ class TrustedSitesViewController: NSViewController {
 		trustSiteBtn.isEnabled = isEnabled
 		trustSiteBtn.state = NSControl.StateValue(rawValue: isEnabled ? 1 : 0)
 	}
-	
 }
 
 // MARK:- Collection view data source
 // MARK:-
 extension TrustedSitesViewController : NSCollectionViewDataSource {
-	
 	// Section Header Count
 	func numberOfSections(in collectionView: NSCollectionView) -> Int {
 		return 1
 	}
 	
 	// Section Item Count
-	func collectionView(_ collectionView: NSCollectionView,
-						numberOfItemsInSection section: Int) -> Int {
+	func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
 		return self.trustedSites.count
 	}
 	
@@ -140,7 +132,6 @@ extension TrustedSitesViewController : NSCollectionViewDataSource {
 }
 
 extension TrustedSitesViewController: TrustedSiteItemDelegate {
-	
 	func trustedSiteDidRemove(indexPath: IndexPath, url: String) {
 		ContentBlockerManager.shared.untrustDomain(domain: self.trustedSites[indexPath.item].name ?? "")
 		updateData()
@@ -150,14 +141,12 @@ extension TrustedSitesViewController: TrustedSiteItemDelegate {
 // MARK:- Collection view delegate
 // MARK:-
 extension TrustedSitesViewController : NSCollectionViewDelegate {
-	func collectionView(_ collectionView: NSCollectionView,
-						didSelectItemsAt indexPaths: Set<IndexPath>) {
+	func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
 		
 	}
 }
 
 extension TrustedSitesViewController: NSTextFieldDelegate {
-	
 	func controlTextDidChange(_ obj: Notification) {
 		self.updateTrustBtnState(trustedSiteTextField.stringValue != "")
 	}

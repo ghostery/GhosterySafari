@@ -2,7 +2,7 @@
 
 + Additional Ad-Blocker lists
 + Initial i18n language support
-+ Updates support URL
++ Updated support and FAQ urls
 + Updated Swift version
 + Bug fixes and improvements
 

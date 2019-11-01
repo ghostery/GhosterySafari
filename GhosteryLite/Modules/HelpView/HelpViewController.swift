@@ -35,7 +35,7 @@ class HelpViewController: NSViewController {
 		} else if sender == blogBtn {
 			openURL("https://www.ghostery.com/blog/")
 		} else if sender == faqBtn {
-			openURL("https://www.ghostery.com/faqs/")
+			openURL("https://www.ghostery.com/faqs/product/ghostery-lite/")
 		}
 	}
 	

@@ -46,7 +46,7 @@ $ make clean
 ## Compatibility
 
 + Safari: 12+
-+ Mac Mojave 10.14+
++ MacOS Mojave 10.14+
 
 ## Links
 + [Website](https://ghostery.com/)
