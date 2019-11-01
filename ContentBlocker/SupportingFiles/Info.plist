@@ -29,9 +29,5 @@
 		<key>NSExtensionPrincipalClass</key>
 		<string>$(PRODUCT_MODULE_NAME).ContentBlockerRequestHandler</string>
 	</dict>
-	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2019 Ghostery, Inc. All rights reserved.</string>
-	<key>NSHumanReadableDescription</key>
-	<string>Remove clutter from the websites you visit including ads and pop-ups for a faster and safer browsing experience.</string>
 </dict>
 </plist>

@@ -24,6 +24,9 @@
 		0D588E84235E4C2F0003668C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0D588E83235E4C2F0003668C /* Fonts */; };
 		0D588E85235E4C2F0003668C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0D588E83235E4C2F0003668C /* Fonts */; };
 		0D99D75C212EFC44005D107D /* page_performance.js in Resources */ = {isa = PBXBuildFile; fileRef = 0D99D75B212EFC44005D107D /* page_performance.js */; };
+		0DD3BF7C236CCD2A00889C41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DD3BF7E236CCD2A00889C41 /* InfoPlist.strings */; };
+		0DD3BF81236CD09300889C41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DD3BF83236CD09300889C41 /* InfoPlist.strings */; };
+		0DD3BF86236CD20F00889C41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DD3BF88236CD20F00889C41 /* InfoPlist.strings */; };
 		0DDCFF7923660DBD009481D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DDCFF7B23660DBD009481D4 /* Localizable.strings */; };
 		0DDCFF7E2366666D009481D4 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4721354DE60098631F /* Preferences.swift */; };
 		0DDCFF7F236666B7009481D4 /* BlockListFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */; };
@@ -143,6 +146,9 @@
 		0D588E88235E50B20003668C /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		0D99D75B212EFC44005D107D /* page_performance.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = page_performance.js; sourceTree = "<group>"; };
 		0DCADD5F235E5EE300F00AB4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0DD3BF7D236CCD2A00889C41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0DD3BF82236CD09300889C41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0DD3BF87236CD20F00889C41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0DDCFF7A23660DBD009481D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1E14B73C21369F5400E28C38 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		1E14B752213819A800E28C38 /* TrustedSitesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSitesViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				4F3049402118983D00BA3961 /* Info.plist */,
+				0DD3BF7E236CCD2A00889C41 /* InfoPlist.strings */,
 				4F3049452118983D00BA3961 /* SafariExtension.entitlements */,
 			);
 			path = SupportingFiles;
@@ -274,6 +281,7 @@
 			children = (
 				4F3049592118985C00BA3961 /* ContentBlocker.entitlements */,
 				4F3049582118985C00BA3961 /* Info.plist */,
+				0DD3BF88236CD20F00889C41 /* InfoPlist.strings */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -293,6 +301,7 @@
 			children = (
 				4F30492A2118982700BA3961 /* GhosteryLite.entitlements */,
 				4F3049292118982700BA3961 /* Info.plist */,
+				0DD3BF83236CD09300889C41 /* InfoPlist.strings */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -730,6 +739,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E14B7592138217800E28C38 /* TrustedSiteItemCollectionViewItem.xib in Resources */,
+				0DD3BF81236CD09300889C41 /* InfoPlist.strings in Resources */,
 				1E597C3721340D180098631F /* MenuItemCollectionViewItem.xib in Resources */,
 				4FFD8338212B4FF90038149F /* BlockListAssets in Resources */,
 				0DDCFF7923660DBD009481D4 /* Localizable.strings in Resources */,
@@ -744,6 +754,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D02795023624099007D5F66 /* ghostery_icon.pdf in Resources */,
+				0DD3BF7C236CCD2A00889C41 /* InfoPlist.strings in Resources */,
 				0D027978236538A9007D5F66 /* Localizable.strings in Resources */,
 				0D3FBB2C2360B4FE0054822A /* SafariExtensionViewController.xib in Resources */,
 				0D99D75C212EFC44005D107D /* page_performance.js in Resources */,
@@ -756,6 +767,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DD3BF86236CD20F00889C41 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -967,6 +979,30 @@
 				0D2D0CCC2369E20F00C3ED87 /* en */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0DD3BF7E236CCD2A00889C41 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DD3BF7D236CCD2A00889C41 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0DD3BF83236CD09300889C41 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DD3BF82236CD09300889C41 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0DD3BF88236CD20F00889C41 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DD3BF87236CD20F00889C41 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		0DDCFF7B23660DBD009481D4 /* Localizable.strings */ = {
