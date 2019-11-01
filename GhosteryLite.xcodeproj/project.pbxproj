@@ -27,6 +27,7 @@
 		0DD3BF7C236CCD2A00889C41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DD3BF7E236CCD2A00889C41 /* InfoPlist.strings */; };
 		0DD3BF81236CD09300889C41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DD3BF83236CD09300889C41 /* InfoPlist.strings */; };
 		0DD3BF86236CD20F00889C41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DD3BF88236CD20F00889C41 /* InfoPlist.strings */; };
+		0DD3BF8C236CD80600889C41 /* config in Resources */ = {isa = PBXBuildFile; fileRef = 0DD3BF8B236CD80600889C41 /* config */; };
 		0DDCFF7923660DBD009481D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DDCFF7B23660DBD009481D4 /* Localizable.strings */; };
 		0DDCFF7E2366666D009481D4 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4721354DE60098631F /* Preferences.swift */; };
 		0DDCFF7F236666B7009481D4 /* BlockListFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */; };
@@ -149,6 +150,7 @@
 		0DD3BF7D236CCD2A00889C41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0DD3BF82236CD09300889C41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0DD3BF87236CD20F00889C41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0DD3BF8B236CD80600889C41 /* config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config; sourceTree = "<group>"; };
 		0DDCFF7A23660DBD009481D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1E14B73C21369F5400E28C38 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		1E14B752213819A800E28C38 /* TrustedSitesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSitesViewController.swift; sourceTree = "<group>"; };
@@ -465,6 +467,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		0DD3BF8A236CD80600889C41 /* .tx */ = {
+			isa = PBXGroup;
+			children = (
+				0DD3BF8B236CD80600889C41 /* config */,
+			);
+			path = .tx;
+			sourceTree = "<group>";
+		};
 		0DF65C4D22E793AF0076A4BD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,6 +498,7 @@
 		4F3049142118982600BA3961 = {
 			isa = PBXGroup;
 			children = (
+				0DD3BF8A236CD80600889C41 /* .tx */,
 				4F3049532118985C00BA3961 /* ContentBlocker */,
 				4F30491F2118982600BA3961 /* GhosteryLite */,
 				4F3049382118983D00BA3961 /* SafariExtension */,
@@ -767,6 +778,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DD3BF8C236CD80600889C41 /* config in Resources */,
 				0DD3BF86236CD20F00889C41 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

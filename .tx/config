@@ -1,0 +1,51 @@
+[main]
+host = https://www.transifex.com
+
+[ghostery-lite.ContentBlocker-InfoPlist-strings]
+file_filter = ContentBlocker/SupportingFiles/<lang>.lproj/InfoPlist.strings
+source_file = ContentBlocker/SupportingFiles/en.lproj/InfoPlist.strings
+minimum_perc = 0
+source_lang = en
+type = STRINGS
+
+[ghostery-lite.GhosteryLite-Main-strings]
+file_filter = GhosteryLite/Modules/MainView/<lang>.lproj/Main.strings
+source_file = GhosteryLite/Modules/MainView/en.lproj/Main.strings
+minimum_perc = 0
+source_lang = en
+type = STRINGS
+
+[ghostery-lite.GhosteryLite-Localizable-strings]
+file_filter = GhosteryLite/Modules/MainView/<lang>.lproj/Localizable.strings
+source_file = GhosteryLite/Modules/MainView/en.lproj/Localizable.strings
+minimum_perc = 0
+source_lang = en
+type = STRINGS
+
+[ghostery-lite.GhosteryLite-InfoPlist-strings]
+file_filter = GhosteryLite/SupportingFiles/<lang>.lproj/InfoPlist.strings
+source_file = GhosteryLite/SupportingFiles/en.lproj/InfoPlist.strings
+minimum_perc = 0
+source_lang = en
+type = STRINGS
+
+[ghostery-lite.SafariExtension-Main-strings]
+file_filter = SafariExtension/Modules/ExtensionView/<lang>.lproj/SafariExtensionViewController.strings
+source_file = SafariExtension/Modules/ExtensionView/en.lproj/SafariExtensionViewController.strings
+minimum_perc = 0
+source_lang = en
+type = STRINGS
+
+[ghostery-lite.SafariExtension-Localizable-strings]
+file_filter = SafariExtension/Modules/ExtensionView/<lang>.lproj/Localizable.strings
+source_file = SafariExtension/Modules/ExtensionView/en.lproj/Localizable.strings
+minimum_perc = 0
+source_lang = en
+type = STRINGS
+
+[ghostery-lite.SafariExtension-InfoPlist-strings]
+file_filter = SafariExtension/SupportingFiles/<lang>.lproj/InfoPlist.strings
+source_file = SafariExtension/SupportingFiles/en.lproj/InfoPlist.strings
+minimum_perc = 0
+source_lang = en
+type = STRINGS

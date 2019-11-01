@@ -43,6 +43,23 @@ In Xcode, use `CMD + SHFT + K` to execute 'Clean Build Folder'. Then run:
 $ make clean
 ```
 
+## Internationalization
+We use Transifex and their CLI to manage our translation files. Follow [these instructions](https://docs.transifex.com/client/installing-the-client) to get started.
+
+Note: There is no need to run `tx config` as the project has already been configured to work with Transifex. See the configuration file in `.tx/config`.
+
+Next, [generate an API Token](https://www.transifex.com/user/settings/api/), run `tx init`, and paste the generated API Token when prompted.  This will allow the computer to push (Submit) and pull (Download) files to/from Transifex.
+
+```sh
+# Submit translation files to Transifex
+$ tx push -s
+```
+
+```sh
+# Download translated files from Transifex
+$ tx pull -a
+```
+
 ## Compatibility
 
 + Safari: 12+
