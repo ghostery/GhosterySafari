@@ -6,8 +6,8 @@ The Ghostery Lite app extension for the Safari desktop browser works alongside A
 This project consists of three main components:
 
 + GhosteryLite: Native macOS container application that manages user settings and controls the Safari extensions
-+ SafariExtension: UI Toolbar extension in Safari
-+ ContentBlocker:  Content blocking extension in Safari
++ SafariExtension: Toolbar extension in Safari
++ ContentBlocker:  Content Blocker extension in Safari
 
 See [here](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/ExtensionOverview.html#//apple_ref/doc/uid/TP40014214-CH2-SW2) for more information on Safari App Extensions.
 
