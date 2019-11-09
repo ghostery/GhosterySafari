@@ -13,50 +13,6 @@
 //
 
 import Foundation
-import Alamofire
-
-enum CategoryType: Int {
-	case advertising
-	case audioVideoPlayer
-	case comments
-	case customerInteraction
-	case essential
-	case pornvertising
-	case siteAnalytics
-	case socialMedia
-	case uncategorized
-	
-	static func allCategoriesCount() -> Int {
-		return 8
-	}
-	
-	func fileName() -> String {
-		switch self {
-			case .advertising:
-				return "cat_advertising"
-			case .audioVideoPlayer:
-				return "cat_audio_video_player"
-			case .comments:
-				return "cat_comments"
-			case .customerInteraction:
-				return "cat_customer_interaction"
-			case .essential:
-				return "cat_essential"
-			case .pornvertising:
-				return "cat_pornvertising"
-			case .siteAnalytics:
-				return "cat_site_analytics"
-			case .socialMedia:
-				return "cat_social_media"
-			case .uncategorized:
-				return "cat_unclassifed"
-		}
-	}
-	
-	static func allCases() -> [CategoryType] {
-		return [.advertising, .audioVideoPlayer, .comments, .customerInteraction, .essential, .pornvertising, .siteAnalytics, .socialMedia, .uncategorized]
-	}
-}
 
 final class BlockListFileManager {
 	
@@ -70,78 +26,53 @@ final class BlockListFileManager {
 	
 	init() {}
 	
-	
 	/// Check for new Block List versions on CDN and trigger an update if a newer version exists
-	func updateBlockLists() {
+	/// - Parameter done: callback handler
+	func updateBlockLists(done: @escaping (Bool) -> ()) {
 		print("BlockListFileManager.updateBlockLists: Checking for block list updates...")
-		FileDownloader.downloadBlockListVersion { (err, json) in
+		var updated = false
+		let group = DispatchGroup()
+		// Fetch the version file
+		FileDownloader.shared.downloadBlockListVersion(completion: { (err, json) in
+			// Category block lists
 			if let categoryListVersion = self.intValueFromJson(json, key: BlockListFileManager.categoryBlockListVersionKey) {
 				if self.isCategoryBlockListVersionChanged(categoryListVersion) {
-					self.updateCategoryBlockLists()
-					Preferences.updateGlobalPreferences(key: BlockListFileManager.categoryBlockListVersionKey, value: categoryListVersion)
+					// Update category block list files
+					for type in CategoryType.allCases() {
+						group.enter()
+						self.downloadAndSaveFile(type.fileName(), BlockListFileManager.categoryAssetsFolder) { () in
+							Preferences.updateGlobalPreferences(key: BlockListFileManager.categoryBlockListVersionKey, value: categoryListVersion)
+							updated = true
+							group.leave()
+						}
+					}
+				} else {
+					print("BlockListFileManager.updateBlockLists: No category updates available.")
 				}
 			}
+			// Full block list
 			if let blockListVersion = self.intValueFromJson(json, key: BlockListFileManager.blockListVersionKey) {
 				if self.isFullBlockListVersionChanged(blockListVersion) {
-					self.updateFullBlockList()
-					Preferences.updateGlobalPreferences(key: BlockListFileManager.blockListVersionKey, value: blockListVersion)
+					group.enter()
+					// Update the complete block list file
+					self.downloadAndSaveFile("safariContentBlocker", BlockListFileManager.assetsFolder) { () in
+						Preferences.updateGlobalPreferences(key: BlockListFileManager.blockListVersionKey, value: blockListVersion)
+						updated = true
+						group.leave()
+					}
+				} else {
+					print("BlockListFileManager.updateBlockLists: No Safari block list update available.")
 				}
 			}
-		}
-	}
-	
-	private func isCategoryBlockListVersionChanged(_ newVersion: Int) -> Bool {
-		if let oldVersion = Preferences.globalPreferences(key: BlockListFileManager.categoryBlockListVersionKey) as? Int {
-			print("isCategoryBlockListVersionChanged: Old version \(oldVersion) New version \(newVersion)")
-			return newVersion != oldVersion
-		}
-		return true
-	}
-	
-	private func intValueFromJson(_ json: Any?, key: String) -> Int? {
-		if let jsonData = json as? [String: Any] {
-			return jsonData[BlockListFileManager.blockListVersionKey] as? Int
-		}
-		return nil
-	}
-	
-	private func isFullBlockListVersionChanged(_ newVersion: Int) -> Bool {
-		if let oldVersion = Preferences.globalPreferences(key: BlockListFileManager.blockListVersionKey) as? Int {
-			print("isFullBlockListVersionChanged: Old version \(oldVersion) New version \(newVersion)")
-			return newVersion != oldVersion
-		}
-		return true
-	}
-	
-	func updateFullBlockList() {
-		let fullBlockListName = "safariContentBlocker"
-		self.downloadAndSaveFile(fullBlockListName, BlockListFileManager.assetsFolder)
-	}
-	
-	func updateCategoryBlockLists() {
-		for type in CategoryType.allCases() {
-			self.downloadAndSaveFile(type.fileName(), BlockListFileManager.categoryAssetsFolder)
-		}
-	}
-	
-	/// Download block list json file and save to Group Container directory
-	/// - Parameter fileName: The name of the json file
-	/// - Parameter folder: The folder location in Group Containers
-	private func downloadAndSaveFile(_ fileName: String, _ folder: URL?) {
-		FileDownloader.downloadBlockList(fileName) { (err, data) in
-			if let e = err {
-				print("BlockListFileManager.downloadAndSaveFile: \(fileName) file download failed: \(e)")
+			group.notify(queue: .main) {
+				done(updated)
 			}
-			if let d = data {
-				// print("BlockListFileManager.downloadAndSaveFile: \(fileName)")
-				FileManager.default.writeFile(d, name: "\(fileName).json", in: folder)
-			}
-		}
+		})
 	}
 	
 	/// Fetch the path of the block list file from the Group Container folder
-	/// - Parameter fileName: The name of the block listr json file
-	/// - Parameter folderName: The name of the assests folder in Group Containers
+	/// - Parameter fileName: The name of the block list json file
+	/// - Parameter folderName: The name of the assets folder in Group Containers
 	func getFilePath(fileName: String, folderName: String) -> URL? {
 		let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
 		let assetsFolder: URL? = groupStorageFolder?.appendingPathComponent(folderName)
@@ -182,65 +113,52 @@ final class BlockListFileManager {
 			}
 		}
 	}
-}
-
-public enum FileDownloaderError: Error {
-	case invalidFileUrl
-}
-
-final class FileDownloader {
 	
-	class func downloadBlockListVersion(completion: @escaping (Error?, Any?) -> Void) {
-		guard let url = URL(string: FileDownloader.getVersionPath()) else {
-			completion(FileDownloaderError.invalidFileUrl, nil)
-			return
+	/// Check to see if the category Block Lists have new versions available
+	/// - Parameter newVersion: Version of the block list on the CDN
+	private func isCategoryBlockListVersionChanged(_ newVersion: Int) -> Bool {
+		if let oldVersion = Preferences.globalPreferences(key: BlockListFileManager.categoryBlockListVersionKey) as? Int {
+			print("BlockListFileManager.isCategoryBlockListVersionChanged: Old version \(oldVersion) New version \(newVersion)")
+			return newVersion != oldVersion
 		}
-		Alamofire.request(url)
-			.validate()
-			.responseJSON { (response) in
-				guard response.result.isSuccess else {
-					print("FileDownloader.downloadBlockListVersion error: \(String(describing: response.result.error))")
-					completion(response.result.error, nil)
-					return
-				}
-				print("FileDownloader.downloadBlockListVersion: Successfully downloaded version file.")
-				completion(nil, response.result.value)
+		return true
+	}
+	
+	/// Check to see if the main compiled Block List has a new version available
+	/// - Parameter newVersion: Version of the block list on the CDN
+	private func isFullBlockListVersionChanged(_ newVersion: Int) -> Bool {
+		if let oldVersion = Preferences.globalPreferences(key: BlockListFileManager.blockListVersionKey) as? Int {
+			print("BlockListFileManager.isFullBlockListVersionChanged: Old version \(oldVersion) New version \(newVersion)")
+			return newVersion != oldVersion
+		}
+		return true
+	}
+	
+	/// Download block list json file and save to Group Container directory
+	/// - Parameters:
+	///   - fileName: The name of the json file
+	///   - folder: The folder location in Group Containers
+	///   - done: Callback handler
+	private func downloadAndSaveFile(_ fileName: String, _ folder: URL?, done: @escaping () -> ()) {
+		FileDownloader.shared.downloadBlockList(fileName) { (err, data) in
+			if let e = err {
+				print("BlockListFileManager.downloadAndSaveFile: \(fileName) file download failed: \(e)")
+			}
+			if let d = data {
+				// print("BlockListFileManager.downloadAndSaveFile: \(fileName)")
+				FileManager.default.writeFile(d, name: "\(fileName).json", in: folder)
+			}
+			done()
 		}
 	}
 	
-	class func downloadBlockList(_ fileName: String, completion: @escaping (Error?, Data?) -> Void) {
-		let urlString = "\(FileDownloader.getBasePath())/\(fileName)"
-		guard let url = URL(string: urlString ) else {
-			completion(FileDownloaderError.invalidFileUrl, nil)
-			return
+	/// Get the Version int value from the JSON key
+	/// - Parameter json: The json data to scan
+	/// - Parameter key: The key where the int value resides
+	private func intValueFromJson(_ json: Any?, key: String) -> Int? {
+		if let jsonData = json as? [String: Any] {
+			return jsonData[BlockListFileManager.blockListVersionKey] as? Int
 		}
-		
-		Alamofire.request(url)
-			.validate()
-			.response { response in
-				if let err = response.error {
-					print("FileDownloader.downloadBlockList: \(fileName) download failed: \(err)")
-					completion(err, nil)
-					return
-				}
-				print("FileDownloader.downloadBlockList: Successfully downloaded \(fileName)")
-				completion(nil, response.data)
-		}
-	}
-	
-	class func getBasePath() -> String {
-		#if PROD
-		return "https://cdn.ghostery.com/update/safari"
-		#else
-		return "https://staging-cdn.ghostery.com/update/safari"
-		#endif
-	}
-	
-	class func getVersionPath() -> String {
-		#if PROD
-		return "https://cdn.ghostery.com/update/version"
-		#else
-		return "https://staging-cdn.ghostery.com/update/version"
-		#endif
+		return nil
 	}
 }

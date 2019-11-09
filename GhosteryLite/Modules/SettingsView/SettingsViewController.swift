@@ -65,7 +65,6 @@ class SettingsViewController: NSViewController {
 		switch sender.tag {
 			case 1:
 				modifiedCat = .advertising
-				print("Supported category")
 			case 2:
 				modifiedCat = .audioVideoPlayer
 			case 3:

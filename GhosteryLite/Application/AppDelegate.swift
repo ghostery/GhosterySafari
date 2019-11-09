@@ -40,7 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateConfigState), name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
 		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateConfigState), name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
 		// Check for new Block Lists on CDN
-		ContentBlockerManager.shared.updateBlockLists()
+		ContentBlockerManager.shared.checkForUpdatedBlockLists()
 	}
 	
 	func applicationWillTerminate(_ aNotification: Notification) {

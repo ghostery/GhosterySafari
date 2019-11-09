@@ -24,16 +24,11 @@ class ContentBlockerManager {
 	
 	init() {
 		configureRealm()
-		reloadContentBlocker()
 	}
 	
 	func subscribeForNotifications() {
-		DistributedNotificationCenter.default().addObserver(self,
-															selector: #selector(self.pauseNotification),
-															name: Constants.PauseNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().addObserver(self,
-															selector: #selector(self.resumeNotification),
-															name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.pauseNotification), name: Constants.PauseNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.resumeNotification), name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
 		// DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.tabDomainIsChanged), name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
 	}
 	
@@ -70,8 +65,16 @@ class ContentBlockerManager {
 		GlobalConfigManager.shared.createConfigIfDoesNotExist()
 	}
 	
-	func updateBlockLists() {
-		BlockListFileManager.shared.updateBlockLists()
+	
+	/// Check for updated block lists. Called from AppDelegate applicationDidFinishLaunching()
+	func checkForUpdatedBlockLists() {
+		BlockListFileManager.shared.updateBlockLists(done: { (updated) in
+			// Did we download a new block list version?
+			if updated {
+				// Generate the new block list and reload the Content Blocker
+				self.reloadContentBlocker()
+			}
+		})
 	}
 	
 	func isPaused() -> Bool {
@@ -119,6 +122,8 @@ class ContentBlockerManager {
 		self.reloadContentBlocker()
 	}
 	
+	/// Checks if the user is using the default or custom block list config. Triggers self.updateAndReloadBlockList(), which generates
+	/// the new block list as needed and reloads the Content Blocker
 	func reloadContentBlocker() {
 		if self.isPaused() {
 			loadDummyCB()
@@ -243,6 +248,7 @@ class ContentBlockerManager {
 	private func updateAndReloadBlockList(fileNames: [String], folderName: String) {
 		print("ContentBlockerManager.updateAndReloadBlockList: Generating new block list...")
 		BlockListFileManager.shared.generateCurrentBlockList(files: fileNames, folderName: folderName) {
+			print("ContentBlockerManager.updateAndReloadBlockList: Build phase complete")
 			self.reloadCBExtension()
 		}
 	}

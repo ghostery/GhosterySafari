@@ -68,7 +68,7 @@ class GlobalConfigRepository: RealmRepository<GlobalConfigObject, String> {
 						c.blockedCategories.append(type.rawValue)
 					}
 				} catch let e as NSError {
-					print("Error on update -- \(e)")
+					print("GlobalConfigRepository.updateCategoryStatus error: \(e)")
 				}
 			}
 			
@@ -80,7 +80,7 @@ class GlobalConfigRepository: RealmRepository<GlobalConfigObject, String> {
 						}
 					}
 				} catch let e as NSError {
-					print("Error on update -- \(e)")
+					print("GlobalConfigRepository.updateCategoryStatus error: \(e)")
 				}
 			}
 		}
@@ -94,7 +94,7 @@ class GlobalConfigRepository: RealmRepository<GlobalConfigObject, String> {
 					c.configType.value = type.rawValue
 				}
 			} catch let e as NSError {
-				print("Error on update -- \(e)")
+				print("GlobalConfigRepository.updateConfigType error: \(e)")
 			}
 		}
 	}

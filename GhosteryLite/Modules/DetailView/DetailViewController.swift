@@ -58,8 +58,6 @@ class DetailViewController: NSViewController {
 	private func removePreviousView() {
 		if let oldView: NSView = container.subviews.first {
 			oldView.removeFromSuperview()
-		} else {
-			print("DetailViewController.removePreviousView: No previous view found")
 		}
 	}
 }

@@ -47,7 +47,7 @@ extension FileManager {
 		
 		let fileURL = directory?.appendingPathComponent("\(fileName)")
 		if FileManager.default.createFile(atPath: (fileURL?.path)!, contents: data, attributes: nil) {
-			print("FileManager.writeFile: \(fileName) written successfully")
+			// print("FileManager.writeFile: \(fileName) written successfully")
 		} else {
 			print("FileManager.writeFile: Unable to write the data to \(fileName)")
 		}
