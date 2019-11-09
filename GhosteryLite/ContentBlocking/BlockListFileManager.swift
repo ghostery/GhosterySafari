@@ -32,42 +32,54 @@ final class BlockListFileManager {
 		print("BlockListFileManager.updateBlockLists: Checking for block list updates...")
 		var updated = false
 		let group = DispatchGroup()
-		// Fetch the version file
-		FileDownloader.shared.downloadBlockListVersion(completion: { (err, json) in
-			// Category block lists
+		
+		// Fetch the Ghostery version file
+		group.enter()
+		FileDownloader.shared.downloadGhosteryBlockListVersion(completion: { (err, json) in
+			// Ghostery category block lists
 			if let categoryListVersion = self.intValueFromJson(json, key: BlockListFileManager.categoryBlockListVersionKey) {
 				if self.isCategoryBlockListVersionChanged(categoryListVersion) {
 					// Update category block list files
 					for type in CategoryType.allCases() {
 						group.enter()
-						self.downloadAndSaveFile(type.fileName(), BlockListFileManager.categoryAssetsFolder) { () in
+						self.downloadAndSaveFile(type.fileName(), "ghostery", BlockListFileManager.categoryAssetsFolder) { () in
 							Preferences.updateGlobalPreferences(key: BlockListFileManager.categoryBlockListVersionKey, value: categoryListVersion)
 							updated = true
 							group.leave()
 						}
 					}
 				} else {
-					print("BlockListFileManager.updateBlockLists: No category updates available.")
+					print("BlockListFileManager.updateBlockLists: No Ghostery category updates available.")
 				}
 			}
-			// Full block list
+			// Ghostery complete Safari block list
 			if let blockListVersion = self.intValueFromJson(json, key: BlockListFileManager.blockListVersionKey) {
 				if self.isFullBlockListVersionChanged(blockListVersion) {
 					group.enter()
 					// Update the complete block list file
-					self.downloadAndSaveFile("safariContentBlocker", BlockListFileManager.assetsFolder) { () in
+					self.downloadAndSaveFile("safariContentBlocker", "ghostery", BlockListFileManager.assetsFolder) { () in
 						Preferences.updateGlobalPreferences(key: BlockListFileManager.blockListVersionKey, value: blockListVersion)
 						updated = true
 						group.leave()
 					}
 				} else {
-					print("BlockListFileManager.updateBlockLists: No Safari block list update available.")
+					print("BlockListFileManager.updateBlockLists: No Ghostery Safari block list update available.")
 				}
 			}
-			group.notify(queue: .main) {
-				done(updated)
-			}
+			group.leave()
 		})
+		
+		// Fetch Cliqz ad block lists
+		group.enter()
+		FileDownloader.shared.downloadCliqzSafariLists(completion: { (err, json) in
+			// Compare checksums
+			// Download update if needed
+			group.leave()
+		})
+		
+		group.notify(queue: .main) {
+			done(updated)
+		}
 	}
 	
 	/// Fetch the path of the block list file from the Group Container folder
@@ -137,10 +149,11 @@ final class BlockListFileManager {
 	/// Download block list json file and save to Group Container directory
 	/// - Parameters:
 	///   - fileName: The name of the json file
+	///   - listType: The type of list (Cliqz or Ghostery)
 	///   - folder: The folder location in Group Containers
 	///   - done: Callback handler
-	private func downloadAndSaveFile(_ fileName: String, _ folder: URL?, done: @escaping () -> ()) {
-		FileDownloader.shared.downloadBlockList(fileName) { (err, data) in
+	private func downloadAndSaveFile(_ fileName: String, _ listType: String, _ folder: URL?, done: @escaping () -> ()) {
+		FileDownloader.shared.downloadBlockList(fileName, listType) { (err, data) in
 			if let e = err {
 				print("BlockListFileManager.downloadAndSaveFile: \(fileName) file download failed: \(e)")
 			}

@@ -65,7 +65,6 @@ class ContentBlockerManager {
 		GlobalConfigManager.shared.createConfigIfDoesNotExist()
 	}
 	
-	
 	/// Check for updated block lists. Called from AppDelegate applicationDidFinishLaunching()
 	func checkForUpdatedBlockLists() {
 		BlockListFileManager.shared.updateBlockLists(done: { (updated) in
@@ -193,7 +192,6 @@ class ContentBlockerManager {
 		self.reloadContentBlocker()
 	}
 	
-	
 	/// Load a custom block list file based on user's selected categories
 	private func loadCustomCB() {
 		if let config = GlobalConfigManager.shared.getCurrentConfig() {
@@ -216,7 +214,6 @@ class ContentBlockerManager {
 		}
 	}
 	
-	
 	/// Load the default block list file consisting of the default categories only
 	private func loadDefaultCB() {
 		if let config = GlobalConfigManager.shared.getCurrentConfig() {
@@ -229,18 +226,15 @@ class ContentBlockerManager {
 		}
 	}
 	
-	
 	/// Load an empty block list file.  Used during  pause and site whitelist scenarios
 	private func loadDummyCB() {
 		self.updateAndReloadBlockList(fileNames: ["emptyRules"], folderName: getBlockListsMainFolder())
 	}
 	
-	
 	/// Load the full block list (all categories)
 	private func loadFullList() {
 		self.updateAndReloadBlockList(fileNames: ["safariContentBlocker"], folderName: getBlockListsMainFolder())
 	}
-	
 	
 	/// Trigger a Content Blocker reload
 	/// - Parameter fileNames: The block list json filenames to be loaded
@@ -252,7 +246,6 @@ class ContentBlockerManager {
 			self.reloadCBExtension()
 		}
 	}
-	
 	
 	/// Reload the Content Blocker extension
 	private func reloadCBExtension() {
