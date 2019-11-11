@@ -26,7 +26,7 @@ final class FileDownloader {
 
 	/// Fetch the Ghostery block list version file
 	/// - Parameter completion: Callback handler
-	func downloadGhosteryBlockListVersion(completion: @escaping (Error?, Any?) -> Void) {
+	func downloadGhosteryVersionFile(completion: @escaping (Error?, Any?) -> Void) {
 		guard let url = URL(string: self.getGhosteryVersionPath()) else {
 			completion(FileDownloaderError.invalidFileUrl, nil)
 			return
@@ -35,18 +35,18 @@ final class FileDownloader {
 			.validate()
 			.responseJSON { (response) in
 				guard response.result.isSuccess else {
-					print("FileDownloader.downloadGhosteryBlockListVersion error: \(String(describing: response.result.error))")
+					print("FileDownloader.downloadGhosteryVersionFile error: \(String(describing: response.result.error))")
 					completion(response.result.error, nil)
 					return
 				}
-				print("FileDownloader.downloadGhosteryBlockListVersion: Successfully downloaded version file.")
+				print("FileDownloader.downloadGhosteryVersionFile: Successfully downloaded Ghostery version file.")
 				completion(nil, response.result.value)
 		}
 	}
 	
 	/// Fetch Cliqz Safari block lists checksums
 	/// - Parameter completion: Callback handler
-	func downloadCliqzSafariLists(completion: @escaping (Error?, Data?) -> Void) {
+	func downloadCliqzVersionFile(completion: @escaping (Error?, Any?) -> Void) {
 		let urlString = "https://cdn.cliqz.com/adblocker/configs/safari-ads/allowed-lists.json"
 		guard let url = URL(string: urlString ) else {
 			completion(FileDownloaderError.invalidFileUrl, nil)
@@ -57,22 +57,22 @@ final class FileDownloader {
 			.validate()
 			.responseJSON { (response) in
 				guard response.result.isSuccess else {
-					print("FileDownloader.downloadCliqzSafariLists error: \(String(describing: response.result.error))")
+					print("FileDownloader.downloadCliqzVersionFile error: \(String(describing: response.result.error))")
 					completion(response.result.error, nil)
 					return
 				}
-				print("FileDownloader.downloadCliqzSafariLists: Successfully downloaded Cliqz Safari lists file.")
-				completion(nil, response.data)
+				print("FileDownloader.downloadCliqzVersionFile: Successfully downloaded Cliqz version file.")
+				completion(nil, response.result.value)
 		}
 	}
 	
 	/// Download block list json files from CDN
 	/// - Parameters:
 	///   - fileName: The name of the block list file
-	///   - listType: The type of list (Cliqz or Ghostery)
+	///   - listUrl: The URL of the list to download (blank for Ghostery lists)
 	///   - completion: Callback handler
-	func downloadBlockList(_ fileName: String, _ listType: String, completion: @escaping (Error?, Data?) -> Void) {
-		let urlString = (listType == "ghostery") ? "\(self.getGhosteryBasePath())/\(fileName)" : fileName
+	func downloadBlockList(_ fileName: String, _ listUrl: String, completion: @escaping (Error?, Data?) -> Void) {
+		let urlString = (listUrl.isEmpty) ? "\(self.getGhosteryAssetPath())/\(fileName)" : listUrl
 		guard let url = URL(string: urlString ) else {
 			completion(FileDownloaderError.invalidFileUrl, nil)
 			return
@@ -91,7 +91,8 @@ final class FileDownloader {
 		}
 	}
 	
-	private func getGhosteryBasePath() -> String {
+	/// Return the path of the Ghostery block list CDN
+	private func getGhosteryAssetPath() -> String {
 		#if PROD
 		return "https://cdn.ghostery.com/update/safari"
 		#else
@@ -99,6 +100,7 @@ final class FileDownloader {
 		#endif
 	}
 	
+	/// Return the path of the Ghostery version file
 	 private func getGhosteryVersionPath() -> String {
 		#if PROD
 		return "https://cdn.ghostery.com/update/version"
