@@ -48,7 +48,7 @@ class TelemetryManager {
 	private let config: TelemetryService.Config
 	
 	init() {
-		var id = Preferences.getPreference(key: installDateKey) as? String
+		var id = Preferences.getGlobalPreference(key: installDateKey) as? String
 		if id == nil {
 			id = TelemetryManager.formatDate(date: Date())
 		}
@@ -66,13 +66,13 @@ class TelemetryManager {
 				if self.isNewVersion() {
 					TelemetryService.shared.sendSignal(type, config: self.config, params: self.generateParams(type, frequency: nil, ghostrank: ghostrank))
 				}
-				Preferences.setPreference(key: lastVersionKey, value: self.config.version)
-				Preferences.setPreference(key: buildVersionKey, value: Preferences.currentBuildNumber())
+				Preferences.setGlobalPreference(key: lastVersionKey, value: self.config.version)
+				Preferences.setGlobalPreference(key: buildVersionKey, value: Preferences.currentBuildNumber())
 			case .active, .engage:
 				if let gr = ghostrank {
 					for f in self.getFrequencies(type, ghostrank: gr) {
 						TelemetryService.shared.sendSignal(type, config: self.config, params: self.generateParams(type, frequency: f, ghostrank: ghostrank))
-						Preferences.setPreference(key: "\(type.rawValue)_\(gr)_\(f.rawValue)", value: Date())
+						Preferences.setGlobalPreference(key: "\(type.rawValue)_\(gr)_\(f.rawValue)", value: Date())
 					}
 			}
 			default:
@@ -85,20 +85,20 @@ class TelemetryManager {
 		let freq = frequency?.rawValue ?? "all"
 		if let f = frequency,
 			type == .active && f == .daily,
-			let d = Preferences.getPreference(key: "\(type.rawValue)_\(ghostrank!)_\(f.rawValue)") as? Date {
+			let d = Preferences.getGlobalPreference(key: "\(type.rawValue)_\(ghostrank!)_\(f.rawValue)") as? Date {
 			r = -Int(d.timeIntervalSinceNow / 86400)
 		}
 		return TelemetryService.Params(recency: r, frequency: freq, ghostrank: ghostrank)
 	}
 	
 	private func isNewInstall() -> Bool {
-		return Preferences.getPreference(key: installDateKey) == nil
+		return Preferences.getGlobalPreference(key: installDateKey) == nil
 	}
 	
 	private func isNewVersion() -> Bool {
-		let lastVersion = Preferences.getPreference(key: lastVersionKey) as? String
+		let lastVersion = Preferences.getGlobalPreference(key: lastVersionKey) as? String
 		if lastVersion == nil || Preferences.currentVersion() == lastVersion! {
-			let lastBuildNumber = Preferences.getPreference(key: buildVersionKey) as? String
+			let lastBuildNumber = Preferences.getGlobalPreference(key: buildVersionKey) as? String
 			return lastBuildNumber != nil && Preferences.currentBuildNumber() != lastBuildNumber!
 		}
 		return true
@@ -108,7 +108,7 @@ class TelemetryManager {
 		let allFrequencies: [Frequency] = [.daily, .weekly, .monthly]
 		var result = [Frequency]()
 		for i in allFrequencies {
-			let p = Preferences.getPreference(key: "\(type.rawValue)_\(ghostrank)_\(i.rawValue)") as? Date
+			let p = Preferences.getGlobalPreference(key: "\(type.rawValue)_\(ghostrank)_\(i.rawValue)") as? Date
 			if p == nil || i.isExpired(p!) {
 				result.append(i)
 			}
@@ -117,17 +117,17 @@ class TelemetryManager {
 	}
 	
 	private func updateInstallParams() {
-		Preferences.setPreference(key: installDateKey, value: self.config.installDate)
-		Preferences.setPreference(key: installRandKey, value: self.config.installRand)
-		Preferences.setPreference(key: lastVersionKey, value: self.config.version)
+		Preferences.setGlobalPreference(key: installDateKey, value: self.config.installDate)
+		Preferences.setGlobalPreference(key: installRandKey, value: self.config.installRand)
+		Preferences.setGlobalPreference(key: lastVersionKey, value: self.config.version)
 	}
 	
 	private static func getInstallRand() -> Int {
-		if let p = Preferences.getPreference(key: installRandKey) as? Int {
+		if let p = Preferences.getGlobalPreference(key: installRandKey) as? Int {
 			return p
 		}
 		let p = Int(arc4random_uniform(100) + 1)
-		Preferences.setPreference(key: installRandKey, value: p)
+		Preferences.setGlobalPreference(key: installRandKey, value: p)
 		return p
 	}
 	

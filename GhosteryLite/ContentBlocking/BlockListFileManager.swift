@@ -19,8 +19,8 @@ final class BlockListFileManager {
 	static let shared = BlockListFileManager()
 	
 	private static let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
-	private static let assetsFolder: URL? = BlockListFileManager.groupStorageFolder?.appendingPathComponent("BlockListAssets")
-	private static let categoryAssetsFolder: URL? = BlockListFileManager.assetsFolder?.appendingPathComponent("BlockListByCategory")
+	private static let assetsFolder: URL? = BlockListFileManager.groupStorageFolder?.appendingPathComponent("BlockListAssets", isDirectory: true)
+	private static let categoryAssetsFolder: URL? = BlockListFileManager.assetsFolder?.appendingPathComponent("BlockListByCategory", isDirectory: true)
 	
 	private let ghosteryBlockListVersionKey = "safariContentBlockerVersion"
 	private let cliqzNetworkListChecksum = "cliqzNetworkListChecksum"
@@ -40,12 +40,12 @@ final class BlockListFileManager {
 			print("BlockListFileManager.updateBlockLists: Checking for Ghostery block list updates")
 			FileDownloader.shared.downloadGhosteryVersionFile(completion: { (err, json) in
 				if let blockListVersion = self.getGhosteryVersionNumber(json, key: self.ghosteryBlockListVersionKey) {
-					// TODO: Check version numbers for each individual category file, rather than just updating if the master list version has changed
+					// TODO: Check version numbers for each individual category file, rather than updating all categories if the master list version has changed
 					if self.isGhosteryBlockListVersionChanged(blockListVersion, self.ghosteryBlockListVersionKey) {
 						group.enter()
 						// Update the complete block list file
 						self.downloadAndSaveFile("safariContentBlocker", "", BlockListFileManager.assetsFolder) { () in
-							Preferences.setPreference(key: self.ghosteryBlockListVersionKey, value: blockListVersion)
+							Preferences.setGlobalPreference(key: self.ghosteryBlockListVersionKey, value: blockListVersion)
 							updated = true
 							group.leave()
 						}
@@ -80,7 +80,7 @@ final class BlockListFileManager {
 						group.enter()
 						// Update the Cliqz network block list file
 						self.downloadAndSaveFile("cliqzNetworkList", networkList, BlockListFileManager.assetsFolder) { () in
-							Preferences.setPreference(key: self.cliqzNetworkListChecksum, value: networkChecksum)
+							Preferences.setGlobalPreference(key: self.cliqzNetworkListChecksum, value: networkChecksum)
 							updated = true
 							group.leave()
 						}
@@ -92,7 +92,7 @@ final class BlockListFileManager {
 						group.enter()
 						// Update the Cliqz cosmetic block list file
 						self.downloadAndSaveFile("cliqzCosmeticList", cosmeticList, BlockListFileManager.assetsFolder) { () in
-							Preferences.setPreference(key: self.cliqzCosmeticListChecksum, value: cosmeticChecksum)
+							Preferences.setGlobalPreference(key: self.cliqzCosmeticListChecksum, value: cosmeticChecksum)
 							updated = true
 							group.leave()
 						}
@@ -157,7 +157,7 @@ final class BlockListFileManager {
 	/// - Parameter newVersion: The new version of the block list on the CDN
 	/// - Parameter oldVersionKey The preference key where the old version number is stored
 	private func isGhosteryBlockListVersionChanged(_ newVersion: Int, _ oldVersionKey: String) -> Bool {
-		if let oldVersion = Preferences.getPreference(key: oldVersionKey) as? Int {
+		if let oldVersion = Preferences.getGlobalPreference(key: oldVersionKey) as? Int {
 			print("BlockListFileManager.isGhosteryBlockListVersionChanged: \(oldVersionKey) Old version \(oldVersion) New version \(newVersion)")
 			return newVersion != oldVersion
 		}
@@ -169,7 +169,7 @@ final class BlockListFileManager {
 	///   - newVersion: The new checksum value
 	///   - oldVersionKey: The preference key where the old checksum value is stored
 	private func isCliqzBlockListChecksumChanged(_ newVersion: String, _ oldVersionKey: String) -> Bool {
-		if let oldVersion = Preferences.getPreference(key: oldVersionKey) as? String {
+		if let oldVersion = Preferences.getGlobalPreference(key: oldVersionKey) as? String {
 			print("BlockListFileManager.isCliqzBlockListChecksumChanged: \(oldVersionKey) Old version \(oldVersion) New version \(newVersion)")
 			return newVersion != oldVersion
 		}

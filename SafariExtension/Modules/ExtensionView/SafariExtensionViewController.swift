@@ -231,7 +231,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 															fontColor:NSColor(named: "untrustBtnTitleColor") ?? NSColor.white,
 															lineSpacing: 0)
 
-		/// TODO: refactor the method, not to call press action
+		// TODO: refactor the method, not to call press action
 		self.pauseButtonPressed(sender: self.pauseButton)
 	}
 

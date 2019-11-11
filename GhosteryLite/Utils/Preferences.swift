@@ -21,27 +21,41 @@ class Preferences: NSObject {
 	
 	/// Is this the first launch of the application?
 	class func isAppFirstLaunch() -> Bool {
-		return !UserDefaults.standard.bool(forKey: Preferences.appFirstLaunchKey)
+		return !(self.getAppPreference(key: Preferences.appFirstLaunchKey) != nil)
 	}
 	
 	/// Set preferences to track the initial application launch
 	class func firstLaunchFinished() {
-		UserDefaults.standard.set(true, forKey: Preferences.appFirstLaunchKey)
+		self.setAppPreference(key: Preferences.appFirstLaunchKey, value: true)
+	}
+	
+	/// Get a local user preference for the application
+	/// - Parameter key: Preference key
+	class func getAppPreference(key: String) -> Any? {
+		return UserDefaults.standard.value(forKey: key)
+	}
+	
+	/// Set a local user preference for the application
+	/// - Parameters:
+	///   - key: Preference key
+	///   - value: Preference value
+	class func setAppPreference(key: String, value: Any) {
+		UserDefaults.standard.set(value, forKey: key)
 		UserDefaults.standard.synchronize()
 	}
 	
-	/// Fetch a user preference from memory
+	/// Fetch a global user preference from the app group
 	/// - Parameter key: Stored preference key
-	class func getPreference(key: String) -> Any? {
+	class func getGlobalPreference(key: String) -> Any? {
 		let d = UserDefaults(suiteName: Constants.AppsGroupID)
 		return d?.value(forKey: key)
 	}
 	
-	/// Save a user preference to memory
+	/// Save a global user preference to the app group
 	/// - Parameters:
 	///   - key: Stored preference key
 	///   - value: Preference value
-	class func setPreference(key: String, value: Any) {
+	class func setGlobalPreference(key: String, value: Any) {
 		let d = UserDefaults(suiteName: Constants.AppsGroupID)
 		d?.set(value, forKey: key)
 		d?.synchronize()

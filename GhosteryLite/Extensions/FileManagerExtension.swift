@@ -53,13 +53,21 @@ extension FileManager {
 		}
 	}
 	
-	public func createDirectoryIfNotExists(_ url: URL?, withIntermediateDirectories hasIntermediateDir: Bool) {
+	func createDirectoryIfNotExists(_ url: URL?, withIntermediateDirectories hasIntermediateDir: Bool) {
 		if !FileManager.default.fileExists(atPath: (url?.path)!) {
 			do {
 				try FileManager.default.createDirectory(at: url!, withIntermediateDirectories: hasIntermediateDir, attributes: nil)
 			} catch {
 				print("FileManager.createDirectoryIfNotExists error")
 			}
+		}
+	}
+	
+	func copyFiles(_ sourceDir: String, _ destDir: String) {
+		do {
+			try FileManager.default.copyItem(atPath: sourceDir, toPath: destDir)
+		} catch {
+			print("FileManager.copyFiles error")
 		}
 	}
 }
