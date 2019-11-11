@@ -17,7 +17,7 @@ import Cocoa
 
 extension NSApplication {
 	@IBAction func defaultConfigSelected(_ sender: NSMenuItem) {
-		print("Default")
+		print("NSApplication.defaultConfigSelected")
 		ContentBlockerManager.shared.switchToDefault()
 		if let m = sender.parent?.submenu {
 			m.items[1].state = NSControl.StateValue(rawValue: 0)
@@ -26,7 +26,7 @@ extension NSApplication {
 	}
 	
 	@IBAction func customConfigSelected(_ sender: NSMenuItem) {
-		print("Custom")
+		print("NSApplication.customConfigSelected")
 		ContentBlockerManager.shared.switchToCustom()
 		if let m = sender.parent?.submenu {
 			m.items[0].state = NSControl.StateValue(rawValue: 0)

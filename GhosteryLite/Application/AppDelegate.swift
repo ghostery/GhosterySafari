@@ -88,10 +88,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		// Copy block list assets to Group Containers
 		guard let resources = Bundle.main.resourceURL?.appendingPathComponent("BlockListAssets", isDirectory: true).path,
 			let groupStorageFolder = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)?.appendingPathComponent("BlockListAssets", isDirectory: true).path else {
-				print("AppDelegate.applicationDidFinishLaunching: Error copying block list assets to Group Containers")
+				print("AppDelegate.handleInitialLaunch: Error copying block list assets to Group Containers")
 				return
 		}
-		FileManager.default.copyFiles(resources, groupStorageFolder)
+		// Make sure the BlockListAssets folder hasn't already been migrated somehow
+		if !FileManager.default.fileExists(atPath: groupStorageFolder) {
+			FileManager.default.copyFiles(resources, groupStorageFolder)
+		}
 		
 		// Save Ghostery block list version to Preferences to prevent unnecessary update check
 	}

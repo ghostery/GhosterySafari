@@ -21,6 +21,8 @@ class ContentBlockerManager {
 	static let shared = ContentBlockerManager()
 	
 	private var paused: Bool = false
+	private let categoryBlockListsFolder = "BlockListAssets/BlockListByCategory"
+	private let blockListsMainFolder = "BlockListAssets"
 	
 	init() {
 		configureRealm()
@@ -76,6 +78,39 @@ class ContentBlockerManager {
 		})
 	}
 	
+	/// Checks if the user is using the default or custom block list config. Triggers self.updateAndReloadBlockList(), which generates
+	/// the new block list as needed and reloads the Content Blocker
+	func reloadContentBlocker() {
+		if self.isPaused() {
+			loadDummyCB()
+		} else {
+			if let c = GlobalConfigManager.shared.getCurrentConfig(),
+				c.configType.value == ConfigurationType.custom.rawValue {
+				self.loadCustomCB()
+			} else {
+				self.loadDefaultCB()
+			}
+		}
+	}
+	
+	func trustDomain(domain: String) {
+		TrustedSitesDataSource.shared.addDomain(domain)
+		WhiteListFileManager.shared.add(domain, completion: {
+			self.reloadContentBlocker()
+		})
+	}
+	
+	func untrustDomain(domain: String) {
+		TrustedSitesDataSource.shared.removeDomain(domain)
+		WhiteListFileManager.shared.remove(domain, completion: {
+			self.reloadContentBlocker()
+		})
+	}
+	
+	func isTrustedDomain(domain: String) -> Bool {
+		return TrustedSitesDataSource.shared.isTrusted(domain)
+	}
+	
 	func isPaused() -> Bool {
 		return self.paused
 	}
@@ -121,47 +156,6 @@ class ContentBlockerManager {
 		self.reloadContentBlocker()
 	}
 	
-	/// Checks if the user is using the default or custom block list config. Triggers self.updateAndReloadBlockList(), which generates
-	/// the new block list as needed and reloads the Content Blocker
-	func reloadContentBlocker() {
-		if self.isPaused() {
-			loadDummyCB()
-		} else {
-			if let c = GlobalConfigManager.shared.getCurrentConfig(),
-				c.configType.value == ConfigurationType.custom.rawValue {
-				self.loadCustomCB()
-			} else {
-				self.loadDefaultCB()
-			}
-		}
-	}
-	
-	func trustDomain(domain: String) {
-		TrustedSitesDataSource.shared.addDomain(domain)
-		WhiteListFileManager.shared.add(domain, completion: {
-			self.reloadContentBlocker()
-		})
-	}
-	
-	func untrustDomain(domain: String) {
-		TrustedSitesDataSource.shared.removeDomain(domain)
-		WhiteListFileManager.shared.remove(domain, completion: {
-			self.reloadContentBlocker()
-		})
-	}
-	
-	func isTrustedDomain(domain: String) -> Bool {
-		return TrustedSitesDataSource.shared.isTrusted(domain)
-	}
-	
-	func getCategoryBlockListsFolder() -> String {
-		return "BlockListAssets/BlockListByCategory"
-	}
-	
-	func getBlockListsMainFolder() -> String {
-		return "BlockListAssets"
-	}
-	
 	@objc
 	func trustSiteNotification() {
 		let d = UserDefaults(suiteName: Constants.AppsGroupID)
@@ -192,7 +186,7 @@ class ContentBlockerManager {
 		self.reloadContentBlocker()
 	}
 	
-	/// Load a custom block list file based on user's selected categories
+	/// Load a custom block list file based on user selected categories
 	private func loadCustomCB() {
 		if let config = GlobalConfigManager.shared.getCurrentConfig() {
 			var fileNames = [String]()
@@ -210,7 +204,7 @@ class ContentBlockerManager {
 				}
 			}
 			// Trigger a Content Blocker reload
-			self.updateAndReloadBlockList(fileNames: fileNames, folderName: getCategoryBlockListsFolder())
+			self.updateAndReloadBlockList(fileNames: fileNames, folderName: self.categoryBlockListsFolder)
 		}
 	}
 	
@@ -222,18 +216,18 @@ class ContentBlockerManager {
 				fileNames.append(i.fileName())
 			}
 			// Trigger a Content Blocker reload
-			self.updateAndReloadBlockList(fileNames: fileNames, folderName: getCategoryBlockListsFolder())
+			self.updateAndReloadBlockList(fileNames: fileNames, folderName: self.categoryBlockListsFolder)
 		}
 	}
 	
 	/// Load an empty block list file.  Used during  pause and site whitelist scenarios
 	private func loadDummyCB() {
-		self.updateAndReloadBlockList(fileNames: ["emptyRules"], folderName: getBlockListsMainFolder())
+		self.updateAndReloadBlockList(fileNames: ["emptyRules"], folderName: self.blockListsMainFolder)
 	}
 	
 	/// Load the full block list (all categories)
 	private func loadFullList() {
-		self.updateAndReloadBlockList(fileNames: ["safariContentBlocker"], folderName: getBlockListsMainFolder())
+		self.updateAndReloadBlockList(fileNames: ["safariContentBlocker", "cliqzNetworkList", "cliqzCosmeticList"], folderName: self.blockListsMainFolder)
 	}
 	
 	/// Trigger a Content Blocker reload
