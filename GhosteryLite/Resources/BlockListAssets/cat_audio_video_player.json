@@ -1,1 +1,13 @@
-[{"action":{"type":"block"},"trigger":{"load-type":["third-party"],"url-filter":"dw\\.com\\.com"}}]
+[
+	{
+		"action": {
+			"type": "block"
+		},
+		"trigger": {
+			"load-type": [
+				"third-party"
+			],
+			"url-filter": "dw\\.com\\.com"
+		}
+	}
+]

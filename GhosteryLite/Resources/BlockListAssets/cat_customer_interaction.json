@@ -1,1 +1,13 @@
-[{"action":{"type":"block"},"trigger":{"load-type":["third-party"],"url-filter":"shots\\.snap\\.com/snap_shots\\.js"}}]
+[
+	{
+		"action": {
+			"type": "block"
+		},
+		"trigger": {
+			"load-type": [
+				"third-party"
+			],
+			"url-filter": "shots\\.snap\\.com/snap_shots\\.js"
+		}
+	}
+]

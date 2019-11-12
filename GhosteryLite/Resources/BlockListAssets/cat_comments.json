@@ -1,1 +1,17 @@
-[{"action":{"type":"block"},"trigger":{"unless-top-url":["blog.disqus.com","disqus.com"],"load-type":["third-party"],"url-filter":"disqus\\.com/api"}}]
+[
+	{
+		"action": {
+			"type": "block"
+		},
+		"trigger": {
+			"unless-top-url": [
+				"blog.disqus.com",
+				"disqus.com"
+			],
+			"load-type": [
+				"third-party"
+			],
+			"url-filter": "disqus\\.com/api"
+		}
+	}
+]

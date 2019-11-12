@@ -1,1 +1,13 @@
-[{"action":{"type":"block"},"trigger":{"load-type":["third-party"],"url-filter":"\\.google\\.com\\.\\.\\.?/coop/cse/brand"}]
+[
+	{
+		"action": {
+			"type": "block"
+		},
+		"trigger": {
+			"load-type": [
+				"third-party"
+			],
+			"url-filter": "\\.google\\.com\\.\\.\\.?/coop/cse/brand"
+		}
+	}
+]
