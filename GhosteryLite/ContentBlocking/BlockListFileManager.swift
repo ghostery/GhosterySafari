@@ -20,7 +20,6 @@ final class BlockListFileManager {
 	
 	private static let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
 	private static let assetsFolder: URL? = BlockListFileManager.groupStorageFolder?.appendingPathComponent("BlockListAssets", isDirectory: true)
-	private static let categoryAssetsFolder: URL? = BlockListFileManager.assetsFolder?.appendingPathComponent("BlockListByCategory", isDirectory: true)
 	
 	private let ghosteryBlockListVersionKey = "safariContentBlockerVersion"
 	private let cliqzNetworkListChecksum = "cliqzNetworkListChecksum"
@@ -53,7 +52,7 @@ final class BlockListFileManager {
 						// Update category block list files
 						for type in CategoryType.allCases() {
 							group.enter()
-							self.downloadAndSaveFile(type.fileName(), "", BlockListFileManager.categoryAssetsFolder) { () in
+							self.downloadAndSaveFile(type.fileName(), "", BlockListFileManager.assetsFolder) { () in
 								updated = true
 								group.leave()
 							}

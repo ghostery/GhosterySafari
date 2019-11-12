@@ -21,7 +21,6 @@ class ContentBlockerManager {
 	static let shared = ContentBlockerManager()
 	
 	private var paused: Bool = false
-	private let categoryBlockListsFolder = "BlockListAssets/BlockListByCategory"
 	private let blockListsMainFolder = "BlockListAssets"
 	
 	init() {
@@ -204,7 +203,7 @@ class ContentBlockerManager {
 				}
 			}
 			// Trigger a Content Blocker reload
-			self.updateAndReloadBlockList(fileNames: fileNames, folderName: self.categoryBlockListsFolder)
+			self.updateAndReloadBlockList(fileNames: fileNames, folderName: self.blockListsMainFolder)
 		}
 	}
 	
@@ -216,7 +215,7 @@ class ContentBlockerManager {
 				fileNames.append(i.fileName())
 			}
 			// Trigger a Content Blocker reload
-			self.updateAndReloadBlockList(fileNames: fileNames, folderName: self.categoryBlockListsFolder)
+			self.updateAndReloadBlockList(fileNames: fileNames, folderName: self.blockListsMainFolder)
 		}
 	}
 	
