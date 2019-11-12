@@ -21,7 +21,7 @@ final class BlockListFileManager {
 	private static let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
 	private static let assetsFolder: URL? = BlockListFileManager.groupStorageFolder?.appendingPathComponent("BlockListAssets", isDirectory: true)
 	
-	private let ghosteryBlockListVersionKey = "safariContentBlockerVersion"
+	public static let ghosteryBlockListVersionKey = "safariContentBlockerVersion"
 	private let cliqzNetworkListChecksum = "cliqzNetworkListChecksum"
 	private let cliqzCosmeticListChecksum = "cliqzCosmeticListChecksum"
 	
@@ -38,13 +38,13 @@ final class BlockListFileManager {
 		DispatchQueue.main.async(group: group) {
 			print("BlockListFileManager.updateBlockLists: Checking for Ghostery block list updates")
 			FileDownloader.shared.downloadGhosteryVersionFile(completion: { (err, json) in
-				if let blockListVersion = self.getGhosteryVersionNumber(json, key: self.ghosteryBlockListVersionKey) {
+				if let blockListVersion = self.getGhosteryVersionNumber(json, key: BlockListFileManager.ghosteryBlockListVersionKey) {
 					// TODO: Check version numbers for each individual category file, rather than updating all categories if the master list version has changed
-					if self.isGhosteryBlockListVersionChanged(blockListVersion, self.ghosteryBlockListVersionKey) {
+					if self.isGhosteryBlockListVersionChanged(blockListVersion, BlockListFileManager.ghosteryBlockListVersionKey) {
 						group.enter()
 						// Update the complete block list file
 						self.downloadAndSaveFile("safariContentBlocker", "", BlockListFileManager.assetsFolder) { () in
-							Preferences.setGlobalPreference(key: self.ghosteryBlockListVersionKey, value: blockListVersion)
+							Preferences.setGlobalPreference(key: BlockListFileManager.ghosteryBlockListVersionKey, value: blockListVersion)
 							updated = true
 							group.leave()
 						}

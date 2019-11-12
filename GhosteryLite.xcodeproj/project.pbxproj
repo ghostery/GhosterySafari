@@ -31,7 +31,6 @@
 		0DD3BF7C236CCD2A00889C41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DD3BF7E236CCD2A00889C41 /* InfoPlist.strings */; };
 		0DD3BF81236CD09300889C41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DD3BF83236CD09300889C41 /* InfoPlist.strings */; };
 		0DD3BF86236CD20F00889C41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DD3BF88236CD20F00889C41 /* InfoPlist.strings */; };
-		0DD3BF8C236CD80600889C41 /* config in Resources */ = {isa = PBXBuildFile; fileRef = 0DD3BF8B236CD80600889C41 /* config */; };
 		0DDCFF7923660DBD009481D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DDCFF7B23660DBD009481D4 /* Localizable.strings */; };
 		0DDCFF7E2366666D009481D4 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4721354DE60098631F /* Preferences.swift */; };
 		0DDCFF7F236666B7009481D4 /* BlockListFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */; };
@@ -890,7 +889,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DD3BF8C236CD80600889C41 /* config in Resources */,
 				0DD3BF86236CD20F00889C41 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

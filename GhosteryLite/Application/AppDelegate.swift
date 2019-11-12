@@ -91,11 +91,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 				print("AppDelegate.handleInitialLaunch: Error copying block list assets to Group Containers")
 				return
 		}
-		// Make sure the BlockListAssets folder hasn't already been migrated somehow
+		// Make sure the BlockListAssets folder hasn't already been migrated
 		if !FileManager.default.fileExists(atPath: groupStorageFolder) {
 			FileManager.default.copyFiles(resources, groupStorageFolder)
 		}
 		
-		// Save Ghostery block list version to Preferences to prevent unnecessary update check
+		// Check the version of the Ghostery block list that shipped with the application. Save the version
+		// to Preferences to prevent an unnecessary update check
+		struct versionData: Decodable {
+			var safariContentBlockerVersion: Int
+		}
+		if let url = Bundle.main.url(forResource: "version", withExtension: "json", subdirectory: "BlockListAssets") { // Fetch version from app bundle
+			do {
+				let data = try Data(contentsOf: url)
+				let decoder = JSONDecoder()
+				let jsonData = try decoder.decode(versionData.self, from: data)
+				print("AppDelegate.handleInitialLaunch: safariContentBlockerVersion is \(jsonData.safariContentBlockerVersion)")
+				Preferences.setGlobalPreference(key: BlockListFileManager.ghosteryBlockListVersionKey, value: jsonData.safariContentBlockerVersion)
+			} catch {
+				print("AppDelegate.handleInitialLaunch: Error getting safariContentBlockerVersion \(error)")
+			}
+		}
 	}
 }
