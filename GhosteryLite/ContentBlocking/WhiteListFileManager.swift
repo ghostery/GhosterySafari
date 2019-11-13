@@ -57,18 +57,16 @@ class WhiteListFileManager {
 	}
 	
 	func getAllRules() -> [[String:Any]]? {
-		let whitelists: [[String:Any]]? = FileManager.default.readJsonFile(at: self.getFilePath())
+		let whitelists: [[String:Any]]? = FileManager.default.readJsonFile(at: self.getWhitelistFilePath())
 		return whitelists
 	}
 	
-	private func getFilePath() -> URL? {
-		let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
-		let assetsFolder: URL? = groupStorageFolder?.appendingPathComponent("BlockListAssets")
-		return assetsFolder?.appendingPathComponent("trustedSitesList.json")
+	private func getWhitelistFilePath() -> URL? {
+		return Constants.AssetsFolderURL?.appendingPathComponent("trustedSitesList.json")
 	}
 	
 	private func save(_ rules: [[String:Any]]?) {
-		FileManager.default.writeJsonFile(at: self.getFilePath(), with: rules)
+		FileManager.default.writeJsonFile(at: self.getWhitelistFilePath(), with: rules)
 	}
 	
 	private func prepareRule(_ domain: String)  -> [String: Any] {

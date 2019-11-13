@@ -86,9 +86,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	private func handleInitialLaunch(){
 		print("AppDelegate.handleInitialLaunch: Initial launch detected")
 		// Copy block list assets to Group Containers
-		guard let resources = Bundle.main.resourceURL?.appendingPathComponent("BlockListAssets", isDirectory: true).path,
-			let groupStorageFolder = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)?.appendingPathComponent("BlockListAssets", isDirectory: true).path else {
-				print("AppDelegate.handleInitialLaunch: Error copying block list assets to Group Containers")
+		guard let resources = Bundle.main.resourceURL?.appendingPathComponent(Constants.BlockListAssetsFolder, isDirectory: true).path,
+			let groupStorageFolder = Constants.AssetsFolderURL?.path else {
+				print("AppDelegate.handleInitialLaunch: Error copying BlockListAssets to Group Containers")
 				return
 		}
 		// Make sure the BlockListAssets folder hasn't already been migrated
@@ -101,13 +101,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		struct versionData: Decodable {
 			var safariContentBlockerVersion: Int
 		}
-		if let url = Bundle.main.url(forResource: "version", withExtension: "json", subdirectory: "BlockListAssets") { // Fetch version from app bundle
+		if let url = Bundle.main.url(forResource: "version", withExtension: "json", subdirectory: Constants.BlockListAssetsFolder) { // Fetch version from app bundle
 			do {
 				let data = try Data(contentsOf: url)
 				let decoder = JSONDecoder()
 				let jsonData = try decoder.decode(versionData.self, from: data)
 				print("AppDelegate.handleInitialLaunch: safariContentBlockerVersion is \(jsonData.safariContentBlockerVersion)")
-				Preferences.setGlobalPreference(key: BlockListFileManager.ghosteryBlockListVersionKey, value: jsonData.safariContentBlockerVersion)
+				Preferences.setGlobalPreference(key: Constants.GhosteryBlockListVersionKey, value: jsonData.safariContentBlockerVersion)
 			} catch {
 				print("AppDelegate.handleInitialLaunch: Error getting safariContentBlockerVersion \(error)")
 			}

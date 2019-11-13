@@ -21,7 +21,6 @@ class ContentBlockerManager {
 	static let shared = ContentBlockerManager()
 	
 	private var paused: Bool = false
-	private let blockListsMainFolder = "BlockListAssets"
 	
 	init() {
 		configureRealm()
@@ -59,8 +58,7 @@ class ContentBlockerManager {
 		
 		// Tell Realm to use this new configuration object for the default Realm
 		Realm.Configuration.defaultConfiguration = config
-		let directory: URL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)!
-		let realmPath = directory.appendingPathComponent("db.realm")
+		let realmPath = Constants.GroupStorageFolderURL?.appendingPathComponent("db.realm")
 		Realm.Configuration.defaultConfiguration.fileURL = realmPath
 		let _ = try! Realm()
 		GlobalConfigManager.shared.createConfigIfDoesNotExist()
@@ -203,7 +201,7 @@ class ContentBlockerManager {
 				}
 			}
 			// Trigger a Content Blocker reload
-			self.updateAndReloadBlockList(fileNames: fileNames, folderName: self.blockListsMainFolder)
+			self.updateAndReloadBlockList(fileNames: fileNames, folderName: Constants.BlockListAssetsFolder)
 		}
 	}
 	
@@ -215,18 +213,18 @@ class ContentBlockerManager {
 				fileNames.append(i.fileName())
 			}
 			// Trigger a Content Blocker reload
-			self.updateAndReloadBlockList(fileNames: fileNames, folderName: self.blockListsMainFolder)
+			self.updateAndReloadBlockList(fileNames: fileNames, folderName: Constants.BlockListAssetsFolder)
 		}
 	}
 	
 	/// Load an empty block list file.  Used during  pause and site whitelist scenarios
 	private func loadDummyCB() {
-		self.updateAndReloadBlockList(fileNames: ["emptyRules"], folderName: self.blockListsMainFolder)
+		self.updateAndReloadBlockList(fileNames: ["emptyRules"], folderName: Constants.BlockListAssetsFolder)
 	}
 	
 	/// Load the full block list (all categories)
 	private func loadFullList() {
-		self.updateAndReloadBlockList(fileNames: ["safariContentBlocker", "cliqzNetworkList", "cliqzCosmeticList"], folderName: self.blockListsMainFolder)
+		self.updateAndReloadBlockList(fileNames: ["safariContentBlocker", "cliqzNetworkList", "cliqzCosmeticList"], folderName: Constants.BlockListAssetsFolder)
 	}
 	
 	/// Trigger a Content Blocker reload

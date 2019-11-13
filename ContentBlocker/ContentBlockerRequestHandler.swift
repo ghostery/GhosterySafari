@@ -19,10 +19,7 @@ class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
 	func beginRequest(with context: NSExtensionContext) {
 		let item = NSExtensionItem()
 		
-		let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
-		let assetsFolder: URL? = groupStorageFolder?.appendingPathComponent("BlockListAssets")
-		
-		let p = assetsFolder?.appendingPathComponent("currentBlockList.json")
+		let p = Constants.AssetsFolderURL?.appendingPathComponent("currentBlockList.json")
 
 		let attachment = NSItemProvider(contentsOf: p)
 		item.attachments = [attachment] as? [NSItemProvider]

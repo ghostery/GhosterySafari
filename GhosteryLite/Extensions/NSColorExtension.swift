@@ -15,9 +15,10 @@
 import Cocoa
 
 extension NSColor {
-	/**
-	* Initializes and returns a color object for the given RGB hex integer.
-	*/
+	/// Initializes and returns a color object for the given RGB hex integer.
+	/// - Parameters:
+	///   - rgb: RGB value
+	///   - alpha: Alpha value
 	public convenience init(rgb: Int, alpha: CGFloat = 1.0) {
 		self.init(
 			red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0,

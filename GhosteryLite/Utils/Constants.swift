@@ -22,6 +22,11 @@ struct Constants {
 	
 	static let AppsGroupID = "HPY23A294X.ghostery.lite"
 	
+	static let BlockListAssetsFolder = "BlockListAssets"
+	static let GroupStorageFolderURL: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
+	static let AssetsFolderURL: URL? = Constants.GroupStorageFolderURL?.appendingPathComponent(Constants.BlockListAssetsFolder, isDirectory: true)
+	static let GhosteryBlockListVersionKey = "safariContentBlockerVersion"
+	
 	static let PauseNotificationName = Notification.Name(rawValue: "GhosteryIsPaused")
 	static let ResumeNotificationName = Notification.Name(rawValue: "GhosteryIsResumed")
 	static let SwitchToDefaultNotificationName = Notification.Name(rawValue: "SwitchToDefaultConfig")

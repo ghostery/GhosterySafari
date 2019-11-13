@@ -17,11 +17,7 @@ import Foundation
 final class BlockListFileManager {
 	
 	static let shared = BlockListFileManager()
-	
-	private static let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
-	private static let assetsFolder: URL? = BlockListFileManager.groupStorageFolder?.appendingPathComponent("BlockListAssets", isDirectory: true)
-	
-	public static let ghosteryBlockListVersionKey = "safariContentBlockerVersion"
+
 	private let cliqzNetworkListChecksum = "cliqzNetworkListChecksum"
 	private let cliqzCosmeticListChecksum = "cliqzCosmeticListChecksum"
 	
@@ -38,13 +34,13 @@ final class BlockListFileManager {
 		DispatchQueue.main.async(group: group) {
 			print("BlockListFileManager.updateBlockLists: Checking for Ghostery block list updates")
 			FileDownloader.shared.downloadGhosteryVersionFile(completion: { (err, json) in
-				if let blockListVersion = self.getGhosteryVersionNumber(json, key: BlockListFileManager.ghosteryBlockListVersionKey) {
+				if let blockListVersion = self.getGhosteryVersionNumber(json, key: Constants.GhosteryBlockListVersionKey) {
 					// TODO: Check version numbers for each individual category file, rather than updating all categories if the master list version has changed
-					if self.isGhosteryBlockListVersionChanged(blockListVersion, BlockListFileManager.ghosteryBlockListVersionKey) {
+					if self.isGhosteryBlockListVersionChanged(blockListVersion, Constants.GhosteryBlockListVersionKey) {
 						group.enter()
 						// Update the complete block list file
-						self.downloadAndSaveFile("safariContentBlocker", "", BlockListFileManager.assetsFolder) { () in
-							Preferences.setGlobalPreference(key: BlockListFileManager.ghosteryBlockListVersionKey, value: blockListVersion)
+						self.downloadAndSaveFile("safariContentBlocker", "", Constants.AssetsFolderURL) { () in
+							Preferences.setGlobalPreference(key: Constants.GhosteryBlockListVersionKey, value: blockListVersion)
 							updated = true
 							group.leave()
 						}
@@ -52,7 +48,7 @@ final class BlockListFileManager {
 						// Update category block list files
 						for type in CategoryType.allCases() {
 							group.enter()
-							self.downloadAndSaveFile(type.fileName(), "", BlockListFileManager.assetsFolder) { () in
+							self.downloadAndSaveFile(type.fileName(), "", Constants.AssetsFolderURL) { () in
 								updated = true
 								group.leave()
 							}
@@ -78,7 +74,7 @@ final class BlockListFileManager {
 					if self.isCliqzBlockListChecksumChanged(networkChecksum, self.cliqzNetworkListChecksum) {
 						group.enter()
 						// Update the Cliqz network block list file
-						self.downloadAndSaveFile("cliqzNetworkList", networkList, BlockListFileManager.assetsFolder) { () in
+						self.downloadAndSaveFile("cliqzNetworkList", networkList, Constants.AssetsFolderURL) { () in
 							Preferences.setGlobalPreference(key: self.cliqzNetworkListChecksum, value: networkChecksum)
 							updated = true
 							group.leave()
@@ -90,7 +86,7 @@ final class BlockListFileManager {
 					if self.isCliqzBlockListChecksumChanged(cosmeticChecksum, self.cliqzCosmeticListChecksum) {
 						group.enter()
 						// Update the Cliqz cosmetic block list file
-						self.downloadAndSaveFile("cliqzCosmeticList", cosmeticList, BlockListFileManager.assetsFolder) { () in
+						self.downloadAndSaveFile("cliqzCosmeticList", cosmeticList, Constants.AssetsFolderURL) { () in
 							Preferences.setGlobalPreference(key: self.cliqzCosmeticListChecksum, value: cosmeticChecksum)
 							updated = true
 							group.leave()
@@ -107,26 +103,16 @@ final class BlockListFileManager {
 			done(updated)
 		}
 	}
-	
-	/// Fetch the path of the block list file from the Group Container folder
-	/// - Parameter fileName: The name of the block list json file
-	/// - Parameter folderName: The name of the assets folder in Group Containers
-	func getFilePath(fileName: String, folderName: String) -> URL? {
-		let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
-		let assetsFolder: URL? = groupStorageFolder?.appendingPathComponent(folderName)
-		return assetsFolder?.appendingPathComponent("\(fileName).json")
-	}
-	
+
 	/// Combine all active block lists into currentBlockList.json
 	/// - Parameter files: List of files to activate
-	/// - Parameter folderName: Folder location of the files
 	/// - Parameter completion: Completion callback
 	func generateCurrentBlockList(files: [String], folderName: String, completion: @escaping () -> Void) {
 		DispatchQueue.global(qos: .background).async {
 			var blockListJSON = [[String: Any]]()
 			// Build category lists into a single block list
 			for f in files {
-				if let url = self.getFilePath(fileName: f, folderName: folderName) {
+				if let url = Constants.AssetsFolderURL?.appendingPathComponent("\(f).json") {
 					let nextChunk: [[String:Any]]? = FileManager.default.readJsonFile(at: url)
 					if let n = nextChunk {
 						blockListJSON.append(contentsOf: n)
@@ -137,10 +123,8 @@ final class BlockListFileManager {
 			let whitelist = WhiteListFileManager.shared.getActiveWhitelistRules()
 			let finalJSON: [[String: Any]] = blockListJSON + (whitelist ?? [])
 			
-			let groupStorageFolder: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
-			let assetsFolder: URL? = groupStorageFolder?.appendingPathComponent("BlockListAssets")
-			let currentBlockList = assetsFolder?.appendingPathComponent("currentBlockList.json")
-			FileManager.default.createDirectoryIfNotExists(assetsFolder, withIntermediateDirectories: true)
+			let currentBlockList = Constants.AssetsFolderURL?.appendingPathComponent("currentBlockList.json")
+			FileManager.default.createDirectoryIfNotExists(Constants.AssetsFolderURL, withIntermediateDirectories: true)
 			// Write the finalJSON to currentBlockList.json in the Container
 			if let url = currentBlockList {
 				try? FileManager.default.removeItem(at: url)
