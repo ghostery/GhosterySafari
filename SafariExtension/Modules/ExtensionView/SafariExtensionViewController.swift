@@ -141,10 +141,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		} else {
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 1)
 		}
-		if !UserDefaults.standard.bool(forKey: SafariExtensionViewController.CustomSettingsSelectedKey) {
+		if !Preferences.getAppPreference(key: SafariExtensionViewController.CustomSettingsSelectedKey) {
 			self.openSettings()
-			UserDefaults.standard.set(true, forKey: SafariExtensionViewController.CustomSettingsSelectedKey)
-			UserDefaults.standard.synchronize()
+			Preferences.setAppPreference(key: SafariExtensionViewController.CustomSettingsSelectedKey, value: true)
 		}
 	}
 

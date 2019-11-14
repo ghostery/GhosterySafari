@@ -155,8 +155,7 @@ class ContentBlockerManager {
 	
 	@objc
 	func trustSiteNotification() {
-		let d = UserDefaults(suiteName: Constants.AppsGroupID)
-		if let d = d?.value(forKey: "domain") as? String {
+		if let d = Preferences.getGlobalPreference(key: "domain") as? String {
 			self.trustDomain(domain: d)
 			loadDummyCB()
 		}
@@ -164,8 +163,7 @@ class ContentBlockerManager {
 	
 	@objc
 	func untrustSiteNotification() {
-		let d = UserDefaults(suiteName: Constants.AppsGroupID)
-		if let d = d?.value(forKey: "domain") as? String {
+		if let d = Preferences.getGlobalPreference(key: "domain") as? String {
 			self.untrustDomain(domain: d)
 			reloadContentBlocker()
 		}
@@ -173,8 +171,7 @@ class ContentBlockerManager {
 	
 	@objc
 	private func tabDomainIsChanged() {
-		let d = UserDefaults(suiteName: Constants.AppsGroupID)
-		if let d = d?.value(forKey: "newDomain") as? String {
+		if let d = Preferences.getGlobalPreference(key: "newDomain") as? String {
 			if self.isTrustedDomain(domain: d) {
 				loadDummyCB()
 				return

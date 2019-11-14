@@ -21,7 +21,7 @@ class Preferences: NSObject {
 	
 	/// Is this the first launch of the application?
 	class func isAppFirstLaunch() -> Bool {
-		return !(self.getAppPreference(key: Preferences.appFirstLaunchKey) != nil)
+		return !self.getAppPreference(key: Preferences.appFirstLaunchKey)
 	}
 	
 	/// Set preferences to track the initial application launch
@@ -33,6 +33,12 @@ class Preferences: NSObject {
 	/// - Parameter key: Preference key
 	class func getAppPreference(key: String) -> Any? {
 		return UserDefaults.standard.value(forKey: key)
+	}
+	
+	/// Get a local user preference for the application, returned as a Bool
+	/// - Parameter key: Preference key
+	class func getAppPreference(key: String) -> Bool {
+		return UserDefaults.standard.bool(forKey: key)
 	}
 	
 	/// Set a local user preference for the application

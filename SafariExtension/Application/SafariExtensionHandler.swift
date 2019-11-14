@@ -34,9 +34,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 	override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
 		TelemetryManager.shared.sendSignal(.active, ghostrank: 2)
 		handleTabUrlChange(window) { (url) in
-			let d = UserDefaults(suiteName: Constants.AppsGroupID)
-			d?.set(url?.normalizedHost ?? "", forKey: "newDomain")
-			d?.synchronize()
+			Preferences.setGlobalPreference(key: "newDomain", value: url?.normalizedHost ?? "")
 		}
 		validationHandler(true, "")
 	}
