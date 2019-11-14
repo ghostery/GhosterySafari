@@ -3,15 +3,10 @@ use_frameworks!
 
 target 'GhosteryLite' do
 	pod 'Alamofire', '~> 4.7.3'
-	pod 'RealmSwift'
-end
-
-target 'ContentBlocker' do
-	pod 'Alamofire', '~> 4.7.3'
-	pod 'RealmSwift'
+	pod 'RealmSwift', '~> 4.1.0'
 end
 
 target 'SafariExtension' do
 	pod 'Alamofire', '~> 4.7.3'
-	pod 'RealmSwift'
+	pod 'RealmSwift', '~> 4.1.0'
 end
