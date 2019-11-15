@@ -49,8 +49,6 @@ class MenuViewController: NSViewController {
 	
 }
 
-// MARK:- Collection view data source
-// MARK:-
 extension MenuViewController : NSCollectionViewDataSource {
 	
 	// Section Header Count
@@ -76,8 +74,6 @@ extension MenuViewController : NSCollectionViewDataSource {
 	}
 }
 
-// MARK:- Collection view delegate
-// MARK:-
 extension MenuViewController : NSCollectionViewDelegate {
 	func collectionView(_ collectionView: NSCollectionView,
 						didSelectItemsAt indexPaths: Set<IndexPath>) {

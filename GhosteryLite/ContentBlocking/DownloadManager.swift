@@ -1,5 +1,5 @@
 //
-// FileDownloader
+// DownloadManager
 // GhosteryLite
 //
 // Ghostery Lite for Safari
@@ -15,12 +15,12 @@
 import Foundation
 import Alamofire
 
-final class FileDownloader {
+final class DownloadManager {
 	
-	static let shared = FileDownloader()
+	static let shared = DownloadManager()
 	
-	/// Custom error for FileDownloader
-	private enum FileDownloaderError: Error {
+	/// Custom error for DownloadManager
+	private enum DownloadManagerError: Error {
 		case invalidFileUrl
 	}
 
@@ -28,18 +28,18 @@ final class FileDownloader {
 	/// - Parameter completion: Callback handler
 	func downloadGhosteryVersionFile(completion: @escaping (Error?, Any?) -> Void) {
 		guard let url = URL(string: self.getGhosteryVersionPath()) else {
-			completion(FileDownloaderError.invalidFileUrl, nil)
+			completion(DownloadManagerError.invalidFileUrl, nil)
 			return
 		}
 		Alamofire.request(url)
 			.validate()
 			.responseJSON { (response) in
 				guard response.result.isSuccess else {
-					print("FileDownloader.downloadGhosteryVersionFile error: \(String(describing: response.result.error))")
+					print("DownloadManager.downloadGhosteryVersionFile error: \(String(describing: response.result.error))")
 					completion(response.result.error, nil)
 					return
 				}
-				print("FileDownloader.downloadGhosteryVersionFile: Successfully downloaded Ghostery version file.")
+				print("DownloadManager.downloadGhosteryVersionFile: Successfully downloaded Ghostery version file.")
 				completion(nil, response.result.value)
 		}
 	}
@@ -49,7 +49,7 @@ final class FileDownloader {
 	func downloadCliqzVersionFile(completion: @escaping (Error?, Any?) -> Void) {
 		let urlString = "https://cdn.cliqz.com/adblocker/configs/safari-ads/allowed-lists.json"
 		guard let url = URL(string: urlString ) else {
-			completion(FileDownloaderError.invalidFileUrl, nil)
+			completion(DownloadManagerError.invalidFileUrl, nil)
 			return
 		}
 		
@@ -57,11 +57,11 @@ final class FileDownloader {
 			.validate()
 			.responseJSON { (response) in
 				guard response.result.isSuccess else {
-					print("FileDownloader.downloadCliqzVersionFile error: \(String(describing: response.result.error))")
+					print("DownloadManager.downloadCliqzVersionFile error: \(String(describing: response.result.error))")
 					completion(response.result.error, nil)
 					return
 				}
-				print("FileDownloader.downloadCliqzVersionFile: Successfully downloaded Cliqz version file.")
+				print("DownloadManager.downloadCliqzVersionFile: Successfully downloaded Cliqz version file.")
 				completion(nil, response.result.value)
 		}
 	}
@@ -74,7 +74,7 @@ final class FileDownloader {
 	func downloadBlockList(_ fileName: String, _ listUrl: String, completion: @escaping (Error?, Data?) -> Void) {
 		let urlString = (listUrl.isEmpty) ? "\(self.getGhosteryAssetPath())/\(fileName)" : listUrl
 		guard let url = URL(string: urlString ) else {
-			completion(FileDownloaderError.invalidFileUrl, nil)
+			completion(DownloadManagerError.invalidFileUrl, nil)
 			return
 		}
 		
@@ -82,11 +82,11 @@ final class FileDownloader {
 			.validate()
 			.response { response in
 				if let err = response.error {
-					print("FileDownloader.downloadBlockList: \(fileName) download failed: \(err)")
+					print("DownloadManager.downloadBlockList: \(fileName) download failed: \(err)")
 					completion(err, nil)
 					return
 				}
-				print("FileDownloader.downloadBlockList: Successfully downloaded \(fileName)")
+				print("DownloadManager.downloadBlockList: Successfully downloaded \(fileName)")
 				completion(nil, response.data)
 		}
 	}

@@ -20,10 +20,10 @@
 		0D3FBB04235F74940054822A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3FBB00235F70030054822A /* Cocoa.framework */; };
 		0D3FBB2C2360B4FE0054822A /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D3FBB2E2360B4FE0054822A /* SafariExtensionViewController.xib */; };
 		0D3FBB312360B5320054822A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D3FBB332360B5320054822A /* Main.storyboard */; };
-		0D5230B22371CB51007A7508 /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5230B12371CB51007A7508 /* FileDownloader.swift */; };
+		0D5230B22371CB51007A7508 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5230B12371CB51007A7508 /* DownloadManager.swift */; };
 		0D5230B42371CCD8007A7508 /* CategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5230B32371CCD8007A7508 /* CategoryType.swift */; };
 		0D5230B52371D129007A7508 /* CategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5230B32371CCD8007A7508 /* CategoryType.swift */; };
-		0D5230B62371D136007A7508 /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5230B12371CB51007A7508 /* FileDownloader.swift */; };
+		0D5230B62371D136007A7508 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5230B12371CB51007A7508 /* DownloadManager.swift */; };
 		0D588E82235E46870003668C /* PageLatencyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D588E81235E46870003668C /* PageLatencyDataSource.swift */; };
 		0D588E84235E4C2F0003668C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0D588E83235E4C2F0003668C /* Fonts */; };
 		0D588E85235E4C2F0003668C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0D588E83235E4C2F0003668C /* Fonts */; };
@@ -141,7 +141,7 @@
 		0D3FBB05235F99450054822A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0D3FBB2D2360B4FE0054822A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		0D3FBB322360B5320054822A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0D5230B12371CB51007A7508 /* FileDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloader.swift; sourceTree = "<group>"; };
+		0D5230B12371CB51007A7508 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		0D5230B32371CCD8007A7508 /* CategoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryType.swift; sourceTree = "<group>"; };
 		0D588D9B235E3FBB0003668C /* GhosteryLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhosteryLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D588D9C235E3FBB0003668C /* SafariExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SafariExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -658,7 +658,7 @@
 				4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */,
 				0D5230B32371CCD8007A7508 /* CategoryType.swift */,
 				4F3049B3211C6D3200BA3961 /* ContentBlockerManager.swift */,
-				0D5230B12371CB51007A7508 /* FileDownloader.swift */,
+				0D5230B12371CB51007A7508 /* DownloadManager.swift */,
 				4F90DD80214BD74F00E8BA6D /* WhiteListFileManager.swift */,
 			);
 			path = ContentBlocking;
@@ -959,7 +959,7 @@
 				0D02796B2363826C007D5F66 /* NSApplicationExtension.swift in Sources */,
 				4F9CF8E3215BCD97005B1C1B /* TelemetryManager.swift in Sources */,
 				1E14B73D21369F5400E28C38 /* StringExtension.swift in Sources */,
-				0D5230B22371CB51007A7508 /* FileDownloader.swift in Sources */,
+				0D5230B22371CB51007A7508 /* DownloadManager.swift in Sources */,
 				0D5230B42371CCD8007A7508 /* CategoryType.swift in Sources */,
 				4F931A1521259BEC00AF4226 /* DomainConfigRepository.swift in Sources */,
 				1E597C2D2133F8170098631F /* DetailViewController.swift in Sources */,
@@ -1016,7 +1016,7 @@
 				4FB1E6D7213EBF5300136D2A /* StringExtension.swift in Sources */,
 				0DDCFF80236666DA009481D4 /* GlobalConfigDataSource.swift in Sources */,
 				4F931A262126C95A00AF4226 /* Constants.swift in Sources */,
-				0D5230B62371D136007A7508 /* FileDownloader.swift in Sources */,
+				0D5230B62371D136007A7508 /* DownloadManager.swift in Sources */,
 				0DDCFF8223666737009481D4 /* GlobalConfigRepository.swift in Sources */,
 				0DDCFF7F236666B7009481D4 /* BlockListFileManager.swift in Sources */,
 				0DDCFF84236667A7009481D4 /* RealmRepository.swift in Sources */,

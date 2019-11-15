@@ -101,8 +101,6 @@ class TrustedSitesViewController: NSViewController {
 	}
 }
 
-// MARK:- Collection view data source
-// MARK:-
 extension TrustedSitesViewController : NSCollectionViewDataSource {
 	// Section Header Count
 	func numberOfSections(in collectionView: NSCollectionView) -> Int {
@@ -138,8 +136,6 @@ extension TrustedSitesViewController: TrustedSiteItemDelegate {
 	}
 }
 
-// MARK:- Collection view delegate
-// MARK:-
 extension TrustedSitesViewController : NSCollectionViewDelegate {
 	func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
 		

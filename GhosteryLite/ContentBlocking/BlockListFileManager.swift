@@ -33,7 +33,7 @@ final class BlockListFileManager {
 		group.enter()
 		DispatchQueue.main.async(group: group) {
 			print("BlockListFileManager.updateBlockLists: Checking for Ghostery block list updates")
-			FileDownloader.shared.downloadGhosteryVersionFile(completion: { (err, json) in
+			DownloadManager.shared.downloadGhosteryVersionFile(completion: { (err, json) in
 				if let blockListVersion = self.getGhosteryVersionNumber(json, key: Constants.GhosteryBlockListVersionKey) {
 					// TODO: Check version numbers for each individual category file, rather than updating all categories if the master list version has changed
 					if self.isGhosteryBlockListVersionChanged(blockListVersion, Constants.GhosteryBlockListVersionKey) {
@@ -65,7 +65,7 @@ final class BlockListFileManager {
 		group.enter()
 		DispatchQueue.main.async(group: group) {
 			print("BlockListFileManager.updateBlockLists: Checking for Cliqz block list updates")
-			FileDownloader.shared.downloadCliqzVersionFile(completion: { (err, json) in
+			DownloadManager.shared.downloadCliqzVersionFile(completion: { (err, json) in
 				if let jsonData = json as? [String: Any], let safariObj = jsonData["safari"] as? [String: Any], let networkList = safariObj["network"] as? String, let cosmeticList = safariObj["cosmetic"] as? String {
 					// Get the checksum value from the URL path
 					let networkChecksum = self.getCliqzChecksum(networkList)
@@ -166,7 +166,7 @@ final class BlockListFileManager {
 	///   - folder: The folder location in Group Containers
 	///   - done: Callback handler
 	private func downloadAndSaveFile(_ fileName: String, _ listUrl: String, _ folder: URL?, done: @escaping () -> ()) {
-		FileDownloader.shared.downloadBlockList(fileName, listUrl) { (err, data) in
+		DownloadManager.shared.downloadBlockList(fileName, listUrl) { (err, data) in
 			if let e = err {
 				print("BlockListFileManager.downloadAndSaveFile: \(fileName) file download failed: \(e)")
 			}
