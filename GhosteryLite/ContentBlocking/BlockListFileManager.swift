@@ -19,6 +19,12 @@ final class BlockListFileManager {
 	static let shared = BlockListFileManager()
 	private let cliqzNetworkListChecksum = "cliqzNetworkListChecksum"
 	private let cliqzCosmeticListChecksum = "cliqzCosmeticListChecksum"
+	private struct ghosteryVersionData: Decodable {
+		var safariContentBlockerVersion: Int
+	}
+	private struct clizVersionData: Decodable {
+		let network, cosmetic: String
+	}
 	
 	init() {}
 	
@@ -32,70 +38,77 @@ final class BlockListFileManager {
 		group.enter()
 		DispatchQueue.main.async(group: group) {
 			print("BlockListFileManager.updateBlockLists: Checking for Ghostery block list updates")
-			DownloadManager.shared.downloadGhosteryVersionFile(completion: { (err, json) in
-				if let blockListVersion = self.getGhosteryVersionNumber(json, key: Constants.GhosteryBlockListVersionKey) {
-					// TODO: Check version numbers for each individual category file, rather than updating all categories if the master list version has changed
-					if self.isGhosteryBlockListVersionChanged(blockListVersion, Constants.GhosteryBlockListVersionKey) {
-						group.enter()
-						// Update the complete block list file
-						self.downloadAndSaveFile("safariContentBlocker", "", Constants.AssetsFolderURL) { () in
-							Preferences.setGlobalPreference(key: Constants.GhosteryBlockListVersionKey, value: blockListVersion)
-							updated = true
-							group.leave()
-						}
-						
-						// Update category block list files
-						for type in CategoryType.allCases() {
+			DownloadManager.shared.getJSON(url: Constants.GhosteryAssetPath) { (completion: Result<ghosteryVersionData, DownloadManager.DownloadManagerError>) in
+				switch completion {
+					case .success(let versionData):
+						let blockListVersion = versionData.safariContentBlockerVersion
+						// TODO: Check version numbers for each individual category file, rather than updating all categories if the master list version has changed
+						if self.isGhosteryBlockListVersionChanged(blockListVersion, Constants.GhosteryBlockListVersionKey) {
 							group.enter()
-							self.downloadAndSaveFile(type.fileName(), "", Constants.AssetsFolderURL) { () in
+							// Update the complete block list file
+							self.downloadAndSaveFile("safariContentBlocker", Constants.GhosteryAssetPath + "/safariContentBlocker", Constants.AssetsFolderURL) { () in
+								Preferences.setGlobalPreference(key: Constants.GhosteryBlockListVersionKey, value: blockListVersion)
 								updated = true
 								group.leave()
 							}
+							
+							// Update category block list files
+							for type in CategoryType.allCases() {
+								group.enter()
+								self.downloadAndSaveFile(type.fileName(), Constants.GhosteryAssetPath + type.fileName(), Constants.AssetsFolderURL) { () in
+									updated = true
+									group.leave()
+								}
+							}
+						} else {
+							print("BlockListFileManager.updateBlockLists: No Ghostery block list updates available.")
 						}
-					} else {
-						print("BlockListFileManager.updateBlockLists: No Ghostery block list updates available.")
-					}
+					case .failure(let error):
+						print("BlockListFileManager.updateBlockLists error: \(error.localizedDescription)")
 				}
 				group.leave()
-			})
+			}
 		}
 		
 		// Fetch Cliqz ad block lists
 		group.enter()
 		DispatchQueue.main.async(group: group) {
 			print("BlockListFileManager.updateBlockLists: Checking for Cliqz block list updates")
-			DownloadManager.shared.downloadCliqzVersionFile(completion: { (err, json) in
-				if let jsonData = json as? [String: Any], let safariObj = jsonData["safari"] as? [String: Any], let networkList = safariObj["network"] as? String, let cosmeticList = safariObj["cosmetic"] as? String {
-					// Get the checksum value from the URL path
-					let networkChecksum = self.getCliqzChecksum(networkList)
-					let cosmeticChecksum = self.getCliqzChecksum(cosmeticList)
-					
-					if self.isCliqzBlockListChecksumChanged(networkChecksum, self.cliqzNetworkListChecksum) {
-						group.enter()
-						// Update the Cliqz network block list file
-						self.downloadAndSaveFile("cliqzNetworkList", networkList, Constants.AssetsFolderURL) { () in
-							Preferences.setGlobalPreference(key: self.cliqzNetworkListChecksum, value: networkChecksum)
-							updated = true
-							group.leave()
+			DownloadManager.shared.getJSON(url: Constants.CliqzVersionPath) { (completion: Result<clizVersionData, DownloadManager.DownloadManagerError>) in
+				switch completion {
+					case .success(let versionData):
+						// Get the checksum value from the URL path
+						let networkChecksum = self.getCliqzChecksum(versionData.network)
+						let cosmeticChecksum = self.getCliqzChecksum(versionData.cosmetic)
+						
+						if self.isCliqzBlockListChecksumChanged(networkChecksum, self.cliqzNetworkListChecksum) {
+							group.enter()
+							// Update the Cliqz network block list file
+							self.downloadAndSaveFile("cliqzNetworkList", versionData.network, Constants.AssetsFolderURL) { () in
+								Preferences.setGlobalPreference(key: self.cliqzNetworkListChecksum, value: networkChecksum)
+								updated = true
+								group.leave()
+							}
+						} else {
+							print("BlockListFileManager.updateBlockLists: No Cliqz network filter list update available.")
 						}
-					} else {
-						print("BlockListFileManager.updateBlockLists: No Cliqz network filter list update available.")
+						
+						if self.isCliqzBlockListChecksumChanged(cosmeticChecksum, self.cliqzCosmeticListChecksum) {
+							group.enter()
+							// Update the Cliqz cosmetic block list file
+							self.downloadAndSaveFile("cliqzCosmeticList", versionData.cosmetic, Constants.AssetsFolderURL) { () in
+								Preferences.setGlobalPreference(key: self.cliqzCosmeticListChecksum, value: cosmeticChecksum)
+								updated = true
+								group.leave()
+							}
+						} else {
+							print("BlockListFileManager.updateBlockLists: No Cliqz cosmetic filter list update available.")
 					}
-					
-					if self.isCliqzBlockListChecksumChanged(cosmeticChecksum, self.cliqzCosmeticListChecksum) {
-						group.enter()
-						// Update the Cliqz cosmetic block list file
-						self.downloadAndSaveFile("cliqzCosmeticList", cosmeticList, Constants.AssetsFolderURL) { () in
-							Preferences.setGlobalPreference(key: self.cliqzCosmeticListChecksum, value: cosmeticChecksum)
-							updated = true
-							group.leave()
-						}
-					} else {
-						print("BlockListFileManager.updateBlockLists: No Cliqz cosmetic filter list update available.")
-					}
+					case .failure(let error):
+						print("BlockListFileManager.updateBlockLists error: \(error.localizedDescription)")
 				}
 				group.leave()
-			})
+			}
 		}
 		
 		group.notify(queue: .main) {
@@ -158,35 +171,24 @@ final class BlockListFileManager {
 		return true
 	}
 	
-	/// Download block list json file and save to Group Container directory
+	/// Download block list json data and save to Group Container directory
 	/// - Parameters:
-	///   - fileName: The name of the json file
-	///   - listType: The type of list (Cliqz or Ghostery)
+	///   - fileName: The name of the json file to write to disk
+	///   - listUrl: The URL of the list to download
 	///   - folder: The folder location in Group Containers
 	///   - done: Callback handler
 	private func downloadAndSaveFile(_ fileName: String, _ listUrl: String, _ folder: URL?, done: @escaping () -> ()) {
-		DownloadManager.shared.downloadBlockList(fileName, listUrl) { (err, data) in
-			if let e = err {
-				print("BlockListFileManager.downloadAndSaveFile: \(fileName) file download failed: \(e)")
-			}
-			if let d = data {
-				// print("BlockListFileManager.downloadAndSaveFile: \(fileName)")
-				FileManager.default.writeFile(d, name: "\(fileName).json", in: folder)
+		DownloadManager.shared.getJSONData(url: listUrl) { (completion: Result<Data, DownloadManager.DownloadManagerError>) in
+			switch completion {
+				case .success(let jsonData):
+					// print("BlockListFileManager.downloadAndSaveFile: \(fileName)")
+					FileManager.default.writeFile(jsonData, name: "\(fileName).json", in: folder)
+				case .failure(let error):
+					print("BlockListFileManager.downloadAndSaveFile: \(fileName) file download failed: \(error.localizedDescription)")
 			}
 			done()
 		}
 	}
-	
-	/// Get the Ghostery block list version number from JSON
-	/// - Parameter json: The json data to scan
-	/// - Parameter key: The key where the version resides
-	private func getGhosteryVersionNumber(_ json: Any?, key: String) -> Int? {
-		if let jsonData = json as? [String: Any] {
-			return jsonData[key] as? Int
-		}
-		return nil
-	}
-	
 	
 	/// Extract the block list checksum from the list URL
 	/// - Parameter listURL: The block list URL

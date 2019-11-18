@@ -26,6 +26,20 @@ struct Constants {
 	static let GroupStorageFolderURL: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
 	static let AssetsFolderURL: URL? = Constants.GroupStorageFolderURL?.appendingPathComponent(Constants.BlockListAssetsFolder, isDirectory: true)
 	static let GhosteryBlockListVersionKey = "safariContentBlockerVersion"
+
+	#if PROD
+	static let GhosteryAssetPath = "https://cdn.ghostery.com/update/safari"
+	#else
+	static let GhosteryAssetPath = "https://staging-cdn.ghostery.com/update/safari"
+	#endif
+	
+	#if PROD
+	static let GhosteryVersionPath = "https://cdn.ghostery.com/update/version"
+	#else
+	static let GhosteryVersionPath = "https://staging-cdn.ghostery.com/update/version"
+	#endif
+
+	static let CliqzVersionPath = "https://cdn.cliqz.com/adblocker/configs/safari-ads/allowed-lists.json"
 	
 	static let PauseNotificationName = Notification.Name(rawValue: "GhosteryIsPaused")
 	static let ResumeNotificationName = Notification.Name(rawValue: "GhosteryIsResumed")
