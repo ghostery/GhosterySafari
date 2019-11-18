@@ -13,7 +13,6 @@
 //
 
 extension Array {
-	
 	public func groupBy<B:Hashable>(key: (Element) -> B) -> Dictionary<B, [Element]>{
 		var dict: Dictionary<B, [Element]> = [:]
 		

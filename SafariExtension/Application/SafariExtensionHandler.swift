@@ -16,7 +16,7 @@ import SafariServices
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
 	/// This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
-	override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
+	override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String: Any]?) {
 		if messageName == "recordPageInfo" {
 			page.getPropertiesWithCompletionHandler { (properties) in
 				if let ui = userInfo,

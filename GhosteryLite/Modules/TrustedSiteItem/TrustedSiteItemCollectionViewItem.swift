@@ -14,17 +14,16 @@
 
 import Cocoa
 
-protocol TrustedSiteItemDelegate: class {
-	func trustedSiteDidRemove(indexPath: IndexPath, url: String)
-}
-
 class TrustedSiteItemCollectionViewItem: NSCollectionViewItem {
 	
 	weak var delegate: TrustedSiteItemDelegate?
+	private var indexPath: IndexPath!
 	
 	@IBOutlet weak var siteLbl: NSTextField!
 	
-	private var indexPath: IndexPath!
+	@IBAction func removeTrustedSite(_ sender: Any) {
+		self.delegate?.trustedSiteDidRemove(indexPath: self.indexPath, url: self.siteLbl.stringValue)
+	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -34,9 +33,5 @@ class TrustedSiteItemCollectionViewItem: NSCollectionViewItem {
 	func update(_ url: String, for indexPath: IndexPath?) {
 		self.siteLbl.attributedStringValue = url.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14, fontColor: NSColor.panelTextColor())
 		self.indexPath = indexPath
-	}
-	
-	@IBAction func removeTrustedSite(_ sender: Any) {
-		self.delegate?.trustedSiteDidRemove(indexPath: self.indexPath, url: self.siteLbl.stringValue)
 	}
 }

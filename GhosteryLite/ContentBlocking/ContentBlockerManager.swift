@@ -19,7 +19,6 @@ import RealmSwift
 class ContentBlockerManager {
 	
 	static let shared = ContentBlockerManager()
-	
 	private var paused: Bool = false
 	
 	init() {

@@ -22,11 +22,6 @@ class HelpViewController: NSViewController {
 	@IBOutlet weak var blogBtn: NSButton!
 	@IBOutlet weak var faqBtn: NSButton!
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		initComponents()
-	}
-	
 	@IBAction func HelpLinkClicked(_ sender: NSButton) {
 		if sender == supportBtn {
 			openURL("https://www.ghostery.com/support/")
@@ -37,6 +32,11 @@ class HelpViewController: NSViewController {
 		} else if sender == faqBtn {
 			openURL("https://www.ghostery.com/faqs/product/ghostery-lite/")
 		}
+	}
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		initComponents()
 	}
 	
 	private func openURL(_ urlString: String) {

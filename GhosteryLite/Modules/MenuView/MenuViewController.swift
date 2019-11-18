@@ -14,10 +14,6 @@
 
 import Cocoa
 
-protocol MenuViewControllerDelegate {
-	func menuViewController(_ vc: MenuViewController, didSelectSectionItem item: MenuItem)
-}
-
 class MenuViewController: NSViewController {
 	
 	var delegate: MenuViewControllerDelegate? = nil
@@ -48,37 +44,3 @@ class MenuViewController: NSViewController {
 	}
 	
 }
-
-extension MenuViewController : NSCollectionViewDataSource {
-	
-	// Section Header Count
-	func numberOfSections(in collectionView: NSCollectionView) -> Int {
-		return 1
-	}
-	
-	// Section Item Count
-	func collectionView(_ collectionView: NSCollectionView,
-						numberOfItemsInSection section: Int) -> Int {
-		return self.items.count
-	}
-	
-	// Section Item
-	func collectionView(_ collectionView: NSCollectionView,
-						itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-		let itemView = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "MenuItemCollectionViewItem"), for: indexPath)
-		guard let sectionItemView = itemView as? MenuItemCollectionViewItem else { return itemView }
-		
-		let item = self.items[indexPath.item]
-		sectionItemView.update(item, for: indexPath)
-		return sectionItemView
-	}
-}
-
-extension MenuViewController : NSCollectionViewDelegate {
-	func collectionView(_ collectionView: NSCollectionView,
-						didSelectItemsAt indexPaths: Set<IndexPath>) {
-		let item = self.items[indexPaths.first!.item]
-		self.delegate?.menuViewController(self, didSelectSectionItem: item)
-	}
-}
-

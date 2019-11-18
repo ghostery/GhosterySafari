@@ -15,22 +15,13 @@
 import Cocoa
 import SafariServices
 
-protocol ModalViewControllerDelegate {
-	func hideSafariExtensionPopOver()
-}
-
 class ModalViewController: NSViewController {
+	
+	var delegate: ModalViewControllerDelegate? = nil
 	
 	@IBOutlet weak var enableGhosteryLiteText: NSTextField!
 	@IBOutlet weak var enableGhosteryLiteBtn: NSButton!
 	@IBOutlet weak var skipButton: NSButton!
-	
-	var delegate: ModalViewControllerDelegate? = nil
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		initComponents()
-	}
 	
 	@IBAction func enableGhosteryLite(_ sender: NSButton) {
 		self.delegate?.hideSafariExtensionPopOver()
@@ -42,9 +33,13 @@ class ModalViewController: NSViewController {
 		self.delegate?.hideSafariExtensionPopOver()
 	}
 	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		initComponents()
+	}
+	
 	private func initComponents() {
 		enableGhosteryLiteBtn.attributedTitle = enableGhosteryLiteBtn.title.attributedString(withTextAlignment: .center, fontName: "Roboto-Medium", fontSize: 14.0, fontColor: NSColor(rgb: 0xffffff), isUnderline: true)
-		
 		skipButton.attributedTitle = skipButton.title.attributedString(withTextAlignment: .center, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(rgb: 0x4a4a4a), isUnderline: true)
 	}
 }

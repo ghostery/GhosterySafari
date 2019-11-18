@@ -36,30 +36,7 @@ class SettingsViewController: NSViewController {
 	
 	@IBOutlet var savedBox: NSBox!
 	@IBOutlet var savedLabel: NSTextField!
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateRadioBoxesState), name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateRadioBoxesState), name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
-	}
-	
-	override func viewWillAppear() {
-		super.viewWillAppear()
-		setupComponents()
-		updateCategoryCheckboxStates()
-	}
-	
-	override var representedObject: Any? {
-		didSet {
-			// Update the view, if already loaded.
-		}
-	}
-	
-	deinit {
-		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
-	}
-	
+			
 	@IBAction func categoryPressed(sender: NSButton) {
 		var modifiedCat: CategoryType?
 		switch sender.tag {
@@ -102,6 +79,29 @@ class SettingsViewController: NSViewController {
 		self.defaultRadio.state = NSControl.StateValue(rawValue: 0)
 		self.categoryBox.isHidden = false
 		self.savedBox.isHidden = true
+	}
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateRadioBoxesState), name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateRadioBoxesState), name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
+	}
+	
+	override func viewWillAppear() {
+		super.viewWillAppear()
+		setupComponents()
+		updateCategoryCheckboxStates()
+	}
+	
+	override var representedObject: Any? {
+		didSet {
+			// Update the view, if already loaded.
+		}
+	}
+	
+	deinit {
+		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
 	}
 	
 	private func setupComponents() {
@@ -160,7 +160,7 @@ class SettingsViewController: NSViewController {
 		textParagraph.maximumLineHeight = 30.0
 		textParagraph.alignment = .left
 		let font = NSFont(name: "Roboto-Regular", size: 14) ?? NSFont.systemFont(ofSize: 14)
-		let attribs: [NSAttributedString.Key : Any] = [NSAttributedString.Key.font : font, NSAttributedString.Key.foregroundColor : textColor, NSAttributedString.Key.paragraphStyle : textParagraph]
+		let attribs: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: textColor, NSAttributedString.Key.paragraphStyle: textParagraph]
 		let str = "\(mainText) \(learnMoreText)"
 		let attrString: NSMutableAttributedString = NSMutableAttributedString.init(string: str, attributes: attribs)
 		let range = NSMakeRange(str.count - learnMoreText.count, learnMoreText.count)

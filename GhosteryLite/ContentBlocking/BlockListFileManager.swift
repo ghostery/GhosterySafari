@@ -17,7 +17,6 @@ import Foundation
 final class BlockListFileManager {
 	
 	static let shared = BlockListFileManager()
-
 	private let cliqzNetworkListChecksum = "cliqzNetworkListChecksum"
 	private let cliqzCosmeticListChecksum = "cliqzCosmeticListChecksum"
 	
@@ -113,7 +112,7 @@ final class BlockListFileManager {
 			// Build category lists into a single block list
 			for f in files {
 				if let url = Constants.AssetsFolderURL?.appendingPathComponent("\(f).json") {
-					let nextChunk: [[String:Any]]? = FileManager.default.readJsonFile(at: url)
+					let nextChunk: [[String: Any]]? = FileManager.default.readJsonFile(at: url)
 					if let n = nextChunk {
 						blockListJSON.append(contentsOf: n)
 					}

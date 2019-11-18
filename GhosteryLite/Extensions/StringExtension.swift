@@ -23,7 +23,7 @@ extension String {
 	/// - Parameter color: Font color
 	/// - Parameter isUnderline: Underline
 	/// - Parameter lineSpacing: Line spacing
-	func attributedString(withTextAlignment textAlignment : NSTextAlignment, fontName: String, fontSize size: CGFloat, fontColor color: NSColor, isUnderline: Bool = false, lineSpacing: CGFloat = 10.0) -> NSAttributedString {
+	func attributedString(withTextAlignment textAlignment: NSTextAlignment, fontName: String, fontSize size: CGFloat, fontColor color: NSColor, isUnderline: Bool = false, lineSpacing: CGFloat = 10.0) -> NSAttributedString {
 		guard let font:NSFont = NSFont(name: fontName, size: size) else {
 			return NSAttributedString.init(string: self)
 		}
@@ -34,10 +34,10 @@ extension String {
 		// this sets the MAXIMUM height of the lines to 12points
 		textParagraph.maximumLineHeight = 30.0
 		textParagraph.alignment = textAlignment
-		let attribs: [NSAttributedString.Key : Any] = [NSAttributedString.Key.font : font,
-													   NSAttributedString.Key.foregroundColor : textColor,
-													   NSAttributedString.Key.paragraphStyle : textParagraph,
-													   NSAttributedString.Key.underlineStyle : isUnderline ? NSUnderlineStyle.single.rawValue : 0]
+		let attribs: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font,
+													   NSAttributedString.Key.foregroundColor: textColor,
+													   NSAttributedString.Key.paragraphStyle: textParagraph,
+													   NSAttributedString.Key.underlineStyle: isUnderline ? NSUnderlineStyle.single.rawValue : 0]
 		let attrString:NSAttributedString = NSAttributedString.init(string: self, attributes: attribs)
 		return attrString
 	}

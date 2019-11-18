@@ -16,6 +16,8 @@ import Cocoa
 
 class TrustedSitesViewController: NSViewController {
 	
+	var trustedSites = [TrustedSiteObject]()
+	
 	@IBOutlet weak var trustedSitesTitle: NSTextField!
 	@IBOutlet weak var trustedSiteTextField: NSTextField!
 	@IBOutlet weak var trustSiteBtn: NSButton!
@@ -33,13 +35,11 @@ class TrustedSitesViewController: NSViewController {
 		if let newStr = regEx?.stringByReplacingMatches(in: str, options: [], range: NSMakeRange(0, str.count), withTemplate: "") {
 			self.errorMessageLabel.isHidden = true
 			ContentBlockerManager.shared.trustDomain(domain: newStr)
-			updateData()
+			self.updateData()
 		}
 		trustedSiteTextField.stringValue = ""
 		updateTrustBtnState(false)
 	}
-	
-	private var trustedSites = [TrustedSiteObject]()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -50,7 +50,7 @@ class TrustedSitesViewController: NSViewController {
 	
 	override func viewWillAppear() {
 		super.viewWillAppear()
-		updateData()
+		self.updateData()
 	}
 	
 	deinit {
@@ -58,8 +58,13 @@ class TrustedSitesViewController: NSViewController {
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
 	}
 	
+	func updateTrustBtnState(_ isEnabled: Bool) {
+		trustSiteBtn.isEnabled = isEnabled
+		trustSiteBtn.state = NSControl.StateValue(rawValue: isEnabled ? 1 : 0)
+	}
+	
 	@objc
-	private func updateData() {
+	func updateData() {
 		self.trustedSites = TrustedSitesDataSource.shared.allTrustedSites()
 		trustedStiesCollectionView.reloadData()
 	}
@@ -93,57 +98,5 @@ class TrustedSitesViewController: NSViewController {
 		}
 		host = String(url[..<(firstSlashRange?.lowerBound ?? url.endIndex)])
 		return host
-	}
-	
-	fileprivate func updateTrustBtnState(_ isEnabled: Bool) {
-		trustSiteBtn.isEnabled = isEnabled
-		trustSiteBtn.state = NSControl.StateValue(rawValue: isEnabled ? 1 : 0)
-	}
-}
-
-extension TrustedSitesViewController : NSCollectionViewDataSource {
-	// Section Header Count
-	func numberOfSections(in collectionView: NSCollectionView) -> Int {
-		return 1
-	}
-	
-	// Section Item Count
-	func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-		return self.trustedSites.count
-	}
-	
-	// Section Item
-	func collectionView(_ collectionView: NSCollectionView,
-						itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-		let trustedSiteItemCollectionView = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TrustedSiteItemCollectionViewItem"), for: indexPath)
-		guard let trustedSiteView = trustedSiteItemCollectionView as? TrustedSiteItemCollectionViewItem else {
-			return trustedSiteItemCollectionView
-		}
-		trustedSiteView.delegate = self
-		//TODO: update the cell with the actual data
-		let obj = self.trustedSites[indexPath.item]
-		if let n = obj.name {
-			trustedSiteView.update(n, for: indexPath)
-		}
-		return trustedSiteView
-	}
-}
-
-extension TrustedSitesViewController: TrustedSiteItemDelegate {
-	func trustedSiteDidRemove(indexPath: IndexPath, url: String) {
-		ContentBlockerManager.shared.untrustDomain(domain: self.trustedSites[indexPath.item].name ?? "")
-		updateData()
-	}
-}
-
-extension TrustedSitesViewController : NSCollectionViewDelegate {
-	func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
-		
-	}
-}
-
-extension TrustedSitesViewController: NSTextFieldDelegate {
-	func controlTextDidChange(_ obj: Notification) {
-		self.updateTrustBtnState(trustedSiteTextField.stringValue != "")
 	}
 }

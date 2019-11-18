@@ -15,7 +15,7 @@
 import Foundation
 import RealmSwift
 
-class RealmRepository<T, ID> : CrudRepository {
+class RealmRepository<T, ID>: CrudRepository {
 	
 	typealias T = Object
 	typealias ID = Int
@@ -42,7 +42,7 @@ class RealmRepository<T, ID> : CrudRepository {
 		return realm.object(ofType: Object.self, forPrimaryKey: id as Int)
 	}
 	
-	func findAll<T>() -> [T] where T : Object {
+	func findAll<T>() -> [T] where T: Object {
 		let realm = try! Realm()
 		
 		return Array(realm.objects(T.self))

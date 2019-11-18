@@ -15,7 +15,6 @@
 import Foundation
 
 extension FileManager {
-	
 	func readJsonFile<T>(at fileUrl: URL?) -> T? {
 		guard fileExists(atPath: (fileUrl?.path)!) else {
 			print("FileManager.readJsonFile: \(String(describing: fileUrl?.path)) does not exist")

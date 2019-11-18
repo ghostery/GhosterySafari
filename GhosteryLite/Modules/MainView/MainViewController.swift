@@ -16,9 +16,9 @@ import Cocoa
 
 class MainViewController: NSViewController {
 	
-	fileprivate var menuViewController: MenuViewController? = nil
-	fileprivate var detailViewController: DetailViewController? = nil
-	fileprivate var modalViewController: ModalViewController? = nil
+	var menuViewController: MenuViewController? = nil
+	var detailViewController: DetailViewController? = nil
+	var modalViewController: ModalViewController? = nil
 	
 	@IBOutlet weak var overlayView: NSBox!
 	@IBOutlet weak var liteLabel: NSTextField!
@@ -46,31 +46,4 @@ class MainViewController: NSViewController {
 			self.modalViewController?.delegate = self
 		}
 	}
-	
 }
-
-extension MainViewController : MenuViewControllerDelegate {
-	func menuViewController(_ vc: MenuViewController, didSelectSectionItem item: MenuItem) {
-		detailViewController?.switchToViewController(withStoryboardId: item.storyboardId)
-	}
-}
-
-extension MainViewController : DetailViewControllerDelegate {
-	func showSettingsPanel() {
-		self.menuViewController?.selectItem(menuItem: .settings)
-		// self.switchToViewController(withStoryboardId: MenuItem.settings.storyboardId)
-	}
-	
-	func showTrustedSitesPanel() {
-		self.menuViewController?.selectItem(menuItem: .trustedSites)
-		// self.switchToViewController(withStoryboardId: MenuItem.trustedSites.storyboardId)
-	}
-}
-
-extension MainViewController : ModalViewControllerDelegate {
-	func hideSafariExtensionPopOver() {
-		overlayView.isHidden = true
-		Preferences.firstLaunchFinished()
-	}
-}
-

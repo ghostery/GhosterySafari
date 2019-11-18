@@ -21,8 +21,10 @@ let buildVersionKey = "lastBuildVersion"
 
 class TelemetryManager {
 	
+	static let shared = TelemetryManager()
+	private let config: TelemetryService.Config
+	
 	enum Frequency: String {
-		
 		case daily = "daily"
 		case weekly = "weekly"
 		case monthly = "monthly"
@@ -42,11 +44,7 @@ class TelemetryManager {
 			}
 		}
 	}
-	
-	static let shared = TelemetryManager()
-	
-	private let config: TelemetryService.Config
-	
+
 	init() {
 		var id = Preferences.getGlobalPreference(key: installDateKey) as? String
 		if id == nil {

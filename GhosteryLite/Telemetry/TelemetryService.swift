@@ -16,7 +16,14 @@ import Foundation
 import Alamofire
 
 class TelemetryService {
-	
+
+	static let shared = TelemetryService()
+	#if PROD
+	private static let telemetryAPIURL = "https://d.ghostery.com"
+	#else
+	private static let telemetryAPIURL = "https://staging-d.ghostery.com"
+	#endif
+
 	enum SignalType: String {
 		case install = "install"
 		case upgrade = "upgrade"
@@ -26,7 +33,6 @@ class TelemetryService {
 	}
 	
 	struct Config {
-		
 		let os = "mac"
 		let userAgent = "gl"
 		let version: String
@@ -45,15 +51,7 @@ class TelemetryService {
 		let frequency: String
 		let ghostrank: Int?
 	}
-	
-	static let shared = TelemetryService()
-	
-	#if PROD
-	private static let telemetryAPIURL = "https://d.ghostery.com"
-	#else
-	private static let telemetryAPIURL = "https://staging-d.ghostery.com"
-	#endif
-	
+
 	func sendSignal(_ type: SignalType, config: Config, params: Params) {
 		let url = self.generateSignalURL(type, config: config, params: params)
 		Alamofire.request(url)

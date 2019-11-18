@@ -18,6 +18,8 @@ import SafariServices
 class SafariExtensionViewController: SFSafariExtensionViewController {
 
 	static let shared = SafariExtensionViewController()
+	private var isPaused = false
+	private static let CustomSettingsSelectedKey = "CustomSettingsSelectedOnce"
 
 	@IBOutlet weak var liteLabel: NSTextField!
 	@IBOutlet var pauseButton: NSButton!
@@ -41,10 +43,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBOutlet weak var popupCloseButton: NSButton!
 	@IBOutlet weak var topHorizontalLine: NSView!
 	@IBOutlet weak var middleHorizontalLine: NSView!
-	
-	private var isPaused = false
-
-	private static let CustomSettingsSelectedKey = "CustomSettingsSelectedOnce"
 
 	var currentDomain: String? {
 		didSet {

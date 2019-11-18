@@ -14,17 +14,12 @@
 
 import Cocoa
 
-protocol DetailViewControllerDelegate {
-	func showSettingsPanel()
-	func showTrustedSitesPanel()
-}
-
 class DetailViewController: NSViewController {
-	
-	@IBOutlet weak var container: NSView!
 	
 	var delegate: DetailViewControllerDelegate?
 	var viewControllers = [String: NSViewController]()
+	
+	@IBOutlet weak var container: NSView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()

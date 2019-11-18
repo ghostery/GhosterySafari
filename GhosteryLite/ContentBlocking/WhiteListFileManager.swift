@@ -21,9 +21,9 @@ class WhiteListFileManager {
 	func add(_ domain: String, completion: @escaping () -> Void) {
 		DispatchQueue.global(qos: .background).async {
 			let rule = self.prepareRule(domain)
-			let whitelist: [String : Any] = ["domain": domain, "active": self.canEnable(), "rule": rule]
+			let whitelist: [String: Any] = ["domain": domain, "active": self.canEnable(), "rule": rule]
 			
-			var whitelists: [[String:Any]]? = self.getAllRules() ?? []
+			var whitelists: [[String: Any]]? = self.getAllRules() ?? []
 			whitelists?.append(whitelist)
 			self.save(whitelists)
 			DispatchQueue.main.async {
@@ -34,7 +34,7 @@ class WhiteListFileManager {
 	
 	func remove(_ domain: String, completion: @escaping () -> Void) {
 		DispatchQueue.global(qos: .background).async {
-			let whitelists: [[String:Any]]? = self.getAllRules() ?? []
+			let whitelists: [[String: Any]]? = self.getAllRules() ?? []
 			let newWhitelists = whitelists?.filter({ (whitelist) -> Bool in
 				guard let nextDomain = whitelist["domain"] as? String else { return false }
 				return domain != nextDomain
@@ -46,7 +46,7 @@ class WhiteListFileManager {
 		}
 	}
 	
-	func getActiveWhitelistRules() -> [[String:Any]]? {
+	func getActiveWhitelistRules() -> [[String: Any]]? {
 		guard let whitelists = getAllRules() else { return [] }
 		let activeWhitelists = whitelists.filter { (whitelist) -> Bool in
 			return whitelist["active"] as? Bool ?? false
@@ -56,8 +56,8 @@ class WhiteListFileManager {
 		return activeWhitelists
 	}
 	
-	func getAllRules() -> [[String:Any]]? {
-		let whitelists: [[String:Any]]? = FileManager.default.readJsonFile(at: self.getWhitelistFilePath())
+	func getAllRules() -> [[String: Any]]? {
+		let whitelists: [[String: Any]]? = FileManager.default.readJsonFile(at: self.getWhitelistFilePath())
 		return whitelists
 	}
 	
@@ -65,7 +65,7 @@ class WhiteListFileManager {
 		return Constants.AssetsFolderURL?.appendingPathComponent("trustedSitesList.json")
 	}
 	
-	private func save(_ rules: [[String:Any]]?) {
+	private func save(_ rules: [[String: Any]]?) {
 		FileManager.default.writeJsonFile(at: self.getWhitelistFilePath(), with: rules)
 	}
 	

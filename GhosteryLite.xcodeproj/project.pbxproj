@@ -28,6 +28,13 @@
 		0D588E84235E4C2F0003668C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0D588E83235E4C2F0003668C /* Fonts */; };
 		0D588E85235E4C2F0003668C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0D588E83235E4C2F0003668C /* Fonts */; };
 		0D99D75C212EFC44005D107D /* page_performance.js in Resources */ = {isa = PBXBuildFile; fileRef = 0D99D75B212EFC44005D107D /* page_performance.js */; };
+		0DBA653D238315FB0011AAD3 /* DetailViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA653C238315FB0011AAD3 /* DetailViewControllerDelegate.swift */; };
+		0DBA653F238316BA0011AAD3 /* MainViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA653E238316BA0011AAD3 /* MainViewControllerExtension.swift */; };
+		0DBA6541238317BF0011AAD3 /* MenuViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA6540238317BF0011AAD3 /* MenuViewControllerDelegate.swift */; };
+		0DBA6543238317E70011AAD3 /* MenuViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA6542238317E70011AAD3 /* MenuViewControllerExtension.swift */; };
+		0DBA65452383184D0011AAD3 /* ModalViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA65442383184D0011AAD3 /* ModalViewControllerDelegate.swift */; };
+		0DBA6547238318A50011AAD3 /* TrustedSiteItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA6546238318A50011AAD3 /* TrustedSiteItemDelegate.swift */; };
+		0DBA6549238319530011AAD3 /* TrustedSitesViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA6548238319530011AAD3 /* TrustedSitesViewControllerExtension.swift */; };
 		0DD3BF7C236CCD2A00889C41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DD3BF7E236CCD2A00889C41 /* InfoPlist.strings */; };
 		0DD3BF81236CD09300889C41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DD3BF83236CD09300889C41 /* InfoPlist.strings */; };
 		0DD3BF86236CD20F00889C41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DD3BF88236CD20F00889C41 /* InfoPlist.strings */; };
@@ -150,6 +157,13 @@
 		0D588E83235E4C2F0003668C /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		0D588E88235E50B20003668C /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		0D99D75B212EFC44005D107D /* page_performance.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = page_performance.js; sourceTree = "<group>"; };
+		0DBA653C238315FB0011AAD3 /* DetailViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerDelegate.swift; sourceTree = "<group>"; };
+		0DBA653E238316BA0011AAD3 /* MainViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerExtension.swift; sourceTree = "<group>"; };
+		0DBA6540238317BF0011AAD3 /* MenuViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewControllerDelegate.swift; sourceTree = "<group>"; };
+		0DBA6542238317E70011AAD3 /* MenuViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewControllerExtension.swift; sourceTree = "<group>"; };
+		0DBA65442383184D0011AAD3 /* ModalViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewControllerDelegate.swift; sourceTree = "<group>"; };
+		0DBA6546238318A50011AAD3 /* TrustedSiteItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSiteItemDelegate.swift; sourceTree = "<group>"; };
+		0DBA6548238319530011AAD3 /* TrustedSitesViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSitesViewControllerExtension.swift; sourceTree = "<group>"; };
 		0DCADD5F235E5EE300F00AB4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0DD3BF7D236CCD2A00889C41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0DD3BF82236CD09300889C41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -353,9 +367,9 @@
 			isa = PBXGroup;
 			children = (
 				0D02795423626D52007D5F66 /* Cells */,
+				0D027976236538A8007D5F66 /* Localizable.strings */,
 				4F30493B2118983D00BA3961 /* SafariExtensionViewController.swift */,
 				0D3FBB2E2360B4FE0054822A /* SafariExtensionViewController.xib */,
-				0D027976236538A8007D5F66 /* Localizable.strings */,
 			);
 			path = ExtensionView;
 			sourceTree = "<group>";
@@ -420,6 +434,8 @@
 			isa = PBXGroup;
 			children = (
 				0D02796E23638C19007D5F66 /* MenuViewController.swift */,
+				0DBA6540238317BF0011AAD3 /* MenuViewControllerDelegate.swift */,
+				0DBA6542238317E70011AAD3 /* MenuViewControllerExtension.swift */,
 			);
 			path = MenuView;
 			sourceTree = "<group>";
@@ -428,6 +444,7 @@
 			isa = PBXGroup;
 			children = (
 				1E597C2C2133F8170098631F /* DetailViewController.swift */,
+				0DBA653C238315FB0011AAD3 /* DetailViewControllerDelegate.swift */,
 			);
 			path = DetailView;
 			sourceTree = "<group>";
@@ -461,9 +478,10 @@
 		0D02795E236342E4007D5F66 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				0D3FBB332360B5320054822A /* Main.storyboard */,
 				0DDCFF7B23660DBD009481D4 /* Localizable.strings */,
+				0D3FBB332360B5320054822A /* Main.storyboard */,
 				0D027968236374A2007D5F66 /* MainViewController.swift */,
+				0DBA653E238316BA0011AAD3 /* MainViewControllerExtension.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -480,6 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				1E14B752213819A800E28C38 /* TrustedSitesViewController.swift */,
+				0DBA6548238319530011AAD3 /* TrustedSitesViewControllerExtension.swift */,
 			);
 			path = TrustedSitesView;
 			sourceTree = "<group>";
@@ -489,6 +508,7 @@
 			children = (
 				1E14B7562138217800E28C38 /* TrustedSiteItemCollectionViewItem.swift */,
 				1E14B7572138217800E28C38 /* TrustedSiteItemCollectionViewItem.xib */,
+				0DBA6546238318A50011AAD3 /* TrustedSiteItemDelegate.swift */,
 			);
 			path = TrustedSiteItem;
 			sourceTree = "<group>";
@@ -505,6 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				1E597C492135682B0098631F /* ModalViewController.swift */,
+				0DBA65442383184D0011AAD3 /* ModalViewControllerDelegate.swift */,
 			);
 			path = ModalView;
 			sourceTree = "<group>";
@@ -964,9 +985,15 @@
 				4F931A1521259BEC00AF4226 /* DomainConfigRepository.swift in Sources */,
 				1E597C2D2133F8170098631F /* DetailViewController.swift in Sources */,
 				4FFD8351212C6C740038149F /* WindowController.swift in Sources */,
+				0DBA6549238319530011AAD3 /* TrustedSitesViewControllerExtension.swift in Sources */,
 				4F9CF8E1215BCD6A005B1C1B /* TelemetryService.swift in Sources */,
+				0DBA6541238317BF0011AAD3 /* MenuViewControllerDelegate.swift in Sources */,
 				0D02796D23638895007D5F66 /* MenuItemCollectionViewItem.swift in Sources */,
+				0DBA6547238318A50011AAD3 /* TrustedSiteItemDelegate.swift in Sources */,
+				0DBA6543238317E70011AAD3 /* MenuViewControllerExtension.swift in Sources */,
 				4F90DD81214BD75000E8BA6D /* WhiteListFileManager.swift in Sources */,
+				0DBA653D238315FB0011AAD3 /* DetailViewControllerDelegate.swift in Sources */,
+				0DBA65452383184D0011AAD3 /* ModalViewControllerDelegate.swift in Sources */,
 				4F3049A62119F4FC00BA3961 /* URLExtension.swift in Sources */,
 				4F83ABB12138586A00BC76E4 /* TrustedSitesDataSource.swift in Sources */,
 				0D027969236374A2007D5F66 /* MainViewController.swift in Sources */,
@@ -985,6 +1012,7 @@
 				4F3049212118982600BA3961 /* AppDelegate.swift in Sources */,
 				4FFD8314212B36BC0038149F /* FileManagerExtension.swift in Sources */,
 				1E597C4821354DE60098631F /* Preferences.swift in Sources */,
+				0DBA653F238316BA0011AAD3 /* MainViewControllerExtension.swift in Sources */,
 				0D02796F23638C19007D5F66 /* MenuViewController.swift in Sources */,
 				1E14B7582138217800E28C38 /* TrustedSiteItemCollectionViewItem.swift in Sources */,
 				4F931A172125AD6500AF4226 /* RealmRepository.swift in Sources */,
