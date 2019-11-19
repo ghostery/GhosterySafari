@@ -23,7 +23,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 					let latency = ui["latency"] as? String,
 					let url = ui["domain"] as? String,
 					url == properties?.url?.fullPath {
-					PageLatencyDataSource.shared.pageLoaded(url: url, latency: latency)
+					PageLatency.shared.pageLoaded(url: url, latency: latency)
 					SafariExtensionViewController.shared.updatePageLatency(url, latency)
 				}
 			}

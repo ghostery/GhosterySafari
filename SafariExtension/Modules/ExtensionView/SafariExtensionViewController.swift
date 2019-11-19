@@ -56,8 +56,8 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	var currentUrl: String? {
 		didSet {
 			DispatchQueue.main.async {
-				self.pageLatencyValueLabel?.stringValue = PageLatencyDataSource.shared.latencyFor(self.currentUrl ?? "")
-				let params = PageLatencyDataSource.shared.latencyImageAndOffset(self.currentUrl ?? "")
+				self.pageLatencyValueLabel?.stringValue = PageLatency.shared.latencyFor(self.currentUrl ?? "")
+				let params = PageLatency.shared.latencyImageAndOffset(self.currentUrl ?? "")
 				self.pageLatencyImage?.image = NSImage(named: params.0)
 				self.secondsLabelLeftOffset?.constant = params.1
 			}

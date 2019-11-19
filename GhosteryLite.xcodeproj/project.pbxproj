@@ -21,10 +21,10 @@
 		0D3FBB2C2360B4FE0054822A /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D3FBB2E2360B4FE0054822A /* SafariExtensionViewController.xib */; };
 		0D3FBB312360B5320054822A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D3FBB332360B5320054822A /* Main.storyboard */; };
 		0D5230B22371CB51007A7508 /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5230B12371CB51007A7508 /* HTTPService.swift */; };
-		0D5230B42371CCD8007A7508 /* CategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5230B32371CCD8007A7508 /* CategoryType.swift */; };
-		0D5230B52371D129007A7508 /* CategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5230B32371CCD8007A7508 /* CategoryType.swift */; };
+		0D5230B42371CCD8007A7508 /* BlockingCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5230B32371CCD8007A7508 /* BlockingCategories.swift */; };
+		0D5230B52371D129007A7508 /* BlockingCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5230B32371CCD8007A7508 /* BlockingCategories.swift */; };
 		0D5230B62371D136007A7508 /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5230B12371CB51007A7508 /* HTTPService.swift */; };
-		0D588E82235E46870003668C /* PageLatencyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D588E81235E46870003668C /* PageLatencyDataSource.swift */; };
+		0D588E82235E46870003668C /* PageLatency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D588E81235E46870003668C /* PageLatency.swift */; };
 		0D588E84235E4C2F0003668C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0D588E83235E4C2F0003668C /* Fonts */; };
 		0D588E85235E4C2F0003668C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0D588E83235E4C2F0003668C /* Fonts */; };
 		0D99D75C212EFC44005D107D /* page_performance.js in Resources */ = {isa = PBXBuildFile; fileRef = 0D99D75B212EFC44005D107D /* page_performance.js */; };
@@ -151,11 +151,11 @@
 		0D3FBB2D2360B4FE0054822A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		0D3FBB322360B5320054822A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D5230B12371CB51007A7508 /* HTTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
-		0D5230B32371CCD8007A7508 /* CategoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryType.swift; sourceTree = "<group>"; };
+		0D5230B32371CCD8007A7508 /* BlockingCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingCategories.swift; sourceTree = "<group>"; };
 		0D588D9B235E3FBB0003668C /* GhosteryLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhosteryLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D588D9C235E3FBB0003668C /* SafariExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SafariExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D588D9D235E3FBB0003668C /* ContentBlocker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentBlocker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D588E81235E46870003668C /* PageLatencyDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageLatencyDataSource.swift; sourceTree = "<group>"; };
+		0D588E81235E46870003668C /* PageLatency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageLatency.swift; sourceTree = "<group>"; };
 		0D588E83235E4C2F0003668C /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		0D588E88235E50B20003668C /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		0D99D75B212EFC44005D107D /* page_performance.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = page_performance.js; sourceTree = "<group>"; };
@@ -361,7 +361,7 @@
 		0D02795223624D82007D5F66 /* PageLatency */ = {
 			isa = PBXGroup;
 			children = (
-				0D588E81235E46870003668C /* PageLatencyDataSource.swift */,
+				0D588E81235E46870003668C /* PageLatency.swift */,
 			);
 			path = PageLatency;
 			sourceTree = "<group>";
@@ -581,6 +581,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		0D74B482238396220095E9C1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0D5230B12371CB51007A7508 /* HTTPService.swift */,
+				4F9CF8E0215BCD6A005B1C1B /* TelemetryService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		0DD3BF8A236CD80600889C41 /* .tx */ = {
 			isa = PBXGroup;
 			children = (
@@ -635,6 +644,7 @@
 				4F3049A02119F4FC00BA3961 /* Extensions */,
 				0D02795823632F84007D5F66 /* Modules */,
 				0D02795623632D9A007D5F66 /* Resources */,
+				0D74B482238396220095E9C1 /* Services */,
 				0D02795723632DA3007D5F66 /* SupportingFiles */,
 				4F9CF8DF215BCC84005B1C1B /* Telemetry */,
 				4F931A232126C8AF00AF4226 /* Utils */,
@@ -681,9 +691,8 @@
 			isa = PBXGroup;
 			children = (
 				4F3049AE211B36E800BA3961 /* BlockListFileManager.swift */,
-				0D5230B32371CCD8007A7508 /* CategoryType.swift */,
+				0D5230B32371CCD8007A7508 /* BlockingCategories.swift */,
 				4F3049B3211C6D3200BA3961 /* ContentBlockerManager.swift */,
-				0D5230B12371CB51007A7508 /* HTTPService.swift */,
 				4F90DD80214BD74F00E8BA6D /* WhiteListFileManager.swift */,
 			);
 			path = ContentBlocking;
@@ -713,7 +722,6 @@
 			isa = PBXGroup;
 			children = (
 				4F9CF8E2215BCD97005B1C1B /* TelemetryManager.swift */,
-				4F9CF8E0215BCD6A005B1C1B /* TelemetryService.swift */,
 			);
 			path = Telemetry;
 			sourceTree = "<group>";
@@ -986,7 +994,7 @@
 				0DBA654B238327D20011AAD3 /* URLSessionExtension.swift in Sources */,
 				1E14B73D21369F5400E28C38 /* StringExtension.swift in Sources */,
 				0D5230B22371CB51007A7508 /* HTTPService.swift in Sources */,
-				0D5230B42371CCD8007A7508 /* CategoryType.swift in Sources */,
+				0D5230B42371CCD8007A7508 /* BlockingCategories.swift in Sources */,
 				4F931A1521259BEC00AF4226 /* DomainConfigRepository.swift in Sources */,
 				1E597C2D2133F8170098631F /* DetailViewController.swift in Sources */,
 				4FFD8351212C6C740038149F /* WindowController.swift in Sources */,
@@ -1033,11 +1041,11 @@
 				4F9CF8E8215E57B9005B1C1B /* TelemetryService.swift in Sources */,
 				4FB1E6D8213EC6DC00136D2A /* NSColorExtension.swift in Sources */,
 				0DDCFF7E2366666D009481D4 /* Preferences.swift in Sources */,
-				0D588E82235E46870003668C /* PageLatencyDataSource.swift in Sources */,
+				0D588E82235E46870003668C /* PageLatency.swift in Sources */,
 				4F9CF8E7215E57B6005B1C1B /* TelemetryManager.swift in Sources */,
 				0DDCFF8323666792009481D4 /* FileManagerExtension.swift in Sources */,
 				4F30493C2118983D00BA3961 /* SafariExtensionViewController.swift in Sources */,
-				0D5230B52371D129007A7508 /* CategoryType.swift in Sources */,
+				0D5230B52371D129007A7508 /* BlockingCategories.swift in Sources */,
 				0DBA654C238327D20011AAD3 /* URLSessionExtension.swift in Sources */,
 				4F30493A2118983D00BA3961 /* SafariExtensionHandler.swift in Sources */,
 				4F931A1E2125D3F500AF4226 /* ContentBlockerManager.swift in Sources */,

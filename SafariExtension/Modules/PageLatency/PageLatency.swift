@@ -14,8 +14,8 @@
 
 import Foundation
 
-class PageLatencyDataSource {
-	static let shared = PageLatencyDataSource()
+class PageLatency {
+	static let shared = PageLatency()
 	var pageLatencies = [String: String]()
 
 	func pageLoaded(url: String, latency: String) {
