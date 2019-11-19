@@ -1,5 +1,5 @@
 //
-// TelemetryManager
+// Telemetry
 // GhosteryLite
 //
 // Ghostery Lite for Safari
@@ -19,9 +19,9 @@ let lastVersionKey = "lastVersion"
 let installRandKey = "installRand"
 let buildVersionKey = "lastBuildVersion"
 
-class TelemetryManager {
+class Telemetry {
 	
-	static let shared = TelemetryManager()
+	static let shared = Telemetry()
 	private let config: TelemetryService.Config
 	
 	enum Frequency: String {
@@ -48,9 +48,9 @@ class TelemetryManager {
 	init() {
 		var id = Preferences.getGlobalPreference(key: installDateKey) as? String
 		if id == nil {
-			id = TelemetryManager.formatDate(date: Date())
+			id = Telemetry.formatDate(date: Date())
 		}
-		self.config = TelemetryService.Config(version: Preferences.currentVersion(), installRand: TelemetryManager.getInstallRand(), installDate: id!)
+		self.config = TelemetryService.Config(version: Preferences.currentVersion(), installRand: Telemetry.getInstallRand(), installDate: id!)
 	}
 	
 	func sendSignal(_ type: TelemetryService.SignalType, ghostrank: Int? = nil) {

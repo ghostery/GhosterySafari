@@ -24,8 +24,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	/// Sent by the default notification center immediately before the application object is initialized.
 	func applicationWillFinishLaunching(_ notification: Notification) {
 		self.updateConfigState()
-		TelemetryManager.shared.sendSignal(.install)
-		TelemetryManager.shared.sendSignal(.upgrade)
+		Telemetry.shared.sendSignal(.install)
+		Telemetry.shared.sendSignal(.upgrade)
 	}
 	
 	/// Sent by the default notification center after the application has been launched and initialized but before it has received its first event.
@@ -47,7 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	/// Sent by the default notification center immediately after the application becomes active.
 	func applicationDidBecomeActive(_ notification: Notification) {
 		self.updateConfigState()
-		TelemetryManager.shared.sendSignal(.active, ghostrank: 3)
+		Telemetry.shared.sendSignal(.active, ghostrank: 3)
 	}
 	
 	/// Sent by the default notification center immediately before the application terminates.

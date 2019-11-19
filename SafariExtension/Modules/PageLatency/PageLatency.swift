@@ -1,5 +1,5 @@
 //
-// PageLoadingTime
+// PageLatency
 // SafariExtension
 //
 // Ghostery Lite for Safari
