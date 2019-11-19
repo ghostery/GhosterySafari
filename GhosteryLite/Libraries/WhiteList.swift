@@ -1,5 +1,5 @@
 //
-// WhiteListFileManager
+// WhiteList
 // GhosteryLite
 //
 // Ghostery Lite for Safari
@@ -14,9 +14,9 @@
 
 import Foundation
 
-class WhiteListFileManager {
+class WhiteList {
 	
-	static let shared: WhiteListFileManager = WhiteListFileManager()
+	static let shared: WhiteList = WhiteList()
 	
 	func add(_ domain: String, completion: @escaping () -> Void) {
 		DispatchQueue.global(qos: .background).async {

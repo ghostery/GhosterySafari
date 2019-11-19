@@ -1,5 +1,5 @@
 //
-// CategoryType
+// Categories
 // GhosteryLite
 //
 // Ghostery Lite for Safari
@@ -14,7 +14,7 @@
 
 import Foundation
 
-enum CategoryType: Int {
+enum Categories: Int {
 	case advertising
 	case audioVideoPlayer
 	case comments
@@ -52,7 +52,7 @@ enum CategoryType: Int {
 		}
 	}
 	
-	static func allCases() -> [CategoryType] {
+	static func allCases() -> [Categories] {
 		return [.advertising, .audioVideoPlayer, .comments, .customerInteraction, .essential, .pornvertising, .siteAnalytics, .socialMedia, .uncategorized]
 	}
 }

@@ -29,7 +29,7 @@ class DomainConfigObject: RealmSwift.Object {
 		return "name"
 	}
 	
-	func switchCategory(type: CategoryType, isOn: Bool) {
+	func switchCategory(type: Categories, isOn: Bool) {
 		if isOn && !blockedCategories.contains(type.rawValue) {
 			blockedCategories.append(type.rawValue)
 		}

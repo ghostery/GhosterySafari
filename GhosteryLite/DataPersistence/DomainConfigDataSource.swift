@@ -16,8 +16,8 @@ import Foundation
 
 class DomainConfigDataSource {
 	
-	func blockedCategories(forDomain name: String) -> [CategoryType] {
-		var result = [CategoryType]()
+	func blockedCategories(forDomain name: String) -> [Categories] {
+		var result = [Categories]()
 		if let config = DomainConfigRepository.shared.getDomainConfig(domainName: name) {
 			for i in config.blockedCategories {
 				if let c = CategoryType(rawValue: i) {
@@ -28,7 +28,7 @@ class DomainConfigDataSource {
 		return result
 	}
 	
-	func updateCategoriesConfig(forDomain name: String, category: CategoryType, block: Bool) {
+	func updateCategoriesConfig(forDomain name: String, category: Categories, block: Bool) {
 		if let config = DomainConfigRepository.shared.getDomainConfig(domainName: name) {
 			config.switchCategory(type: category, isOn: block)
 		}

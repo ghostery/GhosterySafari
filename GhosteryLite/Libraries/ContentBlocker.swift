@@ -65,7 +65,7 @@ class ContentBlockerManager {
 	
 	/// Check for updated block lists. Called from AppDelegate applicationDidFinishLaunching()
 	func checkForUpdatedBlockLists() {
-		BlockListFileManager.shared.updateBlockLists(done: { (updated) in
+		BlockListManager.shared.updateBlockLists(done: { (updated) in
 			// Did we download a new block list version?
 			if updated {
 				// Generate the new block list and reload the Content Blocker
@@ -91,14 +91,14 @@ class ContentBlockerManager {
 	
 	func trustDomain(domain: String) {
 		TrustedSitesDataSource.shared.addDomain(domain)
-		WhiteListFileManager.shared.add(domain, completion: {
+		WhiteList.shared.add(domain, completion: {
 			self.reloadContentBlocker()
 		})
 	}
 	
 	func untrustDomain(domain: String) {
 		TrustedSitesDataSource.shared.removeDomain(domain)
-		WhiteListFileManager.shared.remove(domain, completion: {
+		WhiteList.shared.remove(domain, completion: {
 			self.reloadContentBlocker()
 		})
 	}
@@ -187,7 +187,7 @@ class ContentBlockerManager {
 				loadDummyCB()
 				return
 			}
-			if config.blockedCategories.count == CategoryType.allCategoriesCount() {
+			if config.blockedCategories.count == Categories.allCategoriesCount() {
 				loadFullList()
 				return
 			}
@@ -228,7 +228,7 @@ class ContentBlockerManager {
 	/// - Parameter folderName: The name of the folder where the json files are located on disk
 	private func updateAndReloadBlockList(fileNames: [String], folderName: String) {
 		print("ContentBlockerManager.updateAndReloadBlockList: Generating new block list...")
-		BlockListFileManager.shared.generateCurrentBlockList(files: fileNames, folderName: folderName) {
+		BlockListManager.shared.generateCurrentBlockList(files: fileNames, folderName: folderName) {
 			print("ContentBlockerManager.updateAndReloadBlockList: Build phase complete")
 			self.reloadCBExtension()
 		}

@@ -30,21 +30,21 @@ class GlobalConfigObject: RealmSwift.Object {
 	convenience init(type: ConfigurationType) {
 		self.init()
 		configType.value = type.rawValue
-		blockedCategories.append(CategoryType.advertising.rawValue)
-		blockedCategories.append(CategoryType.audioVideoPlayer.rawValue)
-		blockedCategories.append(CategoryType.comments.rawValue)
-		blockedCategories.append(CategoryType.customerInteraction.rawValue)
-		blockedCategories.append(CategoryType.essential.rawValue)
-		blockedCategories.append(CategoryType.pornvertising.rawValue)
-		blockedCategories.append(CategoryType.siteAnalytics.rawValue)
-		blockedCategories.append(CategoryType.socialMedia.rawValue)
+		blockedCategories.append(Categories.advertising.rawValue)
+		blockedCategories.append(Categories.audioVideoPlayer.rawValue)
+		blockedCategories.append(Categories.comments.rawValue)
+		blockedCategories.append(Categories.customerInteraction.rawValue)
+		blockedCategories.append(Categories.essential.rawValue)
+		blockedCategories.append(Categories.pornvertising.rawValue)
+		blockedCategories.append(Categories.siteAnalytics.rawValue)
+		blockedCategories.append(Categories.socialMedia.rawValue)
 	}
 	
 	override static func primaryKey() -> String? {
 		return "id"
 	}
 	
-	func defaultBlockedCategories() -> [CategoryType] {
+	func defaultBlockedCategories() -> [Categories] {
 		return [.advertising, .siteAnalytics, .pornvertising]
 	}
 	
@@ -59,7 +59,7 @@ class GlobalConfigRepository: RealmRepository<GlobalConfigObject, String> {
 		return list.count > 0 ? list[0] : nil
 	}
 	
-	public func updateCategoryStatus(type: CategoryType, isOn: Bool) {
+	public func updateCategoryStatus(type: Categories, isOn: Bool) {
 		if let c = self.globalConfig() {
 			let realm = try! Realm()
 			if isOn && !c.blockedCategories.contains(type.rawValue) {

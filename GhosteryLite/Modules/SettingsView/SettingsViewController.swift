@@ -38,7 +38,7 @@ class SettingsViewController: NSViewController {
 	@IBOutlet var savedLabel: NSTextField!
 			
 	@IBAction func categoryPressed(sender: NSButton) {
-		var modifiedCat: CategoryType?
+		var modifiedCat: Categories?
 		switch sender.tag {
 			case 1:
 				modifiedCat = .advertising

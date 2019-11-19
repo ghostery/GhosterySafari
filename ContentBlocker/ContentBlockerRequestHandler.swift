@@ -24,8 +24,7 @@ class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
 		let attachment = NSItemProvider(contentsOf: p)
 		item.attachments = [attachment] as? [NSItemProvider]
 
-		context.completeRequest(returningItems: [item], completionHandler: {
-			(expired) -> Void in
+		context.completeRequest(returningItems: [item], completionHandler: { (expired) -> Void in
 			print("Successfully reloaded static block list. (Expired? \(expired))")
 		})
 	}
