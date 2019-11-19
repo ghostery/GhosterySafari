@@ -34,7 +34,7 @@ class TrustedSitesViewController: NSViewController {
 		let regEx = try? NSRegularExpression(pattern: "(^https?://)?(www\\.)?", options: .caseInsensitive)
 		if let newStr = regEx?.stringByReplacingMatches(in: str, options: [], range: NSMakeRange(0, str.count), withTemplate: "") {
 			self.errorMessageLabel.isHidden = true
-			ContentBlockerManager.shared.trustDomain(domain: newStr)
+			ContentBlocking.shared.trustDomain(domain: newStr)
 			self.updateData()
 		}
 		trustedSiteTextField.stringValue = ""

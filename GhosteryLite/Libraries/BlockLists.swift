@@ -1,5 +1,5 @@
 //
-// BlockListManager
+// BlockLists
 // GhosteryLite
 //
 // Ghostery Lite for Safari
@@ -14,9 +14,9 @@
 
 import Foundation
 
-class BlockListManager {
+class BlockLists {
 	
-	static let shared = BlockListManager()
+	static let shared = BlockLists()
 	private let cliqzNetworkListChecksum = "cliqzNetworkListChecksum"
 	private let cliqzCosmeticListChecksum = "cliqzCosmeticListChecksum"
 	private struct ghosteryVersionData: Decodable {
@@ -25,8 +25,6 @@ class BlockListManager {
 	private struct clizVersionData: Decodable {
 		let network, cosmetic: String
 	}
-	
-	init() {}
 	
 	/// Check for new Block List versions on CDN and trigger an update if a newer version exists
 	/// - Parameter done: callback handler
@@ -37,7 +35,7 @@ class BlockListManager {
 		// Fetch the Ghostery version file
 		group.enter()
 		DispatchQueue.main.async(group: group) {
-			print("BlockListManager.updateBlockLists: Checking for Ghostery block list updates")
+			print("BlockLists.updateBlockLists: Checking for Ghostery block list updates")
 			HTTPService.shared.getJSON(url: Constants.GhosteryAssetPath) { (completion: Result<ghosteryVersionData, HTTPService.HTTPServiceError>) in
 				switch completion {
 					case .success(let versionData):
@@ -61,10 +59,10 @@ class BlockListManager {
 								}
 							}
 						} else {
-							print("BlockListManager.updateBlockLists: No Ghostery block list updates available.")
+							print("BlockLists.updateBlockLists: No Ghostery block list updates available.")
 						}
 					case .failure(let error):
-						print("BlockListManager.updateBlockLists error: \(error.localizedDescription)")
+						print("BlockLists.updateBlockLists error: \(error.localizedDescription)")
 				}
 				group.leave()
 			}
@@ -73,7 +71,7 @@ class BlockListManager {
 		// Fetch Cliqz ad block lists
 		group.enter()
 		DispatchQueue.main.async(group: group) {
-			print("BlockListManager.updateBlockLists: Checking for Cliqz block list updates")
+			print("BlockLists.updateBlockLists: Checking for Cliqz block list updates")
 			HTTPService.shared.getJSON(url: Constants.CliqzVersionPath) { (completion: Result<clizVersionData, HTTPService.HTTPServiceError>) in
 				switch completion {
 					case .success(let versionData):
@@ -90,7 +88,7 @@ class BlockListManager {
 								group.leave()
 							}
 						} else {
-							print("BlockListManager.updateBlockLists: No Cliqz network filter list update available.")
+							print("BlockLists.updateBlockLists: No Cliqz network filter list update available.")
 						}
 						
 						if self.isCliqzBlockListChecksumChanged(cosmeticChecksum, self.cliqzCosmeticListChecksum) {
@@ -102,10 +100,10 @@ class BlockListManager {
 								group.leave()
 							}
 						} else {
-							print("BlockListManager.updateBlockLists: No Cliqz cosmetic filter list update available.")
+							print("BlockLists.updateBlockLists: No Cliqz cosmetic filter list update available.")
 					}
 					case .failure(let error):
-						print("BlockListManager.updateBlockLists error: \(error.localizedDescription)")
+						print("BlockLists.updateBlockLists error: \(error.localizedDescription)")
 				}
 				group.leave()
 			}
@@ -153,7 +151,7 @@ class BlockListManager {
 	/// - Parameter oldVersionKey The preference key where the old version number is stored
 	private func isGhosteryBlockListVersionChanged(_ newVersion: Int, _ oldVersionKey: String) -> Bool {
 		if let oldVersion = Preferences.getGlobalPreference(key: oldVersionKey) as? Int {
-			print("BlockListManager.isGhosteryBlockListVersionChanged: \(oldVersionKey) Old version \(oldVersion) New version \(newVersion)")
+			print("BlockLists.isGhosteryBlockListVersionChanged: \(oldVersionKey) Old version \(oldVersion) New version \(newVersion)")
 			return newVersion != oldVersion
 		}
 		return true
@@ -165,7 +163,7 @@ class BlockListManager {
 	///   - oldVersionKey: The preference key where the old checksum value is stored
 	private func isCliqzBlockListChecksumChanged(_ newVersion: String, _ oldVersionKey: String) -> Bool {
 		if let oldVersion = Preferences.getGlobalPreference(key: oldVersionKey) as? String {
-			print("BlockListManager.isCliqzBlockListChecksumChanged: \(oldVersionKey) Old version \(oldVersion) New version \(newVersion)")
+			print("BlockLists.isCliqzBlockListChecksumChanged: \(oldVersionKey) Old version \(oldVersion) New version \(newVersion)")
 			return newVersion != oldVersion
 		}
 		return true
@@ -181,10 +179,10 @@ class BlockListManager {
 		HTTPService.shared.getJSONData(url: listUrl) { (completion: Result<Data, HTTPService.HTTPServiceError>) in
 			switch completion {
 				case .success(let jsonData):
-					// print("BlockListManager.downloadAndSaveFile: \(fileName)")
+					// print("BlockLists.downloadAndSaveFile: \(fileName)")
 					FileManager.default.writeFile(jsonData, name: "\(fileName).json", in: folder)
 				case .failure(let error):
-					print("BlockListManager.downloadAndSaveFile: \(fileName) file download failed: \(error.localizedDescription)")
+					print("BlockLists.downloadAndSaveFile: \(fileName) file download failed: \(error.localizedDescription)")
 			}
 			done()
 		}

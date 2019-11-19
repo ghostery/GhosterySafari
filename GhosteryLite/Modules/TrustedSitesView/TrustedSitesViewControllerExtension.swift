@@ -43,7 +43,7 @@ extension TrustedSitesViewController: NSCollectionViewDataSource {
 
 extension TrustedSitesViewController: TrustedSiteItemDelegate {
 	func trustedSiteDidRemove(indexPath: IndexPath, url: String) {
-		ContentBlockerManager.shared.untrustDomain(domain: self.trustedSites[indexPath.item].name ?? "")
+		ContentBlocking.shared.untrustDomain(domain: self.trustedSites[indexPath.item].name ?? "")
 		self.updateData()
 	}
 }

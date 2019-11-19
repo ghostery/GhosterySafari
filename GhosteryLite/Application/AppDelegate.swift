@@ -41,7 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			self.handleInitialLaunch()
 		}
 		// Check for new Block Lists on CDN
-		ContentBlockerManager.shared.checkForUpdatedBlockLists()
+		ContentBlocking.shared.checkForUpdatedBlockLists()
 	}
 	
 	/// Sent by the default notification center immediately after the application becomes active.
@@ -72,7 +72,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	@objc
 	func updateConfigState() {
 		if let m = self.protectionConfigMenu?.submenu {
-			if ContentBlockerManager.shared.isDefaultConfigEnabled() {
+			if ContentBlocking.shared.isDefaultConfigEnabled() {
 				m.items[0].state = NSControl.StateValue(rawValue: 1)
 				m.items[1].state = NSControl.StateValue(rawValue: 0)
 			} else {

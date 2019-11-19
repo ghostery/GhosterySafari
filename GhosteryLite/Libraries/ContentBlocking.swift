@@ -1,5 +1,5 @@
 //
-// ContentBlockerManager
+// ContentBlocking
 // GhosteryLite
 //
 // Ghostery Lite for Safari
@@ -16,9 +16,9 @@ import Foundation
 import SafariServices
 import RealmSwift
 
-class ContentBlockerManager {
+class ContentBlocking {
 	
-	static let shared = ContentBlockerManager()
+	static let shared = ContentBlocking()
 	private var paused: Bool = false
 	
 	init() {
@@ -65,7 +65,7 @@ class ContentBlockerManager {
 	
 	/// Check for updated block lists. Called from AppDelegate applicationDidFinishLaunching()
 	func checkForUpdatedBlockLists() {
-		BlockListManager.shared.updateBlockLists(done: { (updated) in
+		BlockLists.shared.updateBlockLists(done: { (updated) in
 			// Did we download a new block list version?
 			if updated {
 				// Generate the new block list and reload the Content Blocker
@@ -227,21 +227,21 @@ class ContentBlockerManager {
 	/// - Parameter fileNames: The block list json filenames to be loaded
 	/// - Parameter folderName: The name of the folder where the json files are located on disk
 	private func updateAndReloadBlockList(fileNames: [String], folderName: String) {
-		print("ContentBlockerManager.updateAndReloadBlockList: Generating new block list...")
-		BlockListManager.shared.generateCurrentBlockList(files: fileNames, folderName: folderName) {
-			print("ContentBlockerManager.updateAndReloadBlockList: Build phase complete")
+		print("ContentBlocking.updateAndReloadBlockList: Generating new block list...")
+		BlockLists.shared.generateCurrentBlockList(files: fileNames, folderName: folderName) {
+			print("ContentBlocking.updateAndReloadBlockList: Build phase complete")
 			self.reloadCBExtension()
 		}
 	}
 	
 	/// Reload the Content Blocker extension
 	private func reloadCBExtension() {
-		print("ContentBlockerManager.reloadCBExtension: Reloading Content Blocker...")
+		print("ContentBlocking.reloadCBExtension: Reloading Content Blocker...")
 		SFContentBlockerManager.reloadContentBlocker(withIdentifier: Constants.SafariContentBlockerID, completionHandler: { (error) in
 			if error != nil {
-				print("ContentBlockerManager.reloadCBExtension: Reloading Content Blocker failed with error \(String(describing: error))")
+				print("ContentBlocking.reloadCBExtension: Reloading Content Blocker failed with error \(String(describing: error))")
 			} else {
-				print("ContentBlockerManager.reloadCBExtension: Successfully reloaded Content Blocker!")
+				print("ContentBlocking.reloadCBExtension: Successfully reloaded Content Blocker!")
 			}
 		})
 	}

@@ -63,19 +63,19 @@ class SettingsViewController: NSViewController {
 		}
 		if let m = modifiedCat {
 			let _ = GlobalConfigManager.shared.changeCategoryStatus(m, status: sender.state.rawValue == 0 ? false : true)
-			ContentBlockerManager.shared.reloadContentBlocker()
+			ContentBlocking.shared.reloadContentBlocker()
 			self.savedBox.isHidden = false
 		}
 	}
 	
 	@IBAction func defaultSelected(_ sender: Any) {
-		ContentBlockerManager.shared.switchToDefault()
+		ContentBlocking.shared.switchToDefault()
 		self.customRadio.state = NSControl.StateValue(rawValue: 0)
 		self.categoryBox.isHidden = true
 	}
 	
 	@IBAction func customSelected(_ sender: Any) {
-		ContentBlockerManager.shared.switchToCustom()
+		ContentBlocking.shared.switchToCustom()
 		self.defaultRadio.state = NSControl.StateValue(rawValue: 0)
 		self.categoryBox.isHidden = false
 		self.savedBox.isHidden = true
@@ -131,7 +131,7 @@ class SettingsViewController: NSViewController {
 	
 	@objc
 	private func updateRadioBoxesState() {
-		if ContentBlockerManager.shared.isDefaultConfigEnabled() {
+		if ContentBlocking.shared.isDefaultConfigEnabled() {
 			self.defaultRadio.state = NSControl.StateValue(rawValue: 1)
 			self.customRadio.state = NSControl.StateValue(rawValue: 0)
 			self.categoryBox.isHidden = true
