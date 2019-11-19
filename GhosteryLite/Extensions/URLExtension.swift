@@ -15,8 +15,7 @@
 import Foundation
 
 extension URL {
-	
-	public var normalizedHost: String? {
+	var normalizedHost: String? {
 		// Use components.host instead of self.host since the former correctly preserves
 		// brackets for IPv6 hosts, whereas the latter strips them.
 		guard let components = URLComponents(url: self, resolvingAgainstBaseURL: false), var host = components.host, host != "" else {
@@ -30,7 +29,7 @@ extension URL {
 		return host
 	}
 	
-	public var fullPath: String {
+	var fullPath: String {
 		var scheme = self.scheme ?? ""
 		if !scheme.isEmpty {
 			scheme.append("://")
@@ -40,5 +39,4 @@ extension URL {
 		let newPath = regEx?.stringByReplacingMatches(in: self.path, options: [], range: NSMakeRange(0, self.path.count), withTemplate: "") ?? ""
 		return "\(scheme)\(host)\(newPath)"
 	}
-	
 }

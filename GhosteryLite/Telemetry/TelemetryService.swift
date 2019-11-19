@@ -13,17 +13,11 @@
 //
 
 import Foundation
-import Alamofire
 
 class TelemetryService {
 
 	static let shared = TelemetryService()
-	#if PROD
-	private static let telemetryAPIURL = "https://d.ghostery.com"
-	#else
-	private static let telemetryAPIURL = "https://staging-d.ghostery.com"
-	#endif
-
+	
 	enum SignalType: String {
 		case install = "install"
 		case upgrade = "upgrade"
@@ -51,22 +45,32 @@ class TelemetryService {
 		let frequency: String
 		let ghostrank: Int?
 	}
-
+	
+	/// Send telemetry message
+	/// - Parameters:
+	///   - type: Message type
+	///   - config: Message config
+	///   - params: Message parameters
 	func sendSignal(_ type: SignalType, config: Config, params: Params) {
 		let url = self.generateSignalURL(type, config: config, params: params)
-		Alamofire.request(url)
-			.validate()
-			.response(completionHandler: { (response) in
-				if let d = response.data,
-					let str = String(data: d, encoding: .utf8) {
-					print("\(str)")
-				}
-			})
+		HTTPService.shared.getJSONData(url: url) { (completion: Result<Data, HTTPService.HTTPServiceError>) in
+			switch completion {
+				case .success(_):
+					print("TelemetryService.sendSignal: Sent ping \(type)")
+				case .failure(let error):
+					print("TelemetryService.sendSignal error: \(error.localizedDescription)")
+			}
+		}
 	}
 	
+	/// Build telemetry query string
+	/// - Parameters:
+	///   - type: Message type
+	///   - config: Message config
+	///   - params: Message parameters
 	private func generateSignalURL(_ type: SignalType, config: Config, params: Params) -> String {
 		let gr = params.ghostrank != nil ? params.ghostrank! : -1
-		let url = TelemetryService.telemetryAPIURL + "/\(type.rawValue)/\(params.frequency)?gr=\(gr)" +
+		let url = Constants.telemetryAPIURL + "/\(type.rawValue)/\(params.frequency)?gr=\(gr)" +
 			"&v=\(config.version)" +
 			"&os=\(config.os)" +
 			"&ir=\(config.installRand)" +

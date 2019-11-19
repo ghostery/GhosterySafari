@@ -1,5 +1,5 @@
 //
-// DownloadManager
+// HTTPService
 // GhosteryLite
 //
 // Ghostery Lite for Safari
@@ -14,12 +14,12 @@
 
 import Foundation
 
-final class DownloadManager {
+class HTTPService {
 	
-	static let shared = DownloadManager()
+	static let shared = HTTPService()
 	
-	/// Custom error for DownloadManager
-	public enum DownloadManagerError: Error {
+	/// Custom error for HTTPService
+	enum HTTPServiceError: Error {
 		case apiError
 		case decodeError
 		case invalidEndpoint
@@ -30,7 +30,7 @@ final class DownloadManager {
 	/// - Parameters:
 	///   - url: The URL endpoint
 	///   - completion: Callback handler of Result type
-	func getJSON<T: Decodable>(url: String, completion: @escaping (Result<T, DownloadManagerError>) -> Void) {
+	func getJSON<T: Decodable>(url: String, completion: @escaping (Result<T, HTTPServiceError>) -> Void) {
 		guard let url = URL(string: url) else {
 			completion(.failure(.invalidEndpoint))
 			return
@@ -44,24 +44,23 @@ final class DownloadManager {
 					}
 					do {
 						let values = try JSONDecoder().decode(T.self, from: data)
-						print("DownloadManager.getJSON: Successfully decoded JSON file.")
+						print("HTTPService.getJSON: Successfully decoded JSON file.")
 						completion(.success(values))
 					} catch {
 						completion(.failure(.decodeError))
 					}
 				case .failure(let error):
-					print("DownloadManager.getJSON error: \(error.localizedDescription)")
+					print("HTTPService.getJSON error: \(error.localizedDescription)")
 					completion(.failure(.apiError))
 			}
 		}.resume()
 	}
 	
-	
 	/// GET specified file and return raw JSON data
 	/// - Parameters:
 	///   - url: The url endpoint
 	///   - completion: Callback handler of Result type
-	func getJSONData(url: String, completion: @escaping (Result<Data, DownloadManagerError>) -> Void) {
+	func getJSONData(url: String, completion: @escaping (Result<Data, HTTPServiceError>) -> Void) {
 		guard let url = URL(string: url) else {
 			completion(.failure(.invalidEndpoint))
 			return
@@ -73,10 +72,10 @@ final class DownloadManager {
 						completion(.failure(.invalidResponse))
 						return
 					}
-					print("DownloadManager.getJSONData: Successfully downloaded JSON data.")
+					print("HTTPService.getJSONData: Successfully downloaded JSON data.")
 					completion(.success(data))
 				case .failure(let error):
-					print("DownloadManager.getJSONData error: \(error.localizedDescription)")
+					print("HTTPService.getJSONData error: \(error.localizedDescription)")
 					completion(.failure(.apiError))
 			}
 		}.resume()

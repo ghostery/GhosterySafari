@@ -14,7 +14,7 @@
 
 import Foundation
 
-final class BlockListFileManager {
+class BlockListFileManager {
 	
 	static let shared = BlockListFileManager()
 	private let cliqzNetworkListChecksum = "cliqzNetworkListChecksum"
@@ -38,7 +38,7 @@ final class BlockListFileManager {
 		group.enter()
 		DispatchQueue.main.async(group: group) {
 			print("BlockListFileManager.updateBlockLists: Checking for Ghostery block list updates")
-			DownloadManager.shared.getJSON(url: Constants.GhosteryAssetPath) { (completion: Result<ghosteryVersionData, DownloadManager.DownloadManagerError>) in
+			HTTPService.shared.getJSON(url: Constants.GhosteryAssetPath) { (completion: Result<ghosteryVersionData, HTTPService.HTTPServiceError>) in
 				switch completion {
 					case .success(let versionData):
 						let blockListVersion = versionData.safariContentBlockerVersion
@@ -74,7 +74,7 @@ final class BlockListFileManager {
 		group.enter()
 		DispatchQueue.main.async(group: group) {
 			print("BlockListFileManager.updateBlockLists: Checking for Cliqz block list updates")
-			DownloadManager.shared.getJSON(url: Constants.CliqzVersionPath) { (completion: Result<clizVersionData, DownloadManager.DownloadManagerError>) in
+			HTTPService.shared.getJSON(url: Constants.CliqzVersionPath) { (completion: Result<clizVersionData, HTTPService.HTTPServiceError>) in
 				switch completion {
 					case .success(let versionData):
 						// Get the checksum value from the URL path
@@ -178,7 +178,7 @@ final class BlockListFileManager {
 	///   - folder: The folder location in Group Containers
 	///   - done: Callback handler
 	private func downloadAndSaveFile(_ fileName: String, _ listUrl: String, _ folder: URL?, done: @escaping () -> ()) {
-		DownloadManager.shared.getJSONData(url: listUrl) { (completion: Result<Data, DownloadManager.DownloadManagerError>) in
+		HTTPService.shared.getJSONData(url: listUrl) { (completion: Result<Data, HTTPService.HTTPServiceError>) in
 			switch completion {
 				case .success(let jsonData):
 					// print("BlockListFileManager.downloadAndSaveFile: \(fileName)")

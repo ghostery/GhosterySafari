@@ -120,7 +120,7 @@ class TelemetryManager {
 		Preferences.setGlobalPreference(key: lastVersionKey, value: self.config.version)
 	}
 	
-	private static func getInstallRand() -> Int {
+	private class func getInstallRand() -> Int {
 		if let p = Preferences.getGlobalPreference(key: installRandKey) as? Int {
 			return p
 		}
@@ -129,7 +129,7 @@ class TelemetryManager {
 		return p
 	}
 	
-	private static func formatDate(date: Date) -> String {
+	private class func formatDate(date: Date) -> String {
 		let dt = DateFormatter()
 		dt.dateFormat = "yyyy-MM-dd"
 		return dt.string(from: date)

@@ -13,7 +13,7 @@
 //
 
 extension Array {
-	public func groupBy<B:Hashable>(key: (Element) -> B) -> Dictionary<B, [Element]>{
+	func groupBy<B:Hashable>(key: (Element) -> B) -> Dictionary<B, [Element]>{
 		var dict: Dictionary<B, [Element]> = [:]
 		
 		for elem in self {
@@ -30,7 +30,7 @@ extension Array {
 		return dict
 	}
 	
-	public func groupAndReduce<B:Hashable, C>(byKey: (Element) -> B, reduce: ([Element]) -> C) -> Dictionary<B, C> {
+	func groupAndReduce<B:Hashable, C>(byKey: (Element) -> B, reduce: ([Element]) -> C) -> Dictionary<B, C> {
 		let dict = self.groupBy(key: byKey)
 		var reduceDict: Dictionary<B,C> = [:]
 		
@@ -41,7 +41,7 @@ extension Array {
 		return reduceDict
 	}
 	
-	public func batch(size: Int) -> [[Element]] {
+	func batch(size: Int) -> [[Element]] {
 		var result: [[Element]] = []
 		var temp: [Element] = []
 		for i in 0..<count {

@@ -14,7 +14,7 @@
 
 import Cocoa
 
-public enum MenuItem {
+enum MenuItem {
 	case home
 	case settings
 	case trustedSites

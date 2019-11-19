@@ -19,7 +19,7 @@ extension NSColor {
 	/// - Parameters:
 	///   - rgb: RGB value
 	///   - alpha: Alpha value
-	public convenience init(rgb: Int, alpha: CGFloat = 1.0) {
+	convenience init(rgb: Int, alpha: CGFloat = 1.0) {
 		self.init(
 			red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0,
 			green: CGFloat((rgb & 0x00FF00) >> 8)  / 255.0,
@@ -27,7 +27,7 @@ extension NSColor {
 			alpha: alpha)
 	}
 	
-	public static func panelTextColor() -> NSColor {
+	class func panelTextColor() -> NSColor {
 		return NSColor(named: "panelText") ?? NSColor.white
 	}
 }
