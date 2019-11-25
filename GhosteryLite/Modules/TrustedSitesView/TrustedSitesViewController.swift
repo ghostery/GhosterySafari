@@ -34,7 +34,7 @@ class TrustedSitesViewController: NSViewController {
 		let regEx = try? NSRegularExpression(pattern: "(^https?://)?(www\\.)?", options: .caseInsensitive)
 		if let newStr = regEx?.stringByReplacingMatches(in: str, options: [], range: NSMakeRange(0, str.count), withTemplate: "") {
 			self.errorMessageLabel.isHidden = true
-			ContentBlocking.shared.trustDomain(domain: newStr)
+			GhosteryApplication.shared.trustDomain(domain: newStr)
 			self.updateData()
 		}
 		trustedSiteTextField.stringValue = ""
@@ -63,7 +63,6 @@ class TrustedSitesViewController: NSViewController {
 		trustSiteBtn.state = NSControl.StateValue(rawValue: isEnabled ? 1 : 0)
 	}
 	
-	@objc
 	func updateData() {
 		self.trustedSites = TrustedSitesDataSource.shared.allTrustedSites()
 		trustedStiesCollectionView.reloadData()

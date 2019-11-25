@@ -13,7 +13,6 @@
 //
 
 import Cocoa
-import SafariServices
 
 class ModalViewController: NSViewController {
 	

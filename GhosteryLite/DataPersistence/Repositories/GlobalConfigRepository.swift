@@ -13,7 +13,6 @@
 //
 
 import Foundation
-import RealmSwift
 
 enum ConfigurationType: Int {
 	case custom

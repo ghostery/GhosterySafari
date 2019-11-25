@@ -17,22 +17,30 @@ import Foundation
 class PageLatency {
 	static let shared = PageLatency()
 	var pageLatencies = [String: String]()
-
+	
+	/// Save latency for a page URL once page load has completed
+	/// - Parameters:
+	///   - url: The page URL
+	///   - latency: The latency value
 	func pageLoaded(url: String, latency: String) {
 		pageLatencies[url] = latency
 	}
-
+	
+	/// Return the latency value for a given page URL
+	/// - Parameter url: The page URL
 	func latencyFor(_ url: String) -> String {
 		return pageLatencies[url] ?? "--"
 	}
-
+	
+	/// Generate the image representation for a latency value and it's offset position in the view controller
+	/// - Parameter url: The page URL
 	func latencyImageAndOffset(_ url: String) -> (String, CGFloat) {
-		let pl = self.latencyFor(url)
-		if let ld = Double(pl) {
-			if ld <= 5.0 {
+		let latency = self.latencyFor(url)
+		if let latencyVal = Double(latency) {
+			if latencyVal <= 5.0 {
 				return ("greenLatency", 14)
 			}
-			if ld < 10 {
+			if latencyVal < 10 {
 				return ("yellowLatency", 74)
 			}
 			return ("redLatency", 134)

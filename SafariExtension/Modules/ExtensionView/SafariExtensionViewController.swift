@@ -14,7 +14,6 @@
 
 import SafariServices
 
-
 class SafariExtensionViewController: SFSafariExtensionViewController {
 
 	static let shared = SafariExtensionViewController()
@@ -72,10 +71,10 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
 	override func viewWillAppear() {
 		super.viewWillAppear()
-		TelemetryManager.shared.sendSignal(.engage, ghostrank: 2)
+		Telemetry.shared.sendSignal(.engage, source: 2)
 		self.view.layer?.backgroundColor = NSColor(named: "backgroundColor")?.cgColor
 		urlLabel?.stringValue = self.currentDomain ?? ""
-		if ContentBlocking.shared.isDefaultConfigEnabled() {
+		if GhosteryApplication.shared.isDefaultConfigEnabled() {
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
 		} else {
@@ -89,13 +88,13 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		self.isPaused = sender.state.rawValue == 1
 		if sender.state.rawValue == 1 {
 			self.pauseButton.toolTip = NSLocalizedString("button.resume.tooltip", comment: "Tooltip on resume button")
-			ContentBlocking.shared.pause()
+			GhosteryApplication.shared.pause()
 			DistributedNotificationCenter.default().post(name: Constants.PauseNotificationName, object: Constants.SafariPopupExtensionID)
 			self.trustSiteButton.isEnabled = false
 			self.showPausedPopup()
 		} else {
 			self.pauseButton.toolTip = NSLocalizedString("button.pause.tooltip", comment: "Tooltip on pause button")
-			ContentBlocking.shared.resume()
+			GhosteryApplication.shared.resume()
 			DistributedNotificationCenter.default().post(name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
 			self.trustSiteButton.isEnabled = true
 			self.showResumedPopup()
@@ -105,11 +104,11 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBAction func trustButtonPressed(sender: NSButton) {
 		if let x = self.currentDomain {
 			if sender.state.rawValue == 0 {
-				ContentBlocking.shared.untrustDomain(domain: x)
+				GhosteryApplication.shared.untrustDomain(domain: x)
 				DistributedNotificationCenter.default().post(name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
 				self.showUntrustedPopup()
 			} else {
-				ContentBlocking.shared.trustDomain(domain: x)
+				GhosteryApplication.shared.trustDomain(domain: x)
 				DistributedNotificationCenter.default().post(name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
 				self.showTrustedPopup()
 			}
@@ -125,7 +124,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		if sender.state.rawValue == 1{
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
 			DistributedNotificationCenter.default().post(name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
-			ContentBlocking.shared.switchToDefault()
+			GhosteryApplication.shared.switchToDefault()
 		} else {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
 		}
@@ -135,7 +134,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		if sender.state.rawValue == 1 {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 0)
 			DistributedNotificationCenter.default().post(name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
-			ContentBlocking.shared.switchToCustom()
+			GhosteryApplication.shared.switchToCustom()
 		} else {
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 1)
 		}
@@ -177,7 +176,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
 	private func updateTrustButtonState() {
 		if let d = self.currentDomain {
-			if ContentBlocking.shared.isTrustedDomain(domain: d) {
+			if GhosteryApplication.shared.isTrustedDomain(domain: d) {
 				self.trustSiteButton?.state = NSControl.StateValue(rawValue: 1)
 			} else {
 				self.trustSiteButton?.state = NSControl.StateValue(rawValue: 0)

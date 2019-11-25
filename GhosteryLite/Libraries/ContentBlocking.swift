@@ -1,5 +1,5 @@
 //
-// ContentBlocking
+// GhosteryApplication
 // GhosteryLite
 //
 // Ghostery Lite for Safari
@@ -14,53 +14,112 @@
 
 import Foundation
 import SafariServices
-import RealmSwift
 
-class ContentBlocking {
+class GhosteryApplication {
 	
-	static let shared = ContentBlocking()
+	static let shared = GhosteryApplication()
 	private var paused: Bool = false
 	
 	init() {
-		configureRealm()
-	}
-	
-	func subscribeForNotifications() {
-		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.pauseNotification), name: Constants.PauseNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.resumeNotification), name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
-		// DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.tabDomainIsChanged), name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
+		GlobalConfigManager.shared.createConfigIfDoesNotExist()
 	}
 	
 	deinit {
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.PauseNotificationName, object: Constants.SafariPopupExtensionID)
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
-		//	DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
-		//	DistributedNotificationCenter.default().removeObserver(self, name: Constants.DomainChangedNotificationName, object: Constants.SafariPopupExtensionID)
 	}
 	
-	func configureRealm() {
-		let config = Realm.Configuration(
-			// Set the new schema version. This must be greater than the previously used
-			// version (if you've never set a schema version before, the version is 0).
-			schemaVersion: 1,
-			
-			// Set the block which will be called automatically when opening a Realm with
-			// a schema version lower than the one set above
-			migrationBlock: { migration, oldSchemaVersion in
-				// We haven’t migrated anything yet, so oldSchemaVersion == 0
-				if (oldSchemaVersion < 1) {
-					// Nothing to do!
-					// Realm will automatically detect new properties and removed properties
-					// And will update the schema on disk automatically
-				}
+	/// Create notification subscriptions
+	func subscribeForNotifications() {
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.pauseNotification), name: Constants.PauseNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.resumeNotification), name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
+	}
+	
+	/// Pause GhosteryLite
+	func pause() {
+		self.paused = true
+		reloadContentBlocker()
+	}
+	
+	/// Resume GhosteryLite
+	func resume() {
+		self.paused = false
+		reloadContentBlocker()
+	}
+	
+	/// Check to see if GhosteryList is paused
+	func isPaused() -> Bool {
+		return self.paused
+	}
+	
+	/// Notification handler from a pause action
+	@objc func pauseNotification() {
+		self.paused = true
+	}
+	
+	/// Notification handler for a resume action
+	@objc func resumeNotification() {
+		self.paused = false
+	}
+	
+	/// Enable the default blocking configuration
+	func switchToDefault() {
+		GlobalConfigManager.shared.switchToConfig(.byDefault)
+		self.reloadContentBlocker()
+	}
+	
+	/// Enable the custom blocking configuration
+	func switchToCustom() {
+		GlobalConfigManager.shared.switchToConfig(.custom)
+		self.reloadContentBlocker()
+	}
+	
+	/// Are we using the default blocking configuration
+	func isDefaultConfigEnabled() -> Bool {
+		if let c = GlobalConfigManager.shared.getCurrentConfig() {
+			return c.configType.value == ConfigurationType.byDefault.rawValue
+		}
+		return true
+	}
+	
+	/// Add a domain to the whitelist
+	/// - Parameter domain: Domain URL
+	func trustDomain(domain: String) {
+		TrustedSitesDataSource.shared.addDomain(domain)
+		WhiteList.shared.add(domain, completion: {
+			self.reloadContentBlocker()
 		})
-		
-		// Tell Realm to use this new configuration object for the default Realm
-		Realm.Configuration.defaultConfiguration = config
-		let realmPath = Constants.GroupStorageFolderURL?.appendingPathComponent("db.realm")
-		Realm.Configuration.defaultConfiguration.fileURL = realmPath
-		let _ = try! Realm()
-		GlobalConfigManager.shared.createConfigIfDoesNotExist()
+	}
+	
+	/// Remove a domain from the whitelist
+	/// - Parameter domain: Domain URL
+	func untrustDomain(domain: String) {
+		TrustedSitesDataSource.shared.removeDomain(domain)
+		WhiteList.shared.remove(domain, completion: {
+			self.reloadContentBlocker()
+		})
+	}
+	
+	/// Is the domain in the whitelist?
+	/// - Parameter domain: Domain URL
+	func isTrustedDomain(domain: String) -> Bool {
+		return TrustedSitesDataSource.shared.isTrusted(domain)
+	}
+	
+	/// Notification handler for a trust site action
+	func trustSiteNotification() {
+		if let d = Preferences.getGlobalPreference(key: "domain") as? String {
+			self.trustDomain(domain: d)
+			loadDummyCB()
+		}
+	}
+	
+	/// Notification handler for an untrust site action
+	func untrustSiteNotification() {
+		if let d = Preferences.getGlobalPreference(key: "domain") as? String {
+			self.untrustDomain(domain: d)
+			reloadContentBlocker()
+		}
 	}
 	
 	/// Check for updated block lists. Called from AppDelegate applicationDidFinishLaunching()
@@ -87,96 +146,6 @@ class ContentBlocking {
 				self.loadDefaultCB()
 			}
 		}
-	}
-	
-	func trustDomain(domain: String) {
-		TrustedSitesDataSource.shared.addDomain(domain)
-		WhiteList.shared.add(domain, completion: {
-			self.reloadContentBlocker()
-		})
-	}
-	
-	func untrustDomain(domain: String) {
-		TrustedSitesDataSource.shared.removeDomain(domain)
-		WhiteList.shared.remove(domain, completion: {
-			self.reloadContentBlocker()
-		})
-	}
-	
-	func isTrustedDomain(domain: String) -> Bool {
-		return TrustedSitesDataSource.shared.isTrusted(domain)
-	}
-	
-	func isPaused() -> Bool {
-		return self.paused
-	}
-	
-	func isDefaultConfigEnabled() -> Bool {
-		if let c = GlobalConfigManager.shared.getCurrentConfig() {
-			return c.configType.value == ConfigurationType.byDefault.rawValue
-		}
-		return true
-	}
-	
-	@objc
-	func pause() {
-		self.paused = true
-		reloadContentBlocker()
-	}
-	
-	@objc
-	func resume() {
-		self.paused = false
-		reloadContentBlocker()
-	}
-	
-	@objc
-	func pauseNotification() {
-		self.paused = true
-	}
-	
-	@objc
-	func resumeNotification() {
-		self.paused = false
-	}
-	
-	@objc
-	func switchToDefault() {
-		GlobalConfigManager.shared.switchToConfig(.byDefault)
-		self.reloadContentBlocker()
-	}
-	
-	@objc
-	func switchToCustom() {
-		GlobalConfigManager.shared.switchToConfig(.custom)
-		self.reloadContentBlocker()
-	}
-	
-	@objc
-	func trustSiteNotification() {
-		if let d = Preferences.getGlobalPreference(key: "domain") as? String {
-			self.trustDomain(domain: d)
-			loadDummyCB()
-		}
-	}
-	
-	@objc
-	func untrustSiteNotification() {
-		if let d = Preferences.getGlobalPreference(key: "domain") as? String {
-			self.untrustDomain(domain: d)
-			reloadContentBlocker()
-		}
-	}
-	
-	@objc
-	private func tabDomainIsChanged() {
-		if let d = Preferences.getGlobalPreference(key: "newDomain") as? String {
-			if self.isTrustedDomain(domain: d) {
-				loadDummyCB()
-				return
-			}
-		}
-		self.reloadContentBlocker()
 	}
 	
 	/// Load a custom block list file based on user selected categories
@@ -227,21 +196,21 @@ class ContentBlocking {
 	/// - Parameter fileNames: The block list json filenames to be loaded
 	/// - Parameter folderName: The name of the folder where the json files are located on disk
 	private func updateAndReloadBlockList(fileNames: [String], folderName: String) {
-		print("ContentBlocking.updateAndReloadBlockList: Generating new block list...")
+		print("GhosteryApplication.updateAndReloadBlockList: Generating new block list...")
 		BlockLists.shared.generateCurrentBlockList(files: fileNames, folderName: folderName) {
-			print("ContentBlocking.updateAndReloadBlockList: Build phase complete")
+			print("GhosteryApplication.updateAndReloadBlockList: Build phase complete")
 			self.reloadCBExtension()
 		}
 	}
 	
 	/// Reload the Content Blocker extension
 	private func reloadCBExtension() {
-		print("ContentBlocking.reloadCBExtension: Reloading Content Blocker...")
+		print("GhosteryApplication.reloadCBExtension: Reloading Content Blocker...")
 		SFContentBlockerManager.reloadContentBlocker(withIdentifier: Constants.SafariContentBlockerID, completionHandler: { (error) in
 			if error != nil {
-				print("ContentBlocking.reloadCBExtension: Reloading Content Blocker failed with error \(String(describing: error))")
+				print("GhosteryApplication.reloadCBExtension: Reloading Content Blocker failed with error \(String(describing: error))")
 			} else {
-				print("ContentBlocking.reloadCBExtension: Successfully reloaded Content Blocker!")
+				print("GhosteryApplication.reloadCBExtension: Successfully reloaded Content Blocker!")
 			}
 		})
 	}

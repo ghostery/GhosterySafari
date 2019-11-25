@@ -43,7 +43,7 @@ class TelemetryService {
 	struct Params {
 		let recency: Int
 		let frequency: String
-		let ghostrank: Int?
+		let source: Int? /// Extension = 2, Application = 3
 	}
 	
 	/// Send telemetry message
@@ -69,7 +69,7 @@ class TelemetryService {
 	///   - config: Message config
 	///   - params: Message parameters
 	private func generateSignalURL(_ type: SignalType, config: Config, params: Params) -> String {
-		let gr = params.ghostrank != nil ? params.ghostrank! : -1
+		let gr = params.source != nil ? params.source! : -1
 		let url = Constants.telemetryAPIURL + "/\(type.rawValue)/\(params.frequency)?gr=\(gr)" +
 			"&v=\(config.version)" +
 			"&os=\(config.os)" +

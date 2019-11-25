@@ -12,7 +12,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0
 // 
 
-import Cocoa
+import Foundation
 
 extension TrustedSitesViewController: NSCollectionViewDataSource {
 	// Section Header Count
@@ -43,7 +43,7 @@ extension TrustedSitesViewController: NSCollectionViewDataSource {
 
 extension TrustedSitesViewController: TrustedSiteItemDelegate {
 	func trustedSiteDidRemove(indexPath: IndexPath, url: String) {
-		ContentBlocking.shared.untrustDomain(domain: self.trustedSites[indexPath.item].name ?? "")
+		GhosteryApplication.shared.untrustDomain(domain: self.trustedSites[indexPath.item].name ?? "")
 		self.updateData()
 	}
 }

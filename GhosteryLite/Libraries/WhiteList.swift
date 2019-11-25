@@ -14,14 +14,20 @@
 
 import Foundation
 
+/// Maintains the trustedSitesList.json file on disk, which stores Whitelisted domains in Content Blocker format. The list
+/// of trusted domains chosen by the user is stored in CoreData
 class WhiteList {
 	
 	static let shared: WhiteList = WhiteList()
 	
+	/// Add a new rule to the whitelist
+	/// - Parameters:
+	///   - domain: The domain to whitelist
+	///   - completion: Callback handler
 	func add(_ domain: String, completion: @escaping () -> Void) {
 		DispatchQueue.global(qos: .background).async {
 			let rule = self.prepareRule(domain)
-			let whitelist: [String: Any] = ["domain": domain, "active": self.canEnable(), "rule": rule]
+			let whitelist: [String: Any] = ["domain": domain, "active": true, "rule": rule]
 			
 			var whitelists: [[String: Any]]? = self.getAllRules() ?? []
 			whitelists?.append(whitelist)
@@ -32,6 +38,10 @@ class WhiteList {
 		}
 	}
 	
+	/// Remove a rule from the whitelist
+	/// - Parameters:
+	///   - domain: The domain to remove from the whitelist
+	///   - completion: Callback handler
 	func remove(_ domain: String, completion: @escaping () -> Void) {
 		DispatchQueue.global(qos: .background).async {
 			let whitelists: [[String: Any]]? = self.getAllRules() ?? []
@@ -46,6 +56,7 @@ class WhiteList {
 		}
 	}
 	
+	/// Fetch all active Whitelist rules in Content Blocker format
 	func getActiveWhitelistRules() -> [[String: Any]]? {
 		guard let whitelists = getAllRules() else { return [] }
 		let activeWhitelists = whitelists.filter { (whitelist) -> Bool in
@@ -56,27 +67,29 @@ class WhiteList {
 		return activeWhitelists
 	}
 	
-	func getAllRules() -> [[String: Any]]? {
+	/// Read Whitelist rules from disk
+	private func getAllRules() -> [[String: Any]]? {
 		let whitelists: [[String: Any]]? = FileManager.default.readJsonFile(at: self.getWhitelistFilePath())
 		return whitelists
 	}
 	
+	/// Locate the Whitelist json file on disk
 	private func getWhitelistFilePath() -> URL? {
 		return Constants.AssetsFolderURL?.appendingPathComponent("trustedSitesList.json")
 	}
 	
+	/// Write the new whitelist to disk
+	/// - Parameter rules: Whitelist rules in Content Blocker format
 	private func save(_ rules: [[String: Any]]?) {
 		FileManager.default.writeJsonFile(at: self.getWhitelistFilePath(), with: rules)
 	}
 	
+	/// Build the block list rule into the Content Blocker format
+	/// - Parameter domain: The domain to whitelist
 	private func prepareRule(_ domain: String)  -> [String: Any] {
 		let trigger: [String: Any] = ["url-filter": ".*",
 									  "if-top-url": ["\(domain)"]]
 		let action = ["type": "ignore-previous-rules"]
 		return ["trigger": trigger, "action": action]
-	}
-	
-	private func canEnable() -> Bool {
-		return true
 	}
 }

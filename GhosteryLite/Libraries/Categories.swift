@@ -14,6 +14,7 @@
 
 import Foundation
 
+/// Ghostery blocking categories
 enum Categories: Int {
 	case advertising
 	case audioVideoPlayer
@@ -25,10 +26,12 @@ enum Categories: Int {
 	case socialMedia
 	case uncategorized
 	
+	/// Get the number of categories
 	static func allCategoriesCount() -> Int {
 		return 8
 	}
 	
+	/// Map the blocking category name to its filename on disk
 	func fileName() -> String {
 		switch self {
 			case .advertising:
@@ -52,6 +55,7 @@ enum Categories: Int {
 		}
 	}
 	
+	/// List all blocking categories.  Used for full category blocking.
 	static func allCases() -> [Categories] {
 		return [.advertising, .audioVideoPlayer, .comments, .customerInteraction, .essential, .pornvertising, .siteAnalytics, .socialMedia, .uncategorized]
 	}

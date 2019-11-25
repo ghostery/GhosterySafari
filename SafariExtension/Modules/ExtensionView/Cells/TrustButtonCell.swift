@@ -13,7 +13,6 @@
 //
 
 import Foundation
-import SafariServices
 
 class TrustButtonCell: NSButtonCell {
 	override func titleRect(forBounds rect: NSRect) -> NSRect {

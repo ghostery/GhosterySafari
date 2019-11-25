@@ -32,7 +32,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 
 	/// This is called when Safari's state changed in some way that would require the extension's toolbar item to be validated again.
 	override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
-		TelemetryManager.shared.sendSignal(.active, ghostrank: 2)
+		TelemetryManager.shared.sendSignal(.active, source: 2)
 		handleTabUrlChange(window) { (url) in
 			Preferences.setGlobalPreference(key: "newDomain", value: url?.normalizedHost ?? "")
 		}

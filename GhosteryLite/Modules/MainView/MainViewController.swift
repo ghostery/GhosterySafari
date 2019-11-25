@@ -30,7 +30,7 @@ class MainViewController: NSViewController {
 		}
 		// TelemetryService.shared.sendSignal()
 		
-		ContentBlocking.shared.subscribeForNotifications()
+		GhosteryApplication.shared.subscribeForNotifications()
 		self.liteLabel.font = NSFont(name: "BebasNeueBook", size: 24)
 	}
 	

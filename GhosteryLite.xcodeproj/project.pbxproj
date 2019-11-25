@@ -47,10 +47,14 @@
 		0DDCFF812366670D009481D4 /* WhiteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90DD80214BD74F00E8BA6D /* WhiteList.swift */; };
 		0DDCFF8223666737009481D4 /* GlobalConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */; };
 		0DDCFF8323666792009481D4 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8313212B36BC0038149F /* FileManagerExtension.swift */; };
-		0DDCFF84236667A7009481D4 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A162125AD6500AF4226 /* RealmRepository.swift */; };
-		0DDCFF85236667AA009481D4 /* CrudRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A182125ADD500AF4226 /* CrudRepository.swift */; };
 		0DDCFF86236667C1009481D4 /* TrustedSitesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABB02138586A00BC76E4 /* TrustedSitesDataSource.swift */; };
 		0DDCFF87236667D3009481D4 /* TrustedSitesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */; };
+		0DDF2786238B04DC00C17AC8 /* GhosteryLite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF2784238B04DC00C17AC8 /* GhosteryLite.xcdatamodeld */; };
+		0DDF2787238B04DC00C17AC8 /* GhosteryLite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF2784238B04DC00C17AC8 /* GhosteryLite.xcdatamodeld */; };
+		0DDF278A238B2CB600C17AC8 /* TrustedSites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF2789238B2CB600C17AC8 /* TrustedSites.swift */; };
+		0DDF278B238B2CB600C17AC8 /* TrustedSites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF2789238B2CB600C17AC8 /* TrustedSites.swift */; };
+		0DDF278D238B2EB900C17AC8 /* BlockingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF278C238B2EB900C17AC8 /* BlockingConfig.swift */; };
+		0DDF278E238B2EB900C17AC8 /* BlockingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF278C238B2EB900C17AC8 /* BlockingConfig.swift */; };
 		1E14B73D21369F5400E28C38 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73C21369F5400E28C38 /* StringExtension.swift */; };
 		1E14B754213819A800E28C38 /* TrustedSitesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B752213819A800E28C38 /* TrustedSitesViewController.swift */; };
 		1E14B7582138217800E28C38 /* TrustedSiteItemCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B7562138217800E28C38 /* TrustedSiteItemCollectionViewItem.swift */; };
@@ -77,15 +81,11 @@
 		4F83ABB12138586A00BC76E4 /* TrustedSitesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABB02138586A00BC76E4 /* TrustedSitesDataSource.swift */; };
 		4F83ABB421393CF500BC76E4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABB321393CF400BC76E4 /* SettingsViewController.swift */; };
 		4F90DD81214BD75000E8BA6D /* WhiteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90DD80214BD74F00E8BA6D /* WhiteList.swift */; };
-		4F931A1521259BEC00AF4226 /* DomainConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A1421259BEC00AF4226 /* DomainConfigRepository.swift */; };
-		4F931A172125AD6500AF4226 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A162125AD6500AF4226 /* RealmRepository.swift */; };
-		4F931A192125ADD500AF4226 /* CrudRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A182125ADD500AF4226 /* CrudRepository.swift */; };
 		4F931A1D2125D3DE00AF4226 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A32119F4FC00BA3961 /* URLExtension.swift */; };
 		4F931A1E2125D3F500AF4226 /* ContentBlocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* ContentBlocking.swift */; };
 		4F931A252126C8C900AF4226 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A242126C8C900AF4226 /* Constants.swift */; };
 		4F931A262126C95A00AF4226 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A242126C8C900AF4226 /* Constants.swift */; };
 		4F931A272126C95B00AF4226 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A242126C8C900AF4226 /* Constants.swift */; };
-		4F931A292126E06000AF4226 /* DomainConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */; };
 		4F9CF8E1215BCD6A005B1C1B /* TelemetryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9CF8E0215BCD6A005B1C1B /* TelemetryService.swift */; };
 		4F9CF8E3215BCD97005B1C1B /* Telemetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9CF8E2215BCD97005B1C1B /* Telemetry.swift */; };
 		4F9CF8E7215E57B6005B1C1B /* Telemetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9CF8E2215BCD97005B1C1B /* Telemetry.swift */; };
@@ -98,8 +98,6 @@
 		4FFD8349212B5D430038149F /* GlobalConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */; };
 		4FFD834D212B602B0038149F /* GlobalConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */; };
 		4FFD8351212C6C740038149F /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8350212C6C740038149F /* WindowController.swift */; };
-		79686DAB627B7B89937A3AC6 /* Pods_GhosteryLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DA3ABA53D5C7DCB0D1B603 /* Pods_GhosteryLite.framework */; };
-		A575804C79BFFBE0971AC092 /* Pods_SafariExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC64D6FBF72737F61E2576D /* Pods_SafariExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -264,7 +262,9 @@
 		0DD3BFED236D04EC00889C41 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		0DD3BFEE236D04EC00889C41 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		0DDCFF7A23660DBD009481D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		1064AB5066CBD756EC99FF5E /* Pods-SafariExtension.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.beta.xcconfig"; path = "Target Support Files/Pods-SafariExtension/Pods-SafariExtension.beta.xcconfig"; sourceTree = "<group>"; };
+		0DDF2785238B04DC00C17AC8 /* GhosteryLite.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GhosteryLite.xcdatamodel; sourceTree = "<group>"; };
+		0DDF2789238B2CB600C17AC8 /* TrustedSites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSites.swift; sourceTree = "<group>"; };
+		0DDF278C238B2EB900C17AC8 /* BlockingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingConfig.swift; sourceTree = "<group>"; };
 		1E14B73C21369F5400E28C38 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		1E14B752213819A800E28C38 /* TrustedSitesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSitesViewController.swift; sourceTree = "<group>"; };
 		1E14B7562138217800E28C38 /* TrustedSiteItemCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSiteItemCollectionViewItem.swift; sourceTree = "<group>"; };
@@ -276,7 +276,6 @@
 		1E597C4521354D820098631F /* NSColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSColorExtension.swift; sourceTree = "<group>"; };
 		1E597C4721354DE60098631F /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		1E597C492135682B0098631F /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
-		22DA3ABA53D5C7DCB0D1B603 /* Pods_GhosteryLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GhosteryLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3049202118982600BA3961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F3049242118982700BA3961 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F3049292118982700BA3961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -298,11 +297,7 @@
 		4F83ABB02138586A00BC76E4 /* TrustedSitesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSitesDataSource.swift; sourceTree = "<group>"; };
 		4F83ABB321393CF400BC76E4 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4F90DD80214BD74F00E8BA6D /* WhiteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteList.swift; sourceTree = "<group>"; };
-		4F931A1421259BEC00AF4226 /* DomainConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConfigRepository.swift; sourceTree = "<group>"; };
-		4F931A162125AD6500AF4226 /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
-		4F931A182125ADD500AF4226 /* CrudRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudRepository.swift; sourceTree = "<group>"; };
 		4F931A242126C8C900AF4226 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConfigDataSource.swift; sourceTree = "<group>"; };
 		4F9CF8E0215BCD6A005B1C1B /* TelemetryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelemetryService.swift; sourceTree = "<group>"; };
 		4F9CF8E2215BCD97005B1C1B /* Telemetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Telemetry.swift; sourceTree = "<group>"; };
 		4FCEAA22212E0CCE00AACE42 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -311,12 +306,6 @@
 		4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigRepository.swift; sourceTree = "<group>"; };
 		4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigDataSource.swift; sourceTree = "<group>"; };
 		4FFD8350212C6C740038149F /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		8B0DCFE1A47C2C26AC0A7F61 /* Pods-SafariExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.release.xcconfig"; path = "Target Support Files/Pods-SafariExtension/Pods-SafariExtension.release.xcconfig"; sourceTree = "<group>"; };
-		AE8C203CDD8EB3F4808E1038 /* Pods-GhosteryLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.release.xcconfig"; path = "Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.release.xcconfig"; sourceTree = "<group>"; };
-		CEC64D6FBF72737F61E2576D /* Pods_SafariExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafariExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1182440728E9F458F9DF12C /* Pods-SafariExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafariExtension.debug.xcconfig"; path = "Target Support Files/Pods-SafariExtension/Pods-SafariExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		F348C24C4B7D9DED318436C3 /* Pods-GhosteryLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.debug.xcconfig"; path = "Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.debug.xcconfig"; sourceTree = "<group>"; };
-		FB216CBA35157C4445AE8BD5 /* Pods-GhosteryLite.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhosteryLite.beta.xcconfig"; path = "Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite.beta.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,7 +313,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79686DAB627B7B89937A3AC6 /* Pods_GhosteryLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +321,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D3FBB02235F701F0054822A /* Cocoa.framework in Frameworks */,
-				A575804C79BFFBE0971AC092 /* Pods_SafariExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				4F30492A2118982700BA3961 /* GhosteryLite.entitlements */,
+				0DDF2784238B04DC00C17AC8 /* GhosteryLite.xcdatamodeld */,
 				4F3049292118982700BA3961 /* Info.plist */,
 				0DD3BF83236CD09300889C41 /* InfoPlist.strings */,
 			);
@@ -552,10 +540,7 @@
 		0D02797023650B49007D5F66 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				4F931A182125ADD500AF4226 /* CrudRepository.swift */,
-				4F931A1421259BEC00AF4226 /* DomainConfigRepository.swift */,
 				4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */,
-				4F931A162125AD6500AF4226 /* RealmRepository.swift */,
 				4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */,
 			);
 			path = Repositories;
@@ -598,6 +583,15 @@
 			path = .tx;
 			sourceTree = "<group>";
 		};
+		0DDF2788238B2C5900C17AC8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0DDF2789238B2CB600C17AC8 /* TrustedSites.swift */,
+				0DDF278C238B2EB900C17AC8 /* BlockingConfig.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0DF65C4D22E793AF0076A4BD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -611,8 +605,6 @@
 			isa = PBXGroup;
 			children = (
 				0D3FBB00235F70030054822A /* Cocoa.framework */,
-				22DA3ABA53D5C7DCB0D1B603 /* Pods_GhosteryLite.framework */,
-				CEC64D6FBF72737F61E2576D /* Pods_SafariExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -629,7 +621,6 @@
 				0D2AA0BD2243DA0C0055B6B8 /* LICENSE */,
 				0D0279742365184E007D5F66 /* Makefile */,
 				0DCADD5F235E5EE300F00AB4 /* README.md */,
-				B0A62A735027E637D6286513 /* Pods */,
 				12C745E560D59A7A5C913F04 /* Frameworks */,
 				0D588DA1235E41D10003668C /* Products */,
 			);
@@ -642,6 +633,7 @@
 				4F4BE2DF212595AE00FEE71E /* DataPersistence */,
 				4F3049A02119F4FC00BA3961 /* Extensions */,
 				4F931A232126C8AF00AF4226 /* Libraries */,
+				0DDF2788238B2C5900C17AC8 /* Models */,
 				0D02795823632F84007D5F66 /* Modules */,
 				0D02795623632D9A007D5F66 /* Resources */,
 				0D74B482238396220095E9C1 /* Services */,
@@ -689,7 +681,6 @@
 			isa = PBXGroup;
 			children = (
 				0D02797023650B49007D5F66 /* Repositories */,
-				4F931A282126E06000AF4226 /* DomainConfigDataSource.swift */,
 				4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */,
 				4F83ABB02138586A00BC76E4 /* TrustedSitesDataSource.swift */,
 			);
@@ -710,19 +701,6 @@
 			path = Libraries;
 			sourceTree = "<group>";
 		};
-		B0A62A735027E637D6286513 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F348C24C4B7D9DED318436C3 /* Pods-GhosteryLite.debug.xcconfig */,
-				AE8C203CDD8EB3F4808E1038 /* Pods-GhosteryLite.release.xcconfig */,
-				FB216CBA35157C4445AE8BD5 /* Pods-GhosteryLite.beta.xcconfig */,
-				E1182440728E9F458F9DF12C /* Pods-SafariExtension.debug.xcconfig */,
-				8B0DCFE1A47C2C26AC0A7F61 /* Pods-SafariExtension.release.xcconfig */,
-				1064AB5066CBD756EC99FF5E /* Pods-SafariExtension.beta.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -730,12 +708,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F30492D2118982700BA3961 /* Build configuration list for PBXNativeTarget "GhosteryLite" */;
 			buildPhases = (
-				2B7A9A3C8F4C3E875B0DF0B5 /* [CP] Check Pods Manifest.lock */,
 				4F3049192118982600BA3961 /* Sources */,
 				4F30491A2118982600BA3961 /* Frameworks */,
 				4F30491B2118982600BA3961 /* Resources */,
 				4F30494C2118983D00BA3961 /* Embed App Extensions */,
-				BBB443A1F44D1DEF49EA6308 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -752,7 +728,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F3049492118983D00BA3961 /* Build configuration list for PBXNativeTarget "SafariExtension" */;
 			buildPhases = (
-				5060159726CB73B87A1CD976 /* [CP] Check Pods Manifest.lock */,
 				4F3049302118983D00BA3961 /* Sources */,
 				4F3049312118983D00BA3961 /* Frameworks */,
 				4F3049322118983D00BA3961 /* Resources */,
@@ -901,85 +876,20 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		2B7A9A3C8F4C3E875B0DF0B5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GhosteryLite-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5060159726CB73B87A1CD976 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SafariExtension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BBB443A1F44D1DEF49EA6308 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GhosteryLite/Pods-GhosteryLite-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		4F3049192118982600BA3961 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4F3049A42119F4FC00BA3961 /* ArrayExtension.swift in Sources */,
-				4F931A292126E06000AF4226 /* DomainConfigDataSource.swift in Sources */,
 				4F3049A52119F4FC00BA3961 /* DictionaryExtension.swift in Sources */,
 				0D02796B2363826C007D5F66 /* NSApplicationExtension.swift in Sources */,
+				0DDF278A238B2CB600C17AC8 /* TrustedSites.swift in Sources */,
 				4F9CF8E3215BCD97005B1C1B /* Telemetry.swift in Sources */,
 				0DBA654B238327D20011AAD3 /* URLSessionExtension.swift in Sources */,
 				1E14B73D21369F5400E28C38 /* StringExtension.swift in Sources */,
 				0D5230B22371CB51007A7508 /* HTTPService.swift in Sources */,
 				0D5230B42371CCD8007A7508 /* Categories.swift in Sources */,
-				4F931A1521259BEC00AF4226 /* DomainConfigRepository.swift in Sources */,
 				1E597C2D2133F8170098631F /* DetailViewController.swift in Sources */,
 				4FFD8351212C6C740038149F /* WindowController.swift in Sources */,
 				0DBA6549238319530011AAD3 /* TrustedSitesViewControllerExtension.swift in Sources */,
@@ -987,6 +897,7 @@
 				0DBA6541238317BF0011AAD3 /* MenuViewControllerDelegate.swift in Sources */,
 				0D02796D23638895007D5F66 /* MenuItemCollectionViewItem.swift in Sources */,
 				0DBA6547238318A50011AAD3 /* TrustedSiteItemDelegate.swift in Sources */,
+				0DDF2786238B04DC00C17AC8 /* GhosteryLite.xcdatamodeld in Sources */,
 				0DBA6543238317E70011AAD3 /* MenuViewControllerExtension.swift in Sources */,
 				4F90DD81214BD75000E8BA6D /* WhiteList.swift in Sources */,
 				0DBA653D238315FB0011AAD3 /* DetailViewControllerDelegate.swift in Sources */,
@@ -1002,17 +913,16 @@
 				4FFD8349212B5D430038149F /* GlobalConfigRepository.swift in Sources */,
 				1E597C422134407F0098631F /* HomeViewController.swift in Sources */,
 				4F3049B4211C6D3200BA3961 /* ContentBlocking.swift in Sources */,
-				4F931A192125ADD500AF4226 /* CrudRepository.swift in Sources */,
 				4FFD834D212B602B0038149F /* GlobalConfigDataSource.swift in Sources */,
 				1E14B754213819A800E28C38 /* TrustedSitesViewController.swift in Sources */,
 				4F931A252126C8C900AF4226 /* Constants.swift in Sources */,
 				4F3049212118982600BA3961 /* AppDelegate.swift in Sources */,
 				4FFD8314212B36BC0038149F /* FileManagerExtension.swift in Sources */,
 				1E597C4821354DE60098631F /* Preferences.swift in Sources */,
+				0DDF278D238B2EB900C17AC8 /* BlockingConfig.swift in Sources */,
 				0DBA653F238316BA0011AAD3 /* MainViewControllerExtension.swift in Sources */,
 				0D02796F23638C19007D5F66 /* MenuViewController.swift in Sources */,
 				1E14B7582138217800E28C38 /* TrustedSiteItemCollectionViewItem.swift in Sources */,
-				4F931A172125AD6500AF4226 /* RealmRepository.swift in Sources */,
 				1E597C4A2135682B0098631F /* ModalViewController.swift in Sources */,
 				4F83ABB421393CF500BC76E4 /* SettingsViewController.swift in Sources */,
 			);
@@ -1026,9 +936,11 @@
 				4FB1E6D8213EC6DC00136D2A /* NSColorExtension.swift in Sources */,
 				0DDCFF7E2366666D009481D4 /* Preferences.swift in Sources */,
 				0D588E82235E46870003668C /* PageLatency.swift in Sources */,
+				0DDF278B238B2CB600C17AC8 /* TrustedSites.swift in Sources */,
 				4F9CF8E7215E57B6005B1C1B /* Telemetry.swift in Sources */,
 				0DDCFF8323666792009481D4 /* FileManagerExtension.swift in Sources */,
 				4F30493C2118983D00BA3961 /* SafariExtensionViewController.swift in Sources */,
+				0DDF278E238B2EB900C17AC8 /* BlockingConfig.swift in Sources */,
 				0D5230B52371D129007A7508 /* Categories.swift in Sources */,
 				0DBA654C238327D20011AAD3 /* URLSessionExtension.swift in Sources */,
 				4F30493A2118983D00BA3961 /* SafariExtensionHandler.swift in Sources */,
@@ -1038,14 +950,13 @@
 				4F51EDC82191A0C60032DCDF /* TrustButtonCell.swift in Sources */,
 				4F931A1D2125D3DE00AF4226 /* URLExtension.swift in Sources */,
 				0DDCFF812366670D009481D4 /* WhiteList.swift in Sources */,
-				0DDCFF85236667AA009481D4 /* CrudRepository.swift in Sources */,
 				4FB1E6D7213EBF5300136D2A /* StringExtension.swift in Sources */,
 				0DDCFF80236666DA009481D4 /* GlobalConfigDataSource.swift in Sources */,
 				4F931A262126C95A00AF4226 /* Constants.swift in Sources */,
 				0D5230B62371D136007A7508 /* HTTPService.swift in Sources */,
+				0DDF2787238B04DC00C17AC8 /* GhosteryLite.xcdatamodeld in Sources */,
 				0DDCFF8223666737009481D4 /* GlobalConfigRepository.swift in Sources */,
 				0DDCFF7F236666B7009481D4 /* BlockLists.swift in Sources */,
-				0DDCFF84236667A7009481D4 /* RealmRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1343,7 +1254,6 @@
 		};
 		4F30492E2118982700BA3961 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F348C24C4B7D9DED318436C3 /* Pods-GhosteryLite.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GhosteryLite/SupportingFiles/GhosteryLite.entitlements;
@@ -1373,7 +1283,6 @@
 		};
 		4F30492F2118982700BA3961 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE8C203CDD8EB3F4808E1038 /* Pods-GhosteryLite.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GhosteryLite/SupportingFiles/GhosteryLite.entitlements;
@@ -1403,7 +1312,6 @@
 		};
 		4F30494A2118983D00BA3961 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1182440728E9F458F9DF12C /* Pods-SafariExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SupportingFiles/SafariExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1429,7 +1337,6 @@
 		};
 		4F30494B2118983D00BA3961 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B0DCFE1A47C2C26AC0A7F61 /* Pods-SafariExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SupportingFiles/SafariExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1559,7 +1466,6 @@
 		};
 		4F9CF8DC215B90E8005B1C1B /* Beta */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB216CBA35157C4445AE8BD5 /* Pods-GhosteryLite.beta.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GhosteryLite/SupportingFiles/GhosteryLite.entitlements;
@@ -1589,7 +1495,6 @@
 		};
 		4F9CF8DD215B90E8005B1C1B /* Beta */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1064AB5066CBD756EC99FF5E /* Pods-SafariExtension.beta.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SupportingFiles/SafariExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1682,6 +1587,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0DDF2784238B04DC00C17AC8 /* GhosteryLite.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0DDF2785238B04DC00C17AC8 /* GhosteryLite.xcdatamodel */,
+			);
+			currentVersion = 0DDF2785238B04DC00C17AC8 /* GhosteryLite.xcdatamodel */;
+			path = GhosteryLite.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4F3049152118982600BA3961 /* Project object */;
 }

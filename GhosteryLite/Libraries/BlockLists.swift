@@ -14,6 +14,8 @@
 
 import Foundation
 
+/// Handles all functions related to maintaining block list files. Checks for list updates, generates a new
+/// active list and reloads the Content Blocker.
 class BlockLists {
 	
 	static let shared = BlockLists()
@@ -22,7 +24,7 @@ class BlockLists {
 	private struct ghosteryVersionData: Decodable {
 		var safariContentBlockerVersion: Int
 	}
-	private struct clizVersionData: Decodable {
+	private struct cliqzVersionData: Decodable {
 		let network, cosmetic: String
 	}
 	
@@ -72,7 +74,7 @@ class BlockLists {
 		group.enter()
 		DispatchQueue.main.async(group: group) {
 			print("BlockLists.updateBlockLists: Checking for Cliqz block list updates")
-			HTTPService.shared.getJSON(url: Constants.CliqzVersionPath) { (completion: Result<clizVersionData, HTTPService.HTTPServiceError>) in
+			HTTPService.shared.getJSON(url: Constants.CliqzVersionPath) { (completion: Result<cliqzVersionData, HTTPService.HTTPServiceError>) in
 				switch completion {
 					case .success(let versionData):
 						// Get the checksum value from the URL path

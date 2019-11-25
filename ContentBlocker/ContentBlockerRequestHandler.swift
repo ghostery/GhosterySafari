@@ -16,17 +16,17 @@ import Foundation
 
 class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
 	/// Tells the extension to prepare for a host app’s request.
+	/// - Parameter context: Extension context
 	func beginRequest(with context: NSExtensionContext) {
 		let item = NSExtensionItem()
 		
-		let p = Constants.AssetsFolderURL?.appendingPathComponent("currentBlockList.json")
+		let blockList = Constants.AssetsFolderURL?.appendingPathComponent("currentBlockList.json")
 
-		let attachment = NSItemProvider(contentsOf: p)
+		let attachment = NSItemProvider(contentsOf: blockList)
 		item.attachments = [attachment] as? [NSItemProvider]
 
 		context.completeRequest(returningItems: [item], completionHandler: { (expired) -> Void in
 			print("Successfully reloaded static block list. (Expired? \(expired))")
 		})
 	}
-
 }

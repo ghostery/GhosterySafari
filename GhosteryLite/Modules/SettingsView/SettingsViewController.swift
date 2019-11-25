@@ -13,7 +13,6 @@
 //
 
 import Cocoa
-import SafariServices
 
 class SettingsViewController: NSViewController {
 	
@@ -63,19 +62,19 @@ class SettingsViewController: NSViewController {
 		}
 		if let m = modifiedCat {
 			let _ = GlobalConfigManager.shared.changeCategoryStatus(m, status: sender.state.rawValue == 0 ? false : true)
-			ContentBlocking.shared.reloadContentBlocker()
+			GhosteryApplication.shared.reloadContentBlocker()
 			self.savedBox.isHidden = false
 		}
 	}
 	
 	@IBAction func defaultSelected(_ sender: Any) {
-		ContentBlocking.shared.switchToDefault()
+		GhosteryApplication.shared.switchToDefault()
 		self.customRadio.state = NSControl.StateValue(rawValue: 0)
 		self.categoryBox.isHidden = true
 	}
 	
 	@IBAction func customSelected(_ sender: Any) {
-		ContentBlocking.shared.switchToCustom()
+		GhosteryApplication.shared.switchToCustom()
 		self.defaultRadio.state = NSControl.StateValue(rawValue: 0)
 		self.categoryBox.isHidden = false
 		self.savedBox.isHidden = true
@@ -129,9 +128,8 @@ class SettingsViewController: NSViewController {
 		self.savedBox.isHidden = true
 	}
 	
-	@objc
 	private func updateRadioBoxesState() {
-		if ContentBlocking.shared.isDefaultConfigEnabled() {
+		if GhosteryApplication.shared.isDefaultConfigEnabled() {
 			self.defaultRadio.state = NSControl.StateValue(rawValue: 1)
 			self.customRadio.state = NSControl.StateValue(rawValue: 0)
 			self.categoryBox.isHidden = true

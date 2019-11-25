@@ -13,7 +13,6 @@
 //
 
 import Foundation
-import RealmSwift
 
 class TrustedSiteObject: RealmSwift.Object {
 	

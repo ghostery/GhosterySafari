@@ -12,14 +12,43 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0
 //
 
-import Cocoa
+import Foundation
+import CoreData
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	var mainWindow: NSWindow?
 	
+	/// Core Data: The persistent container for the application
+	lazy var persistentContainer: NSPersistentContainer = {
+		let container = NSPersistentContainer(name: "GhosteryLite")
+		container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+			if let error = error {
+				fatalError("AppDelegate.persistentContainer error: \(error)")
+			}
+		})
+		return container
+	}()
+	
 	@IBOutlet weak var protectionConfigMenu: NSMenuItem!
+	
+	/// Core Data: Performs the save action for the application, which is to send the save: message to the application's managed object context. Any encountered errors are presented to the user.
+	@IBAction func saveAction(_ sender: AnyObject?) {
+		let context = persistentContainer.viewContext
+		if !context.commitEditing() {
+			NSLog("\(NSStringFromClass(type(of: self))) unable to commit editing before saving")
+		}
+		if context.hasChanges {
+			do {
+				try context.save()
+			} catch {
+				// Customize this code block to include application-specific recovery steps.
+				let err = error as NSError
+				NSApplication.shared.presentError(err)
+			}
+		}
+	}
 	
 	/// Sent by the default notification center immediately before the application object is initialized.
 	func applicationWillFinishLaunching(_ notification: Notification) {
@@ -41,13 +70,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			self.handleInitialLaunch()
 		}
 		// Check for new Block Lists on CDN
-		ContentBlocking.shared.checkForUpdatedBlockLists()
+		GhosteryApplication.shared.checkForUpdatedBlockLists()
 	}
 	
 	/// Sent by the default notification center immediately after the application becomes active.
 	func applicationDidBecomeActive(_ notification: Notification) {
 		self.updateConfigState()
-		Telemetry.shared.sendSignal(.active, ghostrank: 3)
+		Telemetry.shared.sendSignal(.active, source: 3)
 	}
 	
 	/// Sent by the default notification center immediately before the application terminates.
@@ -69,10 +98,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		return true
 	}
 	
-	@objc
 	func updateConfigState() {
 		if let m = self.protectionConfigMenu?.submenu {
-			if ContentBlocking.shared.isDefaultConfigEnabled() {
+			if GhosteryApplication.shared.isDefaultConfigEnabled() {
 				m.items[0].state = NSControl.StateValue(rawValue: 1)
 				m.items[1].state = NSControl.StateValue(rawValue: 0)
 			} else {

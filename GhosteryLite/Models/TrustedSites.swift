@@ -1,5 +1,5 @@
 //
-// WindowController
+// TrustedSites: CoreDataClass
 // GhosteryLite
 //
 // Ghostery Lite for Safari
@@ -10,20 +10,23 @@
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0
-//
+// 
 
 import Foundation
+import CoreData
 
-class WindowController: NSWindowController {
+@objc(TrustedSites)
+public class TrustedSites: NSManagedObject {
 	
-	override func windowWillLoad() {
-		super.windowWillLoad()
+}
+
+/// CoreDataProperties
+extension TrustedSites {
+	
+	@nonobjc public class func fetchRequest() -> NSFetchRequest<TrustedSites> {
+		return NSFetchRequest<TrustedSites>(entityName: "TrustedSites")
 	}
 	
-	override func windowDidLoad() {
-		super.windowDidLoad()
-		let appDelegate = NSApplication.shared.delegate as? AppDelegate
-		appDelegate?.mainWindow = self.window
-	}
+	@NSManaged public var domain: String?
 	
 }
