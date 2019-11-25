@@ -75,14 +75,13 @@
 		4F3049A52119F4FC00BA3961 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A22119F4FC00BA3961 /* DictionaryExtension.swift */; };
 		4F3049A62119F4FC00BA3961 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A32119F4FC00BA3961 /* URLExtension.swift */; };
 		4F3049AF211B36E800BA3961 /* BlockLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049AE211B36E800BA3961 /* BlockLists.swift */; };
-		4F3049B4211C6D3200BA3961 /* ContentBlocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* ContentBlocking.swift */; };
+		4F3049B4211C6D3200BA3961 /* GhosteryApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* GhosteryApplication.swift */; };
 		4F51EDC82191A0C60032DCDF /* TrustButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F51EDC72191A0C60032DCDF /* TrustButtonCell.swift */; };
 		4F83ABAE2138583A00BC76E4 /* TrustedSitesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */; };
 		4F83ABB12138586A00BC76E4 /* TrustedSitesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABB02138586A00BC76E4 /* TrustedSitesDataSource.swift */; };
 		4F83ABB421393CF500BC76E4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABB321393CF400BC76E4 /* SettingsViewController.swift */; };
 		4F90DD81214BD75000E8BA6D /* WhiteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90DD80214BD74F00E8BA6D /* WhiteList.swift */; };
 		4F931A1D2125D3DE00AF4226 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A32119F4FC00BA3961 /* URLExtension.swift */; };
-		4F931A1E2125D3F500AF4226 /* ContentBlocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* ContentBlocking.swift */; };
 		4F931A252126C8C900AF4226 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A242126C8C900AF4226 /* Constants.swift */; };
 		4F931A262126C95A00AF4226 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A242126C8C900AF4226 /* Constants.swift */; };
 		4F931A272126C95B00AF4226 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A242126C8C900AF4226 /* Constants.swift */; };
@@ -291,7 +290,7 @@
 		4F3049A22119F4FC00BA3961 /* DictionaryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		4F3049A32119F4FC00BA3961 /* URLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		4F3049AE211B36E800BA3961 /* BlockLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockLists.swift; sourceTree = "<group>"; };
-		4F3049B3211C6D3200BA3961 /* ContentBlocking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlocking.swift; sourceTree = "<group>"; };
+		4F3049B3211C6D3200BA3961 /* GhosteryApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhosteryApplication.swift; sourceTree = "<group>"; };
 		4F51EDC72191A0C60032DCDF /* TrustButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustButtonCell.swift; sourceTree = "<group>"; };
 		4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSitesRepository.swift; sourceTree = "<group>"; };
 		4F83ABB02138586A00BC76E4 /* TrustedSitesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSitesDataSource.swift; sourceTree = "<group>"; };
@@ -345,14 +344,6 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		0D02795223624D82007D5F66 /* PageLatency */ = {
-			isa = PBXGroup;
-			children = (
-				0D588E81235E46870003668C /* PageLatency.swift */,
-			);
-			path = PageLatency;
-			sourceTree = "<group>";
-		};
 		0D02795323624D8E007D5F66 /* ExtensionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,41 +394,39 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		0D02795823632F84007D5F66 /* Modules */ = {
+		0D02795823632F84007D5F66 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0D02795A23634277007D5F66 /* DetailView */,
-				0D02795C236342D7007D5F66 /* HelpView */,
-				0D02795D236342DC007D5F66 /* HomeView */,
-				0D02795E236342E4007D5F66 /* MainView */,
-				0D02795B236342BD007D5F66 /* MenuItem */,
-				0D02795923634271007D5F66 /* MenuView */,
-				0D02796323634662007D5F66 /* ModalView */,
-				0D02795F236342F5007D5F66 /* SettingsView */,
-				0D02796123634306007D5F66 /* TrustedSiteItem */,
-				0D027960236342FE007D5F66 /* TrustedSitesView */,
-				0D027962236345EF007D5F66 /* Window */,
+				0D02795A23634277007D5F66 /* Detail */,
+				0D02795C236342D7007D5F66 /* Help */,
+				0D02795D236342DC007D5F66 /* Home */,
+				0D02795E236342E4007D5F66 /* Main */,
+				0D02795923634271007D5F66 /* Menu */,
+				0D02796323634662007D5F66 /* Modal */,
+				0D02795F236342F5007D5F66 /* Settings */,
+				0D027960236342FE007D5F66 /* TrustedSites */,
 			);
-			path = Modules;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		0D02795923634271007D5F66 /* MenuView */ = {
+		0D02795923634271007D5F66 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				0D02795B236342BD007D5F66 /* MenuItem */,
 				0D02796E23638C19007D5F66 /* MenuViewController.swift */,
 				0DBA6540238317BF0011AAD3 /* MenuViewControllerDelegate.swift */,
 				0DBA6542238317E70011AAD3 /* MenuViewControllerExtension.swift */,
 			);
-			path = MenuView;
+			path = Menu;
 			sourceTree = "<group>";
 		};
-		0D02795A23634277007D5F66 /* DetailView */ = {
+		0D02795A23634277007D5F66 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
 				1E597C2C2133F8170098631F /* DetailViewController.swift */,
 				0DBA653C238315FB0011AAD3 /* DetailViewControllerDelegate.swift */,
 			);
-			path = DetailView;
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		0D02795B236342BD007D5F66 /* MenuItem */ = {
@@ -450,23 +439,23 @@
 			path = MenuItem;
 			sourceTree = "<group>";
 		};
-		0D02795C236342D7007D5F66 /* HelpView */ = {
+		0D02795C236342D7007D5F66 /* Help */ = {
 			isa = PBXGroup;
 			children = (
 				0D027966236373E5007D5F66 /* HelpViewController.swift */,
 			);
-			path = HelpView;
+			path = Help;
 			sourceTree = "<group>";
 		};
-		0D02795D236342DC007D5F66 /* HomeView */ = {
+		0D02795D236342DC007D5F66 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				1E597C412134407F0098631F /* HomeViewController.swift */,
 			);
-			path = HomeView;
+			path = Home;
 			sourceTree = "<group>";
 		};
-		0D02795E236342E4007D5F66 /* MainView */ = {
+		0D02795E236342E4007D5F66 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				0DDCFF7B23660DBD009481D4 /* Localizable.strings */,
@@ -474,24 +463,25 @@
 				0D027968236374A2007D5F66 /* MainViewController.swift */,
 				0DBA653E238316BA0011AAD3 /* MainViewControllerExtension.swift */,
 			);
-			path = MainView;
+			path = Main;
 			sourceTree = "<group>";
 		};
-		0D02795F236342F5007D5F66 /* SettingsView */ = {
+		0D02795F236342F5007D5F66 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				4F83ABB321393CF400BC76E4 /* SettingsViewController.swift */,
 			);
-			path = SettingsView;
+			path = Settings;
 			sourceTree = "<group>";
 		};
-		0D027960236342FE007D5F66 /* TrustedSitesView */ = {
+		0D027960236342FE007D5F66 /* TrustedSites */ = {
 			isa = PBXGroup;
 			children = (
+				0D02796123634306007D5F66 /* TrustedSiteItem */,
 				1E14B752213819A800E28C38 /* TrustedSitesViewController.swift */,
 				0DBA6548238319530011AAD3 /* TrustedSitesViewControllerExtension.swift */,
 			);
-			path = TrustedSitesView;
+			path = TrustedSites;
 			sourceTree = "<group>";
 		};
 		0D02796123634306007D5F66 /* TrustedSiteItem */ = {
@@ -512,13 +502,13 @@
 			path = Window;
 			sourceTree = "<group>";
 		};
-		0D02796323634662007D5F66 /* ModalView */ = {
+		0D02796323634662007D5F66 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
 				1E597C492135682B0098631F /* ModalViewController.swift */,
 				0DBA65442383184D0011AAD3 /* ModalViewControllerDelegate.swift */,
 			);
-			path = ModalView;
+			path = Modal;
 			sourceTree = "<group>";
 		};
 		0D02796423634CDC007D5F66 /* Application */ = {
@@ -533,6 +523,7 @@
 			isa = PBXGroup;
 			children = (
 				4F3049202118982600BA3961 /* AppDelegate.swift */,
+				4F3049B3211C6D3200BA3961 /* GhosteryApplication.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -592,13 +583,28 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		0DF65C4D22E793AF0076A4BD /* Modules */ = {
+		0DDF279B238B6F4A00C17AC8 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				0D588E81235E46870003668C /* PageLatency.swift */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		0DDF279C238B70E100C17AC8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0D027962236345EF007D5F66 /* Window */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0DF65C4D22E793AF0076A4BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				0D02795323624D8E007D5F66 /* ExtensionView */,
-				0D02795223624D82007D5F66 /* PageLatency */,
 			);
-			path = Modules;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		12C745E560D59A7A5C913F04 /* Frameworks */ = {
@@ -630,14 +636,15 @@
 			isa = PBXGroup;
 			children = (
 				0D02796523634CF1007D5F66 /* Application */,
+				0DDF279C238B70E100C17AC8 /* Controllers */,
 				4F4BE2DF212595AE00FEE71E /* DataPersistence */,
 				4F3049A02119F4FC00BA3961 /* Extensions */,
 				4F931A232126C8AF00AF4226 /* Libraries */,
 				0DDF2788238B2C5900C17AC8 /* Models */,
-				0D02795823632F84007D5F66 /* Modules */,
 				0D02795623632D9A007D5F66 /* Resources */,
 				0D74B482238396220095E9C1 /* Services */,
 				0D02795723632DA3007D5F66 /* SupportingFiles */,
+				0D02795823632F84007D5F66 /* Views */,
 			);
 			path = GhosteryLite;
 			sourceTree = "<group>";
@@ -646,9 +653,10 @@
 			isa = PBXGroup;
 			children = (
 				0D02796423634CDC007D5F66 /* Application */,
-				0DF65C4D22E793AF0076A4BD /* Modules */,
+				0DDF279B238B6F4A00C17AC8 /* Libraries */,
 				0D3FBB06235F9F140054822A /* Resources */,
 				0D02795123624B45007D5F66 /* SupportingFiles */,
+				0DF65C4D22E793AF0076A4BD /* Views */,
 			);
 			path = SafariExtension;
 			sourceTree = "<group>";
@@ -693,7 +701,6 @@
 				4F3049AE211B36E800BA3961 /* BlockLists.swift */,
 				0D5230B32371CCD8007A7508 /* Categories.swift */,
 				4F931A242126C8C900AF4226 /* Constants.swift */,
-				4F3049B3211C6D3200BA3961 /* ContentBlocking.swift */,
 				1E597C4721354DE60098631F /* Preferences.swift */,
 				4F9CF8E2215BCD97005B1C1B /* Telemetry.swift */,
 				4F90DD80214BD74F00E8BA6D /* WhiteList.swift */,
@@ -912,7 +919,7 @@
 				1E597C4621354D830098631F /* NSColorExtension.swift in Sources */,
 				4FFD8349212B5D430038149F /* GlobalConfigRepository.swift in Sources */,
 				1E597C422134407F0098631F /* HomeViewController.swift in Sources */,
-				4F3049B4211C6D3200BA3961 /* ContentBlocking.swift in Sources */,
+				4F3049B4211C6D3200BA3961 /* GhosteryApplication.swift in Sources */,
 				4FFD834D212B602B0038149F /* GlobalConfigDataSource.swift in Sources */,
 				1E14B754213819A800E28C38 /* TrustedSitesViewController.swift in Sources */,
 				4F931A252126C8C900AF4226 /* Constants.swift in Sources */,
@@ -944,7 +951,6 @@
 				0D5230B52371D129007A7508 /* Categories.swift in Sources */,
 				0DBA654C238327D20011AAD3 /* URLSessionExtension.swift in Sources */,
 				4F30493A2118983D00BA3961 /* SafariExtensionHandler.swift in Sources */,
-				4F931A1E2125D3F500AF4226 /* ContentBlocking.swift in Sources */,
 				0DDCFF87236667D3009481D4 /* TrustedSitesRepository.swift in Sources */,
 				0DDCFF86236667C1009481D4 /* TrustedSitesDataSource.swift in Sources */,
 				4F51EDC82191A0C60032DCDF /* TrustButtonCell.swift in Sources */,
