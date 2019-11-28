@@ -41,7 +41,7 @@ class BlockLists {
 		group.enter()
 		DispatchQueue.main.async(group: group) {
 			Utils.shared.logger("Checking for Ghostery block list updates")
-			HTTPService.shared.getJSON(url: Constants.GhosteryAssetPath) { (completion: Result<ghosteryVersionData, HTTPService.HTTPServiceError>) in
+			HTTPService.shared.getJSON(url: Constants.GhosteryVersionPath) { (completion: Result<ghosteryVersionData, HTTPService.HTTPServiceError>) in
 				switch completion {
 					case .success(let versionData):
 						let blockListVersion = versionData.safariContentBlockerVersion

@@ -29,9 +29,9 @@ struct Constants {
 	
 	/// Block List CDN paths
 	#if PROD
-		static let GhosteryAssetPath = "https://cdn.ghostery.com/update/safari"
+		static let GhosteryAssetPath = "https://cdn.ghostery.com/update/safari/"
 	#else
-		static let GhosteryAssetPath = "https://staging-cdn.ghostery.com/update/safari"
+		static let GhosteryAssetPath = "https://staging-cdn.ghostery.com/update/safari/"
 	#endif
 	
 	#if PROD
