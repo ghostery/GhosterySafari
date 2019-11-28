@@ -46,11 +46,12 @@ class HTTPService {
 						let values = try JSONDecoder().decode(T.self, from: data)
 						Utils.shared.logger("Successfully decoded JSON file.")
 						completion(.success(values))
-					} catch {
+					} catch let error as NSError {
+						Utils.shared.logger("JSONDecoder error: \(error)")
 						completion(.failure(.decodeError))
 					}
 				case .failure(let error):
-					Utils.shared.logger("Error: \(error.localizedDescription)")
+					Utils.shared.logger("Error: \(error)")
 					completion(.failure(.apiError))
 			}
 		}.resume()
@@ -75,7 +76,7 @@ class HTTPService {
 					Utils.shared.logger("Successfully downloaded JSON data.")
 					completion(.success(data))
 				case .failure(let error):
-					Utils.shared.logger("Error: \(error.localizedDescription)")
+					Utils.shared.logger("Error: \(error)")
 					completion(.failure(.apiError))
 			}
 		}.resume()

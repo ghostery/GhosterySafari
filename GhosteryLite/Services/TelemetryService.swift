@@ -61,7 +61,7 @@ class TelemetryService {
 				case .success(_):
 					Utils.shared.logger("Sent ping \(type)")
 				case .failure(let error):
-					Utils.shared.logger("Error: \(error.localizedDescription)")
+					Utils.shared.logger("Error: \(error)")
 			}
 		}
 	}

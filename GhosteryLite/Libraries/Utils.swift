@@ -23,7 +23,8 @@ class Utils {
 			let dateFormatter = DateFormatter()
 			dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 			let file = URL(string: filename)?.lastPathComponent ?? ""
-			Swift.print("\(dateFormatter.string(from: Foundation.Date())) >> \(file):\(line) \(method) : \(object)")
+			let className = file.replacingOccurrences(of: ".swift", with: "")
+			Swift.print("\(dateFormatter.string(from: Foundation.Date())) >> \(className).\(method):\(line) >> \(object)")
 		#endif
 	}
 }

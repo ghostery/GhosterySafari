@@ -25,6 +25,9 @@ class BlockLists {
 		var safariContentBlockerVersion: Int
 	}
 	private struct cliqzVersionData: Decodable {
+		let safari: cliqzSafariLists
+	}
+	private struct cliqzSafariLists: Decodable {
 		let network, cosmetic: String
 	}
 	
@@ -64,7 +67,7 @@ class BlockLists {
 							Utils.shared.logger("No Ghostery block list updates available.")
 						}
 					case .failure(let error):
-						Utils.shared.logger("Error: \(error.localizedDescription)")
+						Utils.shared.logger("Ghostery version error: \(error)")
 				}
 				group.leave()
 			}
@@ -78,13 +81,13 @@ class BlockLists {
 				switch completion {
 					case .success(let versionData):
 						// Get the checksum value from the URL path
-						let networkChecksum = self.getCliqzChecksum(versionData.network)
-						let cosmeticChecksum = self.getCliqzChecksum(versionData.cosmetic)
+						let networkChecksum = self.getCliqzChecksum(versionData.safari.network)
+						let cosmeticChecksum = self.getCliqzChecksum(versionData.safari.cosmetic)
 						
 						if self.isCliqzBlockListChecksumChanged(networkChecksum, self.cliqzNetworkListChecksum) {
 							group.enter()
 							// Update the Cliqz network block list file
-							self.downloadAndSaveFile("cliqzNetworkList", versionData.network, Constants.AssetsFolderURL) { () in
+							self.downloadAndSaveFile("cliqzNetworkList", versionData.safari.network, Constants.AssetsFolderURL) { () in
 								Preferences.setGlobalPreference(key: self.cliqzNetworkListChecksum, value: networkChecksum)
 								updated = true
 								group.leave()
@@ -96,7 +99,7 @@ class BlockLists {
 						if self.isCliqzBlockListChecksumChanged(cosmeticChecksum, self.cliqzCosmeticListChecksum) {
 							group.enter()
 							// Update the Cliqz cosmetic block list file
-							self.downloadAndSaveFile("cliqzCosmeticList", versionData.cosmetic, Constants.AssetsFolderURL) { () in
+							self.downloadAndSaveFile("cliqzCosmeticList", versionData.safari.cosmetic, Constants.AssetsFolderURL) { () in
 								Preferences.setGlobalPreference(key: self.cliqzCosmeticListChecksum, value: cosmeticChecksum)
 								updated = true
 								group.leave()
@@ -105,7 +108,7 @@ class BlockLists {
 							Utils.shared.logger("No Cliqz cosmetic filter list update available.")
 					}
 					case .failure(let error):
-						Utils.shared.logger("Error: \(error.localizedDescription)")
+						Utils.shared.logger("Cliqz version error: \(error)")
 				}
 				group.leave()
 			}
@@ -184,7 +187,7 @@ class BlockLists {
 					// Utils.shared.logger("Downloaded \(fileName)")
 					FileManager.default.writeFile(jsonData, name: "\(fileName).json", in: folder)
 				case .failure(let error):
-					Utils.shared.logger("\(fileName) file download failed: \(error.localizedDescription)")
+					Utils.shared.logger("\(fileName) file download failed: \(error)")
 			}
 			done()
 		}
