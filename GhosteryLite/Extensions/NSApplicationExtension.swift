@@ -13,7 +13,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0
 // 
 
-import Foundation
+import Cocoa
 
 extension NSApplication {
 	@IBAction func defaultConfigSelected(_ sender: NSMenuItem) {

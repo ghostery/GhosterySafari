@@ -74,7 +74,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		Telemetry.shared.sendSignal(.engage, source: 2)
 		self.view.layer?.backgroundColor = NSColor(named: "backgroundColor")?.cgColor
 		urlLabel?.stringValue = self.currentDomain ?? ""
-		if GhosteryApplication.shared.isDefaultConfigEnabled() {
+		if GhosteryApplication.shared.isDefaultBlockingEnabled() {
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
 		} else {
@@ -124,7 +124,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		if sender.state.rawValue == 1{
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
 			DistributedNotificationCenter.default().post(name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
-			GhosteryApplication.shared.switchToDefault()
+			GhosteryApplication.shared.switchToDefaultBlocking()
 		} else {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
 		}
@@ -134,7 +134,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		if sender.state.rawValue == 1 {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 0)
 			DistributedNotificationCenter.default().post(name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
-			GhosteryApplication.shared.switchToCustom()
+			GhosteryApplication.shared.switchToCustomBlocking()
 		} else {
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 1)
 		}

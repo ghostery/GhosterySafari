@@ -1,5 +1,5 @@
 //
-// BlockingConfig
+// BlockingConfiguration
 // GhosteryLite
 //
 // Ghostery Lite for Safari
@@ -15,12 +15,12 @@
 import Cocoa
 import CoreData
 
-class BlockingConfig {
+class BlockingConfiguration {
 	
 	var configType: Int?
 	var blockedCategories = [Int]()
 	
-	static let shared = BlockingConfig(type: .defaultBlocking)
+	static let shared = BlockingConfiguration(type: .defaultBlocking)
 	
 	/// Blocking configuration types.  Custom or default blocking
 	enum ConfigurationType: Int {
@@ -135,7 +135,7 @@ class BlockingConfig {
 		do {
 			return try managedContext.fetch(fetchRequest)
 		} catch let error as NSError {
-			print("BlockingConfig.getCurrentConfig error: \(error), \(error.userInfo)")
+			print("BlockingConfiguration.getCurrentConfig error: \(error), \(error.userInfo)")
 			return nil
 		}
 	}
@@ -160,7 +160,7 @@ class BlockingConfig {
 		do {
 			try managedContext.save()
 		} catch let error as NSError {
-			print("BlockingConfig.saveContext error: \(error), \(error.userInfo)")
+			print("BlockingConfiguration.saveContext error: \(error), \(error.userInfo)")
 		}
 	}
 }

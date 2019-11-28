@@ -16,7 +16,7 @@ import Cocoa
 
 class TrustedSitesViewController: NSViewController {
 	
-	var trustedSites = [TrustedSiteObject]()
+	var trustedSites = [String]()
 	
 	@IBOutlet weak var trustedSitesTitle: NSTextField!
 	@IBOutlet weak var trustedSiteTextField: NSTextField!
@@ -63,8 +63,10 @@ class TrustedSitesViewController: NSViewController {
 		trustSiteBtn.state = NSControl.StateValue(rawValue: isEnabled ? 1 : 0)
 	}
 	
-	func updateData() {
-		self.trustedSites = TrustedSitesDataSource.shared.allTrustedSites()
+	@objc func updateData() {
+		if let sites = TrustedSite.shared.getTrustedSites() {
+			self.trustedSites = sites
+		}
 		trustedStiesCollectionView.reloadData()
 	}
 	

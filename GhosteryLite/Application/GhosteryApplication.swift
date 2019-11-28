@@ -64,26 +64,26 @@ class GhosteryApplication {
 	
 	/// Enable the default blocking configuration
 	func switchToDefaultBlocking() {
-		BlockingConfig.shared.updateConfigType(type: .defaultBlocking)
+		BlockingConfiguration.shared.updateConfigType(type: .defaultBlocking)
 		self.reloadContentBlocker()
 	}
 	
 	/// Enable the custom blocking configuration
 	func switchToCustomBlocking() {
-		BlockingConfig.shared.updateConfigType(type: .customBlocking)
+		BlockingConfiguration.shared.updateConfigType(type: .customBlocking)
 		self.reloadContentBlocker()
 	}
 	
 	/// Are we using the default blocking configuration
 	func isDefaultBlockingEnabled() -> Bool {
-		let cfgType = BlockingConfig.shared.getConfigType()
-		return cfgType == BlockingConfig.ConfigurationType.defaultBlocking.rawValue
+		let cfgType = BlockingConfiguration.shared.getConfigType()
+		return cfgType == BlockingConfiguration.ConfigurationType.defaultBlocking.rawValue
 	}
 	
 	/// Add a domain to the whitelist
 	/// - Parameter domain: Domain URL
 	func trustDomain(domain: String) {
-		TrustedSitesDataSource.shared.addDomain(domain)
+		TrustedSite.shared.addDomain(domain)
 		WhiteList.shared.add(domain, completion: {
 			self.reloadContentBlocker()
 		})
@@ -92,7 +92,7 @@ class GhosteryApplication {
 	/// Remove a domain from the whitelist
 	/// - Parameter domain: Domain URL
 	func untrustDomain(domain: String) {
-		TrustedSitesDataSource.shared.removeDomain(domain)
+		TrustedSite.shared.removeDomain(domain)
 		WhiteList.shared.remove(domain, completion: {
 			self.reloadContentBlocker()
 		})
@@ -101,7 +101,7 @@ class GhosteryApplication {
 	/// Is the domain in the whitelist?
 	/// - Parameter domain: Domain URL
 	func isTrustedDomain(domain: String) -> Bool {
-		return TrustedSitesDataSource.shared.isTrusted(domain)
+		return TrustedSite.shared.isSiteTrusted(domain)
 	}
 	
 	/// Notification handler for a trust site action
@@ -148,7 +148,7 @@ class GhosteryApplication {
 	/// Load a custom block list file based on user selected categories
 	private func loadCustomBlockList() {
 		// Get the blockedCategories from CoreData
-		if let cats = BlockingConfig.shared.getBlockedCategories() {
+		if let cats = BlockingConfiguration.shared.getBlockedCategories() {
 			var fileNames = [String]()
 			// No categories selected, load empty block list
 			if cats.count == 0 {
@@ -174,7 +174,7 @@ class GhosteryApplication {
 	/// Load the default block list file consisting of the default categories only
 	private func loadDefaultBlockList() {
 		var fileNames = [String]()
-		for index in BlockingConfig.shared.defaultBlockedCategories() {
+		for index in BlockingConfiguration.shared.defaultBlockedCategories() {
 			fileNames.append(index.fileName())
 		}
 		// Trigger a Content Blocker reload

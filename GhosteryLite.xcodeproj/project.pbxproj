@@ -16,6 +16,8 @@
 		0D027978236538A9007D5F66 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D027976236538A8007D5F66 /* Localizable.strings */; };
 		0D182934238E27AA00E5EE42 /* GhosteryLite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0D182932238E27AA00E5EE42 /* GhosteryLite.xcdatamodeld */; };
 		0D182935238E27AA00E5EE42 /* GhosteryLite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0D182932238E27AA00E5EE42 /* GhosteryLite.xcdatamodeld */; };
+		0D182936238F7CC900E5EE42 /* GhosteryApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* GhosteryApplication.swift */; };
+		0D182937238F812700E5EE42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049202118982600BA3961 /* AppDelegate.swift */; };
 		0D3FBAFA235F6EAA0054822A /* SafariExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D588D9C235E3FBB0003668C /* SafariExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D3FBAFD235F6EB10054822A /* ContentBlocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D588D9D235E3FBB0003668C /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D3FBB02235F701F0054822A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3FBB00235F70030054822A /* Cocoa.framework */; };
@@ -284,8 +286,6 @@
 		4F3049AE211B36E800BA3961 /* BlockLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockLists.swift; sourceTree = "<group>"; };
 		4F3049B3211C6D3200BA3961 /* GhosteryApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhosteryApplication.swift; sourceTree = "<group>"; };
 		4F51EDC72191A0C60032DCDF /* TrustButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustButtonCell.swift; sourceTree = "<group>"; };
-		4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSitesRepository.swift; sourceTree = "<group>"; };
-		4F83ABB02138586A00BC76E4 /* TrustedSitesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSitesDataSource.swift; sourceTree = "<group>"; };
 		4F83ABB321393CF400BC76E4 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4F90DD80214BD74F00E8BA6D /* WhiteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteList.swift; sourceTree = "<group>"; };
 		4F931A242126C8C900AF4226 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -518,14 +518,6 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		0D02797023650B49007D5F66 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */,
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
 		0D3FBB06235F9F140054822A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -626,7 +618,6 @@
 			children = (
 				0D02796523634CF1007D5F66 /* Application */,
 				0DDF279C238B70E100C17AC8 /* Controllers */,
-				4F4BE2DF212595AE00FEE71E /* DataPersistence */,
 				4F3049A02119F4FC00BA3961 /* Extensions */,
 				4F931A232126C8AF00AF4226 /* Libraries */,
 				0DDF2788238B2C5900C17AC8 /* Models */,
@@ -672,15 +663,6 @@
 				0DBA654A238327D20011AAD3 /* URLSessionExtension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		4F4BE2DF212595AE00FEE71E /* DataPersistence */ = {
-			isa = PBXGroup;
-			children = (
-				0D02797023650B49007D5F66 /* Repositories */,
-				4F83ABB02138586A00BC76E4 /* TrustedSitesDataSource.swift */,
-			);
-			path = DataPersistence;
 			sourceTree = "<group>";
 		};
 		4F931A232126C8AF00AF4226 /* Libraries */ = {
@@ -923,6 +905,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D182937238F812700E5EE42 /* AppDelegate.swift in Sources */,
 				4F9CF8E8215E57B9005B1C1B /* TelemetryService.swift in Sources */,
 				4FB1E6D8213EC6DC00136D2A /* NSColorExtension.swift in Sources */,
 				0DDCFF7E2366666D009481D4 /* Preferences.swift in Sources */,
@@ -941,6 +924,7 @@
 				0DDCFF812366670D009481D4 /* WhiteList.swift in Sources */,
 				4FB1E6D7213EBF5300136D2A /* StringExtension.swift in Sources */,
 				4F931A262126C95A00AF4226 /* Constants.swift in Sources */,
+				0D182936238F7CC900E5EE42 /* GhosteryApplication.swift in Sources */,
 				0D5230B62371D136007A7508 /* HTTPService.swift in Sources */,
 				0DDCFF7F236666B7009481D4 /* BlockLists.swift in Sources */,
 			);

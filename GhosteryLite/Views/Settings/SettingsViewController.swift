@@ -61,7 +61,7 @@ class SettingsViewController: NSViewController {
 				print("Unsupported category")
 		}
 		if let m = modifiedCat {
-			let _ = BlockingConfig.shared.updateBlockedCategory(category: m, blocked: sender.state.rawValue == 0 ? false : true)
+			let _ = BlockingConfiguration.shared.updateBlockedCategory(category: m, blocked: sender.state.rawValue == 0 ? false : true)
 			GhosteryApplication.shared.reloadContentBlocker()
 			self.savedBox.isHidden = false
 		}
@@ -141,14 +141,14 @@ class SettingsViewController: NSViewController {
 	}
 	
 	private func updateCategoryCheckboxStates() {
-		adCheckbox.state = NSControl.StateValue(BlockingConfig.shared.isCategoryBlocked(category: .advertising) ? 1 : 0)
-		audioVideoCheckbox.state = NSControl.StateValue(BlockingConfig.shared.isCategoryBlocked(category: .audioVideoPlayer) ? 1 : 0)
-		commentsCheckbox.state = NSControl.StateValue(BlockingConfig.shared.isCategoryBlocked(category: .comments) ? 1 : 0)
-		customInterCheckbox.state = NSControl.StateValue(BlockingConfig.shared.isCategoryBlocked(category: .customerInteraction) ? 1 : 0)
-		essentialCheckbox.state = NSControl.StateValue(BlockingConfig.shared.isCategoryBlocked(category: .essential) ? 1 : 0)
-		adultCheckbox.state = NSControl.StateValue(BlockingConfig.shared.isCategoryBlocked(category: .pornvertising) ? 1 : 0)
-		siteAnalyticsCheckbox.state = NSControl.StateValue(BlockingConfig.shared.isCategoryBlocked(category: .siteAnalytics) ? 1 : 0)
-		socialMediaCheckbox.state = NSControl.StateValue(BlockingConfig.shared.isCategoryBlocked(category: .socialMedia) ? 1 : 0)
+		adCheckbox.state = NSControl.StateValue(BlockingConfiguration.shared.isCategoryBlocked(category: .advertising) ? 1 : 0)
+		audioVideoCheckbox.state = NSControl.StateValue(BlockingConfiguration.shared.isCategoryBlocked(category: .audioVideoPlayer) ? 1 : 0)
+		commentsCheckbox.state = NSControl.StateValue(BlockingConfiguration.shared.isCategoryBlocked(category: .comments) ? 1 : 0)
+		customInterCheckbox.state = NSControl.StateValue(BlockingConfiguration.shared.isCategoryBlocked(category: .customerInteraction) ? 1 : 0)
+		essentialCheckbox.state = NSControl.StateValue(BlockingConfiguration.shared.isCategoryBlocked(category: .essential) ? 1 : 0)
+		adultCheckbox.state = NSControl.StateValue(BlockingConfiguration.shared.isCategoryBlocked(category: .pornvertising) ? 1 : 0)
+		siteAnalyticsCheckbox.state = NSControl.StateValue(BlockingConfiguration.shared.isCategoryBlocked(category: .siteAnalytics) ? 1 : 0)
+		socialMediaCheckbox.state = NSControl.StateValue(BlockingConfiguration.shared.isCategoryBlocked(category: .socialMedia) ? 1 : 0)
 	}
 	
 	private func setupTextField(textField: NSTextField, mainText: String, learnMoreText: String, urlString: String) {

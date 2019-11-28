@@ -12,7 +12,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0
 //
 
-import Foundation
+import Cocoa
 
 class TrustButtonCell: NSButtonCell {
 	override func titleRect(forBounds rect: NSRect) -> NSRect {
