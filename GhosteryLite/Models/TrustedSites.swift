@@ -1,5 +1,5 @@
 //
-// TrustedSites: CoreDataClass
+// TrustedSites
 // GhosteryLite
 //
 // Ghostery Lite for Safari
@@ -12,21 +12,9 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0
 // 
 
-import Foundation
+
 import CoreData
 
-@objc(TrustedSites)
-public class TrustedSites: NSManagedObject {
-	
-}
-
-/// CoreDataProperties
-extension TrustedSites {
-	
-	@nonobjc public class func fetchRequest() -> NSFetchRequest<TrustedSites> {
-		return NSFetchRequest<TrustedSites>(entityName: "TrustedSites")
-	}
-	
-	@NSManaged public var domain: String?
+class TrustedSites {
 	
 }

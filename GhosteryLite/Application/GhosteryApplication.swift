@@ -15,14 +15,14 @@
 import Foundation
 import SafariServices
 
+/// Manages GhosteryLite application state between targets. Set paused/resumed, trust/untrust,
+/// change block list settings, reload Content Blocker
 class GhosteryApplication {
 	
 	static let shared = GhosteryApplication()
 	private var paused: Bool = false
 	
-	init() {
-		GlobalConfigManager.shared.createConfigIfDoesNotExist()
-	}
+	init() {}
 	
 	deinit {
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.PauseNotificationName, object: Constants.SafariPopupExtensionID)
@@ -38,13 +38,13 @@ class GhosteryApplication {
 	/// Pause GhosteryLite
 	func pause() {
 		self.paused = true
-		reloadContentBlocker()
+		self.reloadContentBlocker()
 	}
 	
 	/// Resume GhosteryLite
 	func resume() {
 		self.paused = false
-		reloadContentBlocker()
+		self.reloadContentBlocker()
 	}
 	
 	/// Check to see if GhosteryList is paused
@@ -63,23 +63,21 @@ class GhosteryApplication {
 	}
 	
 	/// Enable the default blocking configuration
-	func switchToDefault() {
-		GlobalConfigManager.shared.switchToConfig(.byDefault)
+	func switchToDefaultBlocking() {
+		BlockingConfig.shared.updateConfigType(type: .defaultBlocking)
 		self.reloadContentBlocker()
 	}
 	
 	/// Enable the custom blocking configuration
-	func switchToCustom() {
-		GlobalConfigManager.shared.switchToConfig(.custom)
+	func switchToCustomBlocking() {
+		BlockingConfig.shared.updateConfigType(type: .customBlocking)
 		self.reloadContentBlocker()
 	}
 	
 	/// Are we using the default blocking configuration
-	func isDefaultConfigEnabled() -> Bool {
-		if let c = GlobalConfigManager.shared.getCurrentConfig() {
-			return c.configType.value == ConfigurationType.byDefault.rawValue
-		}
-		return true
+	func isDefaultBlockingEnabled() -> Bool {
+		let cfgType = BlockingConfig.shared.getConfigType()
+		return cfgType == BlockingConfig.ConfigurationType.defaultBlocking.rawValue
 	}
 	
 	/// Add a domain to the whitelist
@@ -110,7 +108,7 @@ class GhosteryApplication {
 	func trustSiteNotification() {
 		if let d = Preferences.getGlobalPreference(key: "domain") as? String {
 			self.trustDomain(domain: d)
-			loadDummyCB()
+			self.loadDummyBlockList()
 		}
 	}
 	
@@ -118,7 +116,7 @@ class GhosteryApplication {
 	func untrustSiteNotification() {
 		if let d = Preferences.getGlobalPreference(key: "domain") as? String {
 			self.untrustDomain(domain: d)
-			reloadContentBlocker()
+			self.reloadContentBlocker()
 		}
 	}
 	
@@ -137,32 +135,35 @@ class GhosteryApplication {
 	/// the new block list as needed and reloads the Content Blocker
 	func reloadContentBlocker() {
 		if self.isPaused() {
-			loadDummyCB()
+			self.loadDummyBlockList()
 		} else {
-			if let c = GlobalConfigManager.shared.getCurrentConfig(),
-				c.configType.value == ConfigurationType.custom.rawValue {
-				self.loadCustomCB()
+			if self.isDefaultBlockingEnabled() {
+				self.loadDefaultBlockList()
 			} else {
-				self.loadDefaultCB()
+				self.loadCustomBlockList()
 			}
 		}
 	}
 	
 	/// Load a custom block list file based on user selected categories
-	private func loadCustomCB() {
-		if let config = GlobalConfigManager.shared.getCurrentConfig() {
+	private func loadCustomBlockList() {
+		// Get the blockedCategories from CoreData
+		if let cats = BlockingConfig.shared.getBlockedCategories() {
 			var fileNames = [String]()
-			if config.blockedCategories.count == 0 {
-				loadDummyCB()
+			// No categories selected, load empty block list
+			if cats.count == 0 {
+				self.loadDummyBlockList()
 				return
 			}
-			if config.blockedCategories.count == Categories.allCategoriesCount() {
-				loadFullList()
+			// All categories selected, load full block list
+			if cats.count == Categories.allCategoriesCount() {
+				self.loadFullBlockList()
 				return
 			}
-			for i in config.blockedCategories {
-				if let c = CategoryType(rawValue: i) {
-					fileNames.append(c.fileName())
+			// Load selected categories
+			for index in cats {
+				if let cat = Categories(rawValue: index) {
+					fileNames.append(cat.fileName())
 				}
 			}
 			// Trigger a Content Blocker reload
@@ -171,24 +172,22 @@ class GhosteryApplication {
 	}
 	
 	/// Load the default block list file consisting of the default categories only
-	private func loadDefaultCB() {
-		if let config = GlobalConfigManager.shared.getCurrentConfig() {
-			var fileNames = [String]()
-			for i in config.defaultBlockedCategories() {
-				fileNames.append(i.fileName())
-			}
-			// Trigger a Content Blocker reload
-			self.updateAndReloadBlockList(fileNames: fileNames, folderName: Constants.BlockListAssetsFolder)
+	private func loadDefaultBlockList() {
+		var fileNames = [String]()
+		for index in BlockingConfig.shared.defaultBlockedCategories() {
+			fileNames.append(index.fileName())
 		}
+		// Trigger a Content Blocker reload
+		self.updateAndReloadBlockList(fileNames: fileNames, folderName: Constants.BlockListAssetsFolder)
 	}
 	
 	/// Load an empty block list file.  Used during  pause and site whitelist scenarios
-	private func loadDummyCB() {
+	private func loadDummyBlockList() {
 		self.updateAndReloadBlockList(fileNames: ["emptyRules"], folderName: Constants.BlockListAssetsFolder)
 	}
 	
 	/// Load the full block list (all categories)
-	private func loadFullList() {
+	private func loadFullBlockList() {
 		self.updateAndReloadBlockList(fileNames: ["safariContentBlocker", "cliqzNetworkList", "cliqzCosmeticList"], folderName: Constants.BlockListAssetsFolder)
 	}
 	

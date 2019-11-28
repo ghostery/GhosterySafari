@@ -18,7 +18,7 @@ import Foundation
 extension NSApplication {
 	@IBAction func defaultConfigSelected(_ sender: NSMenuItem) {
 		print("NSApplication.defaultConfigSelected")
-		GhosteryApplication.shared.switchToDefault()
+		GhosteryApplication.shared.switchToDefaultBlocking()
 		if let m = sender.parent?.submenu {
 			m.items[1].state = NSControl.StateValue(rawValue: 0)
 			sender.state = NSControl.StateValue(rawValue: 1)
@@ -27,7 +27,7 @@ extension NSApplication {
 	
 	@IBAction func customConfigSelected(_ sender: NSMenuItem) {
 		print("NSApplication.customConfigSelected")
-		GhosteryApplication.shared.switchToCustom()
+		GhosteryApplication.shared.switchToCustomBlocking()
 		if let m = sender.parent?.submenu {
 			m.items[0].state = NSControl.StateValue(rawValue: 0)
 			sender.state = NSControl.StateValue(rawValue: 1)

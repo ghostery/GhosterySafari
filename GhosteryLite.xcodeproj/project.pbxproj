@@ -14,6 +14,8 @@
 		0D02796D23638895007D5F66 /* MenuItemCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D02796C23638895007D5F66 /* MenuItemCollectionViewItem.swift */; };
 		0D02796F23638C19007D5F66 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D02796E23638C19007D5F66 /* MenuViewController.swift */; };
 		0D027978236538A9007D5F66 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D027976236538A8007D5F66 /* Localizable.strings */; };
+		0D182934238E27AA00E5EE42 /* GhosteryLite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0D182932238E27AA00E5EE42 /* GhosteryLite.xcdatamodeld */; };
+		0D182935238E27AA00E5EE42 /* GhosteryLite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0D182932238E27AA00E5EE42 /* GhosteryLite.xcdatamodeld */; };
 		0D3FBAFA235F6EAA0054822A /* SafariExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D588D9C235E3FBB0003668C /* SafariExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D3FBAFD235F6EB10054822A /* ContentBlocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D588D9D235E3FBB0003668C /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D3FBB02235F701F0054822A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3FBB00235F70030054822A /* Cocoa.framework */; };
@@ -43,14 +45,8 @@
 		0DDCFF7923660DBD009481D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DDCFF7B23660DBD009481D4 /* Localizable.strings */; };
 		0DDCFF7E2366666D009481D4 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4721354DE60098631F /* Preferences.swift */; };
 		0DDCFF7F236666B7009481D4 /* BlockLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049AE211B36E800BA3961 /* BlockLists.swift */; };
-		0DDCFF80236666DA009481D4 /* GlobalConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */; };
 		0DDCFF812366670D009481D4 /* WhiteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90DD80214BD74F00E8BA6D /* WhiteList.swift */; };
-		0DDCFF8223666737009481D4 /* GlobalConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */; };
 		0DDCFF8323666792009481D4 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8313212B36BC0038149F /* FileManagerExtension.swift */; };
-		0DDCFF86236667C1009481D4 /* TrustedSitesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABB02138586A00BC76E4 /* TrustedSitesDataSource.swift */; };
-		0DDCFF87236667D3009481D4 /* TrustedSitesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */; };
-		0DDF2786238B04DC00C17AC8 /* GhosteryLite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF2784238B04DC00C17AC8 /* GhosteryLite.xcdatamodeld */; };
-		0DDF2787238B04DC00C17AC8 /* GhosteryLite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF2784238B04DC00C17AC8 /* GhosteryLite.xcdatamodeld */; };
 		0DDF278A238B2CB600C17AC8 /* TrustedSites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF2789238B2CB600C17AC8 /* TrustedSites.swift */; };
 		0DDF278B238B2CB600C17AC8 /* TrustedSites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF2789238B2CB600C17AC8 /* TrustedSites.swift */; };
 		0DDF278D238B2EB900C17AC8 /* BlockingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF278C238B2EB900C17AC8 /* BlockingConfig.swift */; };
@@ -77,8 +73,6 @@
 		4F3049AF211B36E800BA3961 /* BlockLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049AE211B36E800BA3961 /* BlockLists.swift */; };
 		4F3049B4211C6D3200BA3961 /* GhosteryApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* GhosteryApplication.swift */; };
 		4F51EDC82191A0C60032DCDF /* TrustButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F51EDC72191A0C60032DCDF /* TrustButtonCell.swift */; };
-		4F83ABAE2138583A00BC76E4 /* TrustedSitesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */; };
-		4F83ABB12138586A00BC76E4 /* TrustedSitesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABB02138586A00BC76E4 /* TrustedSitesDataSource.swift */; };
 		4F83ABB421393CF500BC76E4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83ABB321393CF400BC76E4 /* SettingsViewController.swift */; };
 		4F90DD81214BD75000E8BA6D /* WhiteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90DD80214BD74F00E8BA6D /* WhiteList.swift */; };
 		4F931A1D2125D3DE00AF4226 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A32119F4FC00BA3961 /* URLExtension.swift */; };
@@ -94,8 +88,6 @@
 		4FCEAA23212E0CCE00AACE42 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FCEAA22212E0CCE00AACE42 /* Images.xcassets */; };
 		4FFD8314212B36BC0038149F /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8313212B36BC0038149F /* FileManagerExtension.swift */; };
 		4FFD8338212B4FF90038149F /* BlockListAssets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFD8337212B4FF90038149F /* BlockListAssets */; };
-		4FFD8349212B5D430038149F /* GlobalConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */; };
-		4FFD834D212B602B0038149F /* GlobalConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */; };
 		4FFD8351212C6C740038149F /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD8350212C6C740038149F /* WindowController.swift */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +133,7 @@
 		0D0279742365184E007D5F66 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		0D027977236538A8007D5F66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0D02797A2365409A007D5F66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SafariExtensionViewController.strings; sourceTree = "<group>"; };
+		0D182933238E27AA00E5EE42 /* GhosteryLite.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GhosteryLite.xcdatamodel; sourceTree = "<group>"; };
 		0D2AA0BD2243DA0C0055B6B8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0D2D0CCC2369E20F00C3ED87 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		0D3FBB00235F70030054822A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -261,7 +254,6 @@
 		0DD3BFED236D04EC00889C41 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		0DD3BFEE236D04EC00889C41 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		0DDCFF7A23660DBD009481D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		0DDF2785238B04DC00C17AC8 /* GhosteryLite.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GhosteryLite.xcdatamodel; sourceTree = "<group>"; };
 		0DDF2789238B2CB600C17AC8 /* TrustedSites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSites.swift; sourceTree = "<group>"; };
 		0DDF278C238B2EB900C17AC8 /* BlockingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingConfig.swift; sourceTree = "<group>"; };
 		1E14B73C21369F5400E28C38 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -302,8 +294,6 @@
 		4FCEAA22212E0CCE00AACE42 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4FFD8313212B36BC0038149F /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 		4FFD8337212B4FF90038149F /* BlockListAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BlockListAssets; sourceTree = "<group>"; };
-		4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigRepository.swift; sourceTree = "<group>"; };
-		4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigDataSource.swift; sourceTree = "<group>"; };
 		4FFD8350212C6C740038149F /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -387,7 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				4F30492A2118982700BA3961 /* GhosteryLite.entitlements */,
-				0DDF2784238B04DC00C17AC8 /* GhosteryLite.xcdatamodeld */,
+				0D182932238E27AA00E5EE42 /* GhosteryLite.xcdatamodeld */,
 				4F3049292118982700BA3961 /* Info.plist */,
 				0DD3BF83236CD09300889C41 /* InfoPlist.strings */,
 			);
@@ -531,7 +521,6 @@
 		0D02797023650B49007D5F66 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				4FFD8348212B5D430038149F /* GlobalConfigRepository.swift */,
 				4F83ABAD2138583A00BC76E4 /* TrustedSitesRepository.swift */,
 			);
 			path = Repositories;
@@ -577,8 +566,8 @@
 		0DDF2788238B2C5900C17AC8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0DDF2789238B2CB600C17AC8 /* TrustedSites.swift */,
 				0DDF278C238B2EB900C17AC8 /* BlockingConfig.swift */,
+				0DDF2789238B2CB600C17AC8 /* TrustedSites.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -689,7 +678,6 @@
 			isa = PBXGroup;
 			children = (
 				0D02797023650B49007D5F66 /* Repositories */,
-				4FFD834C212B602B0038149F /* GlobalConfigDataSource.swift */,
 				4F83ABB02138586A00BC76E4 /* TrustedSitesDataSource.swift */,
 			);
 			path = DataPersistence;
@@ -904,25 +892,21 @@
 				0DBA6541238317BF0011AAD3 /* MenuViewControllerDelegate.swift in Sources */,
 				0D02796D23638895007D5F66 /* MenuItemCollectionViewItem.swift in Sources */,
 				0DBA6547238318A50011AAD3 /* TrustedSiteItemDelegate.swift in Sources */,
-				0DDF2786238B04DC00C17AC8 /* GhosteryLite.xcdatamodeld in Sources */,
 				0DBA6543238317E70011AAD3 /* MenuViewControllerExtension.swift in Sources */,
 				4F90DD81214BD75000E8BA6D /* WhiteList.swift in Sources */,
 				0DBA653D238315FB0011AAD3 /* DetailViewControllerDelegate.swift in Sources */,
 				0DBA65452383184D0011AAD3 /* ModalViewControllerDelegate.swift in Sources */,
 				4F3049A62119F4FC00BA3961 /* URLExtension.swift in Sources */,
-				4F83ABB12138586A00BC76E4 /* TrustedSitesDataSource.swift in Sources */,
 				0D027969236374A2007D5F66 /* MainViewController.swift in Sources */,
 				0D027967236373E5007D5F66 /* HelpViewController.swift in Sources */,
 				1E597C4421344ACC0098631F /* MenuItem.swift in Sources */,
 				4F3049AF211B36E800BA3961 /* BlockLists.swift in Sources */,
-				4F83ABAE2138583A00BC76E4 /* TrustedSitesRepository.swift in Sources */,
 				1E597C4621354D830098631F /* NSColorExtension.swift in Sources */,
-				4FFD8349212B5D430038149F /* GlobalConfigRepository.swift in Sources */,
 				1E597C422134407F0098631F /* HomeViewController.swift in Sources */,
 				4F3049B4211C6D3200BA3961 /* GhosteryApplication.swift in Sources */,
-				4FFD834D212B602B0038149F /* GlobalConfigDataSource.swift in Sources */,
 				1E14B754213819A800E28C38 /* TrustedSitesViewController.swift in Sources */,
 				4F931A252126C8C900AF4226 /* Constants.swift in Sources */,
+				0D182934238E27AA00E5EE42 /* GhosteryLite.xcdatamodeld in Sources */,
 				4F3049212118982600BA3961 /* AppDelegate.swift in Sources */,
 				4FFD8314212B36BC0038149F /* FileManagerExtension.swift in Sources */,
 				1E597C4821354DE60098631F /* Preferences.swift in Sources */,
@@ -944,6 +928,7 @@
 				0DDCFF7E2366666D009481D4 /* Preferences.swift in Sources */,
 				0D588E82235E46870003668C /* PageLatency.swift in Sources */,
 				0DDF278B238B2CB600C17AC8 /* TrustedSites.swift in Sources */,
+				0D182935238E27AA00E5EE42 /* GhosteryLite.xcdatamodeld in Sources */,
 				4F9CF8E7215E57B6005B1C1B /* Telemetry.swift in Sources */,
 				0DDCFF8323666792009481D4 /* FileManagerExtension.swift in Sources */,
 				4F30493C2118983D00BA3961 /* SafariExtensionViewController.swift in Sources */,
@@ -951,17 +936,12 @@
 				0D5230B52371D129007A7508 /* Categories.swift in Sources */,
 				0DBA654C238327D20011AAD3 /* URLSessionExtension.swift in Sources */,
 				4F30493A2118983D00BA3961 /* SafariExtensionHandler.swift in Sources */,
-				0DDCFF87236667D3009481D4 /* TrustedSitesRepository.swift in Sources */,
-				0DDCFF86236667C1009481D4 /* TrustedSitesDataSource.swift in Sources */,
 				4F51EDC82191A0C60032DCDF /* TrustButtonCell.swift in Sources */,
 				4F931A1D2125D3DE00AF4226 /* URLExtension.swift in Sources */,
 				0DDCFF812366670D009481D4 /* WhiteList.swift in Sources */,
 				4FB1E6D7213EBF5300136D2A /* StringExtension.swift in Sources */,
-				0DDCFF80236666DA009481D4 /* GlobalConfigDataSource.swift in Sources */,
 				4F931A262126C95A00AF4226 /* Constants.swift in Sources */,
 				0D5230B62371D136007A7508 /* HTTPService.swift in Sources */,
-				0DDF2787238B04DC00C17AC8 /* GhosteryLite.xcdatamodeld in Sources */,
-				0DDCFF8223666737009481D4 /* GlobalConfigRepository.swift in Sources */,
 				0DDCFF7F236666B7009481D4 /* BlockLists.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1595,12 +1575,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0DDF2784238B04DC00C17AC8 /* GhosteryLite.xcdatamodeld */ = {
+		0D182932238E27AA00E5EE42 /* GhosteryLite.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0DDF2785238B04DC00C17AC8 /* GhosteryLite.xcdatamodel */,
+				0D182933238E27AA00E5EE42 /* GhosteryLite.xcdatamodel */,
 			);
-			currentVersion = 0DDF2785238B04DC00C17AC8 /* GhosteryLite.xcdatamodel */;
+			currentVersion = 0D182933238E27AA00E5EE42 /* GhosteryLite.xcdatamodel */;
 			path = GhosteryLite.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

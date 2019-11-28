@@ -8,7 +8,7 @@
         <attribute name="domain" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="TrustedSites" positionX="-63" positionY="-18" width="128" height="58"/>
-        <element name="BlockingConfig" positionX="-54" positionY="0" width="128" height="73"/>
+        <element name="BlockingConfig" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="TrustedSites" positionX="-54" positionY="9" width="128" height="58"/>
     </elements>
 </model>

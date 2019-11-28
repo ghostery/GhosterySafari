@@ -61,20 +61,20 @@ class SettingsViewController: NSViewController {
 				print("Unsupported category")
 		}
 		if let m = modifiedCat {
-			let _ = GlobalConfigManager.shared.changeCategoryStatus(m, status: sender.state.rawValue == 0 ? false : true)
+			let _ = BlockingConfig.shared.updateBlockedCategory(category: m, blocked: sender.state.rawValue == 0 ? false : true)
 			GhosteryApplication.shared.reloadContentBlocker()
 			self.savedBox.isHidden = false
 		}
 	}
 	
 	@IBAction func defaultSelected(_ sender: Any) {
-		GhosteryApplication.shared.switchToDefault()
+		GhosteryApplication.shared.switchToDefaultBlocking()
 		self.customRadio.state = NSControl.StateValue(rawValue: 0)
 		self.categoryBox.isHidden = true
 	}
 	
 	@IBAction func customSelected(_ sender: Any) {
-		GhosteryApplication.shared.switchToCustom()
+		GhosteryApplication.shared.switchToCustomBlocking()
 		self.defaultRadio.state = NSControl.StateValue(rawValue: 0)
 		self.categoryBox.isHidden = false
 		self.savedBox.isHidden = true
@@ -128,8 +128,8 @@ class SettingsViewController: NSViewController {
 		self.savedBox.isHidden = true
 	}
 	
-	private func updateRadioBoxesState() {
-		if GhosteryApplication.shared.isDefaultConfigEnabled() {
+	@objc private func updateRadioBoxesState() {
+		if GhosteryApplication.shared.isDefaultBlockingEnabled() {
 			self.defaultRadio.state = NSControl.StateValue(rawValue: 1)
 			self.customRadio.state = NSControl.StateValue(rawValue: 0)
 			self.categoryBox.isHidden = true
@@ -141,14 +141,14 @@ class SettingsViewController: NSViewController {
 	}
 	
 	private func updateCategoryCheckboxStates() {
-		adCheckbox.state = NSControl.StateValue(GlobalConfigManager.shared.isCategoryBlocked(.advertising) ? 1 : 0)
-		audioVideoCheckbox.state = NSControl.StateValue(GlobalConfigManager.shared.isCategoryBlocked(.audioVideoPlayer) ? 1 : 0)
-		commentsCheckbox.state = NSControl.StateValue(GlobalConfigManager.shared.isCategoryBlocked(.comments) ? 1 : 0)
-		customInterCheckbox.state = NSControl.StateValue(GlobalConfigManager.shared.isCategoryBlocked(.customerInteraction) ? 1 : 0)
-		essentialCheckbox.state = NSControl.StateValue(GlobalConfigManager.shared.isCategoryBlocked(.essential) ? 1 : 0)
-		adultCheckbox.state = NSControl.StateValue(GlobalConfigManager.shared.isCategoryBlocked(.pornvertising) ? 1 : 0)
-		siteAnalyticsCheckbox.state = NSControl.StateValue(GlobalConfigManager.shared.isCategoryBlocked(.siteAnalytics) ? 1 : 0)
-		socialMediaCheckbox.state = NSControl.StateValue(GlobalConfigManager.shared.isCategoryBlocked(.socialMedia) ? 1 : 0)
+		adCheckbox.state = NSControl.StateValue(BlockingConfig.shared.isCategoryBlocked(category: .advertising) ? 1 : 0)
+		audioVideoCheckbox.state = NSControl.StateValue(BlockingConfig.shared.isCategoryBlocked(category: .audioVideoPlayer) ? 1 : 0)
+		commentsCheckbox.state = NSControl.StateValue(BlockingConfig.shared.isCategoryBlocked(category: .comments) ? 1 : 0)
+		customInterCheckbox.state = NSControl.StateValue(BlockingConfig.shared.isCategoryBlocked(category: .customerInteraction) ? 1 : 0)
+		essentialCheckbox.state = NSControl.StateValue(BlockingConfig.shared.isCategoryBlocked(category: .essential) ? 1 : 0)
+		adultCheckbox.state = NSControl.StateValue(BlockingConfig.shared.isCategoryBlocked(category: .pornvertising) ? 1 : 0)
+		siteAnalyticsCheckbox.state = NSControl.StateValue(BlockingConfig.shared.isCategoryBlocked(category: .siteAnalytics) ? 1 : 0)
+		socialMediaCheckbox.state = NSControl.StateValue(BlockingConfig.shared.isCategoryBlocked(category: .socialMedia) ? 1 : 0)
 	}
 	
 	private func setupTextField(textField: NSTextField, mainText: String, learnMoreText: String, urlString: String) {

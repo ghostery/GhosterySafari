@@ -12,7 +12,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0
 //
 
-import Foundation
+import Cocoa
 import CoreData
 
 @NSApplicationMain
@@ -32,23 +32,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}()
 	
 	@IBOutlet weak var protectionConfigMenu: NSMenuItem!
-	
-	/// Core Data: Performs the save action for the application, which is to send the save: message to the application's managed object context. Any encountered errors are presented to the user.
-	@IBAction func saveAction(_ sender: AnyObject?) {
-		let context = persistentContainer.viewContext
-		if !context.commitEditing() {
-			NSLog("\(NSStringFromClass(type(of: self))) unable to commit editing before saving")
-		}
-		if context.hasChanges {
-			do {
-				try context.save()
-			} catch {
-				// Customize this code block to include application-specific recovery steps.
-				let err = error as NSError
-				NSApplication.shared.presentError(err)
-			}
-		}
-	}
 	
 	/// Sent by the default notification center immediately before the application object is initialized.
 	func applicationWillFinishLaunching(_ notification: Notification) {
@@ -98,14 +81,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		return true
 	}
 	
-	func updateConfigState() {
-		if let m = self.protectionConfigMenu?.submenu {
-			if GhosteryApplication.shared.isDefaultConfigEnabled() {
-				m.items[0].state = NSControl.StateValue(rawValue: 1)
-				m.items[1].state = NSControl.StateValue(rawValue: 0)
+	/// Update the blocking config selectors
+	@objc private func updateConfigState() {
+		if let menu = self.protectionConfigMenu?.submenu {
+			if GhosteryApplication.shared.isDefaultBlockingEnabled() {
+				menu.items[0].state = NSControl.StateValue(rawValue: 1)
+				menu.items[1].state = NSControl.StateValue(rawValue: 0)
 			} else {
-				m.items[0].state = NSControl.StateValue(rawValue: 0)
-				m.items[1].state = NSControl.StateValue(rawValue: 1)
+				menu.items[0].state = NSControl.StateValue(rawValue: 0)
+				menu.items[1].state = NSControl.StateValue(rawValue: 1)
 			}
 		}
 	}
