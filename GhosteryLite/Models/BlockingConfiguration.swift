@@ -13,12 +13,12 @@
 // 
 
 import Cocoa
-import CoreData
 
+/// Provides data management for the `BlockingConfig` entity in CoreData
 class BlockingConfiguration {
 	
-	var configType: Int?
-	var blockedCategories = [Int]()
+	var configType: Int? /// CoreData attribute
+	var blockedCategories = [Int]() /// CoreData attribute
 	
 	static let shared = BlockingConfiguration(type: .defaultBlocking)
 	
@@ -135,7 +135,7 @@ class BlockingConfiguration {
 		do {
 			return try managedContext.fetch(fetchRequest)
 		} catch let error as NSError {
-			print("BlockingConfiguration.getCurrentConfig error: \(error), \(error.userInfo)")
+			Utils.shared.logger("Error: \(error), \(error.userInfo)")
 			return nil
 		}
 	}
@@ -160,7 +160,7 @@ class BlockingConfiguration {
 		do {
 			try managedContext.save()
 		} catch let error as NSError {
-			print("BlockingConfiguration.saveContext error: \(error), \(error.userInfo)")
+			Utils.shared.logger("Error: \(error), \(error.userInfo)")
 		}
 	}
 }

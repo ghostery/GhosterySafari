@@ -17,14 +17,14 @@ import Foundation
 extension FileManager {
 	func readJsonFile<T>(at fileUrl: URL?) -> T? {
 		guard fileExists(atPath: (fileUrl?.path)!) else {
-			print("FileManager.readJsonFile: \(String(describing: fileUrl?.path)) does not exist")
+			Utils.shared.logger("\(String(describing: fileUrl?.path)) does not exist")
 			return nil
 		}
 		do {
 			let fileData = try Data(contentsOf: fileUrl!)
 			return try JSONSerialization.jsonObject(with: fileData, options: .allowFragments) as? T
-		} catch {
-			print("FileManager.readJsonFile error")
+		} catch let error as NSError {
+			Utils.shared.logger("\(error), \(error.userInfo)")
 			return nil
 		}
 	}
@@ -34,10 +34,10 @@ extension FileManager {
 			let jsonData = try JSONSerialization.data(withJSONObject: data ?? [], options: JSONSerialization.WritingOptions.prettyPrinted)
 			if FileManager.default.createFile(atPath: (fileUrl?.path)!, contents: jsonData, attributes: [FileAttributeKey.posixPermissions: 0o777]) {
 			} else {
-				print("FileManager.writeJsonFile error")
+				Utils.shared.logger("Could not create file")
 			}
-		} catch {
-			print("FileManager.writeJsonFile error")
+		} catch let error as NSError {
+			Utils.shared.logger("\(error), \(error.userInfo)")
 		}
 	}
 	
@@ -46,9 +46,9 @@ extension FileManager {
 		
 		let fileURL = directory?.appendingPathComponent("\(fileName)")
 		if FileManager.default.createFile(atPath: (fileURL?.path)!, contents: data, attributes: nil) {
-			// print("FileManager.writeFile: \(fileName) written successfully")
+			// Utils.shared.logger("\(fileName) written successfully")
 		} else {
-			print("FileManager.writeFile: Unable to write the data to \(fileName)")
+			Utils.shared.logger("Unable to write the data to \(fileName)")
 		}
 	}
 	
@@ -56,8 +56,8 @@ extension FileManager {
 		if !FileManager.default.fileExists(atPath: (url?.path)!) {
 			do {
 				try FileManager.default.createDirectory(at: url!, withIntermediateDirectories: hasIntermediateDir, attributes: nil)
-			} catch {
-				print("FileManager.createDirectoryIfNotExists error")
+			} catch let error as NSError {
+				Utils.shared.logger("\(error), \(error.userInfo)")
 			}
 		}
 	}
@@ -65,8 +65,8 @@ extension FileManager {
 	func copyFiles(_ sourceDir: String, _ destDir: String) {
 		do {
 			try FileManager.default.copyItem(atPath: sourceDir, toPath: destDir)
-		} catch {
-			print("FileManager.copyFiles error")
+		} catch let error as NSError {
+			Utils.shared.logger("\(error), \(error.userInfo)")
 		}
 	}
 }

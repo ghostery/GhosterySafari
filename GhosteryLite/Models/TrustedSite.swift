@@ -13,11 +13,11 @@
 // 
 
 import Cocoa
-import CoreData
 
+/// Provides data management for the `TrustedSites` entity in CoreData
 class TrustedSite {
 	
-	var domain: String?
+	var domain: String? /// CoreData attribute
 	
 	static let shared = TrustedSite()
 	
@@ -71,14 +71,16 @@ class TrustedSite {
 			do {
 				try managedContext.save()
 			} catch let error as NSError {
-				print("TrustedSite.addDomain error: \(error), \(error.userInfo)")
+				Utils.shared.logger("Error: \(error), \(error.userInfo)")
 			}
 			
 			return
 		}
-		print("TrustedSite.addDomain: Domain already exists in TrustedSites")
+		Utils.shared.logger("Domain already exists in TrustedSites")
 	}
 	
+	/// Remove an existing domain from the TrustedSites entity in CoreData
+	/// - Parameter domain: The domain to remove
 	func removeDomain(_ domain: String) {
 		if let site = self.getTrustedSite(domain) {
 			guard let appDelegate = NSApplication.shared.delegate as? AppDelegate else {
@@ -90,12 +92,12 @@ class TrustedSite {
 			do {
 				try managedContext.save()
 			} catch let error as NSError {
-				print("TrustedSite.removeDomain error: \(error), \(error.userInfo)")
+				Utils.shared.logger("Error: \(error), \(error.userInfo)")
 			}
 			
 			return
 		}
-		print("TrustedSite.removeDomain: Domain does not exist in TrustedSites")
+		Utils.shared.logger("Domain does not exist in TrustedSites")
 	}
 	
 	/// Fetch the current TrustedSites entity from CoreData
@@ -108,7 +110,7 @@ class TrustedSite {
 		do {
 			return try managedContext.fetch(fetchRequest)
 		} catch let error as NSError {
-			print("TrustedSite.getTrustedSites error: \(error), \(error.userInfo)")
+			Utils.shared.logger("Error: \(error), \(error.userInfo)")
 			return nil
 		}
 	}
@@ -123,7 +125,7 @@ class TrustedSite {
 		do {
 			try managedContext.save()
 		} catch let error as NSError {
-			print("TrustedSite.saveContext error: \(error), \(error.userInfo)")
+			Utils.shared.logger("Error: \(error), \(error.userInfo)")
 		}
 	}
 }

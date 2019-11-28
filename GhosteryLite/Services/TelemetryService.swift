@@ -18,6 +18,7 @@ class TelemetryService {
 
 	static let shared = TelemetryService()
 	
+	/// Telemetry signal types
 	enum SignalType: String {
 		case install = "install"
 		case upgrade = "upgrade"
@@ -26,6 +27,7 @@ class TelemetryService {
 		case engage = "engaged"
 	}
 	
+	/// Telemetry value configuration
 	struct Config {
 		let os = "mac"
 		let userAgent = "gl"
@@ -40,6 +42,7 @@ class TelemetryService {
 		}
 	}
 	
+	/// Telemetry parameters
 	struct Params {
 		let recency: Int
 		let frequency: String
@@ -56,9 +59,9 @@ class TelemetryService {
 		HTTPService.shared.getJSONData(url: url) { (completion: Result<Data, HTTPService.HTTPServiceError>) in
 			switch completion {
 				case .success(_):
-					print("TelemetryService.sendSignal: Sent ping \(type)")
+					Utils.shared.logger("Sent ping \(type)")
 				case .failure(let error):
-					print("TelemetryService.sendSignal error: \(error.localizedDescription)")
+					Utils.shared.logger("Error: \(error.localizedDescription)")
 			}
 		}
 	}

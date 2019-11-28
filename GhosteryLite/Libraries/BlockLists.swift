@@ -37,7 +37,7 @@ class BlockLists {
 		// Fetch the Ghostery version file
 		group.enter()
 		DispatchQueue.main.async(group: group) {
-			print("BlockLists.updateBlockLists: Checking for Ghostery block list updates")
+			Utils.shared.logger("Checking for Ghostery block list updates")
 			HTTPService.shared.getJSON(url: Constants.GhosteryAssetPath) { (completion: Result<ghosteryVersionData, HTTPService.HTTPServiceError>) in
 				switch completion {
 					case .success(let versionData):
@@ -61,10 +61,10 @@ class BlockLists {
 								}
 							}
 						} else {
-							print("BlockLists.updateBlockLists: No Ghostery block list updates available.")
+							Utils.shared.logger("No Ghostery block list updates available.")
 						}
 					case .failure(let error):
-						print("BlockLists.updateBlockLists error: \(error.localizedDescription)")
+						Utils.shared.logger("Error: \(error.localizedDescription)")
 				}
 				group.leave()
 			}
@@ -73,7 +73,7 @@ class BlockLists {
 		// Fetch Cliqz ad block lists
 		group.enter()
 		DispatchQueue.main.async(group: group) {
-			print("BlockLists.updateBlockLists: Checking for Cliqz block list updates")
+			Utils.shared.logger("Checking for Cliqz block list updates")
 			HTTPService.shared.getJSON(url: Constants.CliqzVersionPath) { (completion: Result<cliqzVersionData, HTTPService.HTTPServiceError>) in
 				switch completion {
 					case .success(let versionData):
@@ -90,7 +90,7 @@ class BlockLists {
 								group.leave()
 							}
 						} else {
-							print("BlockLists.updateBlockLists: No Cliqz network filter list update available.")
+							Utils.shared.logger("No Cliqz network filter list update available.")
 						}
 						
 						if self.isCliqzBlockListChecksumChanged(cosmeticChecksum, self.cliqzCosmeticListChecksum) {
@@ -102,10 +102,10 @@ class BlockLists {
 								group.leave()
 							}
 						} else {
-							print("BlockLists.updateBlockLists: No Cliqz cosmetic filter list update available.")
+							Utils.shared.logger("No Cliqz cosmetic filter list update available.")
 					}
 					case .failure(let error):
-						print("BlockLists.updateBlockLists error: \(error.localizedDescription)")
+						Utils.shared.logger("Error: \(error.localizedDescription)")
 				}
 				group.leave()
 			}
@@ -153,7 +153,7 @@ class BlockLists {
 	/// - Parameter oldVersionKey The preference key where the old version number is stored
 	private func isGhosteryBlockListVersionChanged(_ newVersion: Int, _ oldVersionKey: String) -> Bool {
 		if let oldVersion = Preferences.getGlobalPreference(key: oldVersionKey) as? Int {
-			print("BlockLists.isGhosteryBlockListVersionChanged: \(oldVersionKey) Old version \(oldVersion) New version \(newVersion)")
+			Utils.shared.logger("\(oldVersionKey) Old version \(oldVersion) New version \(newVersion)")
 			return newVersion != oldVersion
 		}
 		return true
@@ -165,7 +165,7 @@ class BlockLists {
 	///   - oldVersionKey: The preference key where the old checksum value is stored
 	private func isCliqzBlockListChecksumChanged(_ newVersion: String, _ oldVersionKey: String) -> Bool {
 		if let oldVersion = Preferences.getGlobalPreference(key: oldVersionKey) as? String {
-			print("BlockLists.isCliqzBlockListChecksumChanged: \(oldVersionKey) Old version \(oldVersion) New version \(newVersion)")
+			Utils.shared.logger("\(oldVersionKey) Old version \(oldVersion) New version \(newVersion)")
 			return newVersion != oldVersion
 		}
 		return true
@@ -181,10 +181,10 @@ class BlockLists {
 		HTTPService.shared.getJSONData(url: listUrl) { (completion: Result<Data, HTTPService.HTTPServiceError>) in
 			switch completion {
 				case .success(let jsonData):
-					// print("BlockLists.downloadAndSaveFile: \(fileName)")
+					// Utils.shared.logger("Downloaded \(fileName)")
 					FileManager.default.writeFile(jsonData, name: "\(fileName).json", in: folder)
 				case .failure(let error):
-					print("BlockLists.downloadAndSaveFile: \(fileName) file download failed: \(error.localizedDescription)")
+					Utils.shared.logger("\(fileName) file download failed: \(error.localizedDescription)")
 			}
 			done()
 		}

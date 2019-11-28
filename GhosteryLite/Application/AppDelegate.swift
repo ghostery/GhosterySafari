@@ -13,7 +13,6 @@
 //
 
 import Cocoa
-import CoreData
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -42,7 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	/// Sent by the default notification center after the application has been launched and initialized but before it has received its first event.
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		print("AppDelegate.applicationDidFinishLaunching: Ghostery Lite launched successfully")
+		Utils.shared.logger("Ghostery Lite launched successfully")
 		// Set prefs
 		Preferences.setAppPreference(key: "NSInitialToolTipDelay", value: 50)
 		// Create notification listeners
@@ -96,11 +95,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	/// Provision the application preferences and resources on a fresh installation
 	private func handleInitialLaunch(){
-		print("AppDelegate.handleInitialLaunch: Initial launch detected")
+		Utils.shared.logger("Initial launch detected")
 		// Copy block list assets to Group Containers
 		guard let resources = Bundle.main.resourceURL?.appendingPathComponent(Constants.BlockListAssetsFolder, isDirectory: true).path,
 			let groupStorageFolder = Constants.AssetsFolderURL?.path else {
-				print("AppDelegate.handleInitialLaunch: Error copying BlockListAssets to Group Containers")
+				Utils.shared.logger("Error copying BlockListAssets to Group Containers")
 				return
 		}
 		// Make sure the BlockListAssets folder hasn't already been migrated
@@ -118,10 +117,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 				let data = try Data(contentsOf: url)
 				let decoder = JSONDecoder()
 				let jsonData = try decoder.decode(versionData.self, from: data)
-				print("AppDelegate.handleInitialLaunch: safariContentBlockerVersion is \(jsonData.safariContentBlockerVersion)")
+				Utils.shared.logger("safariContentBlockerVersion is \(jsonData.safariContentBlockerVersion)")
 				Preferences.setGlobalPreference(key: Constants.GhosteryBlockListVersionKey, value: jsonData.safariContentBlockerVersion)
 			} catch {
-				print("AppDelegate.handleInitialLaunch: Error getting safariContentBlockerVersion \(error)")
+				Utils.shared.logger("Error getting safariContentBlockerVersion \(error)")
 			}
 		}
 	}

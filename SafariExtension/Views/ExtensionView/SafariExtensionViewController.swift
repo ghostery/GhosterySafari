@@ -176,7 +176,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
 	private func updateTrustButtonState() {
 		if let d = self.currentDomain {
-			if GhosteryApplication.shared.isTrustedDomain(domain: d) {
+			if GhosteryApplication.shared.isDomainTrusted(domain: d) {
 				self.trustSiteButton?.state = NSControl.StateValue(rawValue: 1)
 			} else {
 				self.trustSiteButton?.state = NSControl.StateValue(rawValue: 0)

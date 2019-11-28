@@ -24,6 +24,7 @@ class Telemetry {
 	static let shared = Telemetry()
 	private let config: TelemetryService.Config
 	
+	/// Manage ping frequency intervals
 	enum Frequency: String {
 		case daily = "daily"
 		case weekly = "weekly"

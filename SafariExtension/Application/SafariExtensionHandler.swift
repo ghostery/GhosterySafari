@@ -43,14 +43,14 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 	override func contentBlocker(withIdentifier contentBlockerIdentifier: String, blockedResourcesWith urls: [URL], on page: SFSafariPage) {
 		// TODO: Implement this in a future version
 		//	for u in urls {
-		//		print("pattern matched \(u.absoluteString)")
+		//		Utils.shared.logger("Pattern matched \(u.absoluteString)")
 		//	}
 	}
 	
 	/// Called when page navigation has been triggered
 	override func page(_ page: SFSafariPage, willNavigateTo url: URL?) {
 		// TODO: Implement this in a future version
-		// print("navigating to \(url?.absoluteString ?? "")")
+		// Utils.shared.logger("Navigating to \(url?.absoluteString ?? "")")
 	}
 
 	override func popoverViewController() -> SFSafariExtensionViewController {

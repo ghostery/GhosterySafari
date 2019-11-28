@@ -62,9 +62,7 @@ class HomeViewController: NSViewController {
 	class func showSafariPreferencesForExtension() {
 		SFSafariApplication.showPreferencesForExtension(withIdentifier: Constants.SafariContentBlockerID, completionHandler: { (error) in
 			if let e = error {
-				print("HomeViewController.showSafariPreferencesForExtension Error: \(e)")
-			} else {
-				print("HomeViewController.showSafariPreferencesForExtension Success!")
+				Utils.shared.logger("Error: \(e)")
 			}
 		})
 	}

@@ -100,7 +100,7 @@ class GhosteryApplication {
 	
 	/// Is the domain in the whitelist?
 	/// - Parameter domain: Domain URL
-	func isTrustedDomain(domain: String) -> Bool {
+	func isDomainTrusted(domain: String) -> Bool {
 		return TrustedSite.shared.isSiteTrusted(domain)
 	}
 	
@@ -195,21 +195,21 @@ class GhosteryApplication {
 	/// - Parameter fileNames: The block list json filenames to be loaded
 	/// - Parameter folderName: The name of the folder where the json files are located on disk
 	private func updateAndReloadBlockList(fileNames: [String], folderName: String) {
-		print("GhosteryApplication.updateAndReloadBlockList: Generating new block list...")
+		Utils.shared.logger("Generating new block list...")
 		BlockLists.shared.generateCurrentBlockList(files: fileNames, folderName: folderName) {
-			print("GhosteryApplication.updateAndReloadBlockList: Build phase complete")
+			Utils.shared.logger("Build phase complete")
 			self.reloadCBExtension()
 		}
 	}
 	
 	/// Reload the Content Blocker extension
 	private func reloadCBExtension() {
-		print("GhosteryApplication.reloadCBExtension: Reloading Content Blocker...")
+		Utils.shared.logger("Reloading Content Blocker...")
 		SFContentBlockerManager.reloadContentBlocker(withIdentifier: Constants.SafariContentBlockerID, completionHandler: { (error) in
 			if error != nil {
-				print("GhosteryApplication.reloadCBExtension: Reloading Content Blocker failed with error \(String(describing: error))")
+				Utils.shared.logger("Reloading Content Blocker failed with error \(String(describing: error))")
 			} else {
-				print("GhosteryApplication.reloadCBExtension: Successfully reloaded Content Blocker!")
+				Utils.shared.logger("Successfully reloaded Content Blocker!")
 			}
 		})
 	}

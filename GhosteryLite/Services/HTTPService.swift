@@ -44,13 +44,13 @@ class HTTPService {
 					}
 					do {
 						let values = try JSONDecoder().decode(T.self, from: data)
-						print("HTTPService.getJSON: Successfully decoded JSON file.")
+						Utils.shared.logger("Successfully decoded JSON file.")
 						completion(.success(values))
 					} catch {
 						completion(.failure(.decodeError))
 					}
 				case .failure(let error):
-					print("HTTPService.getJSON error: \(error.localizedDescription)")
+					Utils.shared.logger("Error: \(error.localizedDescription)")
 					completion(.failure(.apiError))
 			}
 		}.resume()
@@ -72,10 +72,10 @@ class HTTPService {
 						completion(.failure(.invalidResponse))
 						return
 					}
-					print("HTTPService.getJSONData: Successfully downloaded JSON data.")
+					Utils.shared.logger("Successfully downloaded JSON data.")
 					completion(.success(data))
 				case .failure(let error):
-					print("HTTPService.getJSONData error: \(error.localizedDescription)")
+					Utils.shared.logger("Error: \(error.localizedDescription)")
 					completion(.failure(.apiError))
 			}
 		}.resume()

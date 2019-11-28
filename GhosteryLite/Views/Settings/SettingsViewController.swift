@@ -58,7 +58,7 @@ class SettingsViewController: NSViewController {
 			case 9:
 				modifiedCat = .uncategorized
 			default:
-				print("Unsupported category")
+				Utils.shared.logger("Unsupported category")
 		}
 		if let m = modifiedCat {
 			let _ = BlockingConfiguration.shared.updateBlockedCategory(category: m, blocked: sender.state.rawValue == 0 ? false : true)
