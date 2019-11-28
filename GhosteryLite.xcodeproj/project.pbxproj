@@ -1233,10 +1233,6 @@
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
-				);
 				INFOPLIST_FILE = GhosteryLite/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1262,10 +1258,6 @@
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
-				);
 				INFOPLIST_FILE = GhosteryLite/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1445,10 +1437,6 @@
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
-				);
 				INFOPLIST_FILE = GhosteryLite/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
