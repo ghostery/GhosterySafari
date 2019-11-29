@@ -1045,7 +1045,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="370"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="M1d-oS-GDx">
-                                                <size key="itemSize" width="570" height="30"/>
+                                                <size key="itemSize" width="560" height="30"/>
                                             </collectionViewFlowLayout>
                                             <color key="primaryBackgroundColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <color key="secondaryBackgroundColor" name="controlAlternatingRowColor" catalog="System" colorSpace="catalog"/>

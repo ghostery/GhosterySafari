@@ -67,8 +67,8 @@ class BlockingConfiguration {
 			// Update the existing BlockingConfig object
 			if let config = blockingConfig.first {
 				config.setValue(type.rawValue, forKeyPath: "configType")
+				self.saveContext()
 			}
-			self.saveContext()
 		}
 	}
 	
@@ -143,11 +143,18 @@ class BlockingConfiguration {
 	/// On init, set the default blocking config if it does not exist
 	/// - Parameter type: The configuration type
 	private func setDefaultConfig(type: ConfigurationType) {
-		if let _ = self.getBlockingConfig() {
-			// Existing configuration found
-			return
+		if let blockingConfig = self.getBlockingConfig() {
+			if blockingConfig.isEmpty {
+				guard let appDelegate = NSApplication.shared.delegate as? AppDelegate else {
+					return
+				}
+				let managedContext = appDelegate.persistentContainer.viewContext
+				let entity = NSEntityDescription.entity(forEntityName: "BlockingConfig", in: managedContext)!
+				let config = NSManagedObject(entity: entity, insertInto: managedContext)
+				config.setValue(type.rawValue, forKeyPath: "configType")
+				self.saveContext()
+			}
 		}
-		self.updateConfigType(type: type)
 	}
 	
 	/// Trigger a CoreData context save
