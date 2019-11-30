@@ -27,6 +27,10 @@ struct Constants {
 	static let AssetsFolderURL: URL? = Constants.GroupStorageFolderURL?.appendingPathComponent(Constants.BlockListAssetsFolder, isDirectory: true)
 	static let GhosteryBlockListVersionKey = "safariContentBlockerVersion"
 	
+	/// Block list files
+	static let CliqzNetworkList = "cliqzNetworkList"
+	static let CliqzCosmeticList = "cliqzCosmeticList"
+	
 	/// Block List CDN paths
 	#if PROD
 		static let GhosteryAssetPath = "https://cdn.ghostery.com/update/safari/"

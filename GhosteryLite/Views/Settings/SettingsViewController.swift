@@ -55,8 +55,6 @@ class SettingsViewController: NSViewController {
 				modifiedCat = .siteAnalytics
 			case 8:
 				modifiedCat = .socialMedia
-			case 9:
-				modifiedCat = .uncategorized
 			default:
 				Utils.shared.logger("Unsupported category")
 		}

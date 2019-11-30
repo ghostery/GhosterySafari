@@ -24,7 +24,6 @@ enum Categories: Int {
 	case pornvertising
 	case siteAnalytics
 	case socialMedia
-	case uncategorized
 	
 	/// Get the number of categories
 	static func allCategoriesCount() -> Int {
@@ -50,13 +49,11 @@ enum Categories: Int {
 				return "cat_site_analytics"
 			case .socialMedia:
 				return "cat_social_media"
-			case .uncategorized:
-				return "cat_unclassifed"
 		}
 	}
 	
 	/// List all blocking categories.  Used for full category blocking.
 	static func allCases() -> [Categories] {
-		return [.advertising, .audioVideoPlayer, .comments, .customerInteraction, .essential, .pornvertising, .siteAnalytics, .socialMedia, .uncategorized]
+		return [.advertising, .audioVideoPlayer, .comments, .customerInteraction, .essential, .pornvertising, .siteAnalytics, .socialMedia]
 	}
 }

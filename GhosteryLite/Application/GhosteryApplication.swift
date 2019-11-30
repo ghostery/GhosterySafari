@@ -145,6 +145,25 @@ class GhosteryApplication {
 		}
 	}
 	
+	/// Load the full block list (all categories)
+	private func loadFullBlockList() {
+		self.updateAndReloadBlockList(fileNames: [Constants.CliqzNetworkList, Constants.CliqzCosmeticList, "safariContentBlocker"], folderName: Constants.BlockListAssetsFolder)
+	}
+	
+	/// Load the default block list file consisting of the default categories only
+	private func loadDefaultBlockList() {
+		var fileNames = [String]()
+		// Cliqz filter lists
+		fileNames.append(Constants.CliqzNetworkList)
+		fileNames.append(Constants.CliqzCosmeticList)
+		// Ghostery default categories
+		for index in BlockingConfiguration.shared.defaultBlockedCategories() {
+			fileNames.append(index.fileName())
+		}
+		// Trigger a Content Blocker reload
+		self.updateAndReloadBlockList(fileNames: fileNames, folderName: Constants.BlockListAssetsFolder)
+	}
+	
 	/// Load a custom block list file based on user selected categories
 	private func loadCustomBlockList() {
 		// Get the blockedCategories from CoreData
@@ -162,6 +181,12 @@ class GhosteryApplication {
 			}
 			// Load selected categories
 			for index in cats {
+				// If advertising category is checked, load Cliqz filter lists
+				// TODO: Move Cliqz lists to their own UI checkbox
+				if index == Categories.advertising.rawValue {
+					fileNames.append(Constants.CliqzNetworkList)
+					fileNames.append(Constants.CliqzCosmeticList)
+				}
 				if let cat = Categories(rawValue: index) {
 					fileNames.append(cat.fileName())
 				}
@@ -170,25 +195,10 @@ class GhosteryApplication {
 			self.updateAndReloadBlockList(fileNames: fileNames, folderName: Constants.BlockListAssetsFolder)
 		}
 	}
-	
-	/// Load the default block list file consisting of the default categories only
-	private func loadDefaultBlockList() {
-		var fileNames = [String]()
-		for index in BlockingConfiguration.shared.defaultBlockedCategories() {
-			fileNames.append(index.fileName())
-		}
-		// Trigger a Content Blocker reload
-		self.updateAndReloadBlockList(fileNames: fileNames, folderName: Constants.BlockListAssetsFolder)
-	}
-	
+
 	/// Load an empty block list file.  Used during  pause and site whitelist scenarios
 	private func loadDummyBlockList() {
 		self.updateAndReloadBlockList(fileNames: ["emptyRules"], folderName: Constants.BlockListAssetsFolder)
-	}
-	
-	/// Load the full block list (all categories)
-	private func loadFullBlockList() {
-		self.updateAndReloadBlockList(fileNames: ["safariContentBlocker", "cliqzNetworkList", "cliqzCosmeticList"], folderName: Constants.BlockListAssetsFolder)
 	}
 	
 	/// Trigger a Content Blocker reload
@@ -197,7 +207,6 @@ class GhosteryApplication {
 	private func updateAndReloadBlockList(fileNames: [String], folderName: String) {
 		Utils.shared.logger("Generating new block list...")
 		BlockLists.shared.generateCurrentBlockList(files: fileNames, folderName: folderName) {
-			Utils.shared.logger("Build phase complete")
 			self.reloadCBExtension()
 		}
 	}

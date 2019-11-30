@@ -41,9 +41,10 @@ class Utils {
 		return str.compactMap{$0.wholeNumberValue}
 	}
 	
-	/// Convert an [Int] to a comma-separated String
+	/// Convert an [Int] to a sorted comma-separated String
 	/// - Parameter arr: Array of Int
 	func intArrayToString(_ arr: [Int]) -> String {
-		return arr.map{String($0)}.joined(separator: ",")
+		let sorted = arr.sorted()
+		return sorted.map{String($0)}.joined(separator: ",")
 	}
 }

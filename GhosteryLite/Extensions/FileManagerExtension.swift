@@ -31,7 +31,7 @@ extension FileManager {
 	
 	func writeJsonFile<T>(at fileUrl: URL?, with data: T?) {
 		do {
-			let jsonData = try JSONSerialization.data(withJSONObject: data ?? [], options: JSONSerialization.WritingOptions.prettyPrinted)
+			let jsonData = try JSONSerialization.data(withJSONObject: data ?? [])
 			if FileManager.default.createFile(atPath: (fileUrl?.path)!, contents: jsonData, attributes: [FileAttributeKey.posixPermissions: 0o777]) {
 			} else {
 				Utils.shared.logger("Could not create file")

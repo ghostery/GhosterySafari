@@ -87,7 +87,7 @@ class BlockLists {
 						if self.isCliqzBlockListChecksumChanged(networkChecksum, self.cliqzNetworkListChecksum) {
 							group.enter()
 							// Update the Cliqz network block list file
-							self.downloadAndSaveFile("cliqzNetworkList", versionData.safari.network, Constants.AssetsFolderURL) { () in
+							self.downloadAndSaveFile(Constants.CliqzNetworkList, versionData.safari.network, Constants.AssetsFolderURL) { () in
 								Preferences.setGlobalPreference(key: self.cliqzNetworkListChecksum, value: networkChecksum)
 								updated = true
 								group.leave()
@@ -99,7 +99,7 @@ class BlockLists {
 						if self.isCliqzBlockListChecksumChanged(cosmeticChecksum, self.cliqzCosmeticListChecksum) {
 							group.enter()
 							// Update the Cliqz cosmetic block list file
-							self.downloadAndSaveFile("cliqzCosmeticList", versionData.safari.cosmetic, Constants.AssetsFolderURL) { () in
+							self.downloadAndSaveFile(Constants.CliqzCosmeticList, versionData.safari.cosmetic, Constants.AssetsFolderURL) { () in
 								Preferences.setGlobalPreference(key: self.cliqzCosmeticListChecksum, value: cosmeticChecksum)
 								updated = true
 								group.leave()
