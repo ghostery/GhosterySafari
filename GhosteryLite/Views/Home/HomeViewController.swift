@@ -56,7 +56,7 @@ class HomeViewController: NSViewController {
 	
 	override func viewDidAppear() {
 		super.viewDidAppear()
-		Telemetry.shared.sendSignal(.engage, source: 3)
+		Telemetry.shared.sendSignal(.engaged, source: 3)
 	}
 	
 	class func showSafariPreferencesForExtension() {

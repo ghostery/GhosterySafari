@@ -24,7 +24,7 @@ class TelemetryService {
 		case upgrade = "upgrade"
 		case uninstall = "uninstall"
 		case active = "active"
-		case engage = "engaged"
+		case engaged = "engaged"
 	}
 	
 	/// Telemetry value configuration

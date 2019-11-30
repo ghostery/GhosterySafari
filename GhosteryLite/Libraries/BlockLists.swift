@@ -37,6 +37,12 @@ class BlockLists {
 		var updated = false
 		let group = DispatchGroup()
 		
+		// Check for DB updates daily
+		if !self.isTimeForDBUpdate() {
+			Utils.shared.logger("Already checked for DB updates today")
+			return
+		}
+		
 		// Fetch the Ghostery version file
 		group.enter()
 		DispatchQueue.main.async(group: group) {
@@ -198,5 +204,17 @@ class BlockLists {
 	private func getCliqzChecksum(_ listURL: String) -> String {
 		let l = listURL.replacingOccurrences(of: "https://cdn.cliqz.com/adblocker/safari/", with: "")
 		return l.replacingOccurrences(of: "/rules.json", with: "")
+	}
+	
+	/// Limit DB updates to once per day
+	private func isTimeForDBUpdate() -> Bool {
+		if let lastChecked = Preferences.getGlobalPreference(key: "dbUpdateCheck") as? Date {
+			// Have we already checked for DB updates today?
+			if Calendar.current.isDateInToday(lastChecked) {
+				return false
+			}
+		}
+		Preferences.setGlobalPreference(key: "dbUpdateCheck", value: Date())
+		return true
 	}
 }

@@ -71,7 +71,7 @@ class Telemetry {
 				}
 				Preferences.setGlobalPreference(key: lastVersionKey, value: self.config.version)
 				Preferences.setGlobalPreference(key: buildVersionKey, value: Preferences.currentBuildNumber())
-			case .active, .engage:
+			case .active, .engaged:
 				if let gr = source {
 					for f in self.getFrequencies(type, source: gr) {
 						TelemetryService.shared.sendSignal(type, config: self.config, params: self.generateParams(type, frequency: f, source: source))

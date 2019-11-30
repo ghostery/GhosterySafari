@@ -71,7 +71,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
 	override func viewWillAppear() {
 		super.viewWillAppear()
-		Telemetry.shared.sendSignal(.engage, source: 2)
 		self.view.layer?.backgroundColor = NSColor(named: "backgroundColor")?.cgColor
 		urlLabel?.stringValue = self.currentDomain ?? ""
 		if GhosteryApplication.shared.isDefaultBlockingEnabled() {
