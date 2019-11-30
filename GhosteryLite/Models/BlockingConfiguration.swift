@@ -18,8 +18,8 @@ import Cocoa
 class BlockingConfiguration {
 	
 	var configType: Int? /// CoreData attribute
-	var blockedCategories = [Int]() /// CoreData attribute
-	
+	var blockedCategories = [Int]() /// Converted from CoreData attribute of type String
+
 	static let shared = BlockingConfiguration(type: .defaultBlocking)
 	
 	/// Blocking configuration types.  Custom or default blocking
@@ -76,8 +76,9 @@ class BlockingConfiguration {
 	func getBlockedCategories() -> [Int]? {
 		if let blockingConfig = self.getBlockingConfig() {
 			if let config = blockingConfig.first {
-				if let cats = config.value(forKey: "blockedCategories") as? [Int] {
-					return cats
+				if let cats = config.value(forKey: "blockedCategories") as? String {
+					// Covert comma-separated string to [Int]
+					return Utils.shared.stringToIntArray(cats)
 				}
 			}
 		}
@@ -89,8 +90,9 @@ class BlockingConfiguration {
 	func isCategoryBlocked(category: Categories) -> Bool {
 		if let blockingConfig = self.getBlockingConfig() {
 			if let config = blockingConfig.first {
-				if let cats = config.value(forKey: "blockedCategories") as? [Int] {
-					return cats.contains(category.rawValue)
+				if let cats = config.value(forKey: "blockedCategories") as? String {
+					let arr = Utils.shared.stringToIntArray(cats)
+					return arr.contains(category.rawValue)
 				}
 			}
 		}
@@ -105,18 +107,21 @@ class BlockingConfiguration {
 		if let blockingConfig = self.getBlockingConfig() {
 			// Get the existing BlockingConfig object
 			if let config = blockingConfig.first {
-				if var cats = config.value(forKey: "blockedCategories") as? [Int] {
+				if let cats = config.value(forKey: "blockedCategories") as? String {
+					var arr = Utils.shared.stringToIntArray(cats)
 					// Category is blocked but not in the blockedCategories list
-					if blocked && !cats.contains(category.rawValue) {
+					if blocked && !arr.contains(category.rawValue) {
 						// Add the category to the blockedCategories list
-						config.setValue(cats.append(category.rawValue), forKeyPath: "blockedCategories")
+						arr.append(category.rawValue)
+						config.setValue(Utils.shared.intArrayToString(arr), forKeyPath: "blockedCategories")
 						self.saveContext()
 					}
 					// Category is allowed but currently in the blockedCategories list
-					if !blocked && !cats.contains(category.rawValue) {
+					if !blocked && arr.contains(category.rawValue) {
 						// Remove the category from the blockedCategories list
-						if let index = cats.firstIndex(of: category.rawValue) {
-							config.removeValue(at: index, fromPropertyWithKey: "blockedCategories")
+						if let index = arr.firstIndex(of: category.rawValue) {
+							arr.remove(at: index)
+							config.setValue(Utils.shared.intArrayToString(arr), forKeyPath: "blockedCategories")
 						}
 						self.saveContext()
 					}
@@ -151,7 +156,10 @@ class BlockingConfiguration {
 				let managedContext = appDelegate.persistentContainer.viewContext
 				let entity = NSEntityDescription.entity(forEntityName: "BlockingConfig", in: managedContext)!
 				let config = NSManagedObject(entity: entity, insertInto: managedContext)
+				
 				config.setValue(type.rawValue, forKeyPath: "configType")
+				config.setValue(Utils.shared.intArrayToString(self.blockedCategories), forKeyPath: "blockedCategories")
+				
 				self.saveContext()
 			}
 		}
