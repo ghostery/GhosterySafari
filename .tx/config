@@ -9,16 +9,23 @@ minimum_perc = 0
 source_lang = en
 type = STRINGS
 
+[ghostery-lite.ContentBlockerCosmetic-InfoPlist-strings]
+file_filter = ContentBlockerCosmetic/SupportingFiles/<lang>.lproj/InfoPlist.strings
+source_file = ContentBlockerCosmetic/SupportingFiles/en.lproj/InfoPlist.strings
+minimum_perc = 0
+source_lang = en
+type = STRINGS
+
 [ghostery-lite.GhosteryLite-Main-strings]
-file_filter = GhosteryLite/Modules/MainView/<lang>.lproj/Main.strings
-source_file = GhosteryLite/Modules/MainView/en.lproj/Main.strings
+file_filter = GhosteryLite/Views/Main/<lang>.lproj/Main.strings
+source_file = GhosteryLite/Views/Main/en.lproj/Main.strings
 minimum_perc = 0
 source_lang = en
 type = STRINGS
 
 [ghostery-lite.GhosteryLite-Localizable-strings]
-file_filter = GhosteryLite/Modules/MainView/<lang>.lproj/Localizable.strings
-source_file = GhosteryLite/Modules/MainView/en.lproj/Localizable.strings
+file_filter = GhosteryLite/Views/Main/<lang>.lproj/Localizable.strings
+source_file = GhosteryLite/Views/Main/en.lproj/Localizable.strings
 minimum_perc = 0
 source_lang = en
 type = STRINGS
@@ -31,15 +38,15 @@ source_lang = en
 type = STRINGS
 
 [ghostery-lite.SafariExtension-Main-strings]
-file_filter = SafariExtension/Modules/ExtensionView/<lang>.lproj/SafariExtensionViewController.strings
-source_file = SafariExtension/Modules/ExtensionView/en.lproj/SafariExtensionViewController.strings
+file_filter = SafariExtension/Views/ExtensionView/<lang>.lproj/SafariExtensionViewController.strings
+source_file = SafariExtension/Views/ExtensionView/en.lproj/SafariExtensionViewController.strings
 minimum_perc = 0
 source_lang = en
 type = STRINGS
 
 [ghostery-lite.SafariExtension-Localizable-strings]
-file_filter = SafariExtension/Modules/ExtensionView/<lang>.lproj/Localizable.strings
-source_file = SafariExtension/Modules/ExtensionView/en.lproj/Localizable.strings
+file_filter = SafariExtension/Views/ExtensionView/<lang>.lproj/Localizable.strings
+source_file = SafariExtension/Views/ExtensionView/en.lproj/Localizable.strings
 minimum_perc = 0
 source_lang = en
 type = STRINGS
