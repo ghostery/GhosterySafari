@@ -16,6 +16,13 @@ minimum_perc = 0
 source_lang = en
 type = STRINGS
 
+[ghostery-lite.ContentBlockerNetwork-InfoPlist-strings]
+file_filter = ContentBlockerNetwork/SupportingFiles/<lang>.lproj/InfoPlist.strings
+source_file = ContentBlockerNetwork/SupportingFiles/en.lproj/InfoPlist.strings
+minimum_perc = 0
+source_lang = en
+type = STRINGS
+
 [ghostery-lite.GhosteryLite-Main-strings]
 file_filter = GhosteryLite/Views/Main/<lang>.lproj/Main.strings
 source_file = GhosteryLite/Views/Main/en.lproj/Main.strings

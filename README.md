@@ -3,11 +3,13 @@
 
 The Ghostery Lite app extension for the Safari desktop browser works alongside Apple’s new privacy ecosystem to bring Safari users comprehensive privacy protection. Check page performance, pause Ghostery Lite, trust a site and switch to your custom settings with a single click.
 
-This project consists of three main components:
+This project consists of the following components:
 
 + GhosteryLite: Native macOS container application that manages user settings and controls the Safari extensions
 + SafariExtension: Toolbar extension in Safari
-+ ContentBlocker:  Content Blocker extension in Safari
++ ContentBlocker:  Content Blocker extension in Safari with Ghostery Privacy filters
++ ContentBlockerCosmetic:  Content Blocker extension in Safari with Cosmetic ad-blocking filters
++ ContentBlockerNetwork:  Content Blocker extension in Safari with network ad-blocking filters
 
 See [here](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/ExtensionOverview.html#//apple_ref/doc/uid/TP40014214-CH2-SW2) for more information on Safari App Extensions.
 
