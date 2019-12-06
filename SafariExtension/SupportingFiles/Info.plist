@@ -42,6 +42,7 @@
 		<key>SFSafariAssociatedContentBlockers</key>
 		<array>
 			<string>com.ghostery.lite.contentBlocker</string>
+			<string>com.ghostery.lite.contentBlockerCosmetic</string>
 		</array>
 		<key>SFSafariContentScript</key>
 		<array>

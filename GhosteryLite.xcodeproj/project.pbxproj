@@ -56,6 +56,12 @@
 		0DDF278B238B2CB600C17AC8 /* TrustedSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF2789238B2CB600C17AC8 /* TrustedSite.swift */; };
 		0DDF278D238B2EB900C17AC8 /* BlockingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF278C238B2EB900C17AC8 /* BlockingConfiguration.swift */; };
 		0DDF278E238B2EB900C17AC8 /* BlockingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF278C238B2EB900C17AC8 /* BlockingConfiguration.swift */; };
+		0DFD55462399F4D8000493FC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3FBB00235F70030054822A /* Cocoa.framework */; };
+		0DFD554B2399F4D8000493FC /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFD554A2399F4D8000493FC /* ContentBlockerRequestHandler.swift */; };
+		0DFD55592399F6AC000493FC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DFD55582399F6AC000493FC /* Info.plist */; };
+		0DFD555C2399F7D7000493FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DFD555E2399F7D7000493FC /* InfoPlist.strings */; };
+		0DFD556C2399F8CB000493FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A242126C8C900AF4226 /* Constants.swift */; };
+		0DFD556D2399F970000493FC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1829382390213300E5EE42 /* Utils.swift */; };
 		1E14B73D21369F5400E28C38 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73C21369F5400E28C38 /* StringExtension.swift */; };
 		1E14B754213819A800E28C38 /* TrustedSitesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B752213819A800E28C38 /* TrustedSitesViewController.swift */; };
 		1E14B7582138217800E28C38 /* TrustedSiteItemCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B7562138217800E28C38 /* TrustedSiteItemCollectionViewItem.swift */; };
@@ -110,6 +116,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4F3049502118985C00BA3961;
 			remoteInfo = ContentBlocker;
+		};
+		0DFD554E2399F4D8000493FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F3049152118982600BA3961 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0DFD55442399F4D8000493FC;
+			remoteInfo = ContentBlockerCosmetic;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -262,6 +275,24 @@
 		0DFD553E2399F318000493FC /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		0DFD553F2399F31B000493FC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0DFD55402399F31E000493FC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0DFD55452399F4D8000493FC /* ContentBlockerCosmetic.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = ContentBlockerCosmetic.appex; path = /Users/christophertino/Developer/GhosterySafari/build/Debug/ContentBlockerCosmetic.appex; sourceTree = "<absolute>"; };
+		0DFD554A2399F4D8000493FC /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
+		0DFD554D2399F4D8000493FC /* ContentBlockerCosmetic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContentBlockerCosmetic.entitlements; sourceTree = "<group>"; };
+		0DFD55582399F6AC000493FC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DFD555D2399F7D7000493FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0DFD555F2399F7E0000493FC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		0DFD55602399F7E0000493FC /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		0DFD55612399F7E2000493FC /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0DFD55622399F7E3000493FC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0DFD55632399F7E4000493FC /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0DFD55642399F7E5000493FC /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0DFD55652399F7E6000493FC /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0DFD55662399F7E7000493FC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0DFD55672399F7E8000493FC /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0DFD55682399F7E8000493FC /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0DFD55692399F7E9000493FC /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		0DFD556A2399F7EA000493FC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0DFD556B2399F7EB000493FC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1E14B73C21369F5400E28C38 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		1E14B752213819A800E28C38 /* TrustedSitesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSitesViewController.swift; sourceTree = "<group>"; };
 		1E14B7562138217800E28C38 /* TrustedSiteItemCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSiteItemCollectionViewItem.swift; sourceTree = "<group>"; };
@@ -302,6 +333,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0DFD55422399F4D8000493FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DFD55462399F4D8000493FC /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4F30491A2118982600BA3961 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -592,6 +631,25 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		0DFD55472399F4D8000493FC /* ContentBlockerCosmetic */ = {
+			isa = PBXGroup;
+			children = (
+				0DFD55572399F69B000493FC /* SupportingFiles */,
+				0DFD554A2399F4D8000493FC /* ContentBlockerRequestHandler.swift */,
+			);
+			path = ContentBlockerCosmetic;
+			sourceTree = "<group>";
+		};
+		0DFD55572399F69B000493FC /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0DFD554D2399F4D8000493FC /* ContentBlockerCosmetic.entitlements */,
+				0DFD55582399F6AC000493FC /* Info.plist */,
+				0DFD555E2399F7D7000493FC /* InfoPlist.strings */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		12C745E560D59A7A5C913F04 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -605,6 +663,7 @@
 			children = (
 				0DD3BF8A236CD80600889C41 /* .tx */,
 				4F3049532118985C00BA3961 /* ContentBlocker */,
+				0DFD55472399F4D8000493FC /* ContentBlockerCosmetic */,
 				4F30491F2118982600BA3961 /* GhosteryLite */,
 				4F3049382118983D00BA3961 /* SafariExtension */,
 				0D3FBB05235F99450054822A /* .gitignore */,
@@ -686,6 +745,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0DFD55442399F4D8000493FC /* ContentBlockerCosmetic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0DFD55512399F4D8000493FC /* Build configuration list for PBXNativeTarget "ContentBlockerCosmetic" */;
+			buildPhases = (
+				0DFD55412399F4D8000493FC /* Sources */,
+				0DFD55422399F4D8000493FC /* Frameworks */,
+				0DFD55432399F4D8000493FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ContentBlockerCosmetic;
+			productName = ContentBlockerCosmetic;
+			productReference = 0DFD55452399F4D8000493FC /* ContentBlockerCosmetic.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		4F30491C2118982600BA3961 /* GhosteryLite */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F30492D2118982700BA3961 /* Build configuration list for PBXNativeTarget "GhosteryLite" */;
@@ -700,6 +776,7 @@
 			dependencies = (
 				0D3FBAFC235F6EAA0054822A /* PBXTargetDependency */,
 				0D3FBAFF235F6EB10054822A /* PBXTargetDependency */,
+				0DFD554F2399F4D8000493FC /* PBXTargetDependency */,
 			);
 			name = GhosteryLite;
 			productName = GhosteryLite;
@@ -746,10 +823,13 @@
 		4F3049152118982600BA3961 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = Ghostery;
 				TargetAttributes = {
+					0DFD55442399F4D8000493FC = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
 					4F30491C2118982600BA3961 = {
 						CreatedOnToolsVersion = 9.4;
 						LastSwiftMigration = 1020;
@@ -814,11 +894,21 @@
 				4F30491C2118982600BA3961 /* GhosteryLite */,
 				4F3049332118983D00BA3961 /* SafariExtension */,
 				4F3049502118985C00BA3961 /* ContentBlocker */,
+				0DFD55442399F4D8000493FC /* ContentBlockerCosmetic */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0DFD55432399F4D8000493FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DFD55592399F6AC000493FC /* Info.plist in Resources */,
+				0DFD555C2399F7D7000493FC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4F30491B2118982600BA3961 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -859,6 +949,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0DFD55412399F4D8000493FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DFD554B2399F4D8000493FC /* ContentBlockerRequestHandler.swift in Sources */,
+				0DFD556C2399F8CB000493FC /* Constants.swift in Sources */,
+				0DFD556D2399F970000493FC /* Utils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4F3049192118982600BA3961 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -959,6 +1059,11 @@
 			isa = PBXTargetDependency;
 			target = 4F3049502118985C00BA3961 /* ContentBlocker */;
 			targetProxy = 0D3FBAFE235F6EB10054822A /* PBXContainerItemProxy */;
+		};
+		0DFD554F2399F4D8000493FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0DFD55442399F4D8000493FC /* ContentBlockerCosmetic */;
+			targetProxy = 0DFD554E2399F4D8000493FC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1112,9 +1217,103 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
+		0DFD555E2399F7D7000493FC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DFD555D2399F7D7000493FC /* en */,
+				0DFD555F2399F7E0000493FC /* zh-Hans */,
+				0DFD55602399F7E0000493FC /* zh-Hant-TW */,
+				0DFD55612399F7E2000493FC /* nl */,
+				0DFD55622399F7E3000493FC /* fr */,
+				0DFD55632399F7E4000493FC /* de */,
+				0DFD55642399F7E5000493FC /* hu */,
+				0DFD55652399F7E6000493FC /* it */,
+				0DFD55662399F7E7000493FC /* ja */,
+				0DFD55672399F7E8000493FC /* ko */,
+				0DFD55682399F7E8000493FC /* pl */,
+				0DFD55692399F7E9000493FC /* pt-BR */,
+				0DFD556A2399F7EA000493FC /* ru */,
+				0DFD556B2399F7EB000493FC /* es */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0DFD55522399F4D8000493FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ContentBlockerCosmetic/ContentBlockerCosmetic.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HPY23A294X;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = ContentBlockerCosmetic/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.contentBlockerCosmetic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0DFD55532399F4D8000493FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ContentBlockerCosmetic/ContentBlockerCosmetic.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HPY23A294X;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = ContentBlockerCosmetic/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.contentBlockerCosmetic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		0DFD55542399F4D8000493FC /* Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ContentBlockerCosmetic/ContentBlockerCosmetic.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HPY23A294X;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = ContentBlockerCosmetic/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.contentBlockerCosmetic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Beta;
+		};
 		4F30492B2118982700BA3961 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1233,6 +1432,7 @@
 		4F30492E2118982700BA3961 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GhosteryLite/SupportingFiles/GhosteryLite.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1258,6 +1458,7 @@
 		4F30492F2118982700BA3961 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GhosteryLite/SupportingFiles/GhosteryLite.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1437,6 +1638,7 @@
 		4F9CF8DC215B90E8005B1C1B /* Beta */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GhosteryLite/SupportingFiles/GhosteryLite.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1512,6 +1714,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0DFD55512399F4D8000493FC /* Build configuration list for PBXNativeTarget "ContentBlockerCosmetic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DFD55522399F4D8000493FC /* Debug */,
+				0DFD55532399F4D8000493FC /* Release */,
+				0DFD55542399F4D8000493FC /* Beta */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4F3049182118982600BA3961 /* Build configuration list for PBXProject "GhosteryLite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
