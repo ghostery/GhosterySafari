@@ -1,5 +1,5 @@
 /**
- * InfoPlist Strings - English
+ * InfoPlist Strings
  * SafariExtension
  *
  * Ghostery Safari App Extension
@@ -12,5 +12,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0
  */
 
+CFBundleDisplayName = "Ghostery Lite Safari Extension";
 NSHumanReadableCopyright = "Copyright © 2019 Ghostery, Inc. All rights reserved.";
 NSHumanReadableDescription = "Ghostery Lite allows you to manage the app from within Safari: pause, trust sites, and customize your tracker blocking settings.";

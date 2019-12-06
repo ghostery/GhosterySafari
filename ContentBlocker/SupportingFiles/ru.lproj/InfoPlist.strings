@@ -1,5 +1,5 @@
 /**
- * InfoPlist Strings - English
+ * InfoPlist Strings
  * ContentBlocker
  *
  * Ghostery Safari App Extension
@@ -12,5 +12,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0
  */
 
+CFBundleDisplayName = "Ghostery Lite Content Blocker - Privacy List";
 NSHumanReadableCopyright = "Copyright © 2019 Ghostery, Inc. All rights reserved.";
 NSHumanReadableDescription = "Remove clutter from the websites you visit including ads and pop-ups for a faster and safer browsing experience.";
