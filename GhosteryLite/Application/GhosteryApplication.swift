@@ -25,26 +25,26 @@ class GhosteryApplication {
 	init() {}
 	
 	deinit {
-		DistributedNotificationCenter.default().removeObserver(self, name: Constants.PauseNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().removeObserver(self, name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().removeObserver(self, name: Constants.PauseNotificationName, object: Constants.SafariExtensionID)
+		DistributedNotificationCenter.default().removeObserver(self, name: Constants.ResumeNotificationName, object: Constants.SafariExtensionID)
 	}
 	
 	/// Create notification subscriptions
 	func subscribeForNotifications() {
-		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.pauseNotification), name: Constants.PauseNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.resumeNotification), name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.pauseNotification), name: Constants.PauseNotificationName, object: Constants.SafariExtensionID)
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.resumeNotification), name: Constants.ResumeNotificationName, object: Constants.SafariExtensionID)
 	}
 	
 	/// Pause GhosteryLite
 	func pause() {
 		self.paused = true
-		self.reloadContentBlocker()
+		self.reloadContentBlockers()
 	}
 	
 	/// Resume GhosteryLite
 	func resume() {
 		self.paused = false
-		self.reloadContentBlocker()
+		self.reloadContentBlockers()
 	}
 	
 	/// Check to see if GhosteryList is paused
@@ -65,13 +65,13 @@ class GhosteryApplication {
 	/// Enable the default blocking configuration
 	func switchToDefaultBlocking() {
 		BlockingConfiguration.shared.updateConfigType(type: .defaultBlocking)
-		self.reloadContentBlocker()
+		self.reloadContentBlockers()
 	}
 	
 	/// Enable the custom blocking configuration
 	func switchToCustomBlocking() {
 		BlockingConfiguration.shared.updateConfigType(type: .customBlocking)
-		self.reloadContentBlocker()
+		self.reloadContentBlockers()
 	}
 	
 	/// Are we using the default blocking configuration
@@ -85,7 +85,7 @@ class GhosteryApplication {
 	func trustDomain(domain: String) {
 		TrustedSite.shared.addDomain(domain)
 		WhiteList.shared.add(domain, completion: {
-			self.reloadContentBlocker()
+			self.reloadContentBlockers()
 		})
 	}
 	
@@ -94,7 +94,7 @@ class GhosteryApplication {
 	func untrustDomain(domain: String) {
 		TrustedSite.shared.removeDomain(domain)
 		WhiteList.shared.remove(domain, completion: {
-			self.reloadContentBlocker()
+			self.reloadContentBlockers()
 		})
 	}
 	
@@ -116,7 +116,7 @@ class GhosteryApplication {
 	func untrustSiteNotification() {
 		if let d = Preferences.getGlobalPreference(key: "domain") as? String {
 			self.untrustDomain(domain: d)
-			self.reloadContentBlocker()
+			self.reloadContentBlockers()
 		}
 	}
 	
@@ -126,14 +126,14 @@ class GhosteryApplication {
 			// Did we download a new block list version?
 			if updated {
 				// Generate the new block list and reload the Content Blocker
-				self.reloadContentBlocker()
+				self.reloadContentBlockers()
 			}
 		})
 	}
 	
-	/// Checks if the user is using the default or custom block list config. Triggers self.updateAndReloadBlockList(), which generates
-	/// the new block list as needed and reloads the Content Blocker
-	func reloadContentBlocker() {
+	/// Reload all active content blockers. Checks if the user is using the default or custom block list config and triggers updateAndReloadBlockList(), which generates
+	/// the new block list as needed.
+	func reloadContentBlockers() {
 		if self.isPaused() {
 			self.loadDummyBlockList()
 		} else {
@@ -147,15 +147,12 @@ class GhosteryApplication {
 	
 	/// Load the full block list (all categories)
 	private func loadFullBlockList() {
-		self.updateAndReloadBlockList(fileNames: [Constants.CliqzNetworkList, Constants.CliqzCosmeticList, "safariContentBlocker"], folderName: Constants.BlockListAssetsFolder)
+		self.updateAndReloadBlockList(fileNames: ["safariContentBlocker"], folderName: Constants.BlockListAssetsFolder)
 	}
 	
 	/// Load the default block list file consisting of the default categories only
 	private func loadDefaultBlockList() {
 		var fileNames = [String]()
-		// Cliqz filter lists
-		fileNames.append(Constants.CliqzNetworkList)
-		fileNames.append(Constants.CliqzCosmeticList)
 		// Ghostery default categories
 		for index in BlockingConfiguration.shared.defaultBlockedCategories() {
 			fileNames.append(index.fileName())
@@ -181,12 +178,6 @@ class GhosteryApplication {
 			}
 			// Load selected categories
 			for index in cats {
-				// If advertising category is checked, load Cliqz filter lists
-				// TODO: Move Cliqz lists to their own UI checkbox
-				if index == Categories.advertising.rawValue {
-					fileNames.append(Constants.CliqzNetworkList)
-					fileNames.append(Constants.CliqzCosmeticList)
-				}
 				if let cat = Categories(rawValue: index) {
 					fileNames.append(cat.fileName())
 				}
@@ -207,14 +198,16 @@ class GhosteryApplication {
 	private func updateAndReloadBlockList(fileNames: [String], folderName: String) {
 		Utils.shared.logger("Generating new block list...")
 		BlockLists.shared.generateCurrentBlockList(files: fileNames, folderName: folderName) {
-			self.reloadCBExtension()
+			self.reloadContentBlocker(withIdentifier: Constants.SafariContentBlockerID)
 		}
 	}
+
 	
 	/// Reload the Content Blocker extension
-	private func reloadCBExtension() {
+	/// - Parameter identifier: The bundle ID of the Content Blocker to reload
+	private func reloadContentBlocker(withIdentifier identifier: String) {
 		Utils.shared.logger("Reloading Content Blocker...")
-		SFContentBlockerManager.reloadContentBlocker(withIdentifier: Constants.SafariContentBlockerID, completionHandler: { (error) in
+		SFContentBlockerManager.reloadContentBlocker(withIdentifier: identifier, completionHandler: { (error) in
 			if error != nil {
 				Utils.shared.logger("Reloading Content Blocker failed with error \(String(describing: error))")
 			} else {

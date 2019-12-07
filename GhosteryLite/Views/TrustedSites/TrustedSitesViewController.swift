@@ -44,8 +44,8 @@ class TrustedSitesViewController: NSViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.setupComponents()
-		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateData), name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateData), name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateData), name: Constants.TrustDomainNotificationName, object: Constants.SafariExtensionID)
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateData), name: Constants.UntrustDomainNotificationName, object: Constants.SafariExtensionID)
 	}
 	
 	override func viewWillAppear() {
@@ -54,8 +54,8 @@ class TrustedSitesViewController: NSViewController {
 	}
 	
 	deinit {
-		DistributedNotificationCenter.default().removeObserver(self, name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().removeObserver(self, name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().removeObserver(self, name: Constants.TrustDomainNotificationName, object: Constants.SafariExtensionID)
+		DistributedNotificationCenter.default().removeObserver(self, name: Constants.UntrustDomainNotificationName, object: Constants.SafariExtensionID)
 	}
 	
 	func updateTrustBtnState(_ isEnabled: Bool) {

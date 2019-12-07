@@ -34,6 +34,8 @@
 		0D588E82235E46870003668C /* PageLatency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D588E81235E46870003668C /* PageLatency.swift */; };
 		0D588E84235E4C2F0003668C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0D588E83235E4C2F0003668C /* Fonts */; };
 		0D588E85235E4C2F0003668C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0D588E83235E4C2F0003668C /* Fonts */; };
+		0D73E57F239B5F090015CE50 /* ContentBlockerCosmetic.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D73E57D239B5EEF0015CE50 /* ContentBlockerCosmetic.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0D73E582239B5F0D0015CE50 /* ContentBlockerNetwork.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D73E57E239B5EEF0015CE50 /* ContentBlockerNetwork.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D99D75C212EFC44005D107D /* page_performance.js in Resources */ = {isa = PBXBuildFile; fileRef = 0D99D75B212EFC44005D107D /* page_performance.js */; };
 		0DBA653D238315FB0011AAD3 /* DetailViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA653C238315FB0011AAD3 /* DetailViewControllerDelegate.swift */; };
 		0DBA653F238316BA0011AAD3 /* MainViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA653E238316BA0011AAD3 /* MainViewControllerExtension.swift */; };
@@ -58,7 +60,6 @@
 		0DDF278E238B2EB900C17AC8 /* BlockingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF278C238B2EB900C17AC8 /* BlockingConfiguration.swift */; };
 		0DFD55462399F4D8000493FC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3FBB00235F70030054822A /* Cocoa.framework */; };
 		0DFD554B2399F4D8000493FC /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFD554A2399F4D8000493FC /* ContentBlockerRequestHandler.swift */; };
-		0DFD55592399F6AC000493FC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DFD55582399F6AC000493FC /* Info.plist */; };
 		0DFD555C2399F7D7000493FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DFD555E2399F7D7000493FC /* InfoPlist.strings */; };
 		0DFD556C2399F8CB000493FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A242126C8C900AF4226 /* Constants.swift */; };
 		0DFD556D2399F970000493FC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1829382390213300E5EE42 /* Utils.swift */; };
@@ -67,7 +68,6 @@
 		0DFD5586239AC5C2000493FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DFD5588239AC5C2000493FC /* InfoPlist.strings */; };
 		0DFD5596239AC5F0000493FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F931A242126C8C900AF4226 /* Constants.swift */; };
 		0DFD5597239AC615000493FC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1829382390213300E5EE42 /* Utils.swift */; };
-		0DFD5598239AC6C3000493FC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DFD557A239AC400000493FC /* Info.plist */; };
 		1E14B73D21369F5400E28C38 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B73C21369F5400E28C38 /* StringExtension.swift */; };
 		1E14B754213819A800E28C38 /* TrustedSitesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B752213819A800E28C38 /* TrustedSitesViewController.swift */; };
 		1E14B7582138217800E28C38 /* TrustedSiteItemCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E14B7562138217800E28C38 /* TrustedSiteItemCollectionViewItem.swift */; };
@@ -146,7 +146,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				0D73E57F239B5F090015CE50 /* ContentBlockerCosmetic.appex in Embed App Extensions */,
 				0D3FBAFA235F6EAA0054822A /* SafariExtension.appex in Embed App Extensions */,
+				0D73E582239B5F0D0015CE50 /* ContentBlockerNetwork.appex in Embed App Extensions */,
 				0D3FBAFD235F6EB10054822A /* ContentBlocker.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -180,6 +182,8 @@
 		0D588E81235E46870003668C /* PageLatency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageLatency.swift; sourceTree = "<group>"; };
 		0D588E83235E4C2F0003668C /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		0D588E88235E50B20003668C /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		0D73E57D239B5EEF0015CE50 /* ContentBlockerCosmetic.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentBlockerCosmetic.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D73E57E239B5EEF0015CE50 /* ContentBlockerNetwork.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentBlockerNetwork.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D99D75B212EFC44005D107D /* page_performance.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = page_performance.js; sourceTree = "<group>"; };
 		0DBA653C238315FB0011AAD3 /* DetailViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerDelegate.swift; sourceTree = "<group>"; };
 		0DBA653E238316BA0011AAD3 /* MainViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -305,8 +309,6 @@
 		0DFD55692399F7E9000493FC /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		0DFD556A2399F7EA000493FC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0DFD556B2399F7EB000493FC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0DFD556E2399FBEF000493FC /* ContentBlockerCosmetic.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = ContentBlockerCosmetic.appex; path = /Users/christophertino/Developer/GhosterySafari/build/Debug/ContentBlockerCosmetic.appex; sourceTree = "<absolute>"; };
-		0DFD5573239AC400000493FC /* ContentBlockerNetwork.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = ContentBlockerNetwork.appex; path = /Users/christophertino/Developer/GhosterySafari/build/Debug/ContentBlockerNetwork.appex; sourceTree = "<absolute>"; };
 		0DFD5578239AC400000493FC /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
 		0DFD557A239AC400000493FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DFD557B239AC401000493FC /* ContentBlockerNetwork.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContentBlockerNetwork.entitlements; sourceTree = "<group>"; };
@@ -616,6 +618,8 @@
 				0D588D9B235E3FBB0003668C /* GhosteryLite.app */,
 				0D588D9C235E3FBB0003668C /* SafariExtension.appex */,
 				0D588D9D235E3FBB0003668C /* ContentBlocker.appex */,
+				0D73E57D239B5EEF0015CE50 /* ContentBlockerCosmetic.appex */,
+				0D73E57E239B5EEF0015CE50 /* ContentBlockerNetwork.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -818,7 +822,7 @@
 			);
 			name = ContentBlockerCosmetic;
 			productName = ContentBlockerCosmetic;
-			productReference = 0DFD556E2399FBEF000493FC /* ContentBlockerCosmetic.appex */;
+			productReference = 0D73E57D239B5EEF0015CE50 /* ContentBlockerCosmetic.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		0DFD5572239AC400000493FC /* ContentBlockerNetwork */ = {
@@ -835,7 +839,7 @@
 			);
 			name = ContentBlockerNetwork;
 			productName = ContentBlockerNetwork;
-			productReference = 0DFD5573239AC400000493FC /* ContentBlockerNetwork.appex */;
+			productReference = 0D73E57E239B5EEF0015CE50 /* ContentBlockerNetwork.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		4F30491C2118982600BA3961 /* GhosteryLite */ = {
@@ -985,7 +989,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DFD55592399F6AC000493FC /* Info.plist in Resources */,
 				0DFD555C2399F7D7000493FC /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -994,7 +997,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DFD5598239AC6C3000493FC /* Info.plist in Resources */,
 				0DFD5586239AC5C2000493FC /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1376,7 +1378,7 @@
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = ContentBlockerCosmetic/Info.plist;
+				INFOPLIST_FILE = ContentBlockerCosmetic/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1402,7 +1404,7 @@
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = ContentBlockerCosmetic/Info.plist;
+				INFOPLIST_FILE = ContentBlockerCosmetic/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1427,7 +1429,7 @@
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = ContentBlockerCosmetic/Info.plist;
+				INFOPLIST_FILE = ContentBlockerCosmetic/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1452,7 +1454,7 @@
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = ContentBlockerNetwork/Info.plist;
+				INFOPLIST_FILE = ContentBlockerNetwork/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1478,7 +1480,7 @@
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = ContentBlockerNetwork/Info.plist;
+				INFOPLIST_FILE = ContentBlockerNetwork/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1503,7 +1505,7 @@
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = ContentBlockerNetwork/Info.plist;
+				INFOPLIST_FILE = ContentBlockerNetwork/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1652,7 +1654,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.1.0;
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\" \"-DSTAGING\"";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-DDEBUG\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1678,7 +1680,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.1.0;
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DPROD\"";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-DPROD\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1752,7 +1754,6 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 1.1.0;
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DSTAGING\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.contentBlocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1777,7 +1778,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 1.1.0;
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DPROD\"";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.contentBlocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1858,7 +1859,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.1.0;
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DSTAGING\"";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-DBETA\" \"-DPROD\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1907,7 +1908,6 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 1.1.0;
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DSTAGING\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.contentBlocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

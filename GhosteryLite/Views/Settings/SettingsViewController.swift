@@ -60,7 +60,7 @@ class SettingsViewController: NSViewController {
 		}
 		if let m = modifiedCat {
 			let _ = BlockingConfiguration.shared.updateBlockedCategory(category: m, blocked: sender.state.rawValue == 0 ? false : true)
-			GhosteryApplication.shared.reloadContentBlocker()
+			GhosteryApplication.shared.reloadContentBlockers()
 			self.savedBox.isHidden = false
 		}
 	}
@@ -80,8 +80,8 @@ class SettingsViewController: NSViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateRadioBoxesState), name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateRadioBoxesState), name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateRadioBoxesState), name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariExtensionID)
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateRadioBoxesState), name: Constants.SwitchToCustomNotificationName, object: Constants.SafariExtensionID)
 	}
 	
 	override func viewWillAppear() {
@@ -97,8 +97,8 @@ class SettingsViewController: NSViewController {
 	}
 	
 	deinit {
-		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariExtensionID)
+		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToCustomNotificationName, object: Constants.SafariExtensionID)
 	}
 	
 	private func setupComponents() {

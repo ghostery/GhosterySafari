@@ -18,7 +18,9 @@ struct Constants {
 	/// Application IDs
 	static let GhosteryLiteID = "com.ghostery.lite"
 	static let SafariContentBlockerID = "com.ghostery.lite.contentBlocker"
-	static let SafariPopupExtensionID = "com.ghostery.lite.safariExtension"
+	static let SafariContentBlockerCosmeticID = "com.ghostery.lite.contentBlockerCosmetic"
+	static let SafariContentBlockerNetworkID = "com.ghostery.lite.contentBlockerNetwork"
+	static let SafariExtensionID = "com.ghostery.lite.safariExtension"
 	static let AppsGroupID = "HPY23A294X.ghostery.lite"
 	
 	/// Block list storage

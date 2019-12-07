@@ -45,8 +45,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		// Set prefs
 		Preferences.setAppPreference(key: "NSInitialToolTipDelay", value: 50)
 		// Create notification listeners
-		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateConfigState), name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateConfigState), name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateConfigState), name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariExtensionID)
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateConfigState), name: Constants.SwitchToCustomNotificationName, object: Constants.SafariExtensionID)
 		// Handle first launch bootstrapping
 		if Preferences.isAppFirstLaunch() {
 			self.handleInitialLaunch()
@@ -63,8 +63,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	/// Sent by the default notification center immediately before the application terminates.
 	func applicationWillTerminate(_ aNotification: Notification) {
-		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
-		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariExtensionID)
+		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToCustomNotificationName, object: Constants.SafariExtensionID)
 	}
 	
 	/// Invoked when the user closes the last window the application has open.

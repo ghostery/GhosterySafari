@@ -51,7 +51,7 @@ class HomeViewController: NSViewController {
 				self.SafariExtensionPromptView.isHidden = contentBlockerEnabled && popoverEnabled
 			}
 		}
-		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.editSettingsClicked(_:)), name: Constants.NavigateToSettingsNotificationName, object: Constants.SafariPopupExtensionID)
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.editSettingsClicked(_:)), name: Constants.NavigateToSettingsNotificationName, object: Constants.SafariExtensionID)
 	}
 	
 	override func viewDidAppear() {
@@ -60,7 +60,7 @@ class HomeViewController: NSViewController {
 	}
 	
 	class func showSafariPreferencesForExtension() {
-		SFSafariApplication.showPreferencesForExtension(withIdentifier: Constants.SafariContentBlockerID, completionHandler: { (error) in
+		SFSafariApplication.showPreferencesForExtension(withIdentifier: Constants.SafariExtensionID, completionHandler: { (error) in
 			if let e = error {
 				Utils.shared.logger("Error: \(e)")
 			}

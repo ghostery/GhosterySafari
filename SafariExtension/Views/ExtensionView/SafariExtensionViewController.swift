@@ -88,13 +88,13 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		if sender.state.rawValue == 1 {
 			self.pauseButton.toolTip = NSLocalizedString("button.resume.tooltip", comment: "Tooltip on resume button")
 			GhosteryApplication.shared.pause()
-			DistributedNotificationCenter.default().post(name: Constants.PauseNotificationName, object: Constants.SafariPopupExtensionID)
+			DistributedNotificationCenter.default().post(name: Constants.PauseNotificationName, object: Constants.SafariExtensionID)
 			self.trustSiteButton.isEnabled = false
 			self.showPausedPopup()
 		} else {
 			self.pauseButton.toolTip = NSLocalizedString("button.pause.tooltip", comment: "Tooltip on pause button")
 			GhosteryApplication.shared.resume()
-			DistributedNotificationCenter.default().post(name: Constants.ResumeNotificationName, object: Constants.SafariPopupExtensionID)
+			DistributedNotificationCenter.default().post(name: Constants.ResumeNotificationName, object: Constants.SafariExtensionID)
 			self.trustSiteButton.isEnabled = true
 			self.showResumedPopup()
 		}
@@ -104,11 +104,11 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		if let x = self.currentDomain {
 			if sender.state.rawValue == 0 {
 				GhosteryApplication.shared.untrustDomain(domain: x)
-				DistributedNotificationCenter.default().post(name: Constants.UntrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
+				DistributedNotificationCenter.default().post(name: Constants.UntrustDomainNotificationName, object: Constants.SafariExtensionID)
 				self.showUntrustedPopup()
 			} else {
 				GhosteryApplication.shared.trustDomain(domain: x)
-				DistributedNotificationCenter.default().post(name: Constants.TrustDomainNotificationName, object: Constants.SafariPopupExtensionID)
+				DistributedNotificationCenter.default().post(name: Constants.TrustDomainNotificationName, object: Constants.SafariExtensionID)
 				self.showTrustedPopup()
 			}
 		}
@@ -122,7 +122,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBAction func defaultConfigPressed(sender: NSButton) {
 		if sender.state.rawValue == 1{
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
-			DistributedNotificationCenter.default().post(name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariPopupExtensionID)
+			DistributedNotificationCenter.default().post(name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariExtensionID)
 			GhosteryApplication.shared.switchToDefaultBlocking()
 		} else {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
@@ -132,7 +132,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBAction func customConfigPressed(sender: NSButton) {
 		if sender.state.rawValue == 1 {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 0)
-			DistributedNotificationCenter.default().post(name: Constants.SwitchToCustomNotificationName, object: Constants.SafariPopupExtensionID)
+			DistributedNotificationCenter.default().post(name: Constants.SwitchToCustomNotificationName, object: Constants.SafariExtensionID)
 			GhosteryApplication.shared.switchToCustomBlocking()
 		} else {
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 1)
@@ -169,7 +169,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		//	NSWorkspace.shared.launchApplication(withBundleIdentifier: Constants.GhosteryLiteID, options: [LaunchOptions], additionalEventParamDescriptor: <#T##NSAppleEventDescriptor?#>, launchIdentifier: AutoreleasingUnsafeMutablePointer<NSNumber?>?)
 		NSWorkspace.shared.launchApplication("GhosteryLite")
 		Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (_) in
-			DistributedNotificationCenter.default().post(name: Constants.NavigateToSettingsNotificationName, object: Constants.SafariPopupExtensionID)
+			DistributedNotificationCenter.default().post(name: Constants.NavigateToSettingsNotificationName, object: Constants.SafariExtensionID)
 		}
 	}
 

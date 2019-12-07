@@ -106,7 +106,7 @@ class Preferences: NSObject {
 		
 		group.enter()
 		DispatchQueue.main.async(group: group) {
-			SFSafariExtensionManager.getStateOfSafariExtension(withIdentifier: Constants.SafariPopupExtensionID) { (state, error) in
+			SFSafariExtensionManager.getStateOfSafariExtension(withIdentifier: Constants.SafariExtensionID) { (state, error) in
 				guard let state = state else {
 					err = error
 					group.leave()
