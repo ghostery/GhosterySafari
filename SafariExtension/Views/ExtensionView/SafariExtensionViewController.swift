@@ -18,32 +18,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
 	static let shared = SafariExtensionViewController()
 	private var isPaused = false
-	private static let CustomSettingsSelectedKey = "CustomSettingsSelectedOnce"
-
-	@IBOutlet weak var liteLabel: NSTextField!
-	@IBOutlet var pauseButton: NSButton!
-	@IBOutlet var defaultConfigRadio: NSButton!
-	@IBOutlet var customConfigRadio: NSButton!
-	@IBOutlet var urlLabel: NSTextField!
 	
-	@IBOutlet var pageLatencyValueLabel: NSTextField!
-	@IBOutlet var pageLatencyImage: NSImageView!
-	@IBOutlet weak var pageLatencyDescLabel: NSTextField!
-	@IBOutlet weak var firstRangeLabel: NSTextField!
-	@IBOutlet weak var secondRangeLabel: NSTextField!
-	@IBOutlet weak var thirdRangeLabel: NSTextField!
-	@IBOutlet weak var secondsLabel: NSTextField!
-	@IBOutlet weak var secondsLabelLeftOffset: NSLayoutConstraint?
-	
-	@IBOutlet var trustSiteButton: NSButton!
-	@IBOutlet weak var reloadPopupView: NSView!
-	@IBOutlet weak var popupTitleLabel: NSTextField!
-	@IBOutlet weak var popupReloadButton: NSButton!
-	@IBOutlet weak var popupCloseButton: NSButton!
-	@IBOutlet weak var topHorizontalLine: NSView!
-	@IBOutlet weak var middleHorizontalLine: NSView!
-
-	var currentDomain: String? {
+	/// The current webpage domain
+	public var currentDomain: String? {
 		didSet {
 			DispatchQueue.main.async {
 				self.urlLabel?.stringValue = self.currentDomain ?? ""
@@ -51,8 +28,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 			}
 		}
 	}
-
-	var currentUrl: String? {
+	
+	/// The current webpage URL
+	public var currentUrl: String? {
 		didSet {
 			DispatchQueue.main.async {
 				self.pageLatencyValueLabel?.stringValue = PageLatency.shared.latencyFor(self.currentUrl ?? "")
@@ -62,27 +40,31 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 			}
 		}
 	}
-
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		self.preferredContentSize = NSMakeSize(186, 302)
-		setupComponents()
-	}
-
-	override func viewWillAppear() {
-		super.viewWillAppear()
-		self.view.layer?.backgroundColor = NSColor(named: "backgroundColor")?.cgColor
-		urlLabel?.stringValue = self.currentDomain ?? ""
-		if GhosteryApplication.shared.isDefaultBlockingEnabled() {
-			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
-			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
-		} else {
-			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 0)
-			self.customConfigRadio.state = NSControl.StateValue(rawValue: 1)
-		}
-		updateReloadPopupViewVisibility(isHidden: true)
-	}
-
+	
+	/// Outlets
+	@IBOutlet weak var liteLabel: NSTextField!
+	@IBOutlet var pauseButton: NSButton!
+	@IBOutlet var defaultConfigRadio: NSButton!
+	@IBOutlet var customConfigRadio: NSButton!
+	@IBOutlet var urlLabel: NSTextField!
+	@IBOutlet var pageLatencyValueLabel: NSTextField!
+	@IBOutlet var pageLatencyImage: NSImageView!
+	@IBOutlet weak var pageLatencyDescLabel: NSTextField!
+	@IBOutlet weak var firstRangeLabel: NSTextField!
+	@IBOutlet weak var secondRangeLabel: NSTextField!
+	@IBOutlet weak var thirdRangeLabel: NSTextField!
+	@IBOutlet weak var secondsLabel: NSTextField!
+	@IBOutlet weak var secondsLabelLeftOffset: NSLayoutConstraint?
+	@IBOutlet var trustSiteButton: NSButton!
+	@IBOutlet weak var reloadPopupView: NSView!
+	@IBOutlet weak var popupTitleLabel: NSTextField!
+	@IBOutlet weak var popupReloadButton: NSButton!
+	@IBOutlet weak var popupCloseButton: NSButton!
+	@IBOutlet weak var topHorizontalLine: NSView!
+	@IBOutlet weak var middleHorizontalLine: NSView!
+	
+	/// Action taken when the pause button is pressed
+	/// - Parameter sender: Pause button
 	@IBAction func pauseButtonPressed(sender: NSButton) {
 		self.isPaused = sender.state.rawValue == 1
 		if sender.state.rawValue == 1 {
@@ -99,7 +81,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 			self.showResumedPopup()
 		}
 	}
-
+	
+	/// Action taken when the Trust Site button is pressed
+	/// - Parameter sender: Trust Site button
 	@IBAction func trustButtonPressed(sender: NSButton) {
 		if let x = self.currentDomain {
 			if sender.state.rawValue == 0 {
@@ -114,11 +98,15 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		}
 		updateTrustButtonTooltip()
 	}
-
-	@IBAction func threedotsButtonPressed(sender: NSButton) {
+	
+	/// Action taken when the menu icon is pressed
+	/// - Parameter sender: The menu icon
+	@IBAction func threeDotsButtonPressed(sender: NSButton) {
 		openSettings()
 	}
-
+	
+	/// Action taken when the Default Blocking radio button is selected
+	/// - Parameter sender: Radio button
 	@IBAction func defaultConfigPressed(sender: NSButton) {
 		if sender.state.rawValue == 1{
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
@@ -128,7 +116,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
 		}
 	}
-
+	
+	/// Action taken when the Custom Blocking radio button is pressed
+	/// - Parameter sender: Radio button
 	@IBAction func customConfigPressed(sender: NSButton) {
 		if sender.state.rawValue == 1 {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 0)
@@ -137,13 +127,17 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		} else {
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 1)
 		}
-		if !Preferences.getAppPreference(key: SafariExtensionViewController.CustomSettingsSelectedKey) {
+
+		// Open app settings when the user clicks Custom Protection, but only the first time
+		if !Preferences.getGlobalPreferenceBool(key: "CustomSettingsSelected") {
 			self.openSettings()
-			Preferences.setAppPreference(key: SafariExtensionViewController.CustomSettingsSelectedKey, value: true)
+			Preferences.setGlobalPreference(key: "CustomSettingsSelected", value: true)
 		}
 	}
-
-	@IBAction func reloadePage(_ sender: Any) {
+	
+	/// Action taken when the Reload Page link is pressed
+	/// - Parameter sender: Reload button
+	@IBAction func reloadPage(_ sender: Any) {
 		updateReloadPopupViewVisibility(isHidden: true)
 		SFSafariApplication.getActiveWindow(completionHandler: { (window) in
 			window?.getActiveTab(completionHandler: { (tab) in
@@ -154,14 +148,43 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		})
 	}
 	
+	/// Action taken when the Close icon is pressed
+	/// - Parameter sender: Close icon
 	@IBAction func closePopup(_ sender: Any) {
 		updateReloadPopupViewVisibility(isHidden: true)
 	}
-
+	
+	/// Called after the view controller’s view has been loaded into memory
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		self.preferredContentSize = NSMakeSize(186, 302)
+		setupComponents()
+	}
+	
+	/// Called after the view controller’s view has been loaded into memory is about to be added to the view hierarchy in the window
+	override func viewWillAppear() {
+		super.viewWillAppear()
+		self.view.layer?.backgroundColor = NSColor(named: "backgroundColor")?.cgColor
+		urlLabel?.stringValue = self.currentDomain ?? ""
+		if GhosteryApplication.shared.isDefaultBlockingEnabled() {
+			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
+			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 1)
+		} else {
+			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 0)
+			self.customConfigRadio.state = NSControl.StateValue(rawValue: 1)
+		}
+		updateReloadPopupViewVisibility(isHidden: true)
+	}
+	
+	/// Update the page latency value
+	/// - Parameters:
+	///   - url: The current page URL
+	///   - latency: The current latency for the page
 	func updatePageLatency(_ url: String, _ latency: String) {
 		self.currentUrl = url
 	}
-
+	
+	/// Open Ghostery Lite application settings
 	private func openSettings() {
 		// TODO: launchApplication also activates the app, with options it only runs but doesn't activate, in future find a way to launch and open with corresponding menu without notification
 		//	let options = NSWorkspace.LaunchOptions(rawValue: 1000)
@@ -172,7 +195,8 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 			DistributedNotificationCenter.default().post(name: Constants.NavigateToSettingsNotificationName, object: Constants.SafariExtensionID)
 		}
 	}
-
+	
+	/// Update the current state for the Trust Site button
 	private func updateTrustButtonState() {
 		if let d = self.currentDomain {
 			if GhosteryApplication.shared.isDomainTrusted(domain: d) {
@@ -214,17 +238,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		paragraphStyle.firstLineHeadIndent = 5.0
 		
 		let trustSiteTitle = self.trustSiteButton.title
-		self.trustSiteButton?.attributedTitle = trustSiteTitle.attributedString(withTextAlignment: .center,
-														fontName: "OpenSans-SemiBold",
-														fontSize: 11.0,
-														fontColor: NSColor(named: "trustBtnTitleColor") ?? NSColor.black,
-														lineSpacing: 0)
+		self.trustSiteButton?.attributedTitle = trustSiteTitle.attributedString(withTextAlignment: .center, fontName: "OpenSans-SemiBold", fontSize: 11.0, fontColor: NSColor(named: "trustBtnTitleColor") ?? NSColor.black, lineSpacing: 0)
 		let siteTrustedTitle = NSLocalizedString("trusted.button", comment: "Trusted site button title")
-		self.trustSiteButton?.attributedAlternateTitle = siteTrustedTitle.attributedString(withTextAlignment: .center,
-															fontName: "OpenSans-SemiBold",
-															fontSize: 11.0,
-															fontColor:NSColor(named: "untrustBtnTitleColor") ?? NSColor.white,
-															lineSpacing: 0)
+		self.trustSiteButton?.attributedAlternateTitle = siteTrustedTitle.attributedString(withTextAlignment: .center, fontName: "OpenSans-SemiBold", fontSize: 11.0, fontColor:NSColor(named: "untrustBtnTitleColor") ?? NSColor.white, lineSpacing: 0)
 
 		// TODO: refactor the method, not to call press action
 		self.pauseButtonPressed(sender: self.pauseButton)

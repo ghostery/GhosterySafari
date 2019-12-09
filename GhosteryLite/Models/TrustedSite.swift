@@ -20,6 +20,7 @@ class TrustedSite {
 	var domain: String? /// CoreData attribute
 	
 	static let shared = TrustedSite()
+	private let managedContext = CoreDataStack.shared.persistentContainer.viewContext
 	
 	/// Is the domain in the TrustedSites entity in CoreData
 	/// - Parameter domain: The domain name to check
@@ -60,16 +61,12 @@ class TrustedSite {
 	/// - Parameter domain: The domain to add
 	func addDomain(_ domain: String) {
 		guard let _ = self.getTrustedSite(domain) else {
-			guard let appDelegate = NSApplication.shared.delegate as? AppDelegate else {
-				return
-			}
-			let managedContext = appDelegate.persistentContainer.viewContext
-			let entity = NSEntityDescription.entity(forEntityName: "TrustedSites", in: managedContext)!
-			let site = NSManagedObject(entity: entity, insertInto: managedContext)
+			let entity = NSEntityDescription.entity(forEntityName: "TrustedSites", in: self.managedContext)!
+			let site = NSManagedObject(entity: entity, insertInto: self.managedContext)
 			site.setValue(domain, forKeyPath: "domain")
 			
 			do {
-				try managedContext.save()
+				try self.managedContext.save()
 			} catch let error as NSError {
 				Utils.shared.logger("Error: \(error), \(error.userInfo)")
 			}
@@ -83,14 +80,10 @@ class TrustedSite {
 	/// - Parameter domain: The domain to remove
 	func removeDomain(_ domain: String) {
 		if let site = self.getTrustedSite(domain) {
-			guard let appDelegate = NSApplication.shared.delegate as? AppDelegate else {
-				return
-			}
-			let managedContext = appDelegate.persistentContainer.viewContext
-			managedContext.delete(site)
-			
+			self.managedContext.delete(site)
+
 			do {
-				try managedContext.save()
+				try self.managedContext.save()
 			} catch let error as NSError {
 				Utils.shared.logger("Error: \(error), \(error.userInfo)")
 			}
@@ -102,13 +95,9 @@ class TrustedSite {
 	
 	/// Fetch the current TrustedSites entity from CoreData
 	private func getTrustedSitesEntity() -> [NSManagedObject]? {
-		guard let appDelegate = NSApplication.shared.delegate as? AppDelegate else {
-			return nil
-		}
-		let managedContext = appDelegate.persistentContainer.viewContext
 		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "TrustedSites")
 		do {
-			return try managedContext.fetch(fetchRequest)
+			return try self.managedContext.fetch(fetchRequest)
 		} catch let error as NSError {
 			Utils.shared.logger("Error: \(error), \(error.userInfo)")
 			return nil
@@ -117,13 +106,8 @@ class TrustedSite {
 	
 	/// Trigger a CoreData context save
 	private func saveContext(){
-		guard let appDelegate = NSApplication.shared.delegate as? AppDelegate else {
-			return
-		}
-		let managedContext = appDelegate.persistentContainer.viewContext
-		
 		do {
-			try managedContext.save()
+			try self.managedContext.save()
 		} catch let error as NSError {
 			Utils.shared.logger("Error: \(error), \(error.userInfo)")
 		}

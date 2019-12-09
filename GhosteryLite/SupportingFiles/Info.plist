@@ -31,6 +31,8 @@
 		<string>Roboto-Regular.ttf</string>
 		<string>RobotoCondensed-Bold.ttf</string>
 	</array>
+	<key>CFBundleIconFile</key>
+	<string>AppIcon</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleDevelopmentRegion</key>

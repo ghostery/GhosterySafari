@@ -19,17 +19,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	var mainWindow: NSWindow?
 	
-	/// Core Data: The persistent container for the application
-	lazy var persistentContainer: NSPersistentContainer = {
-		let container = NSPersistentContainer(name: "GhosteryLite")
-		container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-			if let error = error {
-				fatalError("AppDelegate.persistentContainer error: \(error)")
-			}
-		})
-		return container
-	}()
-	
 	@IBOutlet weak var protectionConfigMenu: NSMenuItem!
 	
 	/// Sent by the default notification center immediately before the application object is initialized.

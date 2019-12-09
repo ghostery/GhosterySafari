@@ -21,6 +21,7 @@ class BlockingConfiguration {
 	var blockedCategories = [Int]() /// Converted from CoreData attribute of type String
 
 	static let shared = BlockingConfiguration(type: .defaultBlocking)
+	private let managedContext = CoreDataStack.shared.persistentContainer.viewContext
 	
 	/// Blocking configuration types.  Custom or default blocking
 	enum ConfigurationType: Int {
@@ -132,13 +133,9 @@ class BlockingConfiguration {
 	
 	/// Fetch the current BlockingConfig entity from CoreData
 	private func getBlockingConfig() -> [NSManagedObject]? {
-		guard let appDelegate = NSApplication.shared.delegate as? AppDelegate else {
-			return nil
-		}
-		let managedContext = appDelegate.persistentContainer.viewContext
 		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "BlockingConfig")
 		do {
-			return try managedContext.fetch(fetchRequest)
+			return try self.managedContext.fetch(fetchRequest)
 		} catch let error as NSError {
 			Utils.shared.logger("Error: \(error), \(error.userInfo)")
 			return nil
@@ -150,12 +147,8 @@ class BlockingConfiguration {
 	private func setDefaultConfig(type: ConfigurationType) {
 		if let blockingConfig = self.getBlockingConfig() {
 			if blockingConfig.isEmpty {
-				guard let appDelegate = NSApplication.shared.delegate as? AppDelegate else {
-					return
-				}
-				let managedContext = appDelegate.persistentContainer.viewContext
-				let entity = NSEntityDescription.entity(forEntityName: "BlockingConfig", in: managedContext)!
-				let config = NSManagedObject(entity: entity, insertInto: managedContext)
+				let entity = NSEntityDescription.entity(forEntityName: "BlockingConfig", in: self.managedContext)!
+				let config = NSManagedObject(entity: entity, insertInto: self.managedContext)
 				
 				config.setValue(type.rawValue, forKeyPath: "configType")
 				config.setValue(Utils.shared.intArrayToString(self.blockedCategories), forKeyPath: "blockedCategories")
@@ -167,13 +160,8 @@ class BlockingConfiguration {
 	
 	/// Trigger a CoreData context save
 	private func saveContext(){
-		guard let appDelegate = NSApplication.shared.delegate as? AppDelegate else {
-			return
-		}
-		let managedContext = appDelegate.persistentContainer.viewContext
-		
 		do {
-			try managedContext.save()
+			try self.managedContext.save()
 		} catch let error as NSError {
 			Utils.shared.logger("Error: \(error), \(error.userInfo)")
 		}

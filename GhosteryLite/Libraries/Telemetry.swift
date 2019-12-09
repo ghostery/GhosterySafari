@@ -14,15 +14,15 @@
 
 import Foundation
 
-let installDateKey = "installDate"
-let lastVersionKey = "lastVersion"
-let installRandKey = "installRand"
-let buildVersionKey = "lastBuildVersion"
-
 class Telemetry {
 	
 	static let shared = Telemetry()
 	private let config: TelemetryService.Config
+	
+	private static let installDateKey = "installDate"
+	private static let installRandKey = "installRand"
+	private static let lastVersionKey = "lastVersion"
+	private static let buildVersionKey = "lastBuildVersion"
 	
 	/// Manage ping frequency intervals
 	enum Frequency: String {
@@ -47,7 +47,7 @@ class Telemetry {
 	}
 
 	init() {
-		var id = Preferences.getGlobalPreference(key: installDateKey) as? String
+		var id = Preferences.getGlobalPreference(key: Telemetry.installDateKey) as? String
 		if id == nil {
 			id = Telemetry.formatDate(date: Date())
 		}
@@ -69,8 +69,8 @@ class Telemetry {
 				if self.isUpgrade() {
 					TelemetryService.shared.sendSignal(type, config: self.config, params: self.generateParams(type, frequency: nil, source: source))
 				}
-				Preferences.setGlobalPreference(key: lastVersionKey, value: self.config.version)
-				Preferences.setGlobalPreference(key: buildVersionKey, value: Preferences.currentBuildNumber())
+				Preferences.setGlobalPreference(key: Telemetry.lastVersionKey, value: self.config.version)
+				Preferences.setGlobalPreference(key: Telemetry.buildVersionKey, value: Preferences.currentBuildNumber())
 			case .active, .engaged:
 				if let gr = source {
 					for f in self.getFrequencies(type, source: gr) {
@@ -101,14 +101,14 @@ class Telemetry {
 	
 	/// Check for new install
 	private func isNewInstall() -> Bool {
-		return Preferences.getGlobalPreference(key: installDateKey) == nil
+		return Preferences.getGlobalPreference(key: Telemetry.installDateKey) == nil
 	}
 	
 	/// Check for upgrade
 	private func isUpgrade() -> Bool {
-		let lastVersion = Preferences.getGlobalPreference(key: lastVersionKey) as? String
+		let lastVersion = Preferences.getGlobalPreference(key: Telemetry.lastVersionKey) as? String
 		if lastVersion == nil || Preferences.currentVersion() == lastVersion! {
-			let lastBuildNumber = Preferences.getGlobalPreference(key: buildVersionKey) as? String
+			let lastBuildNumber = Preferences.getGlobalPreference(key: Telemetry.buildVersionKey) as? String
 			return lastBuildNumber != nil && Preferences.currentBuildNumber() != lastBuildNumber!
 		}
 		return true
@@ -132,18 +132,18 @@ class Telemetry {
 	
 	/// Set install pref values on new install
 	private func updateInstallParams() {
-		Preferences.setGlobalPreference(key: installDateKey, value: self.config.installDate)
-		Preferences.setGlobalPreference(key: installRandKey, value: self.config.installRand)
-		Preferences.setGlobalPreference(key: lastVersionKey, value: self.config.version)
+		Preferences.setGlobalPreference(key: Telemetry.installDateKey, value: self.config.installDate)
+		Preferences.setGlobalPreference(key: Telemetry.installRandKey, value: self.config.installRand)
+		Preferences.setGlobalPreference(key: Telemetry.lastVersionKey, value: self.config.version)
 	}
 	
 	/// Generate a random installation number
 	private class func getInstallRand() -> Int {
-		if let p = Preferences.getGlobalPreference(key: installRandKey) as? Int {
+		if let p = Preferences.getGlobalPreference(key: Telemetry.installRandKey) as? Int {
 			return p
 		}
 		let p = Int(arc4random_uniform(100) + 1)
-		Preferences.setGlobalPreference(key: installRandKey, value: p)
+		Preferences.setGlobalPreference(key: Telemetry.installRandKey, value: p)
 		return p
 	}
 	
