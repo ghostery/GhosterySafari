@@ -35,6 +35,7 @@
 		0D588E82235E46870003668C /* PageLatency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D588E81235E46870003668C /* PageLatency.swift */; };
 		0D588E84235E4C2F0003668C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0D588E83235E4C2F0003668C /* Fonts */; };
 		0D588E85235E4C2F0003668C /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0D588E83235E4C2F0003668C /* Fonts */; };
+		0D69E37D239F4A8200DCBA1D /* CenteredNSButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D69E37C239F4A8200DCBA1D /* CenteredNSButtonCell.swift */; };
 		0D73E57F239B5F090015CE50 /* ContentBlockerCosmetic.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D73E57D239B5EEF0015CE50 /* ContentBlockerCosmetic.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D73E582239B5F0D0015CE50 /* ContentBlockerNetwork.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D73E57E239B5EEF0015CE50 /* ContentBlockerNetwork.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D99D75C212EFC44005D107D /* page_performance.js in Resources */ = {isa = PBXBuildFile; fileRef = 0D99D75B212EFC44005D107D /* page_performance.js */; };
@@ -200,6 +201,7 @@
 		0D69E376239F42B000DCBA1D /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		0D69E378239F42B200DCBA1D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		0D69E37A239F42B500DCBA1D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		0D69E37C239F4A8200DCBA1D /* CenteredNSButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteredNSButtonCell.swift; sourceTree = "<group>"; };
 		0D73E57D239B5EEF0015CE50 /* ContentBlockerCosmetic.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentBlockerCosmetic.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D73E57E239B5EEF0015CE50 /* ContentBlockerNetwork.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentBlockerNetwork.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D99D75B212EFC44005D107D /* page_performance.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = page_performance.js; sourceTree = "<group>"; };
@@ -539,6 +541,7 @@
 		0D02795E236342E4007D5F66 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				0D69E37B239F4A4A00DCBA1D /* Cells */,
 				0DDCFF7B23660DBD009481D4 /* Localizable.strings */,
 				0D3FBB332360B5320054822A /* Main.storyboard */,
 				0D027968236374A2007D5F66 /* MainViewController.swift */,
@@ -630,6 +633,14 @@
 				0D73E57E239B5EEF0015CE50 /* ContentBlockerNetwork.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0D69E37B239F4A4A00DCBA1D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0D69E37C239F4A8200DCBA1D /* CenteredNSButtonCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		0D74B482238396220095E9C1 /* Services */ = {
@@ -1123,6 +1134,7 @@
 				1E597C4821354DE60098631F /* Preferences.swift in Sources */,
 				0DDF278D238B2EB900C17AC8 /* BlockingConfiguration.swift in Sources */,
 				0DBA653F238316BA0011AAD3 /* MainViewControllerExtension.swift in Sources */,
+				0D69E37D239F4A8200DCBA1D /* CenteredNSButtonCell.swift in Sources */,
 				0D02796F23638C19007D5F66 /* MenuViewController.swift in Sources */,
 				1E14B7582138217800E28C38 /* TrustedSiteItemCollectionViewItem.swift in Sources */,
 				1E597C4A2135682B0098631F /* ModalViewController.swift in Sources */,

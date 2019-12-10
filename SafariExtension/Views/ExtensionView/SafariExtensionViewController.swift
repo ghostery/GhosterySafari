@@ -249,28 +249,28 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	private func showPausedPopup() {
 		let bgColor = NSColor(red: 0.976, green: 0.929, blue: 0.745, alpha: 1)
 		let title = NSLocalizedString("paused.message", comment: "Popup message after pausing Ghostery")
-		showPopup(bgColor, title: title, fontColor: 0x4a4a4a)
+		showPopup(bgColor, title: title, fontColor: NSColor(rgb: 0x4a4a4a))
 	}
 
 	private func showResumedPopup() {
 		let bgColor = NSColor(red: 0.976, green: 0.929, blue: 0.745, alpha: 1)
 		let title = NSLocalizedString("resumed.message", comment: "Popup message after resuming Ghostery")
-		showPopup(bgColor, title: title, fontColor: 0x4a4a4a)
+		showPopup(bgColor, title: title, fontColor: NSColor(rgb: 0x4a4a4a))
 	}
 
 	private func showTrustedPopup() {
 		let bgColor = NSColor(red: 0.156, green: 0.804, blue: 0.439, alpha: 1)
 		let title = NSLocalizedString("whitelisted.message", comment: "Popup message after Trusting Site")
-		showPopup(bgColor, title: title, fontColor: 0xffffff, image: "closePopupWhite")
+		showPopup(bgColor, title: title, fontColor: NSColor.white, image: "closePopupWhite")
 	}
 	
 	private func showUntrustedPopup() {
 		let bgColor = NSColor(red: 0.976, green: 0.929, blue: 0.745, alpha: 1)
 		let title = NSLocalizedString("untrusted.message", comment: "Popup message after Untrusting Site")
-		showPopup(bgColor, title: title, fontColor: 0x4a4a4a)
+		showPopup(bgColor, title: title, fontColor: NSColor(rgb: 0x4a4a4a))
 	}
 
-	private func showPopup(_ backgroundColor: NSColor, title: String, fontColor: Int, image: String = "closePopup") {
+	private func showPopup(_ backgroundColor: NSColor, title: String, fontColor: NSColor, image: String = "closePopup") {
 		self.reloadPopupView.layer?.backgroundColor = backgroundColor.cgColor
 		let shadow =  NSShadow()
 		shadow.shadowBlurRadius = 4
@@ -278,9 +278,9 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		shadow.shadowColor = NSColor(rgb: 0x969696, alpha: 0.5)
 		self.reloadPopupView.shadow = shadow
 		self.popupTitleLabel.stringValue = title
-		self.popupTitleLabel.textColor = NSColor(rgb: fontColor)
+		self.popupTitleLabel.textColor = fontColor
 		let reloadButton = self.popupReloadButton.title
-		self.popupReloadButton.attributedTitle = reloadButton.attributedString(withTextAlignment: .center, fontName: "OpenSans-SemiBold", fontSize: 11.0, fontColor: NSColor(rgb: fontColor), isUnderline: true)
+		self.popupReloadButton.attributedTitle = reloadButton.attributedString(withTextAlignment: .center, fontName: "OpenSans-SemiBold", fontSize: 11.0, fontColor: fontColor, isUnderline: true)
 		updateReloadPopupViewVisibility(isHidden: false)
 		self.popupCloseButton.image = NSImage(named: image)
 	}

@@ -840,7 +840,7 @@
                                                 <constraint firstAttribute="height" constant="35" id="LRX-WB-gVJ"/>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="f7J-fq-jXS"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="smallSquare" title="EDIT SETTINGS" bezelStyle="smallSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="rMH-QB-Bjg">
+                                            <buttonCell key="cell" type="smallSquare" title="EDIT SETTINGS" bezelStyle="smallSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="rMH-QB-Bjg" customClass="CenteredNSButtonCell" customModule="GhosteryLite">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="14" name="RobotoCondensed-Bold"/>
                                             </buttonCell>
@@ -895,7 +895,7 @@
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="6Ts-gu-aqP"/>
                                                 <constraint firstAttribute="height" constant="35" id="t1t-79-cSX"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="smallSquare" title="TRUSTED SITES" bezelStyle="smallSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="N8X-rV-l18">
+                                            <buttonCell key="cell" type="smallSquare" title="TRUSTED SITES" bezelStyle="smallSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="N8X-rV-l18" customClass="CenteredNSButtonCell" customModule="GhosteryLite">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="14" name="RobotoCondensed-Bold"/>
                                             </buttonCell>
@@ -1003,7 +1003,7 @@
                                     <constraint firstAttribute="height" constant="28" id="Y1B-D4-RfT"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="112" id="oO6-u7-LV4"/>
                                 </constraints>
-                                <buttonCell key="cell" type="smallSquare" title="TRUST SITE" bezelStyle="smallSquare" image="trust-site-btn-inactive" imagePosition="overlaps" alignment="center" alternateImage="trust-site-btn-active" enabled="NO" imageScaling="proportionallyDown" inset="2" id="C26-J2-vrI">
+                                <buttonCell key="cell" type="smallSquare" title="TRUST SITE" bezelStyle="smallSquare" image="trust-site-btn-inactive" imagePosition="overlaps" alignment="center" alternateImage="trust-site-btn-active" enabled="NO" imageScaling="proportionallyDown" inset="2" id="C26-J2-vrI" customClass="CenteredNSButtonCell" customModule="GhosteryLite">
                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                     <font key="font" size="12" name="Roboto-Medium"/>
                                 </buttonCell>
