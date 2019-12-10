@@ -987,7 +987,7 @@
                                     <constraint firstAttribute="height" constant="28" id="9tU-Rm-lor"/>
                                     <constraint firstAttribute="width" constant="240" id="Ng3-oi-Ij1"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="border" id="T3b-MI-Yog">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="border" placeholderString="example.com" id="T3b-MI-Yog" customClass="TrustedSiteTextFieldCell" customModule="GhosteryLite">
                                     <font key="font" size="12" name="Roboto-Regular"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.24705882352941178" colorSpace="custom" customColorSpace="sRGB"/>
