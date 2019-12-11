@@ -55,7 +55,7 @@ class BlockLists {
 						if self.isGhosteryBlockListVersionChanged(blockListVersion, Constants.GhosteryBlockListVersionKey) {
 							group.enter()
 							// Update the complete block list file
-							self.downloadAndSaveFile("safariContentBlocker", Constants.GhosteryAssetPath + "/safariContentBlocker", Constants.AssetsFolderURL) { () in
+							self.downloadAndSaveFile(Constants.GhosteryBlockList, Constants.GhosteryAssetPath + "/safariContentBlocker", Constants.AssetsFolderURL) { () in
 								Preferences.setGlobalPreference(key: Constants.GhosteryBlockListVersionKey, value: blockListVersion)
 								updated = true
 								group.leave()
@@ -124,11 +124,13 @@ class BlockLists {
 			done(updated)
 		}
 	}
-
-	/// Combine all active block lists into currentBlockList.json
-	/// - Parameter files: List of files to activate
-	/// - Parameter completion: Completion callback
-	func generateCurrentBlockList(files: [String], folderName: String, completion: @escaping () -> Void) {
+	
+	/// Generate the current block list for the appropriate Content Blocker
+	/// - Parameters:
+	///   - files: List of files to activate
+	///   - blockListFile: The output block list json file
+	///   - completion: Callback handler
+	func generateCurrentBlockList(files: [String], blockListFile: String, completion: @escaping () -> Void) {
 		DispatchQueue.global(qos: .background).async {
 			var blockListJSON = [[String: Any]]()
 			// Build category lists into a single block list
@@ -144,9 +146,9 @@ class BlockLists {
 			let whitelist = WhiteList.shared.getActiveWhitelistRules()
 			let finalJSON: [[String: Any]] = blockListJSON + (whitelist ?? [])
 			
-			let currentBlockList = Constants.AssetsFolderURL?.appendingPathComponent("currentBlockList.json")
+			let currentBlockList = Constants.AssetsFolderURL?.appendingPathComponent(blockListFile)
 			FileManager.default.createDirectoryIfNotExists(Constants.AssetsFolderURL, withIntermediateDirectories: true)
-			// Write the finalJSON to currentBlockList.json in the Container
+			// Write the finalJSON to blockListFile json in the App Group
 			if let url = currentBlockList {
 				try? FileManager.default.removeItem(at: url)
 				FileManager.default.writeJsonFile(at: url, with: finalJSON)

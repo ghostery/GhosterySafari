@@ -18,7 +18,7 @@ class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
 	/// Tells the extension to prepare for a host app’s request.
 	/// - Parameter context: Extension context
 	func beginRequest(with context: NSExtensionContext) {
-		let blockList = Constants.AssetsFolderURL?.appendingPathComponent("cliqzNetworkList.json")
+		let blockList = Constants.AssetsFolderURL?.appendingPathComponent(Constants.ContentBlockerLists.network.rawValue)
 		let attachment = NSItemProvider(contentsOf: blockList)
 		
 		let item = NSExtensionItem()

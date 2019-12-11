@@ -14,7 +14,7 @@
 
 import Foundation
 
-/// Maintains the trustedSitesList.json file on disk, which stores Whitelisted domains in Content Blocker format. The list
+/// Maintains the trusted_sites.json file on disk, which stores Whitelisted domains in Content Blocker format. The list
 /// of trusted domains chosen by the user is stored in CoreData
 class WhiteList {
 	
@@ -75,7 +75,7 @@ class WhiteList {
 	
 	/// Locate the Whitelist json file on disk
 	private func getWhitelistFilePath() -> URL? {
-		return Constants.AssetsFolderURL?.appendingPathComponent("trustedSitesList.json")
+		return Constants.AssetsFolderURL?.appendingPathComponent(Constants.TrustedSitesList)
 	}
 	
 	/// Write the new whitelist to disk

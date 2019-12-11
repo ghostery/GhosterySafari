@@ -145,23 +145,33 @@ class GhosteryApplication {
 		}
 	}
 	
-	/// Load the full block list (all categories)
-	private func loadFullBlockList() {
-		self.updateAndReloadBlockList(fileNames: ["safariContentBlocker"], folderName: Constants.BlockListAssetsFolder)
+	/// Load an empty block list file into each of the Content Blockers.  Used during pause and site whitelist scenarios
+	private func loadDummyBlockList() {
+		Utils.shared.logger("Loading dummy block lists for all content blockers...")
+		self.updateAndReloadBlockList(fileNames: [Constants.EmptyRulesList], contentBlocker: Constants.ContentBlockerLists.standard)
+		self.updateAndReloadBlockList(fileNames: [Constants.EmptyRulesList], contentBlocker: Constants.ContentBlockerLists.cosmetic)
+		self.updateAndReloadBlockList(fileNames: [Constants.EmptyRulesList], contentBlocker: Constants.ContentBlockerLists.network)
 	}
 	
-	/// Load the default block list file consisting of the default categories only
+	/// Load the default Ghostery block list file consisting of the default categories only. Used by the standard content blocker.
 	private func loadDefaultBlockList() {
+		Utils.shared.logger("Loading default Ghostery block list categories for \(Constants.SafariContentBlockerID)")
 		var fileNames = [String]()
 		// Ghostery default categories
 		for index in BlockingConfiguration.shared.defaultBlockedCategories() {
 			fileNames.append(index.fileName())
 		}
 		// Trigger a Content Blocker reload
-		self.updateAndReloadBlockList(fileNames: fileNames, folderName: Constants.BlockListAssetsFolder)
+		self.updateAndReloadBlockList(fileNames: fileNames, contentBlocker: Constants.ContentBlockerLists.standard)
 	}
 	
-	/// Load a custom block list file based on user selected categories
+	/// Load the full Ghostery block list (all categories). Used by the standard content blocker.
+	private func loadFullBlockList() {
+		Utils.shared.logger("Loading full Ghostery block list for \(Constants.SafariContentBlockerID)")
+		self.updateAndReloadBlockList(fileNames: [Constants.GhosteryBlockList], contentBlocker: Constants.ContentBlockerLists.standard)
+	}
+	
+	/// Load a custom Ghostery block list file based on user selected categories. Used by the standard content blocker.
 	private func loadCustomBlockList() {
 		// Get the blockedCategories from CoreData
 		if let cats = BlockingConfiguration.shared.getBlockedCategories() {
@@ -182,36 +192,33 @@ class GhosteryApplication {
 					fileNames.append(cat.fileName())
 				}
 			}
+			
+			Utils.shared.logger("Loading custom Ghostery block list categories for \(Constants.SafariContentBlockerID)")
+			
 			// Trigger a Content Blocker reload
-			self.updateAndReloadBlockList(fileNames: fileNames, folderName: Constants.BlockListAssetsFolder)
+			self.updateAndReloadBlockList(fileNames: fileNames, contentBlocker: Constants.ContentBlockerLists.standard)
 		}
 	}
 
-	/// Load an empty block list file.  Used during  pause and site whitelist scenarios
-	private func loadDummyBlockList() {
-		self.updateAndReloadBlockList(fileNames: ["emptyRules"], folderName: Constants.BlockListAssetsFolder)
-	}
-	
-	/// Trigger a Content Blocker reload
+	/// Trigger a Content Blocker reload of specified block list files,  for the given content blocker
 	/// - Parameter fileNames: The block list json filenames to be loaded
-	/// - Parameter folderName: The name of the folder where the json files are located on disk
-	private func updateAndReloadBlockList(fileNames: [String], folderName: String) {
-		Utils.shared.logger("Generating new block list...")
-		BlockLists.shared.generateCurrentBlockList(files: fileNames, folderName: folderName) {
-			self.reloadContentBlocker(withIdentifier: Constants.SafariContentBlockerID)
+	/// - Parameter contentBlocker: The content blocker that should be reloaded
+	private func updateAndReloadBlockList(fileNames: [String], contentBlocker: Constants.ContentBlockerLists) {
+		Utils.shared.logger("Generating new block list for \(contentBlocker.getID())...")
+		BlockLists.shared.generateCurrentBlockList(files: fileNames, blockListFile: contentBlocker.rawValue) {
+			self.reloadContentBlocker(withIdentifier: contentBlocker.getID())
 		}
 	}
 
-	
 	/// Reload the Content Blocker extension
 	/// - Parameter identifier: The bundle ID of the Content Blocker to reload
 	private func reloadContentBlocker(withIdentifier identifier: String) {
-		Utils.shared.logger("Reloading Content Blocker...")
+		Utils.shared.logger("Reloading \(identifier)...")
 		SFContentBlockerManager.reloadContentBlocker(withIdentifier: identifier, completionHandler: { (error) in
-			if error != nil {
-				Utils.shared.logger("Reloading Content Blocker failed with error \(String(describing: error))")
+			if let error = error as NSError? {
+				Utils.shared.logger("Reloading \(identifier) failed with error \(error), \(error.userInfo)")
 			} else {
-				Utils.shared.logger("Successfully reloaded Content Blocker!")
+				Utils.shared.logger("Successfully reloaded \(identifier)!")
 			}
 		})
 	}

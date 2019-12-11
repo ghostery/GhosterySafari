@@ -29,9 +29,31 @@ struct Constants {
 	static let AssetsFolderURL: URL? = Constants.GroupStorageFolderURL?.appendingPathComponent(Constants.BlockListAssetsFolder, isDirectory: true)
 	static let GhosteryBlockListVersionKey = "safariContentBlockerVersion"
 	
-	/// Block list files
-	static let CliqzNetworkList = "cliqzNetworkList"
+	/// Content Blocker json lists and their associated bundle IDs
+	enum ContentBlockerLists: String {
+		case standard = "current_main.json"
+		case cosmetic = "current_cosmetic.json"
+		case network = "current_network.json"
+		
+		/// Return the bundle ID for the content blocker
+		func getID() -> String {
+			switch self {
+				case .standard:
+					return Constants.SafariContentBlockerID
+				case .cosmetic:
+					return Constants.SafariContentBlockerCosmeticID
+				case .network:
+					return Constants.SafariContentBlockerNetworkID
+			}
+		}
+	}
+	
+	/// Block list json files
+	static let TrustedSitesList = "trusted_sites.json"
+	static let EmptyRulesList = "empty_rules.json"
+	static let GhosteryBlockList = "safariContentBlocker"
 	static let CliqzCosmeticList = "cliqzCosmeticList"
+	static let CliqzNetworkList = "cliqzNetworkList"
 	
 	/// Block List CDN paths
 	#if PROD
