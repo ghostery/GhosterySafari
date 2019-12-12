@@ -65,7 +65,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBOutlet weak var notificationReloadButton: NSButton!
 	@IBOutlet weak var notificationCloseButton: NSButton!
 
-	
 	/// Action taken when the pause button is pressed
 	/// - Parameter sender: Pause button
 	@IBAction func pauseButtonPressed(sender: NSButton) {

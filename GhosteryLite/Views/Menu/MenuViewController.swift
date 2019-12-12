@@ -21,6 +21,7 @@ class MenuViewController: NSViewController {
 	
 	@IBOutlet weak var collectionView: NSCollectionView!
 	
+	/// Called after the view controller’s view has been loaded into memory
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		DispatchQueue.main.asyncAfter(deadline: .now()+0.2, execute: {
@@ -28,12 +29,16 @@ class MenuViewController: NSViewController {
 		})
 	}
 	
+	/// Selects the specified menu item
+	/// - Parameter item: The menu item
 	func selectItem(menuItem item: MenuItem) {
 		if let itemIndex = items.firstIndex(of: item) {
-			selectItem(atIndex: itemIndex)
+			self.selectItem(atIndex: itemIndex)
 		}
 	}
 	
+	/// Adds the specified items to the current selection
+	/// - Parameter itemIndex: The index paths of the items you want to select.
 	private func selectItem(atIndex itemIndex: Int) {
 		self.collectionView.deselectItems(at: self.collectionView.selectionIndexPaths)
 		

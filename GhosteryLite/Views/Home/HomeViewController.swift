@@ -30,15 +30,21 @@ class HomeViewController: NSViewController {
 	@IBOutlet weak var enableGhosteryLitePromptText: NSTextField!
 	@IBOutlet weak var enableGhosteryLiteBtn: NSButton!
 	
+	/// Action taken when Enable button is clicked
+	/// - Parameter sender: The enable button
 	@IBAction func enableGhosteryLite(_ sender: NSButton) {
 		self.EnableExtensionsPromptView.isHidden = true
 		HomeViewController.showSafariPreferencesForExtension()
 	}
 	
+	/// Action taken when the Settings button  is clicked
+	/// - Parameter sender: The settings button
 	@IBAction func editSettingsClicked(_ sender: Any) {
 		self.delegate?.showSettingsPanel()
 	}
 	
+	/// Action taken when the trusted sites button is clicked
+	/// - Parameter sender: The trusted sites button
 	@IBAction func trustedSitesClicked(_ sender: Any) {
 		self.delegate?.showTrustedSitesPanel()
 	}

@@ -177,7 +177,7 @@
 "cke-w1-Con.ibShadowedToolTip" = "Enables websites to publish, distribute, and optimize video and audio content.";
 
 /* Class = "NSTextFieldCell"; title = "Please enable the Ghostery Lite Extension and Ghostery Lite Content Blocker in your Safari preferences to begin."; ObjectID = "dEo-t5-f3x"; */
-"dEo-t5-f3x.title" = "Please enable the Ghostery Lite Extension and Ghostery Lite Content Blocker in your Safari preferences to begin.";
+"dEo-t5-f3x.title" = "Please enable the Ghostery Lite Extension and Ghostery Lite Content Blockers in your Safari preferences to begin.";
 
 /* Class = "NSImageView"; ibShadowedToolTip = "Collects and analyzes data related to site usage and performance."; ObjectID = "edo-Q1-18A"; */
 "edo-Q1-18A.ibShadowedToolTip" = "Collects and analyzes data related to site usage and performance.";

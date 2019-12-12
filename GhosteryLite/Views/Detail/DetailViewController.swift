@@ -21,12 +21,14 @@ class DetailViewController: NSViewController {
 	
 	@IBOutlet weak var container: NSView!
 	
+	/// Called after the view controller’s view has been loaded into memory
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do view setup here.
 		initViewControllers()
 	}
 	
+	/// Switch to the specified view
+	/// - Parameter storyboardId: The view ID to activate
 	func switchToViewController(withStoryboardId storyboardId: String) {
 		if let viewController = viewControllers[storyboardId] {
 			removePreviousView()
@@ -34,6 +36,7 @@ class DetailViewController: NSViewController {
 		}
 	}
 	
+	/// Instantiate storyboard view controllers
 	private func initViewControllers() {
 		let storyboard = NSStoryboard(name: "Main", bundle: nil)
 		
@@ -50,6 +53,7 @@ class DetailViewController: NSViewController {
 		}
 	}
 	
+	/// Remove view from window
 	private func removePreviousView() {
 		if let oldView: NSView = container.subviews.first {
 			oldView.removeFromSuperview()

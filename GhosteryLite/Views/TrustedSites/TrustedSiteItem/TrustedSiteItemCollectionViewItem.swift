@@ -21,15 +21,22 @@ class TrustedSiteItemCollectionViewItem: NSCollectionViewItem {
 	
 	@IBOutlet weak var siteLbl: NSTextField!
 	
+	/// Action taken when the remove button is selected
+	/// - Parameter sender: Remove trusted site icon
 	@IBAction func removeTrustedSite(_ sender: Any) {
 		self.delegate?.trustedSiteDidRemove(indexPath: self.indexPath, url: self.siteLbl.stringValue)
 	}
 	
+	/// Called after the view controller’s view has been loaded into memory.
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.wantsLayer = true
 	}
 	
+	/// Update attributes for the trusted site view item
+	/// - Parameters:
+	///   - url: The trusted site URL
+	///   - indexPath: The IndexPath
 	func update(_ url: String, for indexPath: IndexPath?) {
 		self.siteLbl.attributedStringValue = url.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14, fontColor: NSColor.panelTextColor())
 		self.indexPath = indexPath

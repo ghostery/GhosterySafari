@@ -24,6 +24,8 @@ class TrustedSitesViewController: NSViewController {
 	@IBOutlet weak var trustedStiesCollectionView: NSCollectionView!
 	@IBOutlet weak var errorMessageLabel: NSTextField!
 	
+	/// Action taken when the Trust Site button is pressed
+	/// - Parameter sender: The trust site button
 	@IBAction func trustSiteButtonPressed(sender: NSButton) {
 		guard trustedSiteTextField.stringValue.trimmingCharacters(in: .whitespacesAndNewlines).count != 0 &&
 			self.isValid(url: trustedSiteTextField.stringValue) else {
@@ -38,9 +40,10 @@ class TrustedSitesViewController: NSViewController {
 			self.updateData()
 		}
 		trustedSiteTextField.stringValue = ""
-		updateTrustBtnState(false)
+		self.updateTrustButonState(false)
 	}
 	
+	/// Called after the view controller’s view has been loaded into memory.
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.setupComponents()
@@ -48,6 +51,7 @@ class TrustedSitesViewController: NSViewController {
 		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateData), name: Constants.UntrustDomainNotificationName, object: Constants.SafariExtensionID)
 	}
 	
+	/// Called after the view controller’s view has been loaded into memory is about to be added to the view hierarchy in the window.
 	override func viewWillAppear() {
 		super.viewWillAppear()
 		self.updateData()
@@ -58,11 +62,7 @@ class TrustedSitesViewController: NSViewController {
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.UntrustDomainNotificationName, object: Constants.SafariExtensionID)
 	}
 	
-	func updateTrustBtnState(_ isEnabled: Bool) {
-		trustSiteBtn.isEnabled = isEnabled
-		trustSiteBtn.state = NSControl.StateValue(rawValue: isEnabled ? 1 : 0)
-	}
-	
+	/// Get the latest trusted sites list from Core Data and reload the view
 	@objc func updateData() {
 		if let sites = TrustedSite.shared.getTrustedSites() {
 			self.trustedSites = sites
@@ -70,6 +70,14 @@ class TrustedSitesViewController: NSViewController {
 		trustedStiesCollectionView.reloadData()
 	}
 	
+	/// Update the state of the Trust Site button
+	/// - Parameter isEnabled: Is the button enabled
+	private func updateTrustButonState(_ isEnabled: Bool) {
+		trustSiteBtn.isEnabled = isEnabled
+		trustSiteBtn.state = NSControl.StateValue(rawValue: isEnabled ? 1 : 0)
+	}
+	
+	/// Setup font and paragraph styling
 	private func setupComponents() {
 		trustedStiesCollectionView.backgroundColors = [NSColor.clear]
 		trustedSiteTextField.backgroundColor = NSColor.clear
@@ -79,7 +87,9 @@ class TrustedSitesViewController: NSViewController {
 		trustSiteBtn.attributedAlternateTitle = trustSiteBtn.title.attributedString(withTextAlignment: .center, fontName: "Roboto-Medium", fontSize: 12.0, fontColor: NSColor.white)
 	}
 	
-	// Move the logic to TrustSiteDS
+	
+	/// Checks that the trusted site domain is a valid URL format
+	/// - Parameter url: The url to check
 	private func isValid(url: String) -> Bool {
 		let host = removeUrlComponentsAfterHost(url: url)
 		let urlRegEx = "^(https?://)?(www\\.)?([-a-z0-9]{1,63}\\.)*?[a-z0-9][-a-z0-9]{0,61}[a-z0-9]\\.[a-z]{2,6}(/[-\\w@\\+\\.~#\\?&/=%]*)?$"
@@ -88,6 +98,8 @@ class TrustedSitesViewController: NSViewController {
 		return result
 	}
 	
+	/// Parse the trusted site URL to an acceptable format for saving
+	/// - Parameter url: The trusted site URL
 	private func removeUrlComponentsAfterHost(url: String) -> String {
 		var host = ""
 		var firstSlashRange: Range<String.Index>?

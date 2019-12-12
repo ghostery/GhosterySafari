@@ -15,7 +15,6 @@
 import Foundation
 
 extension URLSession {
-	
 	/// Extend URLSession to use Result type in completion handler. Also takes care of redundant
 	/// error handling boilerplate
 	/// - Parameters:

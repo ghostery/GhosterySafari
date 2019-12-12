@@ -29,16 +29,11 @@ extension String {
 		}
 		let textColor:NSColor = color
 		let textParagraph:NSMutableParagraphStyle = NSMutableParagraphStyle()
-		// this sets the space BETWEEN lines to 10points
-		textParagraph.lineSpacing = lineSpacing
-		// this sets the MAXIMUM height of the lines to 12points
-		textParagraph.maximumLineHeight = 30.0
+		textParagraph.lineSpacing = lineSpacing // this sets the space BETWEEN lines to 10points
+		textParagraph.maximumLineHeight = 30.0 // this sets the MAXIMUM height of the lines to 12points
 		textParagraph.alignment = textAlignment
-		let attribs: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font,
-													   NSAttributedString.Key.foregroundColor: textColor,
-													   NSAttributedString.Key.paragraphStyle: textParagraph,
-													   NSAttributedString.Key.underlineStyle: isUnderline ? NSUnderlineStyle.single.rawValue : 0]
-		let attrString:NSAttributedString = NSAttributedString.init(string: self, attributes: attribs)
-		return attrString
+		let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font,  NSAttributedString.Key.foregroundColor: textColor,  NSAttributedString.Key.paragraphStyle: textParagraph, NSAttributedString.Key.underlineStyle: isUnderline ? NSUnderlineStyle.single.rawValue : 0]
+		let outputString: NSAttributedString = NSAttributedString.init(string: self, attributes: attributes)
+		return outputString
 	}
 }

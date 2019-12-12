@@ -14,12 +14,14 @@
 
 import Foundation
 
+/// Current Ghostery menu options
 enum MenuItem {
 	case home
 	case settings
 	case trustedSites
 	case help
 	
+	/// Localized menu titles
 	var title: String {
 		switch self {
 			case .home:
@@ -33,6 +35,7 @@ enum MenuItem {
 		}
 	}
 	
+	/// Maps the menu item to it's storyboard view controller
 	var storyboardId: String {
 		switch self {
 			case .home:
@@ -46,6 +49,8 @@ enum MenuItem {
 		}
 	}
 	
+	/// Maps the menu item to it's icon
+	/// - Parameter active: Is the menu icon active
 	func iconName(active: Bool) -> String {
 		var iconName = ""
 		switch self {
@@ -62,9 +67,11 @@ enum MenuItem {
 		if active {
 			return "\(iconName)-active"
 		}
+		
 		return "\(iconName)-inactive"
 	}
 	
+	/// Returns an array of all menu items
 	static func toArray() -> [MenuItem] {
 		return [.home, .settings, .trustedSites, .help]
 	}

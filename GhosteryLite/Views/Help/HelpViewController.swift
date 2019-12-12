@@ -22,6 +22,8 @@ class HelpViewController: NSViewController {
 	@IBOutlet weak var blogBtn: NSButton!
 	@IBOutlet weak var faqBtn: NSButton!
 	
+	/// Action taken when the help links are clicked
+	/// - Parameter sender: The clicked link
 	@IBAction func HelpLinkClicked(_ sender: NSButton) {
 		if sender == supportBtn {
 			openURL("https://www.ghostery.com/support/")
@@ -34,17 +36,21 @@ class HelpViewController: NSViewController {
 		}
 	}
 	
+	/// Called after the view controller’s view has been loaded into memory.
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		initComponents()
 	}
 	
+	/// Open the specified URL
+	/// - Parameter urlString: A URL specifying the location to open
 	private func openURL(_ urlString: String) {
 		if let url = URL(string: urlString) {
 			NSWorkspace.shared.open(url)
 		}
 	}
 	
+	/// Set formatting for view text and buttons
 	private func initComponents() {
 		self.helpText.attributedStringValue = self.helpText.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 3)
 		supportBtn.attributedTitle = supportBtn.title.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(named: "linkColor") ?? NSColor.blue, isUnderline: true)

@@ -23,6 +23,7 @@ class MainViewController: NSViewController {
 	@IBOutlet weak var overlayView: NSBox!
 	@IBOutlet weak var liteLabel: NSTextField!
 	
+	/// Called after the view controller’s view has been loaded into memory
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		if Preferences.isAppFirstLaunch() {
@@ -33,6 +34,10 @@ class MainViewController: NSViewController {
 		self.liteLabel.font = NSFont(name: "BebasNeueBook", size: 24)
 	}
 	
+	/// Called when a segue is about to be performed
+	/// - Parameters:
+	///   - segue: The segue object containing information about the view controllers involved in the segue
+	///   - sender: The object that initiated the segue
 	override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
 		if segue.identifier == "MenuViewController" {
 			self.menuViewController = segue.destinationController as? MenuViewController

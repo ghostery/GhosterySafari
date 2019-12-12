@@ -27,6 +27,7 @@ extension NSColor {
 			alpha: alpha)
 	}
 	
+	/// Returns the panelText color
 	class func panelTextColor() -> NSColor {
 		return NSColor(named: "panelText") ?? NSColor.white
 	}

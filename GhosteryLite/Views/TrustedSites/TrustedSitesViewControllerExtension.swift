@@ -15,17 +15,24 @@
 import Cocoa
 
 extension TrustedSitesViewController: NSCollectionViewDataSource {
-	// Section Header Count
+	/// Asks your data source object to provide the total number of sections.
+	/// - Parameter collectionView: The collection view requesting the information.
 	func numberOfSections(in collectionView: NSCollectionView) -> Int {
 		return 1
 	}
 	
-	// Section Item Count
+	/// Asks your data source object to provide the number of items in the specified section.
+	/// - Parameters:
+	///   - collectionView: The collection view requesting the information.
+	///   - section: The index number of the section. Section indexes are zero based.
 	func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
 		return self.trustedSites.count
 	}
 	
-	// Section Item
+	/// Asks your data source object to provide the item at the specified location in the collection view.
+	/// - Parameters:
+	///   - collectionView: The collection view requesting the information.
+	///   - indexPath: The index path that specifies the location of the item.
 	func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
 		let trustedSiteItemCollectionView = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TrustedSiteItemCollectionViewItem"), for: indexPath)
 		guard let trustedSiteView = trustedSiteItemCollectionView as? TrustedSiteItemCollectionViewItem else {
@@ -40,20 +47,12 @@ extension TrustedSitesViewController: NSCollectionViewDataSource {
 }
 
 extension TrustedSitesViewController: TrustedSiteItemDelegate {
+	/// Remove the domain from the trusted sites list
+	/// - Parameters:
+	///   - indexPath: The indexPath in the list
+	///   - url: The trusted site URL
 	func trustedSiteDidRemove(indexPath: IndexPath, url: String) {
 		GhosteryApplication.shared.untrustDomain(domain: self.trustedSites[indexPath.item])
 		self.updateData()
-	}
-}
-
-extension TrustedSitesViewController: NSCollectionViewDelegate {
-	func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
-		
-	}
-}
-
-extension TrustedSitesViewController: NSTextFieldDelegate {
-	func controlTextDidChange(_ obj: Notification) {
-		self.updateTrustBtnState(trustedSiteTextField.stringValue != "")
 	}
 }

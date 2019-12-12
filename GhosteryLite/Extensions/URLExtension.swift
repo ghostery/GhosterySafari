@@ -15,6 +15,7 @@
 import Foundation
 
 extension URL {
+	/// Returns the URL host
 	var normalizedHost: String? {
 		// Use components.host instead of self.host since the former correctly preserves
 		// brackets for IPv6 hosts, whereas the latter strips them.
@@ -29,6 +30,7 @@ extension URL {
 		return host
 	}
 	
+	/// Returns the full URL host and path
 	var fullPath: String {
 		var scheme = self.scheme ?? ""
 		if !scheme.isEmpty {

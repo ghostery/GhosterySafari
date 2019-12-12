@@ -16,6 +16,8 @@
 import Cocoa
 
 extension NSApplication {
+	/// Action taken when the default configuration radio is selected
+	/// - Parameter sender: The default configuration radio option
 	@IBAction func defaultConfigSelected(_ sender: NSMenuItem) {
 		Utils.shared.logger("Changing to default blocking configuration")
 		GhosteryApplication.shared.switchToDefaultBlocking()
@@ -25,6 +27,8 @@ extension NSApplication {
 		}
 	}
 	
+	/// Action taken when the custom configuration radio is selected
+	/// - Parameter sender: The custom configuration radio option
 	@IBAction func customConfigSelected(_ sender: NSMenuItem) {
 		Utils.shared.logger("Changing to custom blocking configuration")
 		GhosteryApplication.shared.switchToCustomBlocking()
@@ -34,6 +38,8 @@ extension NSApplication {
 		}
 	}
 	
+	/// Action taken when the support link is clicked
+	/// - Parameter sender: The support link
 	@IBAction func showGhosteryHelp(_ sender: NSMenuItem) {
 		if let url = URL(string: "https://www.ghostery.com/support/") {
 			NSWorkspace.shared.open(url)

@@ -35,7 +35,9 @@ class SettingsViewController: NSViewController {
 	
 	@IBOutlet var savedBox: NSBox!
 	@IBOutlet var savedLabel: NSTextField!
-			
+	
+	/// Action taken when a category checkbox is selected
+	/// - Parameter sender: The category checkbox that was selected
 	@IBAction func categoryPressed(sender: NSButton) {
 		var modifiedCat: Categories?
 		switch sender.tag {
@@ -65,12 +67,16 @@ class SettingsViewController: NSViewController {
 		}
 	}
 	
+	/// Action taken when the default configuration radio button is selected
+	/// - Parameter sender: The default config radio button
 	@IBAction func defaultSelected(_ sender: Any) {
 		GhosteryApplication.shared.switchToDefaultBlocking()
 		self.customRadio.state = NSControl.StateValue(rawValue: 0)
 		self.categoryBox.isHidden = true
 	}
 	
+	/// Action taken when the custom configuration radio button is selected
+	/// - Parameter sender: The custom config radio button
 	@IBAction func customSelected(_ sender: Any) {
 		GhosteryApplication.shared.switchToCustomBlocking()
 		self.defaultRadio.state = NSControl.StateValue(rawValue: 0)
@@ -78,22 +84,18 @@ class SettingsViewController: NSViewController {
 		self.savedBox.isHidden = true
 	}
 	
+	/// Called after the view controller’s view has been loaded into memory.
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateRadioBoxesState), name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariExtensionID)
 		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateRadioBoxesState), name: Constants.SwitchToCustomNotificationName, object: Constants.SafariExtensionID)
 	}
 	
+	/// Called after the view controller’s view has been loaded into memory is about to be added to the view hierarchy in the window.
 	override func viewWillAppear() {
 		super.viewWillAppear()
 		setupComponents()
 		updateCategoryCheckboxStates()
-	}
-	
-	override var representedObject: Any? {
-		didSet {
-			// Update the view, if already loaded.
-		}
 	}
 	
 	deinit {
@@ -101,6 +103,7 @@ class SettingsViewController: NSViewController {
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.SwitchToCustomNotificationName, object: Constants.SafariExtensionID)
 	}
 	
+	/// Setup font and paragraph styling
 	private func setupComponents() {
 		self.updateRadioBoxesState()
 		let settingsTitle = self.topTextLabel.stringValue
@@ -126,6 +129,7 @@ class SettingsViewController: NSViewController {
 		self.savedBox.isHidden = true
 	}
 	
+	/// Update state of the blocking config radio boxes
 	@objc private func updateRadioBoxesState() {
 		if GhosteryApplication.shared.isDefaultBlockingEnabled() {
 			self.defaultRadio.state = NSControl.StateValue(rawValue: 1)
@@ -138,6 +142,7 @@ class SettingsViewController: NSViewController {
 		}
 	}
 	
+	/// Update state of the blocking category checkboxes
 	private func updateCategoryCheckboxStates() {
 		adCheckbox.state = NSControl.StateValue(BlockingConfiguration.shared.isCategoryBlocked(category: .advertising) ? 1 : 0)
 		audioVideoCheckbox.state = NSControl.StateValue(BlockingConfiguration.shared.isCategoryBlocked(category: .audioVideoPlayer) ? 1 : 0)
@@ -149,6 +154,12 @@ class SettingsViewController: NSViewController {
 		socialMediaCheckbox.state = NSControl.StateValue(BlockingConfiguration.shared.isCategoryBlocked(category: .socialMedia) ? 1 : 0)
 	}
 	
+	/// Builds text formatting for settings view copy
+	/// - Parameters:
+	///   - textField: The text field
+	///   - mainText: The text as String
+	///   - learnMoreText: Learn more text
+	///   - urlString: Leran more URL
 	private func setupTextField(textField: NSTextField, mainText: String, learnMoreText: String, urlString: String) {
 		let textColor: NSColor = NSColor.panelTextColor()
 		let textParagraph: NSMutableParagraphStyle = NSMutableParagraphStyle()

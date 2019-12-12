@@ -21,12 +21,10 @@ extension MainViewController: MenuViewControllerDelegate {
 extension MainViewController: DetailViewControllerDelegate {
 	func showSettingsPanel() {
 		self.menuViewController?.selectItem(menuItem: .settings)
-		// self.switchToViewController(withStoryboardId: MenuItem.settings.storyboardId)
 	}
 	
 	func showTrustedSitesPanel() {
 		self.menuViewController?.selectItem(menuItem: .trustedSites)
-		// self.switchToViewController(withStoryboardId: MenuItem.trustedSites.storyboardId)
 	}
 }
 

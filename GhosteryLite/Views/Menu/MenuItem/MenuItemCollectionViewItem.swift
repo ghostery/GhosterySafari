@@ -23,6 +23,7 @@ class MenuItemCollectionViewItem: NSCollectionViewItem {
 	@IBOutlet weak var imgIcon: NSImageView!
 	@IBOutlet weak var sideNavImgIcon: NSImageView!
 	
+	/// Is the menu item active (selected)
 	override var isSelected: Bool {
 		didSet {
 			// set text color
@@ -46,12 +47,17 @@ class MenuItemCollectionViewItem: NSCollectionViewItem {
 		}
 	}
 	
+	/// Called after the view controller’s view has been loaded into memory.
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.wantsLayer = true
 		self.lblTitle.font = NSFont(name: "RobotoCondensed-Bold", size: 14)
 	}
 	
+	/// Update the menu item properties
+	/// - Parameters:
+	///   - item: The menu item
+	///   - indexPath: The index path that specifies the location of the item
 	func update(_ item: MenuItem, for indexPath: IndexPath?) {
 		self.item = item
 		self.indexPath = indexPath

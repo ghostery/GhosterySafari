@@ -1304,7 +1304,7 @@
                                                 <constraint firstAttribute="width" constant="286" id="1PV-M1-xhm"/>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="84" id="OOo-Pq-vhl"/>
                                             </constraints>
-                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Please enable the Ghostery Lite Extension and Ghostery Lite Content Blocker in your Safari preferences to begin." id="dEo-t5-f3x">
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Please enable the Ghostery Lite Extension and Ghostery Lite Content Blockers in your Safari preferences to begin." id="dEo-t5-f3x">
                                                 <font key="font" size="18" name="Roboto-Regular"/>
                                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

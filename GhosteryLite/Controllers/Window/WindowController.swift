@@ -16,14 +16,15 @@ import Cocoa
 
 class WindowController: NSWindowController {
 	
+	/// Sent before the window owned by the receiver is loaded
 	override func windowWillLoad() {
 		super.windowWillLoad()
 	}
 	
+	/// Sent after the window owned by the receiver has been loaded
 	override func windowDidLoad() {
 		super.windowDidLoad()
 		let appDelegate = NSApplication.shared.delegate as? AppDelegate
 		appDelegate?.mainWindow = self.window
 	}
-	
 }

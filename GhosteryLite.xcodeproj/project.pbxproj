@@ -89,8 +89,6 @@
 		4F30493A2118983D00BA3961 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049392118983D00BA3961 /* SafariExtensionHandler.swift */; };
 		4F30493C2118983D00BA3961 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30493B2118983D00BA3961 /* SafariExtensionViewController.swift */; };
 		4F3049572118985C00BA3961 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049562118985C00BA3961 /* ContentBlockerRequestHandler.swift */; };
-		4F3049A42119F4FC00BA3961 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A12119F4FC00BA3961 /* ArrayExtension.swift */; };
-		4F3049A52119F4FC00BA3961 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A22119F4FC00BA3961 /* DictionaryExtension.swift */; };
 		4F3049A62119F4FC00BA3961 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049A32119F4FC00BA3961 /* URLExtension.swift */; };
 		4F3049AF211B36E800BA3961 /* BlockLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049AE211B36E800BA3961 /* BlockLists.swift */; };
 		4F3049B4211C6D3200BA3961 /* GhosteryApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* GhosteryApplication.swift */; };
@@ -357,8 +355,6 @@
 		4F3049562118985C00BA3961 /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
 		4F3049582118985C00BA3961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3049592118985C00BA3961 /* ContentBlocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContentBlocker.entitlements; sourceTree = "<group>"; };
-		4F3049A12119F4FC00BA3961 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
-		4F3049A22119F4FC00BA3961 /* DictionaryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		4F3049A32119F4FC00BA3961 /* URLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		4F3049AE211B36E800BA3961 /* BlockLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockLists.swift; sourceTree = "<group>"; };
 		4F3049B3211C6D3200BA3961 /* GhosteryApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhosteryApplication.swift; sourceTree = "<group>"; };
@@ -806,8 +802,6 @@
 		4F3049A02119F4FC00BA3961 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4F3049A12119F4FC00BA3961 /* ArrayExtension.swift */,
-				4F3049A22119F4FC00BA3961 /* DictionaryExtension.swift */,
 				4FFD8313212B36BC0038149F /* FileManagerExtension.swift */,
 				0D02796A2363826C007D5F66 /* NSApplicationExtension.swift */,
 				1E597C4521354D820098631F /* NSColorExtension.swift */,
@@ -1094,8 +1088,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F3049A42119F4FC00BA3961 /* ArrayExtension.swift in Sources */,
-				4F3049A52119F4FC00BA3961 /* DictionaryExtension.swift in Sources */,
 				0D02796B2363826C007D5F66 /* NSApplicationExtension.swift in Sources */,
 				0DDF278A238B2CB600C17AC8 /* TrustedSite.swift in Sources */,
 				4F9CF8E3215BCD97005B1C1B /* Telemetry.swift in Sources */,
