@@ -104,22 +104,6 @@ class GhosteryApplication {
 		return TrustedSite.shared.isSiteTrusted(domain)
 	}
 	
-	/// Notification handler for a trust site action
-	func trustSiteNotification() {
-		if let d = Preferences.getGlobalPreference(key: "domain") as? String {
-			self.trustDomain(domain: d)
-			self.loadDummyBlockList()
-		}
-	}
-	
-	/// Notification handler for an untrust site action
-	func untrustSiteNotification() {
-		if let d = Preferences.getGlobalPreference(key: "domain") as? String {
-			self.untrustDomain(domain: d)
-			self.reloadContentBlockers()
-		}
-	}
-	
 	/// Check for updated block lists. Called from AppDelegate applicationDidFinishLaunching()
 	func checkForUpdatedBlockLists() {
 		BlockLists.shared.updateBlockLists(done: { (updated) in

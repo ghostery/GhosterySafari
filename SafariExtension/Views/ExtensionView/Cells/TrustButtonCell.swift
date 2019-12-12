@@ -15,6 +15,8 @@
 import Cocoa
 
 class TrustButtonCell: NSButtonCell {
+	/// Vertical center content in NSButtonCell
+	/// - Parameter rect: The bounding rectangle of the receiver
 	override func titleRect(forBounds rect: NSRect) -> NSRect {
 		var theRect = super.titleRect(forBounds: rect)
 		theRect.origin.y = rect.origin.y + rect.size.height - (theRect.size.height+(theRect.origin.y-rect.origin.y)) - 1

@@ -44,6 +44,8 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	/// Outlets
 	@IBOutlet weak var liteLabel: NSTextField!
 	@IBOutlet var pauseButton: NSButton!
+	@IBOutlet weak var topHorizontalLine: NSView!
+	@IBOutlet weak var middleHorizontalLine: NSView!
 	@IBOutlet var defaultConfigRadio: NSButton!
 	@IBOutlet var customConfigRadio: NSButton!
 	@IBOutlet var urlLabel: NSTextField!
@@ -56,12 +58,13 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	@IBOutlet weak var secondsLabel: NSTextField!
 	@IBOutlet weak var secondsLabelLeftOffset: NSLayoutConstraint?
 	@IBOutlet var trustSiteButton: NSButton!
-	@IBOutlet weak var reloadPopupView: NSView!
-	@IBOutlet weak var popupTitleLabel: NSTextField!
-	@IBOutlet weak var popupReloadButton: NSButton!
-	@IBOutlet weak var popupCloseButton: NSButton!
-	@IBOutlet weak var topHorizontalLine: NSView!
-	@IBOutlet weak var middleHorizontalLine: NSView!
+	
+	/// Notifications
+	@IBOutlet weak var notificationView: NSView!
+	@IBOutlet weak var notificationTitleLabel: NSTextField!
+	@IBOutlet weak var notificationReloadButton: NSButton!
+	@IBOutlet weak var notificationCloseButton: NSButton!
+
 	
 	/// Action taken when the pause button is pressed
 	/// - Parameter sender: Pause button
@@ -72,13 +75,13 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 			GhosteryApplication.shared.pause()
 			DistributedNotificationCenter.default().post(name: Constants.PauseNotificationName, object: Constants.SafariExtensionID)
 			self.trustSiteButton.isEnabled = false
-			self.showPausedPopup()
+			self.showPausedNotification()
 		} else {
 			self.pauseButton.toolTip = NSLocalizedString("button.pause.tooltip", comment: "Tooltip on pause button")
 			GhosteryApplication.shared.resume()
 			DistributedNotificationCenter.default().post(name: Constants.ResumeNotificationName, object: Constants.SafariExtensionID)
 			self.trustSiteButton.isEnabled = true
-			self.showResumedPopup()
+			self.showResumedNotification()
 		}
 	}
 	
@@ -89,11 +92,11 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 			if sender.state.rawValue == 0 {
 				GhosteryApplication.shared.untrustDomain(domain: x)
 				DistributedNotificationCenter.default().post(name: Constants.UntrustDomainNotificationName, object: Constants.SafariExtensionID)
-				self.showUntrustedPopup()
+				self.showUntrustedNotification()
 			} else {
 				GhosteryApplication.shared.trustDomain(domain: x)
 				DistributedNotificationCenter.default().post(name: Constants.TrustDomainNotificationName, object: Constants.SafariExtensionID)
-				self.showTrustedPopup()
+				self.showTrustedNotification()
 			}
 		}
 		updateTrustButtonTooltip()
@@ -138,7 +141,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	/// Action taken when the Reload Page link is pressed
 	/// - Parameter sender: Reload button
 	@IBAction func reloadPage(_ sender: Any) {
-		updateReloadPopupViewVisibility(isHidden: true)
+		notificationViewVisibility(isHidden: true)
 		SFSafariApplication.getActiveWindow(completionHandler: { (window) in
 			window?.getActiveTab(completionHandler: { (tab) in
 				tab?.getActivePage(completionHandler: { (page) in
@@ -148,10 +151,10 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		})
 	}
 	
-	/// Action taken when the Close icon is pressed
-	/// - Parameter sender: Close icon
-	@IBAction func closePopup(_ sender: Any) {
-		updateReloadPopupViewVisibility(isHidden: true)
+	/// Action taken when the notification close  button is pressed
+	/// - Parameter sender: Close button
+	@IBAction func closeNotification(_ sender: Any) {
+		notificationViewVisibility(isHidden: true)
 	}
 	
 	/// Called after the view controller’s view has been loaded into memory
@@ -173,7 +176,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 			self.defaultConfigRadio.state = NSControl.StateValue(rawValue: 0)
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 1)
 		}
-		updateReloadPopupViewVisibility(isHidden: true)
+		notificationViewVisibility(isHidden: true)
 	}
 	
 	/// Update the page latency value
@@ -216,7 +219,8 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 			self.trustSiteButton?.toolTip = NSLocalizedString("trusted.tooltip", comment: "Tooltip on Trusted Site button")
 		}
 	}
-
+	
+	/// Setup font and paragraph styling
 	private func setupComponents() {
 		let defaultStr = self.defaultConfigRadio.title
 		self.defaultConfigRadio.attributedTitle = defaultStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(named: "radioTextColor") ?? NSColor.white)
@@ -231,8 +235,8 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		self.secondRangeLabel.font = NSFont(name: "OpenSans-Regular", size: 10)
 		self.thirdRangeLabel.font = NSFont(name: "OpenSans-Regular", size: 10)
 		self.secondsLabel.font = NSFont(name: "Roboto-Regular", size: 9)
-		self.popupTitleLabel.font = NSFont(name: "OpenSans-SemiBold", size: 11)
-		self.popupReloadButton.font = NSFont(name: "OpenSans-SemiBold", size: 11)
+		self.notificationTitleLabel.font = NSFont(name: "OpenSans-SemiBold", size: 11)
+		self.notificationReloadButton.font = NSFont(name: "OpenSans-SemiBold", size: 11)
 
 		let paragraphStyle = NSMutableParagraphStyle()
 		paragraphStyle.firstLineHeadIndent = 5.0
@@ -245,48 +249,60 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		// TODO: refactor the method, not to call press action
 		self.pauseButtonPressed(sender: self.pauseButton)
 	}
-
-	private func showPausedPopup() {
+	
+	/// Show paused notification message
+	private func showPausedNotification() {
 		let bgColor = NSColor(red: 0.976, green: 0.929, blue: 0.745, alpha: 1)
-		let title = NSLocalizedString("paused.message", comment: "Popup message after pausing Ghostery")
-		showPopup(bgColor, title: title, fontColor: NSColor(rgb: 0x4a4a4a))
-	}
-
-	private func showResumedPopup() {
-		let bgColor = NSColor(red: 0.976, green: 0.929, blue: 0.745, alpha: 1)
-		let title = NSLocalizedString("resumed.message", comment: "Popup message after resuming Ghostery")
-		showPopup(bgColor, title: title, fontColor: NSColor(rgb: 0x4a4a4a))
-	}
-
-	private func showTrustedPopup() {
-		let bgColor = NSColor(red: 0.156, green: 0.804, blue: 0.439, alpha: 1)
-		let title = NSLocalizedString("whitelisted.message", comment: "Popup message after Trusting Site")
-		showPopup(bgColor, title: title, fontColor: NSColor.white, image: "closePopupWhite")
+		let title = NSLocalizedString("paused.message", comment: "Notification message after pausing Ghostery")
+		self.showNotificationView(bgColor, title: title, fontColor: NSColor(rgb: 0x4a4a4a))
 	}
 	
-	private func showUntrustedPopup() {
+	/// Show resume notification message
+	private func showResumedNotification() {
 		let bgColor = NSColor(red: 0.976, green: 0.929, blue: 0.745, alpha: 1)
-		let title = NSLocalizedString("untrusted.message", comment: "Popup message after Untrusting Site")
-		showPopup(bgColor, title: title, fontColor: NSColor(rgb: 0x4a4a4a))
+		let title = NSLocalizedString("resumed.message", comment: "Notification message after resuming Ghostery")
+		self.showNotificationView(bgColor, title: title, fontColor: NSColor(rgb: 0x4a4a4a))
 	}
-
-	private func showPopup(_ backgroundColor: NSColor, title: String, fontColor: NSColor, image: String = "closePopup") {
-		self.reloadPopupView.layer?.backgroundColor = backgroundColor.cgColor
+	
+	/// Show site trusted notification message
+	private func showTrustedNotification() {
+		let bgColor = NSColor(red: 0.156, green: 0.804, blue: 0.439, alpha: 1)
+		let title = NSLocalizedString("whitelisted.message", comment: "Notification message after Trusting Site")
+		self.showNotificationView(bgColor, title: title, fontColor: NSColor.white, image: "closeButtonWhite")
+	}
+	
+	/// Show site untrusted notification message
+	private func showUntrustedNotification() {
+		let bgColor = NSColor(red: 0.976, green: 0.929, blue: 0.745, alpha: 1)
+		let title = NSLocalizedString("untrusted.message", comment: "Notification message after Untrusting Site")
+		self.showNotificationView(bgColor, title: title, fontColor: NSColor(rgb: 0x4a4a4a))
+	}
+	
+	/// Display the notification view
+	/// - Parameters:
+	///   - backgroundColor: View background color
+	///   - title: Notification title
+	///   - fontColor: Font color
+	///   - image: Close button image
+	private func showNotificationView(_ backgroundColor: NSColor, title: String, fontColor: NSColor, image: String = "closeButton") {
+		self.notificationView.layer?.backgroundColor = backgroundColor.cgColor
 		let shadow =  NSShadow()
 		shadow.shadowBlurRadius = 4
 		shadow.shadowOffset = CGSize(width: 0, height: -2)
 		shadow.shadowColor = NSColor(rgb: 0x969696, alpha: 0.5)
-		self.reloadPopupView.shadow = shadow
-		self.popupTitleLabel.stringValue = title
-		self.popupTitleLabel.textColor = fontColor
-		let reloadButton = self.popupReloadButton.title
-		self.popupReloadButton.attributedTitle = reloadButton.attributedString(withTextAlignment: .center, fontName: "OpenSans-SemiBold", fontSize: 11.0, fontColor: fontColor, isUnderline: true)
-		updateReloadPopupViewVisibility(isHidden: false)
-		self.popupCloseButton.image = NSImage(named: image)
+		self.notificationView.shadow = shadow
+		self.notificationTitleLabel.stringValue = title
+		self.notificationTitleLabel.textColor = fontColor
+		let reloadButton = self.notificationReloadButton.title
+		self.notificationReloadButton.attributedTitle = reloadButton.attributedString(withTextAlignment: .center, fontName: "OpenSans-SemiBold", fontSize: 11.0, fontColor: fontColor, isUnderline: true)
+		notificationViewVisibility(isHidden: false)
+		self.notificationCloseButton.image = NSImage(named: image)
 	}
 	
-	private func updateReloadPopupViewVisibility(isHidden: Bool) {
-		self.reloadPopupView.isHidden = isHidden
+	/// Set the visibility of the notification view
+	/// - Parameter isHidden: Is the view hidden
+	private func notificationViewVisibility(isHidden: Bool) {
+		self.notificationView.isHidden = isHidden
 		self.defaultConfigRadio.isHidden = !isHidden
 		self.customConfigRadio.isHidden = !isHidden
 		self.topHorizontalLine.isHidden = !isHidden

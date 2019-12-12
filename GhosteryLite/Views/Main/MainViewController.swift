@@ -28,7 +28,6 @@ class MainViewController: NSViewController {
 		if Preferences.isAppFirstLaunch() {
 			overlayView.isHidden = false
 		}
-		// TelemetryService.shared.sendSignal()
 		
 		GhosteryApplication.shared.subscribeForNotifications()
 		self.liteLabel.font = NSFont(name: "BebasNeueBook", size: 24)

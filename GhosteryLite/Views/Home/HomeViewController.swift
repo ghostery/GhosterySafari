@@ -26,12 +26,12 @@ class HomeViewController: NSViewController {
 	@IBOutlet weak var editSettingsBtn: NSButton!
 	@IBOutlet weak var trustedSitesText: NSTextField!
 	@IBOutlet weak var trustedSitesBtn: NSButton!
-	@IBOutlet weak var SafariExtensionPromptView: NSBox!
+	@IBOutlet weak var EnableExtensionsPromptView: NSBox!
 	@IBOutlet weak var enableGhosteryLitePromptText: NSTextField!
 	@IBOutlet weak var enableGhosteryLiteBtn: NSButton!
 	
 	@IBAction func enableGhosteryLite(_ sender: NSButton) {
-		self.SafariExtensionPromptView.isHidden = true
+		self.EnableExtensionsPromptView.isHidden = true
 		HomeViewController.showSafariPreferencesForExtension()
 	}
 	
@@ -43,30 +43,40 @@ class HomeViewController: NSViewController {
 		self.delegate?.showTrustedSitesPanel()
 	}
 	
+	/// Called after the view controller’s view has been loaded into memory.
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		initComponents()
+		// Check for application first launch
 		if !Preferences.isAppFirstLaunch() {
-			Preferences.areExtensionsEnabled { (contentBlockerEnabled, popoverEnabled, error) in
-				self.SafariExtensionPromptView.isHidden = contentBlockerEnabled && popoverEnabled
+			// Check that all safari extensions are currently enabled
+			Preferences.areExtensionsEnabled { (extensionsEnabled, error) in
+				if let error = error as NSError? {
+					Utils.shared.logger("Error \(error), \(error.userInfo)")
+				}
+				// Show / hide the enable extensions prompt
+				self.EnableExtensionsPromptView.isHidden = extensionsEnabled
 			}
 		}
 		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.editSettingsClicked(_:)), name: Constants.NavigateToSettingsNotificationName, object: Constants.SafariExtensionID)
 	}
 	
+	/// Called when the view controller’s view is fully transitioned onto the screen.
 	override func viewDidAppear() {
 		super.viewDidAppear()
 		Telemetry.shared.sendSignal(.engaged, source: 3)
 	}
 	
+	/// Launches Safari and opens the preferences panel for a Safari app extension.
 	class func showSafariPreferencesForExtension() {
 		SFSafariApplication.showPreferencesForExtension(withIdentifier: Constants.SafariExtensionID, completionHandler: { (error) in
-			if let e = error {
-				Utils.shared.logger("Error: \(e)")
+			if let error = error as NSError? {
+				Utils.shared.logger("Error \(error), \(error.userInfo)")
 			}
 		})
 	}
 	
+	/// Set formatting for view text and buttons
 	private func initComponents() {
 		titleText.font = NSFont(name: "Roboto-Regular", size: 24)
 		subtitleText.attributedStringValue = subtitleText.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 6)

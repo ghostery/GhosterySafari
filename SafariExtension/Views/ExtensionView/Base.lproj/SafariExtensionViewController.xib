@@ -15,14 +15,14 @@
                 <outlet property="firstRangeLabel" destination="BdJ-Az-y4r" id="i4V-Vq-iih"/>
                 <outlet property="liteLabel" destination="4Iy-aV-wGF" id="cZy-oI-cdg"/>
                 <outlet property="middleHorizontalLine" destination="xYa-rf-lU4" id="aPB-Hc-sAR"/>
+                <outlet property="notificationCloseButton" destination="UaI-LL-OzT" id="1bk-PS-O4s"/>
+                <outlet property="notificationReloadButton" destination="6aT-bG-BUD" id="e1F-4c-fI5"/>
+                <outlet property="notificationTitleLabel" destination="26T-rB-QRX" id="25b-ch-Adc"/>
+                <outlet property="notificationView" destination="Rlb-mT-MaB" id="9cb-UL-Pqo"/>
                 <outlet property="pageLatencyDescLabel" destination="cF2-v5-BPd" id="2bC-Eq-cBK"/>
                 <outlet property="pageLatencyImage" destination="l9i-jf-Gns" id="JqZ-0v-SAI"/>
                 <outlet property="pageLatencyValueLabel" destination="rAf-uz-UtS" id="f1o-eB-EVz"/>
                 <outlet property="pauseButton" destination="JDN-jK-7IG" id="Xlt-4h-BAI"/>
-                <outlet property="popupCloseButton" destination="UaI-LL-OzT" id="1bk-PS-O4s"/>
-                <outlet property="popupReloadButton" destination="6aT-bG-BUD" id="e1F-4c-fI5"/>
-                <outlet property="popupTitleLabel" destination="26T-rB-QRX" id="25b-ch-Adc"/>
-                <outlet property="reloadPopupView" destination="Rlb-mT-MaB" id="9cb-UL-Pqo"/>
                 <outlet property="secondRangeLabel" destination="WaM-fO-tkH" id="F2d-HD-BY9"/>
                 <outlet property="secondsLabel" destination="2ny-hN-rJo" id="6aS-Wu-64u"/>
                 <outlet property="secondsLabelLeftOffset" destination="mJN-fv-uWC" id="Kvz-Sm-96l"/>
@@ -229,7 +229,7 @@
                         <action selector="trustButtonPressedWithSender:" target="-2" id="vCr-kk-K2e"/>
                     </connections>
                 </button>
-                <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rlb-mT-MaB">
+                <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rlb-mT-MaB" userLabel="Notification View">
                     <rect key="frame" x="0.0" y="201" width="220" height="72"/>
                     <subviews>
                         <button translatesAutoresizingMaskIntoConstraints="NO" id="UaI-LL-OzT">
@@ -238,12 +238,12 @@
                                 <constraint firstAttribute="height" constant="8" id="uTb-XM-neq"/>
                                 <constraint firstAttribute="width" constant="8" id="vMV-tR-9Oa"/>
                             </constraints>
-                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="closePopup" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="6oe-pA-lid">
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="closeButton" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="6oe-pA-lid">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="closePopup:" target="-2" id="oUB-hL-S4z"/>
+                                <action selector="closeNotification:" target="-2" id="oUB-hL-S4z"/>
                             </connections>
                         </button>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="26T-rB-QRX">
@@ -337,7 +337,7 @@
         </customView>
     </objects>
     <resources>
-        <image name="closePopup" width="8" height="8"/>
+        <image name="closeButton" width="8" height="8"/>
         <image name="info" width="11" height="13"/>
         <image name="liteLogo" width="22" height="24"/>
         <image name="meatBallsButton" width="22" height="7"/>

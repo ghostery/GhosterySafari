@@ -941,7 +941,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="SafariExtensionPromptView" destination="tKh-LQ-WJY" id="Ran-hV-YP6"/>
+                        <outlet property="EnableExtensionsPromptView" destination="tKh-LQ-WJY" id="COB-s5-o5A"/>
                         <outlet property="editSettingsBtn" destination="Auf-25-vuC" id="sgw-20-yty"/>
                         <outlet property="editSettingsText" destination="aFr-mY-22K" id="en3-kO-nxV"/>
                         <outlet property="enableGhosteryLiteBtn" destination="hDO-qs-AJP" id="iEx-8n-DjF"/>

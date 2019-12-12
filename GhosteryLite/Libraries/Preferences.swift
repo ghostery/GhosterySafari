@@ -90,24 +90,10 @@ class Preferences: NSObject {
 	
 	/// Check to see if the applications extensions are currently enabled
 	/// - Parameter completion: Callback handler
-	class func areExtensionsEnabled(_ completion: @escaping(_ contentBlockerEnabled: Bool, _ popoverEnabled: Bool, _ error: Error?) -> Void) {
-		var safariContentBlockerEnabled = false
-		var safariExtensionEnabled = false
+	class func areExtensionsEnabled(_ completion: @escaping(_ extensionsEnabled: Bool, _ error: Error?) -> Void) {
 		let group = DispatchGroup()
 		var err: Error?
-		group.enter()
-		DispatchQueue.main.async(group: group) {
-			SFContentBlockerManager.getStateOfContentBlocker(withIdentifier: Constants.SafariContentBlockerID) { (state, error) in
-				guard let state = state else {
-					err = error
-					group.leave()
-					return
-				}
-				
-				safariContentBlockerEnabled = state.isEnabled
-				group.leave()
-			}
-		}
+		var enabled = false
 		
 		group.enter()
 		DispatchQueue.main.async(group: group) {
@@ -118,13 +104,55 @@ class Preferences: NSObject {
 					return
 				}
 				
-				safariExtensionEnabled = state.isEnabled
+				enabled = state.isEnabled
+				group.leave()
+			}
+		}
+		
+		group.enter()
+		DispatchQueue.main.async(group: group) {
+			SFContentBlockerManager.getStateOfContentBlocker(withIdentifier: Constants.SafariContentBlockerID) { (state, error) in
+				guard let state = state else {
+					err = error
+					group.leave()
+					return
+				}
+				
+				enabled = state.isEnabled
+				group.leave()
+			}
+		}
+		
+		group.enter()
+		DispatchQueue.main.async(group: group) {
+			SFContentBlockerManager.getStateOfContentBlocker(withIdentifier: Constants.SafariContentBlockerCosmeticID) { (state, error) in
+				guard let state = state else {
+					err = error
+					group.leave()
+					return
+				}
+				
+				enabled = state.isEnabled
+				group.leave()
+			}
+		}
+		
+		group.enter()
+		DispatchQueue.main.async(group: group) {
+			SFContentBlockerManager.getStateOfContentBlocker(withIdentifier: Constants.SafariContentBlockerNetworkID) { (state, error) in
+				guard let state = state else {
+					err = error
+					group.leave()
+					return
+				}
+				
+				enabled = state.isEnabled
 				group.leave()
 			}
 		}
 		
 		group.notify(queue: .main) {
-			completion(safariContentBlockerEnabled, safariExtensionEnabled, err)
+			completion(enabled, err)
 		}
 	}
 }
