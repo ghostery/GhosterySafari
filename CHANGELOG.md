@@ -12,6 +12,7 @@
 + Updated Swift version
 + Bug fixes and improvements
 + Transifex integration
++ Fully documented open-source codebase
 + Updated Readme
 + Added Changelog
 + Added MPL 2.0 license

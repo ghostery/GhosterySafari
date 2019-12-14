@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -393,6 +393,10 @@
                                                 <action selector="categoryPressedWithSender:" target="XfG-lQ-9wD" id="Yre-Rf-eYw"/>
                                             </connections>
                                         </button>
+                                        <imageView toolTip="Provides advertising or advertising-related services such as data-collection, behavioral analysis, or re-targeting." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V3t-dF-QL4" userLabel="Ad Icon">
+                                            <rect key="frame" x="230" y="134" width="11" height="13"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="5dA-2t-oQA"/>
+                                        </imageView>
                                         <button verticalHuggingPriority="750" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="Qyy-sP-LtW">
                                             <rect key="frame" x="93" y="91" width="148" height="18"/>
                                             <buttonCell key="cell" type="check" title="Block: Site Analytics" bezelStyle="regularSquare" imagePosition="left" inset="2" id="aDg-VX-FLP">
@@ -529,10 +533,6 @@
                                                 <constraint firstAttribute="width" constant="115" id="hcK-4Q-YaP"/>
                                             </constraints>
                                         </box>
-                                        <imageView toolTip="Provides advertising or advertising-related services such as data-collection, behavioral analysis, or re-targeting." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V3t-dF-QL4" userLabel="Ad Icon">
-                                            <rect key="frame" x="230" y="134" width="11" height="13"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="5dA-2t-oQA"/>
-                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="6Y1-oA-mwM" firstAttribute="top" secondItem="tfb-4f-8qe" secondAttribute="bottom" constant="19" id="0zp-hd-VZQ"/>

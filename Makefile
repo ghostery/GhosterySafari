@@ -19,9 +19,13 @@ clean:
 	@echo "Cleaning up..."
 	rm -rf ~/Library/Application\ Scripts/com.ghostery.lite/
 	rm -rf ~/Library/Application\ Scripts/com.ghostery.lite.contentBlocker/
+	rm -rf ~/Library/Application\ Scripts/com.ghostery.lite.contentBlockerCosmetic/
+	rm -rf ~/Library/Application\ Scripts/com.ghostery.lite.contentBlockerNetwork/
 	rm -rf ~/Library/Application\ Scripts/com.ghostery.lite.safariExtension/
 	rm -rf ~/Library/Containers/com.ghostery.lite/
 	rm -rf ~/Library/Containers/com.ghostery.lite.contentBlocker/
+	rm -rf ~/Library/Containers/com.ghostery.lite.contentBlockerCosmetic/
+	rm -rf ~/Library/Containers/com.ghostery.lite.contentBlockerNetwork/
 	rm -rf ~/Library/Containers/com.ghostery.lite.safariExtension/
 	rm -rf ~/Library/Group\ Containers/HPY23A294X.ghostery.lite/
 
