@@ -13,6 +13,7 @@
 //
 
 import Cocoa
+import Realm
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -24,8 +25,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	/// Sent by the default notification center immediately before the application object is initialized.
 	func applicationWillFinishLaunching(_ notification: Notification) {
 		self.updateConfigState()
-		Telemetry.shared.sendSignal(.install)
-		Telemetry.shared.sendSignal(.upgrade)
 	}
 	
 	/// Sent by the default notification center after the application has been launched and initialized but before it has received its first event.
@@ -36,9 +35,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		// Create notification listeners
 		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateConfigState), name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariExtensionID)
 		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateConfigState), name: Constants.SwitchToCustomNotificationName, object: Constants.SafariExtensionID)
-		// Handle first launch bootstrapping
-		if Preferences.isAppFirstLaunch() {
+		// Handle new installation
+		if Preferences.isNewInstall() {
 			self.handleInitialLaunch()
+			Telemetry.shared.sendSignal(.install)
+		}
+		// Handle application upgrade {
+		if Preferences.isUpgrade() {
+			self.handleApplicationUpgrade()
+			Telemetry.shared.sendSignal(.upgrade)
 		}
 		// Check for new Block Lists on CDN
 		GhosteryApplication.shared.checkForUpdatedBlockLists()
@@ -47,7 +52,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	/// Sent by the default notification center immediately after the application becomes active.
 	func applicationDidBecomeActive(_ notification: Notification) {
 		self.updateConfigState()
-		Telemetry.shared.sendSignal(.active, source: 3)
+		Telemetry.shared.sendSignal(.active, source: TelemetryService.PingSource.ghosteryLiteApplication)
 	}
 	
 	/// Sent by the default notification center immediately before the application terminates.
@@ -106,11 +111,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 				let data = try Data(contentsOf: url)
 				let decoder = JSONDecoder()
 				let jsonData = try decoder.decode(versionData.self, from: data)
-				Utils.shared.logger("safariContentBlockerVersion is \(jsonData.safariContentBlockerVersion)")
+				Utils.shared.logger("\(Constants.GhosteryBlockListVersionKey) is \(jsonData.safariContentBlockerVersion)")
 				Preferences.setGlobalPreference(key: Constants.GhosteryBlockListVersionKey, value: jsonData.safariContentBlockerVersion)
 			} catch {
-				Utils.shared.logger("Error getting safariContentBlockerVersion \(error)")
+				Utils.shared.logger("Error getting \(Constants.GhosteryBlockListVersionKey): \(error)")
 			}
 		}
+	}
+	
+	/// Run application version upgrade logic
+	private func handleApplicationUpgrade() {
+		// Migrate trusted sites from Realm to CoreData
+		
 	}
 }

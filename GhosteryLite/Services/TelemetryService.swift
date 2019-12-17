@@ -46,7 +46,23 @@ class TelemetryService {
 	struct Params {
 		let recency: Int
 		let frequency: String
-		let source: Int? /// Extension = 2, Application = 3
+		let source: PingSource?
+	}
+	
+	/// Ping source origin. Used to determine where the telemetry originated
+	enum PingSource: String {
+		case safariExtension
+		case ghosteryLiteApplication
+		
+		/// Returns the telemetry source ID value
+		func getID() -> Int {
+			switch self {
+				case .safariExtension:
+					return 2
+				case .ghosteryLiteApplication:
+					return 3
+			}
+		}
 	}
 	
 	/// Send telemetry message
@@ -72,14 +88,14 @@ class TelemetryService {
 	///   - config: Message config
 	///   - params: Message parameters
 	private func generateSignalURL(_ type: SignalType, config: Config, params: Params) -> String {
-		let gr = params.source != nil ? params.source! : -1
-		let url = Constants.telemetryAPIURL + "/\(type.rawValue)/\(params.frequency)?gr=\(gr)" +
+		let url = Constants.telemetryAPIURL + "/\(type.rawValue)/\(params.frequency)?gr=\(params.source?.getID() ?? -1)" +
 			"&v=\(config.version)" +
 			"&os=\(config.os)" +
 			"&ir=\(config.installRand)" +
 			"&id=\(config.installDate)" +
 			"&ua=\(config.userAgent)" +
 		"&rc=\(params.recency)"
+		Utils.shared.logger("Ping url: \(url)")
 		return url
 	}
 }

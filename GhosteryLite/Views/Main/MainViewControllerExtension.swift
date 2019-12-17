@@ -31,6 +31,7 @@ extension MainViewController: DetailViewControllerDelegate {
 extension MainViewController: ModalViewControllerDelegate {
 	func hideSafariExtensionPopOver() {
 		overlayView.isHidden = true
-		Preferences.firstLaunchFinished()
+		// Set the application first launch flag to true
+		Preferences.setAppPreference(key: Constants.firstLaunchKey, value: true)
 	}
 }

@@ -18,7 +18,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 	/// Called when a toolbar item associated with the app extension is clicked.
 	/// - Parameter window: The window containing the clicked toolbar item
 	override func toolbarItemClicked(in window: SFSafariWindow) {
-		Telemetry.shared.sendSignal(.engaged, source: 2)
+		Telemetry.shared.sendSignal(.engaged, source: TelemetryService.PingSource.safariExtension)
 		GhosteryApplication.shared.checkForUpdatedBlockLists()
 	}
 	
@@ -27,10 +27,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 	///   - window: The window containing the clicked toolbar item
 	///   - validationHandler: A code block used to set the state of the toolbar item
 	override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
-		Telemetry.shared.sendSignal(.active, source: 2)
-		self.handleTabUrlChange(window) { (url) in
-			Preferences.setGlobalPreference(key: "newDomain", value: url?.normalizedHost ?? "")
-		}
+		Telemetry.shared.sendSignal(.active, source: TelemetryService.PingSource.safariExtension)
 		validationHandler(true, "")
 	}
 	

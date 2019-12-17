@@ -54,7 +54,7 @@ class HomeViewController: NSViewController {
 		super.viewDidLoad()
 		initComponents()
 		// Check for application first launch
-		if !Preferences.isAppFirstLaunch() {
+		if !Preferences.isFirstLaunch() {
 			// Check that all safari extensions are currently enabled
 			Preferences.areExtensionsEnabled { (extensionsEnabled, error) in
 				if let error = error as NSError? {
@@ -70,7 +70,7 @@ class HomeViewController: NSViewController {
 	/// Called when the view controller’s view is fully transitioned onto the screen.
 	override func viewDidAppear() {
 		super.viewDidAppear()
-		Telemetry.shared.sendSignal(.engaged, source: 3)
+		Telemetry.shared.sendSignal(.engaged, source: TelemetryService.PingSource.ghosteryLiteApplication)
 	}
 	
 	/// Launches Safari and opens the preferences panel for a Safari app extension.

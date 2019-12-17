@@ -16,17 +16,24 @@ import Foundation
 import SafariServices
 
 class Preferences: NSObject {
-	
-	static let appFirstLaunchKey = "isAppLaunched"
-	
-	/// Is this the first launch of the application?
-	class func isAppFirstLaunch() -> Bool {
-		return !self.getAppPreferenceBool(key: Preferences.appFirstLaunchKey)
+	/// Check if the application has just been installed
+	class func isNewInstall() -> Bool {
+		return Preferences.getGlobalPreference(key: Constants.installDateKey) == nil
 	}
 	
-	/// Set preferences to track the initial application launch
-	class func firstLaunchFinished() {
-		self.setAppPreference(key: Preferences.appFirstLaunchKey, value: true)
+	/// Use this to check is the application is launching for the first time. Different from isNewInstall() because here we wait until the entire application has finished launching.
+	class func isFirstLaunch() -> Bool {
+		return !self.getAppPreferenceBool(key: Constants.firstLaunchKey)
+	}
+	
+	/// Check if the application has been updated
+	class func isUpgrade() -> Bool {
+		let lastVersion = Preferences.getGlobalPreference(key: Constants.lastVersionKey) as? String
+		if lastVersion == nil || Preferences.currentVersion() == lastVersion! {
+			let lastBuildNumber = Preferences.getGlobalPreference(key: Constants.buildVersionKey) as? String
+			return lastBuildNumber != nil && Preferences.currentBuildNumber() != lastBuildNumber!
+		}
+		return true
 	}
 	
 	/// Get a local user preference for the application

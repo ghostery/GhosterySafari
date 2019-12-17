@@ -23,6 +23,13 @@ struct Constants {
 	static let SafariExtensionID = "com.ghostery.lite.safariExtension"
 	static let AppsGroupID = "HPY23A294X.ghostery.lite"
 	
+	/// Preference keys
+	static let firstLaunchKey = "firstLaunchCompleted"
+	static let installDateKey = "installDate"
+	static let installRandKey = "installRand"
+	static let lastVersionKey = "lastVersion"
+	static let buildVersionKey = "lastBuildVersion"
+	
 	/// Block list storage
 	static let BlockListAssetsFolder = "BlockListAssets"
 	static let GroupStorageFolderURL: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)

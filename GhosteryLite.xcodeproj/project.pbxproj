@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,6 +38,8 @@
 		0D69E37D239F4A8200DCBA1D /* CenteredNSButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D69E37C239F4A8200DCBA1D /* CenteredNSButtonCell.swift */; };
 		0D73E57F239B5F090015CE50 /* ContentBlockerCosmetic.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D73E57D239B5EEF0015CE50 /* ContentBlockerCosmetic.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D73E582239B5F0D0015CE50 /* ContentBlockerNetwork.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D73E57E239B5EEF0015CE50 /* ContentBlockerNetwork.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0D7ECB6223A834D30019AF44 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0D7ECB6123A834D30019AF44 /* Realm */; };
+		0D7ECB6423A834D30019AF44 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0D7ECB6323A834D30019AF44 /* RealmSwift */; };
 		0D99D75C212EFC44005D107D /* page_performance.js in Resources */ = {isa = PBXBuildFile; fileRef = 0D99D75B212EFC44005D107D /* page_performance.js */; };
 		0DB0C588239EF8F60027DA4B /* TrustedSiteTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0C587239EF8F60027DA4B /* TrustedSiteTextFieldCell.swift */; };
 		0DBA653D238315FB0011AAD3 /* DetailViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA653C238315FB0011AAD3 /* DetailViewControllerDelegate.swift */; };
@@ -391,6 +393,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D7ECB6423A834D30019AF44 /* RealmSwift in Frameworks */,
+				0D7ECB6223A834D30019AF44 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,6 +887,10 @@
 				0DFD557D239AC401000493FC /* PBXTargetDependency */,
 			);
 			name = GhosteryLite;
+			packageProductDependencies = (
+				0D7ECB6123A834D30019AF44 /* Realm */,
+				0D7ECB6323A834D30019AF44 /* RealmSwift */,
+			);
 			productName = GhosteryLite;
 			productReference = 0D588D9B235E3FBB0003668C /* GhosteryLite.app */;
 			productType = "com.apple.product-type.application";
@@ -994,6 +1002,9 @@
 				"zh-Hans",
 			);
 			mainGroup = 4F3049142118982600BA3961;
+			packageReferences = (
+				0D7ECB6023A834D30019AF44 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 4F3049142118982600BA3961;
 			projectDirPath = "";
 			projectRoot = "";
@@ -2006,6 +2017,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0D7ECB6023A834D30019AF44 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 4.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0D7ECB6123A834D30019AF44 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0D7ECB6023A834D30019AF44 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		0D7ECB6323A834D30019AF44 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0D7ECB6023A834D30019AF44 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		0D182932238E27AA00E5EE42 /* GhosteryLite.xcdatamodeld */ = {

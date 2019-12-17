@@ -26,7 +26,7 @@ class MainViewController: NSViewController {
 	/// Called after the view controller’s view has been loaded into memory
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		if Preferences.isAppFirstLaunch() {
+		if Preferences.isFirstLaunch() {
 			overlayView.isHidden = false
 		}
 		

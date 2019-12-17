@@ -7,7 +7,11 @@ xcuserdata/
 *.xcuserstate
 *.xcworkspace/
 
-# Pods
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# CocoaPods
 Podfile.lock
 Pods/
 
