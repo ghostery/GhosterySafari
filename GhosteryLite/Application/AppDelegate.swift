@@ -13,7 +13,7 @@
 //
 
 import Cocoa
-import Realm
+import RealmSwift
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -121,7 +121,57 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	/// Run application version upgrade logic
 	private func handleApplicationUpgrade() {
-		// Migrate trusted sites from Realm to CoreData
+		Utils.shared.logger("Upgrade detected")
 		
+		// Migrate Ghostery Lite v1.0.0 settings from Realm to CoreData
+		if !Preferences.getAppPreferenceBool(key: Constants.coreDataMigrationCompleted) {
+			self.handleCoreDataMigration()
+		}
+	}
+	
+	/// Migrate legacy user settings from Realm to CoreData
+	private func handleCoreDataMigration() {
+		self.configureRealm()
+		let realm = try! Realm()
+		
+		// Migrate Trusted Sites from Realm to CoreData
+		let sites = realm.objects(TrustedSiteObject.self)
+		for site in sites {
+			if let name = site.name {
+				TrustedSite.shared.addDomain(name)
+			}
+		}
+		
+		// Migrate Blocking Config from Realm to CoreData
+		let config = realm.objects(GlobalConfigObject.self)
+		for cfg in config {
+			if let val = cfg.configType.value {
+				// Update the blocking config
+				BlockingConfiguration.shared.updateConfigType(type: BlockingConfiguration.ConfigurationType(rawValue: val) ?? BlockingConfiguration.ConfigurationType.defaultBlocking)
+			}
+			if cfg.blockedCategories.count > 0 {
+				// Update the blocked categories
+				for cat in cfg.blockedCategories {
+					if let c = Categories(rawValue: cat) {
+						BlockingConfiguration.shared.updateBlockedCategory(category: c, blocked: true)
+					}
+				}
+			}
+		}
+		
+		Preferences.setAppPreference(key: Constants.coreDataMigrationCompleted, value: true)
+	}
+	
+	/// Handle Realm configuration
+	private func configureRealm() {
+		let config = Realm.Configuration(
+			schemaVersion: 1,
+			migrationBlock: { migration, oldSchemaVersion in
+				if (oldSchemaVersion < 1) {}
+		}
+		)
+		Realm.Configuration.defaultConfiguration = config
+		let realmPath = Constants.GroupStorageFolderURL?.appendingPathComponent("db.realm")
+		Realm.Configuration.defaultConfiguration.fileURL = realmPath
 	}
 }

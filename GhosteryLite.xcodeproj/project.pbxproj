@@ -41,6 +41,7 @@
 		0D7ECB6223A834D30019AF44 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0D7ECB6123A834D30019AF44 /* Realm */; };
 		0D7ECB6423A834D30019AF44 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0D7ECB6323A834D30019AF44 /* RealmSwift */; };
 		0D99D75C212EFC44005D107D /* page_performance.js in Resources */ = {isa = PBXBuildFile; fileRef = 0D99D75B212EFC44005D107D /* page_performance.js */; };
+		0DA61A9323A97BC30054A882 /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA61A9223A97BC30054A882 /* RealmObjects.swift */; };
 		0DB0C588239EF8F60027DA4B /* TrustedSiteTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0C587239EF8F60027DA4B /* TrustedSiteTextFieldCell.swift */; };
 		0DBA653D238315FB0011AAD3 /* DetailViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA653C238315FB0011AAD3 /* DetailViewControllerDelegate.swift */; };
 		0DBA653F238316BA0011AAD3 /* MainViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA653E238316BA0011AAD3 /* MainViewControllerExtension.swift */; };
@@ -205,6 +206,7 @@
 		0D73E57D239B5EEF0015CE50 /* ContentBlockerCosmetic.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentBlockerCosmetic.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D73E57E239B5EEF0015CE50 /* ContentBlockerNetwork.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentBlockerNetwork.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D99D75B212EFC44005D107D /* page_performance.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = page_performance.js; sourceTree = "<group>"; };
+		0DA61A9223A97BC30054A882 /* RealmObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
 		0DB0C587239EF8F60027DA4B /* TrustedSiteTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSiteTextFieldCell.swift; sourceTree = "<group>"; };
 		0DBA653C238315FB0011AAD3 /* DetailViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerDelegate.swift; sourceTree = "<group>"; };
 		0DBA653E238316BA0011AAD3 /* MainViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -672,6 +674,7 @@
 			isa = PBXGroup;
 			children = (
 				0DDF278C238B2EB900C17AC8 /* BlockingConfiguration.swift */,
+				0DA61A9223A97BC30054A882 /* RealmObjects.swift */,
 				0DDF2789238B2CB600C17AC8 /* TrustedSite.swift */,
 			);
 			path = Models;
@@ -1129,6 +1132,7 @@
 				4F3049B4211C6D3200BA3961 /* GhosteryApplication.swift in Sources */,
 				1E14B754213819A800E28C38 /* TrustedSitesViewController.swift in Sources */,
 				0D4FA014239D3D6B00D6CE51 /* CoreDataStack.swift in Sources */,
+				0DA61A9323A97BC30054A882 /* RealmObjects.swift in Sources */,
 				4F931A252126C8C900AF4226 /* Constants.swift in Sources */,
 				0D182934238E27AA00E5EE42 /* GhosteryLite.xcdatamodeld in Sources */,
 				0DC7C479239C047200E54B37 /* PersistentContainer.swift in Sources */,
@@ -1421,7 +1425,6 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 1.1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1447,7 +1450,6 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 1.1.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.contentBlockerCosmetic;
@@ -1472,7 +1474,6 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 1.1.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.contentBlockerCosmetic;
@@ -1497,7 +1498,6 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 1.1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1523,7 +1523,6 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 1.1.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.contentBlockerNetwork;
@@ -1548,7 +1547,6 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 1.1.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostery.lite.contentBlockerNetwork;
@@ -1610,7 +1608,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -1665,7 +1663,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1870,7 +1868,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
