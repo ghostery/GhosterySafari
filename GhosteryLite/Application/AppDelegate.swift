@@ -150,11 +150,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 				BlockingConfiguration.shared.updateConfigType(type: BlockingConfiguration.ConfigurationType(rawValue: val) ?? BlockingConfiguration.ConfigurationType.defaultBlocking)
 			}
 			if cfg.blockedCategories.count > 0 {
-				// Update the blocked categories
+				var cats = Categories.allCases()
+				// Block the blocked categories
 				for cat in cfg.blockedCategories {
 					if let c = Categories(rawValue: cat) {
 						BlockingConfiguration.shared.updateBlockedCategory(category: c, blocked: true)
+						// Remove the value from cats array, so that we can unblock whichever categories are left over
+						if let index = cats.firstIndex(of: c) {
+							cats.remove(at: index)
+						}
 					}
+				}
+				// Unblock the allowed categories
+				for cat in cats {
+					BlockingConfiguration.shared.updateBlockedCategory(category: cat, blocked: false)
 				}
 			}
 		}

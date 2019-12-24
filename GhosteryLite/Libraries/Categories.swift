@@ -15,7 +15,7 @@
 import Foundation
 
 /// Ghostery blocking categories
-enum Categories: Int {
+enum Categories: Int, CaseIterable {
 	case advertising
 	case audioVideoPlayer
 	case comments
@@ -54,6 +54,6 @@ enum Categories: Int {
 	
 	/// List all blocking categories.  Used for full category blocking.
 	static func allCases() -> [Categories] {
-		return [.advertising, .audioVideoPlayer, .comments, .customerInteraction, .essential, .pornvertising, .siteAnalytics, .socialMedia]
+		return Categories.allCases.map{$0}
 	}
 }

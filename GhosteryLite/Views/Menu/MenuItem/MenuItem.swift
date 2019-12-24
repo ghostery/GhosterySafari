@@ -15,7 +15,7 @@
 import Foundation
 
 /// Current Ghostery menu options
-enum MenuItem {
+enum MenuItem: CaseIterable {
 	case home
 	case settings
 	case trustedSites
@@ -71,8 +71,8 @@ enum MenuItem {
 		return "\(iconName)-inactive"
 	}
 	
-	/// Returns an array of all menu items
-	static func toArray() -> [MenuItem] {
-		return [.home, .settings, .trustedSites, .help]
+	/// Returns an array of all MenuItem cases
+	static func allCases() -> [MenuItem] {
+		return MenuItem.allCases.map{$0}
 	}
 }

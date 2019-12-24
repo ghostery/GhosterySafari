@@ -40,7 +40,7 @@ class DetailViewController: NSViewController {
 	private func initViewControllers() {
 		let storyboard = NSStoryboard(name: "Main", bundle: nil)
 		
-		for menuItem in MenuItem.toArray() {
+		for menuItem in MenuItem.allCases() {
 			let storyboardId = menuItem.storyboardId
 			let identifier = storyboardId
 			if let viewController = storyboard.instantiateController(withIdentifier: identifier) as? NSViewController {
