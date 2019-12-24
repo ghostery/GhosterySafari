@@ -14,6 +14,7 @@
 
 import SafariServices
 
+/// A base class to handle events in the Safari app extension.
 class SafariExtensionHandler: SFSafariExtensionHandler {
 	/// Called when a toolbar item associated with the app extension is clicked.
 	/// - Parameter window: The window containing the clicked toolbar item
@@ -66,14 +67,14 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 	override func contentBlocker(withIdentifier contentBlockerIdentifier: String, blockedResourcesWith urls: [URL], on page: SFSafariPage) {
 		// TODO: Implement this in a future version
 		//	for u in urls {
-		//		Utils.shared.logger("Pattern matched \(u.absoluteString)")
+		//		Utils.logger("Pattern matched \(u.absoluteString)")
 		//	}
 	}
 	
 	/// Called when page navigation has been triggered
 	override func page(_ page: SFSafariPage, willNavigateTo url: URL?) {
 		// TODO: Implement this in a future version
-		// Utils.shared.logger("Navigating to \(url?.absoluteString ?? "")")
+		// Utils.logger("Navigating to \(url?.absoluteString ?? "")")
 	}
 	
 	/// Update the current webpage URL shown in the extension popover

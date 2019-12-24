@@ -14,6 +14,7 @@
 
 import Foundation
 
+/// Handles the sending of Telemetry signals
 class TelemetryService {
 
 	static let shared = TelemetryService()
@@ -75,9 +76,9 @@ class TelemetryService {
 		HTTPService.shared.getJSONData(url: url) { (completion: Result<Data, HTTPService.HTTPServiceError>) in
 			switch completion {
 				case .success(_):
-					Utils.shared.logger("Sent ping \(type)")
+					Utils.logger("Sent ping \(type)")
 				case .failure(let error):
-					Utils.shared.logger("Error: \(error)")
+					Utils.logger("Error: \(error)")
 			}
 		}
 	}
@@ -95,7 +96,7 @@ class TelemetryService {
 			"&id=\(config.installDate)" +
 			"&ua=\(config.userAgent)" +
 		"&rc=\(params.recency)"
-		Utils.shared.logger("Ping url: \(url)")
+		Utils.logger("Ping url: \(url)")
 		return url
 	}
 }

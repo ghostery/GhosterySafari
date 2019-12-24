@@ -14,6 +14,7 @@
 
 import Foundation
 
+/// Application globals
 struct Constants {
 	/// Application IDs
 	static let GhosteryLiteID = "com.ghostery.lite"

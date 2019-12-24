@@ -15,6 +15,7 @@
 import Foundation
 import RealmSwift
 
+/// Legacy Realm objects used for data migration
 class TrustedSiteObject: RealmSwift.Object {
 	@objc dynamic var name: String?
 	

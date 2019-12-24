@@ -14,6 +14,7 @@
 
 import Foundation
 
+/// Stores page latency values for display in the extension UI
 class PageLatency {
 	static let shared = PageLatency()
 	var pageLatencies = [String: String]()

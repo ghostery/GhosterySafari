@@ -13,29 +13,29 @@
 //
 
 import Foundation
-import SafariServices
 
+/// Static get/set methods for working with the UserDefaults database
 class Preferences: NSObject {
 	/// Check if the application has just been installed
 	class func isNewInstall() -> Bool {
 		return Preferences.getGlobalPreference(key: Constants.installDateKey) == nil
 	}
 	
-	/// Use this to check is the application is launching for the first time. Different from isNewInstall() because here we wait until the entire application has finished launching.
+	/// Use this to check if the application is launching for the first time. Different from isNewInstall() because here we wait until the entire application has finished launching.
 	class func isFirstLaunch() -> Bool {
-		return !self.getAppPreferenceBool(key: Constants.firstLaunchKey)
+		return !Preferences.getAppPreferenceBool(key: Constants.firstLaunchKey)
 	}
 	
 	/// Check if the application has been updated
 	class func isUpgrade() -> Bool {
 		let lastVersion = Preferences.getGlobalPreference(key: Constants.lastVersionKey) as? String
-		if lastVersion == nil || Preferences.currentVersion() == lastVersion! {
+		if lastVersion == nil || Utils.currentVersion() == lastVersion! {
 			let lastBuildNumber = Preferences.getGlobalPreference(key: Constants.buildVersionKey) as? String
-			return lastBuildNumber != nil && Preferences.currentBuildNumber() != lastBuildNumber!
+			return lastBuildNumber != nil && Utils.currentBuildNumber() != lastBuildNumber!
 		}
 		return true
 	}
-	
+
 	/// Get a local user preference for the application
 	/// - Parameter key: Preference key
 	class func getAppPreference(key: String) -> Any? {
@@ -77,89 +77,5 @@ class Preferences: NSObject {
 		let d = UserDefaults(suiteName: Constants.AppsGroupID)
 		d?.set(value, forKey: key)
 		d?.synchronize()
-	}
-	
-	/// Get the application current version
-	class func currentVersion() -> String {
-		if let shortVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-			return shortVersion
-		}
-		return ""
-	}
-	
-	/// Get the application current build number
-	class func currentBuildNumber() -> String {
-		if let version = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
-			return version
-		}
-		return ""
-	}
-	
-	/// Check to see if the applications extensions are currently enabled
-	/// - Parameter completion: Callback handler
-	class func areExtensionsEnabled(_ completion: @escaping(_ extensionsEnabled: Bool, _ error: Error?) -> Void) {
-		let group = DispatchGroup()
-		var err: Error?
-		var enabled = false
-		
-		group.enter()
-		DispatchQueue.main.async(group: group) {
-			SFSafariExtensionManager.getStateOfSafariExtension(withIdentifier: Constants.SafariExtensionID) { (state, error) in
-				guard let state = state else {
-					err = error
-					group.leave()
-					return
-				}
-				
-				enabled = state.isEnabled
-				group.leave()
-			}
-		}
-		
-		group.enter()
-		DispatchQueue.main.async(group: group) {
-			SFContentBlockerManager.getStateOfContentBlocker(withIdentifier: Constants.SafariContentBlockerID) { (state, error) in
-				guard let state = state else {
-					err = error
-					group.leave()
-					return
-				}
-				
-				enabled = state.isEnabled
-				group.leave()
-			}
-		}
-		
-		group.enter()
-		DispatchQueue.main.async(group: group) {
-			SFContentBlockerManager.getStateOfContentBlocker(withIdentifier: Constants.SafariContentBlockerCosmeticID) { (state, error) in
-				guard let state = state else {
-					err = error
-					group.leave()
-					return
-				}
-				
-				enabled = state.isEnabled
-				group.leave()
-			}
-		}
-		
-		group.enter()
-		DispatchQueue.main.async(group: group) {
-			SFContentBlockerManager.getStateOfContentBlocker(withIdentifier: Constants.SafariContentBlockerNetworkID) { (state, error) in
-				guard let state = state else {
-					err = error
-					group.leave()
-					return
-				}
-				
-				enabled = state.isEnabled
-				group.leave()
-			}
-		}
-		
-		group.notify(queue: .main) {
-			completion(enabled, err)
-		}
 	}
 }

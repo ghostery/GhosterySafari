@@ -79,7 +79,7 @@ class BlockingConfiguration {
 			if let config = blockingConfig.first {
 				if let cats = config.value(forKey: "blockedCategories") as? String {
 					// Covert comma-separated string to [Int]
-					return Utils.shared.stringToIntArray(cats)
+					return Utils.stringToIntArray(cats)
 				}
 			}
 		}
@@ -92,7 +92,7 @@ class BlockingConfiguration {
 		if let blockingConfig = self.getBlockingConfig() {
 			if let config = blockingConfig.first {
 				if let cats = config.value(forKey: "blockedCategories") as? String {
-					let arr = Utils.shared.stringToIntArray(cats)
+					let arr = Utils.stringToIntArray(cats)
 					return arr.contains(category.rawValue)
 				}
 			}
@@ -109,12 +109,12 @@ class BlockingConfiguration {
 			// Get the existing BlockingConfig object
 			if let config = blockingConfig.first {
 				if let cats = config.value(forKey: "blockedCategories") as? String {
-					var arr = Utils.shared.stringToIntArray(cats)
+					var arr = Utils.stringToIntArray(cats)
 					// Category is blocked but not in the blockedCategories list
 					if blocked && !arr.contains(category.rawValue) {
 						// Add the category to the blockedCategories list
 						arr.append(category.rawValue)
-						config.setValue(Utils.shared.intArrayToString(arr), forKeyPath: "blockedCategories")
+						config.setValue(Utils.intArrayToString(arr), forKeyPath: "blockedCategories")
 						self.saveContext()
 					}
 					// Category is allowed but currently in the blockedCategories list
@@ -122,7 +122,7 @@ class BlockingConfiguration {
 						// Remove the category from the blockedCategories list
 						if let index = arr.firstIndex(of: category.rawValue) {
 							arr.remove(at: index)
-							config.setValue(Utils.shared.intArrayToString(arr), forKeyPath: "blockedCategories")
+							config.setValue(Utils.intArrayToString(arr), forKeyPath: "blockedCategories")
 						}
 						self.saveContext()
 					}
@@ -137,7 +137,7 @@ class BlockingConfiguration {
 		do {
 			return try self.managedContext.fetch(fetchRequest)
 		} catch let error as NSError {
-			Utils.shared.logger("Error: \(error), \(error.userInfo)")
+			Utils.logger("Error: \(error), \(error.userInfo)")
 			return nil
 		}
 	}
@@ -151,7 +151,7 @@ class BlockingConfiguration {
 				let config = NSManagedObject(entity: entity, insertInto: self.managedContext)
 				
 				config.setValue(type.rawValue, forKeyPath: "configType")
-				config.setValue(Utils.shared.intArrayToString(self.blockedCategories), forKeyPath: "blockedCategories")
+				config.setValue(Utils.intArrayToString(self.blockedCategories), forKeyPath: "blockedCategories")
 				
 				self.saveContext()
 			}
@@ -163,7 +163,7 @@ class BlockingConfiguration {
 		do {
 			try self.managedContext.save()
 		} catch let error as NSError {
-			Utils.shared.logger("Error: \(error), \(error.userInfo)")
+			Utils.logger("Error: \(error), \(error.userInfo)")
 		}
 	}
 }

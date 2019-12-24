@@ -29,7 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	/// Sent by the default notification center after the application has been launched and initialized but before it has received its first event.
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		Utils.shared.logger("Ghostery Lite launched successfully")
+		Utils.logger("Ghostery Lite launched successfully")
 		// Set prefs
 		Preferences.setAppPreference(key: "NSInitialToolTipDelay", value: 50)
 		// Create notification listeners
@@ -89,11 +89,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	/// Provision the application preferences and resources on a fresh installation
 	private func handleInitialLaunch(){
-		Utils.shared.logger("Initial launch detected")
+		Utils.logger("Initial launch detected")
 		// Copy block list assets to Group Containers
 		guard let resources = Bundle.main.resourceURL?.appendingPathComponent(Constants.BlockListAssetsFolder, isDirectory: true).path,
 			let groupStorageFolder = Constants.AssetsFolderURL?.path else {
-				Utils.shared.logger("Error copying BlockListAssets to Group Containers")
+				Utils.logger("Error copying BlockListAssets to Group Containers")
 				return
 		}
 		// Make sure the BlockListAssets folder hasn't already been migrated
@@ -111,17 +111,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 				let data = try Data(contentsOf: url)
 				let decoder = JSONDecoder()
 				let jsonData = try decoder.decode(versionData.self, from: data)
-				Utils.shared.logger("\(Constants.GhosteryBlockListVersionKey) is \(jsonData.safariContentBlockerVersion)")
+				Utils.logger("\(Constants.GhosteryBlockListVersionKey) is \(jsonData.safariContentBlockerVersion)")
 				Preferences.setGlobalPreference(key: Constants.GhosteryBlockListVersionKey, value: jsonData.safariContentBlockerVersion)
 			} catch {
-				Utils.shared.logger("Error getting \(Constants.GhosteryBlockListVersionKey): \(error)")
+				Utils.logger("Error getting \(Constants.GhosteryBlockListVersionKey): \(error)")
 			}
 		}
 	}
 	
 	/// Run application version upgrade logic
 	private func handleApplicationUpgrade() {
-		Utils.shared.logger("Upgrade detected")
+		Utils.logger("Upgrade detected")
 		
 		// Migrate Ghostery Lite v1.0.0 settings from Realm to CoreData
 		if !Preferences.getAppPreferenceBool(key: Constants.coreDataMigrationCompleted) {

@@ -58,7 +58,7 @@ class SettingsViewController: NSViewController {
 			case 8:
 				modifiedCat = .socialMedia
 			default:
-				Utils.shared.logger("Unsupported category")
+				Utils.logger("Unsupported category")
 		}
 		if let m = modifiedCat {
 			let _ = BlockingConfiguration.shared.updateBlockedCategory(category: m, blocked: sender.state.rawValue == 0 ? false : true)

@@ -68,12 +68,12 @@ class TrustedSite {
 			do {
 				try self.managedContext.save()
 			} catch let error as NSError {
-				Utils.shared.logger("Error: \(error), \(error.userInfo)")
+				Utils.logger("Error: \(error), \(error.userInfo)")
 			}
 			
 			return
 		}
-		Utils.shared.logger("Domain already exists in TrustedSites")
+		Utils.logger("Domain already exists in TrustedSites")
 	}
 	
 	/// Remove an existing domain from the TrustedSites entity in CoreData
@@ -85,12 +85,12 @@ class TrustedSite {
 			do {
 				try self.managedContext.save()
 			} catch let error as NSError {
-				Utils.shared.logger("Error: \(error), \(error.userInfo)")
+				Utils.logger("Error: \(error), \(error.userInfo)")
 			}
 			
 			return
 		}
-		Utils.shared.logger("Domain does not exist in TrustedSites")
+		Utils.logger("Domain does not exist in TrustedSites")
 	}
 	
 	/// Fetch the current TrustedSites entity from CoreData
@@ -99,7 +99,7 @@ class TrustedSite {
 		do {
 			return try self.managedContext.fetch(fetchRequest)
 		} catch let error as NSError {
-			Utils.shared.logger("Error: \(error), \(error.userInfo)")
+			Utils.logger("Error: \(error), \(error.userInfo)")
 			return nil
 		}
 	}
@@ -109,7 +109,7 @@ class TrustedSite {
 		do {
 			try self.managedContext.save()
 		} catch let error as NSError {
-			Utils.shared.logger("Error: \(error), \(error.userInfo)")
+			Utils.logger("Error: \(error), \(error.userInfo)")
 		}
 	}
 }

@@ -19,14 +19,14 @@ extension FileManager {
 	/// - Parameter fileUrl: The json file URL
 	func readJsonFile<T>(at fileUrl: URL?) -> T? {
 		guard fileExists(atPath: (fileUrl?.path)!) else {
-			Utils.shared.logger("\(String(describing: fileUrl?.path)) does not exist")
+			Utils.logger("\(String(describing: fileUrl?.path)) does not exist")
 			return nil
 		}
 		do {
 			let fileData = try Data(contentsOf: fileUrl!)
 			return try JSONSerialization.jsonObject(with: fileData, options: .allowFragments) as? T
 		} catch let error as NSError {
-			Utils.shared.logger("\(error), \(error.userInfo)")
+			Utils.logger("\(error), \(error.userInfo)")
 			return nil
 		}
 	}
@@ -40,10 +40,10 @@ extension FileManager {
 			let jsonData = try JSONSerialization.data(withJSONObject: data ?? [])
 			if FileManager.default.createFile(atPath: (fileUrl?.path)!, contents: jsonData, attributes: [FileAttributeKey.posixPermissions: 0o777]) {
 			} else {
-				Utils.shared.logger("Could not create file")
+				Utils.logger("Could not create file")
 			}
 		} catch let error as NSError {
-			Utils.shared.logger("\(error), \(error.userInfo)")
+			Utils.logger("\(error), \(error.userInfo)")
 		}
 	}
 	
@@ -57,9 +57,9 @@ extension FileManager {
 		
 		let fileURL = directory?.appendingPathComponent("\(fileName)")
 		if FileManager.default.createFile(atPath: (fileURL?.path)!, contents: data, attributes: nil) {
-			// Utils.shared.logger("\(fileName) written successfully")
+			// Utils.logger("\(fileName) written successfully")
 		} else {
-			Utils.shared.logger("Unable to write the data to \(fileName)")
+			Utils.logger("Unable to write the data to \(fileName)")
 		}
 	}
 	
@@ -72,7 +72,7 @@ extension FileManager {
 			do {
 				try FileManager.default.createDirectory(at: url!, withIntermediateDirectories: hasIntermediateDir, attributes: nil)
 			} catch let error as NSError {
-				Utils.shared.logger("\(error), \(error.userInfo)")
+				Utils.logger("\(error), \(error.userInfo)")
 			}
 		}
 	}
@@ -85,7 +85,7 @@ extension FileManager {
 		do {
 			try FileManager.default.copyItem(atPath: sourceDir, toPath: destDir)
 		} catch let error as NSError {
-			Utils.shared.logger("\(error), \(error.userInfo)")
+			Utils.logger("\(error), \(error.userInfo)")
 		}
 	}
 }

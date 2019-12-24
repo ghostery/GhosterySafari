@@ -14,6 +14,7 @@
 
 import Foundation
 
+/// Methods relating to application Telemetry
 class Telemetry {
 	
 	static let shared = Telemetry()
@@ -46,7 +47,7 @@ class Telemetry {
 		if id == nil {
 			id = Telemetry.formatDate(date: Date())
 		}
-		self.config = TelemetryService.Config(version: Preferences.currentVersion(), installRand: Telemetry.getInstallRand(), installDate: id!)
+		self.config = TelemetryService.Config(version: Utils.currentVersion(), installRand: Telemetry.getInstallRand(), installDate: id!)
 	}
 	
 	/// Send a telemetry signal
@@ -61,7 +62,7 @@ class Telemetry {
 			case .upgrade:
 				TelemetryService.shared.sendSignal(type, config: self.config, params: self.generateParams(type, frequency: nil, source: source))
 				Preferences.setGlobalPreference(key: Constants.lastVersionKey, value: self.config.version)
-				Preferences.setGlobalPreference(key: Constants.buildVersionKey, value: Preferences.currentBuildNumber())
+				Preferences.setGlobalPreference(key: Constants.buildVersionKey, value: Utils.currentBuildNumber())
 			case .active, .engaged:
 				if let src = source {
 					// Check if the ping type frequency has expired
@@ -91,9 +92,6 @@ class Telemetry {
 		}
 		return TelemetryService.Params(recency: rec, frequency: freq, source: source)
 	}
-	
-	/// Check for new install
-	
 	
 	/// Get signal frequencies (daily, weekly, monthly) for the specified signal type. Returns frequencies that have expired or are not present
 	/// - Parameters:

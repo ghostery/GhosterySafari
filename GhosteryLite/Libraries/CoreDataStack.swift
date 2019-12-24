@@ -14,6 +14,7 @@
 
 import Cocoa
 
+/// Establishes an access point for CoreData persistentContainer
 class CoreDataStack {
 	
 	static let shared = CoreDataStack()

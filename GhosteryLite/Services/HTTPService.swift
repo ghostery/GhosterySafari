@@ -14,6 +14,7 @@
 
 import Foundation
 
+/// Provides methods for making HTTP requests with URLSession
 class HTTPService {
 	
 	static let shared = HTTPService()
@@ -44,14 +45,14 @@ class HTTPService {
 					}
 					do {
 						let values = try JSONDecoder().decode(T.self, from: data)
-						Utils.shared.logger("Successfully decoded JSON file.")
+						Utils.logger("Successfully decoded JSON file.")
 						completion(.success(values))
 					} catch let error as NSError {
-						Utils.shared.logger("JSONDecoder error: \(error)")
+						Utils.logger("JSONDecoder error: \(error)")
 						completion(.failure(.decodeError))
 					}
 				case .failure(let error):
-					Utils.shared.logger("Error: \(error)")
+					Utils.logger("Error: \(error)")
 					completion(.failure(.apiError))
 			}
 		}.resume()
@@ -73,10 +74,10 @@ class HTTPService {
 						completion(.failure(.invalidResponse))
 						return
 					}
-					Utils.shared.logger("Successfully downloaded JSON data.")
+					Utils.logger("Successfully downloaded JSON data.")
 					completion(.success(data))
 				case .failure(let error):
-					Utils.shared.logger("Error: \(error)")
+					Utils.logger("Error: \(error)")
 					completion(.failure(.apiError))
 			}
 		}.resume()

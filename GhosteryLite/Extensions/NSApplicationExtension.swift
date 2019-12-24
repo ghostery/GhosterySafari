@@ -19,7 +19,7 @@ extension NSApplication {
 	/// Action taken when the default configuration radio is selected
 	/// - Parameter sender: The default configuration radio option
 	@IBAction func defaultConfigSelected(_ sender: NSMenuItem) {
-		Utils.shared.logger("Changing to default blocking configuration")
+		Utils.logger("Changing to default blocking configuration")
 		GhosteryApplication.shared.switchToDefaultBlocking()
 		if let m = sender.parent?.submenu {
 			m.items[1].state = NSControl.StateValue(rawValue: 0)
@@ -30,7 +30,7 @@ extension NSApplication {
 	/// Action taken when the custom configuration radio is selected
 	/// - Parameter sender: The custom configuration radio option
 	@IBAction func customConfigSelected(_ sender: NSMenuItem) {
-		Utils.shared.logger("Changing to custom blocking configuration")
+		Utils.logger("Changing to custom blocking configuration")
 		GhosteryApplication.shared.switchToCustomBlocking()
 		if let m = sender.parent?.submenu {
 			m.items[0].state = NSControl.StateValue(rawValue: 0)

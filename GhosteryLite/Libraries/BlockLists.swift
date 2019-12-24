@@ -39,14 +39,14 @@ class BlockLists {
 		
 		// Check for DB updates daily
 		if !self.isTimeForDBUpdate() {
-			Utils.shared.logger("Already checked for DB updates today")
+			Utils.logger("Already checked for DB updates today")
 			return
 		}
 		
 		// Fetch the Ghostery version file
 		group.enter()
 		DispatchQueue.main.async(group: group) {
-			Utils.shared.logger("Checking for Ghostery block list updates")
+			Utils.logger("Checking for Ghostery block list updates")
 			HTTPService.shared.getJSON(url: Constants.GhosteryVersionPath) { (completion: Result<ghosteryVersionData, HTTPService.HTTPServiceError>) in
 				switch completion {
 					case .success(let versionData):
@@ -70,10 +70,10 @@ class BlockLists {
 								}
 							}
 						} else {
-							Utils.shared.logger("No Ghostery block list updates available.")
+							Utils.logger("No Ghostery block list updates available.")
 						}
 					case .failure(let error):
-						Utils.shared.logger("Ghostery version error: \(error)")
+						Utils.logger("Ghostery version error: \(error)")
 				}
 				group.leave()
 			}
@@ -82,7 +82,7 @@ class BlockLists {
 		// Fetch Cliqz ad block lists
 		group.enter()
 		DispatchQueue.main.async(group: group) {
-			Utils.shared.logger("Checking for Cliqz block list updates")
+			Utils.logger("Checking for Cliqz block list updates")
 			HTTPService.shared.getJSON(url: Constants.CliqzVersionPath) { (completion: Result<cliqzVersionData, HTTPService.HTTPServiceError>) in
 				switch completion {
 					case .success(let versionData):
@@ -99,7 +99,7 @@ class BlockLists {
 								group.leave()
 							}
 						} else {
-							Utils.shared.logger("No Cliqz network filter list update available.")
+							Utils.logger("No Cliqz network filter list update available.")
 						}
 						
 						if self.isCliqzBlockListChecksumChanged(cosmeticChecksum, self.cliqzCosmeticListChecksum) {
@@ -111,10 +111,10 @@ class BlockLists {
 								group.leave()
 							}
 						} else {
-							Utils.shared.logger("No Cliqz cosmetic filter list update available.")
+							Utils.logger("No Cliqz cosmetic filter list update available.")
 					}
 					case .failure(let error):
-						Utils.shared.logger("Cliqz version error: \(error)")
+						Utils.logger("Cliqz version error: \(error)")
 				}
 				group.leave()
 			}
@@ -164,7 +164,7 @@ class BlockLists {
 	/// - Parameter oldVersionKey The preference key where the old version number is stored
 	private func isGhosteryBlockListVersionChanged(_ newVersion: Int, _ oldVersionKey: String) -> Bool {
 		if let oldVersion = Preferences.getGlobalPreference(key: oldVersionKey) as? Int {
-			Utils.shared.logger("\(oldVersionKey) Old version \(oldVersion) New version \(newVersion)")
+			Utils.logger("\(oldVersionKey) Old version \(oldVersion) New version \(newVersion)")
 			return newVersion != oldVersion
 		}
 		return true
@@ -176,7 +176,7 @@ class BlockLists {
 	///   - oldVersionKey: The preference key where the old checksum value is stored
 	private func isCliqzBlockListChecksumChanged(_ newVersion: String, _ oldVersionKey: String) -> Bool {
 		if let oldVersion = Preferences.getGlobalPreference(key: oldVersionKey) as? String {
-			Utils.shared.logger("\(oldVersionKey) Old version \(oldVersion) New version \(newVersion)")
+			Utils.logger("\(oldVersionKey) Old version \(oldVersion) New version \(newVersion)")
 			return newVersion != oldVersion
 		}
 		return true
@@ -192,10 +192,10 @@ class BlockLists {
 		HTTPService.shared.getJSONData(url: listUrl) { (completion: Result<Data, HTTPService.HTTPServiceError>) in
 			switch completion {
 				case .success(let jsonData):
-					// Utils.shared.logger("Downloaded \(fileName)")
+					// Utils.logger("Downloaded \(fileName)")
 					FileManager.default.writeFile(jsonData, name: "\(fileName).json", in: folder)
 				case .failure(let error):
-					Utils.shared.logger("\(fileName) file download failed: \(error)")
+					Utils.logger("\(fileName) file download failed: \(error)")
 			}
 			done()
 		}

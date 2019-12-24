@@ -16,13 +16,11 @@ import Foundation
 import SafariServices
 
 /// Manages GhosteryLite application state between targets. Set paused/resumed, trust/untrust,
-/// change block list settings, reload Content Blocker
+/// change block list settings, reload Content Blockers
 class GhosteryApplication {
 	
 	static let shared = GhosteryApplication()
 	private var paused: Bool = false
-	
-	init() {}
 	
 	deinit {
 		DistributedNotificationCenter.default().removeObserver(self, name: Constants.PauseNotificationName, object: Constants.SafariExtensionID)
@@ -131,7 +129,7 @@ class GhosteryApplication {
 	
 	/// Load an empty block list file into each of the Content Blockers.  Used during pause and site whitelist scenarios
 	private func loadDummyBlockList() {
-		Utils.shared.logger("Loading dummy block lists for all content blockers...")
+		Utils.logger("Loading dummy block lists for all content blockers...")
 		self.updateAndReloadBlockList(fileNames: [Constants.EmptyRulesList], contentBlocker: Constants.ContentBlockerLists.standard)
 		self.updateAndReloadBlockList(fileNames: [Constants.EmptyRulesList], contentBlocker: Constants.ContentBlockerLists.cosmetic)
 		self.updateAndReloadBlockList(fileNames: [Constants.EmptyRulesList], contentBlocker: Constants.ContentBlockerLists.network)
@@ -139,7 +137,7 @@ class GhosteryApplication {
 	
 	/// Load the default Ghostery block list file consisting of the default categories only. Used by the standard content blocker.
 	private func loadDefaultBlockList() {
-		Utils.shared.logger("Loading default Ghostery block list categories for \(Constants.SafariContentBlockerID)")
+		Utils.logger("Loading default Ghostery block list categories for \(Constants.SafariContentBlockerID)")
 		var fileNames = [String]()
 		// Ghostery default categories
 		for index in BlockingConfiguration.shared.defaultBlockedCategories() {
@@ -151,7 +149,7 @@ class GhosteryApplication {
 	
 	/// Load the full Ghostery block list (all categories). Used by the standard content blocker.
 	private func loadFullBlockList() {
-		Utils.shared.logger("Loading full Ghostery block list for \(Constants.SafariContentBlockerID)")
+		Utils.logger("Loading full Ghostery block list for \(Constants.SafariContentBlockerID)")
 		self.updateAndReloadBlockList(fileNames: [Constants.GhosteryBlockList], contentBlocker: Constants.ContentBlockerLists.standard)
 	}
 	
@@ -177,7 +175,7 @@ class GhosteryApplication {
 				}
 			}
 			
-			Utils.shared.logger("Loading custom Ghostery block list categories for \(Constants.SafariContentBlockerID)")
+			Utils.logger("Loading custom Ghostery block list categories for \(Constants.SafariContentBlockerID)")
 			
 			// Trigger a Content Blocker reload
 			self.updateAndReloadBlockList(fileNames: fileNames, contentBlocker: Constants.ContentBlockerLists.standard)
@@ -188,7 +186,7 @@ class GhosteryApplication {
 	/// - Parameter fileNames: The block list json filenames to be loaded
 	/// - Parameter contentBlocker: The content blocker that should be reloaded
 	private func updateAndReloadBlockList(fileNames: [String], contentBlocker: Constants.ContentBlockerLists) {
-		Utils.shared.logger("Generating new block list for \(contentBlocker.getID())...")
+		Utils.logger("Generating new block list for \(contentBlocker.getID())...")
 		BlockLists.shared.generateCurrentBlockList(files: fileNames, blockListFile: contentBlocker.rawValue) {
 			self.reloadContentBlocker(withIdentifier: contentBlocker.getID())
 		}
@@ -197,12 +195,12 @@ class GhosteryApplication {
 	/// Reload the Content Blocker extension
 	/// - Parameter identifier: The bundle ID of the Content Blocker to reload
 	private func reloadContentBlocker(withIdentifier identifier: String) {
-		Utils.shared.logger("Reloading \(identifier)...")
+		Utils.logger("Reloading \(identifier)...")
 		SFContentBlockerManager.reloadContentBlocker(withIdentifier: identifier, completionHandler: { (error) in
 			if let error = error as NSError? {
-				Utils.shared.logger("Reloading \(identifier) failed with error \(error), \(error.userInfo)")
+				Utils.logger("Reloading \(identifier) failed with error \(error), \(error.userInfo)")
 			} else {
-				Utils.shared.logger("Successfully reloaded \(identifier)!")
+				Utils.logger("Successfully reloaded \(identifier)!")
 			}
 		})
 	}

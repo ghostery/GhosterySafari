@@ -56,9 +56,9 @@ class HomeViewController: NSViewController {
 		// Check for application first launch
 		if !Preferences.isFirstLaunch() {
 			// Check that all safari extensions are currently enabled
-			Preferences.areExtensionsEnabled { (extensionsEnabled, error) in
+			Utils.areExtensionsEnabled { (extensionsEnabled, error) in
 				if let error = error as NSError? {
-					Utils.shared.logger("Error \(error), \(error.userInfo)")
+					Utils.logger("Error \(error), \(error.userInfo)")
 				}
 				// Show / hide the enable extensions prompt
 				self.EnableExtensionsPromptView.isHidden = extensionsEnabled
@@ -77,7 +77,7 @@ class HomeViewController: NSViewController {
 	class func showSafariPreferencesForExtension() {
 		SFSafariApplication.showPreferencesForExtension(withIdentifier: Constants.SafariExtensionID, completionHandler: { (error) in
 			if let error = error as NSError? {
-				Utils.shared.logger("Error \(error), \(error.userInfo)")
+				Utils.logger("Error \(error), \(error.userInfo)")
 			}
 		})
 	}
