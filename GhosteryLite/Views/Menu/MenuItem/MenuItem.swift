@@ -72,7 +72,7 @@ enum MenuItem: CaseIterable {
 	}
 	
 	/// Returns an array of all MenuItem cases
-	static func allCases() -> [MenuItem] {
+	static func allMenuItemCases() -> [MenuItem] {
 		return MenuItem.allCases.map{$0}
 	}
 }

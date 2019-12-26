@@ -150,7 +150,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 				BlockingConfiguration.shared.updateConfigType(type: BlockingConfiguration.ConfigurationType(rawValue: val) ?? BlockingConfiguration.ConfigurationType.defaultBlocking)
 			}
 			if cfg.blockedCategories.count > 0 {
-				var cats = Categories.allCases()
+				var cats = Categories.allCategories()
 				// Block the blocked categories
 				for cat in cfg.blockedCategories {
 					if let c = Categories(rawValue: cat) {

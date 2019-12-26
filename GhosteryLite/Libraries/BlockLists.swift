@@ -62,7 +62,7 @@ class BlockLists {
 							}
 							
 							// Update category block list files
-							for type in Categories.allCases() {
+							for type in Categories.allCategories() {
 								group.enter()
 								self.downloadAndSaveFile(type.fileName(), Constants.GhosteryAssetPath + type.fileName(), Constants.AssetsFolderURL) { () in
 									updated = true

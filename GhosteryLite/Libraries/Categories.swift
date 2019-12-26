@@ -25,11 +25,6 @@ enum Categories: Int, CaseIterable {
 	case siteAnalytics
 	case socialMedia
 	
-	/// Get the number of categories
-	static func allCategoriesCount() -> Int {
-		return 8
-	}
-	
 	/// Map the blocking category name to its filename on disk
 	func fileName() -> String {
 		switch self {
@@ -53,7 +48,12 @@ enum Categories: Int, CaseIterable {
 	}
 	
 	/// List all blocking categories.  Used for full category blocking.
-	static func allCases() -> [Categories] {
+	static func allCategories() -> [Categories] {
 		return Categories.allCases.map{$0}
+	}
+	
+	/// Get the number of categories
+	static func allCategoriesCount() -> Int {
+		return Categories.allCases.count
 	}
 }
