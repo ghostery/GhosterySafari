@@ -57,7 +57,7 @@ $ tx pull -a
 ## Compatibility
 
 + Safari: 12+
-+ MacOS Mojave 10.14+
++ MacOS Sierra 10.12+
 
 ## Links
 + [Website](https://ghostery.com/)
