@@ -40,6 +40,8 @@
 		0D73E582239B5F0D0015CE50 /* ContentBlockerNetwork.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D73E57E239B5EEF0015CE50 /* ContentBlockerNetwork.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D7ECB6223A834D30019AF44 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0D7ECB6123A834D30019AF44 /* Realm */; };
 		0D7ECB6423A834D30019AF44 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0D7ECB6323A834D30019AF44 /* RealmSwift */; };
+		0D8D9B4223BA4FA50005979D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D8D9B4123BA4FA50005979D /* Colors.xcassets */; };
+		0D8D9B4423BA507F0005979D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D8D9B4323BA507F0005979D /* Colors.xcassets */; };
 		0D99D75C212EFC44005D107D /* page_performance.js in Resources */ = {isa = PBXBuildFile; fileRef = 0D99D75B212EFC44005D107D /* page_performance.js */; };
 		0DA61A9323A97BC30054A882 /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA61A9223A97BC30054A882 /* RealmObjects.swift */; };
 		0DB0C588239EF8F60027DA4B /* TrustedSiteTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0C587239EF8F60027DA4B /* TrustedSiteTextFieldCell.swift */; };
@@ -88,7 +90,7 @@
 		1E597C4821354DE60098631F /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C4721354DE60098631F /* Preferences.swift */; };
 		1E597C4A2135682B0098631F /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E597C492135682B0098631F /* ModalViewController.swift */; };
 		4F3049212118982600BA3961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049202118982600BA3961 /* AppDelegate.swift */; };
-		4F3049252118982700BA3961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049242118982700BA3961 /* Assets.xcassets */; };
+		4F3049252118982700BA3961 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3049242118982700BA3961 /* Images.xcassets */; };
 		4F30493A2118983D00BA3961 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049392118983D00BA3961 /* SafariExtensionHandler.swift */; };
 		4F30493C2118983D00BA3961 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30493B2118983D00BA3961 /* SafariExtensionViewController.swift */; };
 		4F3049572118985C00BA3961 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049562118985C00BA3961 /* ContentBlockerRequestHandler.swift */; };
@@ -205,6 +207,8 @@
 		0D69E37C239F4A8200DCBA1D /* CenteredNSButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteredNSButtonCell.swift; sourceTree = "<group>"; };
 		0D73E57D239B5EEF0015CE50 /* ContentBlockerCosmetic.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentBlockerCosmetic.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D73E57E239B5EEF0015CE50 /* ContentBlockerNetwork.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentBlockerNetwork.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D8D9B4123BA4FA50005979D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		0D8D9B4323BA507F0005979D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0D99D75B212EFC44005D107D /* page_performance.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = page_performance.js; sourceTree = "<group>"; };
 		0DA61A9223A97BC30054A882 /* RealmObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
 		0DB0C587239EF8F60027DA4B /* TrustedSiteTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSiteTextFieldCell.swift; sourceTree = "<group>"; };
@@ -349,7 +353,7 @@
 		1E597C4721354DE60098631F /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		1E597C492135682B0098631F /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		4F3049202118982600BA3961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4F3049242118982700BA3961 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F3049242118982700BA3961 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4F3049292118982700BA3961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F30492A2118982700BA3961 /* GhosteryLite.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GhosteryLite.entitlements; sourceTree = "<group>"; };
 		4F3049392118983D00BA3961 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
@@ -461,9 +465,10 @@
 		0D02795623632D9A007D5F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4F3049242118982700BA3961 /* Assets.xcassets */,
 				4FFD8337212B4FF90038149F /* BlockListAssets */,
+				0D8D9B4323BA507F0005979D /* Colors.xcassets */,
 				0D588E83235E4C2F0003668C /* Fonts */,
+				4F3049242118982700BA3961 /* Images.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -618,6 +623,7 @@
 		0D3FBB06235F9F140054822A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0D8D9B4123BA4FA50005979D /* Colors.xcassets */,
 				4FCEAA22212E0CCE00AACE42 /* Images.xcassets */,
 				0D02794F23624099007D5F66 /* ghostery_icon.pdf */,
 				0D99D75B212EFC44005D107D /* page_performance.js */,
@@ -1042,6 +1048,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D8D9B4423BA507F0005979D /* Colors.xcassets in Resources */,
 				1E14B7592138217800E28C38 /* TrustedSiteItemCollectionViewItem.xib in Resources */,
 				0DD3BF81236CD09300889C41 /* InfoPlist.strings in Resources */,
 				1E597C3721340D180098631F /* MenuItemCollectionViewItem.xib in Resources */,
@@ -1049,7 +1056,7 @@
 				0DDCFF7923660DBD009481D4 /* Localizable.strings in Resources */,
 				0D3FBB312360B5320054822A /* Main.storyboard in Resources */,
 				0D588E84235E4C2F0003668C /* Fonts in Resources */,
-				4F3049252118982700BA3961 /* Assets.xcassets in Resources */,
+				4F3049252118982700BA3961 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1062,6 +1069,7 @@
 				0D027978236538A9007D5F66 /* Localizable.strings in Resources */,
 				0D3FBB2C2360B4FE0054822A /* SafariExtensionViewController.xib in Resources */,
 				0D99D75C212EFC44005D107D /* page_performance.js in Resources */,
+				0D8D9B4223BA4FA50005979D /* Colors.xcassets in Resources */,
 				0D588E85235E4C2F0003668C /* Fonts in Resources */,
 				4FCEAA23212E0CCE00AACE42 /* Images.xcassets in Resources */,
 			);
