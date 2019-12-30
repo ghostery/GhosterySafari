@@ -88,8 +88,14 @@ class HomeViewController: NSViewController {
 		subtitleText.attributedStringValue = subtitleText.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 6)
 		editSettingsText.attributedStringValue = editSettingsText.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Medium", fontSize: 16.0, fontColor: NSColor.panelTextColor(), lineSpacing: 12.0)
 		trustedSitesText.attributedStringValue = trustedSitesText.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Medium", fontSize: 16.0, fontColor: NSColor.panelTextColor(), lineSpacing: 12.0)
-			
-		let textColor = NSColor(named: "homeBtnTextColor") ?? NSColor.black
+		
+		var textColor: NSColor
+		if #available(OSX 10.13, *) {
+			textColor = NSColor(named: "homeBtnTextColor") ?? NSColor.black
+		} else {
+			// OSX 10.12
+			textColor = NSColor.black
+		}
 		editSettingsBtn.attributedTitle = editSettingsBtn.title.attributedString(withTextAlignment: .center, fontName: "RobotoCondensed-Bold", fontSize: 14.0, fontColor: textColor)
 		trustedSitesBtn.attributedTitle = trustedSitesBtn.title.attributedString(withTextAlignment: .center, fontName: "RobotoCondensed-Bold", fontSize: 14.0, fontColor: textColor)
 		enableGhosteryLiteBtn.attributedTitle = enableGhosteryLiteBtn.title.attributedString(withTextAlignment: .center, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(rgb: 0x4a4a4a))

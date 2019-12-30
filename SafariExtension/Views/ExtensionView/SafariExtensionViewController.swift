@@ -166,7 +166,12 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	/// Called after the view controller’s view has been loaded into memory is about to be added to the view hierarchy in the window
 	override func viewWillAppear() {
 		super.viewWillAppear()
-		self.view.layer?.backgroundColor = NSColor(named: "backgroundColor")?.cgColor
+		if #available(OSXApplicationExtension 10.13, *) {
+			self.view.layer?.backgroundColor = NSColor(named: "backgroundColor")?.cgColor
+		} else {
+			// OSX 10.12
+			self.view.layer?.backgroundColor = NSColor.white.cgColor
+		}
 		urlLabel?.stringValue = self.currentDomain ?? ""
 		if GhosteryApplication.shared.isDefaultBlockingEnabled() {
 			self.customConfigRadio.state = NSControl.StateValue(rawValue: 0)
@@ -222,9 +227,22 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	/// Setup font and paragraph styling
 	private func setupComponents() {
 		let defaultStr = self.defaultConfigRadio.title
-		self.defaultConfigRadio.attributedTitle = defaultStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(named: "radioTextColor") ?? NSColor.white)
 		let customStr = self.customConfigRadio.title
-		self.customConfigRadio.attributedTitle = customStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(named: "radioTextColor") ?? NSColor.white)
+		let trustSiteTitle = self.trustSiteButton.title
+		let siteTrustedTitle = NSLocalizedString("trusted.button", comment: "Trusted site button title")
+		
+		if #available(OSXApplicationExtension 10.13, *) {
+			self.defaultConfigRadio.attributedTitle = defaultStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(named: "radioTextColor") ?? NSColor.white)
+			self.customConfigRadio.attributedTitle = customStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(named: "radioTextColor") ?? NSColor.white)
+			self.trustSiteButton?.attributedTitle = trustSiteTitle.attributedString(withTextAlignment: .center, fontName: "OpenSans-SemiBold", fontSize: 11.0, fontColor: NSColor(named: "trustBtnTitleColor") ?? NSColor.black, lineSpacing: 0)
+			self.trustSiteButton?.attributedAlternateTitle = siteTrustedTitle.attributedString(withTextAlignment: .center, fontName: "OpenSans-SemiBold", fontSize: 11.0, fontColor:NSColor(named: "untrustBtnTitleColor") ?? NSColor.white, lineSpacing: 0)
+		} else {
+			// OSX 10.12
+			self.defaultConfigRadio.attributedTitle = defaultStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor.white)
+			self.customConfigRadio.attributedTitle = customStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor.white)
+			self.trustSiteButton?.attributedTitle = trustSiteTitle.attributedString(withTextAlignment: .center, fontName: "OpenSans-SemiBold", fontSize: 11.0, fontColor: NSColor.black, lineSpacing: 0)
+			self.trustSiteButton?.attributedAlternateTitle = siteTrustedTitle.attributedString(withTextAlignment: .center, fontName: "OpenSans-SemiBold", fontSize: 11.0, fontColor: NSColor.white, lineSpacing: 0)
+		}
 
 		self.liteLabel.font = NSFont(name: "BebasNeueBook", size: 18)
 		self.urlLabel.font = NSFont(name: "OpenSans-Regular", size: 11)
@@ -239,11 +257,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 
 		let paragraphStyle = NSMutableParagraphStyle()
 		paragraphStyle.firstLineHeadIndent = 5.0
-		
-		let trustSiteTitle = self.trustSiteButton.title
-		self.trustSiteButton?.attributedTitle = trustSiteTitle.attributedString(withTextAlignment: .center, fontName: "OpenSans-SemiBold", fontSize: 11.0, fontColor: NSColor(named: "trustBtnTitleColor") ?? NSColor.black, lineSpacing: 0)
-		let siteTrustedTitle = NSLocalizedString("trusted.button", comment: "Trusted site button title")
-		self.trustSiteButton?.attributedAlternateTitle = siteTrustedTitle.attributedString(withTextAlignment: .center, fontName: "OpenSans-SemiBold", fontSize: 11.0, fontColor:NSColor(named: "untrustBtnTitleColor") ?? NSColor.white, lineSpacing: 0)
 
 		// TODO: refactor the method, not to call press action
 		self.pauseButtonPressed(sender: self.pauseButton)
