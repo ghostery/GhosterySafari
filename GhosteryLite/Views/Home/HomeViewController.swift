@@ -26,14 +26,14 @@ class HomeViewController: NSViewController {
 	@IBOutlet weak var editSettingsBtn: NSButton!
 	@IBOutlet weak var trustedSitesText: NSTextField!
 	@IBOutlet weak var trustedSitesBtn: NSButton!
-	@IBOutlet weak var EnableExtensionsPromptView: NSBox!
-	@IBOutlet weak var enableGhosteryLitePromptText: NSTextField!
+	@IBOutlet weak var enableExtensionsBannerView: NSBox!
+	@IBOutlet weak var enableGhosteryLiteBannerText: NSTextField!
 	@IBOutlet weak var enableGhosteryLiteBtn: NSButton!
 	
 	/// Action taken when Enable button is clicked
 	/// - Parameter sender: The enable button
 	@IBAction func enableGhosteryLite(_ sender: NSButton) {
-		self.EnableExtensionsPromptView.isHidden = true
+		self.enableExtensionsBannerView.isHidden = true
 		HomeViewController.showSafariPreferencesForExtension()
 	}
 	
@@ -54,14 +54,14 @@ class HomeViewController: NSViewController {
 		super.viewDidLoad()
 		initComponents()
 		// Check for application first launch
-		if !Preferences.isFirstLaunch() {
+		if Preferences.isFirstLaunch() {
 			// Check that all safari extensions are currently enabled
 			Utils.areExtensionsEnabled { (extensionsEnabled, error) in
 				if let error = error as NSError? {
 					Utils.logger("Error \(error), \(error.userInfo)")
 				}
 				// Show / hide the enable extensions prompt
-				self.EnableExtensionsPromptView.isHidden = extensionsEnabled
+				self.enableExtensionsBannerView.isHidden = extensionsEnabled
 			}
 		}
 		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.editSettingsClicked(_:)), name: Constants.NavigateToSettingsNotificationName, object: Constants.SafariExtensionID)
@@ -89,7 +89,7 @@ class HomeViewController: NSViewController {
 		editSettingsText.attributedStringValue = editSettingsText.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Medium", fontSize: 16.0, fontColor: NSColor.panelTextColor(), lineSpacing: 12.0)
 		trustedSitesText.attributedStringValue = trustedSitesText.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Medium", fontSize: 16.0, fontColor: NSColor.panelTextColor(), lineSpacing: 12.0)
 		
-		let textColor = NSColor(named: "homeBtnTextColor") ?? NSColor.black		
+		let textColor = NSColor(named: "homeBtnTextColor") ?? NSColor.black
 		editSettingsBtn.attributedTitle = editSettingsBtn.title.attributedString(withTextAlignment: .center, fontName: "RobotoCondensed-Bold", fontSize: 14.0, fontColor: textColor)
 		trustedSitesBtn.attributedTitle = trustedSitesBtn.title.attributedString(withTextAlignment: .center, fontName: "RobotoCondensed-Bold", fontSize: 14.0, fontColor: textColor)
 		enableGhosteryLiteBtn.attributedTitle = enableGhosteryLiteBtn.title.attributedString(withTextAlignment: .center, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(rgb: 0x4a4a4a))

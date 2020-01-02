@@ -765,7 +765,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <box boxType="custom" borderType="none" translatesAutoresizingMaskIntoConstraints="NO" id="tKh-LQ-WJY" userLabel="Enable Ghostery Banner">
+                            <box hidden="YES" boxType="custom" borderType="none" translatesAutoresizingMaskIntoConstraints="NO" id="tKh-LQ-WJY" userLabel="Enable Extensions Banner">
                                 <rect key="frame" x="0.0" y="536" width="626" height="40"/>
                                 <view key="contentView" id="0ss-bE-TGG">
                                     <rect key="frame" x="0.0" y="0.0" width="626" height="40"/>
@@ -941,11 +941,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="EnableExtensionsPromptView" destination="tKh-LQ-WJY" id="COB-s5-o5A"/>
                         <outlet property="editSettingsBtn" destination="Auf-25-vuC" id="sgw-20-yty"/>
                         <outlet property="editSettingsText" destination="aFr-mY-22K" id="en3-kO-nxV"/>
+                        <outlet property="enableExtensionsBannerView" destination="tKh-LQ-WJY" id="3AH-tx-8hs"/>
+                        <outlet property="enableGhosteryLiteBannerText" destination="eaA-8t-yl9" id="beB-lL-DfZ"/>
                         <outlet property="enableGhosteryLiteBtn" destination="hDO-qs-AJP" id="iEx-8n-DjF"/>
-                        <outlet property="enableGhosteryLitePromptText" destination="eaA-8t-yl9" id="GFa-8x-ZWe"/>
                         <outlet property="subtitleText" destination="WF8-1w-fw2" id="wPe-83-a9m"/>
                         <outlet property="titleText" destination="nNK-J5-s6c" id="pBQ-Bv-smw"/>
                         <outlet property="trustedSitesBtn" destination="PAN-CY-Rm1" id="Mcr-b8-17p"/>
