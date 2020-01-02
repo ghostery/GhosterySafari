@@ -29,11 +29,6 @@ extension NSColor {
 	
 	/// Returns the panelText color
 	class func panelTextColor() -> NSColor {
-		if #available(OSX 10.13, *) {
-			return NSColor(named: "panelText") ?? NSColor.white
-		} else {
-			// OSX 10.12
-			return NSColor(rgb: 0x4a4a4a)
-		}
+		return NSColor(named: "panelText") ?? NSColor.white
 	}
 }
