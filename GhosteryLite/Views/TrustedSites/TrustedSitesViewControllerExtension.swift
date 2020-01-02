@@ -56,3 +56,11 @@ extension TrustedSitesViewController: TrustedSiteItemDelegate {
 		self.updateData()
 	}
 }
+
+extension TrustedSitesViewController: NSTextFieldDelegate {
+	/// Listen for changes to the Trusted Sites text field
+	/// - Parameter obj: The object that was changed
+	func controlTextDidChange(_ obj: Notification) {
+		self.updateTrustButtonState(self.trustedSiteTextField.stringValue != "")
+	}
+}

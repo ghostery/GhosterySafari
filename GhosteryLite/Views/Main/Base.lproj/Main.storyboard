@@ -982,10 +982,9 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LAu-bc-Mwd">
-                                <rect key="frame" x="182" y="416" width="240" height="28"/>
+                                <rect key="frame" x="182" y="416" width="274" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="9tU-Rm-lor"/>
-                                    <constraint firstAttribute="width" constant="240" id="Ng3-oi-Ij1"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="border" placeholderString="example.com" id="T3b-MI-Yog" customClass="TrustedSiteTextFieldCell" customModule="GhosteryLite">
                                     <font key="font" size="12" name="Roboto-Regular"/>
@@ -993,12 +992,12 @@
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.24705882352941178" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textFieldCell>
                                 <connections>
-                                    <action selector="performClick:" target="qwB-cC-fc2" id="tVA-wC-U43"/>
+                                    <action selector="performClick:" target="qwB-cC-fc2" id="sXS-U1-IQx"/>
                                     <outlet property="delegate" destination="LTy-Jl-Bl3" id="5fJ-cY-fIx"/>
                                 </connections>
                             </textField>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="qwB-cC-fc2">
-                                <rect key="frame" x="447" y="416" width="112" height="28"/>
+                                <rect key="frame" x="481" y="416" width="112" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="Y1B-D4-RfT"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="112" id="oO6-u7-LV4"/>
@@ -1008,14 +1007,11 @@
                                     <font key="font" size="12" name="Roboto-Medium"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="trustSiteButtonPressedWithSender:" target="LTy-Jl-Bl3" id="C2u-C2-tWT"/>
+                                    <action selector="trustSiteButtonPressedWithSender:" target="LTy-Jl-Bl3" id="6LR-VD-PRk"/>
                                 </connections>
                             </button>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4uz-3S-HSA">
-                                <rect key="frame" x="180" y="400" width="244" height="11"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="oNR-x3-bRV"/>
-                                </constraints>
+                                <rect key="frame" x="180" y="400" width="114" height="11"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please enter a valid URL." id="hp5-oU-rd6">
                                     <font key="font" size="10" name="Roboto-Regular"/>
                                     <color key="textColor" red="0.90588235294117647" green="0.25098039215686274" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
@@ -1073,8 +1069,8 @@
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="3q8-lj-Gd7" secondAttribute="trailing" constant="32" id="5yA-kB-6zf"/>
+                            <constraint firstAttribute="trailing" secondItem="qwB-cC-fc2" secondAttribute="trailing" constant="32" id="Aza-r4-FuU"/>
                             <constraint firstItem="swm-qe-0kG" firstAttribute="top" secondItem="3q8-lj-Gd7" secondAttribute="bottom" constant="19" id="J1f-g2-eHs"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qwB-cC-fc2" secondAttribute="trailing" constant="20" symbolic="YES" id="Leh-QT-lns"/>
                             <constraint firstItem="3q8-lj-Gd7" firstAttribute="top" secondItem="4uz-3S-HSA" secondAttribute="bottom" constant="10" id="NAq-HN-ExL"/>
                             <constraint firstItem="4uz-3S-HSA" firstAttribute="top" secondItem="LAu-bc-Mwd" secondAttribute="bottom" constant="5" id="Oek-7M-rDU"/>
                             <constraint firstItem="4fF-tz-VdL" firstAttribute="top" secondItem="QCj-UT-lns" secondAttribute="top" id="TIs-m2-sVu"/>

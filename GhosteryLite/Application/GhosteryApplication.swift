@@ -125,6 +125,7 @@ class GhosteryApplication {
 				self.loadCustomBlockList()
 			}
 			// Refresh Cliqz content blockers
+			// @TODO: We should ignore this on blocking configuration changes (custom vs default) and only refresh on resume, trust and restrict
 			self.updateAndReloadBlockList(fileNames: [Constants.CliqzCosmeticList], contentBlocker: Constants.ContentBlockerLists.cosmetic)
 			self.updateAndReloadBlockList(fileNames: [Constants.CliqzNetworkList], contentBlocker: Constants.ContentBlockerLists.network)
 		}

@@ -40,7 +40,7 @@ class TrustedSitesViewController: NSViewController {
 			self.updateData()
 		}
 		trustedSiteTextField.stringValue = ""
-		self.updateTrustButonState(false)
+		self.updateTrustButtonState(false)
 	}
 	
 	/// Called after the view controller’s view has been loaded into memory.
@@ -72,7 +72,7 @@ class TrustedSitesViewController: NSViewController {
 	
 	/// Update the state of the Trust Site button
 	/// - Parameter isEnabled: Is the button enabled
-	private func updateTrustButonState(_ isEnabled: Bool) {
+	func updateTrustButtonState(_ isEnabled: Bool) {
 		trustSiteBtn.isEnabled = isEnabled
 		trustSiteBtn.state = NSControl.StateValue(rawValue: isEnabled ? 1 : 0)
 	}
@@ -86,7 +86,6 @@ class TrustedSitesViewController: NSViewController {
 		errorMessageLabel.font = NSFont(name: "Roboto-Regular", size: 10)
 		trustSiteBtn.attributedAlternateTitle = trustSiteBtn.title.attributedString(withTextAlignment: .center, fontName: "Roboto-Medium", fontSize: 12.0, fontColor: NSColor.white)
 	}
-	
 	
 	/// Checks that the trusted site domain is a valid URL format
 	/// - Parameter url: The url to check
