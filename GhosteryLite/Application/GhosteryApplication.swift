@@ -124,6 +124,9 @@ class GhosteryApplication {
 			} else {
 				self.loadCustomBlockList()
 			}
+			// Refresh Cliqz content blockers
+			self.updateAndReloadBlockList(fileNames: [Constants.CliqzCosmeticList], contentBlocker: Constants.ContentBlockerLists.cosmetic)
+			self.updateAndReloadBlockList(fileNames: [Constants.CliqzNetworkList], contentBlocker: Constants.ContentBlockerLists.network)
 		}
 	}
 	

@@ -19,8 +19,7 @@ import Foundation
 class BlockLists {
 	
 	static let shared = BlockLists()
-	private let cliqzNetworkListChecksum = "cliqzNetworkListChecksum"
-	private let cliqzCosmeticListChecksum = "cliqzCosmeticListChecksum"
+
 	private struct ghosteryVersionData: Decodable {
 		var safariContentBlockerVersion: Int
 	}
@@ -90,11 +89,11 @@ class BlockLists {
 						let networkChecksum = self.getCliqzChecksum(versionData.safari.network)
 						let cosmeticChecksum = self.getCliqzChecksum(versionData.safari.cosmetic)
 						
-						if self.isCliqzBlockListChecksumChanged(networkChecksum, self.cliqzNetworkListChecksum) {
+						if self.isCliqzBlockListChecksumChanged(networkChecksum, Constants.CliqzNetworkListChecksum) {
 							group.enter()
 							// Update the Cliqz network block list file
 							self.downloadAndSaveFile(Constants.CliqzNetworkList, versionData.safari.network, Constants.AssetsFolderURL) { () in
-								Preferences.setGlobalPreference(key: self.cliqzNetworkListChecksum, value: networkChecksum)
+								Preferences.setGlobalPreference(key: Constants.CliqzNetworkListChecksum, value: networkChecksum)
 								updated = true
 								group.leave()
 							}
@@ -102,11 +101,11 @@ class BlockLists {
 							Utils.logger("No Cliqz network filter list update available.")
 						}
 						
-						if self.isCliqzBlockListChecksumChanged(cosmeticChecksum, self.cliqzCosmeticListChecksum) {
+						if self.isCliqzBlockListChecksumChanged(cosmeticChecksum, Constants.CliqzCosmeticListChecksum) {
 							group.enter()
 							// Update the Cliqz cosmetic block list file
 							self.downloadAndSaveFile(Constants.CliqzCosmeticList, versionData.safari.cosmetic, Constants.AssetsFolderURL) { () in
-								Preferences.setGlobalPreference(key: self.cliqzCosmeticListChecksum, value: cosmeticChecksum)
+								Preferences.setGlobalPreference(key: Constants.CliqzCosmeticListChecksum, value: cosmeticChecksum)
 								updated = true
 								group.leave()
 							}

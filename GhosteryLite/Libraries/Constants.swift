@@ -59,10 +59,12 @@ struct Constants {
 	
 	/// Block list json files
 	static let TrustedSitesList = "trusted_sites.json"
-	static let EmptyRulesList = "empty_rules.json"
+	static let EmptyRulesList = "empty_rules"
 	static let GhosteryBlockList = "safariContentBlocker"
 	static let CliqzCosmeticList = "cliqzCosmeticList"
+	static let CliqzCosmeticListChecksum = "cliqzCosmeticListChecksum"
 	static let CliqzNetworkList = "cliqzNetworkList"
+	static let CliqzNetworkListChecksum = "cliqzNetworkListChecksum"
 	
 	/// Block List CDN paths
 	#if PROD
