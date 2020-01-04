@@ -17,7 +17,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Ghostery Lite" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About GhosteryLite" id="5kV-Vb-QxS">
+                                        <menuItem title="About Ghostery Lite" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -59,7 +59,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit GhosteryLite" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit Ghostery Lite" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -152,7 +152,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="800" height="576"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <box boxType="custom" borderType="none" cornerRadius="4" title="Left Panel" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="5FX-lN-wZ1">
+                            <box boxType="custom" borderType="none" cornerRadius="4" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="5FX-lN-wZ1" userLabel="Left Panel">
                                 <rect key="frame" x="0.0" y="0.0" width="175" height="576"/>
                                 <view key="contentView" id="Bk4-Cx-roK">
                                     <rect key="frame" x="0.0" y="0.0" width="175" height="576"/>
@@ -212,7 +212,7 @@
                                 </constraints>
                                 <color key="fillColor" name="menuHeader"/>
                             </box>
-                            <box boxType="custom" borderType="none" cornerRadius="4" title="Right Panel" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="CWC-pw-01r">
+                            <box boxType="custom" borderType="none" cornerRadius="4" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="CWC-pw-01r" userLabel="Right Panel">
                                 <rect key="frame" x="175" y="0.0" width="625" height="576"/>
                                 <view key="contentView" id="WEN-01-hNr">
                                     <rect key="frame" x="0.0" y="0.0" width="625" height="576"/>
@@ -234,7 +234,7 @@
                                 </view>
                                 <color key="fillColor" name="panelBackground"/>
                             </box>
-                            <box hidden="YES" boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="NWW-Wy-iqe">
+                            <box hidden="YES" boxType="custom" borderType="none" cornerRadius="4" translatesAutoresizingMaskIntoConstraints="NO" id="NWW-Wy-iqe" userLabel="Overlay View">
                                 <rect key="frame" x="0.0" y="0.0" width="800" height="576"/>
                                 <view key="contentView" id="0XP-OB-std">
                                     <rect key="frame" x="0.0" y="0.0" width="800" height="576"/>
@@ -311,7 +311,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <box boxType="custom" borderType="none" cornerRadius="4" title="Top Line" translatesAutoresizingMaskIntoConstraints="NO" id="qEK-TC-RNc">
+                            <box boxType="custom" borderType="none" cornerRadius="4" translatesAutoresizingMaskIntoConstraints="NO" id="qEK-TC-RNc" userLabel="Top Line">
                                 <rect key="frame" x="32" y="417" width="561" height="1"/>
                                 <view key="contentView" id="Wq1-wg-lHP">
                                     <rect key="frame" x="0.0" y="0.0" width="561" height="1"/>
@@ -337,7 +337,7 @@
                                     <action selector="defaultSelected:" target="XfG-lQ-9wD" id="3SM-Lr-m92"/>
                                 </connections>
                             </button>
-                            <box boxType="custom" borderType="none" cornerRadius="4" title="Bottom Line" translatesAutoresizingMaskIntoConstraints="NO" id="m17-jn-QNs">
+                            <box boxType="custom" borderType="none" cornerRadius="4" translatesAutoresizingMaskIntoConstraints="NO" id="m17-jn-QNs" userLabel="Bottom Line">
                                 <rect key="frame" x="32" y="275" width="561" height="1"/>
                                 <view key="contentView" id="pG2-QZ-QeY">
                                     <rect key="frame" x="0.0" y="0.0" width="561" height="1"/>
@@ -376,7 +376,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <box hidden="YES" boxType="custom" title="Category Box" translatesAutoresizingMaskIntoConstraints="NO" id="4dn-Gg-Wy3">
+                            <box hidden="YES" boxType="custom" translatesAutoresizingMaskIntoConstraints="NO" id="4dn-Gg-Wy3" userLabel="Category Box">
                                 <rect key="frame" x="0.0" y="0.0" width="625" height="155"/>
                                 <view key="contentView" id="2Ea-UR-Jyh">
                                     <rect key="frame" x="1" y="1" width="623" height="153"/>
@@ -1018,7 +1018,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <box boxType="custom" borderType="none" cornerRadius="4" title="Divider" translatesAutoresizingMaskIntoConstraints="NO" id="3q8-lj-Gd7">
+                            <box boxType="custom" borderType="none" cornerRadius="4" translatesAutoresizingMaskIntoConstraints="NO" id="3q8-lj-Gd7" userLabel="Divider">
                                 <rect key="frame" x="32" y="389" width="561" height="1"/>
                                 <view key="contentView" id="McC-du-hao">
                                     <rect key="frame" x="0.0" y="0.0" width="561" height="1"/>
@@ -1125,7 +1125,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <box boxType="custom" borderType="none" cornerRadius="4" title="Divider" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-3n-ed0">
+                            <box boxType="custom" borderType="none" cornerRadius="4" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-3n-ed0" userLabel="Divider">
                                 <rect key="frame" x="32" y="413" width="561" height="1"/>
                                 <view key="contentView" id="b3C-0y-Cve">
                                     <rect key="frame" x="0.0" y="0.0" width="561" height="1"/>
@@ -1222,7 +1222,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="415" height="386"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <box boxType="custom" borderType="line" borderWidth="3" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Dba-jd-8JT">
+                            <box boxType="custom" borderType="line" borderWidth="3" cornerRadius="4" translatesAutoresizingMaskIntoConstraints="NO" id="Dba-jd-8JT" userLabel="Modal Box">
                                 <rect key="frame" x="0.0" y="0.0" width="415" height="386"/>
                                 <view key="contentView" id="TgT-6w-5h8">
                                     <rect key="frame" x="3" y="3" width="409" height="380"/>
@@ -1232,13 +1232,13 @@
                                             <rect key="frame" x="176" y="272" width="57" height="63"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-ghostery" id="4cN-lD-chj"/>
                                         </imageView>
-                                        <box boxType="custom" borderType="none" cornerRadius="4" title="Bottom Box" translatesAutoresizingMaskIntoConstraints="NO" id="RAj-YN-Sdm">
+                                        <box boxType="custom" borderType="none" cornerRadius="4" translatesAutoresizingMaskIntoConstraints="NO" id="RAj-YN-Sdm" userLabel="Bottom Box">
                                             <rect key="frame" x="5" y="5" width="399" height="88"/>
                                             <view key="contentView" id="JGU-PU-YIR">
                                                 <rect key="frame" x="0.0" y="0.0" width="399" height="88"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <box boxType="custom" borderType="none" cornerRadius="4" title="Enable Button" translatesAutoresizingMaskIntoConstraints="NO" id="VFy-d1-dX0">
+                                                    <box boxType="custom" borderType="none" cornerRadius="4" translatesAutoresizingMaskIntoConstraints="NO" id="VFy-d1-dX0" userLabel="Enable Button Box">
                                                         <rect key="frame" x="12" y="35" width="375" height="38"/>
                                                         <view key="contentView" id="gNO-Jh-gLg">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
