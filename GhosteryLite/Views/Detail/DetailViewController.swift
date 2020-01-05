@@ -45,7 +45,7 @@ class DetailViewController: NSViewController {
 			let identifier = storyboardId
 			if let viewController = storyboard.instantiateController(withIdentifier: identifier) as? NSViewController {
 				viewControllers[storyboardId] = viewController
-				
+				// Set HomeViewController delegate to DetailViewControllerDelegate
 				if let homeViewController = viewController as? HomeViewController {
 					homeViewController.delegate = self.delegate
 				}

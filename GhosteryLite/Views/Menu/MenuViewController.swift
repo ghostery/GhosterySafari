@@ -16,7 +16,7 @@ import Cocoa
 
 class MenuViewController: NSViewController {
 	
-	var delegate: MenuViewControllerDelegate? = nil
+	var delegate: MenuViewControllerDelegate?
 	let items: [MenuItem] = [.home, .settings, .trustedSites, .help]
 	
 	@IBOutlet weak var collectionView: NSCollectionView!

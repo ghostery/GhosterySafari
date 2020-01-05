@@ -13,5 +13,6 @@
 // 
 
 protocol ModalViewControllerDelegate {
-	func hideSafariExtensionPopOver()
+	/// Hide the Enable Ghostery Lite overlay modal
+	func hideEnableGhosteryLiteModal()
 }

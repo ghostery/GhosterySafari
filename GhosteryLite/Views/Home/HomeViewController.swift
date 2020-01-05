@@ -16,10 +16,9 @@ import Cocoa
 import SafariServices
 
 class HomeViewController: NSViewController {
-	
-	/// Set delegate to DetailViewControllerDelegate
+
 	var delegate: DetailViewControllerDelegate?
-	
+
 	@IBOutlet weak var titleText: NSTextField!
 	@IBOutlet weak var subtitleText: NSTextField!
 	@IBOutlet weak var editSettingsText: NSTextField!
@@ -33,7 +32,7 @@ class HomeViewController: NSViewController {
 	/// Action taken when Enable button is clicked
 	/// - Parameter sender: The enable button
 	@IBAction func enableGhosteryLite(_ sender: NSButton) {
-		self.enableExtensionsBannerView.isHidden = true
+		self.hideEnableGhosteryLiteBanner()
 		HomeViewController.showSafariPreferencesForExtension()
 	}
 	
@@ -53,18 +52,18 @@ class HomeViewController: NSViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		initComponents()
-		// Check for application first launch
-		if Preferences.isFirstLaunch() {
-			// Check that all safari extensions are currently enabled
-			Utils.areExtensionsEnabled { (extensionsEnabled, error) in
-				if let error = error as NSError? {
-					Utils.logger("Error \(error), \(error.userInfo)")
-				}
-				// Show / hide the enable extensions prompt
-				self.enableExtensionsBannerView.isHidden = extensionsEnabled
+
+		// Check that all safari extensions are currently enabled
+		Utils.areExtensionsEnabled { (extensionsEnabled, error) in
+			if let error = error as NSError? {
+				Utils.logger("Error \(error), \(error.userInfo)")
 			}
+			// Show / hide the enable extensions prompt
+			self.enableExtensionsBannerView.isHidden = extensionsEnabled
 		}
+		
 		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.editSettingsClicked(_:)), name: Constants.NavigateToSettingsNotificationName, object: Constants.SafariExtensionID)
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.hideEnableGhosteryLiteBanner), name: Constants.EnableGhosteryLiteNotification, object: Constants.GhosteryLiteID)
 	}
 	
 	/// Called when the view controller’s view is fully transitioned onto the screen.
@@ -80,6 +79,12 @@ class HomeViewController: NSViewController {
 				Utils.logger("Error \(error), \(error.userInfo)")
 			}
 		})
+	}
+	
+	/// Notification handler used to hide the 'Enable Ghostery Lite' banner when the user clicks
+	/// the 'enable' button from the Modal View
+	@objc private func hideEnableGhosteryLiteBanner() {
+		self.enableExtensionsBannerView.isHidden = true
 	}
 	
 	/// Set formatting for view text and buttons

@@ -26,8 +26,10 @@ class MainViewController: NSViewController {
 	/// Called after the view controller’s view has been loaded into memory
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		// Show the Overlay Modal on first launch of the application
 		if Preferences.isFirstLaunch() {
-			overlayView.isHidden = false
+			self.overlayView.isHidden = false
 		}
 		
 		GhosteryApplication.shared.subscribeForNotifications()

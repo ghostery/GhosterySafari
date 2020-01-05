@@ -16,24 +16,26 @@ import Cocoa
 
 class ModalViewController: NSViewController {
 	
-	var delegate: ModalViewControllerDelegate? = nil
+	var delegate: ModalViewControllerDelegate?
 	
 	@IBOutlet weak var enableGhosteryLiteText: NSTextField!
 	@IBOutlet weak var enableGhosteryLiteBtn: NSButton!
 	@IBOutlet weak var skipButton: NSButton!
 	
-	/// Action taken when the Enable button is clicked
+	/// Action taken when the Enable button is clicked. Hides the modal and the 'Enable Ghostery Lite' banner
 	/// - Parameter sender: Enable button
 	@IBAction func enableGhosteryLite(_ sender: NSButton) {
-		self.delegate?.hideSafariExtensionPopOver()
-		// TODO: Needs to be refactored
+		self.delegate?.hideEnableGhosteryLiteModal()
+		// Hide the Enable Ghostery Lite Banner in HomeView
+		DistributedNotificationCenter.default().post(name: Constants.EnableGhosteryLiteNotification, object: Constants.GhosteryLiteID)
+		// TODO: Refactor to use delegate or observer
 		HomeViewController.showSafariPreferencesForExtension()
 	}
 	
-	/// Action taken when the skip button is pressed
+	/// Action taken when the skip button is pressed. Leaves the 'Enable Ghostery Lite' banner as visible
 	/// - Parameter sender: The skip button
 	@IBAction func skip(_ sender: NSButton) {
-		self.delegate?.hideSafariExtensionPopOver()
+		self.delegate?.hideEnableGhosteryLiteModal()
 	}
 	
 	/// Called after the view controller’s view has been loaded into memory

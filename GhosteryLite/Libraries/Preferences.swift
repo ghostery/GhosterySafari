@@ -21,7 +21,9 @@ class Preferences: NSObject {
 		return Preferences.getGlobalPreference(key: Constants.installDateKey) == nil
 	}
 	
-	/// Use this to check if the application is launching for the first time. Different from isNewInstall() because here we wait until the entire application has finished launching.
+	/// Use this to check if the application is launching for the first time. Different from isNewInstall() because
+	/// here we wait until the entire application has finished launching. Preference `firstLaunchKey` is set
+	/// once the user clicks out of the initial Enable Ghostery Lite modal (`hideEnableGhosteryLiteModal()`)
 	class func isFirstLaunch() -> Bool {
 		return !Preferences.getAppPreferenceBool(key: Constants.firstLaunchKey)
 	}

@@ -95,4 +95,5 @@ struct Constants {
 	static let TrustDomainNotificationName = Notification.Name(rawValue: "TrustDomain")
 	static let UntrustDomainNotificationName = Notification.Name(rawValue: "UntrustDomain")
 	static let NavigateToSettingsNotificationName = Notification.Name(rawValue: "NavigateToSettings")
+	static let EnableGhosteryLiteNotification = Notification.Name(rawValue: "EnableGhosteryLiteClicked")
 }

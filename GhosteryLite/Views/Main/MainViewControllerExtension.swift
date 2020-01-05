@@ -29,8 +29,9 @@ extension MainViewController: DetailViewControllerDelegate {
 }
 
 extension MainViewController: ModalViewControllerDelegate {
-	func hideSafariExtensionPopOver() {
-		overlayView.isHidden = true
+	/// Hide the Enable Ghostery Lite overlay modal
+	func hideEnableGhosteryLiteModal() {
+		self.overlayView.isHidden = true
 		// Set the application first launch flag to true
 		Preferences.setAppPreference(key: Constants.firstLaunchKey, value: true)
 	}
