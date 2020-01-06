@@ -87,6 +87,7 @@ class SettingsViewController: NSViewController {
 	/// Called after the view controller’s view has been loaded into memory.
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		self.setupComponents()
 		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateRadioBoxesState), name: Constants.SwitchToDefaultNotificationName, object: Constants.SafariExtensionID)
 		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.updateRadioBoxesState), name: Constants.SwitchToCustomNotificationName, object: Constants.SafariExtensionID)
 	}
@@ -94,8 +95,8 @@ class SettingsViewController: NSViewController {
 	/// Called after the view controller’s view has been loaded into memory is about to be added to the view hierarchy in the window.
 	override func viewWillAppear() {
 		super.viewWillAppear()
-		setupComponents()
-		updateCategoryCheckboxStates()
+		self.updateRadioBoxesState()
+		self.updateCategoryCheckboxStates()
 	}
 	
 	deinit {
@@ -105,7 +106,6 @@ class SettingsViewController: NSViewController {
 	
 	/// Setup font and paragraph styling
 	private func setupComponents() {
-		self.updateRadioBoxesState()
 		let settingsTitle = self.topTextLabel.stringValue
 		self.topTextLabel.attributedStringValue = settingsTitle.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 3)
 		

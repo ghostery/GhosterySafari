@@ -50,12 +50,12 @@ class GhosteryApplication {
 		return self.paused
 	}
 	
-	/// Notification handler from a pause action
+	/// Notification handler for a pause action from the Safari Extension
 	@objc func pauseNotification() {
 		self.paused = true
 	}
 	
-	/// Notification handler for a resume action
+	/// Notification handler for a resume action from the Safari Extension
 	@objc func resumeNotification() {
 		self.paused = false
 	}
@@ -113,8 +113,8 @@ class GhosteryApplication {
 		})
 	}
 	
-	/// Reload all active content blockers. Checks if the user is using the default or custom block list config and triggers updateAndReloadBlockList(), which generates
-	/// the new block list as needed.
+	/// Reload all active content blockers. Checks if the user is using the default or custom block list config
+	/// and triggers updateAndReloadBlockList(), which generates the new block list as needed.
 	func reloadContentBlockers() {
 		if self.isPaused() {
 			self.loadDummyBlockList()
