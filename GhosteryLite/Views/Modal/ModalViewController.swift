@@ -28,8 +28,8 @@ class ModalViewController: NSViewController {
 		self.delegate?.hideEnableGhosteryLiteModal()
 		// Hide the Enable Ghostery Lite Banner in HomeView
 		DistributedNotificationCenter.default().post(name: Constants.EnableGhosteryLiteNotification, object: Constants.GhosteryLiteID)
-		// TODO: Refactor to use delegate or observer
-		HomeViewController.showSafariPreferencesForExtension()
+		// Show the Safari Preferences window
+		DistributedNotificationCenter.default().post(name: Constants.ShowSafariPreferencesNotification, object: Constants.GhosteryLiteID)
 	}
 	
 	/// Action taken when the skip button is pressed. Leaves the 'Enable Ghostery Lite' banner as visible

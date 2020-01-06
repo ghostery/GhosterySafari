@@ -33,7 +33,7 @@ class HomeViewController: NSViewController {
 	/// - Parameter sender: The enable button
 	@IBAction func enableGhosteryLite(_ sender: NSButton) {
 		self.hideEnableGhosteryLiteBanner()
-		HomeViewController.showSafariPreferencesForExtension()
+		self.showSafariPreferencesForExtension()
 	}
 	
 	/// Action taken when the Settings button  is clicked
@@ -64,6 +64,7 @@ class HomeViewController: NSViewController {
 		
 		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.editSettingsClicked(_:)), name: Constants.NavigateToSettingsNotificationName, object: Constants.SafariExtensionID)
 		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.hideEnableGhosteryLiteBanner), name: Constants.EnableGhosteryLiteNotification, object: Constants.GhosteryLiteID)
+		DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.showSafariPreferencesForExtension), name: Constants.ShowSafariPreferencesNotification, object: Constants.GhosteryLiteID)
 	}
 	
 	/// Called when the view controller’s view is fully transitioned onto the screen.
@@ -72,8 +73,9 @@ class HomeViewController: NSViewController {
 		Telemetry.shared.sendSignal(.engaged, source: TelemetryService.PingSource.ghosteryLiteApplication)
 	}
 	
-	/// Launches Safari and opens the preferences panel for a Safari app extension.
-	class func showSafariPreferencesForExtension() {
+	/// Launches Safari and opens the preferences panel for a Safari app extension. Notification handler for when the
+	/// user clicks 'Enable Ghostery Lite'
+	@objc private func showSafariPreferencesForExtension() {
 		SFSafariApplication.showPreferencesForExtension(withIdentifier: Constants.SafariExtensionID, completionHandler: { (error) in
 			if let error = error as NSError? {
 				Utils.logger("Error \(error), \(error.userInfo)")
