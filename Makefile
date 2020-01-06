@@ -46,4 +46,8 @@ restore:
 	@echo "Restore default block list files..."
 	git checkout -- ${DB_DIR}
 
+incrementBuildNumber:
+	@echo "Bumping project build number..."
+	xcrun agvtool next-version
+
 .PHONY: clean

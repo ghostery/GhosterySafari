@@ -136,7 +136,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "# Fetch Ghostery Lite DBs&#10;make --directory ${PROJECT_DIR} bugs&#10;"
+               scriptText = "# Fetch Ghostery Lite DBs&#10;make --directory ${PROJECT_DIR} bugs&#10;&#10;# Bump the build number&#10;make --directory ${PROJECT_DIR} incrementBuildNumber&#10;"
                shellToInvoke = "/bin/zsh">
                <EnvironmentBuildable>
                   <BuildableReference
