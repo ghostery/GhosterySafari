@@ -1424,7 +1424,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlockerCosmetic/SupportingFiles/ContentBlockerCosmetic.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlockerCosmetic/SupportingFiles/Info.plist;
@@ -1449,7 +1449,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlockerCosmetic/SupportingFiles/ContentBlockerCosmetic.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlockerCosmetic/SupportingFiles/Info.plist;
@@ -1473,7 +1473,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlockerCosmetic/SupportingFiles/ContentBlockerCosmetic.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlockerCosmetic/SupportingFiles/Info.plist;
@@ -1497,7 +1497,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlockerNetwork/SupportingFiles/ContentBlockerNetwork.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlockerNetwork/SupportingFiles/Info.plist;
@@ -1522,7 +1522,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlockerNetwork/SupportingFiles/ContentBlockerNetwork.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlockerNetwork/SupportingFiles/Info.plist;
@@ -1546,7 +1546,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlockerNetwork/SupportingFiles/ContentBlockerNetwork.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlockerNetwork/SupportingFiles/Info.plist;
@@ -1688,7 +1688,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = GhosteryLite/SupportingFiles/Info.plist;
@@ -1714,7 +1714,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = GhosteryLite/SupportingFiles/Info.plist;
@@ -1737,7 +1737,7 @@
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SupportingFiles/SafariExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = SafariExtension/SupportingFiles/Info.plist;
@@ -1762,7 +1762,7 @@
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SupportingFiles/SafariExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = SafariExtension/SupportingFiles/Info.plist;
@@ -1787,7 +1787,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/SupportingFiles/ContentBlocker.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlocker/SupportingFiles/Info.plist;
@@ -1811,7 +1811,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/SupportingFiles/ContentBlocker.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlocker/SupportingFiles/Info.plist;
@@ -1893,7 +1893,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = GhosteryLite/SupportingFiles/Info.plist;
@@ -1916,7 +1916,7 @@
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SupportingFiles/SafariExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = SafariExtension/SupportingFiles/Info.plist;
@@ -1941,7 +1941,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/SupportingFiles/ContentBlocker.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlocker/SupportingFiles/Info.plist;
