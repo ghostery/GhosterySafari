@@ -267,7 +267,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	private func showTrustedNotification() {
 		let bgColor = NSColor(red: 0.156, green: 0.804, blue: 0.439, alpha: 1)
 		let title = NSLocalizedString("whitelisted.message", comment: "Notification message after Trusting Site")
-		self.showNotificationView(bgColor, title: title, fontColor: NSColor.white, image: "closeButtonWhite")
+		self.showNotificationView(bgColor, title: title, fontColor: NSColor.white, image: "button_close_white")
 	}
 	
 	/// Show site untrusted notification message
@@ -283,7 +283,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 	///   - title: Notification title
 	///   - fontColor: Font color
 	///   - image: Close button image
-	private func showNotificationView(_ backgroundColor: NSColor, title: String, fontColor: NSColor, image: String = "closeButton") {
+	private func showNotificationView(_ backgroundColor: NSColor, title: String, fontColor: NSColor, image: String = "button_close") {
 		self.notificationView.layer?.backgroundColor = backgroundColor.cgColor
 		let shadow =  NSShadow()
 		shadow.shadowBlurRadius = 4

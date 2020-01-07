@@ -39,13 +39,13 @@ class PageLatency {
 		let latency = self.latencyFor(url)
 		if let latencyVal = Double(latency) {
 			if latencyVal <= 5.0 {
-				return ("greenLatency", 14)
+				return ("latency_green", 14)
 			}
 			if latencyVal < 10 {
-				return ("yellowLatency", 74)
+				return ("latency_yellow", 74)
 			}
-			return ("redLatency", 134)
+			return ("latency_red", 134)
 		}
-		return ("noLatency", -100)
+		return ("latency_none", -100)
 	}
 }
