@@ -14,6 +14,7 @@
 		0D02796D23638895007D5F66 /* MenuItemCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D02796C23638895007D5F66 /* MenuItemCollectionViewItem.swift */; };
 		0D02796F23638C19007D5F66 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D02796E23638C19007D5F66 /* MenuViewController.swift */; };
 		0D027978236538A9007D5F66 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D027976236538A8007D5F66 /* Localizable.strings */; };
+		0D06245923C4FFFF0036414A /* PaddedNSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D06245823C4FFFF0036414A /* PaddedNSButton.swift */; };
 		0D182934238E27AA00E5EE42 /* GhosteryLite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0D182932238E27AA00E5EE42 /* GhosteryLite.xcdatamodeld */; };
 		0D182935238E27AA00E5EE42 /* GhosteryLite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0D182932238E27AA00E5EE42 /* GhosteryLite.xcdatamodeld */; };
 		0D182936238F7CC900E5EE42 /* GhosteryApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3049B3211C6D3200BA3961 /* GhosteryApplication.swift */; };
@@ -174,6 +175,7 @@
 		0D0279742365184E007D5F66 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		0D027977236538A8007D5F66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0D02797A2365409A007D5F66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SafariExtensionViewController.strings; sourceTree = "<group>"; };
+		0D06245823C4FFFF0036414A /* PaddedNSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedNSButton.swift; sourceTree = "<group>"; };
 		0D182933238E27AA00E5EE42 /* GhosteryLite.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GhosteryLite.xcdatamodel; sourceTree = "<group>"; };
 		0D1829382390213300E5EE42 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		0D2AA0BD2243DA0C0055B6B8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -548,6 +550,7 @@
 		0D02795E236342E4007D5F66 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				0D06245723C4FFEB0036414A /* Buttons */,
 				0D69E37B239F4A4A00DCBA1D /* Cells */,
 				0DDCFF7B23660DBD009481D4 /* Localizable.strings */,
 				0D3FBB332360B5320054822A /* Main.storyboard */,
@@ -618,6 +621,14 @@
 				4F3049B3211C6D3200BA3961 /* GhosteryApplication.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		0D06245723C4FFEB0036414A /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				0D06245823C4FFFF0036414A /* PaddedNSButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		0D3FBB06235F9F140054822A /* Resources */ = {
@@ -1121,6 +1132,7 @@
 				4FFD8351212C6C740038149F /* WindowController.swift in Sources */,
 				0DBA6549238319530011AAD3 /* TrustedSitesViewControllerExtension.swift in Sources */,
 				4F9CF8E1215BCD6A005B1C1B /* TelemetryService.swift in Sources */,
+				0D06245923C4FFFF0036414A /* PaddedNSButton.swift in Sources */,
 				0DBA6541238317BF0011AAD3 /* MenuViewControllerDelegate.swift in Sources */,
 				0D02796D23638895007D5F66 /* MenuItemCollectionViewItem.swift in Sources */,
 				0D1829392390213300E5EE42 /* Utils.swift in Sources */,

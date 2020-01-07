@@ -834,17 +834,22 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="Auf-25-vuC">
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="Auf-25-vuC" customClass="PaddedNSButton" customModule="GhosteryLite" customModuleProvider="target">
                                             <rect key="frame" x="113" y="29" width="150" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="LRX-WB-gVJ"/>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="f7J-fq-jXS"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="smallSquare" title="EDIT SETTINGS" bezelStyle="smallSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="rMH-QB-Bjg" customClass="CenteredNSButtonCell" customModule="GhosteryLite">
+                                            <buttonCell key="cell" type="smallSquare" title="EDIT SETTINGS" bezelStyle="smallSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="rMH-QB-Bjg" customClass="CenteredNSButtonCell" customModule="GhosteryLite">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="14" name="RobotoCondensed-Bold"/>
                                             </buttonCell>
                                             <color key="contentTintColor" name="homeBtnTextColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="horizontalPadding">
+                                                    <real key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="editSettingsClicked:" target="oCc-SD-ZvT" id="dvg-6s-UbT"/>
                                             </connections>
@@ -889,17 +894,22 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="PAN-CY-Rm1">
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="PAN-CY-Rm1" customClass="PaddedNSButton" customModule="GhosteryLite" customModuleProvider="target">
                                             <rect key="frame" x="106" y="29" width="150" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="6Ts-gu-aqP"/>
                                                 <constraint firstAttribute="height" constant="35" id="t1t-79-cSX"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="smallSquare" title="TRUSTED SITES" bezelStyle="smallSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="N8X-rV-l18" customClass="CenteredNSButtonCell" customModule="GhosteryLite">
+                                            <buttonCell key="cell" type="smallSquare" title="TRUSTED SITES" bezelStyle="smallSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="N8X-rV-l18" customClass="CenteredNSButtonCell" customModule="GhosteryLite">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="14" name="RobotoCondensed-Bold"/>
                                             </buttonCell>
                                             <color key="contentTintColor" name="homeBtnTextColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="horizontalPadding">
+                                                    <real key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="trustedSitesClicked:" target="oCc-SD-ZvT" id="7kN-h0-vxK"/>
                                             </connections>
@@ -996,16 +1006,21 @@
                                     <outlet property="delegate" destination="LTy-Jl-Bl3" id="5fJ-cY-fIx"/>
                                 </connections>
                             </textField>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="qwB-cC-fc2">
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="qwB-cC-fc2" customClass="PaddedNSButton" customModule="GhosteryLite" customModuleProvider="target">
                                 <rect key="frame" x="481" y="416" width="112" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="Y1B-D4-RfT"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="112" id="oO6-u7-LV4"/>
                                 </constraints>
-                                <buttonCell key="cell" type="smallSquare" title="TRUST SITE" bezelStyle="smallSquare" image="trust-site-btn-inactive" imagePosition="overlaps" alignment="center" alternateImage="trust-site-btn-active" enabled="NO" imageScaling="proportionallyDown" inset="2" id="C26-J2-vrI" customClass="CenteredNSButtonCell" customModule="GhosteryLite">
+                                <buttonCell key="cell" type="smallSquare" title="TRUST SITE" bezelStyle="smallSquare" image="trust-site-btn-inactive" imagePosition="overlaps" alignment="center" alternateImage="trust-site-btn-active" enabled="NO" imageScaling="axesIndependently" inset="2" id="C26-J2-vrI" customClass="CenteredNSButtonCell" customModule="GhosteryLite">
                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                     <font key="font" size="12" name="Roboto-Medium"/>
                                 </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="horizontalPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="trustSiteButtonPressedWithSender:" target="LTy-Jl-Bl3" id="6LR-VD-PRk"/>
                                 </connections>
@@ -1068,6 +1083,7 @@
                             </scrollView>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4uz-3S-HSA" secondAttribute="trailing" id="2JF-2W-0IY"/>
                             <constraint firstAttribute="trailing" secondItem="3q8-lj-Gd7" secondAttribute="trailing" constant="32" id="5yA-kB-6zf"/>
                             <constraint firstAttribute="trailing" secondItem="qwB-cC-fc2" secondAttribute="trailing" constant="32" id="Aza-r4-FuU"/>
                             <constraint firstItem="swm-qe-0kG" firstAttribute="top" secondItem="3q8-lj-Gd7" secondAttribute="bottom" constant="19" id="J1f-g2-eHs"/>
@@ -1081,7 +1097,6 @@
                             <constraint firstItem="swm-qe-0kG" firstAttribute="centerX" secondItem="hzg-6t-EUG" secondAttribute="centerX" id="j9d-sr-998"/>
                             <constraint firstItem="3q8-lj-Gd7" firstAttribute="leading" secondItem="hzg-6t-EUG" secondAttribute="leading" constant="32" id="lHP-Bq-JeR"/>
                             <constraint firstItem="LAu-bc-Mwd" firstAttribute="leading" secondItem="4fF-tz-VdL" secondAttribute="leading" id="qjD-fs-neQ"/>
-                            <constraint firstItem="qwB-cC-fc2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4uz-3S-HSA" secondAttribute="trailing" constant="8" symbolic="YES" id="r71-bG-SAn"/>
                             <constraint firstItem="qwB-cC-fc2" firstAttribute="leading" secondItem="LAu-bc-Mwd" secondAttribute="trailing" constant="25" id="rgm-uT-zu6"/>
                             <constraint firstItem="QCj-UT-lns" firstAttribute="leading" secondItem="hzg-6t-EUG" secondAttribute="leading" constant="48" id="vsS-M5-KED"/>
                             <constraint firstItem="qwB-cC-fc2" firstAttribute="centerY" secondItem="LAu-bc-Mwd" secondAttribute="centerY" id="z2K-Rf-3NP"/>
