@@ -74,8 +74,8 @@
 /* Class = "NSTextFieldCell"; title = "Welcome to Ghostery Lite!"; ObjectID = "Lxj-pw-A6c"; */
 "Lxj-pw-A6c.title" = "Welcome to Ghostery Lite!";
 
-/* Class = "NSButtonCell"; title = "Block: Essential"; ObjectID = "MXn-Zo-X8B"; */
-"MXn-Zo-X8B.title" = "Block: Essential";
+/* Class = "NSButtonCell"; title = "Essential"; ObjectID = "MXn-Zo-X8B"; */
+"MXn-Zo-X8B.title" = "Essential";
 
 /* Class = "NSButtonCell"; title = "Ghostery Blog"; ObjectID = "MdL-PO-b4U"; */
 "MdL-PO-b4U.title" = "Ghostery Blog";
@@ -89,8 +89,8 @@
 /* Class = "NSTextFieldCell"; title = "Thanks for installing Ghostery Lite. You are now protected with our default settings!"; ObjectID = "Nj1-99-0ia"; */
 "Nj1-99-0ia.title" = "Thanks for installing Ghostery Lite. You are now protected with our default settings!";
 
-/* Class = "NSButtonCell"; title = "Block: Adult Content"; ObjectID = "O3s-iH-PLS"; */
-"O3s-iH-PLS.title" = "Block: Adult Content";
+/* Class = "NSButtonCell"; title = "Adult Content"; ObjectID = "O3s-iH-PLS"; */
+"O3s-iH-PLS.title" = "Adult Content";
 
 /* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "OY7-WF-poV"; */
 "OY7-WF-poV.title" = "Minimize";
@@ -125,8 +125,8 @@
 /* Class = "NSTextFieldCell"; title = "Want to customize your tracker settings? Select the tracker categories you would like to block or unblock."; ObjectID = "Xyh-1f-Gqv"; */
 "Xyh-1f-Gqv.title" = "Want to customize your tracker settings? Select the tracker categories you would like to block or unblock.";
 
-/* Class = "NSButtonCell"; title = "Block: Site Analytics"; ObjectID = "aDg-VX-FLP"; */
-"aDg-VX-FLP.title" = "Block: Site Analytics";
+/* Class = "NSButtonCell"; title = "Site Analytics"; ObjectID = "aDg-VX-FLP"; */
+"aDg-VX-FLP.title" = "Site Analytics";
 
 /* Class = "NSMenuItem"; title = "Window"; ObjectID = "aUF-d1-5bR"; */
 "aUF-d1-5bR.title" = "Window";
@@ -134,11 +134,11 @@
 /* Class = "NSTextFieldCell"; title = "Want to allow trackers on a site? Add or remove sites from your 'Trusted' list."; ObjectID = "acO-0Z-yHY"; */
 "acO-0Z-yHY.title" = "Want to allow trackers on a site? Add or remove sites from your 'Trusted' list.";
 
-/* Class = "NSButtonCell"; title = "Block: Customer Interaction"; ObjectID = "bgP-eI-vT7"; */
-"bgP-eI-vT7.title" = "Block: Customer Interaction";
+/* Class = "NSButtonCell"; title = "Customer Interaction"; ObjectID = "bgP-eI-vT7"; */
+"bgP-eI-vT7.title" = "Customer Interaction";
 
-/* Class = "NSButtonCell"; title = "Block: Social Media"; ObjectID = "c0M-zC-Od5"; */
-"c0M-zC-Od5.title" = "Block: Social Media";
+/* Class = "NSButtonCell"; title = "Social Media"; ObjectID = "c0M-zC-Od5"; */
+"c0M-zC-Od5.title" = "Social Media";
 
 /* Class = "NSButtonCell"; title = "Ghostery FAQs"; ObjectID = "c4M-2c-co9"; */
 "c4M-2c-co9.title" = "Ghostery FAQs";
@@ -170,11 +170,11 @@
 /* Class = "NSMenuItem"; title = "Custom"; ObjectID = "mye-Gf-T1p"; */
 "mye-Gf-T1p.title" = "Custom";
 
-/* Class = "NSButtonCell"; title = "Block: Advertising"; ObjectID = "phd-zp-sTL"; */
-"phd-zp-sTL.title" = "Block: Advertising";
+/* Class = "NSButtonCell"; title = "Advertising"; ObjectID = "phd-zp-sTL"; */
+"phd-zp-sTL.title" = "Advertising";
 
-/* Class = "NSButtonCell"; title = "Block: Audio/Video Player"; ObjectID = "r8b-df-JUE"; */
-"r8b-df-JUE.title" = "Block: Audio/Video Player";
+/* Class = "NSButtonCell"; title = "Audio/Video Player"; ObjectID = "r8b-df-JUE"; */
+"r8b-df-JUE.title" = "Audio/Video Player";
 
 /* Class = "NSButtonCell"; title = "EDIT SETTINGS"; ObjectID = "rMH-QB-Bjg"; */
 "rMH-QB-Bjg.title" = "EDIT SETTINGS";
@@ -197,5 +197,5 @@
 /* Class = "NSButtonCell"; title = "ENABLE LITE"; ObjectID = "y0w-zA-czl"; */
 "y0w-zA-czl.title" = "ENABLE LITE";
 
-/* Class = "NSButtonCell"; title = "Block: Comments"; ObjectID = "ylv-lj-W0x"; */
-"ylv-lj-W0x.title" = "Block: Comments";
+/* Class = "NSButtonCell"; title = "Comments"; ObjectID = "ylv-lj-W0x"; */
+"ylv-lj-W0x.title" = "Comments";

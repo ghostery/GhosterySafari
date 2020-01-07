@@ -176,6 +176,7 @@
 		0D027977236538A8007D5F66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0D02797A2365409A007D5F66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SafariExtensionViewController.strings; sourceTree = "<group>"; };
 		0D06245823C4FFFF0036414A /* PaddedNSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedNSButton.swift; sourceTree = "<group>"; };
+		0D06245D23C507E50036414A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		0D182933238E27AA00E5EE42 /* GhosteryLite.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GhosteryLite.xcdatamodel; sourceTree = "<group>"; };
 		0D1829382390213300E5EE42 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		0D2AA0BD2243DA0C0055B6B8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -342,7 +343,6 @@
 		0DFD5593239AC5D8000493FC /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		0DFD5594239AC5D9000493FC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0DFD5595239AC5D9000493FC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0DFE584823C0E81C0068860B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		1E14B73C21369F5400E28C38 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		1E14B752213819A800E28C38 /* TrustedSitesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSitesViewController.swift; sourceTree = "<group>"; };
 		1E14B7562138217800E28C38 /* TrustedSiteItemCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSiteItemCollectionViewItem.swift; sourceTree = "<group>"; };
@@ -1296,7 +1296,7 @@
 				0D69E376239F42B000DCBA1D /* pt-BR */,
 				0D69E378239F42B200DCBA1D /* ru */,
 				0D69E37A239F42B500DCBA1D /* es */,
-				0DFE584823C0E81C0068860B /* en */,
+				0D06245D23C507E50036414A /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
