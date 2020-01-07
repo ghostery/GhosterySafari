@@ -766,33 +766,35 @@
                                 </textFieldCell>
                             </textField>
                             <box hidden="YES" boxType="custom" borderType="none" translatesAutoresizingMaskIntoConstraints="NO" id="tKh-LQ-WJY" userLabel="Enable Extensions Banner">
-                                <rect key="frame" x="0.0" y="536" width="626" height="40"/>
+                                <rect key="frame" x="0.0" y="536" width="625" height="40"/>
                                 <view key="contentView" id="0ss-bE-TGG">
-                                    <rect key="frame" x="0.0" y="0.0" width="626" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="625" height="40"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eaA-8t-yl9">
                                             <rect key="frame" x="13" y="13" width="461" height="15"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="456" id="iSh-eo-CwR"/>
-                                            </constraints>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please enable the Ghostery Lite extensions in your Safari preferences to begin." id="6N3-zF-kcF">
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Please enable the Ghostery Lite extensions in your Safari preferences to begin." id="6N3-zF-kcF">
                                                 <font key="font" size="13" name="Roboto-Medium"/>
-                                                <color key="textColor" name="panelText"/>
+                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="hDO-qs-AJP">
-                                            <rect key="frame" x="494" y="7" width="112" height="27"/>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="hDO-qs-AJP" customClass="PaddedNSButton" customModule="GhosteryLite" customModuleProvider="target">
+                                            <rect key="frame" x="498" y="7" width="112" height="27"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="27" id="3jo-GR-cft"/>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="xfL-Xz-hwa"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="square" title="ENABLE LITE" bezelStyle="shadowlessSquare" image="white-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="y0w-zA-czl">
+                                            <buttonCell key="cell" type="square" title="ENABLE LITE" bezelStyle="shadowlessSquare" image="white-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="y0w-zA-czl">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="14" name="Roboto-Regular"/>
                                             </buttonCell>
                                             <color key="contentTintColor" name="homeBtnTextColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="horizontalPadding">
+                                                    <real key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="enableGhosteryLite:" target="oCc-SD-ZvT" id="VLp-wR-TBE"/>
                                             </connections>
@@ -800,14 +802,14 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="hDO-qs-AJP" firstAttribute="centerY" secondItem="0ss-bE-TGG" secondAttribute="centerY" id="6mE-KS-L0L"/>
-                                        <constraint firstAttribute="trailing" secondItem="hDO-qs-AJP" secondAttribute="trailing" constant="20" id="PFY-UK-Gui"/>
+                                        <constraint firstAttribute="trailing" secondItem="hDO-qs-AJP" secondAttribute="trailing" constant="15" id="PFY-UK-Gui"/>
                                         <constraint firstItem="eaA-8t-yl9" firstAttribute="centerY" secondItem="0ss-bE-TGG" secondAttribute="centerY" id="Wtr-oM-BTF"/>
                                         <constraint firstItem="eaA-8t-yl9" firstAttribute="leading" secondItem="0ss-bE-TGG" secondAttribute="leading" constant="15" id="dVu-cR-3gf"/>
-                                        <constraint firstItem="hDO-qs-AJP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eaA-8t-yl9" secondAttribute="trailing" constant="8" symbolic="YES" id="rNV-N6-O3A"/>
-                                        <constraint firstItem="eaA-8t-yl9" firstAttribute="centerX" secondItem="0ss-bE-TGG" secondAttribute="centerX" constant="-69.5" id="xlX-z6-ESA"/>
+                                        <constraint firstItem="hDO-qs-AJP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eaA-8t-yl9" secondAttribute="trailing" constant="15" id="rNV-N6-O3A"/>
                                     </constraints>
                                 </view>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="625" id="0vM-M9-nEm"/>
                                     <constraint firstAttribute="height" constant="40" id="4Al-RY-0rZ"/>
                                 </constraints>
                                 <color key="fillColor" red="0.74509803919999995" green="0.28627450980000002" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
