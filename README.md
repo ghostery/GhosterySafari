@@ -53,6 +53,9 @@ $ tx push -s
 # Download translated files from Transifex
 $ tx pull -a
 ```
+#### Testing Localized Strings
+
+Under the Ghostery Lite "Run" configuration, look for "Arguments Passed on Launch" and enable the `-AppleLanguages` flag for the language you wish to test.   
 
 ## Compatibility
 
