@@ -167,7 +167,7 @@
                                                         <constraint firstAttribute="height" constant="35" id="O0P-yv-NlH"/>
                                                         <constraint firstAttribute="width" constant="31" id="S6d-sI-UkB"/>
                                                     </constraints>
-                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="lite-logo" id="1Tz-pp-SSp"/>
+                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="logo_ghostery_lite" id="1Tz-pp-SSp"/>
                                                 </imageView>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e2q-Aw-3KF">
                                                     <rect key="frame" x="85" y="18" width="33" height="29"/>
@@ -296,7 +296,7 @@
                                     <constraint firstAttribute="height" constant="107" id="MwU-Lt-SVR"/>
                                     <constraint firstAttribute="width" constant="120" id="WDw-KI-5dW"/>
                                 </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ghosty-settings" id="RXo-cj-6Cm"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_settings" id="RXo-cj-6Cm"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GzW-fZ-j1l">
                                 <rect key="frame" x="181" y="444" width="414" height="100"/>
@@ -395,7 +395,7 @@
                                         </button>
                                         <imageView toolTip="Provides advertising or advertising-related services such as data-collection, behavioral analysis, or re-targeting." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V3t-dF-QL4" userLabel="Ad Icon">
                                             <rect key="frame" x="189" y="134" width="11" height="13"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="5dA-2t-oQA"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_info_tooltip" id="5dA-2t-oQA"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="Qyy-sP-LtW">
                                             <rect key="frame" x="93" y="91" width="107" height="18"/>
@@ -409,7 +409,7 @@
                                         </button>
                                         <imageView toolTip="Collects and analyzes data related to site usage and performance." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="edo-Q1-18A" userLabel="Site Analytics Icon">
                                             <rect key="frame" x="203" y="101" width="11" height="13"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="vgk-Nj-DUk"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_info_tooltip" id="vgk-Nj-DUk"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="tfb-4f-8qe" userLabel="Customer Interaction Checkbox">
                                             <rect key="frame" x="93" y="58" width="153" height="18"/>
@@ -423,7 +423,7 @@
                                         </button>
                                         <imageView toolTip="Includes chat, email messaging, customer support, and other interaction tools." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VDK-om-yg2" userLabel="Customer Interaction Icon">
                                             <rect key="frame" x="249" y="68" width="11" height="13"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="giH-R0-xGw"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_info_tooltip" id="giH-R0-xGw"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="6Y1-oA-mwM">
                                             <rect key="frame" x="93" y="25" width="103" height="18"/>
@@ -437,7 +437,7 @@
                                         </button>
                                         <imageView toolTip="Integrates features related to social media sites." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tD7-PD-U11" userLabel="Social Media Icon">
                                             <rect key="frame" x="199" y="35" width="11" height="13"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="u1f-Pf-mi4"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_info_tooltip" id="u1f-Pf-mi4"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="cOs-rr-nNM">
                                             <rect key="frame" x="368" y="124" width="79" height="18"/>
@@ -451,7 +451,7 @@
                                         </button>
                                         <imageView toolTip="Includes tag managers, privacy notices, and technologies that are critical to the functionality of a website." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="caT-UF-u5T" userLabel="Essential Icon">
                                             <rect key="frame" x="450" y="134" width="11" height="13"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="8Wu-qV-53n"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_info_tooltip" id="8Wu-qV-53n"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="uoe-bI-z7M">
                                             <rect key="frame" x="368" y="91" width="142" height="18"/>
@@ -465,7 +465,7 @@
                                         </button>
                                         <imageView toolTip="Enables websites to publish, distribute, and optimize video and audio content." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cke-w1-Con" userLabel="Audio Video Icon">
                                             <rect key="frame" x="513" y="101" width="11" height="13"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="5UE-RA-Agv"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_info_tooltip" id="5UE-RA-Agv"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="jq0-cX-Poj">
                                             <rect key="frame" x="368" y="58" width="108" height="18"/>
@@ -479,7 +479,7 @@
                                         </button>
                                         <imageView toolTip="Delivers advertising technology designed specifically for adult content sites." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1rF-ap-Ve5" userLabel="Adult Icon">
                                             <rect key="frame" x="479" y="68" width="11" height="13"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="esl-tX-Gek"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_info_tooltip" id="esl-tX-Gek"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="NWS-6i-ZYt">
                                             <rect key="frame" x="368" y="25" width="91" height="18"/>
@@ -493,7 +493,7 @@
                                         </button>
                                         <imageView toolTip="Enables comments sections for articles and product reviews." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WNN-aY-BDO" userLabel="Comments Icon">
                                             <rect key="frame" x="462" y="35" width="11" height="13"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="info" id="cjQ-GI-0eE"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_info_tooltip" id="cjQ-GI-0eE"/>
                                         </imageView>
                                         <box hidden="YES" canDrawConcurrently="YES" borderType="none" titlePosition="noTitle" transparent="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PZ4-ye-KpA">
                                             <rect key="frame" x="495" y="-4" width="131" height="36"/>
@@ -515,7 +515,7 @@
                                                             <constraint firstAttribute="height" constant="15" id="9RT-Pc-PN6"/>
                                                             <constraint firstAttribute="width" constant="15" id="AK7-UD-5u1"/>
                                                         </constraints>
-                                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="savedIcon" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="7NX-Sl-dqM">
+                                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon_saved" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="7NX-Sl-dqM">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
@@ -740,7 +740,7 @@
                                     <constraint firstAttribute="height" constant="106" id="E99-Ry-Z9j"/>
                                     <constraint firstAttribute="width" constant="120" id="vrg-3N-clG"/>
                                 </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ghosty-home" id="bP0-tC-lQ8"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_home" id="bP0-tC-lQ8"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nNK-J5-s6c">
                                 <rect key="frame" x="181" y="509" width="284" height="35"/>
@@ -785,7 +785,7 @@
                                                 <constraint firstAttribute="height" constant="27" id="3jo-GR-cft"/>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="xfL-Xz-hwa"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="square" title="ENABLE LITE" bezelStyle="shadowlessSquare" image="white-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="y0w-zA-czl">
+                                            <buttonCell key="cell" type="square" title="ENABLE LITE" bezelStyle="shadowlessSquare" image="button_white_bg" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="y0w-zA-czl">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="14" name="Roboto-Regular"/>
                                             </buttonCell>
@@ -822,7 +822,7 @@
                                     <subviews>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x6R-h9-8FG">
                                             <rect key="frame" x="30" y="66" width="48" height="48"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="settings-icon" id="xIY-G3-Tbj"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_settings_menu" id="xIY-G3-Tbj"/>
                                         </imageView>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aFr-mY-22K">
                                             <rect key="frame" x="111" y="74" width="381" height="76"/>
@@ -842,7 +842,7 @@
                                                 <constraint firstAttribute="height" constant="35" id="LRX-WB-gVJ"/>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="f7J-fq-jXS"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="smallSquare" title="EDIT SETTINGS" bezelStyle="smallSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="rMH-QB-Bjg" customClass="CenteredNSButtonCell" customModule="GhosteryLite">
+                                            <buttonCell key="cell" type="smallSquare" title="EDIT SETTINGS" bezelStyle="smallSquare" image="button_purple_bg" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="rMH-QB-Bjg" customClass="CenteredNSButtonCell" customModule="GhosteryLite">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="14" name="RobotoCondensed-Bold"/>
                                             </buttonCell>
@@ -882,7 +882,7 @@
                                     <subviews>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sQb-r1-DJ3">
                                             <rect key="frame" x="30" y="62" width="46" height="57"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="trusted-site-icon" id="OiP-Jy-Wiy"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_trusted_sites_menu" id="OiP-Jy-Wiy"/>
                                         </imageView>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CIW-BN-MI7">
                                             <rect key="frame" x="104" y="74" width="373" height="76"/>
@@ -902,7 +902,7 @@
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="6Ts-gu-aqP"/>
                                                 <constraint firstAttribute="height" constant="35" id="t1t-79-cSX"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="smallSquare" title="TRUSTED SITES" bezelStyle="smallSquare" image="purple-btn-bg" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="N8X-rV-l18" customClass="CenteredNSButtonCell" customModule="GhosteryLite">
+                                            <buttonCell key="cell" type="smallSquare" title="TRUSTED SITES" bezelStyle="smallSquare" image="button_purple_bg" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="N8X-rV-l18" customClass="CenteredNSButtonCell" customModule="GhosteryLite">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="14" name="RobotoCondensed-Bold"/>
                                             </buttonCell>
@@ -978,7 +978,7 @@
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QCj-UT-lns">
                                 <rect key="frame" x="48" y="438" width="119" height="106"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ghosty-trustedSites" id="xrC-CN-LvJ"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_trusted_sites" id="xrC-CN-LvJ"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4fF-tz-VdL">
                                 <rect key="frame" x="180" y="464" width="364" height="80"/>
@@ -1014,7 +1014,7 @@
                                     <constraint firstAttribute="height" constant="28" id="Y1B-D4-RfT"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="112" id="oO6-u7-LV4"/>
                                 </constraints>
-                                <buttonCell key="cell" type="smallSquare" title="TRUST SITE" bezelStyle="smallSquare" image="trust-site-btn-inactive" imagePosition="overlaps" alignment="center" alternateImage="trust-site-btn-active" enabled="NO" imageScaling="axesIndependently" inset="2" id="C26-J2-vrI" customClass="CenteredNSButtonCell" customModule="GhosteryLite">
+                                <buttonCell key="cell" type="smallSquare" title="TRUST SITE" bezelStyle="smallSquare" image="button_add_site" imagePosition="overlaps" alignment="center" alternateImage="button_add_site_active" enabled="NO" imageScaling="axesIndependently" inset="2" id="C26-J2-vrI" customClass="CenteredNSButtonCell" customModule="GhosteryLite">
                                     <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                     <font key="font" size="12" name="Roboto-Medium"/>
                                 </buttonCell>
@@ -1127,7 +1127,7 @@
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Olq-2d-bAe">
                                 <rect key="frame" x="48" y="437" width="120" height="107"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ghosty-help" id="vvX-kQ-bSN"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_help" id="vvX-kQ-bSN"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="d01-sf-A44">
                                 <rect key="frame" x="181" y="444" width="414" height="100"/>
@@ -1247,7 +1247,7 @@
                                     <subviews>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pJz-QB-tX5">
                                             <rect key="frame" x="176" y="272" width="57" height="63"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-ghostery" id="4cN-lD-chj"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="logo_ghostery_modal" id="4cN-lD-chj"/>
                                         </imageView>
                                         <box boxType="custom" borderType="none" cornerRadius="4" translatesAutoresizingMaskIntoConstraints="NO" id="RAj-YN-Sdm" userLabel="Bottom Box">
                                             <rect key="frame" x="5" y="5" width="399" height="88"/>
@@ -1358,20 +1358,20 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ghosty-help" width="120" height="107"/>
-        <image name="ghosty-home" width="120" height="106"/>
-        <image name="ghosty-settings" width="119" height="106"/>
-        <image name="ghosty-trustedSites" width="119" height="106"/>
-        <image name="icon-ghostery" width="57" height="63"/>
-        <image name="info" width="11" height="13"/>
-        <image name="lite-logo" width="31" height="35"/>
-        <image name="purple-btn-bg" width="150" height="35"/>
-        <image name="savedIcon" width="15" height="15"/>
-        <image name="settings-icon" width="48" height="48"/>
-        <image name="trust-site-btn-active" width="112" height="28"/>
-        <image name="trust-site-btn-inactive" width="112" height="28"/>
-        <image name="trusted-site-icon" width="46" height="57"/>
-        <image name="white-btn-bg" width="112" height="28"/>
+        <image name="button_add_site" width="112" height="28"/>
+        <image name="button_add_site_active" width="112" height="28"/>
+        <image name="button_purple_bg" width="150" height="35"/>
+        <image name="button_white_bg" width="112" height="28"/>
+        <image name="icon_help" width="120" height="107"/>
+        <image name="icon_home" width="120" height="106"/>
+        <image name="icon_info_tooltip" width="11" height="13"/>
+        <image name="icon_saved" width="15" height="15"/>
+        <image name="icon_settings" width="119" height="106"/>
+        <image name="icon_settings_menu" width="48" height="48"/>
+        <image name="icon_trusted_sites" width="119" height="106"/>
+        <image name="icon_trusted_sites_menu" width="46" height="57"/>
+        <image name="logo_ghostery_lite" width="31" height="35"/>
+        <image name="logo_ghostery_modal" width="57" height="63"/>
         <namedColor name="homeBtnTextColor">
             <color red="0.57647058823529407" green="0.0039215686274509803" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -7,7 +7,7 @@
 + Remove CocoaPod dependencies to reduce build size
 + Migrate RealmSwift to CoreData
 + Migrate Alamofire to URLSession
-+ Updated support and FAQ urls in Help View
++ Updated Support and FAQ urls in Help View
 + Reorganized project structure
 + Updated Swift version
 + Bug fixes and improvements
