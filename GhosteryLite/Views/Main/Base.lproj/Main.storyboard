@@ -831,7 +831,7 @@
                                                 <constraint firstAttribute="width" constant="377" id="utq-Sj-Kwh"/>
                                             </constraints>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Want to customize your tracker settings? Select the tracker categories you would like to block or unblock." id="Xyh-1f-Gqv">
-                                                <font key="font" size="16" name="Roboto-Medium"/>
+                                                <font key="font" size="16" name="Roboto-Regular"/>
                                                 <color key="textColor" name="panelText"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -891,7 +891,7 @@
                                                 <constraint firstAttribute="width" constant="369" id="fMJ-2j-z7J"/>
                                             </constraints>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Want to allow trackers on a site? Add or remove sites from your 'Trusted' list." id="acO-0Z-yHY">
-                                                <font key="font" size="16" name="Roboto-Medium"/>
+                                                <font key="font" size="16" name="Roboto-Regular"/>
                                                 <color key="textColor" name="panelText"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>

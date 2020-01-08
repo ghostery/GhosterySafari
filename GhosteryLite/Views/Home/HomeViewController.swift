@@ -93,8 +93,8 @@ class HomeViewController: NSViewController {
 	private func initComponents() {
 		titleText.font = NSFont(name: "Roboto-Regular", size: 24)
 		subtitleText.attributedStringValue = subtitleText.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false)
-		editSettingsText.attributedStringValue = editSettingsText.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Medium", fontSize: 16.0, fontColor: NSColor.panelTextColor())
-		trustedSitesText.attributedStringValue = trustedSitesText.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Medium", fontSize: 16.0, fontColor: NSColor.panelTextColor())
+		editSettingsText.attributedStringValue = editSettingsText.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16.0, fontColor: NSColor.panelTextColor())
+		trustedSitesText.attributedStringValue = trustedSitesText.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16.0, fontColor: NSColor.panelTextColor())
 		
 		let textColor = NSColor(named: "homeBtnTextColor") ?? NSColor.black
 		editSettingsBtn.attributedTitle = editSettingsBtn.title.attributedString(withTextAlignment: .center, fontName: "RobotoCondensed-Bold", fontSize: 14.0, fontColor: textColor)

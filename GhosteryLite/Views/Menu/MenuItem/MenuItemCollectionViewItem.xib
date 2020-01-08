@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="175" height="128"/>
             <subviews>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7xO-K0-YGT">
-                    <rect key="frame" x="25" y="51" width="26" height="26"/>
+                    <rect key="frame" x="15" y="51" width="26" height="26"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="26" id="7J3-zL-0x3"/>
                         <constraint firstAttribute="height" constant="26" id="X0I-Zo-rwy"/>
@@ -25,10 +25,7 @@
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="ZVW-OI-f5r"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Jly-Mf-FrK">
-                    <rect key="frame" x="59" y="56" width="64" height="16"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="60" id="8Fs-aG-8UO"/>
-                    </constraints>
+                    <rect key="frame" x="44" y="56" width="79" height="16"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="P3p-V5-5qS">
                         <font key="font" size="14" name="RobotoCondensed-Bold"/>
                         <color key="textColor" red="0.66274509803921566" green="0.72549019607843135" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
@@ -46,11 +43,12 @@
             <constraints>
                 <constraint firstItem="7xO-K0-YGT" firstAttribute="centerY" secondItem="pN4-3q-kTx" secondAttribute="centerY" id="0qL-Jo-8s6"/>
                 <constraint firstItem="Jly-Mf-FrK" firstAttribute="centerY" secondItem="pN4-3q-kTx" secondAttribute="centerY" id="7dt-KP-EHo"/>
+                <constraint firstItem="D1k-2I-vqe" firstAttribute="leading" secondItem="Jly-Mf-FrK" secondAttribute="trailing" id="9in-yh-S7b"/>
                 <constraint firstAttribute="width" constant="175" id="AHG-BT-KJt"/>
                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="buE-3N-PZV"/>
-                <constraint firstItem="Jly-Mf-FrK" firstAttribute="leading" secondItem="7xO-K0-YGT" secondAttribute="trailing" constant="10" id="fiZ-eB-32j"/>
+                <constraint firstItem="Jly-Mf-FrK" firstAttribute="leading" secondItem="7xO-K0-YGT" secondAttribute="trailing" constant="5" id="fiZ-eB-32j"/>
                 <constraint firstAttribute="trailing" secondItem="D1k-2I-vqe" secondAttribute="trailing" id="iYI-sX-zft"/>
-                <constraint firstItem="7xO-K0-YGT" firstAttribute="leading" secondItem="pN4-3q-kTx" secondAttribute="leading" constant="25" id="lcf-We-5vZ"/>
+                <constraint firstItem="7xO-K0-YGT" firstAttribute="leading" secondItem="pN4-3q-kTx" secondAttribute="leading" constant="15" id="lcf-We-5vZ"/>
                 <constraint firstAttribute="bottom" secondItem="D1k-2I-vqe" secondAttribute="bottom" id="qga-C9-gUe"/>
                 <constraint firstItem="D1k-2I-vqe" firstAttribute="top" secondItem="pN4-3q-kTx" secondAttribute="top" id="sqW-aW-JfF"/>
             </constraints>
