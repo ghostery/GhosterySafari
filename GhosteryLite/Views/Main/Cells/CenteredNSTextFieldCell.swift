@@ -1,5 +1,5 @@
 //
-// TrustedSiteTextFieldCell
+// CenteredNSTextFieldCell
 // GhosteryLite
 //
 // Ghostery Lite for Safari
@@ -14,7 +14,7 @@
 
 import Cocoa
 
-class TrustedSiteTextFieldCell: NSTextFieldCell {
+class CenteredNSTextFieldCell: NSTextFieldCell {
 	/// Vertical center content in NSTextFieldCell
 	/// - Parameter rect: The bounding rectangle of the receiver
 	override func titleRect(forBounds rect: NSRect) -> NSRect {

@@ -81,7 +81,7 @@ class TrustedSitesViewController: NSViewController {
 	private func setupComponents() {
 		trustedStiesCollectionView.backgroundColors = [NSColor.clear]
 		trustedSiteTextField.backgroundColor = NSColor.clear
-		trustedSitesTitle.attributedStringValue = trustedSitesTitle.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 3)
+		trustedSitesTitle.attributedStringValue = trustedSitesTitle.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false)
 		trustSiteBtn.attributedTitle = trustSiteBtn.title.attributedString(withTextAlignment: .center, fontName: "Roboto-Medium", fontSize: 12.0, fontColor: NSColor(named: "trustBtnText") ?? NSColor.black)
 		errorMessageLabel.font = NSFont(name: "Roboto-Regular", size: 10)
 		trustSiteBtn.attributedAlternateTitle = trustSiteBtn.title.attributedString(withTextAlignment: .center, fontName: "Roboto-Medium", fontSize: 12.0, fontColor: NSColor.white)

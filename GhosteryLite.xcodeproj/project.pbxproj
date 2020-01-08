@@ -45,7 +45,7 @@
 		0D8D9B4423BA507F0005979D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D8D9B4323BA507F0005979D /* Colors.xcassets */; };
 		0D99D75C212EFC44005D107D /* page_performance.js in Resources */ = {isa = PBXBuildFile; fileRef = 0D99D75B212EFC44005D107D /* page_performance.js */; };
 		0DA61A9323A97BC30054A882 /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA61A9223A97BC30054A882 /* RealmObjects.swift */; };
-		0DB0C588239EF8F60027DA4B /* TrustedSiteTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0C587239EF8F60027DA4B /* TrustedSiteTextFieldCell.swift */; };
+		0DB0C588239EF8F60027DA4B /* CenteredNSTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0C587239EF8F60027DA4B /* CenteredNSTextFieldCell.swift */; };
 		0DBA653D238315FB0011AAD3 /* DetailViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA653C238315FB0011AAD3 /* DetailViewControllerDelegate.swift */; };
 		0DBA653F238316BA0011AAD3 /* MainViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA653E238316BA0011AAD3 /* MainViewControllerExtension.swift */; };
 		0DBA6541238317BF0011AAD3 /* MenuViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA6540238317BF0011AAD3 /* MenuViewControllerDelegate.swift */; };
@@ -213,7 +213,7 @@
 		0D8D9B4323BA507F0005979D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0D99D75B212EFC44005D107D /* page_performance.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = page_performance.js; sourceTree = "<group>"; };
 		0DA61A9223A97BC30054A882 /* RealmObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
-		0DB0C587239EF8F60027DA4B /* TrustedSiteTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSiteTextFieldCell.swift; sourceTree = "<group>"; };
+		0DB0C587239EF8F60027DA4B /* CenteredNSTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteredNSTextFieldCell.swift; sourceTree = "<group>"; };
 		0DBA653C238315FB0011AAD3 /* DetailViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerDelegate.swift; sourceTree = "<group>"; };
 		0DBA653E238316BA0011AAD3 /* MainViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerExtension.swift; sourceTree = "<group>"; };
 		0DBA6540238317BF0011AAD3 /* MenuViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -571,7 +571,6 @@
 		0D027960236342FE007D5F66 /* TrustedSites */ = {
 			isa = PBXGroup;
 			children = (
-				0DB0C589239EF9030027DA4B /* Cells */,
 				0D02796123634306007D5F66 /* TrustedSiteItem */,
 				1E14B752213819A800E28C38 /* TrustedSitesViewController.swift */,
 				0DBA6548238319530011AAD3 /* TrustedSitesViewControllerExtension.swift */,
@@ -658,6 +657,7 @@
 			isa = PBXGroup;
 			children = (
 				0D69E37C239F4A8200DCBA1D /* CenteredNSButtonCell.swift */,
+				0DB0C587239EF8F60027DA4B /* CenteredNSTextFieldCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -669,14 +669,6 @@
 				4F9CF8E0215BCD6A005B1C1B /* TelemetryService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		0DB0C589239EF9030027DA4B /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				0DB0C587239EF8F60027DA4B /* TrustedSiteTextFieldCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		0DD3BF8A236CD80600889C41 /* .tx */ = {
@@ -1138,7 +1130,7 @@
 				0D1829392390213300E5EE42 /* Utils.swift in Sources */,
 				0DBA6547238318A50011AAD3 /* TrustedSiteItemDelegate.swift in Sources */,
 				0DBA6543238317E70011AAD3 /* MenuViewControllerExtension.swift in Sources */,
-				0DB0C588239EF8F60027DA4B /* TrustedSiteTextFieldCell.swift in Sources */,
+				0DB0C588239EF8F60027DA4B /* CenteredNSTextFieldCell.swift in Sources */,
 				4F90DD81214BD75000E8BA6D /* WhiteList.swift in Sources */,
 				0DBA653D238315FB0011AAD3 /* DetailViewControllerDelegate.swift in Sources */,
 				0DBA65452383184D0011AAD3 /* ModalViewControllerDelegate.swift in Sources */,

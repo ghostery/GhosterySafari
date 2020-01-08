@@ -228,8 +228,8 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		
 		self.defaultConfigRadio.attributedTitle = defaultStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(named: "radioTextColor") ?? NSColor.white)
 		self.customConfigRadio.attributedTitle = customStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(named: "radioTextColor") ?? NSColor.white)
-		self.trustSiteButton?.attributedTitle = trustSiteTitle.attributedString(withTextAlignment: .center, fontName: "OpenSans-SemiBold", fontSize: 11.0, fontColor: NSColor(named: "trustBtnTitleColor") ?? NSColor.black, lineSpacing: 0)
-		self.trustSiteButton?.attributedAlternateTitle = siteTrustedTitle.attributedString(withTextAlignment: .center, fontName: "OpenSans-SemiBold", fontSize: 11.0, fontColor:NSColor(named: "untrustBtnTitleColor") ?? NSColor.white, lineSpacing: 0)
+		self.trustSiteButton?.attributedTitle = trustSiteTitle.attributedString(withTextAlignment: .center, fontName: "OpenSans-SemiBold", fontSize: 11.0, fontColor: NSColor(named: "trustBtnTitleColor") ?? NSColor.black)
+		self.trustSiteButton?.attributedAlternateTitle = siteTrustedTitle.attributedString(withTextAlignment: .center, fontName: "OpenSans-SemiBold", fontSize: 11.0, fontColor:NSColor(named: "untrustBtnTitleColor") ?? NSColor.white)
 		
 		self.liteLabel.font = NSFont(name: "BebasNeueBook", size: 18)
 		self.urlLabel.font = NSFont(name: "OpenSans-Regular", size: 11)

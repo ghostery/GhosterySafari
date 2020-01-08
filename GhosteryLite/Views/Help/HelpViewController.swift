@@ -52,7 +52,7 @@ class HelpViewController: NSViewController {
 	
 	/// Set formatting for view text and buttons
 	private func initComponents() {
-		self.helpText.attributedStringValue = self.helpText.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 3)
+		self.helpText.attributedStringValue = self.helpText.stringValue.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false)
 		supportBtn.attributedTitle = supportBtn.title.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(named: "linkColor") ?? NSColor.blue, isUnderline: true)
 		productsBtn.attributedTitle = productsBtn.title.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(named: "linkColor") ?? NSColor.blue, isUnderline: true)
 		blogBtn.attributedTitle = blogBtn.title.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 14.0, fontColor: NSColor(named: "linkColor") ?? NSColor.blue, isUnderline: true)

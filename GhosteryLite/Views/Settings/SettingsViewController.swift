@@ -107,7 +107,7 @@ class SettingsViewController: NSViewController {
 	/// Setup font and paragraph styling
 	private func setupComponents() {
 		let settingsTitle = self.topTextLabel.stringValue
-		self.topTextLabel.attributedStringValue = settingsTitle.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 3)
+		self.topTextLabel.attributedStringValue = settingsTitle.attributedString(withTextAlignment: .left, fontName: "Roboto-Regular", fontSize: 16, fontColor: NSColor.panelTextColor(), isUnderline: false, lineSpacing: 0, lineHeight: 20.0)
 		
 		self.defaultRadio.font = NSFont(name: "Roboto-Bold", size: 14)
 		self.customRadio.font = NSFont(name: "Roboto-Bold", size: 14)
@@ -163,8 +163,8 @@ class SettingsViewController: NSViewController {
 	private func setupTextField(textField: NSTextField, mainText: String, learnMoreText: String, urlString: String) {
 		let textColor: NSColor = NSColor.panelTextColor()
 		let textParagraph: NSMutableParagraphStyle = NSMutableParagraphStyle()
-		textParagraph.lineSpacing = 1
-		textParagraph.maximumLineHeight = 30.0
+		textParagraph.lineSpacing = 0
+		textParagraph.maximumLineHeight = 18.0
 		textParagraph.alignment = .left
 		let font = NSFont(name: "Roboto-Regular", size: 14) ?? NSFont.systemFont(ofSize: 14)
 		let attribs: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: textColor, NSAttributedString.Key.paragraphStyle: textParagraph]

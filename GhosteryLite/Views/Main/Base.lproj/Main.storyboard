@@ -299,12 +299,11 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_settings" id="RXo-cj-6Cm"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GzW-fZ-j1l">
-                                <rect key="frame" x="181" y="444" width="414" height="100"/>
+                                <rect key="frame" x="181" y="438" width="414" height="113"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="and-wP-lp0"/>
                                     <constraint firstAttribute="width" constant="410" id="nFT-zy-dSI"/>
                                 </constraints>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="Pl8-CX-f6l">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="Pl8-CX-f6l" customClass="CenteredNSTextFieldCell" customModule="GhosteryLite" customModuleProvider="target">
                                     <font key="font" size="16" name="Roboto-Regular"/>
                                     <string key="title">With Ghostery Lite's default settings you're protected and ready to browse. If you want to change your tracker-blocker settings, our custom settings allow you to block or unblock specific categories of trackers and ads.</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -364,9 +363,9 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i7J-qY-hF0">
-                                <rect key="frame" x="93" y="170" width="484" height="69"/>
+                                <rect key="frame" x="93" y="169" width="484" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="69" id="TMF-lr-9Hy"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="TMF-lr-9Hy"/>
                                     <constraint firstAttribute="width" constant="480" id="pec-pi-fgV"/>
                                 </constraints>
                                 <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" allowsEditingTextAttributes="YES" id="0KE-sx-Ohg">
@@ -377,7 +376,7 @@
                                 </textFieldCell>
                             </textField>
                             <box hidden="YES" boxType="custom" translatesAutoresizingMaskIntoConstraints="NO" id="4dn-Gg-Wy3" userLabel="Category Box">
-                                <rect key="frame" x="0.0" y="0.0" width="625" height="155"/>
+                                <rect key="frame" x="0.0" y="14" width="625" height="155"/>
                                 <view key="contentView" id="2Ea-UR-Jyh">
                                     <rect key="frame" x="1" y="1" width="623" height="153"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -598,7 +597,7 @@
                             <constraint firstItem="xMh-pp-Uek" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="32" id="47C-uD-xuZ"/>
                             <constraint firstItem="VW5-hv-OwS" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="95" id="4fb-Xy-31e"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="i7J-qY-hF0" secondAttribute="trailing" constant="20" symbolic="YES" id="517-Bh-wNL"/>
-                            <constraint firstItem="4dn-Gg-Wy3" firstAttribute="top" secondItem="i7J-qY-hF0" secondAttribute="bottom" constant="15" id="5FR-07-Yex"/>
+                            <constraint firstItem="4dn-Gg-Wy3" firstAttribute="top" secondItem="i7J-qY-hF0" secondAttribute="bottom" id="8V3-k8-KBd"/>
                             <constraint firstItem="VW5-hv-OwS" firstAttribute="top" secondItem="rKj-gW-VAB" secondAttribute="bottom" constant="8" id="9cK-4I-WYh"/>
                             <constraint firstItem="i7J-qY-hF0" firstAttribute="top" secondItem="LVb-pL-6ez" secondAttribute="bottom" constant="8" id="Cbj-sL-FTk"/>
                             <constraint firstAttribute="trailing" secondItem="qEK-TC-RNc" secondAttribute="trailing" constant="32" id="D6L-3g-HIm"/>
@@ -606,7 +605,7 @@
                             <constraint firstItem="rKj-gW-VAB" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="75" id="D7c-3F-JlX"/>
                             <constraint firstAttribute="trailing" secondItem="m17-jn-QNs" secondAttribute="trailing" constant="32" id="FbD-jt-jTd"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VW5-hv-OwS" secondAttribute="trailing" constant="20" symbolic="YES" id="IUR-2y-Mhf"/>
-                            <constraint firstItem="GzW-fZ-j1l" firstAttribute="top" secondItem="xMh-pp-Uek" secondAttribute="top" id="NGO-nm-c3W"/>
+                            <constraint firstItem="GzW-fZ-j1l" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="25" id="NGO-nm-c3W"/>
                             <constraint firstItem="qEK-TC-RNc" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="32" id="PSE-MU-aDh"/>
                             <constraint firstAttribute="trailing" secondItem="4dn-Gg-Wy3" secondAttribute="trailing" id="R4u-b5-DNd"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rKj-gW-VAB" secondAttribute="trailing" constant="20" symbolic="YES" id="TMo-hY-rrA"/>
@@ -617,6 +616,7 @@
                             <constraint firstItem="qEK-TC-RNc" firstAttribute="top" secondItem="xMh-pp-Uek" secondAttribute="bottom" constant="19" id="cc6-PO-N4k"/>
                             <constraint firstItem="4dn-Gg-Wy3" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="e7R-C6-N9D"/>
                             <constraint firstItem="m17-jn-QNs" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="32" id="hxm-98-0It"/>
+                            <constraint firstItem="qEK-TC-RNc" firstAttribute="top" secondItem="GzW-fZ-j1l" secondAttribute="bottom" constant="20" id="i9b-bR-JSs"/>
                             <constraint firstItem="GzW-fZ-j1l" firstAttribute="leading" secondItem="xMh-pp-Uek" secondAttribute="trailing" constant="15" id="iCo-WJ-Zgu"/>
                             <constraint firstItem="GzW-fZ-j1l" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="trailing" constant="20" symbolic="YES" id="iKA-3P-Wr7"/>
                             <constraint firstItem="LVb-pL-6ez" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="75" id="vYB-y7-HxQ"/>
@@ -754,10 +754,10 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WF8-1w-fw2">
-                                <rect key="frame" x="181" y="432" width="364" height="60"/>
+                                <rect key="frame" x="181" y="432" width="414" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="J7Y-rl-aXp"/>
-                                    <constraint firstAttribute="width" constant="360" id="x63-Yc-VJQ"/>
+                                    <constraint firstAttribute="width" constant="410" id="x63-Yc-VJQ"/>
                                 </constraints>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Thanks for installing Ghostery Lite. You are now protected with our default settings!" id="Nj1-99-0ia">
                                     <font key="font" size="16" name="Roboto-Regular"/>
@@ -981,12 +981,12 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_trusted_sites" id="xrC-CN-LvJ"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4fF-tz-VdL">
-                                <rect key="frame" x="180" y="464" width="364" height="80"/>
+                                <rect key="frame" x="180" y="464" width="414" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="360" id="7eo-Rs-sJS"/>
+                                    <constraint firstAttribute="width" constant="410" id="7eo-Rs-sJS"/>
                                     <constraint firstAttribute="height" constant="80" id="Ihq-pi-Nza"/>
                                 </constraints>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="uVO-Aq-Xil">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="uVO-Aq-Xil" customClass="CenteredNSTextFieldCell" customModule="GhosteryLite" customModuleProvider="target">
                                     <font key="font" size="16" name="Roboto-Regular"/>
                                     <string key="title">All the sites that you trust can be seen here. You can also add or remove additional sites from your list using the field below.</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -998,7 +998,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="9tU-Rm-lor"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="border" placeholderString="example.com" id="T3b-MI-Yog" customClass="TrustedSiteTextFieldCell" customModule="GhosteryLite">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="border" placeholderString="example.com" id="T3b-MI-Yog" customClass="CenteredNSTextFieldCell" customModule="GhosteryLite" customModuleProvider="target">
                                     <font key="font" size="12" name="Roboto-Regular"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.24705882352941178" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1135,7 +1135,7 @@
                                     <constraint firstAttribute="width" constant="410" id="hoF-nm-dB4"/>
                                     <constraint firstAttribute="height" constant="100" id="ztQ-Dz-c7I"/>
                                 </constraints>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="9tv-f8-fCZ">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="9tv-f8-fCZ" customClass="CenteredNSTextFieldCell" customModule="GhosteryLite" customModuleProvider="target">
                                     <font key="font" size="16" name="Roboto-Regular"/>
                                     <string key="title">If you have encountered an issue, would like to know more about Ghostery Lite and our other products or would like to get in touch, please follow the link below.</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1143,7 +1143,7 @@
                                 </textFieldCell>
                             </textField>
                             <box boxType="custom" borderType="none" cornerRadius="4" translatesAutoresizingMaskIntoConstraints="NO" id="ClR-3n-ed0" userLabel="Divider">
-                                <rect key="frame" x="32" y="413" width="561" height="1"/>
+                                <rect key="frame" x="32" y="423" width="561" height="1"/>
                                 <view key="contentView" id="b3C-0y-Cve">
                                     <rect key="frame" x="0.0" y="0.0" width="561" height="1"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1156,7 +1156,7 @@
                                 <color key="fillColor" name="linebreakColor"/>
                             </box>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="GGf-yh-WDN">
-                                <rect key="frame" x="48" y="372" width="113" height="16"/>
+                                <rect key="frame" x="48" y="382" width="113" height="16"/>
                                 <buttonCell key="cell" type="square" title="Ghostery Support" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="BgZ-xj-F2J">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="14" name="Roboto-Regular"/>
@@ -1166,7 +1166,7 @@
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="J30-pG-oZv">
-                                <rect key="frame" x="48" y="331" width="120" height="16"/>
+                                <rect key="frame" x="48" y="341" width="120" height="16"/>
                                 <buttonCell key="cell" type="square" title="Ghostery Products" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="IW3-BT-Kt8">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="14" name="Roboto-Regular"/>
@@ -1176,7 +1176,7 @@
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="Z2x-ej-mQ8">
-                                <rect key="frame" x="48" y="290" width="92" height="16"/>
+                                <rect key="frame" x="48" y="300" width="92" height="16"/>
                                 <buttonCell key="cell" type="square" title="Ghostery Blog" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="MdL-PO-b4U">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="14" name="Roboto-Regular"/>
@@ -1186,7 +1186,7 @@
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="D5B-eQ-LSy">
-                                <rect key="frame" x="48" y="249" width="96" height="16"/>
+                                <rect key="frame" x="48" y="259" width="96" height="16"/>
                                 <buttonCell key="cell" type="square" title="Ghostery FAQs" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="c4M-2c-co9">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="14" name="Roboto-Regular"/>
@@ -1213,7 +1213,7 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GGf-yh-WDN" secondAttribute="trailing" constant="20" symbolic="YES" id="hPS-gj-ae3"/>
                             <constraint firstItem="ClR-3n-ed0" firstAttribute="leading" secondItem="9uA-SM-6nW" secondAttribute="leading" constant="32" id="hkC-tT-pMc"/>
                             <constraint firstItem="D5B-eQ-LSy" firstAttribute="leading" secondItem="Olq-2d-bAe" secondAttribute="leading" id="rMz-8h-NBb"/>
-                            <constraint firstItem="ClR-3n-ed0" firstAttribute="top" secondItem="d01-sf-A44" secondAttribute="bottom" constant="30" id="umm-71-REr"/>
+                            <constraint firstItem="ClR-3n-ed0" firstAttribute="top" secondItem="d01-sf-A44" secondAttribute="bottom" constant="20" id="umm-71-REr"/>
                             <constraint firstItem="J30-pG-oZv" firstAttribute="leading" secondItem="Olq-2d-bAe" secondAttribute="leading" id="vda-sf-ptW"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Z2x-ej-mQ8" secondAttribute="trailing" constant="20" symbolic="YES" id="xbZ-XM-riA"/>
                             <constraint firstItem="Z2x-ej-mQ8" firstAttribute="top" secondItem="J30-pG-oZv" secondAttribute="bottom" constant="25" id="zM1-eh-ldP"/>
