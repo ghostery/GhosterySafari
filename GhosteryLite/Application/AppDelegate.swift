@@ -146,8 +146,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		let config = realm.objects(GlobalConfigObject.self)
 		for cfg in config {
 			if let val = cfg.configType.value {
-				// Update the blocking config
-				BlockingConfiguration.shared.updateConfigType(type: BlockingConfiguration.ConfigurationType(rawValue: val) ?? BlockingConfiguration.ConfigurationType.defaultBlocking)
+				// Update the blocking config. Note: We have to invert the blocking config value, because previously 0 = custom, 1 = default
+				BlockingConfiguration.shared.updateConfigType(type: BlockingConfiguration.ConfigurationType(rawValue: 1 - val) ?? BlockingConfiguration.ConfigurationType.defaultBlocking)
 			}
 			if cfg.blockedCategories.count > 0 {
 				var cats = Categories.allCategories()
