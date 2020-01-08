@@ -242,9 +242,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		self.notificationTitleLabel.font = NSFont(name: "OpenSans-SemiBold", size: 11)
 		self.notificationReloadButton.font = NSFont(name: "OpenSans-SemiBold", size: 11)
 
-		let paragraphStyle = NSMutableParagraphStyle()
-		paragraphStyle.firstLineHeadIndent = 5.0
-
 		// TODO: refactor the method, not to call press action
 		self.pauseButtonPressed(sender: self.pauseButton)
 	}

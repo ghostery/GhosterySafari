@@ -299,7 +299,7 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_settings" id="RXo-cj-6Cm"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GzW-fZ-j1l">
-                                <rect key="frame" x="181" y="438" width="414" height="113"/>
+                                <rect key="frame" x="181" y="433" width="414" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="410" id="nFT-zy-dSI"/>
                                 </constraints>
@@ -605,7 +605,7 @@
                             <constraint firstItem="rKj-gW-VAB" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="75" id="D7c-3F-JlX"/>
                             <constraint firstAttribute="trailing" secondItem="m17-jn-QNs" secondAttribute="trailing" constant="32" id="FbD-jt-jTd"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VW5-hv-OwS" secondAttribute="trailing" constant="20" symbolic="YES" id="IUR-2y-Mhf"/>
-                            <constraint firstItem="GzW-fZ-j1l" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="25" id="NGO-nm-c3W"/>
+                            <constraint firstItem="GzW-fZ-j1l" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="15" id="NGO-nm-c3W"/>
                             <constraint firstItem="qEK-TC-RNc" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="32" id="PSE-MU-aDh"/>
                             <constraint firstAttribute="trailing" secondItem="4dn-Gg-Wy3" secondAttribute="trailing" id="R4u-b5-DNd"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rKj-gW-VAB" secondAttribute="trailing" constant="20" symbolic="YES" id="TMo-hY-rrA"/>
@@ -616,7 +616,7 @@
                             <constraint firstItem="qEK-TC-RNc" firstAttribute="top" secondItem="xMh-pp-Uek" secondAttribute="bottom" constant="19" id="cc6-PO-N4k"/>
                             <constraint firstItem="4dn-Gg-Wy3" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="e7R-C6-N9D"/>
                             <constraint firstItem="m17-jn-QNs" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="32" id="hxm-98-0It"/>
-                            <constraint firstItem="qEK-TC-RNc" firstAttribute="top" secondItem="GzW-fZ-j1l" secondAttribute="bottom" constant="20" id="i9b-bR-JSs"/>
+                            <constraint firstItem="qEK-TC-RNc" firstAttribute="top" secondItem="GzW-fZ-j1l" secondAttribute="bottom" constant="15" id="i9b-bR-JSs"/>
                             <constraint firstItem="GzW-fZ-j1l" firstAttribute="leading" secondItem="xMh-pp-Uek" secondAttribute="trailing" constant="15" id="iCo-WJ-Zgu"/>
                             <constraint firstItem="GzW-fZ-j1l" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="trailing" constant="20" symbolic="YES" id="iKA-3P-Wr7"/>
                             <constraint firstItem="LVb-pL-6ez" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="75" id="vYB-y7-HxQ"/>
@@ -849,7 +849,7 @@
                                             <color key="contentTintColor" name="homeBtnTextColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="horizontalPadding">
-                                                    <real key="value" value="10"/>
+                                                    <real key="value" value="15"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
@@ -909,7 +909,7 @@
                                             <color key="contentTintColor" name="homeBtnTextColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="horizontalPadding">
-                                                    <real key="value" value="10"/>
+                                                    <real key="value" value="15"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
