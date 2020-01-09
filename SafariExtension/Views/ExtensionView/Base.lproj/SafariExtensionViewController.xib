@@ -221,7 +221,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="OiK-xf-oaE"/>
                     </constraints>
-                    <buttonCell key="cell" type="square" title="Trust Site" bezelStyle="shadowlessSquare" image="button_trust_site" imagePosition="overlaps" alignment="center" alternateImage="button_trust_site_active" imageScaling="proportionallyDown" inset="2" id="B4q-Xk-a9k" customClass="CenteredNSButtonCell" customModule="SafariExtension" customModuleProvider="target">
+                    <buttonCell key="cell" type="square" title="Trust Site" alternateTitle="Site Trusted" bezelStyle="shadowlessSquare" image="button_trust_site" imagePosition="overlaps" alignment="center" alternateImage="button_trust_site_active" imageScaling="proportionallyDown" inset="2" id="B4q-Xk-a9k" customClass="CenteredNSButtonCell" customModule="SafariExtension" customModuleProvider="target">
                         <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                         <font key="font" size="11" name="OpenSans-SemiBold"/>
                     </buttonCell>

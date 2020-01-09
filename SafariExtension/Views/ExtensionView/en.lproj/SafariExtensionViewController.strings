@@ -5,6 +5,9 @@
 /* Class = "NSButtonCell"; title = "Custom Protection"; ObjectID = "77T-OQ-Bj8"; */
 "77T-OQ-Bj8.title" = "Custom Protection";
 
+/* Class = "NSButtonCell"; alternateTitle = "Site Trusted"; ObjectID = "B4q-Xk-a9k"; */
+"B4q-Xk-a9k.alternateTitle" = "Site Trusted";
+
 /* Class = "NSButtonCell"; title = "Trust Site"; ObjectID = "B4q-Xk-a9k"; */
 "B4q-Xk-a9k.title" = "Trust Site";
 
@@ -35,8 +38,8 @@
 /* Class = "NSTextFieldCell"; placeholderString = "Website URL"; ObjectID = "oIv-xw-QGv"; */
 "oIv-xw-QGv.placeholderString" = "Website URL";
 
-/* Class = "NSTextFieldCell"; title = "Seconds load time"; ObjectID = "qiI-a6-bvL"; */
-"qiI-a6-bvL.title" = "Seconds load time";
+/* Class = "NSTextFieldCell"; title = "seconds load time"; ObjectID = "qiI-a6-bvL"; */
+"qiI-a6-bvL.title" = "seconds load time";
 
 /* Class = "NSTextFieldCell"; title = "seconds"; ObjectID = "seQ-fv-OFw"; */
 "seQ-fv-OFw.title" = "seconds";

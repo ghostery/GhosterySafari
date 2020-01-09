@@ -174,7 +174,6 @@
 		0D02796E23638C19007D5F66 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0D0279742365184E007D5F66 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		0D027977236538A8007D5F66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		0D02797A2365409A007D5F66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SafariExtensionViewController.strings; sourceTree = "<group>"; };
 		0D06245823C4FFFF0036414A /* PaddedNSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedNSButton.swift; sourceTree = "<group>"; };
 		0D06245D23C507E50036414A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		0D182933238E27AA00E5EE42 /* GhosteryLite.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GhosteryLite.xcdatamodel; sourceTree = "<group>"; };
@@ -222,6 +221,7 @@
 		0DBA6546238318A50011AAD3 /* TrustedSiteItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSiteItemDelegate.swift; sourceTree = "<group>"; };
 		0DBA6548238319530011AAD3 /* TrustedSitesViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedSitesViewControllerExtension.swift; sourceTree = "<group>"; };
 		0DBA654A238327D20011AAD3 /* URLSessionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtension.swift; sourceTree = "<group>"; };
+		0DBC5D1823C7B5D400D4EDD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SafariExtensionViewController.strings; sourceTree = "<group>"; };
 		0DC7C478239C047200E54B37 /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 		0DCADD5F235E5EE300F00AB4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0DD3BF7D236CCD2A00889C41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -1243,7 +1243,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				0D3FBB2D2360B4FE0054822A /* Base */,
-				0D02797A2365409A007D5F66 /* en */,
 				0DD3BF8E236CDBCD00889C41 /* de */,
 				0DD3BF95236CFFF200889C41 /* fr */,
 				0DD3BF9C236CFFF900889C41 /* es */,
@@ -1257,6 +1256,7 @@
 				0DD3BFDB236D00A700889C41 /* pt-BR */,
 				0DD3BFE2236D00B500889C41 /* ru */,
 				0DD3BFE9236D04EC00889C41 /* zh-Hans */,
+				0DBC5D1823C7B5D400D4EDD0 /* en */,
 			);
 			name = SafariExtensionViewController.xib;
 			sourceTree = "<group>";
@@ -1418,7 +1418,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlockerCosmetic/SupportingFiles/ContentBlockerCosmetic.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlockerCosmetic/SupportingFiles/Info.plist;
@@ -1443,7 +1443,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlockerCosmetic/SupportingFiles/ContentBlockerCosmetic.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlockerCosmetic/SupportingFiles/Info.plist;
@@ -1467,7 +1467,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlockerCosmetic/SupportingFiles/ContentBlockerCosmetic.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlockerCosmetic/SupportingFiles/Info.plist;
@@ -1491,7 +1491,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlockerNetwork/SupportingFiles/ContentBlockerNetwork.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlockerNetwork/SupportingFiles/Info.plist;
@@ -1516,7 +1516,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlockerNetwork/SupportingFiles/ContentBlockerNetwork.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlockerNetwork/SupportingFiles/Info.plist;
@@ -1540,7 +1540,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlockerNetwork/SupportingFiles/ContentBlockerNetwork.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlockerNetwork/SupportingFiles/Info.plist;
@@ -1682,7 +1682,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = GhosteryLite/SupportingFiles/Info.plist;
@@ -1708,7 +1708,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = GhosteryLite/SupportingFiles/Info.plist;
@@ -1731,7 +1731,7 @@
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SupportingFiles/SafariExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = SafariExtension/SupportingFiles/Info.plist;
@@ -1756,7 +1756,7 @@
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SupportingFiles/SafariExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = SafariExtension/SupportingFiles/Info.plist;
@@ -1781,7 +1781,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/SupportingFiles/ContentBlocker.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlocker/SupportingFiles/Info.plist;
@@ -1805,7 +1805,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/SupportingFiles/ContentBlocker.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlocker/SupportingFiles/Info.plist;
@@ -1887,7 +1887,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = GhosteryLite/SupportingFiles/Info.plist;
@@ -1910,7 +1910,7 @@
 				CODE_SIGN_ENTITLEMENTS = SafariExtension/SupportingFiles/SafariExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = SafariExtension/SupportingFiles/Info.plist;
@@ -1935,7 +1935,7 @@
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/SupportingFiles/ContentBlocker.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = HPY23A294X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ContentBlocker/SupportingFiles/Info.plist;

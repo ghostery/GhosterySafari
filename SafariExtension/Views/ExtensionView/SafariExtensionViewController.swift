@@ -224,7 +224,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
 		let defaultStr = self.defaultConfigRadio.title
 		let customStr = self.customConfigRadio.title
 		let trustSiteTitle = self.trustSiteButton.title
-		let siteTrustedTitle = NSLocalizedString("trusted.button", comment: "Trusted site button title")
+		let siteTrustedTitle = self.trustSiteButton.alternateTitle
 		
 		self.defaultConfigRadio.attributedTitle = defaultStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(named: "radioTextColor") ?? NSColor.white)
 		self.customConfigRadio.attributedTitle = customStr.attributedString(withTextAlignment: .left, fontName: "OpenSans-Regular", fontSize: 14, fontColor: NSColor(named: "radioTextColor") ?? NSColor.white)

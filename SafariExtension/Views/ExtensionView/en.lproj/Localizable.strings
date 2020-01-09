@@ -14,7 +14,6 @@
 
 "trust.tooltip" = "Always allow trackers and ads on this site.";
 "trusted.tooltip" = "Trackers and ads allowed. Click to undo.";
-"trusted.button" = "Site Trusted";
 "button.pause.tooltip" = "Pause Ghostery Lite";
 "button.resume.tooltip" = "Resume Ghostery Lite";
 "paused.message" = "Ghostery Lite has been paused.";
