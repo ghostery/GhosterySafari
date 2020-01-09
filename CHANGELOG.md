@@ -1,4 +1,4 @@
-### Ghostery Lite 1.1.0 (UNRELEASED)
+### Ghostery Lite 1.1.0 (January 10, 2020)
 
 + New network and cosmetic Content Blocker extensions for Cliqz block lists
 + Check for block list updates on CDN on app start (once per day)
