@@ -4,6 +4,8 @@
 <dict>
 	<key>ATSApplicationFontsPath</key>
 	<string>Fonts</string>
+	<key>CFBundleDisplayName</key>
+	<string>Ghostery Lite Safari Extension</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleName</key>
@@ -72,5 +74,7 @@
 			<string>All</string>
 		</dict>
 	</dict>
+	<key>NSHumanReadableDescription</key>
+	<string>Ghostery Lite allows you to manage the app from within Safari: pause, trust sites, and customize your tracker blocking settings.</string>
 </dict>
 </plist>
