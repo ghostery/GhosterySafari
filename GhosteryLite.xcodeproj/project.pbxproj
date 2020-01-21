@@ -983,7 +983,7 @@
 				};
 			};
 			buildConfigurationList = 4F3049182118982600BA3961 /* Build configuration list for PBXProject "GhosteryLite" */;
-			compatibilityVersion = "Xcode 10.0";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (

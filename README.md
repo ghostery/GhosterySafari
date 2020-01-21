@@ -75,7 +75,7 @@ Under the Ghostery Lite "Run" configuration, look for "Arguments Passed on Launc
 See [LICENSE](LICENSE)
 
 ## Tracker Databases
-The [BlockListAssets](https://github.com/ghostery/GhosterySafari/tree/master/GhosteryLite/Resources/BlockListAssets) folder contains JSON skeletons to show the schema expected by the content blocker. Ghostery's production tracker databases have been purposely excluded from this project, as they remain proprietary to Ghostery, Inc.
+The [BlockListAssets](GhosteryLite/Resources/BlockListAssets) folder contains JSON skeletons to show the schema expected by the content blocker. Ghostery's production tracker databases have been purposely excluded from this project, as they remain proprietary to Ghostery, Inc.
 
 **Copyright Notice**
 
