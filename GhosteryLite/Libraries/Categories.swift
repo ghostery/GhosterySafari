@@ -46,6 +46,11 @@ enum Categories: Int, CaseIterable {
 				return "cat_social_media"
 		}
 	}
+
+	/// Generates a list of the default blocked categories
+	static func defaultBlockedCategories() -> [Categories] {
+		return [.advertising, .siteAnalytics, .pornvertising]
+	}
 	
 	/// List all blocking categories.  Used for full category blocking.
 	static func allCategories() -> [Categories] {

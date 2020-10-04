@@ -43,11 +43,6 @@ class BlockingConfiguration {
 		self.setDefaultConfig(type: type)
 	}
 	
-	/// Generates a list of the default blocked categories
-	func defaultBlockedCategories() -> [Categories] {
-		return [.advertising, .siteAnalytics, .pornvertising]
-	}
-	
 	/// Fetches the configType property from the BlockingConfig entity of CoreData
 	func getConfigType() -> Int {
 		if let blockingConfig = self.getBlockingConfig() {

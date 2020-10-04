@@ -45,7 +45,7 @@ class GhosteryApplication {
 		self.reloadContentBlockers()
 	}
 	
-	/// Check to see if GhosteryList is paused
+	/// Check to see if GhosteryLite is paused
 	func isPaused() -> Bool {
 		return self.paused
 	}
@@ -144,7 +144,7 @@ class GhosteryApplication {
 		Utils.logger("Loading default Ghostery block list categories for \(Constants.SafariContentBlockerID)")
 		var fileNames = [String]()
 		// Ghostery default categories
-		for index in BlockingConfiguration.shared.defaultBlockedCategories() {
+		for index in Categories.defaultBlockedCategories() {
 			fileNames.append(index.fileName())
 		}
 		// Trigger a Content Blocker reload

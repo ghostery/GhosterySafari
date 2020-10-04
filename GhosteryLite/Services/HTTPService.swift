@@ -45,7 +45,7 @@ class HTTPService {
 					}
 					do {
 						let values = try JSONDecoder().decode(T.self, from: data)
-						Utils.logger("Successfully decoded JSON file.")
+						Utils.logger("Successfully decoded JSON file")
 						completion(.success(values))
 					} catch let error as NSError {
 						Utils.logger("JSONDecoder error: \(error)")
@@ -74,7 +74,7 @@ class HTTPService {
 						completion(.failure(.invalidResponse))
 						return
 					}
-					Utils.logger("Successfully downloaded JSON data.")
+					Utils.logger("Successfully downloaded JSON data")
 					completion(.success(data))
 				case .failure(let error):
 					Utils.logger("Error: \(error)")
