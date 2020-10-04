@@ -58,6 +58,7 @@
 		0DBA654C238327D20011AAD3 /* URLSessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA654A238327D20011AAD3 /* URLSessionExtension.swift */; };
 		0DC7C479239C047200E54B37 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC7C478239C047200E54B37 /* PersistentContainer.swift */; };
 		0DC7C47A239C049400E54B37 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC7C478239C047200E54B37 /* PersistentContainer.swift */; };
+		0DD3876F252A224100E4871E /* RealmCore in Frameworks */ = {isa = PBXBuildFile; productRef = 0DD3876E252A224100E4871E /* RealmCore */; };
 		0DD3BF7C236CCD2A00889C41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DD3BF7E236CCD2A00889C41 /* InfoPlist.strings */; };
 		0DD3BF81236CD09300889C41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DD3BF83236CD09300889C41 /* InfoPlist.strings */; };
 		0DD3BF86236CD20F00889C41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DD3BF88236CD20F00889C41 /* InfoPlist.strings */; };
@@ -402,6 +403,7 @@
 			files = (
 				0D7ECB6423A834D30019AF44 /* RealmSwift in Frameworks */,
 				0D7ECB6223A834D30019AF44 /* Realm in Frameworks */,
+				0DD3876F252A224100E4871E /* RealmCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -892,6 +894,7 @@
 			packageProductDependencies = (
 				0D7ECB6123A834D30019AF44 /* Realm */,
 				0D7ECB6323A834D30019AF44 /* RealmSwift */,
+				0DD3876E252A224100E4871E /* RealmCore */,
 			);
 			productName = GhosteryLite;
 			productReference = 0D588D9B235E3FBB0003668C /* GhosteryLite.app */;
@@ -938,7 +941,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = Ghostery;
 				TargetAttributes = {
 					0DFD55442399F4D8000493FC = {
@@ -1006,6 +1009,7 @@
 			mainGroup = 4F3049142118982600BA3961;
 			packageReferences = (
 				0D7ECB6023A834D30019AF44 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				0DD3876D252A224100E4871E /* XCRemoteSwiftPackageReference "realm-core" */,
 			);
 			productRefGroup = 4F3049142118982600BA3961;
 			projectDirPath = "";
@@ -1585,6 +1589,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1646,6 +1651,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1851,6 +1857,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -2024,7 +2031,15 @@
 			repositoryURL = "git@github.com:realm/realm-cocoa.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 4.1.1;
+				minimumVersion = 5.4.7;
+			};
+		};
+		0DD3876D252A224100E4871E /* XCRemoteSwiftPackageReference "realm-core" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:realm/realm-core.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 6.1.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -2039,6 +2054,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0D7ECB6023A834D30019AF44 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		0DD3876E252A224100E4871E /* RealmCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0DD3876D252A224100E4871E /* XCRemoteSwiftPackageReference "realm-core" */;
+			productName = RealmCore;
 		};
 /* End XCSwiftPackageProductDependency section */
 
