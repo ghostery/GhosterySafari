@@ -21,7 +21,7 @@ class BlockLists {
 	static let shared = BlockLists()
 
 	private struct ghosteryVersionData: Decodable {
-		var safariContentBlockerVersion: Int
+		var safariContentBlocker: String
 	}
 	private struct cliqzVersionData: Decodable {
 		let safari: cliqzSafariLists
@@ -49,7 +49,7 @@ class BlockLists {
 			HTTPService.shared.getJSON(url: Constants.GhosteryVersionPath) { (completion: Result<ghosteryVersionData, HTTPService.HTTPServiceError>) in
 				switch completion {
 					case .success(let versionData):
-						let blockListVersion = versionData.safariContentBlockerVersion
+						let blockListVersion = versionData.safariContentBlocker
 						// TODO: Check version numbers for each individual category file, rather than updating all categories if the master list version has changed
 						if self.isGhosteryBlockListVersionChanged(blockListVersion, Constants.GhosteryBlockListVersionKey) {
 							group.enter()
@@ -161,8 +161,8 @@ class BlockLists {
 	/// Check to see if the Ghostery block list version number has changed
 	/// - Parameter newVersion: The new version of the block list on the CDN
 	/// - Parameter oldVersionKey The preference key where the old version number is stored
-	private func isGhosteryBlockListVersionChanged(_ newVersion: Int, _ oldVersionKey: String) -> Bool {
-		if let oldVersion = Preferences.getGlobalPreference(key: oldVersionKey) as? Int {
+	private func isGhosteryBlockListVersionChanged(_ newVersion: String, _ oldVersionKey: String) -> Bool {
+		if let oldVersion = Preferences.getGlobalPreference(key: oldVersionKey) as? String {
 			Utils.logger("\(oldVersionKey) Old version \(oldVersion) New version \(newVersion)")
 			return newVersion != oldVersion
 		}

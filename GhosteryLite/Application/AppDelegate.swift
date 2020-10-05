@@ -104,15 +104,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		// Check the version of the Ghostery block list that shipped with the application. Save the version
 		// to Preferences to prevent an unnecessary update check
 		struct versionData: Decodable {
-			var safariContentBlockerVersion: Int
+			var safariContentBlocker: String
 		}
 		if let url = Bundle.main.url(forResource: "version", withExtension: "json", subdirectory: Constants.BlockListAssetsFolder) { // Fetch version from app bundle
 			do {
 				let data = try Data(contentsOf: url)
 				let decoder = JSONDecoder()
 				let jsonData = try decoder.decode(versionData.self, from: data)
-				Utils.logger("\(Constants.GhosteryBlockListVersionKey) is \(jsonData.safariContentBlockerVersion)")
-				Preferences.setGlobalPreference(key: Constants.GhosteryBlockListVersionKey, value: jsonData.safariContentBlockerVersion)
+				Utils.logger("\(Constants.GhosteryBlockListVersionKey) is \(jsonData.safariContentBlocker)")
+				Preferences.setGlobalPreference(key: Constants.GhosteryBlockListVersionKey, value: jsonData.safariContentBlocker)
 			} catch {
 				Utils.logger("Error getting \(Constants.GhosteryBlockListVersionKey): \(error)")
 			}

@@ -36,7 +36,7 @@ struct Constants {
 	static let BlockListAssetsFolder = "BlockListAssets"
 	static let GroupStorageFolderURL: URL? = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.AppsGroupID)
 	static let AssetsFolderURL: URL? = Constants.GroupStorageFolderURL?.appendingPathComponent(Constants.BlockListAssetsFolder, isDirectory: true)
-	static let GhosteryBlockListVersionKey = "safariContentBlockerVersion"
+	static let GhosteryBlockListVersionKey = "safariContentBlocker"
 	
 	/// Content Blocker json lists and their associated bundle IDs
 	enum ContentBlockerLists: String {
@@ -68,15 +68,15 @@ struct Constants {
 	
 	/// Block List CDN paths
 	#if PROD
-		static let GhosteryAssetPath = "https://cdn.ghostery.com/update/safari/"
+		static let GhosteryAssetPath = "https://cdn.ghostery.com/update/v4/safari/"
 	#else
-		static let GhosteryAssetPath = "https://staging-cdn.ghostery.com/update/safari/"
+		static let GhosteryAssetPath = "https://staging-cdn.ghostery.com/update/v4/safari/"
 	#endif
 	
 	#if PROD
-		static let GhosteryVersionPath = "https://cdn.ghostery.com/update/version"
+		static let GhosteryVersionPath = "https://cdn.ghostery.com/update/v4/version"
 	#else
-		static let GhosteryVersionPath = "https://staging-cdn.ghostery.com/update/version"
+		static let GhosteryVersionPath = "https://staging-cdn.ghostery.com/update/v4/version"
 	#endif
 	static let CliqzVersionPath = "https://cdn.cliqz.com/adblocker/configs/safari-ads/allowed-lists.json"
 	
