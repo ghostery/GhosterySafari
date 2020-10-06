@@ -78,7 +78,7 @@ struct Constants {
 	#else
 		static let GhosteryVersionPath = "https://staging-cdn.ghostery.com/update/v4/version"
 	#endif
-	static let CliqzVersionPath = "https://cdn.cliqz.com/adblocker/configs/safari-ads/allowed-lists.json"
+	static let CliqzVersionPath = "https://cdn.ghostery.com/adblocker/configs/safari-ads/allowed-lists.json"
 	
 	/// Telemetry paths
 	#if PROD
