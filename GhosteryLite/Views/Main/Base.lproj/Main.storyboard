@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -324,7 +324,7 @@
                                 <color key="fillColor" name="linebreakColor"/>
                             </box>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rKj-gW-VAB">
-                                <rect key="frame" x="74" y="388" width="68" height="18"/>
+                                <rect key="frame" x="73" y="388" width="72" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="WrX-eY-Y3a"/>
                                 </constraints>
@@ -350,7 +350,7 @@
                                 <color key="fillColor" name="linebreakColor"/>
                             </box>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LVb-pL-6ez">
-                                <rect key="frame" x="74" y="246" width="71" height="18"/>
+                                <rect key="frame" x="73" y="246" width="75" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="bR7-aY-aO5"/>
                                 </constraints>
@@ -382,7 +382,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="9dj-E3-uka">
-                                            <rect key="frame" x="93" y="124" width="93" height="18"/>
+                                            <rect key="frame" x="93" y="123" width="97" height="18"/>
                                             <buttonCell key="cell" type="check" title="Advertising" bezelStyle="regularSquare" imagePosition="left" inset="2" id="phd-zp-sTL">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" size="14" name="Roboto-Regular"/>
@@ -393,11 +393,11 @@
                                             </connections>
                                         </button>
                                         <imageView toolTip="Provides advertising or advertising-related services such as data-collection, behavioral analysis, or re-targeting." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V3t-dF-QL4" userLabel="Ad Icon">
-                                            <rect key="frame" x="189" y="134" width="11" height="13"/>
+                                            <rect key="frame" x="195" y="134" width="11" height="13"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_info_tooltip" id="5dA-2t-oQA"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="Qyy-sP-LtW">
-                                            <rect key="frame" x="93" y="91" width="107" height="18"/>
+                                            <rect key="frame" x="93" y="88" width="111" height="18"/>
                                             <buttonCell key="cell" type="check" title="Site Analytics" bezelStyle="regularSquare" imagePosition="left" inset="2" id="aDg-VX-FLP">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" size="14" name="Roboto-Regular"/>
@@ -407,11 +407,11 @@
                                             </connections>
                                         </button>
                                         <imageView toolTip="Collects and analyzes data related to site usage and performance." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="edo-Q1-18A" userLabel="Site Analytics Icon">
-                                            <rect key="frame" x="203" y="101" width="11" height="13"/>
+                                            <rect key="frame" x="209" y="99" width="11" height="13"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_info_tooltip" id="vgk-Nj-DUk"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="tfb-4f-8qe" userLabel="Customer Interaction Checkbox">
-                                            <rect key="frame" x="93" y="58" width="153" height="18"/>
+                                            <rect key="frame" x="93" y="53" width="157" height="18"/>
                                             <buttonCell key="cell" type="check" title="Customer Interaction" bezelStyle="regularSquare" imagePosition="left" inset="2" id="bgP-eI-vT7">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" size="14" name="Roboto-Regular"/>
@@ -421,11 +421,11 @@
                                             </connections>
                                         </button>
                                         <imageView toolTip="Includes chat, email messaging, customer support, and other interaction tools." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VDK-om-yg2" userLabel="Customer Interaction Icon">
-                                            <rect key="frame" x="249" y="68" width="11" height="13"/>
+                                            <rect key="frame" x="255" y="64" width="11" height="13"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_info_tooltip" id="giH-R0-xGw"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="6Y1-oA-mwM">
-                                            <rect key="frame" x="93" y="25" width="103" height="18"/>
+                                            <rect key="frame" x="93" y="18" width="107" height="18"/>
                                             <buttonCell key="cell" type="check" title="Social Media" bezelStyle="regularSquare" imagePosition="left" inset="2" id="c0M-zC-Od5">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" size="14" name="Roboto-Regular"/>
@@ -435,11 +435,11 @@
                                             </connections>
                                         </button>
                                         <imageView toolTip="Integrates features related to social media sites." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tD7-PD-U11" userLabel="Social Media Icon">
-                                            <rect key="frame" x="199" y="35" width="11" height="13"/>
+                                            <rect key="frame" x="205" y="29" width="11" height="13"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_info_tooltip" id="u1f-Pf-mi4"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="cOs-rr-nNM">
-                                            <rect key="frame" x="368" y="124" width="79" height="18"/>
+                                            <rect key="frame" x="368" y="123" width="83" height="18"/>
                                             <buttonCell key="cell" type="check" title="Essential" bezelStyle="regularSquare" imagePosition="left" inset="2" id="MXn-Zo-X8B">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" size="14" name="Roboto-Regular"/>
@@ -449,11 +449,11 @@
                                             </connections>
                                         </button>
                                         <imageView toolTip="Includes tag managers, privacy notices, and technologies that are critical to the functionality of a website." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="caT-UF-u5T" userLabel="Essential Icon">
-                                            <rect key="frame" x="450" y="134" width="11" height="13"/>
+                                            <rect key="frame" x="456" y="134" width="11" height="13"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_info_tooltip" id="8Wu-qV-53n"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="uoe-bI-z7M">
-                                            <rect key="frame" x="368" y="91" width="142" height="18"/>
+                                            <rect key="frame" x="368" y="88" width="146" height="18"/>
                                             <buttonCell key="cell" type="check" title="Audio/Video Player" bezelStyle="regularSquare" imagePosition="left" inset="2" id="r8b-df-JUE">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" size="14" name="Roboto-Regular"/>
@@ -463,11 +463,11 @@
                                             </connections>
                                         </button>
                                         <imageView toolTip="Enables websites to publish, distribute, and optimize video and audio content." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cke-w1-Con" userLabel="Audio Video Icon">
-                                            <rect key="frame" x="513" y="101" width="11" height="13"/>
+                                            <rect key="frame" x="519" y="99" width="11" height="13"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_info_tooltip" id="5UE-RA-Agv"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="jq0-cX-Poj">
-                                            <rect key="frame" x="368" y="58" width="108" height="18"/>
+                                            <rect key="frame" x="368" y="53" width="112" height="18"/>
                                             <buttonCell key="cell" type="check" title="Adult Content" bezelStyle="regularSquare" imagePosition="left" inset="2" id="O3s-iH-PLS">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" size="14" name="Roboto-Regular"/>
@@ -477,11 +477,11 @@
                                             </connections>
                                         </button>
                                         <imageView toolTip="Delivers advertising technology designed specifically for adult content sites." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1rF-ap-Ve5" userLabel="Adult Icon">
-                                            <rect key="frame" x="479" y="68" width="11" height="13"/>
+                                            <rect key="frame" x="485" y="64" width="11" height="13"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_info_tooltip" id="esl-tX-Gek"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="NWS-6i-ZYt">
-                                            <rect key="frame" x="368" y="25" width="91" height="18"/>
+                                            <rect key="frame" x="368" y="18" width="95" height="18"/>
                                             <buttonCell key="cell" type="check" title="Comments" bezelStyle="regularSquare" imagePosition="left" inset="2" id="ylv-lj-W0x">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" size="14" name="Roboto-Regular"/>
@@ -491,10 +491,10 @@
                                             </connections>
                                         </button>
                                         <imageView toolTip="Enables comments sections for articles and product reviews." horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WNN-aY-BDO" userLabel="Comments Icon">
-                                            <rect key="frame" x="462" y="35" width="11" height="13"/>
+                                            <rect key="frame" x="468" y="29" width="11" height="13"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_info_tooltip" id="cjQ-GI-0eE"/>
                                         </imageView>
-                                        <box hidden="YES" canDrawConcurrently="YES" borderType="none" titlePosition="noTitle" transparent="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PZ4-ye-KpA">
+                                        <box hidden="YES" borderType="none" titlePosition="noTitle" transparent="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PZ4-ye-KpA">
                                             <rect key="frame" x="495" y="-4" width="131" height="36"/>
                                             <view key="contentView" id="5jb-33-TXX">
                                                 <rect key="frame" x="0.0" y="0.0" width="131" height="36"/>

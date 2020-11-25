@@ -1,4 +1,4 @@
-[![Ghostery](https://www.ghostery.com/wp-content/themes/ghostery/images/ghostery_logo_black.svg)](https://www.ghostery.com)
+[![Ghostery](https://www.ghostery.com/wp-content/themes/ghostery/assets/prod/images/github/ghostery_logo.svg)](https://www.ghostery.com)
 ---
 
 The Ghostery Lite app extension for the Safari desktop browser works alongside Apple’s new privacy ecosystem to bring Safari users comprehensive privacy protection. Check page performance, pause Ghostery Lite, trust a site and switch to your custom settings with a single click.
