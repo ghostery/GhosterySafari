@@ -1,4 +1,4 @@
-### Ghostery Lite 1.2.0 ()
+### Ghostery Lite 1.2.0 (August 10, 2021)
 
 + Update to v4 tracker database endpoints
 + Update Ad Blocking CDN paths
