@@ -30,7 +30,6 @@ struct Constants {
 	static let installRandKey = "installRand"
 	static let lastVersionKey = "lastVersion"
 	static let buildVersionKey = "lastBuildVersion"
-	static let coreDataMigrationCompleted = "CoreDataMigrationCompleted"
 	
 	/// Block list storage
 	static let BlockListAssetsFolder = "BlockListAssets"

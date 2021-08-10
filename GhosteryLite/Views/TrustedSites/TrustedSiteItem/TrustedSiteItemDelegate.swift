@@ -14,6 +14,6 @@
 
 import Foundation
 
-protocol TrustedSiteItemDelegate: class {
+protocol TrustedSiteItemDelegate: AnyObject {
 	func trustedSiteDidRemove(indexPath: IndexPath, url: String)
 }
