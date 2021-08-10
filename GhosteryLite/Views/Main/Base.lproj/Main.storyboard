@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -324,13 +324,13 @@
                                 <color key="fillColor" name="linebreakColor"/>
                             </box>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rKj-gW-VAB">
-                                <rect key="frame" x="73" y="388" width="72" height="18"/>
+                                <rect key="frame" x="73" y="388" width="71" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="WrX-eY-Y3a"/>
                                 </constraints>
                                 <buttonCell key="cell" type="radio" title="Default" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="3wz-JW-Z1K">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" size="14" name="Roboto-Bold"/>
+                                    <font key="font" size="14" name="Roboto-Regular"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="defaultSelected:" target="XfG-lQ-9wD" id="3SM-Lr-m92"/>
@@ -356,7 +356,7 @@
                                 </constraints>
                                 <buttonCell key="cell" type="radio" title="Custom" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="E3u-jU-cgo">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" size="14" name="Roboto-Bold"/>
+                                    <font key="font" size="14" name="Roboto-Regular"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="customSelected:" target="XfG-lQ-9wD" id="we0-eY-s0Y"/>

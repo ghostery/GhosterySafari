@@ -1,3 +1,10 @@
+### Ghostery Lite 1.2.0 ()
+
++ Update to v4 tracker database endpoints
++ Update Ad Blocking CDN paths
++ Remove RealmSwift packages
++ Adds support for Apple Silicon 
+
 ### Ghostery Lite 1.1.0 (January 10, 2020)
 
 + New network and cosmetic Content Blocker extensions for Cliqz block lists
