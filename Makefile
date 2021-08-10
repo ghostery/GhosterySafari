@@ -31,16 +31,16 @@ clean:
 
 bugs:
 	@echo "Fetching Safari block list json files..."
-	curl "https://cdn.ghostery.com/update/safari/safariContentBlocker" -o $(DB_DIR)/safariContentBlocker.json --compressed --fail
-	curl "https://cdn.ghostery.com/update/safari/cat_advertising" -o $(DB_DIR)/cat_advertising.json --compressed --fail
-	curl "https://cdn.ghostery.com/update/safari/cat_audio_video_player" -o $(DB_DIR)/cat_audio_video_player.json --compressed --fail
-	curl "https://cdn.ghostery.com/update/safari/cat_comments" -o $(DB_DIR)/cat_comments.json --compressed --fail
-	curl "https://cdn.ghostery.com/update/safari/cat_customer_interaction" -o $(DB_DIR)/cat_customer_interaction.json --compressed --fail
-	curl "https://cdn.ghostery.com/update/safari/cat_essential" -o $(DB_DIR)/cat_essential.json --compressed --fail
-	curl "https://cdn.ghostery.com/update/safari/cat_pornvertising" -o $(DB_DIR)/cat_pornvertising.json --compressed --fail
-	curl "https://cdn.ghostery.com/update/safari/cat_site_analytics" -o $(DB_DIR)/cat_site_analytics.json --compressed --fail
-	curl "https://cdn.ghostery.com/update/safari/cat_social_media" -o $(DB_DIR)/cat_social_media.json --compressed --fail
-	curl "https://cdn.ghostery.com/update/version" -o $(DB_DIR)/version.json --compressed --fail
+	curl "https://cdn.ghostery.com/update/v4/safari/safariContentBlocker.json" -o $(DB_DIR)/safariContentBlocker.json --compressed --fail
+	curl "https://cdn.ghostery.com/update/v4/safari/cat_advertising.json" -o $(DB_DIR)/cat_advertising.json --compressed --fail
+	curl "https://cdn.ghostery.com/update/v4/safari/cat_audio_video_player.json" -o $(DB_DIR)/cat_audio_video_player.json --compressed --fail
+	curl "https://cdn.ghostery.com/update/v4/safari/cat_comments.json" -o $(DB_DIR)/cat_comments.json --compressed --fail
+	curl "https://cdn.ghostery.com/update/v4/safari/cat_customer_interaction.json" -o $(DB_DIR)/cat_customer_interaction.json --compressed --fail
+	curl "https://cdn.ghostery.com/update/v4/safari/cat_essential.json" -o $(DB_DIR)/cat_essential.json --compressed --fail
+	curl "https://cdn.ghostery.com/update/v4/safari/cat_pornvertising.json" -o $(DB_DIR)/cat_pornvertising.json --compressed --fail
+	curl "https://cdn.ghostery.com/update/v4/safari/cat_site_analytics.json" -o $(DB_DIR)/cat_site_analytics.json --compressed --fail
+	curl "https://cdn.ghostery.com/update/v4/safari/cat_social_media.json" -o $(DB_DIR)/cat_social_media.json --compressed --fail
+	curl "https://cdn.ghostery.com/update/v4/versions.json" -o $(DB_DIR)/version.json --compressed --fail
 
 restore:
 	@echo "Restore default block list files..."

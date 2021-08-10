@@ -203,7 +203,7 @@ class BlockLists {
 	/// Extract the block list checksum from the list URL
 	/// - Parameter listURL: The block list URL
 	private func getCliqzChecksum(_ listURL: String) -> String {
-		let l = listURL.replacingOccurrences(of: "https://cdn.cliqz.com/adblocker/safari/", with: "")
+		let l = listURL.replacingOccurrences(of: "https://cdn.ghostery.com/adblocker/safari/", with: "")
 		return l.replacingOccurrences(of: "/rules.json", with: "")
 	}
 	

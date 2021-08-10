@@ -74,9 +74,9 @@ struct Constants {
 	#endif
 	
 	#if PROD
-		static let GhosteryVersionPath = "https://cdn.ghostery.com/update/v4/version"
+		static let GhosteryVersionPath = "https://cdn.ghostery.com/update/v4/versions.json"
 	#else
-		static let GhosteryVersionPath = "https://staging-cdn.ghostery.com/update/v4/version"
+		static let GhosteryVersionPath = "https://staging-cdn.ghostery.com/update/v4/versions.json"
 	#endif
 	static let CliqzVersionPath = "https://cdn.ghostery.com/adblocker/configs/safari-ads/allowed-lists.json"
 	
