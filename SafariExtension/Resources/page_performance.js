@@ -35,8 +35,6 @@ var PageInfo = (function(window, document) {
 			pageLatency = unfixedLatency.toFixed(2); 
 		}
 
-		console.log('Sending latency from page_performance', pageLatency, host+pathname);
-
 		safari.extension.dispatchMessage('recordPageInfo', {
 			domain: `${protocol}//${host}${pathname}`,
 			latency: pageLatency
