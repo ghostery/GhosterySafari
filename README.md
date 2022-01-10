@@ -1,3 +1,5 @@
+# This repository is obsolte. Up to date version of Ghostery Extension for Safari is [here](https://github.com/ghostery/ghostery-dnr-extension)
+
 [![Ghostery](https://www.ghostery.com/wp-content/themes/ghostery/assets/prod/images/github/ghostery_logo.svg)](https://www.ghostery.com)
 ---
 
